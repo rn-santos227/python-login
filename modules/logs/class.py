@@ -7,3 +7,6 @@ class Log:
     self.id = id
     self.student_id = student_id
     self.timestamp = timestamp
+
+  def get_student(self):
+    pass
