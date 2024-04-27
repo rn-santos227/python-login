@@ -1,3 +1,5 @@
+from students.model import Student
+
 class Log:
   def __init__(self,
     id,
