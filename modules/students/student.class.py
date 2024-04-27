@@ -12,3 +12,5 @@ class Student:
   def get_full_name(self) -> str:
     if (self.middle_name):
       return f"{self.first_name} {self.middle_name[0]}. {self.last_name}"
+    else:
+      return f"{self.first_name} {self.last_name}"
