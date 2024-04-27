@@ -8,3 +8,7 @@ class Student:
     self.last_name = last_name
     self.section = section
     self.level = level
+
+  def get_full_name(self) -> str:
+    if (self.middle_name):
+      return f"{self.first_name} {self.middle_name[0]}. {self.last_name}"
