@@ -1,8 +1,9 @@
 class Student:
   def __init__(self,
-    id, first_name, middle_name, last_name, section, level
+    id, email, first_name, middle_name, last_name, section, level
   ):
     self.id = id
+    self.email = email
     self.first_name = first_name
     self.middle_name = middle_name
     self.last_name = last_name
