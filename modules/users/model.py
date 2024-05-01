@@ -11,7 +11,8 @@ class User:
     return hashed_password
 
   def verify_password(self, password):
-    pass
+    input_password_hash = self.encrypt_password(password)
+    return input_password_hash == self._password_hash
 
   @property
   def password(self):
