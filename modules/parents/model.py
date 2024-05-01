@@ -1,4 +1,5 @@
 class Parent:
-  def __init__(self, id, full_name):
+  def __init__(self, id, full_name, contact):
     self.id = id
     self.full_name = full_name
+    self.contact = contact
