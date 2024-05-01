@@ -1,6 +1,5 @@
 from modules.users.model import User
 
-class Admin:
-  def __init__(self, id, email):
-    self.id = id
-    self.email = email
+class Admin(User):
+  def __init__(self, id, full_name, email, password):
+    super().__init__(id, email, password)
