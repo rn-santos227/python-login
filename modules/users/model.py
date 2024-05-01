@@ -12,3 +12,7 @@ class User:
 
   def verify_password(self, password):
     pass
+
+  @property
+  def password(self):
+    raise AttributeError("Password is not readable")
