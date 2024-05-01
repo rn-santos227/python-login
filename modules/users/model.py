@@ -6,8 +6,9 @@ class User:
     self.password = password
 
   @staticmethod
-  def encrypt_password(password):
-    pass
+  def encrypt_password(password) -> str:
+    hashed_password = hashlib.sha256(password.encode()).hexdigest()
+    return hashed_password
 
   def verify_password(self, password):
     pass
