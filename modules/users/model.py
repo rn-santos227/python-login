@@ -4,3 +4,7 @@ class User:
     self.id = id
     self.email = email
     self.password = password
+
+  @staticmethod
+  def encrypt_password(password):
+    pass
