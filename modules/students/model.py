@@ -8,3 +8,7 @@ class Student(User):
     self.contact_number = contact_number
     self.section = section
     self.level = level
+
+  @User.password.setter
+  def password(self, new_password):
+      self._password_hash = self.encrypt_password(new_password)
