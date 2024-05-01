@@ -17,3 +17,7 @@ class User:
   @property
   def password(self):
     raise AttributeError("Password is not readable")
+  
+  @password.setter
+  def password(self, new_password):
+    self._password_hash = self.encrypt_password(new_password)
