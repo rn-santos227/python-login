@@ -3,7 +3,7 @@ class User:
   def __init__(self, id, email, password):
     self.id = id
     self.email = email
-    self.password = self.encrypt_password(password)
+    self._password_hash = self.encrypt_password(password)
 
   @staticmethod
   def encrypt_password(password) -> str:
