@@ -1,5 +1,3 @@
-import hashlib
-
 class Student:
   def __init__(self,
     id, full_name, student_number, email, contact_number, section, level
