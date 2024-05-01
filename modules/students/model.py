@@ -1,4 +1,6 @@
-class Student:
+from modules.users.model import User
+
+class Student():
   def __init__(self,
     id, full_name, student_number, email, contact_number, section, level
   ):
