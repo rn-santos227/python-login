@@ -8,3 +8,6 @@ class User:
   @staticmethod
   def encrypt_password(password):
     pass
+
+  def verify_password(self, password):
+    pass
