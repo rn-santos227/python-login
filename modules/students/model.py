@@ -19,5 +19,6 @@ class Student(User):
         id AUTOINCREMENT PRIMARY KEY,
         full_name TEXT,
         student_number TEXT,
+        email TEXT,
       )
     '''
