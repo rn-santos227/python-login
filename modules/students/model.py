@@ -20,5 +20,6 @@ class Student(User):
         full_name TEXT,
         student_number TEXT,
         email TEXT,
+        contact_number TEXT,
       )
     '''
