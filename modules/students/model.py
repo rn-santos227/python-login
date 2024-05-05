@@ -23,5 +23,6 @@ class Student(User):
         contact_number TEXT,
         section TEXT,
         level TEXT,
+        password TEXT
       )
     '''
