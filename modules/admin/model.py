@@ -8,3 +8,7 @@ class Admin(User):
   @User.password.setter
   def password(self, new_password):
     self._password_hash = self.encrypt_password(new_password)
+
+  def create_table() -> str:
+    return '''
+    '''
