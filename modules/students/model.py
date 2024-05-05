@@ -18,5 +18,6 @@ class Student(User):
       CREATE TABLE students (
         id AUTOINCREMENT PRIMARY KEY,
         full_name TEXT,
+        student_number TEXT,
       )
     '''
