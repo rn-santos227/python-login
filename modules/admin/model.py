@@ -11,4 +11,6 @@ class Admin(User):
 
   def create_table() -> str:
     return '''
+    CREATE TABLE administrators (
+    )
     '''
