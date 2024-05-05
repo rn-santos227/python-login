@@ -15,5 +15,6 @@ class Admin(User):
       id AUTOINCREMENT PRIMARY KEY,
       full_name TEXT,
       email TEXT,
+      password TEXT,
     )
     '''
