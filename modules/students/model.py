@@ -21,5 +21,6 @@ class Student(User):
         student_number TEXT,
         email TEXT,
         contact_number TEXT,
+        section TEXT,
       )
     '''
