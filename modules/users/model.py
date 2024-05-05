@@ -13,6 +13,9 @@ class User:
   def verify_password(self, password):
     input_password_hash = self.encrypt_password(password)
     return input_password_hash == self._password_hash
+  
+  def validate_email(email):
+    pass
 
   @property
   def password(self):
