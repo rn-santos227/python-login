@@ -14,4 +14,8 @@ class Student(User):
     self._password_hash = self.encrypt_password(new_password)
 
   def create_table() -> str:
-    return ""
+    return '''
+      CREATE TABLE students (
+        id AUTOINCREMENT PRIMARY KEY
+      )
+    '''
