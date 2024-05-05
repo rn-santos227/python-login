@@ -13,6 +13,7 @@ class Student(User):
   def password(self, new_password):
     self._password_hash = self.encrypt_password(new_password)
 
+  @staticmethod
   def create_table() -> str:
     return '''
       CREATE TABLE students (
