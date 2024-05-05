@@ -13,5 +13,6 @@ class Admin(User):
     return '''
     CREATE TABLE administrators (
       id AUTOINCREMENT PRIMARY KEY,
+      full_name TEXT,
     )
     '''
