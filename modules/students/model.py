@@ -16,6 +16,7 @@ class Student(User):
   def create_table() -> str:
     return '''
       CREATE TABLE students (
-        id AUTOINCREMENT PRIMARY KEY
+        id AUTOINCREMENT PRIMARY KEY,
+        full_name TEXT,
       )
     '''
