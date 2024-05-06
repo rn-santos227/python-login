@@ -4,3 +4,6 @@ class Parent:
     self.student_id = student_id
     self.full_name = full_name
     self.contact = contact
+
+  def get_student(self):
+    pass
