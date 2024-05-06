@@ -8,3 +8,4 @@ def create_database(database_name):
   )
   conn = pyodbc.connect(conn_str)
   conn.close()
+  return conn_str
