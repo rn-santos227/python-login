@@ -8,3 +8,6 @@ def get_admins():
 
 def create_admin(admin: Admin):
   pass
+
+def update_admin(admin: Admin):
+  pass
