@@ -11,3 +11,6 @@ def get_logs_by_student(student_id):
 
 def create_log(log: Log):
   pass
+
+def update_log(log: Log):
+  pass
