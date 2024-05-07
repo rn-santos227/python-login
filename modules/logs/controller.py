@@ -8,3 +8,6 @@ def get_logs():
 
 def get_logs_by_student(student_id):
   pass
+
+def create_log(log: Log):
+  pass
