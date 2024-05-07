@@ -11,3 +11,6 @@ def create_admin(admin: Admin):
 
 def update_admin(admin: Admin):
   pass
+
+def delete_admin(id):
+  pass
