@@ -5,3 +5,6 @@ def get_admin_by_id(id):
 
 def get_admins():
   pass
+
+def create_admin(admin: Admin):
+  pass
