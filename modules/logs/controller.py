@@ -14,3 +14,6 @@ def create_log(log: Log):
 
 def update_log(log: Log):
   pass
+
+def delete_log(id):
+  pass
