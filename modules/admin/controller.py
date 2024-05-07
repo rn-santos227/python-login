@@ -1,1 +1,1 @@
-from modules.admin import Admin
+from modules.admin.model import Admin
