@@ -11,3 +11,6 @@ def create_parent(parent: Parent):
 
 def update_parent(parent: Parent):
   pass
+
+def delete_parent(id):
+  pass
