@@ -11,3 +11,6 @@ def create_student(student: Student):
 
 def update_student(student: Student):
   pass
+
+def delete_student(id):
+  pass
