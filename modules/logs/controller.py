@@ -5,3 +5,6 @@ def get_log_by_id(id):
 
 def get_logs():
   pass
+
+def get_logs_by_student(student_id):
+  pass
