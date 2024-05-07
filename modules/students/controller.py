@@ -8,3 +8,6 @@ def get_students():
 
 def create_student(student: Student):
   pass
+
+def update_student(student: Student):
+  pass
