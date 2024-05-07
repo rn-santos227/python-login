@@ -5,3 +5,6 @@ def get_parent_by_id(id):
 
 def get_parents():
   pass
+
+def create_parents(parent: Parent):
+  pass
