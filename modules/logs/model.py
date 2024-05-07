@@ -10,5 +10,4 @@ class Log:
     self.student_id = student_id
     self.timestamp = timestamp
 
-  def get_student(self):
-    pass
+  
