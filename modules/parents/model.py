@@ -8,4 +8,7 @@ class Parent:
   @staticmethod
   def create_table() -> str:
     return '''
+    CREATE TABLE parents (
+    
+    );
     '''
