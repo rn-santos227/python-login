@@ -13,4 +13,6 @@ class Log:
   @staticmethod
   def create_table() -> str:
     return '''
+    CREATE TABLE logs (
+    );
     '''
