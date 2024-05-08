@@ -15,5 +15,6 @@ class Log:
     return '''
     CREATE TABLE logs (
       id AUTOINCREMENT PRIMARY KEY,
+      student_id INT,
     );
     '''
