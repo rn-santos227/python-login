@@ -9,6 +9,6 @@ class Parent:
   def create_table() -> str:
     return '''
     CREATE TABLE parents (
-    
+      id AUTOINCREMENT PRIMARY KEY,
     );
     '''
