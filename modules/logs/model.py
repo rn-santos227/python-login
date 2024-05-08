@@ -17,5 +17,6 @@ class Log:
       id AUTOINCREMENT PRIMARY KEY,
       student_id INT,
       timestamp DATETIME,
+      FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''
