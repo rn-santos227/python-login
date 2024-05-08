@@ -10,4 +10,7 @@ class Log:
     self.student_id = student_id
     self.timestamp = timestamp
 
-  
+  @staticmethod
+  def create_table() -> str:
+    return '''
+    '''
