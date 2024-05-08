@@ -16,14 +16,14 @@ class Student(User):
   @staticmethod
   def create_table() -> str:
     return '''
-      CREATE TABLE students (
-        id AUTOINCREMENT PRIMARY KEY,
-        full_name TEXT,
-        student_number TEXT,
-        email TEXT,
-        contact_number TEXT,
-        section TEXT,
-        level TEXT,
-        password TEXT
-      )
+    CREATE TABLE students (
+      id AUTOINCREMENT PRIMARY KEY,
+      full_name TEXT,
+      student_number TEXT,
+      email TEXT,
+      contact_number TEXT,
+      section TEXT,
+      level TEXT,
+      password TEXT
+    );
     '''

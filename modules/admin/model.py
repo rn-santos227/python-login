@@ -17,5 +17,5 @@ class Admin(User):
       full_name TEXT,
       email TEXT,
       password TEXT,
-    )
+    );
     '''
