@@ -10,6 +10,7 @@ class Parent:
     return '''
     CREATE TABLE parents (
       id AUTOINCREMENT PRIMARY KEY,
+      student_id INT,
       full_name TEXT,
       contact TEXT,
     );
