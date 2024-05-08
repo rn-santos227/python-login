@@ -16,5 +16,6 @@ class Log:
     CREATE TABLE logs (
       id AUTOINCREMENT PRIMARY KEY,
       student_id INT,
+      timestamp DATETIME,
     );
     '''
