@@ -10,5 +10,6 @@ class Parent:
     return '''
     CREATE TABLE parents (
       id AUTOINCREMENT PRIMARY KEY,
+      full_name TEXT,
     );
     '''
