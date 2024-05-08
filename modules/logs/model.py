@@ -14,5 +14,6 @@ class Log:
   def create_table() -> str:
     return '''
     CREATE TABLE logs (
+      id AUTOINCREMENT PRIMARY KEY,
     );
     '''
