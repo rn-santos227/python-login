@@ -11,5 +11,6 @@ class Parent:
     CREATE TABLE parents (
       id AUTOINCREMENT PRIMARY KEY,
       full_name TEXT,
+      contact TEXT,
     );
     '''
