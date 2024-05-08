@@ -4,6 +4,7 @@ def get_student_by_id(id):
   pass
 
 def get_student_by_email(email):
+  query = 'SELECT * FROM students WHERE email = ?;'
   pass
 
 def get_students():
