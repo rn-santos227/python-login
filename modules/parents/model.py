@@ -13,5 +13,6 @@ class Parent:
       student_id INT,
       full_name TEXT,
       contact TEXT,
+      FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''
