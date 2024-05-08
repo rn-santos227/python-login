@@ -5,5 +5,7 @@ class Parent:
     self.full_name = full_name
     self.contact = contact
 
-  def get_student(self):
-    pass
+  @staticmethod
+  def create_table() -> str:
+    return '''
+    '''
