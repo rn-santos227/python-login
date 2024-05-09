@@ -11,4 +11,6 @@ def connect_db(database_name):
   return conn
 
 def query_builder(table, query, action):
+  if action.lower() == 'select':
+    pass
   pass
