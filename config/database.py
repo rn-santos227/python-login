@@ -13,6 +13,9 @@ def connect_db(database_name):
 def query_builder(table, query, action):
   if action.lower() == 'select':
     pass
+  
   elif action.lower() == 'insert':
     pass
-  pass
+  
+  elif action.lower() == 'update':
+    pass
