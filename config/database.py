@@ -21,7 +21,9 @@ def query_builder(table, query, action):
     sql_query = f"UPDATE {table} SET {query};"
 
   elif action.lower() == 'delete':
-    pass
+    sql_query = f"DELETE FROM {table} WHERE {query};"
 
   else:
     raise ValueError("Invalid action. Supported actions are: 'select', 'insert', 'update', 'delete'.")
+
+  return sql_query
