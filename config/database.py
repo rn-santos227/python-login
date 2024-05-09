@@ -9,3 +9,6 @@ def connect_db(database_name):
   conn = pyodbc.connect(conn_str)
   conn.close()
   return conn
+
+def query_builder(table, query, action):
+  pass
