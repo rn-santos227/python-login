@@ -22,3 +22,6 @@ def query_builder(table, query, action):
 
   elif action.lower() == 'delete':
     pass
+
+  else:
+    raise ValueError("Invalid action. Supported actions are: 'select', 'insert', 'update', 'delete'.")
