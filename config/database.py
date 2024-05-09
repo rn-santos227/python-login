@@ -12,7 +12,7 @@ def connect_db(database_name):
 
 def query_builder(table, query, action):
   if action.lower() == 'select':
-    pass
+    sql_query = f"SELECT * FROM {table} WHERE {query};"
   
   elif action.lower() == 'insert':
     pass
