@@ -18,7 +18,7 @@ def query_builder(table, query, action):
     sql_query = f"INSERT INTO {table} VALUES ({query});"
   
   elif action.lower() == 'update':
-    pass
+    sql_query = f"UPDATE {table} SET {query};"
 
   elif action.lower() == 'delete':
     pass
