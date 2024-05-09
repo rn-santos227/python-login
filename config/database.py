@@ -19,3 +19,6 @@ def query_builder(table, query, action):
   
   elif action.lower() == 'update':
     pass
+
+  elif action.lower() == 'delete':
+    pass
