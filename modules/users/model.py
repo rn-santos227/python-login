@@ -15,7 +15,7 @@ class User:
     return input_password_hash == self._password_hash
   
   def validate_email(email):
-    pass
+    pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
 
   @property
   def password(self):
