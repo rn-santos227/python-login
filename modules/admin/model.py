@@ -18,5 +18,6 @@ class Admin(User):
       name TEXT,
       email TEXT,
       password TEXT,
+      status VARCHAR(10)
     );
     '''
