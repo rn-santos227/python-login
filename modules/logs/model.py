@@ -4,11 +4,13 @@ class Log:
   def __init__(self,
     id,
     student_id,
-    login_time
+    login_time,
+    logout_time,
   ):
     self.id = id
     self.student_id = student_id
     self.login_time = login_time
+    self.logout_time = logout_time
 
   @staticmethod
   def create_table() -> str:
