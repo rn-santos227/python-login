@@ -21,6 +21,7 @@ class Log:
       id AUTOINCREMENT PRIMARY KEY,
       student_id INT,
       login_time DATETIME,
+      logout_time DATETIME,
       FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''
