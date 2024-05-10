@@ -20,7 +20,7 @@ class Log:
     CREATE TABLE logs (
       id AUTOINCREMENT PRIMARY KEY,
       student_id INT,
-      timestamp DATETIME,
+      login_time DATETIME,
       FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''
