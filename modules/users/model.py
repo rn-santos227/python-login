@@ -3,7 +3,7 @@ import re
 class User:
   def __init__(self, id, email, password):
     self.id = id
-    self.email = email
+    self.email = self.validate_email(email)
     self._password_hash = self.encrypt_password(password)
 
   @staticmethod
