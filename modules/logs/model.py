@@ -6,11 +6,13 @@ class Log:
     student_id,
     login_time,
     logout_time,
+    ip_address,
   ):
     self.id = id
     self.student_id = student_id
     self.login_time = login_time
     self.logout_time = logout_time
+    self.ip_address = ip_address
 
   @staticmethod
   def create_table() -> str:
