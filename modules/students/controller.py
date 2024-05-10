@@ -5,7 +5,7 @@ def get_student_by_id(id):
   pass
 
 def get_student_by_email(email):
-  query = 'SELECT * FROM students WHERE email = ?;'
+  sql_query = query_builder('students', 'email = ?', 'select')
   pass
 
 def get_students():
