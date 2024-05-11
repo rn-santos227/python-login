@@ -8,7 +8,9 @@ def get_student_by_id(id):
 def get_student_by_email(email):
   sql_query = DB.query_builder('students', 'email = ?', 'select')
   cursor = DB.connect_db.cursor()
-  pass
+  cursor.execute(sql_query, (email))
+
+  
 
 def get_students():
   pass
