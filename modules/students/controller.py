@@ -26,6 +26,9 @@ def get_students(query):
   rows = cursor.fetchAll()
 
   students = []
+  for row in rows:
+    student = Student(*row)
+    students.append(student)
 
   cursor.close()
   DB.connect_db.close()
