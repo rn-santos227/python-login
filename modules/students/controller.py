@@ -23,6 +23,7 @@ def get_students(query):
   sql_query = DB.query_builder('students', query, 'select')
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query)
+  rows = cursor.fetchAll()
 
 def create_student(student: Student):
   pass
