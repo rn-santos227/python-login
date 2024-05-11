@@ -5,7 +5,7 @@ import config.database as DB
 
 def get_student_by_id(id):
   sql_query = DB.query_builder('students', 'id = ?', 'select')
-  pass
+  cursor = DB.connect_db.cursor()
 
 def get_student_by_email(email) -> Union[Student, str]:
   sql_query = DB.query_builder('students', 'email = ?', 'select')
@@ -25,7 +25,7 @@ def get_students(query, action) -> Union[list[Student], str]:
   sql_query = DB.query_builder('students', query, action)
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query)
-  rows = cursor.fetchAll()
+  rows = cursor.fetchall()
 
   students = []
   for row in rows:
