@@ -1,5 +1,6 @@
-from config.database import query_builder
 from modules.logs.model import Log
+
+import config.database as DB
 
 def get_log_by_id(id):
   pass
