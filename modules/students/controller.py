@@ -19,8 +19,8 @@ def get_student_by_email(email) -> Student:
   else:
     return "No student found with the provided email."
 
-def get_students():
-  pass
+def get_students(query):
+  sql_query = DB.query_builder('students', query, 'select')
 
 def create_student(student: Student):
   pass
