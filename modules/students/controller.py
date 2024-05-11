@@ -21,6 +21,7 @@ def get_student_by_email(email) -> Student:
 
 def get_students(query):
   sql_query = DB.query_builder('students', query, 'select')
+  cursor = DB.connect_db.cursor()
 
 def create_student(student: Student):
   pass
