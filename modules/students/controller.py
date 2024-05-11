@@ -6,6 +6,7 @@ import config.database as DB
 def get_student_by_id(id):
   sql_query = DB.query_builder('students', 'id = ?', 'select')
   cursor = DB.connect_db.cursor()
+  cursor.execute(sql_query, (id))
 
 def get_student_by_email(email) -> Union[Student, str]:
   sql_query = DB.query_builder('students', 'email = ?', 'select')
