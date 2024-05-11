@@ -11,6 +11,10 @@ def get_student_by_email(email):
   cursor.execute(sql_query, (email))
   row = cursor.fetchone()
 
+  cursor.close()
+  DB.connect_db.close()
+
+
 def get_students():
   pass
 
