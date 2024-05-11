@@ -25,8 +25,11 @@ def get_students(query):
   cursor.execute(sql_query)
   rows = cursor.fetchAll()
 
+  students = []
+
   cursor.close()
   DB.connect_db.close()
+
 
 def create_student(student: Student):
   pass
