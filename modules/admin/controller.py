@@ -1,4 +1,6 @@
-from config.database import query_builder
+
+import config.database as DB
+
 from modules.admin.model import Admin
 
 def get_admin_by_id(id):
