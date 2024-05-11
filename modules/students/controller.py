@@ -4,6 +4,7 @@ from modules.students.model import Student
 import config.database as DB
 
 def get_student_by_id(id):
+  sql_query = DB.query_builder('students', 'id = ?', 'select')
   pass
 
 def get_student_by_email(email) -> Union[Student, str]:
