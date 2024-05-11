@@ -1,8 +1,9 @@
 import pyodbc
 
+from config.config import database_name
+
 # Create Access database
 def connect_db():
-  database_name = "db_logbook.accdb"
   conn_str = (
     r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
     r"DBQ=" + database_name + ";"
