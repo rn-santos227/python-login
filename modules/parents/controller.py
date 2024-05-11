@@ -1,5 +1,6 @@
-from config.database import query_builder
 from modules.parents.model import Parent
+
+import config.database as DB
 
 def get_parent_by_id(id):
   pass
