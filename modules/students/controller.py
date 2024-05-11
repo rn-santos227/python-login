@@ -9,7 +9,7 @@ def get_student_by_email(email):
   sql_query = DB.query_builder('students', 'email = ?', 'select')
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query, (email))
-  students = cursor.fetchall()
+  row = cursor.fetchone()
 
 def get_students():
   pass
