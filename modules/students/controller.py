@@ -20,8 +20,8 @@ def get_student_by_email(email) -> Union[Student, str]:
   else:
     return "No student found with the provided email."
 
-def get_students(query):
-  sql_query = DB.query_builder('students', query, 'select')
+def get_students(query, action) -> Union[list[Student], str]:
+  sql_query = DB.query_builder('students', query, action)
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query)
   rows = cursor.fetchAll()
@@ -33,7 +33,7 @@ def get_students(query):
 
   cursor.close()
   DB.connect_db.close()
-  return students if students else ["No student records available."]
+  return students if students else "No student records available."
 
 def create_student(student: Student):
   pass
