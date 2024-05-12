@@ -13,6 +13,8 @@ def get_parents(query, action) -> Union[list[Parent], str]:
   rows = cursor.fetchall()
 
   parents = []
+  for row in rows:
+    parent = Parent(*row)
 
 def create_parent(parent: Parent):
   pass
