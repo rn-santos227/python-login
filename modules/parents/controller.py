@@ -10,6 +10,7 @@ def get_parents(query, action) -> Union[list[Parent], str]:
   sql_query = DB.query_builder('students', query, action)
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query)
+  rows = cursor.fetchall()
 
 def create_parent(parent: Parent):
   pass
