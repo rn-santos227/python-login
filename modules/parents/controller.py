@@ -6,7 +6,7 @@ import config.database as DB
 def get_parent_by_id(id):
   pass
 
-def get_parents():
+def get_parents(query, action) -> Union[list[Parent], str]:
   pass
 
 def create_parent(parent: Parent):
