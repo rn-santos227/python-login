@@ -12,6 +12,8 @@ def get_parents(query, action) -> Union[list[Parent], str]:
   cursor.execute(sql_query)
   rows = cursor.fetchall()
 
+  parents = []
+
 def create_parent(parent: Parent):
   pass
 
