@@ -7,7 +7,7 @@ def get_parent_by_id(id):
   pass
 
 def get_parents(query, action) -> Union[list[Parent], str]:
-  pass
+  sql_query = DB.query_builder('students', query, action)
 
 def create_parent(parent: Parent):
   pass
