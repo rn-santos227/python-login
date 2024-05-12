@@ -1,3 +1,4 @@
+from typing import Union
 from modules.parents.model import Parent
 
 import config.database as DB
