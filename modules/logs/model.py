@@ -17,7 +17,7 @@ class Log:
 
   @property
   def student(self) -> Student:
-    pass
+    return get_student_by_id(self.student_id)
 
   @staticmethod
   def create_table() -> str:
