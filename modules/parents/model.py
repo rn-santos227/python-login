@@ -1,3 +1,5 @@
+from modules.students.model import Student
+
 class Parent:
   def __init__(self, id, student_id, full_name, contact):
     self.id = id
