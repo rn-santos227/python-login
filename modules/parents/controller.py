@@ -19,6 +19,7 @@ def get_parents(query, action) -> Union[list[Parent], str]:
 
   cursor.close()
   DB.connect_db.close()
+  return parents if parents else "No parent records available."
 
 def create_parent(parent: Parent):
   pass
