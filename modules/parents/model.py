@@ -7,6 +7,10 @@ class Parent:
     self.full_name = full_name
     self.contact = contact
 
+  @property
+  def student() -> Student:
+    pass
+
   @staticmethod
   def create_table() -> str:
     return '''
