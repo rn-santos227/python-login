@@ -1,4 +1,5 @@
 from modules.students.model import Student
+from modules.students.controller import get_student_by_id
 
 class Parent:
   def __init__(self, id, student_id, full_name, contact):
@@ -8,8 +9,8 @@ class Parent:
     self.contact = contact
 
   @property
-  def student() -> Student:
-    pass
+  def student(self) -> Student:
+    return get_student_by_id(self.student_id)
 
   @staticmethod
   def create_table() -> str:
