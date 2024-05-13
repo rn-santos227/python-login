@@ -15,6 +15,10 @@ class Log:
     self.logout_time = logout_time
     self.ip_address = ip_address
 
+  @property
+  def student(self) -> Student:
+    pass
+
   @staticmethod
   def create_table() -> str:
     return '''
