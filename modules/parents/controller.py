@@ -15,6 +15,7 @@ def get_parents(query, action) -> Union[list[Parent], str]:
   parents = []
   for row in rows:
     parent = Parent(*row)
+    parents.append(parent)
 
 def create_parent(parent: Parent):
   pass
