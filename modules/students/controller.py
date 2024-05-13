@@ -11,6 +11,9 @@ def get_student_by_id(id)-> Union[Student, str]:
 
   cursor.close()
   DB.connect_db.close()
+  if row:
+    student = Student(*row)
+    return student
 
 def get_student_by_email(email) -> Union[Student, str]:
   sql_query = DB.query_builder('students', 'email = ?', 'select')
