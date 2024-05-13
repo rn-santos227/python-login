@@ -1,4 +1,5 @@
 from students.model import Student
+from students.controller import get_student_by_id
 
 class Log:
   def __init__(self,
