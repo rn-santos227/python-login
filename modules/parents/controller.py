@@ -11,7 +11,6 @@ def get_parent_by_id(id) -> Union[Parent, str]:
 
   cursor.close()
   DB.connect_db.close()
-
   if row:
     parent = Parent(*row)
     return parent

@@ -3,7 +3,7 @@ from modules.students.model import Student
 
 import config.database as DB
 
-def get_student_by_id(id):
+def get_student_by_id(id)-> Union[Student, str]:
   sql_query = DB.query_builder('students', 'id = ?', 'select')
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query, (id))
