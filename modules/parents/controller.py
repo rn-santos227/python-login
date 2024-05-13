@@ -17,6 +17,9 @@ def get_parents(query, action) -> Union[list[Parent], str]:
     parent = Parent(*row)
     parents.append(parent)
 
+  cursor.close()
+  DB.connect_db.close()
+
 def create_parent(parent: Parent):
   pass
 
