@@ -5,6 +5,7 @@ import config.database as DB
 
 def get_parent_by_id(id):
   sql_query = DB.query_builder('parents', 'id = ?', 'select')
+  cursor = DB.connect_db.cursor()
 
 def get_parents(query, action) -> Union[list[Parent], str]:
   sql_query = DB.query_builder('parents', query, action)
