@@ -4,10 +4,10 @@ from modules.parents.model import Parent
 import config.database as DB
 
 def get_parent_by_id(id):
-  pass
+  sql_query = DB.query_builder('parents', 'id = ?', 'select')
 
 def get_parents(query, action) -> Union[list[Parent], str]:
-  sql_query = DB.query_builder('students', query, action)
+  sql_query = DB.query_builder('parents', query, action)
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query)
   rows = cursor.fetchall()
