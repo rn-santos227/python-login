@@ -10,6 +10,7 @@ def get_admin_by_id(id):
 def get_admins(query, action):
   sql_query = DB.query_builder('admins', query, action)
   cursor = DB.connect_db.cursor()
+  cursor.execute(sql_query)
 
 def create_admin(admin: Admin):
   pass
