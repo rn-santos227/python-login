@@ -1,4 +1,5 @@
 
+from typing import Union
 import config.database as DB
 
 from modules.admin.model import Admin
