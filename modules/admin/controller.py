@@ -16,6 +16,8 @@ def get_admins(query, action):
   admins = []
   for row in rows:
     admin = Admin(*row)
+    admins.append(admin)
+
 
 def create_admin(admin: Admin):
   pass
