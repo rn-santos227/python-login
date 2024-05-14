@@ -10,6 +10,8 @@ def get_admin_by_id(id):
   cursor.execute(sql_query, (id))
   row = cursor.fetchone()
 
+  cursor.close()
+
 def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = DB.query_builder('admins', query, action)
   cursor = DB.connect_db.cursor()
