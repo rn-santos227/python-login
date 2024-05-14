@@ -1,7 +1,7 @@
 from modules.users.model import User
 
 class Student(User):
-  def __init__(self, id, full_name, student_number, email, contact_number, section, level, password):
+  def __init__(self, id, email, password, full_name, student_number, contact_number, section, level, status):
     super().__init__(id, email, password)
     self.full_name = full_name
     self.student_number = student_number
@@ -18,12 +18,12 @@ class Student(User):
     return '''
     CREATE TABLE students (
       id AUTOINCREMENT PRIMARY KEY,
+      email TEXT,
+      password TEXT,
       full_name TEXT,
       student_number TEXT,
-      email TEXT,
       contact_number TEXT,
       section TEXT,
       level TEXT,
-      password TEXT
     );
     '''
