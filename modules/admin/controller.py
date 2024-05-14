@@ -5,7 +5,7 @@ import config.database as DB
 from modules.admin.model import Admin
 
 def get_admin_by_id(id):
-  pass
+  sql_query = DB.query_builder('admins', 'id = ?', 'select')
 
 def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = DB.query_builder('admins', query, action)
