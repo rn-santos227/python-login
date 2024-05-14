@@ -12,6 +12,8 @@ def get_admin_by_id(id):
 
   cursor.close()
   DB.connect_db.close()
+  if row:
+    parent = Admin(*row)
 
 def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = DB.query_builder('admins', query, action)
