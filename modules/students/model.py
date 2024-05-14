@@ -8,6 +8,7 @@ class Student(User):
     self.contact_number = contact_number
     self.section = section
     self.level = level
+    self.status = status
 
   @User.password.setter
   def password(self, new_password):
@@ -25,5 +26,6 @@ class Student(User):
       contact_number TEXT,
       section TEXT,
       level TEXT,
+      status TEXT
     );
     '''
