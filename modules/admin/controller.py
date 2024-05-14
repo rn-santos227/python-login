@@ -14,6 +14,8 @@ def get_admins(query, action):
   rows = cursor.fetchall()
 
   admins = []
+  for row in rows:
+    admin = Admin(*row)
 
 def create_admin(admin: Admin):
   pass
