@@ -7,7 +7,7 @@ from modules.admin.model import Admin
 def get_admin_by_id(id):
   pass
 
-def get_admins(query, action):
+def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = DB.query_builder('admins', query, action)
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query)
