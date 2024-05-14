@@ -13,6 +13,8 @@ def get_admins(query, action):
   cursor.execute(sql_query)
   rows = cursor.fetchall()
 
+  admins = []
+
 def create_admin(admin: Admin):
   pass
 
