@@ -20,6 +20,7 @@ def get_admins(query, action):
 
   cursor.close()
   DB.connect_db.close()
+  return admins if admins else "No admin records available."
 
 def create_admin(admin: Admin):
   pass
