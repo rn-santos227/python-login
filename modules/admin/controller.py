@@ -18,6 +18,8 @@ def get_admins(query, action):
     admin = Admin(*row)
     admins.append(admin)
 
+  cursor.close()
+  DB.connect_db.close()
 
 def create_admin(admin: Admin):
   pass
