@@ -15,7 +15,7 @@ def get_parent_by_id(id) -> Union[Parent, str]:
     parent = Parent(*row)
     return parent
   else:
-    return "No parents found."
+    return "No parent found."
 
 def get_parents(query, action) -> Union[list[Parent], str]:
   sql_query = DB.query_builder('parents', query, action)

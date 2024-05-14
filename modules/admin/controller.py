@@ -15,6 +15,8 @@ def get_admin_by_id(id):
   if row:
     admin = Admin(*row)
     return admin
+  else:
+    return "No admin found."
 
 def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = DB.query_builder('admins', query, action)
