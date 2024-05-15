@@ -11,6 +11,7 @@ def create_db():
       r"DBQ=" + database_name
     )
     pypyodbc.win_create_mdb(database_name)
+    print(f"Database '{database_name}' created successfully.")
 
 def connect_db():
   conn_str = (
