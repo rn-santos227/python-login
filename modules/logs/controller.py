@@ -8,6 +8,7 @@ def get_log_by_id(id):
   sql_query = DB.query_builder('logs', 'id = ?', 'select')
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query, (id))
+  row = cursor.fetchone()
 
 def get_logs():
   pass
