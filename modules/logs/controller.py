@@ -15,6 +15,8 @@ def get_log_by_id(id):
   if row:
     log = Log(*row)
     return log
+  else:
+    return "No logs found."
 
 def get_logs():
   pass
