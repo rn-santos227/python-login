@@ -4,7 +4,8 @@ import pyodbc
 from config.config import database_name
 
 def create_db():
-  pass
+  if not os.path.exists(database_name):
+    pass
 
 def connect_db():
   conn_str = (
