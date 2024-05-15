@@ -12,7 +12,9 @@ def create_db():
     )
     pypyodbc.win_create_mdb(database_name)
     print(f"Database '{database_name}' created successfully.")
-
+  else:
+    print(f"Database '{database_name}' already exists.")
+    
 def connect_db():
   conn_str = (
     r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
