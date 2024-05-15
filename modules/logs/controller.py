@@ -18,8 +18,8 @@ def get_log_by_id(id) -> Union[Log, str]:
   else:
     return "No logs found."
 
-def get_logs():
-  pass
+def get_logs(query, action) :
+  sql_query = DB.query_builder('logs', query, action)
 
 def get_logs_by_student(student_id):
   pass
