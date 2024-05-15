@@ -10,6 +10,9 @@ def get_log_by_id(id):
   cursor.execute(sql_query, (id))
   row = cursor.fetchone()
 
+  cursor.close()
+  DB.connect_db.close()
+
 def get_logs():
   pass
 
