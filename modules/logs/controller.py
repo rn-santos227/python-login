@@ -1,3 +1,4 @@
+from typing import Union
 from modules.logs.model import Log
 
 import config.database as DB
