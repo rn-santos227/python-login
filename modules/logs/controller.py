@@ -23,6 +23,8 @@ def get_logs(query, action) :
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query)
 
+  logs = []
+
 def get_logs_by_student(student_id):
   pass
 
