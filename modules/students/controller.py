@@ -1,7 +1,8 @@
-from typing import Union
-from modules.students.model import Student
 
 import config.database as DB
+
+from typing import Union
+from modules.students.model import Student
 
 def get_student_by_id(id)-> Union[Student, str]:
   sql_query = DB.query_builder('students', 'id = ?', 'select')

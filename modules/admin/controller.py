@@ -1,10 +1,10 @@
 
-from typing import Union
 import config.database as DB
 
+from typing import Union
 from modules.admin.model import Admin
 
-def get_admin_by_id(id)-> Union[Admin, str]:
+def get_admin_by_id(id) -> Union[Admin, str]:
   sql_query = DB.query_builder('admins', 'id = ?', 'select')
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query, (id))

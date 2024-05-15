@@ -1,7 +1,7 @@
+import config.database as DB
+
 from typing import Union
 from modules.parents.model import Parent
-
-import config.database as DB
 
 def get_parent_by_id(id) -> Union[Parent, str]:
   sql_query = DB.query_builder('parents', 'id = ?', 'select')
