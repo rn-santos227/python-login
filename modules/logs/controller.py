@@ -5,7 +5,8 @@ from typing import Union
 from modules.logs.model import Log
 
 def get_log_by_id(id):
-  pass
+  sql_query = DB.query_builder('logs', 'id = ?', 'select')
+  
 
 def get_logs():
   pass
