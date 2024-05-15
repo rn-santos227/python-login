@@ -1,3 +1,4 @@
+import os
 import pyodbc
 
 from config.config import database_name
