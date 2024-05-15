@@ -12,6 +12,8 @@ def get_log_by_id(id):
 
   cursor.close()
   DB.connect_db.close()
+  if row:
+    log = Log(*row)
 
 def get_logs():
   pass
