@@ -18,7 +18,7 @@ def get_log_by_id(id) -> Union[Log, str]:
   else:
     return "No logs found."
 
-def get_logs(query, action) :
+def get_logs(query, action) -> Union[list[Log], str]:
   sql_query = DB.query_builder('logs', query, action)
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query)
