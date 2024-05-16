@@ -1,17 +1,11 @@
 import os
 import pyodbc
-import win32com.client
+import pypyodbc
 
 from config.config import database_name
 
 def create_db():
-  if not os.path.exists(database_name):
-    access_app = win32com.client.Dispatch("Access.Application")
-    access_app.NewCurrentDatabase(database_name)
-    access_app.Quit()
-    print(f"Database '{database_name}' created successfully.")
-  else:
-    print(f"Database '{database_name}' already exists.")
+  pass
     
 def connect_db():
   conn_str = (
