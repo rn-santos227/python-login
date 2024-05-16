@@ -37,9 +37,12 @@ def get_logs_by_student(student_id) -> Union[list[Log], str]:
   sql_query = DB.query_builder('logs', 'student_id = ?', 'select')
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query, (student_id))
-  row = cursor.fetchall()
+  rows = cursor.fetchall()
 
   logs = []
+  for row in rows:
+    log = Log(*row)
+    logs.append(log)
 
   cursor.close()
   DB.connect_db.close()
