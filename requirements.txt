@@ -1,3 +1,12 @@
+# Ensure the latest versions of pip, setuptools, and wheel are installed
+pip>=21.0
+setuptools>=56.0.0
+wheel>=0.36.2
+
+# Necessary for building PyQt5
+sip>=6.0.0
+
+# Application dependencies
 PyQt5
 pyqt5-tools
 pyodbc
