@@ -1,19 +1,11 @@
 import os
 import pyodbc
-import pypyodbc
+import win32com.client
 
 from config.config import database_name
 
 def create_db():
-  if not os.path.exists(database_name):
-    connection_string = (
-      r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
-      r"DBQ=" + database_name
-    )
-    pypyodbc.win_create_mdb(database_name)
-    print(f"Database '{database_name}' created successfully.")
-  else:
-    print(f"Database '{database_name}' already exists.")
+  pass
     
 def connect_db():
   conn_str = (
