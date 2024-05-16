@@ -35,7 +35,7 @@ def get_logs(query, action) -> Union[list[Log], str]:
 
 def get_logs_by_student(student_id):
   sql_query = DB.query_builder('logs', 'student_id = ?', 'select')
-  pass
+  cursor = DB.connect_db.cursor()
 
 def create_log(log: Log):
   pass
