@@ -10,6 +10,7 @@ def create_db():
       r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
       r"DBQ=" + database_name
     )
+    pypyodbc.win_create_mdb(database_name)
     
 def connect_db():
   conn_str = (
