@@ -22,6 +22,7 @@ def get_logs(query, action) :
   sql_query = DB.query_builder('logs', query, action)
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query)
+  rows = cursor.fetchall()
 
   logs = []
 
