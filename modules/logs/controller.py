@@ -34,6 +34,7 @@ def get_logs(query, action) -> Union[list[Log], str]:
   return logs if logs else "No logs available."
 
 def get_logs_by_student(student_id):
+  sql_query = DB.query_builder('logs', 'student_id = ?', 'select')
   pass
 
 def create_log(log: Log):
