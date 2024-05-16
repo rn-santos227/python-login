@@ -27,6 +27,7 @@ def get_logs(query, action) :
   logs = []
   for row in rows:
     log = Log(*row)
+    logs.append(log)
 
 def get_logs_by_student(student_id):
   pass
