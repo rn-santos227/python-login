@@ -39,6 +39,9 @@ def get_logs_by_student(student_id):
   cursor.execute(sql_query, (student_id))
   row = cursor.fetchone()
 
+  cursor.close()
+  DB.connect_db.close()
+
 def create_log(log: Log):
   pass
 
