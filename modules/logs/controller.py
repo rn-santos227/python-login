@@ -29,6 +29,9 @@ def get_logs(query, action) :
     log = Log(*row)
     logs.append(log)
 
+  cursor.close()
+  DB.connect_db.close()
+
 def get_logs_by_student(student_id):
   pass
 
