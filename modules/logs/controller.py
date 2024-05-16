@@ -25,6 +25,8 @@ def get_logs(query, action) :
   rows = cursor.fetchall()
 
   logs = []
+  for row in rows:
+    log = Log(*row)
 
 def get_logs_by_student(student_id):
   pass
