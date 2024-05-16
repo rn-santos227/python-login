@@ -37,6 +37,7 @@ def get_logs_by_student(student_id):
   sql_query = DB.query_builder('logs', 'student_id = ?', 'select')
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query, (student_id))
+  row = cursor.fetchone()
 
 def create_log(log: Log):
   pass
