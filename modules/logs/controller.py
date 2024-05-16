@@ -31,6 +31,7 @@ def get_logs(query, action) :
 
   cursor.close()
   DB.connect_db.close()
+  return logs if logs else "No logs available."
 
 def get_logs_by_student(student_id):
   pass
