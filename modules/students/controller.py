@@ -50,7 +50,7 @@ def get_students(query, action) -> Union[list[Student], str]:
 def create_student(student: Student) -> Student:
   pass
 
-def update_student(student: Student):
+def update_student(student: Student) -> Student:
   pass
 
 def delete_student(id):
