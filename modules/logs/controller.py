@@ -48,7 +48,7 @@ def get_logs_by_student(student_id) -> Union[list[Log], str]:
   DB.connect_db.close()
   return logs if logs else "No logs available."
 
-def create_log(log: Log):
+def create_log(log: Log) -> Log:
   pass
 
 def update_log(log: Log):
