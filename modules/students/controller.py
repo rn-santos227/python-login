@@ -27,8 +27,6 @@ def get_student_by_email(email) -> Union[Student, str]:
     cursor.execute(sql_query, (email))
     row = cursor.fetchone()
 
-    cursor.close()
-    DB.connect_db.close()
     if row:
       student = Student(*row)
       return student
@@ -37,6 +35,10 @@ def get_student_by_email(email) -> Union[Student, str]:
     
   except Exception as e:
     print(f"Error: {e}")
+
+  finally:
+    cursor.close()
+    DB.connect_db.close()
 
 def get_students(query, action) -> Union[list[Student], str]:
   sql_query = DB.query_builder(table, query, action)
