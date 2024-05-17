@@ -91,6 +91,7 @@ def update_student(student: Student) -> Student:
     f"section = '{student.section}', "
     f"level = '{student.level}', "
     f"status = '{student.status}'")
+  where_clause = f"id = {student.id}"
 
 def delete_student(id):
   pass
