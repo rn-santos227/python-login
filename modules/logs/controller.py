@@ -51,7 +51,7 @@ def get_logs_by_student(student_id) -> Union[list[Log], str]:
 def create_log(log: Log) -> Log:
   pass
 
-def update_log(log: Log):
+def update_log(log: Log) -> Log:
   pass
 
 def delete_log(id):
