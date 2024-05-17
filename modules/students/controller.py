@@ -50,6 +50,7 @@ def get_students(query, action) -> Union[list[Student], str]:
 def create_student(student: Student) -> Student:
   columns = "(email, password, full_name, student_number, contact_number, section, level, status)"
   values = f"'{student.email}', '{student.password}', '{student.full_name}', '{student.student_number}', '{student.contact_number}', '{student.section}', '{student.level}', '{student.status}'"
+  query = DB.query_builder('students, f"{columns} VALUES ({values})", 'insert')
 
 def update_student(student: Student) -> Student:
   pass
