@@ -45,11 +45,10 @@ def get_students(query, action) -> Union[list[Student], str]:
     for row in rows:
       student = Student(*row)
       students.append(student)
-    return students
+    return students if students else "No student records available."
   
   except Exception as e:
     print(f"Error: {e}")
-    return "No student records available."
   
   finally:
     cursor.close()
