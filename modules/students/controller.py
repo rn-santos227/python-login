@@ -76,6 +76,10 @@ def create_student(student: Student) -> Student:
   except Exception as e:
     print(f"Error: {e}")
 
+  finally:
+    cursor.close()
+    DB.connect_db.close()
+
 def update_student(student: Student) -> Student:
   pass
 
