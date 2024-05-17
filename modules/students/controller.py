@@ -21,7 +21,7 @@ def get_student_by_id(id)-> Union[Student, str]:
     return "No students found."
 
 def get_student_by_email(email) -> Union[Student, str]:
-  sql_query = DB.query_builder('students', 'email = ?', 'select')
+  sql_query = DB.query_builder(table, 'email = ?', 'select')
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query, (email))
   row = cursor.fetchone()
