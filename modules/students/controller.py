@@ -47,7 +47,7 @@ def get_students(query, action) -> Union[list[Student], str]:
   DB.connect_db.close()
   return students if students else "No student records available."
 
-def create_student(student: Student):
+def create_student(student: Student) -> Student:
   pass
 
 def update_student(student: Student):
