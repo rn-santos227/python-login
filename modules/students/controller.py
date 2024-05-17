@@ -92,6 +92,7 @@ def update_student(student: Student) -> Student:
     f"level = '{student.level}', "
     f"status = '{student.status}'")
   where_clause = f"id = {student.id}"
+  query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
 
 def delete_student(id):
   pass
