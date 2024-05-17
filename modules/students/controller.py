@@ -7,7 +7,7 @@ from modules.students.model import Student
 table = "students"
 
 def get_student_by_id(id)-> Union[Student, str]:
-  sql_query = DB.query_builder('students', 'id = ?', 'select')
+  sql_query = DB.query_builder(table, 'id = ?', 'select')
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query, (id))
   row = cursor.fetchone()
