@@ -36,18 +36,24 @@ def get_student_by_email(email) -> Union[Student, str]:
 
 def get_students(query, action) -> Union[list[Student], str]:
   sql_query = DB.query_builder(table, query, action)
-  cursor = DB.connect_db.cursor()
-  cursor.execute(sql_query)
-  rows = cursor.fetchall()
+  try:
+    cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query)
+    rows = cursor.fetchall()
 
-  students = []
-  for row in rows:
-    student = Student(*row)
-    students.append(student)
-
-  cursor.close()
-  DB.connect_db.close()
-  return students if students else "No student records available."
+    students = []
+    for row in rows:
+      student = Student(*row)
+      students.append(student)
+    return students
+  
+  except Exception as e:
+    print(f"Error: {e}")
+    return "No student records available."
+  
+  finally:
+    cursor.close()
+    DB.connect_db.close()
 
 def create_student(student: Student) -> Student:
   columns = "(email, password, full_name, student_number, contact_number, section, level, status)"
