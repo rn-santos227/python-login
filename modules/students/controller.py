@@ -22,17 +22,21 @@ def get_student_by_id(id)-> Union[Student, str]:
 
 def get_student_by_email(email) -> Union[Student, str]:
   sql_query = DB.query_builder(table, 'email = ?', 'select')
-  cursor = DB.connect_db.cursor()
-  cursor.execute(sql_query, (email))
-  row = cursor.fetchone()
+  try:
+    cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query, (email))
+    row = cursor.fetchone()
 
-  cursor.close()
-  DB.connect_db.close()
-  if row:
-    student = Student(*row)
-    return student
-  else:
-    return "No student found with the provided email."
+    cursor.close()
+    DB.connect_db.close()
+    if row:
+      student = Student(*row)
+      return student
+    else:
+      return "No student found with the provided email."
+    
+  except Exception as e:
+    print(f"Error: {e}")
 
 def get_students(query, action) -> Union[list[Student], str]:
   sql_query = DB.query_builder(table, query, action)
