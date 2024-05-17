@@ -35,7 +35,7 @@ def get_student_by_email(email) -> Union[Student, str]:
     return "No student found with the provided email."
 
 def get_students(query, action) -> Union[list[Student], str]:
-  sql_query = DB.query_builder('students', query, action)
+  sql_query = DB.query_builder(table, query, action)
   cursor = DB.connect_db.cursor()
   cursor.execute(sql_query)
   rows = cursor.fetchall()
