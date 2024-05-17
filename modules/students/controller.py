@@ -8,17 +8,21 @@ table = "students"
 
 def get_student_by_id(id)-> Union[Student, str]:
   sql_query = DB.query_builder(table, 'id = ?', 'select')
-  cursor = DB.connect_db.cursor()
-  cursor.execute(sql_query, (id))
-  row = cursor.fetchone()
+  try:
+    cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query, (id))
+    row = cursor.fetchone()
 
-  cursor.close()
-  DB.connect_db.close()
-  if row:
-    student = Student(*row)
-    return student
-  else:
-    return "No students found."
+    cursor.close()
+    DB.connect_db.close()
+    if row:
+      student = Student(*row)
+      return student
+    else:
+      return "No students found."
+    
+  except Exception as e:
+    print(f"Error: {e}")
 
 def get_student_by_email(email) -> Union[Student, str]:
   sql_query = DB.query_builder(table, 'email = ?', 'select')
