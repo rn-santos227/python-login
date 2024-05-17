@@ -69,7 +69,12 @@ def get_students(query, action) -> Union[list[Student], str]:
 def create_student(student: Student) -> Student:
   columns = "(email, password, full_name, student_number, contact_number, section, level, status)"
   values = f"'{student.email}', '{student.password}', '{student.full_name}', '{student.student_number}', '{student.contact_number}', '{student.section}', '{student.level}', '{student.status}'"
-  query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
+  sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
+  try:
+    cursor = DB.connect_db.cursor()
+  
+  except Exception as e:
+    print(f"Error: {e}")
 
 def update_student(student: Student) -> Student:
   pass
