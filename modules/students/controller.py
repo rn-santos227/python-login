@@ -48,7 +48,7 @@ def get_students(query, action) -> Union[list[Student], str]:
   return students if students else "No student records available."
 
 def create_student(student: Student) -> Student:
-  pass
+ columns = "(email, password, full_name, student_number, contact_number, section, level, status)"
 
 def update_student(student: Student) -> Student:
   pass
