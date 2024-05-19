@@ -35,9 +35,6 @@ def get_admins(query, action) -> Union[list[Admin], str]:
     for row in rows:
       admin = Admin(*row)
       admins.append(admin)
-
-    cursor.close()
-    DB.connect_db.close()
     return admins if admins else "No admin records available."
   
   except Exception as e:
