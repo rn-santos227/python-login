@@ -50,6 +50,11 @@ def create_admin(admin: Admin) -> Admin:
   columns = "(full_name, email, password, status)"
   values = f"'{admin.full_name}', '{admin.email}', {admin.password}, '{admin.status}'"
   sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
+  try:
+    cursor = DB.connect_db.cursor()
+
+  except Exception as e:
+    print(f"Error: {e}")
 
 def update_admin(admin: Admin):
   pass
