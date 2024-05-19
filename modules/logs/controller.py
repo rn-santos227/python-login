@@ -11,8 +11,6 @@ def get_log_by_id(id) -> Union[Log, str]:
     cursor.execute(sql_query, (id))
     row = cursor.fetchone()
 
-    cursor.close()
-    DB.connect_db.close()
     if row:
       log = Log(*row)
       return log
@@ -21,6 +19,10 @@ def get_log_by_id(id) -> Union[Log, str]:
     
   except Exception as e:
     print(f"Error: {e}")
+
+  finally:
+    cursor.close()
+    DB.connect_db.close()
 
 def get_logs(query, action) -> Union[list[Log], str]:
   sql_query = DB.query_builder('logs', query, action)
