@@ -1,9 +1,9 @@
 from modules.users.model import User
 
 class Admin(User):
-  def __init__(self, id, name, email, password, status):
+  def __init__(self, id, full_name, email, password, status):
     super().__init__(id, email, password)
-    self.name = name
+    self.full_name = full_name
     self.status = status
 
   @User.password.setter
@@ -13,9 +13,9 @@ class Admin(User):
   @staticmethod
   def create_table() -> str:
     return '''
-    CREATE TABLE administrators (
+    CREATE TABLE admins (
       id AUTOINCREMENT PRIMARY KEY,
-      name TEXT,
+      full_name TEXT,
       email TEXT,
       password TEXT,
       status VARCHAR(10)
