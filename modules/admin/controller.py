@@ -6,17 +6,21 @@ from modules.admin.model import Admin
 
 def get_admin_by_id(id) -> Union[Admin, str]:
   sql_query = DB.query_builder('admins', 'id = ?', 'select')
-  cursor = DB.connect_db.cursor()
-  cursor.execute(sql_query, (id))
-  row = cursor.fetchone()
+  try:
+    cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query, (id))
+    row = cursor.fetchone()
 
-  cursor.close()
-  DB.connect_db.close()
-  if row:
-    admin = Admin(*row)
-    return admin
-  else:
-    return "No admin found."
+    cursor.close()
+    DB.connect_db.close()
+    if row:
+      admin = Admin(*row)
+      return admin
+    else:
+      return "No admin found."
+    
+  except Exception as e:
+    print(f"Error: {e}")
 
 def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = DB.query_builder('admins', query, action)
