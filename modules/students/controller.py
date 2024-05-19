@@ -92,9 +92,10 @@ def update_student(student: Student) -> Student:
     f"level = '{student.level}', "
     f"status = '{student.status}'")
   where_clause = f"id = {student.id}"
-  query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
   try:
     cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query)
 
   except Exception as e:
     print(f"Error: {e}")
