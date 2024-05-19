@@ -52,9 +52,15 @@ def create_admin(admin: Admin) -> Admin:
   sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
   try:
     cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query)
+    return admin
 
   except Exception as e:
     print(f"Error: {e}")
+
+  finally:
+    cursor.close()
+    DB.connect_db.close()
 
 def update_admin(admin: Admin):
   pass
