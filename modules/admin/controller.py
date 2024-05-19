@@ -4,6 +4,8 @@ import config.database as DB
 from typing import Union
 from modules.admin.model import Admin
 
+table = "admins"
+
 def get_admin_by_id(id) -> Union[Admin, str]:
   sql_query = DB.query_builder('admins', 'id = ?', 'select')
   try:
