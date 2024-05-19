@@ -11,8 +11,6 @@ def get_admin_by_id(id) -> Union[Admin, str]:
     cursor.execute(sql_query, (id))
     row = cursor.fetchone()
 
-    cursor.close()
-    DB.connect_db.close()
     if row:
       admin = Admin(*row)
       return admin
@@ -21,6 +19,10 @@ def get_admin_by_id(id) -> Union[Admin, str]:
     
   except Exception as e:
     print(f"Error: {e}")
+
+  finally:
+    cursor.close()
+    DB.connect_db.close()
 
 def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = DB.query_builder('admins', query, action)
