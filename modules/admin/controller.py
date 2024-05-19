@@ -43,6 +43,10 @@ def get_admins(query, action) -> Union[list[Admin], str]:
   except Exception as e:
     print(f"Error: {e}")
 
+  finally:
+    cursor.close()
+    DB.connect_db.close()
+
 def create_admin(admin: Admin):
   pass
 
