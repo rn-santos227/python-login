@@ -44,7 +44,7 @@ def get_admins(query, action) -> Union[list[Admin], str]:
     cursor.close()
     DB.connect_db.close()
 
-def create_admin(admin: Admin) -> Admin:
+def create_admin(admin: Admin):
   pass
 
 def update_admin(admin: Admin):
