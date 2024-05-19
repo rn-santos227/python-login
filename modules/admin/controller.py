@@ -46,6 +46,7 @@ def get_admins(query, action) -> Union[list[Admin], str]:
 
 def create_admin(admin: Admin) -> Admin:
   columns = "(full_name, email, password, status)"
+  values = f"'{admin.full_name}', ''"
 
 def update_admin(admin: Admin):
   pass
