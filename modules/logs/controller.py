@@ -6,17 +6,21 @@ from modules.logs.model import Log
 
 def get_log_by_id(id) -> Union[Log, str]:
   sql_query = DB.query_builder('logs', 'id = ?', 'select')
-  cursor = DB.connect_db.cursor()
-  cursor.execute(sql_query, (id))
-  row = cursor.fetchone()
+  try:
+    cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query, (id))
+    row = cursor.fetchone()
 
-  cursor.close()
-  DB.connect_db.close()
-  if row:
-    log = Log(*row)
-    return log
-  else:
-    return "No logs found."
+    cursor.close()
+    DB.connect_db.close()
+    if row:
+      log = Log(*row)
+      return log
+    else:
+      return "No logs found."
+    
+  except Exception as e:
+    print(f"Error: {e}")
 
 def get_logs(query, action) -> Union[list[Log], str]:
   sql_query = DB.query_builder('logs', query, action)
