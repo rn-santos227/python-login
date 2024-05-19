@@ -96,6 +96,7 @@ def update_student(student: Student) -> Student:
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
+    return student
 
   except Exception as e:
     print(f"Error: {e}")
