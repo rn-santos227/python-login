@@ -7,7 +7,7 @@ from modules.logs.model import Log
 table = "logs"
 
 def get_log_by_id(id) -> Union[Log, str]:
-  sql_query = DB.query_builder('logs', 'id = ?', 'select')
+  sql_query = DB.query_builder(table, 'id = ?', 'select')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (id))
