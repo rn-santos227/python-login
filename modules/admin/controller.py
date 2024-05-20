@@ -79,6 +79,9 @@ def update_admin(admin: Admin):
   except Exception as e:
     print(f"Error: {e}")
 
+  finally:
+    cursor.close()
+    DB.connect_db.close()
 
 def delete_admin(id):
   pass
