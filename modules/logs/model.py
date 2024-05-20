@@ -28,6 +28,6 @@ class Log:
       login_time DATETIME,
       logout_time DATETIME,
       ip_address TEXT,
-      FOREIGN KEY (student_id) REFERENCES students(id)
+      CONSTRAINT fk_student FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''
