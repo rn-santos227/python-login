@@ -70,6 +70,7 @@ def update_admin(admin: Admin):
     f"status = '{admin.status}', "
   )
   where_clause = f"id = {admin.id}"
+  sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
 
 def delete_admin(id):
   pass
