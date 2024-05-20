@@ -28,18 +28,22 @@ def get_log_by_id(id) -> Union[Log, str]:
 
 def get_logs(query, action) -> Union[list[Log], str]:
   sql_query = DB.query_builder(table, query, action)
-  cursor = DB.connect_db.cursor()
-  cursor.execute(sql_query)
-  rows = cursor.fetchall()
+  try:
+    cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query)
+    rows = cursor.fetchall()
 
-  logs = []
-  for row in rows:
-    log = Log(*row)
-    logs.append(log)
+    logs = []
+    for row in rows:
+      log = Log(*row)
+      logs.append(log)
 
-  cursor.close()
-  DB.connect_db.close()
-  return logs if logs else "No logs available."
+    cursor.close()
+    DB.connect_db.close()
+    return logs if logs else "No logs available."
+  
+  except Exception as e:
+    print(f"Error: {e}")
 
 def get_logs_by_student(student_id) -> Union[list[Log], str]:
   sql_query = DB.query_builder(table, 'student_id = ?', 'select')
