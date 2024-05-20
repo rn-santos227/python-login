@@ -71,6 +71,12 @@ def update_admin(admin: Admin):
   )
   where_clause = f"id = {admin.id}"
   sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  try:
+    cursor = DB.connect_db.cursor()
+
+  except Exception as e:
+    print(f"Error: {e}")
+
 
 def delete_admin(id):
   pass
