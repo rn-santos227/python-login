@@ -38,12 +38,14 @@ def get_logs(query, action) -> Union[list[Log], str]:
       log = Log(*row)
       logs.append(log)
 
-    cursor.close()
-    DB.connect_db.close()
     return logs if logs else "No logs available."
   
   except Exception as e:
     print(f"Error: {e}")
+
+  finally:
+    cursor.close()
+    DB.connect_db.close()
 
 def get_logs_by_student(student_id) -> Union[list[Log], str]:
   sql_query = DB.query_builder(table, 'student_id = ?', 'select')
