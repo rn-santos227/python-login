@@ -73,6 +73,8 @@ def update_admin(admin: Admin):
   sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
   try:
     cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query)
+    return admin
 
   except Exception as e:
     print(f"Error: {e}")
