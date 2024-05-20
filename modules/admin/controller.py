@@ -66,6 +66,7 @@ def update_admin(admin: Admin):
   set_clause = (
     f"email = '{admin.email}', "
     f"password = '{admin.encrypt_password(admin.password)}', "
+    f"full_name = '{admin.full_name}', "
   )
 
 def delete_admin(id):
