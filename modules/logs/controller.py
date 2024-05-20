@@ -4,6 +4,8 @@ import config.database as DB
 from typing import Union
 from modules.logs.model import Log
 
+table = "logs"
+
 def get_log_by_id(id) -> Union[Log, str]:
   sql_query = DB.query_builder('logs', 'id = ?', 'select')
   try:
