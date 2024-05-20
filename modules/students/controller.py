@@ -85,7 +85,7 @@ def create_student(student: Student) -> Student:
 def update_student(student: Student) -> Student:
   set_clause = (
     f"email = '{student.email}', "
-    f"password = '{student.password}', "
+    f"password = '{student.encrypt_password(student.password)}', "
     f"full_name = '{student.full_name}', "
     f"student_number = '{student.student_number}', "
     f"contact_number = '{student.contact_number}', "

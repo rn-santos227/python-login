@@ -65,6 +65,7 @@ def create_admin(admin: Admin) -> Admin:
 def update_admin(admin: Admin):
   set_clause = (
     f"email = '{admin.email}', "
+    f"password = '{admin.password}', "
   )
 
 def delete_admin(id):
