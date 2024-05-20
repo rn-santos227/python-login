@@ -20,6 +20,6 @@ class Parent:
       student_id INT,
       full_name TEXT,
       contact TEXT,
-      FOREIGN KEY (student_id) REFERENCES students(id)
+      CONSTRAINT fk_student FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''
