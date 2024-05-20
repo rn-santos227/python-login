@@ -69,6 +69,7 @@ def update_admin(admin: Admin):
     f"full_name = '{admin.full_name}', "
     f"status = '{admin.status}', "
   )
+  where_clause = f"id = {admin.id}"
 
 def delete_admin(id):
   pass
