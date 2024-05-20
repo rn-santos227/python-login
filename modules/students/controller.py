@@ -83,14 +83,16 @@ def create_student(student: Student) -> Student:
     DB.connect_db.close()
 
 def update_student(student: Student) -> Student:
-  set_clause = (f"email = '{student.email}', "
+  set_clause = (
+    f"email = '{student.email}', "
     f"password = '{student.password}', "
     f"full_name = '{student.full_name}', "
     f"student_number = '{student.student_number}', "
     f"contact_number = '{student.contact_number}', "
     f"section = '{student.section}', "
     f"level = '{student.level}', "
-    f"status = '{student.status}'")
+    f"status = '{student.status}'"
+  )
   where_clause = f"id = {student.id}"
   sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
   try:

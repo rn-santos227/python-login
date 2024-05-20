@@ -63,7 +63,9 @@ def create_admin(admin: Admin) -> Admin:
     DB.connect_db.close()
 
 def update_admin(admin: Admin):
-  pass
+  set_clause = (
+    
+  )
 
 def delete_admin(id):
   pass
