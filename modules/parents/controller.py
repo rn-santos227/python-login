@@ -12,8 +12,6 @@ def get_parent_by_id(id) -> Union[Parent, str]:
     cursor.execute(sql_query, (id))
     row = cursor.fetchone()
 
-    cursor.close()
-    DB.connect_db.close()
     if row:
       parent = Parent(*row)
       return parent
@@ -22,6 +20,10 @@ def get_parent_by_id(id) -> Union[Parent, str]:
     
   except Exception as e:
     print(f"Error: {e}")
+
+  finally:
+    cursor.close()
+    DB.connect_db.close()
 
 def get_parents(query, action) -> Union[list[Parent], str]:
   sql_query = DB.query_builder(table, query, action)
