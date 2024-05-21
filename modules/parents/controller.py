@@ -38,6 +38,11 @@ def create_parent(parent: Parent):
   columns = "(student_id, full_name, contact)" 
   values = f"'{parent.student_id}', '{parent.full_name}', {parent.contact}"
   sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
+  try:
+    cursor = DB.connect_db.cursor()
+
+  except Exception as e:
+    print(f"Error: {e}")
 
 def update_parent(parent: Parent):
   pass
