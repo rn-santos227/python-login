@@ -40,6 +40,7 @@ def create_parent(parent: Parent):
   sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
   try:
     cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query)
 
   except Exception as e:
     print(f"Error: {e}")
