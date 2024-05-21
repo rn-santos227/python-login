@@ -35,7 +35,7 @@ def get_parents(query, action) -> Union[list[Parent], str]:
   return parents if parents else "No parent records available."
 
 def create_parent(parent: Parent):
-  pass
+  columns = "(student_id, full_name, contact)" 
 
 def update_parent(parent: Parent):
   pass
