@@ -37,6 +37,7 @@ def get_parents(query, action) -> Union[list[Parent], str]:
 def create_parent(parent: Parent):
   columns = "(student_id, full_name, contact)" 
   values = f"'{parent.student_id}', '{parent.full_name}', {parent.contact}"
+  sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
 
 def update_parent(parent: Parent):
   pass
