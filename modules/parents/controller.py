@@ -30,13 +30,14 @@ def get_parents(query, action) -> Union[list[Parent], str]:
     for row in rows:
       parent = Parent(*row)
       parents.append(parent)
-
-    cursor.close()
-    DB.connect_db.close()
     return parents if parents else "No parent records available."
   
   except Exception as e:
     print(f"Error: {e}")
+
+  finally:
+    cursor.close()
+    DB.connect_db.close()
 
 def create_parent(parent: Parent) -> Parent:
   columns = "(student_id, full_name, contact)" 
