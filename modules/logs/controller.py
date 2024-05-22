@@ -72,6 +72,11 @@ def create_log(log: Log) -> Log:
   columns = "(student_id, ip_address)"
   values =  f"'{log.student_id}', '{log.ip_address}'"
   sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
+  try:
+    cursor = DB.connect_db.cursor()
+
+  except Exception as e:
+    print(f"Error: {e}")
 
 def update_log(log: Log) -> Log:
   pass
