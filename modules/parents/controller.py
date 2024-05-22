@@ -66,6 +66,7 @@ def update_parent(parent: Parent) -> Parent:
     f"full_name = '{parent.full_name}', "
     f"contact_number = '{parent.contact_number}', "
   )
+  where_clause = f"id = {parent.id}"
 
 def delete_parent(id):
   pass
