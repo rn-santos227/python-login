@@ -70,6 +70,8 @@ def update_parent(parent: Parent) -> Parent:
   sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
   try:
     cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query)
+    return parent
 
   except Exception as e:
     print(f"Error: {e}")
