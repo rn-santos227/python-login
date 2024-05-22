@@ -74,6 +74,8 @@ def create_log(log: Log) -> Log:
   sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
   try:
     cursor = DB.connect_db.cursor()
+    cursor.execute(sql_query)
+    return log
 
   except Exception as e:
     print(f"Error: {e}")
