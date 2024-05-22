@@ -61,8 +61,10 @@ def create_parent(parent: Parent) -> Parent:
     cursor.close()
     DB.connect_db.close()
 
-def update_parent(parent: Parent):
-  pass
+def update_parent(parent: Parent) -> Parent:
+  set_clause = (
+
+  )
 
 def delete_parent(id):
   pass
