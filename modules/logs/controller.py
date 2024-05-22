@@ -84,6 +84,9 @@ def create_log(log: Log) -> Log:
     cursor.close()
     DB.connect_db.close()
 
+def add_login_time(log: Log) -> Log:
+  pass
+
 def update_log(log: Log) -> Log:
   pass
 
