@@ -88,6 +88,7 @@ def add_login_time(log: Log) -> Log:
   set_clause = (
     f"login_time = '{log.login_time}'"
   )
+  where_clause = f"id = {log.id}"
 
 def add_logout_time(log: Log) -> Log:
   pass
