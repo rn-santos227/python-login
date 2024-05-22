@@ -63,7 +63,8 @@ def create_parent(parent: Parent) -> Parent:
 
 def update_parent(parent: Parent) -> Parent:
   set_clause = (
-    f"email = '{parent.full_name}', "
+    f"full_name = '{parent.full_name}', "
+    f"contact_number = '{parent.contact_number}', "
   )
 
 def delete_parent(id):
