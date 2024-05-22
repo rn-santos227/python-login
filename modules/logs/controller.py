@@ -89,6 +89,11 @@ def add_login_time(log: Log) -> Log:
     f"login_time = '{log.login_time}'"
   )
   where_clause = f"id = {log.id}"
+  try:
+    cursor = DB.connect_db.cursor()
+
+  except Exception as e:
+    print(f"Error: {e}")
 
 def add_logout_time(log: Log) -> Log:
   pass
