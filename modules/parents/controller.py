@@ -67,6 +67,7 @@ def update_parent(parent: Parent) -> Parent:
     f"contact_number = '{parent.contact_number}', "
   )
   where_clause = f"id = {parent.id}"
+  sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
 
 def delete_parent(id):
   pass
