@@ -71,6 +71,7 @@ def get_logs_by_student(student_id) -> Union[list[Log], str]:
 def create_log(log: Log) -> Log:
   columns = "(student_id, ip_address)"
   values =  f"'{log.student_id}', '{log.ip_address}'"
+  sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
 
 def update_log(log: Log) -> Log:
   pass
