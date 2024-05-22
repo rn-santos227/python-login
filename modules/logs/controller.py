@@ -87,6 +87,9 @@ def create_log(log: Log) -> Log:
 def add_login_time(log: Log) -> Log:
   pass
 
+def add_logout_time(log: Log) -> Log:
+  pass
+
 def update_log(log: Log) -> Log:
   pass
 
