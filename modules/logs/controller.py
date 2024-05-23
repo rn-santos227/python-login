@@ -106,6 +106,7 @@ def add_logout_time(log: Log) -> Log:
   set_clause = (
     f"logout_time = '{log.logout_time}'"
   )
+  where_clause = f"id = {log.id}"
 
 def update_log(log: Log) -> Log:
   pass
