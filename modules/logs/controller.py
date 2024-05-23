@@ -125,6 +125,7 @@ def update_log(log: Log) -> Log:
     f"login_time = '{log.login_time}'"
     f"logout_time = '{log.logout_time}'"
   )
+  where_clause = f"id = {log.id}"
 
 def delete_log(id):
   pass
