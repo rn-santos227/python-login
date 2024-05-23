@@ -126,6 +126,7 @@ def update_log(log: Log) -> Log:
     f"logout_time = '{log.logout_time}'"
   )
   where_clause = f"id = {log.id}"
+  sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
 
 def delete_log(id):
   pass
