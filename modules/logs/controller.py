@@ -130,6 +130,7 @@ def update_log(log: Log) -> Log:
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
+    return log
 
   except Exception as e:
     print(f"Error: {e}")
