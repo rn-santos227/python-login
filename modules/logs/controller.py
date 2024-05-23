@@ -121,7 +121,9 @@ def add_logout_time(log: Log) -> Log:
     DB.connect_db.close()
 
 def update_log(log: Log) -> Log:
-  pass
+  set_clause = (
+    
+  )
 
 def delete_log(id):
   pass
