@@ -123,6 +123,7 @@ def add_logout_time(log: Log) -> Log:
 def update_log(log: Log) -> Log:
   set_clause = (
     f"login_time = '{log.login_time}'"
+    f"logout_time = '{log.logout_time}'"
   )
 
 def delete_log(id):
