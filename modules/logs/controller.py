@@ -108,6 +108,11 @@ def add_logout_time(log: Log) -> Log:
   )
   where_clause = f"id = {log.id}"
   sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  try:
+    cursor = DB.connect_db.cursor()
+
+  except Exception as e:
+    print(f"Error: {e}")
 
 def update_log(log: Log) -> Log:
   pass
