@@ -114,6 +114,10 @@ def add_logout_time(log: Log) -> Log:
   except Exception as e:
     print(f"Error: {e}")
 
+  finally:
+    cursor.close()
+    DB.connect_db.close()
+
 def update_log(log: Log) -> Log:
   pass
 
