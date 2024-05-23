@@ -103,7 +103,9 @@ def add_login_time(log: Log) -> Log:
     DB.connect_db.close()
 
 def add_logout_time(log: Log) -> Log:
-  pass
+  set_clause = (
+    f"logout_time = '{log.logout_time}'"
+  )
 
 def update_log(log: Log) -> Log:
   pass
