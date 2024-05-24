@@ -94,3 +94,4 @@ def delete_parent(id) -> bool:
   
   finally:
     cursor.close()
+    DB.connect_db.close()
