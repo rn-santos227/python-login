@@ -80,5 +80,5 @@ def update_parent(parent: Parent) -> Parent:
     cursor.close()
     DB.connect_db.close()
 
-def delete_parent(id):
+def delete_parent(id) -> bool:
   pass
