@@ -153,3 +153,4 @@ def delete_log(id) -> bool:
   
   finally:
     cursor.close()
+    DB.connect_db.close()
