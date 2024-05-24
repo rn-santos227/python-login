@@ -140,4 +140,4 @@ def update_log(log: Log) -> Log:
     DB.connect_db.close()
 
 def delete_log(id):
-  pass
+  where_clause = f"id = {id}"
