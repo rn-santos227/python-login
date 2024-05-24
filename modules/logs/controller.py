@@ -147,3 +147,4 @@ def delete_log(id) -> bool:
 
   except Exception as e:
     print(f"Error: {e}")
+    return False
