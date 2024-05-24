@@ -145,6 +145,7 @@ def delete_log(id) -> bool:
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
+    return True
 
   except Exception as e:
     print(f"Error: {e}")
