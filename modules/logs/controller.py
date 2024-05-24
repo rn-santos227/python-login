@@ -141,3 +141,4 @@ def update_log(log: Log) -> Log:
 
 def delete_log(id):
   where_clause = f"id = {id}"
+  sql_query = DB.query_builder(table, f"WHERE {where_clause}", 'delete')
