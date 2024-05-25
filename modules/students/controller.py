@@ -107,5 +107,5 @@ def update_student(student: Student) -> Student:
     cursor.close()
     DB.connect_db.close()
 
-def delete_student(id):
-  pass
+def delete_student(id) -> bool:
+  where_clause = f"id = {id}"
