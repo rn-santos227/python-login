@@ -110,3 +110,8 @@ def update_student(student: Student) -> Student:
 def delete_student(id) -> bool:
   where_clause = f"id = {id}"
   sql_query = DB.query_builder(table, f"WHERE {where_clause}", 'delete')
+  try:
+    cursor = DB.connect_db.cursor()
+
+  except Exception as e:
+    print(f"Error: {e}")
