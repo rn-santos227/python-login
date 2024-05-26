@@ -118,3 +118,7 @@ def delete_student(id) -> bool:
   except Exception as e:
     print(f"Error: {e}")
     return False
+  
+  finally:
+    cursor.close()
+    DB.connect_db.close()
