@@ -4,6 +4,7 @@ def login(email, password) -> bool:
   student = get_student_by_email(email)
   
   if(student.verify_password(password)):
+    print(f"User has been logged in.")
     return True
   else:
     return False
