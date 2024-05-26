@@ -84,4 +84,4 @@ def update_admin(admin: Admin):
     DB.connect_db.close()
 
 def delete_admin(id):
-  pass
+  where_clause = f"id = {id}"
