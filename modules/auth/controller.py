@@ -7,4 +7,5 @@ def login(email, password) -> bool:
     print(f"User has been logged in.")
     return True
   else:
+    print(f"User could not login.")
     return False
