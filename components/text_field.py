@@ -9,3 +9,4 @@ class TextField(QWidget):
     self.layout = QVBoxLayout()
 
     self.label = QLabel(label_text)
+    self.text_field = QLineEdit()
