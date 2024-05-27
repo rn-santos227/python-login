@@ -19,3 +19,6 @@ class LoginPage(QWidget):
     self.password_field = TextField(label_text="Password", placeholder_text="Enter your password")
 
     self.password_field.text_field.setEchoMode(QLineEdit.Password)
+
+    login_button = QPushButton("Login")
+    login_button.clicked.connect(self.handle_login)
