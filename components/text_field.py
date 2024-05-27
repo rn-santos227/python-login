@@ -10,3 +10,4 @@ class TextField(QWidget):
 
     self.label = QLabel(label_text)
     self.text_field = QLineEdit()
+    self.text_field.setPlaceholderText(placeholder_text)
