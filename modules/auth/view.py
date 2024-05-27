@@ -11,3 +11,6 @@ class LoginPage(QWidget):
 
   def init_ui(self):
     layout = QVBoxLayout()
+
+    top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+    bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding
