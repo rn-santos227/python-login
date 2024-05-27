@@ -1,12 +1,12 @@
 import sys
-import components.ScreenWindow as screen
+from components.ScreenWindow import ScreenWindow
 
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
 
 def main():
   app = QApplication(sys.argv)
-  window = screen()
+  window = ScreenWindow()
   window.show()
   sys.exit(app.exec_())
 
