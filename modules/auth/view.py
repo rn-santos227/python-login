@@ -7,3 +7,6 @@ class LoginPage(QWidget):
   def __init__(self, main_window):
     super().__init__()
     self.main_window = main_window
+
+  def init_ui(self):
+    layout = QVBoxLayout()
