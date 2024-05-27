@@ -1,3 +1,4 @@
+import sys
 import components.ScreenWindow as screen
 
 from PyQt5.QtWidgets import QApplication
