@@ -7,3 +7,5 @@ class TextField(QWidget):
 
   def init_ui(self, label_text, placeholder_text):
     self.layout = QVBoxLayout()
+
+    self.label = QLabel(label_text)
