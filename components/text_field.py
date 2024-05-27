@@ -25,3 +25,6 @@ class TextField(QWidget):
 
   def set_placeholder_text(self, text):
     self.text_field.setPlaceholderText(text)
+
+  def clear_text(self):
+    self.text_field.clear()
