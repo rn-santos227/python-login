@@ -13,3 +13,6 @@ class TextField(QWidget):
     self.text_field.setPlaceholderText(placeholder_text)
 
     self.layout.addWidget(self.label)
+    self.layout.addWidget(self.text_field)
+
+    self.setLayout(self.layout)
