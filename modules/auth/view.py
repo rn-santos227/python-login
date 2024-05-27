@@ -17,3 +17,5 @@ class LoginPage(QWidget):
 
     self.username_field = TextField(label_text="Email", placeholder_text="Enter your username")
     self.password_field = TextField(label_text="Password", placeholder_text="Enter your password")
+
+    self.password_field.text_field.setEchoMode(QLineEdit.Password)
