@@ -22,3 +22,6 @@ class TextField(QWidget):
   
   def set_label_text(self, text):
     self.label.setText(text)
+
+  def set_placeholder_text(self, text):
+    self.text_field.setPlaceholderText(text)
