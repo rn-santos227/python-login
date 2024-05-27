@@ -6,4 +6,4 @@ class TextField(QWidget):
     self.init_ui(label_text, placeholder_text)
 
   def init_ui(self, label_text, placeholder_text):
-    pass
+    self.layout = QVBoxLayout()
