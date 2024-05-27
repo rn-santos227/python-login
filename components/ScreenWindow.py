@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtCore import Qt
 
-class FullScreenWindow(QMainWindow):
+class ScreenWindow(QMainWindow):
   def __init__(self):
     super().__init__()
 
