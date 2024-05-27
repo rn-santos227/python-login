@@ -16,3 +16,6 @@ class TextField(QWidget):
     self.layout.addWidget(self.text_field)
 
     self.setLayout(self.layout)
+
+  def get_text(self):
+    return self.text_field.text()
