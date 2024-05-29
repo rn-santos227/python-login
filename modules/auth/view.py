@@ -22,3 +22,5 @@ class LoginPage(QWidget):
 
     login_button = QPushButton("Login")
     login_button.clicked.connect(self.handle_login)
+
+    layout.addItem(top_spacer)
