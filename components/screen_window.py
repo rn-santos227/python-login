@@ -2,6 +2,8 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from PyQt5.QtCore import Qt
 
+from modules.auth.view import LoginPage
+
 class ScreenWindow(QMainWindow):
   def __init__(self):
     super().__init__()
@@ -10,3 +12,8 @@ class ScreenWindow(QMainWindow):
     self.showFullScreen()
 
     self.stacked_widget = QStackedWidget()
+    self.setCentralWidget(self.stacked_widget)
+
+    self.login_page = LoginPage(self)
+    
+    self.stacked_widget.addWidget(self.login_page)
