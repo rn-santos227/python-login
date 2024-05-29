@@ -28,3 +28,5 @@ class LoginPage(QWidget):
     layout.addWidget(self.username_field)
     layout.addWidget(self.password_field)
     layout.addItem(bottom_spacer)
+
+    self.setLayout(layout)
