@@ -32,4 +32,4 @@ class LoginPage(QWidget):
     self.setLayout(layout)
 
   def handle_login(self):
-    pass
+    username = self.username_field.get_text()
