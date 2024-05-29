@@ -7,7 +7,7 @@ wheel>=0.36.2
 sip>=6.0.0
 
 # Application dependencies
-PyQt5
+PyQt5==5.15.6
 pyqt5-tools
 pyodbc
 pypyodbc
