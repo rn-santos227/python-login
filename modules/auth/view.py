@@ -17,7 +17,7 @@ class LoginPage(QWidget):
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-    self.username_field = TextField(label_text="Email", placeholder_text="Enter your username")
+    self.email_field = TextField(label_text="Email", placeholder_text="Enter your username")
     self.password_field = TextField(label_text="Password", placeholder_text="Enter your password")
 
     self.password_field.text_field.setEchoMode(QLineEdit.Password)
@@ -27,12 +27,12 @@ class LoginPage(QWidget):
 
     layout.addItem(top_spacer)
     layout.addWidget(QLabel("Login Page"))
-    layout.addWidget(self.username_field)
+    layout.addWidget(self.email_field)
     layout.addWidget(self.password_field)
     layout.addItem(bottom_spacer)
 
     self.setLayout(layout)
 
   def handle_login(self):
-    username = self.username_field.get_text()
+    username = self.email_field.get_text()
     password = self.password_field.get_text()
