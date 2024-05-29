@@ -38,6 +38,7 @@ class LoginPage(QWidget):
     password = self.password_field.get_text()
 
     if(login(email, password)):
-      pass
+      print("Login Success.")
+
     else:
-      pass
+      print("Login Unsuccessful.")
