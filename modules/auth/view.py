@@ -25,3 +25,4 @@ class LoginPage(QWidget):
 
     layout.addItem(top_spacer)
     layout.addWidget(QLabel("Login Page"))
+    layout.addWidget(self.username_field)
