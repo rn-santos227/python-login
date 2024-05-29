@@ -34,5 +34,10 @@ class LoginPage(QWidget):
     self.setLayout(layout)
 
   def handle_login(self):
-    username = self.email_field.get_text()
+    email = self.email_field.get_text()
     password = self.password_field.get_text()
+
+    if(login(email, password)):
+      pass
+    else:
+      pass
