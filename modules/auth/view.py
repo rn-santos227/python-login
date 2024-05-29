@@ -33,3 +33,4 @@ class LoginPage(QWidget):
 
   def handle_login(self):
     username = self.username_field.get_text()
+    password = self.password_field.get_text()
