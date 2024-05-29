@@ -30,3 +30,6 @@ class LoginPage(QWidget):
     layout.addItem(bottom_spacer)
 
     self.setLayout(layout)
+
+  def handle_login(self):
+    pass
