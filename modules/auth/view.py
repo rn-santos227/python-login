@@ -24,3 +24,4 @@ class LoginPage(QWidget):
     login_button.clicked.connect(self.handle_login)
 
     layout.addItem(top_spacer)
+    layout.addWidget(QLabel("Login Page"))
