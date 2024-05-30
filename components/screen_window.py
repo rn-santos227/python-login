@@ -23,4 +23,6 @@ class ScreenWindow(QMainWindow):
     self.stacked_widget.addWidget(self.login_page)
     self.pages_handler.switch_to_login_page()
 
-
+  def keyPressEvent(self, event):
+    if event.key() == Qt.Key_Escape:
+      pass
