@@ -6,9 +6,9 @@ from components.text_field import TextField
 from modules.auth.controller import login
 
 class LoginPage(QWidget):
-  def __init__(self, main_window):
+  def __init__(self, pages_handler):
     super().__init__()
-    self.main_window = main_window
+    self.pages_handler = pages_handler
     self.init_ui()
 
   def init_ui(self):
