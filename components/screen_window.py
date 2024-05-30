@@ -18,7 +18,7 @@ class ScreenWindow(QMainWindow):
 
     self.page_handler = PagesHandler(self.stacked_widget, None)
 
-    self.login_page = LoginPage(self)
+    self.login_page = LoginPage(self.pages_handler)
 
     self.stacked_widget.addWidget(self.login_page)
 
