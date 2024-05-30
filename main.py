@@ -1,5 +1,5 @@
 import sys
-from components.ScreenWindow import ScreenWindow
+from components.screen_window import ScreenWindow
 
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
