@@ -1,6 +1,8 @@
 import sys
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QSpacerItem, QSizePolicy
+
+from components.button import Button
 from components.text_field import TextField
 
 from modules.auth.controller import login
@@ -25,9 +27,9 @@ class LoginPage(QWidget):
     self.password_field = TextField(label_text="Password", placeholder_text="Enter your password")
     self.password_field.text_field.setEchoMode(QLineEdit.Password)
 
-    login_button = QPushButton("Login")
-    login_button.clicked.connect(self.handle_login)
-    
+    login_button = Button("Login")
+    login_button.connect_signal(self.handle_login)
+
     center_layout.addWidget(self.email_field)
     center_layout.addWidget(self.password_field)
     center_layout.addWidget(login_button)
