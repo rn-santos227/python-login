@@ -17,3 +17,6 @@ class Button(QWidget):
 
     self.layout.addWidget(self.button)
     self.setLayout(self.layout)
+
+  def set_button_text(self, text):
+    self.button.setText(text)
