@@ -17,6 +17,7 @@ class LoginPage(QWidget):
     main_layout = QVBoxLayout()
     center_layout = QVBoxLayout()
     h_center_layout = QHBoxLayout()
+    button_layout = QHBoxLayout()
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
@@ -30,9 +31,12 @@ class LoginPage(QWidget):
     login_button = Button("Login")
     login_button.connect_signal(self.handle_login)
 
+    button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    button_layout.addWidget(login_button)
+
     center_layout.addWidget(self.email_field)
     center_layout.addWidget(self.password_field)
-    center_layout.addWidget(login_button)
+    center_layout.addLayout(button_layout)
 
     h_center_layout.addItem(left_spacer)
     h_center_layout.addLayout(center_layout)
