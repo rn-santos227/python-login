@@ -24,3 +24,6 @@ class TitleBar(QWidget):
     layout.addWidget(self.close_button)
 
     self.setLayout(layout)
+
+  def close_window(self):
+    self.window().close()
