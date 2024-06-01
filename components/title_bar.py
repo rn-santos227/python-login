@@ -22,3 +22,5 @@ class TitleBar(QWidget):
 
     layout.addWidget(self.title)
     layout.addWidget(self.close_button)
+
+    self.setLayout(layout)
