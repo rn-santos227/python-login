@@ -1,4 +1,6 @@
 import sys
+import config.database as db
+
 from components.screen_window import ScreenWindow
 
 from PyQt5.QtWidgets import QApplication
@@ -11,4 +13,8 @@ def main():
   sys.exit(app.exec_())
 
 if __name__ == "__main__":
-  main()
+  if (db.check_db_connection()):
+    main()
+
+  else:
+    print("Application Failed to Run.")
