@@ -6,12 +6,18 @@ from config.config import database_name
 
 def create_db():
   if not os.path.exists(database_name):
-    connection_string = (
-      r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
-      r"DBQ=" + database_name
-    )
     pypyodbc.win_create_mdb(database_name)
     print(f"Database '{database_name}' created successfully.")
+    
+    conn_str = (
+        r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
+        r"DBQ=" + database_name
+    )
+    conn = pypyodbc.connect(conn_str)
+    print(f"Connected to the database '{database_name}' successfully.")
+    
+    conn.close()
+    print(f"Connection to the database '{database_name}' closed.")
   else:
     print(f"Database '{database_name}' already exists.")
     
