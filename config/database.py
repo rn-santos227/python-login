@@ -37,6 +37,17 @@ def check_db_connection() -> bool:
         r"DBQ=" + database_name
     )
     
+    try:
+      conn = pypyodbc.connect(conn_str)
+      print(f"Connected to the database '{database_name}' successfully.")
+      conn.close()
+      print(f"Connection to the database '{database_name}' closed.")
+      return True
+    
+    except pypyodbc.Error as e:
+      print(f"Failed to connect to the database '{database_name}': {e}")
+      return False
+      
   else:
     print(f"Database '{database_name}' does not exist. Please create it first.")
     return False
