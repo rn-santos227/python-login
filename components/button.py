@@ -23,3 +23,6 @@ class Button(QWidget):
 
   def connect_signal(self, slot):
     self.button.clicked.connect(slot)
+
+  def set_fixed_width(self, width):
+    self.button.setFixedWidth(width)
