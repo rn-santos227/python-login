@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLineEdit, QLabel
+from PyQt5.QtGui import QFont
 
 class TextField(QWidget):
   def __init__(self, label_text="Text Field", placeholder_text="Enter text...", parent=None):
@@ -11,7 +12,15 @@ class TextField(QWidget):
     self.label = QLabel(label_text)
     self.text_field = QLineEdit()
     self.text_field.setPlaceholderText(placeholder_text)
-    self.text_field.setFixedWidth(500)
+    self.text_field.setFixedWidth(500) 
+
+    label_font = QFont()
+    label_font.setPointSize(14)
+    self.label.setFont(label_font)
+
+    text_field_font = QFont()
+    text_field_font.setPointSize(12)
+    self.text_field.setFont(text_field_font)
 
     self.layout.addWidget(self.label)
     self.layout.addWidget(self.text_field)

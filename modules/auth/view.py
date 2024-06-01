@@ -27,8 +27,7 @@ class LoginPage(QWidget):
 
     login_button = QPushButton("Login")
     login_button.clicked.connect(self.handle_login)
-
-    center_layout.addWidget(QLabel("Login Page"))
+    
     center_layout.addWidget(self.email_field)
     center_layout.addWidget(self.password_field)
     center_layout.addWidget(login_button)
@@ -37,6 +36,11 @@ class LoginPage(QWidget):
     h_center_layout.addLayout(center_layout)
     h_center_layout.addItem(right_spacer)
 
+    main_layout.addItem(top_spacer)
+    main_layout.addLayout(h_center_layout)
+    main_layout.addItem(bottom_spacer)
+
+    self.setLayout(main_layout)
 
   def handle_login(self):
     email = self.email_field.get_text()
