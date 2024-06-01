@@ -20,3 +20,6 @@ class Button(QWidget):
 
   def set_button_text(self, text):
     self.button.setText(text)
+
+  def connect_signal(self, slot):
+    self.button.clicked.connect(slot)
