@@ -26,3 +26,8 @@ class Button(QWidget):
 
   def set_fixed_width(self, width):
     self.button.setFixedWidth(width)
+
+  def set_font_size(self, size):
+    button_font = self.button.font()
+    button_font.setPointSize(size)
+    self.button.setFont(button_font)
