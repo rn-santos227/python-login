@@ -15,3 +15,10 @@ class TitleBar(QWidget):
 
     self.title = QLabel("Attendance Logbook Application")
     self.title.setAlignment(Qt.AlignCenter)
+
+    self.close_button = QPushButton("X")
+    self.close_button.setFixedSize(30, 30)
+    self.close_button.clicked.connect(self.close_window)
+
+    layout.addWidget(self.title)
+    layout.addWidget(self.close_button)
