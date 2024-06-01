@@ -1,9 +1,9 @@
 from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget, QVBoxLayout, QWidget
 from PyQt5.QtCore import Qt
 
+from components.title_bar import TitleBar
 from handlers.pages_handler import PagesHandler
-
 from modules.auth.view import LoginPage
 
 class ScreenWindow(QMainWindow):
@@ -13,8 +13,17 @@ class ScreenWindow(QMainWindow):
     self.setWindowFlags(Qt.FramelessWindowHint)
     self.showFullScreen()
 
+    self.central_widget = QWidget(self)
+    self.setCentralWidget(self.central_widget)
+    self.layout = QVBoxLayout(self.central_widget)
+    self.layout.setContentsMargins(0, 0, 0, 0)
+    self.layout.setSpacing(0)
+
+    self.title_bar = TitleBar(self)
+    self.layout.addWidget(self.title_bar)
+
     self.stacked_widget = QStackedWidget()
-    self.setCentralWidget(self.stacked_widget)
+    self.layout.addWidget(self.stacked_widget)
 
     self.pages_handler = PagesHandler(self.stacked_widget, None)
 

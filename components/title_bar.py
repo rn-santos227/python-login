@@ -7,17 +7,18 @@ class TitleBar(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    self.setFixedHeight(30)
+    self.setFixedHeight(30) 
 
     layout = QHBoxLayout()
     layout.setContentsMargins(0, 0, 0, 0)
     layout.setSpacing(0)
 
-    self.title = QLabel("Attendance Logbook Application")
+    self.title = QLabel("Digital Logbook Application")
     self.title.setAlignment(Qt.AlignCenter)
 
     self.close_button = QPushButton("X")
     self.close_button.setFixedSize(30, 30)
+    self.close_button.setStyleSheet("QPushButton { font-size: 20px; padding: 0; margin: 0; }")
     self.close_button.clicked.connect(self.close_window)
 
     layout.addWidget(self.title)
