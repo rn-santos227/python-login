@@ -30,6 +30,17 @@ def connect_db():
   conn.close()
   return conn
 
+def check_db_connection() -> bool:
+  if os.path.exists(database_name):
+    conn_str = (
+        r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
+        r"DBQ=" + database_name
+    )
+    
+  else:
+    print(f"Database '{database_name}' does not exist. Please create it first.")
+    return False
+
 def query_builder(table, query, action):
   if action.lower() == 'select':
     if query.lower() == 'all':
