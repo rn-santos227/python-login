@@ -12,7 +12,6 @@ class TextField(QWidget):
     self.label = QLabel(label_text)
     self.text_field = QLineEdit()
     self.text_field.setPlaceholderText(placeholder_text)
-    self.text_field.setFixedWidth(500) 
 
     label_font = QFont()
     label_font.setPointSize(14)
