@@ -3,6 +3,7 @@ import pyodbc
 import pypyodbc
 
 from config.config import database_name
+from config.config import conn_str
 
 def create_db():
   if not os.path.exists(database_name):
