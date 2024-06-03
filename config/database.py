@@ -78,4 +78,7 @@ def create_table(query):
     r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
     r"DBQ=" + database_name
   )
+  
+  conn = pypyodbc.connect(conn_str)  
+  cursor = conn.cursor()
 
