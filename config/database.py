@@ -3,18 +3,13 @@ import pyodbc
 import pypyodbc
 
 from config.config import database_name
-from config.config import conn_str
+from config.config import connection_string
 
 def create_db():
   if not os.path.exists(database_name):
     pypyodbc.win_create_mdb(database_name)
     print(f"Database '{database_name}' created successfully.")
-    
-    conn_str = (
-        r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
-        r"DBQ=" + database_name
-    )
-    conn = pypyodbc.connect(conn_str)
+    conn = pypyodbc.connect(connection_string)
     print(f"Connected to the database '{database_name}' successfully.")
     
     conn.close()
@@ -23,23 +18,14 @@ def create_db():
     print(f"Database '{database_name}' already exists.")
     
 def connect_db():
-  conn_str = (
-    r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
-    r"DBQ=" + database_name + ";"
-  )
-  conn = pyodbc.connect(conn_str)
+  conn = pyodbc.connect(connection_string)
   conn.close()
   return conn
 
 def check_db_connection() -> bool:
   if os.path.exists(database_name):
-    conn_str = (
-        r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
-        r"DBQ=" + database_name
-    )
-    
     try:
-      conn = pypyodbc.connect(conn_str)
+      conn = pypyodbc.connect(connection_string)
       print(f"Connected to the database '{database_name}' successfully.")
       conn.close()
       print(f"Connection to the database '{database_name}' closed.")
@@ -75,12 +61,7 @@ def query_builder(table, query, action):
   return sql_query
 
 def create_table(query, table):
-  conn_str = (
-    r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
-    r"DBQ=" + database_name
-  )
-  
-  conn = pypyodbc.connect(conn_str)  
+  conn = pypyodbc.connect(connection_string)  
   cursor = conn.cursor()
 
   try:
