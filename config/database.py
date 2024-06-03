@@ -90,3 +90,8 @@ def create_table(query, table):
   except Exception as e:
       print(f"Failed to create table '{table}': {e}")
 
+  finally:
+      cursor.close()
+      conn.close()
+      print(f"Connection to the database '{database_name}' closed.")
+
