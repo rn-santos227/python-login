@@ -84,6 +84,8 @@ def create_table(query, table):
 
   try:
     cursor.execute(query)
+    conn.commit()
+    print(f"Table '{table}' created successfully.")
 
   except Exception as e:
       print(f"Failed to create table '{table}': {e}")
