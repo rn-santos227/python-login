@@ -24,6 +24,7 @@ def initialize_db():
   db.create_table(Log.create_table(), "logs")
   db.create_table(Parent.create_table(), "parents")
 
+  print("creating default user...")
   admin = Admin(full_name="Administrator", email="test@test.com", password="test@123", status="active")
   ctr_admin.create_admin(admin)
 
