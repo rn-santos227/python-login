@@ -1,3 +1,5 @@
+import config.database as db
+
 def init():
   print("initializing app config.")
 
