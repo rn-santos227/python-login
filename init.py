@@ -7,7 +7,8 @@ def init():
 
 
 def initialize_db():
-  pass
+  print("creating database...")
+  db.create_db()
 
 if __name__ == "__main__":
   init()
