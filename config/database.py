@@ -73,7 +73,7 @@ def query_builder(table, query, action):
 
   return sql_query
 
-def create_table(query):
+def create_table(query, table):
   conn_str = (
     r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
     r"DBQ=" + database_name
@@ -81,4 +81,10 @@ def create_table(query):
   
   conn = pypyodbc.connect(conn_str)  
   cursor = conn.cursor()
+
+  try:
+    cursor.execute(query)
+
+  except Exception as e:
+      print(f"Failed to create table '{table}': {e}")
 
