@@ -1,2 +1,2 @@
-def builder(table, query, action)
+def builder(table, query, action):
   pass
