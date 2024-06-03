@@ -21,5 +21,7 @@ def initialize_db():
   db.create_table(Log.create_table(), "logs")
   db.create_table(Parent.create_table(), "parents")
 
+  admin = Admin(full_name="Administrator", email="test@test.com", password="test@123", status="active")
+
 if __name__ == "__main__":
   init()
