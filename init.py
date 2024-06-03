@@ -13,6 +13,9 @@ def init():
   if(db.check_db_connection):
     print("database has already been created.")
 
+  else:
+    initialize_db()
+
 
 def initialize_db():
   print("creating database...")
