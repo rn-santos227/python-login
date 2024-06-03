@@ -72,3 +72,10 @@ def query_builder(table, query, action):
     raise ValueError("Invalid action. Supported actions are: 'select', 'insert', 'update', 'delete'.")
 
   return sql_query
+
+def create_table(query):
+  conn_str = (
+    r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
+    r"DBQ=" + database_name
+  )
+
