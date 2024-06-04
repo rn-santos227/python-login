@@ -4,7 +4,6 @@ import modules.admin.controller as ctr_admin
 from database.migration import table_migration
 from modules.admin.model import Admin
 
-
 def init():
   print("initializing app config.")
   if(DB.check_db_connection):
