@@ -1,4 +1,5 @@
 import sys
+import init
 import config.database as db
 
 from components.screen_window import ScreenWindow
@@ -17,4 +18,5 @@ if __name__ == "__main__":
     main()
 
   else:
-    print("Application Failed to Run.")
+    print("running init...")
+    init.init()
