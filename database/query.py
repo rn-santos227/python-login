@@ -1,5 +1,4 @@
 def builder(table, query, action):
-  sql_query = ""
   if action.lower() == 'select':
     if query.lower() == 'all':
       sql_query = f"SELECT * FROM {table};"
