@@ -11,6 +11,9 @@ def builder(table, query, action):
   elif action.lower() == 'update':
     sql_query = f"UPDATE {table} SET {query};"
 
+  elif action.lower() == 'delete':
+    sql_query = f"DELETE FROM {table} WHERE {query};"
+
   else:
     raise ValueError("Invalid action. Supported actions are: 'select', 'insert', 'update', 'delete'.")
 
