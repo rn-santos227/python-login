@@ -2,12 +2,13 @@
 import config.database as DB
 
 from typing import Union
+from database.query import builder
 from modules.admin.model import Admin
 
 table = "admins"
 
 def get_admin_by_id(id) -> Union[Admin, str]:
-  sql_query = DB.query_builder(table, 'id = ?', 'select')
+  sql_query = builder(table, 'id = ?', 'select')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (id))
@@ -27,7 +28,7 @@ def get_admin_by_id(id) -> Union[Admin, str]:
     DB.connect_db.close()
 
 def get_admins(query, action) -> Union[list[Admin], str]:
-  sql_query = DB.query_builder(table, query, action)
+  sql_query = builder(table, query, action)
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -49,7 +50,7 @@ def get_admins(query, action) -> Union[list[Admin], str]:
 def create_admin(admin: Admin) -> Admin:
   columns = "(full_name, email, password, status)"
   values = f"'{admin.full_name}', '{admin.email}', {admin.password}, '{admin.status}'"
-  sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
+  sql_query = builder(table, f"{columns} VALUES ({values})", 'insert')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -70,7 +71,7 @@ def update_admin(admin: Admin):
     f"status = '{admin.status}', "
   )
   where_clause = f"id = {admin.id}"
-  sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -85,7 +86,7 @@ def update_admin(admin: Admin):
 
 def delete_admin(id) -> bool:
   where_clause = f"id = {id}"
-  sql_query = DB.query_builder(table, f"WHERE {where_clause}", 'delete')
+  sql_query = builder(table, f"WHERE {where_clause}", 'delete')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)

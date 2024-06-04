@@ -39,27 +39,6 @@ def check_db_connection() -> bool:
     print(f"Database '{database_name}' does not exist. Please create it first.")
     return False
 
-def query_builder(table, query, action):
-  if action.lower() == 'select':
-    if query.lower() == 'all':
-      sql_query = f"SELECT * FROM {table};"
-    else:
-      sql_query = f"SELECT * FROM {table} WHERE {query};"
-  
-  elif action.lower() == 'insert':
-    sql_query = f"INSERT INTO {table} VALUES ({query});"
-  
-  elif action.lower() == 'update':
-    sql_query = f"UPDATE {table} SET {query};"
-
-  elif action.lower() == 'delete':
-    sql_query = f"DELETE FROM {table} WHERE {query};"
-
-  else:
-    raise ValueError("Invalid action. Supported actions are: 'select', 'insert', 'update', 'delete'.")
-
-  return sql_query
-
 def create_table(query, table):
   conn = pypyodbc.connect(connection_string)  
   cursor = conn.cursor()
