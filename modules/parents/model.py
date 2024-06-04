@@ -1,5 +1,5 @@
-from students.model import Student
-from students.controller import get_student_by_id
+from modules.students.model import Student
+from modules.students.controller import get_student_by_id
 
 class Parent:
   def __init__(self, id, student_id, full_name, contact):
