@@ -1,7 +1,9 @@
 import config.database as DB
 import modules.admin.controller as ctr_admin
 
+from database.migration import table_migration
 from modules.admin.model import Admin
+
 
 def init():
   print("initializing app config.")
@@ -17,7 +19,7 @@ def initialize_db():
   DB.create_db()
 
   print("creating tables...")
-
+  table_migration()
 
   print("creating default user...")
   admin = Admin(full_name="Administrator", email="test@test.com", password="test@123", status="active")
