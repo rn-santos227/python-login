@@ -2,12 +2,13 @@
 import config.database as DB
 
 from typing import Union
+from database.query import builder
 from modules.students.model import Student
 
 table = "students"
 
 def get_student_by_id(id)-> Union[Student, str]:
-  sql_query = DB.query_builder(table, 'id = ?', 'select')
+  sql_query = builder(table, 'id = ?', 'select')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (id))
@@ -27,7 +28,7 @@ def get_student_by_id(id)-> Union[Student, str]:
     DB.connect_db.close()
 
 def get_student_by_email(email) -> Union[Student, str]:
-  sql_query = DB.query_builder(table, 'email = ?', 'select')
+  sql_query = builder(table, 'email = ?', 'select')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (email))
@@ -47,7 +48,7 @@ def get_student_by_email(email) -> Union[Student, str]:
     DB.connect_db.close()
 
 def get_students(query, action) -> Union[list[Student], str]:
-  sql_query = DB.query_builder(table, query, action)
+  sql_query = builder(table, query, action)
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -69,7 +70,7 @@ def get_students(query, action) -> Union[list[Student], str]:
 def create_student(student: Student) -> Student:
   columns = "(email, password, full_name, student_number, contact_number, section, level, status)"
   values = f"'{student.email}', '{student.password}', '{student.full_name}', '{student.student_number}', '{student.contact_number}', '{student.section}', '{student.level}', '{student.status}'"
-  sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
+  sql_query = builder(table, f"{columns} VALUES ({values})", 'insert')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -94,7 +95,7 @@ def update_student(student: Student) -> Student:
     f"status = '{student.status}'"
   )
   where_clause = f"id = {student.id}"
-  sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -109,7 +110,7 @@ def update_student(student: Student) -> Student:
 
 def delete_student(id) -> bool:
   where_clause = f"id = {id}"
-  sql_query = DB.query_builder(table, f"WHERE {where_clause}", 'delete')
+  sql_query = builder(table, f"WHERE {where_clause}", 'delete')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
