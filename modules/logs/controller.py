@@ -2,12 +2,13 @@
 import config.database as DB
 
 from typing import Union
+from database.query import builder
 from modules.logs.model import Log
 
 table = "logs"
 
 def get_log_by_id(id) -> Union[Log, str]:
-  sql_query = DB.query_builder(table, 'id = ?', 'select')
+  sql_query = builder(table, 'id = ?', 'select')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (id))
@@ -27,7 +28,7 @@ def get_log_by_id(id) -> Union[Log, str]:
     DB.connect_db.close()
 
 def get_logs(query, action) -> Union[list[Log], str]:
-  sql_query = DB.query_builder(table, query, action)
+  sql_query = builder(table, query, action)
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -48,7 +49,7 @@ def get_logs(query, action) -> Union[list[Log], str]:
     DB.connect_db.close()
 
 def get_logs_by_student(student_id) -> Union[list[Log], str]:
-  sql_query = DB.query_builder(table, 'student_id = ?', 'select')
+  sql_query = builder(table, 'student_id = ?', 'select')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (student_id))
@@ -71,7 +72,7 @@ def get_logs_by_student(student_id) -> Union[list[Log], str]:
 def create_log(log: Log) -> Log:
   columns = "(student_id, ip_address)"
   values =  f"'{log.student_id}', '{log.ip_address}'"
-  sql_query = DB.query_builder(table, f"{columns} VALUES ({values})", 'insert')
+  sql_query = builder(table, f"{columns} VALUES ({values})", 'insert')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -89,7 +90,7 @@ def add_login_time(log: Log) -> Log:
     f"login_time = '{log.login_time}'"
   )
   where_clause = f"id = {log.id}"
-  sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -107,7 +108,7 @@ def add_logout_time(log: Log) -> Log:
     f"logout_time = '{log.logout_time}'"
   )
   where_clause = f"id = {log.id}"
-  sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -126,7 +127,7 @@ def update_log(log: Log) -> Log:
     f"logout_time = '{log.logout_time}'"
   )
   where_clause = f"id = {log.id}"
-  sql_query = DB.query_builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
@@ -141,7 +142,7 @@ def update_log(log: Log) -> Log:
 
 def delete_log(id) -> bool:
   where_clause = f"id = {id}"
-  sql_query = DB.query_builder(table, f"WHERE {where_clause}", 'delete')
+  sql_query = builder(table, f"WHERE {where_clause}", 'delete')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
