@@ -5,6 +5,9 @@ def builder(table, query, action):
     else:
       sql_query = f"SELECT * FROM {table} WHERE {query};"
 
+  elif action.lower() == 'insert':
+    sql_query = f"INSERT INTO {table} VALUES ({query});"
+
   else:
     raise ValueError("Invalid action. Supported actions are: 'select', 'insert', 'update', 'delete'.")
 
