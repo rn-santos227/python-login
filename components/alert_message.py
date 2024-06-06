@@ -9,3 +9,6 @@ class AlertMessage(QWidget):
   def init_ui(self, message, alert_type):
     self.layout = QVBoxLayout()
     self.setLayout(self.layout)
+
+    self.label = QLabel(message)
+    self.label.setAlignment(Qt.AlignCenter)
