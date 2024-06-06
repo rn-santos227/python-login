@@ -2,6 +2,7 @@ import sys
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QSpacerItem, QSizePolicy
 
+from components.alert_message import AlertMessage
 from components.button import Button
 from components.text_field import TextField
 
