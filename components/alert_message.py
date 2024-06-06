@@ -14,3 +14,6 @@ class AlertMessage(QWidget):
     self.label.setAlignment(Qt.AlignCenter)
 
     self.layout.addWidget(self.label)
+
+  def set_alert_type(self, alert_type):
+    pass
