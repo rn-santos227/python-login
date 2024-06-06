@@ -27,3 +27,6 @@ class AlertMessage(QWidget):
 
     else:
       self.label.setStyleSheet("color: black; background-color: lightgrey; padding: 10px; border-radius: 5px;")
+
+  def set_message(self, message):
+    self.label.setText(message)
