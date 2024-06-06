@@ -18,3 +18,6 @@ class AlertMessage(QWidget):
   def set_alert_type(self, alert_type):
     if alert_type == "success":
       self.label.setStyleSheet("color: white; background-color: green; padding: 10px; border-radius: 5px;")
+
+    elif alert_type == "warning":
+      self.label.setStyleSheet("color: black; background-color: yellow; padding: 10px; border-radius: 5px;")
