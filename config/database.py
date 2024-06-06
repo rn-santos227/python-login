@@ -19,7 +19,6 @@ def create_db():
     
 def connect_db():
   conn = pyodbc.connect(connection_string)
-  conn.close()
   return conn
 
 def check_db_connection() -> bool:
