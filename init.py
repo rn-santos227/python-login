@@ -1,7 +1,6 @@
 import os
 import config.database as DB
 
-from config.config import project_directory
 from config.config import data_folder
 
 from database.migration import table_migration
@@ -13,6 +12,8 @@ def init():
     print("database has already been created.")
 
   else:
+    if not os.path.exists(data_folder):
+      os.makedirs(data_folder)
     initialize_db()
 
 
