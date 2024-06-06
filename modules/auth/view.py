@@ -60,3 +60,4 @@ class LoginPage(QWidget):
 
     else:
       print("Login Unsuccessful.")
+      self.alert_message.set_message("Invalid username or password")
