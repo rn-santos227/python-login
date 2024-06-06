@@ -27,3 +27,6 @@ files/api.txt
 plugins/
 .DS_Store
 .txt
+
+# Database
+.accdb
