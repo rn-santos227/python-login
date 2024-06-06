@@ -29,5 +29,6 @@ plugins/
 .txt
 
 # Database
+data/
 *.accdb
 *.mdb
