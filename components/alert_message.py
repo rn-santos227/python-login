@@ -21,3 +21,6 @@ class AlertMessage(QWidget):
 
     elif alert_type == "warning":
       self.label.setStyleSheet("color: black; background-color: yellow; padding: 10px; border-radius: 5px;")
+
+    elif alert_type == "error":
+      self.label.setStyleSheet("color: white; background-color: red; padding: 10px; border-radius: 5px;")
