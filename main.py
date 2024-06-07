@@ -14,7 +14,7 @@ def main():
   sys.exit(app.exec_())
 
 if __name__ == "__main__":
-  if (db.check_db_connection):
+  if (db.check_db_connection()):
     main()
 
   else:
