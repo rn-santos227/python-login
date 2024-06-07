@@ -51,8 +51,8 @@ def create_admin(admin: Admin) -> Admin:
   columns = "(full_name, email, password, status)"
   values = f"'{admin.full_name}', '{admin.email}', {admin.password}, '{admin.status}'"
   sql_query = builder(table, f"{columns} VALUES ({values})", 'insert')
-  cursor = DB.connect_db.cursor()
-  
+  cursor = DB.connect_db().cursor()
+
   try:
     cursor.execute(sql_query)
     return admin
