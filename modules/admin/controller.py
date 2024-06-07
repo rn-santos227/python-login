@@ -29,6 +29,12 @@ def get_admin_by_id(id) -> Union[Admin, str]:
 def get_admin_by_email(email) -> Union[Admin, str]:
   sql_query = builder(table, 'email = ?', 'select')
   cursor = DB.connect_db().cursor()
+  try:
+    cursor.execute(sql_query, (email))
+
+  except Exception as e:
+    print(f"Error: {e}")
+
 
 def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = builder(table, query, action)
