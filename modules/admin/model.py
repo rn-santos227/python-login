@@ -1,7 +1,7 @@
 from modules.users.model import User
 
 class Admin(User):
-  def __init__(self, id, full_name, email, password, status):
+  def __init__(self, id=None, full_name=None, email=None, password=None, status=None):
     super().__init__(id, email, password)
     self.full_name = full_name
     self.status = status
