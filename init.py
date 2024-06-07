@@ -1,4 +1,3 @@
-import os
 import config.database as DB
 
 from database.migration import table_migration
@@ -11,7 +10,6 @@ def init():
 
   else:
     initialize_db()
-
 
 def initialize_db():
   print("creating database...")

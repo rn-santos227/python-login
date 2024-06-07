@@ -3,6 +3,7 @@ import pyodbc
 import pypyodbc
 
 from config.config import database_name
+from config.config import data_folder
 from config.config import connection_string
 
 def create_db():
