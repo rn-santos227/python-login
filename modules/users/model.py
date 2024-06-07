@@ -15,7 +15,7 @@ class User:
     input_password_hash = self.encrypt_password(password)
     return input_password_hash == self._password_hash
   
-  def validate_email(email):
+  def validate_email(self, email):
     pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
     
     if re.match(pattern, email):
@@ -25,7 +25,7 @@ class User:
 
   @property
   def password(self):
-    raise AttributeError("Password is not readable")
+    return self._password_hash
   
   @password.setter
   def password(self, new_password):
