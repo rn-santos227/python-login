@@ -29,8 +29,9 @@ def get_admin_by_id(id) -> Union[Admin, str]:
 
 def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = builder(table, query, action)
+  cursor = DB.connect_db().cursor()
+  
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
     rows = cursor.fetchall()
 
