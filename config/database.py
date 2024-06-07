@@ -3,7 +3,6 @@ import pyodbc
 import pypyodbc
 
 from config.config import database_path
-from config.config import data_folder
 from config.config import connection_string
 
 def create_db():
@@ -23,9 +22,6 @@ def connect_db():
   return conn
 
 def check_db_connection() -> bool:
-  if not os.path.exists(data_folder):
-    os.makedirs(data_folder)
-
   if os.path.exists(database_path):
     try:
       conn = pypyodbc.connect(connection_string)

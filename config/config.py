@@ -1,10 +1,8 @@
 import os
 
-project_directory = os.path.dirname(os.path.abspath(__file__))
+documents_directory = os.path.join(os.path.expanduser('~'), 'Documents')
 
-data_folder = os.path.join(project_directory, 'data')
-
-database_path = os.path.join(data_folder, "db_logbook.accdb")
+database_path = os.path.join(documents_directory, "db_logbook.mdb")
 
 connection_string = (
   r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
