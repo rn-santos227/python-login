@@ -27,7 +27,7 @@ def get_student_by_id(id)-> Union[Student, str]:
     cursor.close()
     DB.connect_db.close()
 
-def get_student_by_email(email) -> Union[Student, str]:
+def get_student_by_email(email) -> Union[Student, None]:
   sql_query = builder(table, 'email = ?', 'select')
   cursor = DB.connect_db().cursor()
   try:
@@ -46,7 +46,7 @@ def get_student_by_email(email) -> Union[Student, str]:
   finally:
     cursor.close()
 
-def get_students(query, action) -> Union[list[Student], str]:
+def get_students(query, action) -> Union[list[Student], None]:
   sql_query = builder(table, query, action)
   try:
     cursor = DB.connect_db.cursor()
