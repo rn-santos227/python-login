@@ -6,7 +6,7 @@ def builder(table, query, action):
       sql_query = f"SELECT * FROM {table} WHERE {query};"
 
   elif action.lower() == 'insert':
-    sql_query = f"INSERT INTO {table} VALUES ({query});"
+    sql_query = f"INSERT INTO {table}{query};"
 
   elif action.lower() == 'update':
     sql_query = f"UPDATE {table} SET {query};"
