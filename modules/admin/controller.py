@@ -52,8 +52,8 @@ def create_admin(admin: Admin) -> Admin:
   cursor = DB.connect_db().cursor()
   
   try:
-    admin_data = (admin.full_name, admin.email, admin.password, admin.status)
-    cursor.execute(sql_query)
+    values = (admin.full_name, admin.email, admin.password, admin.status)
+    cursor.execute(sql_query, values)
     return admin
 
   except Exception as e:
