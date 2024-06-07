@@ -23,7 +23,6 @@ def connect_db():
   return conn
 
 def check_db_connection() -> bool:
-  print(data_folder)
   if not os.path.exists(data_folder):
     os.makedirs(data_folder)
 
