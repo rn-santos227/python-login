@@ -1,4 +1,5 @@
 import modules.students.controller as student_controller
+import modules.admin.controller as admin_controller
 
 def login(email, password) -> bool:
   student = student_controller.get_student_by_email(email)
