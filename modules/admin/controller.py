@@ -9,8 +9,8 @@ table = "admins"
 
 def get_admin_by_id(id) -> Union[Admin, str]:
   sql_query = builder(table, 'id = ?', 'select')
+  cursor = DB.connect_db().cursor()
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (id))
     row = cursor.fetchone()
 
@@ -25,7 +25,6 @@ def get_admin_by_id(id) -> Union[Admin, str]:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = builder(table, query, action)
@@ -46,7 +45,6 @@ def get_admins(query, action) -> Union[list[Admin], str]:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def create_admin(admin: Admin) -> Admin:
   columns = "(full_name, email, password, status)"
@@ -63,7 +61,6 @@ def create_admin(admin: Admin) -> Admin:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def update_admin(admin: Admin):
   set_clause = (
