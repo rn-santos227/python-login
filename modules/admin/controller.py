@@ -34,10 +34,10 @@ def get_admin_by_email(email) -> Union[Admin, str]:
     row = cursor.fetchone()
 
     if row:
-      student = Admin(*row)
-      return student
+      admin = Admin(*row)
+      return admin
     else:
-      return "No student found with the provided email."
+      return "No admin found with the provided email."
 
   except Exception as e:
     print(f"Error: {e}")
