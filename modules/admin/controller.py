@@ -42,6 +42,9 @@ def get_admin_by_email(email) -> Union[Admin, str]:
   except Exception as e:
     print(f"Error: {e}")
 
+  finally:
+    cursor.close()
+
 
 def get_admins(query, action) -> Union[list[Admin], str]:
   sql_query = builder(table, query, action)
