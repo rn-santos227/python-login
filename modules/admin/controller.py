@@ -31,6 +31,13 @@ def get_admin_by_email(email) -> Union[Admin, str]:
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (email))
+    row = cursor.fetchone()
+
+    if row:
+      student = Admin(*row)
+      return student
+    else:
+      return "No student found with the provided email."
 
   except Exception as e:
     print(f"Error: {e}")
