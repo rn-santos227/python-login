@@ -40,6 +40,7 @@ class LoginPage(QWidget):
     center_layout.addWidget(self.email_field)
     center_layout.addWidget(self.password_field)
     center_layout.addLayout(button_layout)
+    center_layout.addWidget(self.alert_message) 
 
     h_center_layout.addItem(left_spacer)
     h_center_layout.addLayout(center_layout)

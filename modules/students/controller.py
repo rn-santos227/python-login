@@ -9,8 +9,8 @@ table = "students"
 
 def get_student_by_id(id)-> Union[Student, str]:
   sql_query = builder(table, 'id = ?', 'select')
+  cursor = DB.connect_db().cursor()
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (id))
     row = cursor.fetchone()
 
@@ -25,7 +25,6 @@ def get_student_by_id(id)-> Union[Student, str]:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def get_student_by_email(email) -> Union[Student, None]:
   sql_query = builder(table, 'email = ?', 'select')
