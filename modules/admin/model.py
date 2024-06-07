@@ -20,4 +20,4 @@ class Admin(User):
       password TEXT,
       status VARCHAR(10)
     );
-    '''
+  '''
