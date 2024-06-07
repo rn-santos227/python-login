@@ -11,7 +11,7 @@ def login(email, password) -> bool:
   student_valid = isinstance(student, Student) and student.verify_password(password)
   admin_valid = isinstance(admin, Admin) and admin.verify_password(password)
   
-  if(student.verify_password(password) | admin.verify_password(password)):
+  if student_valid or admin_valid:
     print(f"User has been logged in.")
     return True
   else:
