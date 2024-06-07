@@ -45,7 +45,6 @@ def get_student_by_email(email) -> Union[Student, str]:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def get_students(query, action) -> Union[list[Student], str]:
   sql_query = builder(table, query, action)
