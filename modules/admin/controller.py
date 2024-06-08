@@ -69,7 +69,6 @@ def get_admins(query, action) -> Union[list[Admin], None]:
 def create_admin(admin: Admin) -> Admin:
   columns = "(full_name, email, password, status)"
   sql_query = builder(table, f"{columns} VALUES (?, ?, ?, ?)", 'insert')
-  print(sql_query)
 
   connection = DB.connect_db()
   cursor = connection.cursor()
