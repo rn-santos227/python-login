@@ -88,9 +88,12 @@ def update_parent(parent: Parent) -> Parent:
 def delete_parent(id) -> bool:
   where_clause = f"id = {id}"
   sql_query = builder(table, f"WHERE {where_clause}", 'delete')
+  connection = DB.connect_db()
+  cursor = connection.cursor()
+
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
+    connection.commit()
     return True
 
   except Exception as e:
@@ -99,4 +102,3 @@ def delete_parent(id) -> bool:
   
   finally:
     cursor.close()
-    DB.connect_db.close()
