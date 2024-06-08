@@ -112,10 +112,12 @@ def update_admin(admin: Admin):
 def delete_admin(id) -> bool:
   where_clause = f"id = {id}"
   sql_query = builder(table, f"WHERE {where_clause}", 'delete')
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
 
   try:
     cursor.execute(sql_query)
+    connection.commit()
     return True
 
   except Exception as e:
