@@ -8,8 +8,9 @@ table = "parents"
 
 def get_parent_by_id(id) -> Union[Parent, str]:
   sql_query = builder(table, 'id = ?', 'select')
+  cursor = DB.connect_db().cursor()
+  
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (id))
     row = cursor.fetchone()
 
@@ -24,7 +25,6 @@ def get_parent_by_id(id) -> Union[Parent, str]:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def get_parents(query, action) -> Union[list[Parent], str]:
   sql_query = builder(table, query, action)
