@@ -73,6 +73,7 @@ def create_student(student: Student) -> Student:
   cursor = connection.cursor()
   
   try:
+    values = (student.email, student.password, student.full_name, student.student_number, student.contact_number, student.section, student.level, student.status)
     cursor.execute(sql_query, values)
     connection.commit()
     return student
