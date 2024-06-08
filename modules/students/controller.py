@@ -47,8 +47,9 @@ def get_student_by_email(email) -> Union[Student, None]:
 
 def get_students(query, action) -> Union[list[Student], None]:
   sql_query = builder(table, query, action)
+  cursor = DB.connect_db().cursor()
+  
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
     rows = cursor.fetchall()
 
@@ -63,7 +64,6 @@ def get_students(query, action) -> Union[list[Student], None]:
   
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def create_student(student: Student) -> Student:
   columns = "(email, password, full_name, student_number, contact_number, section, level, status)"
