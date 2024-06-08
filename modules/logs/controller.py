@@ -29,8 +29,9 @@ def get_log_by_id(id) -> Union[Log, str]:
 
 def get_logs(query, action) -> Union[list[Log], str]:
   sql_query = builder(table, query, action)
+  cursor = DB.connect_db().cursor()
+  
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
     rows = cursor.fetchall()
 
@@ -46,7 +47,6 @@ def get_logs(query, action) -> Union[list[Log], str]:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def get_logs_by_student(student_id) -> Union[list[Log], str]:
   sql_query = builder(table, 'student_id = ?', 'select')
