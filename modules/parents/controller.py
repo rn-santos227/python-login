@@ -49,7 +49,7 @@ def get_parents(query, action) -> Union[list[Parent], str]:
 def create_parent(parent: Parent) -> Parent:
   columns = "(student_id, full_name, contact)" 
   values = f"'{parent.student_id}', '{parent.full_name}', {parent.contact}"
-  sql_query = builder(table, f"{columns} VALUES ({values})", 'insert')
+  sql_query = builder(table, f"{columns} VALUES (?, ?, ?)", 'insert')
   try:
     cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
