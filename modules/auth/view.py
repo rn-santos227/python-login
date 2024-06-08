@@ -1,5 +1,3 @@
-import sys
-
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QSpacerItem, QSizePolicy
 
 from components.alert_message import AlertMessage
