@@ -69,11 +69,15 @@ def get_admins(query, action) -> Union[list[Admin], None]:
 def create_admin(admin: Admin) -> Admin:
   columns = "(full_name, email, password, status)"
   sql_query = builder(table, f"{columns} VALUES (?, ?, ?, ?)", 'insert')
-  cursor = DB.connect_db().cursor()
+  print(sql_query)
+
+  connection = DB.connect_db()
+  cursor = connection.cursor()
   
   try:
     values = (admin.full_name, admin.email, admin.password, admin.status)
     cursor.execute(sql_query, values)
+    connection.commit()
     return admin
 
   except Exception as e:
