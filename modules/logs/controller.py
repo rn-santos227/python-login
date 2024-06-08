@@ -116,9 +116,13 @@ def add_logout_time(log: Log) -> Log:
   )
   where_clause = f"id = {log.id}"
   sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+
+  connection = DB.connect_db()
+  cursor = connection.cursor()
+
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
+    connection.commit()
     return log
 
   except Exception as e:
@@ -126,7 +130,6 @@ def add_logout_time(log: Log) -> Log:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def update_log(log: Log) -> Log:
   set_clause = (
