@@ -68,10 +68,13 @@ def get_students(query, action) -> Union[list[Student], None]:
 def create_student(student: Student) -> Student:
   columns = "(email, password, full_name, student_number, contact_number, section, level, status)"
   values = f"'{student.email}', '{student.password}', '{student.full_name}', '{student.student_number}', '{student.contact_number}', '{student.section}', '{student.level}', '{student.status}'"
-  sql_query = builder(table, f"{columns} VALUES ({values})", 'insert')
+  sql_query = builder(table, f"{columns} VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 'insert')
+  connection = DB.connect_db()
+  cursor = connection.cursor()
+  
   try:
-    cursor = DB.connect_db.cursor()
-    cursor.execute(sql_query)
+    cursor.execute(sql_query, values)
+    connection.commit()
     return student
   
   except Exception as e:
@@ -79,7 +82,6 @@ def create_student(student: Student) -> Student:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def update_student(student: Student) -> Student:
   set_clause = (
