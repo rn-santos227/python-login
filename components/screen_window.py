@@ -4,7 +4,9 @@ from PyQt5.QtCore import Qt
 
 from components.title_bar import TitleBar
 from handlers.pages_handler import PagesHandler
+
 from modules.auth.view import LoginPage
+from modules.dashboard.view import DashboardPage
 
 class ScreenWindow(QMainWindow):
   def __init__(self):
@@ -25,9 +27,10 @@ class ScreenWindow(QMainWindow):
     self.stacked_widget = QStackedWidget()
     self.layout.addWidget(self.stacked_widget)
 
-    self.pages_handler = PagesHandler(self.stacked_widget, None)
+    self.pages_handler = PagesHandler(self.stacked_widget, None, None)
 
     self.login_page = LoginPage(self.pages_handler)
+    self.dasboard_page = DashboardPage(self.pages_handler)
 
     self.stacked_widget.addWidget(self.login_page)
     self.pages_handler.switch_to_login_page()
