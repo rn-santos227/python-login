@@ -1,4 +1,5 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
+
 
 from components.button import Button
 from components.text_field import TextField
@@ -12,6 +13,7 @@ class StudentPage(QWidget):
   def init_ui(self):
     main_layout = QVBoxLayout()
     top_half_layout = QVBoxLayout()
+    button_layout = QHBoxLayout()
 
     create_layout = QVBoxLayout()
 
@@ -23,6 +25,11 @@ class StudentPage(QWidget):
     self.section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
     self.level_field = TextField(label_text="Student Level", placeholder_text="Enter student level.")
 
+    create_button = Button("Create Student")
+    create_button.connect_signal(self.create_student)
+
+    button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    button_layout.addWidget(create_button)
 
     create_layout.addWidget(self.email_field)
     create_layout.addWidget(self.password_field)
@@ -30,10 +37,19 @@ class StudentPage(QWidget):
     create_layout.addWidget(self.student_number_field)
     create_layout.addWidget(self.section_field)
     create_layout.addWidget(self.level_field)
+    create_layout.addLayout(button_layout)
 
     top_half_layout.addLayout(create_layout)
 
+    self.table_widget = QTableWidget()
+    self.table_widget.setColumnCount(7)
+    self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Student Number", "Section", "Level", "Actions"])
+    self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
     main_layout.addLayout(top_half_layout)
+    main_layout.addWidget(self.table_widget)
   
     self.setLayout(main_layout)
-    
+
+  def create_student(self):
+    pass
