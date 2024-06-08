@@ -4,7 +4,7 @@ class User:
   def __init__(self, id, email, password):
     self.id = id
     self.email = self.validate_email(email)
-    self._password_hash = self.encrypt_password(password)
+    self._password_hash = password
 
   @staticmethod
   def encrypt_password(password) -> str:
@@ -26,7 +26,3 @@ class User:
   @property
   def password(self):
     return self._password_hash
-  
-  @password.setter
-  def password(self, new_password):
-    self._password_hash = self.encrypt_password(new_password)

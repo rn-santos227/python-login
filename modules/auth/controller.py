@@ -8,7 +8,7 @@ def login(email, password) -> bool:
   student = student_controller.get_student_by_email(email)
   admin = admin_controller.get_admin_by_email(email)
 
-  print(admin)
+  print(admin.password)
 
   student_valid = isinstance(student, Student) and student.verify_password(password)
   admin_valid = isinstance(admin, Admin) and admin.verify_password(password)
