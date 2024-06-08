@@ -114,3 +114,6 @@ def delete_admin(id) -> bool:
   except Exception as e:
     print(f"Error: {e}")
     return False
+  
+  finally:
+    cursor.close()
