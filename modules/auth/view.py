@@ -58,6 +58,8 @@ class LoginPage(QWidget):
 
     if(login(email, password)):
       print("Login Success.")
+      self.password_field.clear_text()
+      self.email_field.clear_text()
       self.pages_handler.switch_to_dashboard_page()
 
     else:
