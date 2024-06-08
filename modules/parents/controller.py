@@ -48,11 +48,14 @@ def get_parents(query, action) -> Union[list[Parent], str]:
 
 def create_parent(parent: Parent) -> Parent:
   columns = "(student_id, full_name, contact)" 
-  values = f"'{parent.student_id}', '{parent.full_name}', {parent.contact}"
   sql_query = builder(table, f"{columns} VALUES (?, ?, ?)", 'insert')
+  connection = DB.connect_db()
+  cursor = connection.cursor()
+
   try:
-    cursor = DB.connect_db.cursor()
-    cursor.execute(sql_query)
+    values = (parent.student_id, parent.full_name, parent.contact)
+    cursor.execute(sql_query, values)
+    connection.commit()
     return parent
 
   except Exception as e:
@@ -60,7 +63,6 @@ def create_parent(parent: Parent) -> Parent:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def update_parent(parent: Parent) -> Parent:
   set_clause = (
