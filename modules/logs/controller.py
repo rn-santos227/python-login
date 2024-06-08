@@ -9,8 +9,9 @@ table = "logs"
 
 def get_log_by_id(id) -> Union[Log, str]:
   sql_query = builder(table, 'id = ?', 'select')
+  cursor = DB.connect_db().cursor()
+  
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (id))
     row = cursor.fetchone()
 
@@ -25,7 +26,6 @@ def get_log_by_id(id) -> Union[Log, str]:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def get_logs(query, action) -> Union[list[Log], str]:
   sql_query = builder(table, query, action)
