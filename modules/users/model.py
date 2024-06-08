@@ -25,4 +25,4 @@ class User:
 
   @property
   def password(self):
-    return self._password_hash
+    return self.encrypt_password(self._password_hash)
