@@ -50,8 +50,9 @@ def get_logs(query, action) -> Union[list[Log], str]:
 
 def get_logs_by_student(student_id) -> Union[list[Log], str]:
   sql_query = builder(table, 'student_id = ?', 'select')
+  cursor = DB.connect_db().cursor()
+
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query, (student_id))
     rows = cursor.fetchall()
 
