@@ -30,9 +30,11 @@ class ScreenWindow(QMainWindow):
     self.pages_handler = PagesHandler(self.stacked_widget, None, None)
 
     self.login_page = LoginPage(self.pages_handler)
-    self.dasboard_page = DashboardPage(self.pages_handler)
+    self.dashboard_page = DashboardPage(self.pages_handler)
 
     self.stacked_widget.addWidget(self.login_page)
+    self.stacked_widget.addWidget(self.dashboard_page)
+    
     self.pages_handler.switch_to_login_page()
 
   def keyPressEvent(self, event):

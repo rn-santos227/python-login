@@ -58,6 +58,7 @@ class LoginPage(QWidget):
 
     if(login(email, password)):
       print("Login Success.")
+      self.pages_handler.switch_to_dashboard_page()
 
     else:
       print("Login Unsuccessful.")
