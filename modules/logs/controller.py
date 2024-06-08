@@ -72,10 +72,14 @@ def get_logs_by_student(student_id) -> Union[list[Log], str]:
 
 def create_log(log: Log) -> Log:
   columns = "(student_id, ip_address)"
-  values =  f"'{log.student_id}', '{log.ip_address}'"
-  sql_query = builder(table, f"{columns} VALUES ({values})", 'insert')
+  sql_query = builder(table, f"{columns} VALUES (?, ?)", 'insert')
+
+  connection = DB.connect_db()
+  cursor = connection.cursor()
+
   try:
-    cursor = DB.connect_db.cursor()
+    values = (log.student_id, log.ip_address)
+    cursor.execute(sql_query, values)
     cursor.execute(sql_query)
     return log
 
@@ -84,7 +88,6 @@ def create_log(log: Log) -> Log:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def add_login_time(log: Log) -> Log:
   set_clause = (
