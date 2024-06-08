@@ -97,9 +97,12 @@ def update_student(student: Student) -> Student:
   )
   where_clause = f"id = {student.id}"
   sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  connection = DB.connect_db()
+  cursor = connection.cursor()
+
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
+    connection.commit()
     return student
 
   except Exception as e:
@@ -107,7 +110,6 @@ def update_student(student: Student) -> Student:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def delete_student(id) -> bool:
   where_clause = f"id = {id}"
