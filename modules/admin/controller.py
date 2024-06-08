@@ -91,8 +91,8 @@ def update_admin(admin: Admin):
   )
   where_clause = f"id = {admin.id}"
   sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  cursor = DB.connect_db().cursor()
   try:
-    cursor = DB.connect_db.cursor()
     cursor.execute(sql_query)
     return admin
 
@@ -101,7 +101,6 @@ def update_admin(admin: Admin):
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def delete_admin(id) -> bool:
   where_clause = f"id = {id}"
