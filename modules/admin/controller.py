@@ -95,9 +95,12 @@ def update_admin(admin: Admin):
   )
   where_clause = f"id = {admin.id}"
   sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
+
   try:
     cursor.execute(sql_query)
+    connection.commit()
     return admin
 
   except Exception as e:
