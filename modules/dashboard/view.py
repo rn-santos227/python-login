@@ -15,16 +15,15 @@ class DashboardPage(QWidget):
     self.navigation_menu = QVBoxLayout()
     self.main_content = QStackedWidget()
 
-    dashboard_button = Button("Dashboard")
-
-    students_button = Button("Students")
-
     logs_button = Button("Attendance Logs")
-
+    students_button = Button("Students")
     parents_button = Button("Parents")
 
-    self.navigation_menu.addWidget(dashboard_button)
-    self.navigation_menu.addWidget(students_button)
     self.navigation_menu.addWidget(logs_button)
+    self.navigation_menu.addWidget(students_button)
     self.navigation_menu.addWidget(parents_button)
     self.navigation_menu.addStretch()
+
+    layout.addLayout(self.navigation_menu)
+    
+    self.setLayout(layout)
