@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit
 
 from components.alert_message import AlertMessage
 from components.button import Button
+from components.message_box import MessageBox
 from components.text_field import TextField
 
 from modules.auth.controller import login
@@ -49,6 +50,8 @@ class LoginPage(QWidget):
     main_layout.addItem(bottom_spacer)
 
     self.setLayout(main_layout)
+
+    self.message_box = MessageBox(self)
 
   def handle_login(self):
     email = self.email_field.get_text()
