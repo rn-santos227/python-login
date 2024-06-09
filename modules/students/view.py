@@ -52,4 +52,12 @@ class StudentPage(QWidget):
     self.setLayout(main_layout)
 
   def create_student(self):
+    email = self.email_field.get_text()
+    password = self.password_field.get_text()
+    full_name = self.fullname_field.get_text()
+    student_number = self.student_number_field.get_text()
+    section = self.section_field.get_text()
+    level =  self.level_field .get_text()
+
+  def load_students(self):
     pass
