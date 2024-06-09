@@ -61,6 +61,7 @@ class LoginPage(QWidget):
       print("Login Success.")
       self.password_field.clear_text()
       self.email_field.clear_text()
+      self.message_box.show_message(title="Information", message="Login Succssful.")
       self.pages_handler.switch_to_dashboard_page()
 
     else:
