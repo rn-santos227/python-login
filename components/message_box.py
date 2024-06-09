@@ -8,3 +8,12 @@ class MessageBox:
     msg_box = QMessageBox(self.parent)
     msg_box.setWindowTitle(title)
     msg_box.setText(message)
+
+    if message_type == "information":
+        msg_box.setIcon(QMessageBox.Information)
+    elif message_type == "warning":
+        msg_box.setIcon(QMessageBox.Warning)
+    elif message_type == "error":
+        msg_box.setIcon(QMessageBox.Critical)
+    elif message_type == "question":
+        msg_box.setIcon(QMessageBox.Question)
