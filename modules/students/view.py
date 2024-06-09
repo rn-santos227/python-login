@@ -1,8 +1,9 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
 
-
 from components.button import Button
 from components.text_field import TextField
+
+from modules.students.model import Student
 
 class StudentPage(QWidget):
   def __init__(self, pages_handler):
@@ -58,6 +59,16 @@ class StudentPage(QWidget):
     student_number = self.student_number_field.get_text()
     section = self.section_field.get_text()
     level =  self.level_field .get_text()
+    
+    new_student = Student(
+      email = email,
+      password = password,
+      full_name = full_name,
+      student_number = student_number,
+      section = section,
+      level = level,
+      status = "active"
+    )
 
   def load_students(self):
     pass
