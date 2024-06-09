@@ -45,7 +45,6 @@ def get_admin_by_email(email) -> Union[Admin, None]:
   finally:
     cursor.close()
 
-
 def get_admins(query, action) -> Union[list[Admin], None]:
   sql_query = builder(table, query, action)
   cursor = DB.connect_db().cursor()

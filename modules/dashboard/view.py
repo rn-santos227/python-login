@@ -23,6 +23,8 @@ class DashboardPage(QWidget):
     students_button.connect_signal(self.handle_student)
 
     parents_button = Button("Parents")
+
+    users_button = Button("Admin Users")
     
     logout_button = Button("Log Out")
     logout_button.connect_signal(self.handle_logout)
@@ -30,6 +32,7 @@ class DashboardPage(QWidget):
     self.navigation_menu.addWidget(logs_button)
     self.navigation_menu.addWidget(students_button)
     self.navigation_menu.addWidget(parents_button)
+    self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addStretch()
 
