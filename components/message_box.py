@@ -6,3 +6,5 @@ class MessageBox:
 
   def show_message(self, title, message, message_type="information"):
     msg_box = QMessageBox(self.parent)
+    msg_box.setWindowTitle(title)
+    msg_box.setText(message)
