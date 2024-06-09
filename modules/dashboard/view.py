@@ -32,7 +32,7 @@ class DashboardPage(QWidget):
     self.navigation_menu.addWidget(logs_button)
     self.navigation_menu.addWidget(students_button)
     self.navigation_menu.addWidget(parents_button)
-    self.navigation_menu.addWidget(logout_button)
+    self.navigation_menu.addWidget(users_button)
     self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addStretch()
 
