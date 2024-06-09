@@ -1,3 +1,5 @@
+import modules.students.controller as student_controller
+
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
 
 from components.button import Button
@@ -72,6 +74,8 @@ class StudentPage(QWidget):
       level = level,
       status = "active"
     )
+
+    student_controller.create_student(new_student)
 
   def load_students(self):
     pass
