@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
 
 from components.button import Button
+from components.message_box import MessageBox
 from components.text_field import TextField
 
 from modules.students.model import Student
@@ -51,6 +52,8 @@ class StudentPage(QWidget):
     main_layout.addWidget(self.table_widget)
   
     self.setLayout(main_layout)
+    
+    self.message_box = MessageBox(self)
 
   def create_student(self):
     email = self.email_field.get_text()
