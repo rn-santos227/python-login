@@ -13,6 +13,9 @@ class AdminsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
+    self.message_box = MessageBox(self)
+    self.validation_handler = ValidationHandler()
+    self.admins = []
     self.init_ui()
 
   def init_ui(self):
@@ -44,3 +47,11 @@ class AdminsPage(QWidget):
     self.table_widget.setColumnCount(4)
     self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+    main_layout.addLayout(left_layout)
+    main_layout.addWidget(self.table_widget)
+  
+    self.setLayout(main_layout)
+
+  def load_admins(self):
+    self.admins = admin_controller.get_students("status = 'active'", "select")
