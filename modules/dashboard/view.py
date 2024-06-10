@@ -4,6 +4,7 @@ from PyQt5.QtCore import Qt
 from components.button import Button
 
 from modules.logs.view import LogsPage
+from modules.parents.view import ParentsPage
 from modules.students.view import StudentPage
 
 class DashboardAdminPage(QWidget):
@@ -13,6 +14,10 @@ class DashboardAdminPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
+    self.logs_content = LogsPage(self)
+    self.parents_content = ParentsPage(self)
+    self.students_content = StudentPage(self)
+
     layout = QHBoxLayout(self)
 
     self.navigation_menu = QVBoxLayout()
@@ -25,6 +30,7 @@ class DashboardAdminPage(QWidget):
     students_button.connect_signal(self.handle_student)
 
     parents_button = Button("Parents")
+    students_button.connect_signal(self.handle_parents)
 
     users_button = Button("Admin Users")
     
@@ -38,10 +44,8 @@ class DashboardAdminPage(QWidget):
     self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addStretch()
 
-    self.logs_content = LogsPage(self)
-    self.students_content = StudentPage(self)
-
     self.main_content.addWidget(self.logs_content)
+    self.main_content.addWidget(self.parents_content)
     self.main_content.addWidget(self.students_content)
 
     layout.addLayout(self.navigation_menu)
@@ -52,6 +56,9 @@ class DashboardAdminPage(QWidget):
 
   def handle_student(self):
     self.main_content.setCurrentWidget(self.students_content)
+
+  def handle_parents(self):
+    self.main_content.setCurrentWidget(self.parents_content)
 
   def handle_log(self):
     self.main_content.setCurrentWidget(self.logs_content)
