@@ -104,7 +104,7 @@ class StudentPage(QWidget):
   def load_students(self):
     self.students = student_controller.get_students("status = 'active'", "select")
     self.table_widget.setRowCount(0)
-    print(self.students)
+    
     if not self.students:
       return
 
