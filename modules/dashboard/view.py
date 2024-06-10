@@ -3,6 +3,7 @@ from PyQt5.QtCore import Qt
 
 from components.button import Button
 
+from modules.logs.view import LogsPage
 from modules.students.view import StudentPage
 
 class DashboardPage(QWidget):
@@ -37,20 +38,23 @@ class DashboardPage(QWidget):
     self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addStretch()
 
+    self.logs_content = LogsPage(self)
     self.students_content = StudentPage(self)
 
+    self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.students_content)
 
     layout.addLayout(self.navigation_menu)
     layout.addWidget(self.main_content)
     
     self.setLayout(layout)
+    self.handle_log()
 
   def handle_student(self):
     self.main_content.setCurrentWidget(self.students_content)
 
   def handle_log(self):
-    pass
+    self.main_content.setCurrentWidget(self.logs_content)
 
   def handle_logout(self):
     self.pages_handler.switch_to_login_page()
