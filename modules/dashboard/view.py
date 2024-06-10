@@ -6,7 +6,7 @@ from components.button import Button
 from modules.logs.view import LogsPage
 from modules.students.view import StudentPage
 
-class DashboardPage(QWidget):
+class DashboardAdminPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
