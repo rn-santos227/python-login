@@ -29,6 +29,7 @@ class StudentPage(QWidget):
     self.password_field = TextField(label_text="Password", placeholder_text="Enter student password.")
     self.password_field.text_field.setEchoMode(QLineEdit.Password)
     self.fullname_field = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
+    self.contact_field = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
     self.student_number_field = TextField(label_text="Student Number", placeholder_text="Enter student number.")
     self.section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
     self.level_field = TextField(label_text="Student Level", placeholder_text="Enter student level.")
@@ -42,6 +43,7 @@ class StudentPage(QWidget):
     create_layout.addWidget(self.email_field)
     create_layout.addWidget(self.password_field)
     create_layout.addWidget(self.fullname_field)
+    create_layout.addWidget(self.contact_field)
     create_layout.addWidget(self.student_number_field)
     create_layout.addWidget(self.section_field)
     create_layout.addWidget(self.level_field)
@@ -65,6 +67,7 @@ class StudentPage(QWidget):
     email = self.email_field.get_text()
     password = self.password_field.get_text()
     full_name = self.fullname_field.get_text()
+    contact_number = self.contact_field.get_text()
     student_number = self.student_number_field.get_text()
     section = self.section_field.get_text()
     level =  self.level_field .get_text()
@@ -73,18 +76,20 @@ class StudentPage(QWidget):
       (self.validation_handler.is_valid_email, email, "Invalid email address."),
       (self.validation_handler.is_not_empty, password, "Password cannot be empty."),
       (self.validation_handler.is_not_empty, full_name, "Full name cannot be empty."),
+      (self.validation_handler.is_not_empty, contact_number, "Contact number cannot be empty."),
       (self.validation_handler.is_not_empty, student_number, "Student number cannot be empty."),
       (self.validation_handler.is_not_empty, section, "Section cannot be empty."),
       (self.validation_handler.is_not_empty, level, "Level cannot be empty.")
     ]
 
-    if not self.validation_handler.validate_fields(fields_to_validate):
+    if not self.validation_handler.validate_fields(self, fields_to_validate):
       return
     
     new_student = Student(
       email = email,
       password = password,
       full_name = full_name,
+      contact_number = contact_number,
       student_number = student_number,
       section = section,
       level = level,
