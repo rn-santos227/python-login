@@ -18,6 +18,7 @@ class DashboardPage(QWidget):
     self.main_content = QStackedWidget()
 
     logs_button = Button("Attendance Logs")
+    logs_button.connect_signal(self.handle_log)
     
     students_button = Button("Students")
     students_button.connect_signal(self.handle_student)
@@ -47,6 +48,9 @@ class DashboardPage(QWidget):
 
   def handle_student(self):
     self.main_content.setCurrentWidget(self.students_content)
+
+  def handle_log(self):
+    pass
 
   def handle_logout(self):
     self.pages_handler.switch_to_login_page()
