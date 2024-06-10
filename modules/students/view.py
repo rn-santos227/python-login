@@ -53,7 +53,7 @@ class StudentPage(QWidget):
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(8)
-    self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Student Number", "Contact Number", "Section", "grade", "Actions"])
+    self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Student Number", "Contact Number", "Section", "Grade", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
     main_layout.addLayout(left_layout)
@@ -104,7 +104,7 @@ class StudentPage(QWidget):
   def load_students(self):
     self.students = student_controller.get_students("status = 'active'", "select")
     self.table_widget.setRowCount(0)
-    
+
     if not self.students:
       return
 
