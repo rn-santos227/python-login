@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QStackedWidget
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget
 from PyQt5.QtCore import Qt
 
 from components.button import Button

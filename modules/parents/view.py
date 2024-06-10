@@ -1,7 +1,6 @@
 import modules.parents.controller as parent_controller
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
-from PyQt5.QtCore import Qt
 
 from components.button import Button
 from components.message_box import MessageBox
