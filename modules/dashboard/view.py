@@ -30,7 +30,7 @@ class DashboardAdminPage(QWidget):
     students_button.connect_signal(self.handle_student)
 
     parents_button = Button("Parents")
-    students_button.connect_signal(self.handle_parents)
+    parents_button.connect_signal(self.handle_parents)
 
     users_button = Button("Admin Users")
     
