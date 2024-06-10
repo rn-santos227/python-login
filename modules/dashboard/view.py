@@ -58,3 +58,8 @@ class DashboardAdminPage(QWidget):
 
   def handle_logout(self):
     self.pages_handler.switch_to_login_page()
+
+class DashboardStudentPage(QWidget):
+  def __init__(self, pages_handler):
+    super().__init__()
+    self.pages_handler = pages_handler

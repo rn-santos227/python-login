@@ -45,7 +45,7 @@ def get_admin_by_email(email) -> Union[Admin, None]:
   finally:
     cursor.close()
 
-def get_admins(query, action) -> Union[list[Admin], None]:
+def get_admins(query, action) -> list[Admin]:
   sql_query = builder(table, query, action)
   cursor = DB.connect_db().cursor()
   
@@ -57,7 +57,7 @@ def get_admins(query, action) -> Union[list[Admin], None]:
     for row in rows:
       admin = Admin(*row)
       admins.append(admin)
-    return admins if admins else "No admin records available."
+    return admins
   
   except Exception as e:
     print(f"Error: {e}")

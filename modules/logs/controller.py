@@ -27,7 +27,7 @@ def get_log_by_id(id) -> Union[Log, str]:
   finally:
     cursor.close()
 
-def get_logs(query, action) -> Union[list[Log], str]:
+def get_logs(query, action) -> list[Log]:
   sql_query = builder(table, query, action)
   cursor = DB.connect_db().cursor()
   
@@ -40,7 +40,7 @@ def get_logs(query, action) -> Union[list[Log], str]:
       log = Log(*row)
       logs.append(log)
 
-    return logs if logs else "No logs available."
+    return logs
   
   except Exception as e:
     print(f"Error: {e}")
@@ -48,7 +48,7 @@ def get_logs(query, action) -> Union[list[Log], str]:
   finally:
     cursor.close()
 
-def get_logs_by_student(student_id) -> Union[list[Log], str]:
+def get_logs_by_student(student_id) ->list[Log]:
   sql_query = builder(table, 'student_id = ?', "select")
   cursor = DB.connect_db().cursor()
 
@@ -61,7 +61,7 @@ def get_logs_by_student(student_id) -> Union[list[Log], str]:
       log = Log(*row)
       logs.append(log)
 
-    return logs if logs else "No logs available."
+    return logs
   
   except Exception as e:
     print(f"Error: {e}")
