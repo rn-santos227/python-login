@@ -8,7 +8,7 @@ from modules.logs.model import Log
 table = "logs"
 
 def get_log_by_id(id) -> Union[Log, str]:
-  sql_query = builder(table, 'id = ?', 'select')
+  sql_query = builder(table, 'id = ?', "select")
   cursor = DB.connect_db().cursor()
   
   try:
@@ -49,7 +49,7 @@ def get_logs(query, action) -> Union[list[Log], str]:
     cursor.close()
 
 def get_logs_by_student(student_id) -> Union[list[Log], str]:
-  sql_query = builder(table, 'student_id = ?', 'select')
+  sql_query = builder(table, 'student_id = ?', "select")
   cursor = DB.connect_db().cursor()
 
   try:
@@ -72,7 +72,7 @@ def get_logs_by_student(student_id) -> Union[list[Log], str]:
 
 def create_log(log: Log) -> Log:
   columns = "(student_id, ip_address)"
-  sql_query = builder(table, f"{columns} VALUES (?, ?)", 'insert')
+  sql_query = builder(table, f"{columns} VALUES (?, ?)", "insert")
 
   connection = DB.connect_db()
   cursor = connection.cursor()
@@ -94,7 +94,7 @@ def add_login_time(log: Log) -> Log:
     f"login_time = '{log.login_time}'"
   )
   where_clause = f"id = {log.id}"
-  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", "update")
     
   connection = DB.connect_db()
   cursor = connection.cursor()
@@ -115,7 +115,7 @@ def add_logout_time(log: Log) -> Log:
     f"logout_time = '{log.logout_time}'"
   )
   where_clause = f"id = {log.id}"
-  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", "update")
 
   connection = DB.connect_db()
   cursor = connection.cursor()
@@ -137,7 +137,7 @@ def update_log(log: Log) -> Log:
     f"logout_time = '{log.logout_time}'"
   )
   where_clause = f"id = {log.id}"
-  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", "update")
 
   connection = DB.connect_db()
   cursor = connection.cursor()
@@ -155,7 +155,7 @@ def update_log(log: Log) -> Log:
 
 def delete_log(id) -> bool:
   where_clause = f"id = {id}"
-  sql_query = builder(table, f"WHERE {where_clause}", 'delete')
+  sql_query = builder(table, f"WHERE {where_clause}", "delete")
 
   connection = DB.connect_db()
   cursor = connection.cursor()

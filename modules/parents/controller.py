@@ -7,7 +7,7 @@ from modules.parents.model import Parent
 table = "parents"
 
 def get_parent_by_id(id) -> Union[Parent, str]:
-  sql_query = builder(table, 'id = ?', 'select')
+  sql_query = builder(table, 'id = ?', "select")
   cursor = DB.connect_db().cursor()
   
   try:
@@ -48,7 +48,7 @@ def get_parents(query, action) -> Union[list[Parent], str]:
 
 def create_parent(parent: Parent) -> Parent:
   columns = "(student_id, full_name, contact)" 
-  sql_query = builder(table, f"{columns} VALUES (?, ?, ?)", 'insert')
+  sql_query = builder(table, f"{columns} VALUES (?, ?, ?)", "insert")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
@@ -70,7 +70,7 @@ def update_parent(parent: Parent) -> Parent:
     f"contact_number = '{parent.contact_number}', "
   )
   where_clause = f"id = {parent.id}"
-  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", 'update')
+  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", "update")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
@@ -87,7 +87,7 @@ def update_parent(parent: Parent) -> Parent:
 
 def delete_parent(id) -> bool:
   where_clause = f"id = {id}"
-  sql_query = builder(table, f"WHERE {where_clause}", 'delete')
+  sql_query = builder(table, f"WHERE {where_clause}", "delete")
   connection = DB.connect_db()
   cursor = connection.cursor()
 

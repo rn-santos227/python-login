@@ -15,6 +15,7 @@ class StudentPage(QWidget):
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
     self.validation_handler = ValidationHandler()
+    self.students = []
     self.init_ui()
 
   def init_ui(self):
@@ -57,6 +58,7 @@ class StudentPage(QWidget):
     main_layout.addWidget(self.table_widget)
   
     self.setLayout(main_layout)
+    self.load_students()
     
 
   def create_student(self):
@@ -93,4 +95,5 @@ class StudentPage(QWidget):
     self.message_box.show_message("Success", "Student created successfully.", "information")
 
   def load_students(self):
-    pass
+    self.students = student_controller.get_students("status = 'active'", "select")
+    print(self.students)
