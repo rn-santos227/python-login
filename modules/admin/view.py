@@ -54,7 +54,7 @@ class AdminsPage(QWidget):
     self.setLayout(main_layout)
 
   def load_admins(self):
-    self.admins = admin_controller.get_students("status = 'active'", "select")
+    self.admins = admin_controller.get_admins("status = 'active'", "select")
     self.table_widget.setRowCount(0)
 
     if not self.students:
@@ -67,3 +67,16 @@ class AdminsPage(QWidget):
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(admin.id)))
       self.table_widget.setItem(row_position, 1, QTableWidgetItem(admin.full_name))
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(admin.email))
+
+      update_button = QPushButton("Update")
+      delete_button = QPushButton("Delete")
+
+      button_layout = QHBoxLayout()
+      button_layout.addWidget(update_button)
+      button_layout.addWidget(delete_button)
+      button_layout.setContentsMargins(0, 0, 0, 0)
+      
+      button_widget = QWidget()
+      button_widget.setLayout(button_layout)
+      
+      self.table_widget.setCellWidget(row_position, 3, button_widget)
