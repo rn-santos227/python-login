@@ -1,13 +1,13 @@
 from modules.users.model import User
 
 class Student(User):
-  def __init__(self, id=None, email=None, password=None, full_name=None, student_number=None, contact_number=None, section=None, level=None, status="active"):
+  def __init__(self, id=None, email=None, password=None, full_name=None, student_number=None, contact_number=None, section=None, grade=None, status=None):
     super().__init__(id, email, password)
     self.full_name = full_name
     self.student_number = student_number
     self.contact_number = contact_number
     self.section = section
-    self.level = level
+    self.grade = grade
     self.status = status
 
   @User.password.setter
@@ -25,7 +25,7 @@ class Student(User):
       student_number TEXT,
       contact_number TEXT,
       section TEXT,
-      level TEXT,
-      status TEXT
+      grade TEXT,
+      status VARCHAR(10)
     );
     '''

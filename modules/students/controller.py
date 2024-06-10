@@ -45,7 +45,7 @@ def get_student_by_email(email) -> Union[Student, None]:
   finally:
     cursor.close()
 
-def get_students(query, action) -> Union[list[Student], None]:
+def get_students(query, action) -> list[Student]:
   sql_query = builder(table, query, action)
   cursor = DB.connect_db().cursor()
   
@@ -57,7 +57,7 @@ def get_students(query, action) -> Union[list[Student], None]:
     for row in rows:
       student = Student(*row)
       students.append(student)
-    return students if students else "No student records available."
+    return students
   
   except Exception as e:
     print(f"Error: {e}")
@@ -66,13 +66,13 @@ def get_students(query, action) -> Union[list[Student], None]:
     cursor.close()
 
 def create_student(student: Student) -> Student:
-  columns = "(email, password, full_name, student_number, contact_number, section, level, status)"
+  columns = "(email, password, full_name, student_number, contact_number, section, grade, status)"
   sql_query = builder(table, f"{columns} VALUES (?, ?, ?, ?, ?, ?, ?, ?)", "insert")
   connection = DB.connect_db()
   cursor = connection.cursor()
   
   try:
-    values = (student.email, student.password, student.full_name, student.student_number, student.contact_number, student.section, student.level, student.status)
+    values = (student.email, student.password, student.full_name, student.student_number, student.contact_number, student.section, student.grade, student.status)
     cursor.execute(sql_query, values)
     connection.commit()
     return student
@@ -91,7 +91,7 @@ def update_student(student: Student) -> Student:
     f"student_number = '{student.student_number}', "
     f"contact_number = '{student.contact_number}', "
     f"section = '{student.section}', "
-    f"level = '{student.level}', "
+    f"grade = '{student.grade}', "
     f"status = '{student.status}'"
   )
   where_clause = f"id = {student.id}"

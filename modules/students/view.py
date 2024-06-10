@@ -32,7 +32,7 @@ class StudentPage(QWidget):
     self.contact_field = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
     self.student_number_field = TextField(label_text="Student Number", placeholder_text="Enter student number.")
     self.section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
-    self.level_field = TextField(label_text="Student Level", placeholder_text="Enter student level.")
+    self.grade_field = TextField(label_text="Student grade", placeholder_text="Enter student grade.")
 
     create_button = Button("Create Student")
     create_button.connect_signal(self.create_student)
@@ -46,14 +46,14 @@ class StudentPage(QWidget):
     create_layout.addWidget(self.contact_field)
     create_layout.addWidget(self.student_number_field)
     create_layout.addWidget(self.section_field)
-    create_layout.addWidget(self.level_field)
+    create_layout.addWidget(self.grade_field)
     create_layout.addLayout(button_layout)
 
     top_half_layout.addLayout(create_layout)
 
     self.table_widget = QTableWidget()
-    self.table_widget.setColumnCount(7)
-    self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Student Number", "Contact Number", "Section", "Level", "Actions"])
+    self.table_widget.setColumnCount(8)
+    self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Student Number", "Contact Number", "Section", "grade", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
     main_layout.addLayout(top_half_layout)
@@ -70,7 +70,7 @@ class StudentPage(QWidget):
     contact_number = self.contact_field.get_text()
     student_number = self.student_number_field.get_text()
     section = self.section_field.get_text()
-    level =  self.level_field .get_text()
+    grade =  self.grade_field.get_text()
 
     fields_to_validate = [
       (self.validation_handler.is_valid_email, email, "Invalid email address."),
@@ -79,7 +79,7 @@ class StudentPage(QWidget):
       (self.validation_handler.is_not_empty, contact_number, "Contact number cannot be empty."),
       (self.validation_handler.is_not_empty, student_number, "Student number cannot be empty."),
       (self.validation_handler.is_not_empty, section, "Section cannot be empty."),
-      (self.validation_handler.is_not_empty, level, "Level cannot be empty.")
+      (self.validation_handler.is_not_empty, grade, "Grade cannot be empty.")
     ]
 
     if not self.validation_handler.validate_fields(self, fields_to_validate):
@@ -92,14 +92,22 @@ class StudentPage(QWidget):
       contact_number = contact_number,
       student_number = student_number,
       section = section,
-      level = level
+      grade = grade,
+      status = "active"
     )
 
     student_controller.create_student(new_student)
+    self.load_students()
+    self._clear_fields()
     self.message_box.show_message("Success", "Student created successfully.", "information")
 
   def load_students(self):
     self.students = student_controller.get_students("status = 'active'", "select")
+    self.table_widget.setRowCount(0)
+    print(self.students)
+    if not self.students:
+      return
+
     for student in self.students:
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
@@ -110,8 +118,7 @@ class StudentPage(QWidget):
       self.table_widget.setItem(row_position, 3, QTableWidgetItem(student.student_number))
       self.table_widget.setItem(row_position, 4, QTableWidgetItem(student.contact_number))
       self.table_widget.setItem(row_position, 5, QTableWidgetItem(student.section))
-      self.table_widget.setItem(row_position, 6, QTableWidgetItem(student.level))
-
+      self.table_widget.setItem(row_position, 6, QTableWidgetItem(student.grade))
 
       update_button = QPushButton("Update")
       delete_button = QPushButton("Delete")
@@ -125,3 +132,12 @@ class StudentPage(QWidget):
       button_widget.setLayout(button_layout)
       
       self.table_widget.setCellWidget(row_position, 7, button_widget)
+
+  def _clear_fields(self):
+    self.email_field.clear_text()
+    self.password_field.clear_text()
+    self.fullname_field.clear_text()
+    self.contact_field.clear_text()
+    self.student_number_field.clear_text()
+    self.section_field.clear_text()
+    self.grade_field.clear_text()
