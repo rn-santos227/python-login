@@ -53,7 +53,7 @@ class StudentPage(QWidget):
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(7)
-    self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Student Number", "Section", "Level", "Actions"])
+    self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Student Number", "Contact Number", "Section", "Level", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
     main_layout.addLayout(top_half_layout)
@@ -104,3 +104,24 @@ class StudentPage(QWidget):
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
 
+      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(student.id)))
+      self.table_widget.setItem(row_position, 1, QTableWidgetItem(student.full_name))
+      self.table_widget.setItem(row_position, 2, QTableWidgetItem(student.email))
+      self.table_widget.setItem(row_position, 3, QTableWidgetItem(student.student_number))
+      self.table_widget.setItem(row_position, 4, QTableWidgetItem(student.contact_number))
+      self.table_widget.setItem(row_position, 5, QTableWidgetItem(student.section))
+      self.table_widget.setItem(row_position, 6, QTableWidgetItem(student.level))
+
+
+      update_button = QPushButton("Update")
+      delete_button = QPushButton("Delete")
+      
+      button_layout = QHBoxLayout()
+      button_layout.addWidget(update_button)
+      button_layout.addWidget(delete_button)
+      button_layout.setContentsMargins(0, 0, 0, 0)
+      
+      button_widget = QWidget()
+      button_widget.setLayout(button_layout)
+      
+      self.table_widget.setCellWidget(row_position, 7, button_widget)
