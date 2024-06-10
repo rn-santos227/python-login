@@ -55,3 +55,15 @@ class AdminsPage(QWidget):
 
   def load_admins(self):
     self.admins = admin_controller.get_students("status = 'active'", "select")
+    self.table_widget.setRowCount(0)
+
+    if not self.students:
+      return
+    
+    for admin in self.admins:
+      row_position = self.table_widget.rowCount()
+      self.table_widget.insertRow(row_position)
+
+      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(admin.id)))
+      self.table_widget.setItem(row_position, 1, QTableWidgetItem(admin.full_name))
+      self.table_widget.setItem(row_position, 2, QTableWidgetItem(admin.email))
