@@ -78,7 +78,7 @@ class StudentPage(QWidget):
       (self.validation_handler.is_not_empty, level, "Level cannot be empty.")
     ]
 
-    if not self.validate_fields(fields_to_validate):
+    if not self.validation_handler.validate_fields(fields_to_validate):
       return
     
     new_student = Student(

@@ -15,6 +15,6 @@ def builder(table, query, action):
     sql_query = f"DELETE FROM {table} WHERE {query};"
 
   else:
-    raise ValueError("Invalid action. Supported actions are: "select", "insert", "update", "delete".")
+    raise ValueError("Invalid action. Supported actions are: 'select', 'insert', 'update', 'delete'.")
 
   return sql_query 

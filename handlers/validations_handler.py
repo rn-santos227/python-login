@@ -24,7 +24,7 @@ class ValidationHandler:
     return re.match(phone_regex, input_str) is not None
   
   @staticmethod
-  def validate_field(self, fields):
+  def validate_fields(self, fields):
     for validation_method, field_value, error_message in fields:
       if not validation_method(field_value):
         self.message_box.show_message("Validation Error", error_message, "error")
