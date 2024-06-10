@@ -1,7 +1,7 @@
 from modules.users.model import User
 
 class Student(User):
-  def __init__(self, id, email, password, full_name, student_number, contact_number, section, level, status):
+  def __init__(self, id=None, email=None, password=None, full_name=None, student_number=None, contact_number=None, section=None, level=None, status="active"):
     super().__init__(id, email, password)
     self.full_name = full_name
     self.student_number = student_number

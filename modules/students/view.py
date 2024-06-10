@@ -92,8 +92,7 @@ class StudentPage(QWidget):
       contact_number = contact_number,
       student_number = student_number,
       section = section,
-      level = level,
-      status = "active"
+      level = level
     )
 
     student_controller.create_student(new_student)

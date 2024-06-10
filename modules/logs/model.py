@@ -3,11 +3,11 @@ from modules.students.controller import get_student_by_id
 
 class Log:
   def __init__(self,
-    id,
-    student_id,
-    login_time,
-    logout_time,
-    ip_address,
+    id=None,
+    student_id=None,
+    login_time=None,
+    logout_time=None,
+    ip_address=None,
   ):
     self.id = id
     self.student_id = student_id
