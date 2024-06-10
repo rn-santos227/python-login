@@ -6,12 +6,15 @@ from components.button import Button
 from components.message_box import MessageBox
 from components.text_field import TextField
 
+from handlers.validations_handler import ValidationHandler
 from modules.students.model import Student
 
 class StudentPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
+    self.message_box = MessageBox(self)
+    self.validation_handler = ValidationHandler()
     self.init_ui()
 
   def init_ui(self):
@@ -55,7 +58,6 @@ class StudentPage(QWidget):
   
     self.setLayout(main_layout)
     
-    self.message_box = MessageBox(self)
 
   def create_student(self):
     email = self.email_field.get_text()
@@ -88,6 +90,7 @@ class StudentPage(QWidget):
     )
 
     student_controller.create_student(new_student)
+    self.message_box.show_message("Success", "Student created successfully.", "information")
 
   def load_students(self):
     pass
