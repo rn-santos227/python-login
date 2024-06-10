@@ -4,6 +4,7 @@ class QuestionBox(QDialog):
   def __init__(self, title="Question", message="Are you sure?", parent=None):
     super().__init__(parent)
     self.setWindowTitle(title)
+    self.init_ui(message)
 
   def init_ui(self, message):
     self.layout = QVBoxLayout()
