@@ -31,7 +31,6 @@ class AdminsPage(QWidget):
     self.fullname_field = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
 
     create_button = Button("Create Admin")
-    create_button.connect_signal(self.create_student)
 
     button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     button_layout.addWidget(create_button)
@@ -52,12 +51,13 @@ class AdminsPage(QWidget):
     main_layout.addWidget(self.table_widget)
   
     self.setLayout(main_layout)
+    self.load_admins()
 
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
     self.table_widget.setRowCount(0)
 
-    if not self.students:
+    if not self.admins:
       return
     
     for admin in self.admins:

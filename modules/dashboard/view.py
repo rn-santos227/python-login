@@ -3,6 +3,7 @@ from PyQt5.QtCore import Qt
 
 from components.button import Button
 
+from modules.admin.view import AdminsPage
 from modules.logs.view import LogsPage
 from modules.parents.view import ParentsPage
 from modules.students.view import StudentPage
@@ -14,6 +15,7 @@ class DashboardAdminPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
+    self.admins_content = AdminsPage(self)
     self.logs_content = LogsPage(self)
     self.parents_content = ParentsPage(self)
     self.students_content = StudentPage(self)
@@ -24,15 +26,16 @@ class DashboardAdminPage(QWidget):
     self.main_content = QStackedWidget()
 
     logs_button = Button("Attendance Logs")
-    logs_button.connect_signal(self.handle_log)
+    logs_button.connect_signal(self.handle_logs)
     
     students_button = Button("Students")
-    students_button.connect_signal(self.handle_student)
+    students_button.connect_signal(self.handle_students)
 
     parents_button = Button("Parents")
     parents_button.connect_signal(self.handle_parents)
 
     users_button = Button("Admin Users")
+    users_button.connect_signal(self.handle_admins)
     
     logout_button = Button("Log Out")
     logout_button.connect_signal(self.handle_logout)
@@ -44,6 +47,7 @@ class DashboardAdminPage(QWidget):
     self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addStretch()
 
+    self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.parents_content)
     self.main_content.addWidget(self.students_content)
@@ -52,15 +56,18 @@ class DashboardAdminPage(QWidget):
     layout.addWidget(self.main_content)
     
     self.setLayout(layout)
-    self.handle_log()
+    self.handle_logs()
 
-  def handle_student(self):
+  def handle_admins(self):
+    self.main_content.setCurrentWidget(self.admins_content)
+
+  def handle_students(self):
     self.main_content.setCurrentWidget(self.students_content)
 
   def handle_parents(self):
     self.main_content.setCurrentWidget(self.parents_content)
 
-  def handle_log(self):
+  def handle_logs(self):
     self.main_content.setCurrentWidget(self.logs_content)
 
   def handle_logout(self):
