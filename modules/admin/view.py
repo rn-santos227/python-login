@@ -1,6 +1,6 @@
 import modules.admin.controller as admin_controller
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
 
 from components.button import Button
 from components.message_box import MessageBox
@@ -23,7 +23,7 @@ class AdminsPage(QWidget):
     left_layout = QHBoxLayout()
     button_layout = QHBoxLayout()
 
-    create_layout = QVBoxLayout()
+    create_layout = QGridLayout()
 
     self.email_field = TextField(label_text="Email", placeholder_text="Enter admin email.")
     self.password_field = TextField(label_text="Password", placeholder_text="Enter admin password.")
@@ -35,10 +35,10 @@ class AdminsPage(QWidget):
     button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     button_layout.addWidget(create_button)
 
-    create_layout.addWidget(self.email_field)
-    create_layout.addWidget(self.password_field)
-    create_layout.addWidget(self.fullname_field)
-    create_layout.addLayout(button_layout)
+    create_layout.addWidget(self.email_field, 0, 0, 1, 2)
+    create_layout.addWidget(self.password_field, 1, 0, 1, 2)
+    create_layout.addWidget(self.fullname_field, 2, 0, 1, 2)
+    create_layout.addLayout(button_layout, 3, 0, 1, 2)
 
     left_layout.addLayout(create_layout)
 
