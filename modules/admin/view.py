@@ -78,6 +78,11 @@ class AdminsPage(QWidget):
         status = "active"
       )
 
+      admin_controller.create_admin(new_admin)
+      self.load_admins()
+      self._clear_fields()
+      self.message_box.show_message("Success", "Admin has been created successfully.", "Information")
+
     if not self.validation_handler.validate_fields(self, fields_to_validate):
       return
       
