@@ -50,4 +50,10 @@ class ParentsPage(QWidget):
     main_layout.addWidget(self.table_widget)
   
     self.setLayout(main_layout)
+
+
+  def _clear_fields(self):
+    self.student_name_field.clear_text()
+    self.parent_name_field.clear_text()
+    self.parent_contact_field.clear_text()
     
