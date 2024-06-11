@@ -31,6 +31,7 @@ class AdminsPage(QWidget):
     self.fullname_field = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
 
     create_button = Button("Create Admin")
+    create_button.connect_signal(self.create_admin)
 
     button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     button_layout.addWidget(create_button)
