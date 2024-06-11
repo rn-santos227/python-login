@@ -1,6 +1,6 @@
 import modules.parents.controller as parent_controller
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
 
 from components.button import Button
 from components.message_box import MessageBox
@@ -19,11 +19,11 @@ class ParentsPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    main_layout = QHBoxLayout()
-    left_layout = QHBoxLayout()
+    main_layout = QVBoxLayout()
+    top_layout = QHBoxLayout()
     button_layout = QHBoxLayout()
   
-    create_layout = QVBoxLayout()
+    create_layout = QGridLayout()
 
     self.student_name_field = TextField(label_text="Student Name", placeholder_text="Enter student name.")
     self.parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
@@ -34,19 +34,19 @@ class ParentsPage(QWidget):
     button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     button_layout.addWidget(create_button)
 
-    create_layout.addWidget(self.student_name_field)
-    create_layout.addWidget(self.parent_name_field)
-    create_layout.addWidget(self.parent_contact_field)
-    create_layout.addLayout(button_layout)
+    create_layout.addWidget(self.student_name_field, 0, 0, 1, 2)
+    create_layout.addWidget(self.parent_name_field, 1, 0, 1, 2)
+    create_layout.addWidget(self.parent_contact_field, 2, 0, 1, 2)
+    create_layout.addLayout(button_layout, 3, 0, 1, 2)
 
-    left_layout.addLayout(create_layout)
+    top_layout.addLayout(create_layout)
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(5)
     self.table_widget.setHorizontalHeaderLabels(["ID", "Student Name", "Parent Name", "Contact Number", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-    main_layout.addLayout(left_layout)
+    main_layout.addLayout(top_layout)
     main_layout.addWidget(self.table_widget)
   
     self.setLayout(main_layout)
