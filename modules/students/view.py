@@ -1,6 +1,6 @@
 import modules.students.controller as student_controller
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView,  QSpacerItem, QSizePolicy, QGridLayout
 
 from components.button import Button
 from components.message_box import MessageBox
@@ -19,11 +19,11 @@ class StudentPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    main_layout = QHBoxLayout()
-    left_layout = QHBoxLayout()
+    main_layout = QVBoxLayout()
+    top_layout = QHBoxLayout()
     button_layout = QHBoxLayout()
 
-    create_layout = QVBoxLayout()
+    create_layout = QGridLayout()
 
     self.email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
     self.password_field = TextField(label_text="Password", placeholder_text="Enter student password.")
@@ -32,7 +32,7 @@ class StudentPage(QWidget):
     self.contact_field = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
     self.student_number_field = TextField(label_text="Student Number", placeholder_text="Enter student number.")
     self.section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
-    self.grade_field = TextField(label_text="Student grade", placeholder_text="Enter student grade.")
+    self.grade_field = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
 
     create_button = Button("Create Student")
     create_button.connect_signal(self.create_student)
@@ -40,23 +40,30 @@ class StudentPage(QWidget):
     button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     button_layout.addWidget(create_button)
 
-    create_layout.addWidget(self.email_field)
-    create_layout.addWidget(self.password_field)
-    create_layout.addWidget(self.fullname_field)
-    create_layout.addWidget(self.contact_field)
-    create_layout.addWidget(self.student_number_field)
-    create_layout.addWidget(self.section_field)
-    create_layout.addWidget(self.grade_field)
-    create_layout.addLayout(button_layout)
+    field_layout_1 = QHBoxLayout()
+    field_layout_2 = QHBoxLayout()
 
-    left_layout.addLayout(create_layout)
+    field_layout_1.addWidget(self.contact_field)
+    field_layout_1.addWidget(self.student_number_field)
+
+    field_layout_2.addWidget(self.section_field)
+    field_layout_2.addWidget(self.grade_field)
+
+    create_layout.addWidget(self.email_field, 0, 0, 1, 2)
+    create_layout.addWidget(self.password_field, 1, 0, 1, 2)
+    create_layout.addWidget(self.fullname_field, 2, 0, 1, 2)
+    create_layout.addLayout(field_layout_1, 3, 0, 1, 2)
+    create_layout.addLayout(field_layout_2, 4, 0, 1, 2)
+    create_layout.addLayout(button_layout, 5, 0, 1, 2)
+
+    top_layout.addLayout(create_layout)
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(8)
     self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Student Number", "Contact Number", "Section", "Grade", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-    main_layout.addLayout(left_layout)
+    main_layout.addLayout(top_layout)
     main_layout.addWidget(self.table_widget)
   
     self.setLayout(main_layout)
