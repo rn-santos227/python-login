@@ -53,12 +53,17 @@ class AdminsPage(QWidget):
     self.setLayout(main_layout)
     self.load_admins()
 
+  def create_admin(self):
+    pass
+  
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
     self.table_widget.setRowCount(0)
 
     if not self.admins:
-      return
+      email = self.email_field.get_text()
+      password = self.password_field.get_text()
+      full_name = self.fullname_field.get_text()
     
     for admin in self.admins:
       row_position = self.table_widget.rowCount()
