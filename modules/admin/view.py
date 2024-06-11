@@ -71,6 +71,13 @@ class AdminsPage(QWidget):
         (self.validation_handler.is_not_empty, full_name, "Full name cannot be empty.")
       ]
 
+      new_admin = Admin(
+        full_name = full_name,
+        email = email,
+        password = password,
+        status = "active"
+      )
+
     if not self.validation_handler.validate_fields(self, fields_to_validate):
       return
       
