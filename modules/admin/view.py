@@ -19,8 +19,8 @@ class AdminsPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    main_layout = QHBoxLayout()
-    left_layout = QHBoxLayout()
+    main_layout = QVBoxLayout()
+    top_layout = QHBoxLayout()
     button_layout = QHBoxLayout()
 
     create_layout = QGridLayout()
@@ -41,14 +41,14 @@ class AdminsPage(QWidget):
     create_layout.addWidget(self.fullname_field, 2, 0, 1, 2)
     create_layout.addLayout(button_layout, 3, 0, 1, 2)
 
-    left_layout.addLayout(create_layout)
+    top_layout.addLayout(create_layout)
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(4)
     self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-    main_layout.addLayout(left_layout)
+    main_layout.addLayout(top_layout)
     main_layout.addWidget(self.table_widget)
   
     self.setLayout(main_layout)
