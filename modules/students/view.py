@@ -73,6 +73,7 @@ class StudentPage(QWidget):
     create_layout = QGridLayout()
     field_layout_1 = QHBoxLayout()
     field_layout_2 = QHBoxLayout()
+    self.button_layout = QHBoxLayout()
 
     self.email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
     self.password_field = TextField(label_text="Password", placeholder_text="Enter student password.")
@@ -82,6 +83,12 @@ class StudentPage(QWidget):
     self.student_number_field = TextField(label_text="Student Number", placeholder_text="Enter student number.")
     self.section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
     self.grade_field = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
+
+    create_button = Button("Create Student")
+    create_button.connect_signal(self.create_student)
+
+    self.button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    self.button_layout.addWidget(create_button)
 
     return create_layout
 
