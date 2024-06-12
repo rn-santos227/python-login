@@ -96,6 +96,13 @@ class StudentPage(QWidget):
     self.button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.button_layout.addWidget(create_button)
 
+    create_layout.addWidget(self.email_field, 0, 0, 1, 2)
+    create_layout.addWidget(self.password_field, 1, 0, 1, 2)
+    create_layout.addWidget(self.fullname_field, 2, 0, 1, 2)
+    create_layout.addLayout(field_layout_1, 3, 0, 1, 2)
+    create_layout.addLayout(field_layout_2, 4, 0, 1, 2)
+    create_layout.addLayout(self.button_layout, 5, 0, 1, 2)
+
     return create_layout
 
   def create_student(self):
