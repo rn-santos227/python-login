@@ -84,6 +84,12 @@ class StudentPage(QWidget):
     self.section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
     self.grade_field = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
 
+    field_layout_1.addWidget(self.contact_field)
+    field_layout_1.addWidget(self.student_number_field)
+
+    field_layout_2.addWidget(self.section_field)
+    field_layout_2.addWidget(self.grade_field)
+
     create_button = Button("Create Student")
     create_button.connect_signal(self.create_student)
 
