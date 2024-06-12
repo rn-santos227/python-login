@@ -71,6 +71,8 @@ class StudentPage(QWidget):
     
   def init_create_layout(self):
     create_layout = QGridLayout()
+    field_layout_1 = QHBoxLayout()
+    field_layout_2 = QHBoxLayout()
 
     self.email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
     self.password_field = TextField(label_text="Password", placeholder_text="Enter student password.")
