@@ -69,6 +69,10 @@ class StudentPage(QWidget):
     self.setLayout(main_layout)
     self.load_students()
     
+  def init_create_layout(self):
+    create_layout = QGridLayout()
+
+    return create_layout
 
   def create_student(self):
     email = self.email_field.get_text()
