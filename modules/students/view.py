@@ -21,40 +21,8 @@ class StudentPage(QWidget):
   def init_ui(self):
     main_layout = QVBoxLayout()
     top_layout = QHBoxLayout()
-    button_layout = QHBoxLayout()
 
-    create_layout = QGridLayout()
-
-    self.email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
-    self.password_field = TextField(label_text="Password", placeholder_text="Enter student password.")
-    self.password_field.text_field.setEchoMode(QLineEdit.Password)
-    self.fullname_field = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
-    self.contact_field = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
-    self.student_number_field = TextField(label_text="Student Number", placeholder_text="Enter student number.")
-    self.section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
-    self.grade_field = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
-
-    create_button = Button("Create Student")
-    create_button.connect_signal(self.create_student)
-
-    button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
-    button_layout.addWidget(create_button)
-
-    field_layout_1 = QHBoxLayout()
-    field_layout_2 = QHBoxLayout()
-
-    field_layout_1.addWidget(self.contact_field)
-    field_layout_1.addWidget(self.student_number_field)
-
-    field_layout_2.addWidget(self.section_field)
-    field_layout_2.addWidget(self.grade_field)
-
-    create_layout.addWidget(self.email_field, 0, 0, 1, 2)
-    create_layout.addWidget(self.password_field, 1, 0, 1, 2)
-    create_layout.addWidget(self.fullname_field, 2, 0, 1, 2)
-    create_layout.addLayout(field_layout_1, 3, 0, 1, 2)
-    create_layout.addLayout(field_layout_2, 4, 0, 1, 2)
-    create_layout.addLayout(button_layout, 5, 0, 1, 2)
+    create_layout = self.init_create_layout()
 
     top_layout.addLayout(create_layout)
 

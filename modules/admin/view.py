@@ -71,6 +71,9 @@ class AdminsPage(QWidget):
         (self.validation_handler.is_not_empty, password, "Password cannot be empty."),
         (self.validation_handler.is_not_empty, full_name, "Full name cannot be empty.")
       ]
+      
+      if not self.validation_handler.validate_fields(self, fields_to_validate):
+        return
 
       new_admin = Admin(
         full_name = full_name,
@@ -83,9 +86,6 @@ class AdminsPage(QWidget):
       self.load_admins()
       self._clear_fields()
       self.message_box.show_message("Success", "Admin has been created successfully.", "Information")
-
-    if not self.validation_handler.validate_fields(self, fields_to_validate):
-      return
       
     for admin in self.admins:
       row_position = self.table_widget.rowCount()
