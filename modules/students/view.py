@@ -22,9 +22,10 @@ class StudentPage(QWidget):
     main_layout = QVBoxLayout()
     top_layout = QHBoxLayout()
 
-    create_layout = self.init_create_layout()
+    self.create_layout = self.init_create_layout()
+    self.update_layout = self.init_update_layout()
 
-    top_layout.addLayout(create_layout)
+    top_layout.addLayout(self.create_layout)
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(8)
