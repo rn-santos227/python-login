@@ -73,6 +73,9 @@ class StudentPage(QWidget):
 
     return create_layout
 
+  def init_update_layout(self):
+    update_layout = QGridLayout()
+
   def create_student(self):
     email = self.email_field.get_text()
     password = self.password_field.get_text()
