@@ -89,7 +89,9 @@ class StudentPage(QWidget):
     self.update_grade_field = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
 
     update_button = Button("Update Student")
+    
     cancel_button = Button("Cancel Update")
+    cancel_button.connect_signal(self._switch_to_create_layout)
 
     self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.create_button_layout.addWidget(update_button)
