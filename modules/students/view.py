@@ -187,7 +187,8 @@ class StudentPage(QWidget):
     self.top_layout.addLayout(self.update_layout)
 
   def _switch_to_create_layout(self):
-    pass
+    self.top_layout.removeItem(self.update_layout)
+    self.top_layout.addLayout(self.create_layout)
 
   def _clear_fields(self):
     self.email_field.clear_text()
