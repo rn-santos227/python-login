@@ -82,6 +82,8 @@ class StudentPage(QWidget):
     self.update_button_layout = QHBoxLayout()
 
     self.update_email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
+    self.update_password_field = TextField(label_text="Password", placeholder_text="Enter student password.")
+    self.update_password_field.text_field.setEchoMode(QLineEdit.Password)
     self.update_fullname_field = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
     self.update_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
     self.update_student_number_field = TextField(label_text="Student Number", placeholder_text="Enter student number.")
@@ -104,10 +106,11 @@ class StudentPage(QWidget):
     field_layout_2.addWidget(self.update_grade_field)
 
     update_layout.addWidget(self.update_email_field, 0, 0, 1, 2)
-    update_layout.addWidget(self.update_fullname_field, 1, 0, 1, 2)
-    update_layout.addLayout(field_layout_1, 2, 0, 1, 2)
-    update_layout.addLayout(field_layout_2, 3, 0, 1, 2)
-    update_layout.addLayout(self.update_button_layout, 4, 0, 1, 2)
+    update_layout.addWidget(self.update_password_field, 1, 0, 1, 2)
+    update_layout.addWidget(self.update_fullname_field, 2, 0, 1, 2)
+    update_layout.addLayout(field_layout_1, 3, 0, 1, 2)
+    update_layout.addLayout(field_layout_2, 4, 0, 1, 2)
+    update_layout.addLayout(self.update_button_layout, 5, 0, 1, 2)
 
     return update_layout
 
@@ -184,6 +187,8 @@ class StudentPage(QWidget):
   def _load_student_for_update(self, student: Student):
     self._switch_to_update_layout()
     self.student_id = student.id
+
+    self.update_email_field.set_text(student.email)
 
   def _switch_to_update_layout(self):
     self.top_layout.removeItem(self.create_layout)
