@@ -183,7 +183,8 @@ class StudentPage(QWidget):
     pass
 
   def _switch_to_update_layout(self):
-    pass
+    self.top_layout.removeItem(self.create_layout)
+    self.top_layout.addLayout(self.update_layout)
 
   def _switch_to_create_layout(self):
     pass
