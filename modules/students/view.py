@@ -189,7 +189,12 @@ class StudentPage(QWidget):
     self.student_id = student.id
 
     self.update_email_field.set_text(student.email)
-
+    self.update_fullname_field.set_text(student.full_name)
+    self.update_student_number_field.set_text(student.student_number)
+    self.update_contact_field.set_text(student.contact_number)
+    self.update_section_field.set_text(student.section)
+    self.update_grade_field.set_text(student.grade)
+    
   def _switch_to_update_layout(self):
     self.top_layout.removeItem(self.create_layout)
     self.top_layout.addLayout(self.update_layout)
