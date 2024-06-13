@@ -41,7 +41,7 @@ class StudentPage(QWidget):
     create_layout = QGridLayout()
     field_layout_1 = QHBoxLayout()
     field_layout_2 = QHBoxLayout()
-    self.button_layout = QHBoxLayout()
+    self.create_button_layout = QHBoxLayout()
 
     self.email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
     self.password_field = TextField(label_text="Password", placeholder_text="Enter student password.")
@@ -61,15 +61,15 @@ class StudentPage(QWidget):
     create_button = Button("Create Student")
     create_button.connect_signal(self.create_student)
 
-    self.button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
-    self.button_layout.addWidget(create_button)
+    self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    self.create_button_layout.addWidget(create_button)
 
     create_layout.addWidget(self.email_field, 0, 0, 1, 2)
     create_layout.addWidget(self.password_field, 1, 0, 1, 2)
     create_layout.addWidget(self.fullname_field, 2, 0, 1, 2)
     create_layout.addLayout(field_layout_1, 3, 0, 1, 2)
     create_layout.addLayout(field_layout_2, 4, 0, 1, 2)
-    create_layout.addLayout(self.button_layout, 5, 0, 1, 2)
+    create_layout.addLayout(self.create_button_layout, 5, 0, 1, 2)
 
     return create_layout
 
@@ -78,6 +78,7 @@ class StudentPage(QWidget):
 
     field_layout_1 = QHBoxLayout()
     field_layout_2 = QHBoxLayout()
+    self.button_layout = QHBoxLayout()
 
     self.update_email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
     self.update_fullname_field = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
@@ -85,6 +86,9 @@ class StudentPage(QWidget):
     self.update_student_number_field = TextField(label_text="Student Number", placeholder_text="Enter student number.")
     self.update_section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
     self.update_grade_field = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
+
+    update_button = Button("Update Student")
+    cancel_button = Button("Cancel Update")
 
   def create_student(self):
     email = self.email_field.get_text()
