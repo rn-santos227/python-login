@@ -94,6 +94,12 @@ class StudentPage(QWidget):
     self.create_button_layout.addWidget(update_button)
     self.create_button_layout.addWidget(cancel_button)
 
+    field_layout_1.addWidget(self.update_contact_field)
+    field_layout_1.addWidget(self.update_student_number_field)
+
+    field_layout_2.addWidget(self.update_section_field)
+    field_layout_2.addWidget(self.update_grade_field)
+
   def create_student(self):
     email = self.email_field.get_text()
     password = self.password_field.get_text()
