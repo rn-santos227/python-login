@@ -184,6 +184,9 @@ class StudentPage(QWidget):
   def _switch_to_update_layout(self):
     pass
 
+  def _switch_to_create_layout(self):
+    pass
+
   def _clear_fields(self):
     self.email_field.clear_text()
     self.password_field.clear_text()
