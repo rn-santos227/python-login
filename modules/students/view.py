@@ -96,8 +96,8 @@ class StudentPage(QWidget):
     cancel_button.connect_signal(self._switch_to_create_layout)
 
     self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
-    self.create_button_layout.addWidget(update_button)
-    self.create_button_layout.addWidget(cancel_button)
+    self.update_button_layout.addWidget(update_button)
+    self.update_button_layout.addWidget(cancel_button)
 
     field_layout_1.addWidget(self.update_contact_field)
     field_layout_1.addWidget(self.update_student_number_field)
