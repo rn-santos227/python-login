@@ -178,6 +178,9 @@ class StudentPage(QWidget):
       
       self.table_widget.setCellWidget(row_position, 7, button_widget)
 
+  def _load_student_for_update(self, student: Student):
+    pass
+
   def _clear_fields(self):
     self.email_field.clear_text()
     self.password_field.clear_text()
