@@ -78,7 +78,7 @@ class StudentPage(QWidget):
 
     field_layout_1 = QHBoxLayout()
     field_layout_2 = QHBoxLayout()
-    self.button_layout = QHBoxLayout()
+    self.update_button_layout = QHBoxLayout()
 
     self.update_email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
     self.update_fullname_field = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
@@ -89,6 +89,10 @@ class StudentPage(QWidget):
 
     update_button = Button("Update Student")
     cancel_button = Button("Cancel Update")
+
+    self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    self.create_button_layout.addWidget(update_button)
+    self.create_button_layout.addWidget(cancel_button)
 
   def create_student(self):
     email = self.email_field.get_text()
