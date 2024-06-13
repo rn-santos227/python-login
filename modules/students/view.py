@@ -100,6 +100,12 @@ class StudentPage(QWidget):
     field_layout_2.addWidget(self.update_section_field)
     field_layout_2.addWidget(self.update_grade_field)
 
+    update_layout.addWidget(self.update_email_field, 0, 0, 1, 2)
+    update_layout.addWidget(self.update_fullname_field, 1, 0, 1, 2)
+    update_layout.addLayout(field_layout_1, 2, 0, 1, 2)
+    update_layout.addLayout(field_layout_2, 3, 0, 1, 2)
+    update_layout.addLayout(self.update_button_layout, 4, 0, 1, 2)
+
   def create_student(self):
     email = self.email_field.get_text()
     password = self.password_field.get_text()
