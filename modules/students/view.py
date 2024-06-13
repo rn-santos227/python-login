@@ -182,7 +182,7 @@ class StudentPage(QWidget):
       self.table_widget.setCellWidget(row_position, 7, button_widget)
 
   def _load_student_for_update(self, student: Student):
-    pass
+    self._switch_to_update_layout()
 
   def _switch_to_update_layout(self):
     self.top_layout.removeItem(self.create_layout)
