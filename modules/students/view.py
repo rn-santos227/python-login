@@ -76,6 +76,13 @@ class StudentPage(QWidget):
   def init_update_layout(self):
     update_layout = QGridLayout()
 
+    self.update_email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
+    self.update_fullname_field = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
+    self.update_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
+    self.update_student_number_field = TextField(label_text="Student Number", placeholder_text="Enter student number.")
+    self.update_section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
+    self.update_grade_field = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
+
   def create_student(self):
     email = self.email_field.get_text()
     password = self.password_field.get_text()
