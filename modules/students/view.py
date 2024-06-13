@@ -183,6 +183,7 @@ class StudentPage(QWidget):
 
   def _load_student_for_update(self, student: Student):
     self._switch_to_update_layout()
+    self.student_id = student.id
 
   def _switch_to_update_layout(self):
     self.top_layout.removeItem(self.create_layout)
