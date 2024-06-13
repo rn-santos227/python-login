@@ -22,10 +22,7 @@ class StudentPage(QWidget):
     self.main_layout = QVBoxLayout()
     self.top_layout = QHBoxLayout()
 
-    self.create_layout = self.init_create_layout()
-    self.update_layout = self.init_update_layout()
-
-    self.top_layout.addLayout(self.create_layout)
+    self.top_layout.addLayout(self.init_create_layout())
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(8)
@@ -199,13 +196,23 @@ class StudentPage(QWidget):
     self.update_grade_field.set_text(student.grade)
     
   def _switch_to_update_layout(self):
-    self.top_layout.removeItem(self.create_layout)
-    self.top_layout.addLayout(self.update_layout)
+    while self.top_layout.count():
+      child = self.top_layout.takeAt(0)
+      if child.widget():
+        child.widget().deleteLater()
+      elif child.layout():
+        self._clear_layout(child.layout())
+    self.top_layout.addLayout(self.init_update_layout())
 
   def _switch_to_create_layout(self):
+    while self.top_layout.count():
+      child = self.top_layout.takeAt(0)
+      if child.widget():
+        child.widget().deleteLater()
+      elif child.layout():
+        self._clear_layout(child.layout())
+    self.top_layout.addLayout(self.init_create_layout())
     self._clear_fields()
-    self.top_layout.removeItem(self.update_layout)
-    self.top_layout.addLayout(self.create_layout)
 
   def _clear_fields(self):
     self.email_field.clear_text()
@@ -215,3 +222,11 @@ class StudentPage(QWidget):
     self.student_number_field.clear_text()
     self.section_field.clear_text()
     self.grade_field.clear_text()
+
+  def _clear_layout(self, layout):
+    while layout.count():
+      child = layout.takeAt(0)
+      if child.widget():
+        child.widget().deleteLater()
+      elif child.layout():
+        self._clear_layout(child.layout())
