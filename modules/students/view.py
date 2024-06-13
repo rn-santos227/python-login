@@ -19,7 +19,7 @@ class StudentPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    main_layout = QVBoxLayout()
+    self.main_layout = QVBoxLayout()
     self.top_layout = QHBoxLayout()
 
     self.create_layout = self.init_create_layout()
@@ -32,10 +32,10 @@ class StudentPage(QWidget):
     self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Student Number", "Contact Number", "Section", "Grade", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-    main_layout.addLayout(self.top_layout)
-    main_layout.addWidget(self.table_widget)
+    self.main_layout.addLayout(self.top_layout)
+    self.main_layout.addWidget(self.table_widget)
   
-    self.setLayout(main_layout)
+    self.setLayout(self.main_layout)
     self.load_students()
     
   def init_create_layout(self):
