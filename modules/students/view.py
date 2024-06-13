@@ -172,10 +172,13 @@ class StudentPage(QWidget):
       self.table_widget.setItem(row_position, 6, QTableWidgetItem(student.grade))
 
       update_button = QPushButton("Update")
+      update_button.clicked.connect(lambda ch, student=student: self._load_student_for_update(student))
+
       delete_button = QPushButton("Delete")
       
       button_layout = QHBoxLayout()
       button_layout.addWidget(update_button)
+      
       button_layout.addWidget(delete_button)
       button_layout.setContentsMargins(0, 0, 0, 0)
       
@@ -200,6 +203,7 @@ class StudentPage(QWidget):
     self.top_layout.addLayout(self.update_layout)
 
   def _switch_to_create_layout(self):
+    self._clear_fields()
     self.top_layout.removeItem(self.update_layout)
     self.top_layout.addLayout(self.create_layout)
 
