@@ -79,6 +79,8 @@ class AdminsPage(QWidget):
     update_layout.addWidget(self.update_fullname_field, 2, 0, 1, 2)
     update_layout.addLayout(self.update_button_layout, 3, 0, 1, 2)
 
+    return update_layout
+
   def create_admin(self):
     pass
   
