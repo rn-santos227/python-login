@@ -66,6 +66,9 @@ class AdminsPage(QWidget):
     create_button = Button("Create Admin")
     create_button.connect_signal(self.create_admin)
 
+    self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    self.create_button_layout.addWidget(create_button)
+
 
   def create_admin(self):
     pass
