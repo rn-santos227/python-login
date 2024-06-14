@@ -101,6 +101,8 @@ class AdminsPage(QWidget):
       full_name = full_name,
       status = "active"
     )
+
+    admin_controller.create_admin(new_admin)
   
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
