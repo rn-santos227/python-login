@@ -57,6 +57,9 @@ class AdminsPage(QWidget):
 
     return create_layout
 
+  def init_update_layout(self):
+    update_layout = QGridLayout()
+
   def create_admin(self):
     pass
   
