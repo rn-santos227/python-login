@@ -8,6 +8,5 @@ sip>=6.0.0
 
 # Application dependencies
 PyQt5
-pyqt5-tools
 pyodbc
 pypyodbc
