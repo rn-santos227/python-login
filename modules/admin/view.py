@@ -82,7 +82,9 @@ class AdminsPage(QWidget):
     return update_layout
 
   def create_admin(self):
-    pass
+    email = self.email_field.get_text()
+    password = self.password_field.get_text()
+    full_name = self.fullname_field.get_text()
   
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
