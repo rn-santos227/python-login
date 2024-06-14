@@ -19,39 +19,20 @@ class AdminsPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    main_layout = QVBoxLayout()
-    top_layout = QHBoxLayout()
-    button_layout = QHBoxLayout()
-
-    create_layout = QGridLayout()
-
-    self.email_field = TextField(label_text="Email", placeholder_text="Enter admin email.")
-    self.password_field = TextField(label_text="Password", placeholder_text="Enter admin password.")
-    self.password_field.text_field.setEchoMode(QLineEdit.Password)
-    self.fullname_field = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
-
-    create_button = Button("Create Admin")
-    create_button.connect_signal(self.create_admin)
-
-    button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
-    button_layout.addWidget(create_button)
-
-    create_layout.addWidget(self.email_field, 0, 0, 1, 2)
-    create_layout.addWidget(self.password_field, 1, 0, 1, 2)
-    create_layout.addWidget(self.fullname_field, 2, 0, 1, 2)
-    create_layout.addLayout(button_layout, 3, 0, 1, 2)
-
-    top_layout.addLayout(create_layout)
+    self.main_layout = QVBoxLayout()
+    self.top_layout = QHBoxLayout()
+    
+    self.top_layout.addLayout(self.init_create_layout())
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(4)
     self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-    main_layout.addLayout(top_layout)
-    main_layout.addWidget(self.table_widget)
+    self.main_layout.addLayout(self.top_layout)
+    self.main_layout.addWidget(self.table_widget)
   
-    self.setLayout(main_layout)
+    self.setLayout(self.main_layout)
     self.load_admins()
 
   def init_create_layout(self):
