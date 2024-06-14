@@ -85,6 +85,15 @@ class AdminsPage(QWidget):
     email = self.email_field.get_text()
     password = self.password_field.get_text()
     full_name = self.fullname_field.get_text()
+
+    fields_to_validate = [
+      (self.validation_handler.is_valid_email, email, "Invalid email address."),
+      (self.validation_handler.is_not_empty, password, "Password cannot be empty."),
+      (self.validation_handler.is_not_empty, full_name, "Full name cannot be empty."),
+    ]
+
+    if not self.validation_handler.validate_fields(self, fields_to_validate):
+      return
   
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
