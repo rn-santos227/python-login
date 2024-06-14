@@ -56,7 +56,10 @@ class AdminsPage(QWidget):
 
   def init_create_layout(self):
     create_layout = QGridLayout()
-    
+    field_layout_1 = QHBoxLayout()
+    field_layout_2 = QHBoxLayout()
+    self.create_button_layout = QHBoxLayout()
+
   def create_admin(self):
     pass
   
