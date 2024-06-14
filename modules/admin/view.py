@@ -167,6 +167,15 @@ class AdminsPage(QWidget):
         self._clear_layout(child.layout())
     self.top_layout.addLayout(self.init_update_layout())
 
+  def _switch_to_create_layout(self):
+    while self.top_layout.count():
+      child = self.top_layout.takeAt(0)
+      if child.widget():
+        child.widget().deleteLater()
+      elif child.layout():
+        self._clear_layout(child.layout())
+
+
   def _clear_fields(self):
     self.email_field.clear_text()
     self.password_field.clear_text()
