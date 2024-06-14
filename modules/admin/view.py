@@ -158,6 +158,10 @@ class AdminsPage(QWidget):
       
       self.table_widget.setCellWidget(row_position, 3, button_widget)
 
+  def _switch_to_update_layout(self):
+    while self.top_layout.count():
+      child = self.top_layout.takeAt(0)
+
   def _clear_fields(self):
     self.email_field.clear_text()
     self.password_field.clear_text()
