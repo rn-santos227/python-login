@@ -69,6 +69,12 @@ class AdminsPage(QWidget):
     self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.create_button_layout.addWidget(create_button)
 
+    create_layout.addWidget(self.email_field, 0, 0, 1, 2)
+    create_layout.addWidget(self.password_field, 1, 0, 1, 2)
+    create_layout.addWidget(self.fullname_field, 2, 0, 1, 2)
+    create_layout.addLayout(self.create_button_layout, 3, 0, 1, 2)
+
+    return create_layout
 
   def create_admin(self):
     pass
