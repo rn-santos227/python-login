@@ -60,6 +60,12 @@ class AdminsPage(QWidget):
     field_layout_2 = QHBoxLayout()
     self.create_button_layout = QHBoxLayout()
 
+    self.email_field = TextField(label_text="Email", placeholder_text="Enter admin email.")
+    self.password_field = TextField(label_text="Password", placeholder_text="Enter admin password.")
+    self.password_field.text_field.setEchoMode(QLineEdit.Password)
+    self.fullname_field = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
+
+
   def create_admin(self):
     pass
   
