@@ -174,7 +174,8 @@ class AdminsPage(QWidget):
         child.widget().deleteLater()
       elif child.layout():
         self._clear_layout(child.layout())
-
+    self.top_layout.addLayout(self.init_create_layout())
+    self._clear_fields()
 
   def _clear_fields(self):
     self.email_field.clear_text()
