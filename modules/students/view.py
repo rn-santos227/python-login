@@ -184,6 +184,7 @@ class StudentPage(QWidget):
     )
 
     student_controller.update_student(update_student)
+    self.load_students()
 
 
   def load_students(self):
