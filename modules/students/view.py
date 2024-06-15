@@ -168,6 +168,9 @@ class StudentPage(QWidget):
       (self.validation_handler.is_not_empty, grade, "Grade cannot be empty.")
     ]
 
+    if not self.validation_handler.validate_fields(self, fields_to_validate):
+      return
+
 
   def load_students(self):
     self.students = student_controller.get_students("status = 'active'", "select")
