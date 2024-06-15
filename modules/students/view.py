@@ -158,6 +158,17 @@ class StudentPage(QWidget):
     section = self.update_section_field.get_text()
     grade = self.update_grade_field.get_text()
 
+    fields_to_validate = [
+      (self.validation_handler.is_valid_email, email, "Invalid email address."),
+      (self.validation_handler.is_not_empty, password, "Password cannot be empty."),
+      (self.validation_handler.is_not_empty, full_name, "Full name cannot be empty."),
+      (self.validation_handler.is_not_empty, contact_number, "Contact number cannot be empty."),
+      (self.validation_handler.is_not_empty, student_number, "Student number cannot be empty."),
+      (self.validation_handler.is_not_empty, section, "Section cannot be empty."),
+      (self.validation_handler.is_not_empty, grade, "Grade cannot be empty.")
+    ]
+
+
   def load_students(self):
     self.students = student_controller.get_students("status = 'active'", "select")
     self.table_widget.setRowCount(0)
