@@ -172,7 +172,7 @@ class StudentPage(QWidget):
       return
     
     update_student = Student(
-      id = self.student_id
+      id = self.student_id,
       email = email,
       password = password,
       full_name = full_name,
