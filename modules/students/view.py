@@ -88,7 +88,8 @@ class StudentPage(QWidget):
     self.update_grade_field = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
 
     update_button = Button("Update Student")
-    
+    update_button.connect_signal(self.update_student)
+
     cancel_button = Button("Cancel Update")
     cancel_button.connect_signal(self._switch_to_create_layout)
 
@@ -187,7 +188,6 @@ class StudentPage(QWidget):
     self.load_students()
     self._switch_to_create_layout()
     self.message_box.show_message("Success", "Student has been updated successfully.", "Information")
-
 
   def load_students(self):
     self.students = student_controller.get_students("status = 'active'", "select")
