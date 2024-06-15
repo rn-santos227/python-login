@@ -170,6 +170,18 @@ class StudentPage(QWidget):
 
     if not self.validation_handler.validate_fields(self, fields_to_validate):
       return
+    
+    update_student = Student(
+      id = self.student_id
+      email = email,
+      password = password,
+      full_name = full_name,
+      contact_number = contact_number,
+      student_number = student_number,
+      section = section,
+      grade = grade,
+      status = "active"
+    )
 
 
   def load_students(self):
