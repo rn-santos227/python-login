@@ -149,6 +149,9 @@ class StudentPage(QWidget):
     self._clear_fields()
     self.message_box.show_message("Success", "Student has been created successfully.", "Information")
 
+  def update_student(self):
+    pass
+
   def load_students(self):
     self.students = student_controller.get_students("status = 'active'", "select")
     self.table_widget.setRowCount(0)
