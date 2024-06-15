@@ -186,6 +186,7 @@ class StudentPage(QWidget):
     student_controller.update_student(update_student)
     self.load_students()
     self._switch_to_create_layout()
+    self.message_box.show_message("Success", "Student has been updated successfully.", "Information")
 
 
   def load_students(self):
