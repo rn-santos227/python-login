@@ -183,6 +183,8 @@ class StudentPage(QWidget):
       status = "active"
     )
 
+    student_controller.update_student(update_student)
+
 
   def load_students(self):
     self.students = student_controller.get_students("status = 'active'", "select")
