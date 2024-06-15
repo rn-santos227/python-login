@@ -158,6 +158,9 @@ class AdminsPage(QWidget):
       
       self.table_widget.setCellWidget(row_position, 3, button_widget)
 
+  def _load_admin_for_update(self, admin: Admin):
+    pass
+
   def _switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
