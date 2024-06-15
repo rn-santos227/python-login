@@ -162,6 +162,8 @@ class AdminsPage(QWidget):
     self._switch_to_update_layout()
     self.admin_id = admin.id
 
+    self.update_email_field.set_text(admin.email)
+
   def _switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
