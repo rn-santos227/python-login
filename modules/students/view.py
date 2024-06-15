@@ -154,6 +154,7 @@ class StudentPage(QWidget):
     password = self.update_password_field.get_text()
     full_name = self.update_fullname_field.get_text()
     contact_number = self.update_contact_field.get_text()
+    student_number = self.update_student_number_field.get_text()
 
   def load_students(self):
     self.students = student_controller.get_students("status = 'active'", "select")
