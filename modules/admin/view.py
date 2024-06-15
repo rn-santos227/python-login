@@ -163,6 +163,7 @@ class AdminsPage(QWidget):
     self.admin_id = admin.id
 
     self.update_email_field.set_text(admin.email)
+    self.update_fullname_field.set_text(admin.full_name)
 
   def _switch_to_update_layout(self):
     while self.top_layout.count():
