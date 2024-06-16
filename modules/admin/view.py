@@ -128,6 +128,8 @@ class AdminsPage(QWidget):
       full_name = full_name
     )
 
+    admin_controller.update_admin(update_admin)
+
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
     self.table_widget.setRowCount(0)
