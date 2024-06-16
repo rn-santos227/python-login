@@ -180,8 +180,7 @@ class StudentPage(QWidget):
       contact_number = contact_number,
       student_number = student_number,
       section = section,
-      grade = grade,
-      status = "active"
+      grade = grade
     )
 
     student_controller.update_student(update_student)
