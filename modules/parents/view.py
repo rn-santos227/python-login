@@ -60,6 +60,10 @@ class ParentsPage(QWidget):
     self.parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
+    create_button = Button("Create Parent")
+
+    self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    self.create_button_layout.addWidget(create_button)
 
   def _clear_fields(self):
     self.student_name_field.clear_text()
