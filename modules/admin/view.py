@@ -108,6 +108,9 @@ class AdminsPage(QWidget):
     self._clear_fields()
     self.message_box.show_message("Success", "Admin has been created successfully.", "Information")
   
+  def update_admin(self):
+    pass
+
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
     self.table_widget.setRowCount(0)
