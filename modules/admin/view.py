@@ -67,6 +67,7 @@ class AdminsPage(QWidget):
     self.update_fullname_field = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
 
     update_button = Button("Update Student")
+    update_button.connect_signal(self.update_admin)
 
     cancel_button = Button("Cancel Update")
     cancel_button.connect_signal(self._switch_to_create_layout)
