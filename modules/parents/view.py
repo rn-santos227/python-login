@@ -65,6 +65,11 @@ class ParentsPage(QWidget):
     self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.create_button_layout.addWidget(create_button)
 
+    create_layout.addWidget(self.student_name_field, 0, 0, 1, 2)
+    create_layout.addWidget(self.parent_name_field, 1, 0, 1, 2)
+    create_layout.addWidget(self.parent_contact_field, 2, 0, 1, 2)
+    create_layout.addLayout(self.create_button_layout, 3, 0, 1, 2)
+
   def _clear_fields(self):
     self.student_name_field.clear_text()
     self.parent_name_field.clear_text()
