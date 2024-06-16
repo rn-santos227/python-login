@@ -56,6 +56,11 @@ class ParentsPage(QWidget):
     create_layout = QGridLayout()
     self.create_button_layout = QHBoxLayout()
 
+    self.student_name_field = TextField(label_text="Student Name", placeholder_text="Enter student name.")
+    self.parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
+    self.parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
+
+
   def _clear_fields(self):
     self.student_name_field.clear_text()
     self.parent_name_field.clear_text()
