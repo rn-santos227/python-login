@@ -53,7 +53,7 @@ class ParentsPage(QWidget):
     self.setLayout(main_layout)
 
   def init_create_layout(self):
-    pass
+    create_layout = QGridLayout()
 
   def _clear_fields(self):
     self.student_name_field.clear_text()
