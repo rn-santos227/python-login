@@ -70,6 +70,8 @@ class ParentsPage(QWidget):
     create_layout.addWidget(self.parent_contact_field, 2, 0, 1, 2)
     create_layout.addLayout(self.create_button_layout, 3, 0, 1, 2)
 
+    return create_layout
+
   def _clear_fields(self):
     self.student_name_field.clear_text()
     self.parent_name_field.clear_text()
