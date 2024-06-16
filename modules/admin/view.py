@@ -129,6 +129,7 @@ class AdminsPage(QWidget):
     )
 
     admin_controller.update_admin(update_admin)
+    self.load_admins()
 
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
