@@ -109,7 +109,9 @@ class AdminsPage(QWidget):
     self.message_box.show_message("Success", "Admin has been created successfully.", "Information")
   
   def update_admin(self):
-    pass
+    email = self.update_email_field.get_text()
+    password = self.update_password_field.get_text()
+    full_name = self.update_fullname_field.get_text()
 
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
