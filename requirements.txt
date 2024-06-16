@@ -8,5 +8,7 @@ sip>=6.0.0
 
 # Application dependencies
 PyQt5
+opencv-python-headless
+face_recognition
 pyodbc
 pypyodbc
