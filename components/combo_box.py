@@ -15,3 +15,7 @@ class ComboBox(QWidget):
     label_font = QFont()
     label_font.setPointSize(14)
     self.label.setFont(label_font)
+
+    combo_box_font = QFont()
+    combo_box_font.setPointSize(12)
+    self.combo_box.setFont(combo_box_font)
