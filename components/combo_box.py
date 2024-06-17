@@ -28,8 +28,11 @@ class ComboBox(QWidget):
     if items:
       self.set_items(items)
 
-    def get_selected_value(self):
-      return self.combo_box.currentData()
-    
-    def get_selected_text(self):
-      return self.combo_box.currentText()
+  def get_selected_value(self):
+    return self.combo_box.currentData()
+  
+  def get_selected_text(self):
+    return self.combo_box.currentText()
+  
+  def set_label_text(self, text):
+    self.label.setText(text)
