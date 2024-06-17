@@ -57,7 +57,9 @@ class ParentsPage(QWidget):
     return create_layout
   
   def load_students_to_dropdown(self):
-    pass
+    self.students = student_controller.get_students("status = 'active'", "select")
+    if not self.students:
+      return
 
   def _clear_fields(self):
     self.student_name_field.clear_text()
