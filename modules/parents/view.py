@@ -17,6 +17,7 @@ class ParentsPage(QWidget):
     self.message_box = MessageBox(self)
     self.validation_handler = ValidationHandler()
     self.parents = []
+    self.students = []
     self.init_ui()
 
   def init_ui(self):
@@ -54,6 +55,9 @@ class ParentsPage(QWidget):
     create_layout.addLayout(self.create_button_layout, 3, 0, 1, 2)
 
     return create_layout
+  
+  def load_students_to_dropdown(self):
+    pass
 
   def _clear_fields(self):
     self.student_name_field.clear_text()
