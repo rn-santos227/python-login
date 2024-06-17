@@ -1,7 +1,7 @@
 import modules.parents.controller as parent_controller
 import modules.students.controller as student_controller
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QComboBox, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
 
 from components.button import Button
 from components.message_box import MessageBox
@@ -40,7 +40,9 @@ class ParentsPage(QWidget):
     create_layout = QGridLayout()
     self.create_button_layout = QHBoxLayout()
 
-    self.student_name_field = TextField(label_text="Student Name", placeholder_text="Enter student name.")
+    self.student_combo_box = QComboBox()
+    self.student_combo_box.setPlaceholderText("Select Student")
+    
     self.parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
@@ -49,7 +51,7 @@ class ParentsPage(QWidget):
     self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.create_button_layout.addWidget(create_button)
 
-    create_layout.addWidget(self.student_name_field, 0, 0, 1, 2)
+    create_layout.addWidget(self.student_combo_box, 0, 0, 1, 2)
     create_layout.addWidget(self.parent_name_field, 1, 0, 1, 2)
     create_layout.addWidget(self.parent_contact_field, 2, 0, 1, 2)
     create_layout.addLayout(self.create_button_layout, 3, 0, 1, 2)
