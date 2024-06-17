@@ -60,9 +60,11 @@ class ParentsPage(QWidget):
     return create_layout
   
   def load_students_to_combo_box(self):
-    self.students = student_controller.get_students("status = 'active'", "select")
+    students = student_controller.get_students("status = 'active'", "select")
     if not self.students:
       return
+    
+    self.students = [(student.full_name, student.id) for student in students]
 
   def _clear_fields(self):
     self.parent_name_field.clear_text()
