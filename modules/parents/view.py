@@ -1,8 +1,9 @@
 import modules.parents.controller as parent_controller
 import modules.students.controller as student_controller
 
-from PyQt5.QtWidgets import QWidget, QComboBox, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
 
+from components.combo_box import ComboBox
 from components.button import Button
 from components.message_box import MessageBox
 from components.text_field import TextField
@@ -39,9 +40,6 @@ class ParentsPage(QWidget):
   def init_create_layout(self):
     create_layout = QGridLayout()
     self.create_button_layout = QHBoxLayout()
-
-    self.student_combo_box = QComboBox()
-    self.student_combo_box.setPlaceholderText("Select Student")
     
     self.parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
