@@ -24,3 +24,6 @@ class ComboBox(QWidget):
     self.layout.addWidget(self.combo_box)
 
     self.setLayout(self.layout)
+
+    if items:
+      self.set_items(items)
