@@ -22,6 +22,7 @@ class ParentsPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
+    self.load_students_to_combo_box()
     self.main_layout = QVBoxLayout()
     self.top_layout = QHBoxLayout()
 
@@ -64,7 +65,6 @@ class ParentsPage(QWidget):
       return
 
   def _clear_fields(self):
-    self.student_name_field.clear_text()
     self.parent_name_field.clear_text()
     self.parent_contact_field.clear_text()
     
