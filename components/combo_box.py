@@ -27,3 +27,6 @@ class ComboBox(QWidget):
 
     if items:
       self.set_items(items)
+
+    def get_selected_value(self):
+        return self.combo_box.currentData()
