@@ -39,3 +39,5 @@ class ComboBox(QWidget):
 
   def set_items(self, items):
     self.combo_box.clear()
+    for text, value in items:
+      self.combo_box.addItem(text, value)
