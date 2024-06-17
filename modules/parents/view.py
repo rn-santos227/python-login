@@ -41,6 +41,8 @@ class ParentsPage(QWidget):
     create_layout = QGridLayout()
     self.create_button_layout = QHBoxLayout()
     
+    self.student_combo_box = ComboBox(label_text="Student Name", items=self.students)
+
     self.parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
@@ -56,7 +58,7 @@ class ParentsPage(QWidget):
 
     return create_layout
   
-  def load_students_to_dropdown(self):
+  def load_students_to_combo_box(self):
     self.students = student_controller.get_students("status = 'active'", "select")
     if not self.students:
       return
