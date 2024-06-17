@@ -36,3 +36,6 @@ class ComboBox(QWidget):
   
   def set_label_text(self, text):
     self.label.setText(text)
+
+  def set_items(self, items):
+    self.combo_box.clear()
