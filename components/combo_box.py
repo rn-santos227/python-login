@@ -41,3 +41,6 @@ class ComboBox(QWidget):
     self.combo_box.clear()
     for text, value in items:
       self.combo_box.addItem(text, value)
+
+  def clear_selection(self):
+    self.combo_box.setCurrentIndex(-1)
