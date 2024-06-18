@@ -18,7 +18,7 @@ def get_student_by_id(id)-> Union[Student, None]:
       student = Student(*row)
       return student
     else:
-      return "No students found."
+      return None
     
   except Exception as e:
     print(f"Error: {e}")
