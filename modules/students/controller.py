@@ -48,6 +48,11 @@ def get_student_by_email(email) -> Union[Student, None]:
 def get_student_by_student_number(student_number) -> Union[Student, None]:
   sql_query = builder(table, 'student_number = ?', "select")
   cursor = DB.connect_db().cursor()
+  try:
+    cursor.execute(sql_query, (student_number))
+
+  except Exception as e:
+    print(f"Error: {e}")
 
 def get_students(query, action) -> list[Student]:
   sql_query = builder(table, query, action)
