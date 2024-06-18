@@ -22,7 +22,6 @@ class ParentsPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    self.load_students_to_combo_box()
     self.main_layout = QVBoxLayout()
     self.top_layout = QHBoxLayout()
 
@@ -42,7 +41,7 @@ class ParentsPage(QWidget):
     create_layout = QGridLayout()
     self.create_button_layout = QHBoxLayout()
     
-    self.student_combo_box = ComboBox(label_text="Student Name", items=self.students)
+    self.student_combo_box = ComboBox(label_text="Student Name", items=self.load_students_to_combo_box())
 
     self.parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
@@ -61,10 +60,10 @@ class ParentsPage(QWidget):
   
   def load_students_to_combo_box(self):
     students = student_controller.get_students("status = 'active'", "select")
-    if not self.students:
+    if not students:
       return
     
-    self.students = [(student.full_name, student.id) for student in students]
+    return [(student.full_name, student.id) for student in students]
 
   def _clear_fields(self):
     self.parent_name_field.clear_text()
