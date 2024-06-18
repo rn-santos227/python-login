@@ -7,7 +7,7 @@ from modules.students.model import Student
 
 table = "students"
 
-def get_student_by_id(id)-> Union[Student, str]:
+def get_student_by_id(id)-> Union[Student, None]:
   sql_query = builder(table, 'id = ?', "select")
   cursor = DB.connect_db().cursor()
   try:
@@ -37,7 +37,7 @@ def get_student_by_email(email) -> Union[Student, None]:
       student = Student(*row)
       return student
     else:
-      return "No student found with the provided email."
+      return None
     
   except Exception as e:
     print(f"Error: {e}")
