@@ -50,6 +50,7 @@ def get_student_by_student_number(student_number) -> Union[Student, None]:
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (student_number))
+    row = cursor.fetchone()
 
   except Exception as e:
     print(f"Error: {e}")
