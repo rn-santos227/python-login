@@ -27,6 +27,10 @@ class ValidationHandler:
     return re.match(phone_regex, input_str) is not None
   
   @staticmethod
+  def is_unique_email(input_email):
+    pass
+
+  @staticmethod
   def validate_fields(self, fields):
     for validation_method, field_value, error_message in fields:
       if not validation_method(field_value):
