@@ -31,6 +31,10 @@ class ValidationHandler:
     pass
 
   @staticmethod
+  def is_unique_student_number(input_student_number):
+    pass
+  
+  @staticmethod
   def validate_fields(self, fields):
     for validation_method, field_value, error_message in fields:
       if not validation_method(field_value):
