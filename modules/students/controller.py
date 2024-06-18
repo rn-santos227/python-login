@@ -47,6 +47,7 @@ def get_student_by_email(email) -> Union[Student, None]:
 
 def get_student_by_student_number(student_number) -> Union[Student, None]:
   sql_query = builder(table, 'student_number = ?', "select")
+  cursor = DB.connect_db().cursor()
 
 def get_students(query, action) -> list[Student]:
   sql_query = builder(table, query, action)
