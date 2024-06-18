@@ -7,7 +7,7 @@ from modules.logs.model import Log
 
 table = "logs"
 
-def get_log_by_id(id) -> Union[Log, str]:
+def get_log_by_id(id) -> Union[Log, None]:
   sql_query = builder(table, 'id = ?', "select")
   cursor = DB.connect_db().cursor()
   
@@ -19,7 +19,7 @@ def get_log_by_id(id) -> Union[Log, str]:
       log = Log(*row)
       return log
     else:
-      return "No logs found."
+      return None
     
   except Exception as e:
     print(f"Error: {e}")
