@@ -18,7 +18,7 @@ def get_admin_by_id(id) -> Union[Admin, None]:
       admin = Admin(*row)
       return admin
     else:
-      return "No admin found."
+      return None
     
   except Exception as e:
     print(f"Error: {e}")
@@ -37,8 +37,7 @@ def get_admin_by_email(email) -> Union[Admin, None]:
       admin = Admin(*row)
       return admin
     else:
-      return "No admin found with the provided email."
-
+      return None
   except Exception as e:
     print(f"Error: {e}")
 
