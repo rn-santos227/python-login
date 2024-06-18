@@ -31,7 +31,7 @@ class ValidationHandler:
 
   @staticmethod
   def is_unique_student_number(input_student_number):
-    pass
+    return student_controller.get_student_by_student_number(student_number=input_student_number) == None
 
   @staticmethod
   def validate_fields(self, fields):
