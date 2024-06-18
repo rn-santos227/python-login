@@ -1,7 +1,6 @@
 import re
-import config.database as DB
 
-from database.query import builder
+import modules.students.controller as student_controller
 
 class ValidationHandler:
   @staticmethod
@@ -28,14 +27,10 @@ class ValidationHandler:
   
   @staticmethod
   def is_unique_email(input_email):
-    pass
+    return student_controller.get_student_by_email(email=input_email) == None
 
   @staticmethod
   def is_unique_student_number(input_student_number):
-    pass
-
-  @staticmethod
-  def is_unique(query):
     pass
 
   @staticmethod
