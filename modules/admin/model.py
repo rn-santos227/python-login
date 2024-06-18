@@ -16,7 +16,7 @@ class Admin(User):
     CREATE TABLE admins (
       id AUTOINCREMENT PRIMARY KEY,
       full_name TEXT,
-      email TEXT,
+      email TEXT UNIQUE,
       password TEXT,
       status VARCHAR(10)
     );
