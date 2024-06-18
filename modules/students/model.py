@@ -19,10 +19,10 @@ class Student(User):
     return '''
     CREATE TABLE students (
       id AUTOINCREMENT PRIMARY KEY,
-      email TEXT,
+      email TEXT UNIQUE,
       password TEXT,
       full_name TEXT,
-      student_number TEXT,
+      student_number TEXT UNIQUE,
       contact_number TEXT,
       section TEXT,
       grade TEXT,
