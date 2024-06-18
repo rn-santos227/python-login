@@ -1,4 +1,7 @@
 import re
+import config.database as DB
+
+from database.query import builder
 
 class ValidationHandler:
   @staticmethod
