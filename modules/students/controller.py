@@ -46,7 +46,7 @@ def get_student_by_email(email) -> Union[Student, None]:
     cursor.close()
 
 def get_student_by_student_number(student_number) -> Union[Student, None]:
-  pass
+  sql_query = builder(table, 'student_number = ?', "select")
 
 def get_students(query, action) -> list[Student]:
   sql_query = builder(table, query, action)
