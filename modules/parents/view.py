@@ -58,6 +58,9 @@ class ParentsPage(QWidget):
 
     return create_layout
   
+  def init_update_layout(self):
+    update_layout = QGridLayout()
+  
   def load_students_to_combo_box(self):
     students = student_controller.get_students("status = 'active'", "select")
     if not students:
