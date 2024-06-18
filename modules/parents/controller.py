@@ -6,7 +6,7 @@ from modules.parents.model import Parent
 
 table = "parents"
 
-def get_parent_by_id(id) -> Union[Parent, str]:
+def get_parent_by_id(id) -> Union[Parent, None]:
   sql_query = builder(table, 'id = ?', "select")
   cursor = DB.connect_db().cursor()
   
@@ -18,7 +18,7 @@ def get_parent_by_id(id) -> Union[Parent, str]:
       parent = Parent(*row)
       return parent
     else:
-      return "No parent found."
+      return None
     
   except Exception as e:
     print(f"Error: {e}")
