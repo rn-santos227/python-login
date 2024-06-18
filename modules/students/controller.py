@@ -52,8 +52,17 @@ def get_student_by_student_number(student_number) -> Union[Student, None]:
     cursor.execute(sql_query, (student_number))
     row = cursor.fetchone()
 
+    if row:
+      student = Student(*row)
+      return student
+    else:
+      return None
+
   except Exception as e:
     print(f"Error: {e}")
+
+  finally:
+    cursor.close()
 
 def get_students(query, action) -> list[Student]:
   sql_query = builder(table, query, action)
