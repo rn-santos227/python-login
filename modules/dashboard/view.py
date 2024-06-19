@@ -56,6 +56,7 @@ class DashboardAdminPage(QWidget):
     self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.parents_content)
+    self.main_content.addWidget(self.scanner_content)
     self.main_content.addWidget(self.students_content)
 
     layout.addLayout(self.navigation_menu)
