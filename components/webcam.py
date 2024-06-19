@@ -32,3 +32,7 @@ class WebcamComponent(QWidget):
     img = QtGui.QImage(img, img.shape[1], img.shape[0], img.strides[0], qformat)
     img = img.rgbSwapped()
     self.label.setPixmap(QtGui.QPixmap.fromImage(img))
+
+  def capture_image(self):
+    ret, frame = self.cap.read()
+    return ret, frame
