@@ -46,6 +46,7 @@ class ParentsPage(QWidget):
     self.parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
     create_button = Button("Create Parent")
+    create_button.set_fixed_width(250)
 
     self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.create_button_layout.addWidget(create_button)
@@ -66,8 +67,10 @@ class ParentsPage(QWidget):
     self.update_parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
     update_button = Button("Update Parent")
+    update_button.set_fixed_width(250)
 
     cancel_button = Button("Cancel Update")
+    cancel_button.set_fixed_width(250)
 
     self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.update_button_layout.addWidget(update_button)
