@@ -1,3 +1,7 @@
+import sys
+import os
+import cv2
+import face_recognition
 import modules.students.controller as student_controller
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
