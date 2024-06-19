@@ -29,21 +29,27 @@ class DashboardAdminPage(QWidget):
 
     logs_button = Button("Attendance Logs")
     logs_button.connect_signal(self.handle_logs)
-
+    logs_button.set_fixed_width(250)
+    
     scanner_button = Button("Save Biometrics")
     scanner_button.connect_signal(self.handle_scanner)
+    scanner_button.set_fixed_width(250)
     
     students_button = Button("Students")
     students_button.connect_signal(self.handle_students)
+    students_button.set_fixed_width(250)
 
     parents_button = Button("Parents")
     parents_button.connect_signal(self.handle_parents)
+    parents_button.set_fixed_width(250)
 
     users_button = Button("Admin Users")
     users_button.connect_signal(self.handle_admins)
+    users_button.set_fixed_width(250)
     
     logout_button = Button("Log Out")
     logout_button.connect_signal(self.handle_logout)
+    logout_button.set_fixed_width(250)
 
     self.navigation_menu.addWidget(logs_button)
     self.navigation_menu.addWidget(scanner_button)
