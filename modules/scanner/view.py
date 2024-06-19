@@ -1,3 +1,4 @@
+import modules.students.controller as student_controller
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
 
@@ -14,3 +15,10 @@ class ScannerPage(QWidget):
   def init_ui(self):
     self.main_layout = QVBoxLayout()
     self.setLayout(self.main_layout)
+
+  def load_students_to_combo_box(self):
+    students = student_controller.get_students("status = 'active'", "select")
+    if not students:
+      return
+    
+    return [(student.full_name, student.id) for student in students]
