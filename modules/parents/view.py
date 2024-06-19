@@ -68,6 +68,10 @@ class ParentsPage(QWidget):
     update_button = Button("Update Parent")
 
     cancel_button = Button("Cancel Update")
+
+    self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    self.update_button_layout.addWidget(update_button)
+    self.update_button_layout.addWidget(cancel_button)
   
   def load_students_to_combo_box(self):
     students = student_controller.get_students("status = 'active'", "select")
