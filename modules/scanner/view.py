@@ -4,7 +4,7 @@ import cv2
 import face_recognition
 import modules.students.controller as student_controller
 
-from PyQt5 import QtCore
+from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
 
 from components.button import Button
@@ -48,3 +48,6 @@ class ScannerPage(QWidget):
   def _start_webcam(self):
     self.cap = cv2.VideoCapture(0)
     self.timer = QtCore.QTimer(self)
+
+  def _update_frame(self):
+    ret, frame = self.cap.read()
