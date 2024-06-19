@@ -46,6 +46,7 @@ class AdminsPage(QWidget):
 
     create_button = Button("Create Admin")
     create_button.connect_signal(self.create_admin)
+    create_button.set_fixed_width(250)
 
     self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.create_button_layout.addWidget(create_button)
@@ -68,9 +69,11 @@ class AdminsPage(QWidget):
 
     update_button = Button("Update Student")
     update_button.connect_signal(self.update_admin)
+    update_button.set_fixed_width(250)
 
     cancel_button = Button("Cancel Update")
     cancel_button.connect_signal(self._switch_to_create_layout)
+    update_button.set_fixed_width(250)
 
     self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.update_button_layout.addWidget(update_button)
