@@ -16,6 +16,7 @@ class WebcamComponent(QWidget):
 
     self.cap = None
     self.timer = QtCore.QTimer(self)
+    self.timer.timeout.connect(self.update_frame)
 
   def start_webcam(self):
     self.cap = cv2.VideoCapture(0)
