@@ -14,6 +14,7 @@ class ScannerPage(QWidget):
 
   def init_ui(self):
     self.main_layout = QVBoxLayout()
+    center_layout = QVBoxLayout()
     h_center_layout = QHBoxLayout()
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
