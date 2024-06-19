@@ -4,6 +4,7 @@ import cv2
 import face_recognition
 import modules.students.controller as student_controller
 
+from PyQt5 import QtCore
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
 
 from components.button import Button
@@ -35,6 +36,7 @@ class ScannerPage(QWidget):
     self.main_layout.addItem(bottom_spacer)
 
     self.setLayout(self.main_layout)
+    self.cap = None
 
   def load_students_to_combo_box(self):
     students = student_controller.get_students("status = 'active'", "select")
@@ -44,4 +46,5 @@ class ScannerPage(QWidget):
     return [(student.full_name, student.id) for student in students]
   
   def _start_webcam(self):
-    pass
+    self.cap = cv2.VideoCapture(0)
+    self.timer = QtCore.QTimer(self)
