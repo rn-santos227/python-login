@@ -1,6 +1,6 @@
 import modules.students.controller as student_controller
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
 
 from components.button import Button
 from components.combo_box import ComboBox
@@ -14,6 +14,13 @@ class ScannerPage(QWidget):
 
   def init_ui(self):
     self.main_layout = QVBoxLayout()
+    h_center_layout = QHBoxLayout()
+
+    top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+    bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+    left_spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+    right_spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
     self.setLayout(self.main_layout)
 
   def load_students_to_combo_box(self):
