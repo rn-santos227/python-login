@@ -11,3 +11,6 @@ class WebcamComponent(QWidget):
 
     self.label = QLabel(self)
     self.layout.addWidget(self.label)
+
+    self.cap = None
+    self.timer = QtCore.QTimer(self)
