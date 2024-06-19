@@ -22,6 +22,14 @@ class ScannerPage(QWidget):
     left_spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
     right_spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
+    h_center_layout.addItem(left_spacer)
+    h_center_layout.addLayout(center_layout)
+    h_center_layout.addItem(right_spacer)
+
+    self.main_layout.addItem(top_spacer)
+    self.main_layout.addItem(h_center_layout)
+    self.main_layout.addItem(bottom_spacer)
+
     self.setLayout(self.main_layout)
 
   def load_students_to_combo_box(self):
