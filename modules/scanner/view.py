@@ -10,6 +10,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSiz
 from components.button import Button
 from components.combo_box import ComboBox
 from components.message_box import MessageBox
+from components.webcam import Webcam
 
 class ScannerPage(QWidget):
   def __init__(self, pages_handler):
