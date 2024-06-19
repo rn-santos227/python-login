@@ -3,8 +3,8 @@ import modules.students.controller as student_controller
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
 
-from components.combo_box import ComboBox
 from components.button import Button
+from components.combo_box import ComboBox
 from components.message_box import MessageBox
 from components.text_field import TextField
 
