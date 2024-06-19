@@ -66,6 +66,9 @@ class DashboardAdminPage(QWidget):
   def handle_admins(self):
     self.main_content.setCurrentWidget(self.admins_content)
 
+  def handle_scanner(self):
+    self.main_content.setCurrentWidget(self.scanner_content)
+
   def handle_students(self):
     self.main_content.setCurrentWidget(self.students_content)
 
