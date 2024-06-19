@@ -2,6 +2,7 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
 
 from components.button import Button
+from components.combo_box import ComboBox
 from components.message_box import MessageBox
 
 class ScannerPage(QWidget):

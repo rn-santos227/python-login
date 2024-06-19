@@ -6,6 +6,7 @@ from components.button import Button
 from modules.admin.view import AdminsPage
 from modules.logs.view import LogsPage
 from modules.parents.view import ParentsPage
+from modules.scanner.view import ScannerPage
 from modules.students.view import StudentPage
 
 class DashboardAdminPage(QWidget):
@@ -18,6 +19,7 @@ class DashboardAdminPage(QWidget):
     self.admins_content = AdminsPage(self)
     self.logs_content = LogsPage(self)
     self.parents_content = ParentsPage(self)
+    self.scanner_content = ScannerPage(self)
     self.students_content = StudentPage(self)
 
     layout = QHBoxLayout(self)
@@ -27,6 +29,8 @@ class DashboardAdminPage(QWidget):
 
     logs_button = Button("Attendance Logs")
     logs_button.connect_signal(self.handle_logs)
+
+    scanner_button = Button("Save Biometric")
     
     students_button = Button("Students")
     students_button.connect_signal(self.handle_students)
@@ -41,6 +45,7 @@ class DashboardAdminPage(QWidget):
     logout_button.connect_signal(self.handle_logout)
 
     self.navigation_menu.addWidget(logs_button)
+    self.navigation_menu.addWidget(scanner_button)
     self.navigation_menu.addWidget(students_button)
     self.navigation_menu.addWidget(parents_button)
     self.navigation_menu.addWidget(users_button)
