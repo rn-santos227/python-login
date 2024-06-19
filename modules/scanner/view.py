@@ -42,3 +42,6 @@ class ScannerPage(QWidget):
       return
     
     return [(student.full_name, student.id) for student in students]
+  
+  def _start_webcam(self):
+    pass
