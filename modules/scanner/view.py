@@ -44,10 +44,3 @@ class ScannerPage(QWidget):
       return
     
     return [(student.full_name, student.id) for student in students]
-  
-  def _start_webcam(self):
-    self.cap = cv2.VideoCapture(0)
-    self.timer = QtCore.QTimer(self)
-
-  def _update_frame(self):
-    ret, frame = self.cap.read()
