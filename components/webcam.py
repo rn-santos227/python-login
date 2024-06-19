@@ -36,3 +36,8 @@ class WebcamComponent(QWidget):
   def capture_image(self):
     ret, frame = self.cap.read()
     return ret, frame
+  
+  def stop_webcam(self):
+    if self.cap is not None:
+        self.cap.release()
+    self.timer.stop()
