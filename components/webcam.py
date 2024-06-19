@@ -20,6 +20,11 @@ class WebcamComponent(QWidget):
   def start_webcam(self):
     self.cap = cv2.VideoCapture(0)
     self.timer.start(20)
+
+  def update_frame(self):
+    ret, frame = self.cap.read()
+    if ret:
+      self.display_image(frame)
     
   def display_image(self, img):
     qformat = QtGui.QImage.Format_RGB888
