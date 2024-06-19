@@ -9,3 +9,5 @@ class ScannerPage(QWidget):
 
   def init_ui(self):
     self.main_layout = QVBoxLayout()
+
+    self.setLayout(self.main_layout)
