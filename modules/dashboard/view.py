@@ -31,9 +31,10 @@ class DashboardAdminPage(QWidget):
     logs_button.connect_signal(self.handle_logs)
 
     scanner_button = Button("Save Biometric")
+    scanner_button.connect_signal(self.handle_students)
     
     students_button = Button("Students")
-    students_button.connect_signal(self.handle_students)
+    students_button.connect_signal(self.handle_scanner)
 
     parents_button = Button("Parents")
     parents_button.connect_signal(self.handle_parents)
