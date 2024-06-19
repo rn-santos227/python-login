@@ -1,5 +1,5 @@
 
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWidgets import QWidget, QVBoxLayout
 
 class ScannerPage(QWidget):
   def __init__(self, pages_handler):
@@ -8,4 +8,4 @@ class ScannerPage(QWidget):
     self.students = []
 
   def init_ui(self):
-    pass
+    self.main_layout = QVBoxLayout()
