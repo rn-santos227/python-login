@@ -1,6 +1,5 @@
 import sys
 import os
-import cv2
 import face_recognition
 import modules.students.controller as student_controller
 
@@ -17,6 +16,7 @@ class ScannerPage(QWidget):
     super().__init__()
     self.pages_handler = pages_handler
     self.students = []
+    self.init_ui()
 
   def init_ui(self):
     self.main_layout = QVBoxLayout()
@@ -25,12 +25,18 @@ class ScannerPage(QWidget):
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-    left_spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-    right_spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+    left_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
+    right_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-    self.student_combo_box = ComboBox(label_text="Student Name", items=self.load_students_to_combo_box())
+    self.student_combo_box = ComboBox(label_text="Student Names", items=self.load_students_to_combo_box())
+    self.webcam_component = Webcam(self)
+
+    self.start_button = Button("Start Webcam")
+    self.start_button.connect_signal(self.webcam_component.start_webcam)
 
     center_layout.addWidget(self.student_combo_box)
+    center_layout.addWidget(self.webcam_component)
+    center_layout.addWidget(self.start_button)
     
     h_center_layout.addItem(left_spacer)
     h_center_layout.addLayout(center_layout)
@@ -41,7 +47,6 @@ class ScannerPage(QWidget):
     self.main_layout.addItem(bottom_spacer)
 
     self.setLayout(self.main_layout)
-    self.cap = None
 
   def load_students_to_combo_box(self):
     students = student_controller.get_students("status = 'active'", "select")
