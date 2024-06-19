@@ -77,6 +77,8 @@ class ParentsPage(QWidget):
     update_layout.addWidget(self.update_parent_name_field, 1, 0, 1, 2)
     update_layout.addWidget(self.update_parent_contact_field, 2, 0, 1, 2)
     update_layout.addLayout(self.update_button_layout, 3, 0, 1, 2)
+
+    return update_layout
   
   def load_students_to_combo_box(self):
     students = student_controller.get_students("status = 'active'", "select")
