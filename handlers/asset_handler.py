@@ -7,3 +7,9 @@ class AssetHandler:
 
   def get_image(self, image_name):
     image_path = os.path.join(self.assets_dir, image_name)
+    
+    if os.path.exists(image_path):
+      return QPixmap(image_path)
+    
+    else:
+      raise FileNotFoundError(f"Image {image_name} not found in {self.assets_dir}")
