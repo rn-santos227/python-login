@@ -89,6 +89,7 @@ class ParentsPage(QWidget):
 
   def load_parents(self):
     self.parents = parent_controller.get_parents("status = 'active'", "select")
+    self.table_widget.setRowCount(0)
 
   def _clear_fields(self):
     self.parent_name_field.clear_text()
