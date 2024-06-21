@@ -33,7 +33,7 @@ class LoginPage(QWidget):
     form_frame = QFrame(self)
     form_frame.setFrameShape(QFrame.Box)
     form_frame.setFrameShadow(QFrame.Raised)
-    form_frame.setStyleSheet("background-color: rgba(255, 255, 255, 180);")
+    form_frame.setStyleSheet("background-color: rgba(255, 255, 255, 220);")
     form_layout = QVBoxLayout(form_frame)
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
@@ -49,9 +49,6 @@ class LoginPage(QWidget):
 
     login_button = Button("Login")
     login_button.connect_signal(self.handle_login)
-    login_button.set_fixed_width(250)
-    login_button.set_bg_color("green")
-    login_button.set_font_color("white")
 
     button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     button_layout.addWidget(login_button)
