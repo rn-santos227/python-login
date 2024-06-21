@@ -36,6 +36,7 @@ class ParentsPage(QWidget):
     self.main_layout.addWidget(self.table_widget)
   
     self.setLayout(self.main_layout)
+    self.load_parents()
 
   def init_create_layout(self):
     create_layout = QGridLayout()
