@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QHBoxLayout, QLineEdit, QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QHBoxLayout, QLineEdit, QSpacerItem, QSizePolicy, QFrame
 
 from components.alert_message import AlertMessage
 from components.button import Button
@@ -29,6 +29,8 @@ class LoginPage(QWidget):
     center_layout = QVBoxLayout()
     h_center_layout = QHBoxLayout()
     button_layout = QHBoxLayout()
+
+    form_frame = QFrame(self)
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
