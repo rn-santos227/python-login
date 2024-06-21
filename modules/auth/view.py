@@ -31,6 +31,7 @@ class LoginPage(QWidget):
     button_layout = QHBoxLayout()
 
     form_frame = QFrame(self)
+    form_frame.setFrameShape(QFrame.Box)
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
