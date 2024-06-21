@@ -26,7 +26,6 @@ class LoginPage(QWidget):
     self.background_label.setScaledContents(True)
     self.background_label.lower()
 
-    center_layout = QVBoxLayout()
     h_center_layout = QHBoxLayout()
     button_layout = QHBoxLayout()
 
@@ -59,7 +58,7 @@ class LoginPage(QWidget):
     form_layout.addWidget(self.alert_message) 
 
     h_center_layout.addItem(left_spacer)
-    h_center_layout.addLayout(center_layout)
+    h_center_layout.addLayout(form_layout)
     h_center_layout.addItem(right_spacer)
 
     main_layout.addItem(top_spacer)
