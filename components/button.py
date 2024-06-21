@@ -34,3 +34,6 @@ class Button(QWidget):
 
   def set_bg_color(self, color="white"):
     self.button.setStyleSheet(f"background-color: {color};")
+
+  def set_font_color(self, color="black"):
+    self.button.setStyleSheet(f"color: {color};")
