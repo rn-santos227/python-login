@@ -49,6 +49,7 @@ class LoginPage(QWidget):
 
     login_button = Button("Login")
     login_button.connect_signal(self.handle_login)
+    login_button.set_fixed_width(250)
 
     button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     button_layout.addWidget(login_button)
