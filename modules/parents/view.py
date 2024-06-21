@@ -94,6 +94,9 @@ class ParentsPage(QWidget):
 
     if not self.parents:
       return
+    
+    for parent in self.parents:
+      row_position = self.table_widget.rowCount()
 
   def _clear_fields(self):
     self.parent_name_field.clear_text()
