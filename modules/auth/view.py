@@ -1,9 +1,11 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QHBoxLayout, QLineEdit, QSpacerItem, QSizePolicy
 
 from components.alert_message import AlertMessage
 from components.button import Button
 from components.message_box import MessageBox
 from components.text_field import TextField
+
+from handlers.asset_handler import AssetHandler
 
 from modules.auth.controller import login
 
@@ -14,7 +16,16 @@ class LoginPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    main_layout = QVBoxLayout()
+    main_layout = QVBoxLayout(self)
+    main_layout.setContentsMargins(0, 0, 0, 0)
+    main_layout.setSpacing(0)
+
+    self.background_label = QLabel(self)
+    self._set_background_image("bg.jpg")
+    self.background_label.setGeometry(self.rect())
+    self.background_label.setScaledContents(True)
+    self.background_label.lower()
+
     center_layout = QVBoxLayout()
     h_center_layout = QHBoxLayout()
     button_layout = QHBoxLayout()
@@ -52,6 +63,24 @@ class LoginPage(QWidget):
     self.setLayout(main_layout)
 
     self.message_box = MessageBox(self)
+
+    self.background_label.lower()
+    main_layout.setContentsMargins(0, 0, 0, 0)
+
+
+  def _set_background_image(self, image_name):
+    asset_handler = AssetHandler()
+
+    try:
+      pixmap = asset_handler.get_image(image_name)
+      self.background_label.setPixmap(pixmap)
+
+    except FileNotFoundError as e:
+      print(e)
+
+  def resizeEvent(self, event):
+    super().resizeEvent(event)
+    self.background_label.setGeometry(self.rect())
 
   def handle_login(self):
     email = self.email_field.get_text()
