@@ -99,6 +99,9 @@ class ParentsPage(QWidget):
       (self.validation_handler.is_not_empty, contact, "Contacts cannot be empty."),
     ]
 
+    if not self.validation_handler.validate_fields(self, fields_to_validate):
+      return
+
     new_parent = Parent(
       student_id = student_id,
       full_name = parent_name,
