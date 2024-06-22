@@ -147,4 +147,12 @@ class ParentsPage(QWidget):
   def _clear_fields(self):
     self.parent_name_field.clear_text()
     self.parent_contact_field.clear_text()
+
+  def _clear_layout(self, layout):
+    while layout.count():
+      child = layout.takeAt(0)
+      if child.widget():
+        child.widget().deleteLater()
+      elif child.layout():
+        self._clear_layout(child.layout())
     
