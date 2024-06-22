@@ -109,6 +109,9 @@ class ParentsPage(QWidget):
       status = "active"
     )
 
+    parent_controller.create_parent(new_parent)
+    self.load_parents()
+
   def load_parents(self):
     self.parents = parent_controller.get_parents("status = 'active'", "select")
     self.table_widget.setRowCount(0)
