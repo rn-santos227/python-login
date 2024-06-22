@@ -111,6 +111,8 @@ class ParentsPage(QWidget):
 
     parent_controller.create_parent(new_parent)
     self.load_parents()
+    self._clear_fields()
+    self.message_box.show_message("Success", "Parent has been created successfully.", "Information")
 
   def load_parents(self):
     self.parents = parent_controller.get_parents("status = 'active'", "select")
