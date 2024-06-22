@@ -105,6 +105,8 @@ class ParentsPage(QWidget):
 
       update_button = QPushButton("Update")
 
+      delete_button = QPushButton("Delete")
+
   def _clear_fields(self):
     self.parent_name_field.clear_text()
     self.parent_contact_field.clear_text()
