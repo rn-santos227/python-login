@@ -1,7 +1,7 @@
 import modules.parents.controller as parent_controller
 import modules.students.controller as student_controller
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout, QSpacerItem, QSizePolicy, QTableWidgetItem
 
 from components.button import Button
 from components.combo_box import ComboBox
@@ -97,6 +97,8 @@ class ParentsPage(QWidget):
     
     for parent in self.parents:
       row_position = self.table_widget.rowCount()
+
+      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(parent.id)))
 
   def _clear_fields(self):
     self.parent_name_field.clear_text()
