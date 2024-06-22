@@ -107,6 +107,8 @@ class ParentsPage(QWidget):
 
       delete_button = QPushButton("Delete")
 
+      button_layout = QHBoxLayout()
+
   def _clear_fields(self):
     self.parent_name_field.clear_text()
     self.parent_contact_field.clear_text()
