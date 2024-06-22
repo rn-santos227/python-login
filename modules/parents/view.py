@@ -89,9 +89,15 @@ class ParentsPage(QWidget):
     return [(student.full_name, student.id) for student in students]
 
   def create_parent(self):
+    student_id = self.student_combo_box.get_selected_value()
     parent_name = self.parent_name_field.get_text()
     contact = self.parent_contact_field.get_text()
-    student_id = self.student_combo_box.get_selected_value()
+
+    fields_to_validate = [
+      (self.validation_handler.is_not_empty, student_id, "Student cannot be empty."),
+      (self.validation_handler.is_not_empty, parent_name, "Parent's full name cannot be empty."),
+      (self.validation_handler.is_not_empty, contact, "Contacts cannot be empty."),
+    ]
 
   def load_parents(self):
     self.parents = parent_controller.get_parents("status = 'active'", "select")
