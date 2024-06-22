@@ -99,6 +99,13 @@ class ParentsPage(QWidget):
       (self.validation_handler.is_not_empty, contact, "Contacts cannot be empty."),
     ]
 
+    new_parent = Parent(
+      student_id = student_id,
+      full_name = parent_name,
+      contact = contact,
+      status = "active"
+    )
+
   def load_parents(self):
     self.parents = parent_controller.get_parents("status = 'active'", "select")
     self.table_widget.setRowCount(0)
