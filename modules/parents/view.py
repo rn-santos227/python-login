@@ -99,6 +99,7 @@ class ParentsPage(QWidget):
       row_position = self.table_widget.rowCount()
 
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(parent.id)))
+      self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(parent.student.full_name)))
 
   def _clear_fields(self):
     self.parent_name_field.clear_text()
