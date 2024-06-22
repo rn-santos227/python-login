@@ -88,6 +88,9 @@ class ParentsPage(QWidget):
     
     return [(student.full_name, student.id) for student in students]
 
+  def create_parent(self):
+    pass
+
   def load_parents(self):
     self.parents = parent_controller.get_parents("status = 'active'", "select")
     self.table_widget.setRowCount(0)
