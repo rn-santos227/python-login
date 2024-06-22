@@ -1,7 +1,7 @@
 import modules.parents.controller as parent_controller
 import modules.students.controller as student_controller
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout, QSpacerItem, QSizePolicy, QTableWidgetItem
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout, QSpacerItem, QSizePolicy, QTableWidgetItem, QPushButton
 
 from components.button import Button
 from components.combo_box import ComboBox
@@ -102,6 +102,8 @@ class ParentsPage(QWidget):
       self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(parent.student.full_name)))
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(str(parent.full_name)))
       self.table_widget.setItem(row_position, 3, QTableWidgetItem(str(parent.contact)))
+
+      update_button = QPushButton("Update")
 
   def _clear_fields(self):
     self.parent_name_field.clear_text()
