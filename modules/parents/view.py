@@ -112,6 +112,9 @@ class ParentsPage(QWidget):
       button_layout.addWidget(delete_button)
       button_layout.setContentsMargins(0, 0, 0, 0)
 
+      button_widget = QWidget()
+      button_widget.setLayout(button_layout)
+
   def _clear_fields(self):
     self.parent_name_field.clear_text()
     self.parent_contact_field.clear_text()
