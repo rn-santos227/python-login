@@ -37,3 +37,10 @@ class Button(QWidget):
 
   def set_font_color(self, color="black"):
     self.button.setStyleSheet(f"color: {color};")
+
+  def set_enabled(self):
+    self.button.setEnabled(True)
+
+  def set_disabled(self):
+    self.button.setEnabled(False)
+
