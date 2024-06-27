@@ -70,7 +70,7 @@ class AdminsPage(QWidget):
     update_button.connect_signal(self.update_admin)
 
     cancel_button = Button("Cancel Update")
-    cancel_button.connect_signal(self._switch_to_create_layout)
+    cancel_button.connect_signal(self.__switch_to_create_layout)
 
     self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.update_button_layout.addWidget(update_button)
@@ -106,7 +106,7 @@ class AdminsPage(QWidget):
 
     admin_controller.create_admin(new_admin)
     self.load_admins()
-    self._clear_fields()
+    self.__clear_fields()
     self.message_box.show_message("Success", "Admin has been created successfully.", "Information")
   
   def update_admin(self):
@@ -131,7 +131,7 @@ class AdminsPage(QWidget):
 
     admin_controller.update_admin(update_admin)
     self.load_admins()
-    self._switch_to_create_layout()
+    self.__switch_to_create_layout()
     self.message_box.show_message("Success", "Admin has been updated successfully.", "Information")
 
   def load_admins(self):
@@ -150,7 +150,7 @@ class AdminsPage(QWidget):
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(admin.email))
 
       update_button = QPushButton("Update")
-      update_button.clicked.connect(lambda ch, admin=admin: self._load_admin_for_update(admin))
+      update_button.clicked.connect(lambda ch, admin=admin: self.__load_admin_for_update(admin))
 
       delete_button = QPushButton("Delete")
 
@@ -164,41 +164,41 @@ class AdminsPage(QWidget):
       
       self.table_widget.setCellWidget(row_position, 3, button_widget)
 
-  def _load_admin_for_update(self, admin: Admin):
-    self._switch_to_update_layout()
+  def __load_admin_for_update(self, admin: Admin):
+    self.__switch_to_update_layout()
     self.admin_id = admin.id
 
     self.update_email_field.set_text(admin.email)
-    self.update_fullname_field.set_text(admin.full_name)
+    self.update_fullname_field.set_text(admin.full_name_)
 
-  def _switch_to_update_layout(self):
+  def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
       if child.widget():
         child.widget().deleteLater()
       elif child.layout():
-        self._clear_layout(child.layout())
+        self.__clear_layout(child.layout())
     self.top_layout.addLayout(self.init_update_layout())
 
-  def _switch_to_create_layout(self):
+  def __switch_to_create_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
       if child.widget():
         child.widget().deleteLater()
       elif child.layout():
-        self._clear_layout(child.layout())
+        self.__clear_layout(child.layout())
     self.top_layout.addLayout(self.init_create_layout())
-    self._clear_fields()
+    self.__clear_fields()
 
-  def _clear_fields(self):
+  def __clear_fields(self):
     self.email_field.clear_text()
     self.password_field.clear_text()
     self.fullname_field.clear_text()
 
-  def _clear_layout(self, layout):
+  def __clear_layout(self, layout):
     while layout.count():
       child = layout.takeAt(0)
       if child.widget():
         child.widget().deleteLater()
       elif child.layout():
-        self._clear_layout(child.layout())
+        self.__clear_layout(child.layout())
