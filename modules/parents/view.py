@@ -144,6 +144,9 @@ class ParentsPage(QWidget):
 
       self.table_widget.setCellWidget(row_position, 4, button_widget)
 
+  def __load_parent_for_update(self, parent: Parent):
+    self.__switch_to_update_layout()
+
   def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
