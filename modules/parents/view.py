@@ -145,7 +145,8 @@ class ParentsPage(QWidget):
       self.table_widget.setCellWidget(row_position, 4, button_widget)
 
   def __switch_to_update_layout(self):
-    pass
+    while self.top_layout.count():
+      pass
 
   def __clear_fields(self):
     self.parent_name_field.clear_text()
