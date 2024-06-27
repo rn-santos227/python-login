@@ -91,7 +91,7 @@ class StudentPage(QWidget):
     update_button.connect_signal(self.update_student)
 
     cancel_button = Button("Cancel Update")
-    cancel_button.connect_signal(self._switch_to_create_layout)
+    cancel_button.connect_signal(self.__switch_to_create_layout)
 
     self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.update_button_layout.addWidget(update_button)
@@ -149,7 +149,7 @@ class StudentPage(QWidget):
 
     student_controller.create_student(new_student)
     self.load_students()
-    self._clear_fields()
+    self.__clear_fields()
     self.message_box.show_message("Success", "Student has been created successfully.", "Information")
 
   def update_student(self):
@@ -189,7 +189,7 @@ class StudentPage(QWidget):
 
     student_controller.update_student(update_student)
     self.load_students()
-    self._switch_to_create_layout()
+    self.__switch_to_create_layout()
     self.message_box.show_message("Success", "Student has been updated successfully.", "Information")
 
   def load_students(self):
@@ -212,7 +212,7 @@ class StudentPage(QWidget):
       self.table_widget.setItem(row_position, 6, QTableWidgetItem(student.grade))
 
       update_button = QPushButton("Update")
-      update_button.clicked.connect(lambda ch, student=student: self._load_student_for_update(student))
+      update_button.clicked.connect(lambda ch, student=student: self.__load_student_for_update(student))
 
       delete_button = QPushButton("Delete")
       
@@ -227,8 +227,8 @@ class StudentPage(QWidget):
       
       self.table_widget.setCellWidget(row_position, 7, button_widget)
 
-  def _load_student_for_update(self, student: Student):
-    self._switch_to_update_layout()
+  def __load_student_for_update(self, student: Student):
+    self.__switch_to_update_layout()
     self.student_id = student.id
 
     self.update_email_field.set_text(student.email)
@@ -238,26 +238,26 @@ class StudentPage(QWidget):
     self.update_section_field.set_text(student.section)
     self.update_grade_field.set_text(student.grade)
     
-  def _switch_to_update_layout(self):
+  def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
       if child.widget():
         child.widget().deleteLater()
       elif child.layout():
-        self._clear_layout(child.layout())
+        self.__clear_layout(child.layout())
     self.top_layout.addLayout(self.init_update_layout())
 
-  def _switch_to_create_layout(self):
+  def __switch_to_create_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
       if child.widget():
         child.widget().deleteLater()
       elif child.layout():
-        self._clear_layout(child.layout())
+        self.__clear_layout(child.layout())
     self.top_layout.addLayout(self.init_create_layout())
-    self._clear_fields()
+    self.__clear_fields()
 
-  def _clear_fields(self):
+  def __clear_fields(self):
     self.email_field.clear_text()
     self.password_field.clear_text()
     self.fullname_field.clear_text()
@@ -266,10 +266,10 @@ class StudentPage(QWidget):
     self.section_field.clear_text()
     self.grade_field.clear_text()
 
-  def _clear_layout(self, layout):
+  def __clear_layout(self, layout):
     while layout.count():
       child = layout.takeAt(0)
       if child.widget():
         child.widget().deleteLater()
       elif child.layout():
-        self._clear_layout(child.layout())
+        self.__clear_layout(child.layout())
