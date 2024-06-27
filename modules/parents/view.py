@@ -112,7 +112,7 @@ class ParentsPage(QWidget):
 
     parent_controller.create_parent(new_parent)
     self.load_parents()
-    self._clear_fields()
+    self.__clear_fields()
     self.message_box.show_message("Success", "Parent has been created successfully.", "Information")
 
   def load_parents(self):
@@ -144,15 +144,15 @@ class ParentsPage(QWidget):
 
       self.table_widget.setCellWidget(row_position, 4, button_widget)
 
-  def _clear_fields(self):
+  def __clear_fields(self):
     self.parent_name_field.clear_text()
     self.parent_contact_field.clear_text()
 
-  def _clear_layout(self, layout):
+  def __clear_layout(self, layout):
     while layout.count():
       child = layout.takeAt(0)
       if child.widget():
         child.widget().deleteLater()
       elif child.layout():
-        self._clear_layout(child.layout())
+        self.__clear_layout(child.layout())
     
