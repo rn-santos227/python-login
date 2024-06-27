@@ -155,7 +155,7 @@ class ParentsPage(QWidget):
 
   def __switch_to_create_layout(self):
     while self.top_layout.count():
-      pass
+      child = self.top_layout.takeAt(0)
 
   def __clear_fields(self):
     self.parent_name_field.clear_text()
