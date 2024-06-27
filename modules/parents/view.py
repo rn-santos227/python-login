@@ -1,10 +1,10 @@
 import modules.parents.controller as parent_controller
 import modules.students.controller as student_controller
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout, QSpacerItem, QSizePolicy, QTableWidgetItem, QPushButton
 
-from components.combo_box import ComboBox
 from components.button import Button
+from components.combo_box import ComboBox
 from components.message_box import MessageBox
 from components.text_field import TextField
 
@@ -22,7 +22,6 @@ class ParentsPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    self.load_students_to_combo_box()
     self.main_layout = QVBoxLayout()
     self.top_layout = QHBoxLayout()
 
@@ -37,17 +36,18 @@ class ParentsPage(QWidget):
     self.main_layout.addWidget(self.table_widget)
   
     self.setLayout(self.main_layout)
+    self.load_parents()
 
   def init_create_layout(self):
     create_layout = QGridLayout()
     self.create_button_layout = QHBoxLayout()
     
-    self.student_combo_box = ComboBox(label_text="Student Name", items=self.students)
-
+    self.student_combo_box = ComboBox(label_text="Student Name", items=self.load_students_to_combo_box())
     self.parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
     create_button = Button("Create Parent")
+    create_button.connect_signal(self.create_parent)
 
     self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.create_button_layout.addWidget(create_button)
@@ -59,14 +59,100 @@ class ParentsPage(QWidget):
 
     return create_layout
   
+  def init_update_layout(self):
+    update_layout = QGridLayout()
+    self.update_button_layout = QHBoxLayout()
+
+    self.update_student_combo_box = ComboBox(label_text="Student Name", items=self.load_students_to_combo_box())
+    self.update_parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
+    self.update_parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
+
+    update_button = Button("Update Parent")
+
+    cancel_button = Button("Cancel Update")
+  
+    self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    self.update_button_layout.addWidget(update_button)
+    self.update_button_layout.addWidget(cancel_button)
+
+    update_layout.addWidget(self.update_student_combo_box, 0, 0, 1, 2)
+    update_layout.addWidget(self.update_parent_name_field, 1, 0, 1, 2)
+    update_layout.addWidget(self.update_parent_contact_field, 2, 0, 1, 2)
+    update_layout.addLayout(self.update_button_layout, 3, 0, 1, 2)
+
+    return update_layout
+  
   def load_students_to_combo_box(self):
     students = student_controller.get_students("status = 'active'", "select")
-    if not self.students:
+    if not students:
       return
     
-    self.students = [(student.full_name, student.id) for student in students]
+    return [(student.full_name, student.id) for student in students]
+
+  def create_parent(self):
+    student_id = self.student_combo_box.get_selected_value()
+    parent_name = self.parent_name_field.get_text()
+    contact = self.parent_contact_field.get_text()
+
+    fields_to_validate = [
+      (self.validation_handler.is_not_empty, student_id, "Student cannot be empty."),
+      (self.validation_handler.is_not_empty, parent_name, "Parent's full name cannot be empty."),
+      (self.validation_handler.is_not_empty, contact, "Contacts cannot be empty."),
+    ]
+
+    if not self.validation_handler.validate_fields(self, fields_to_validate):
+      return
+
+    new_parent = Parent(
+      student_id = student_id,
+      full_name = parent_name,
+      contact = contact,
+      status = "active"
+    )
+
+    parent_controller.create_parent(new_parent)
+    self.load_parents()
+    self._clear_fields()
+    self.message_box.show_message("Success", "Parent has been created successfully.", "Information")
+
+  def load_parents(self):
+    self.parents = parent_controller.get_parents("status = 'active'", "select")
+    self.table_widget.setRowCount(0)
+
+    if not self.parents:
+      return
+    
+    for parent in self.parents:
+      row_position = self.table_widget.rowCount()
+
+      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(parent.id)))
+      self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(parent.student.full_name)))
+      self.table_widget.setItem(row_position, 2, QTableWidgetItem(str(parent.full_name)))
+      self.table_widget.setItem(row_position, 3, QTableWidgetItem(str(parent.contact)))
+
+      update_button = QPushButton("Update")
+
+      delete_button = QPushButton("Delete")
+
+      button_layout = QHBoxLayout()
+      button_layout.addWidget(update_button)
+      button_layout.addWidget(delete_button)
+      button_layout.setContentsMargins(0, 0, 0, 0)
+
+      button_widget = QWidget()
+      button_widget.setLayout(button_layout)
+
+      self.table_widget.setCellWidget(row_position, 4, button_widget)
 
   def _clear_fields(self):
     self.parent_name_field.clear_text()
     self.parent_contact_field.clear_text()
+
+  def _clear_layout(self, layout):
+    while layout.count():
+      child = layout.takeAt(0)
+      if child.widget():
+        child.widget().deleteLater()
+      elif child.layout():
+        self._clear_layout(child.layout())
     

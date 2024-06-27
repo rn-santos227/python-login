@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton, QSizePolicy
 from PyQt5.QtGui import QFont
 
 class Button(QWidget):
@@ -9,7 +9,7 @@ class Button(QWidget):
   def init_ui(self, button_text):
     self.layout = QVBoxLayout()
     self.button = QPushButton(button_text)
-    self.button.setFixedWidth(250) 
+    self.button.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
 
     button_font = QFont()
     button_font.setPointSize(12)
@@ -31,3 +31,16 @@ class Button(QWidget):
     button_font = self.button.font()
     button_font.setPointSize(size)
     self.button.setFont(button_font)
+
+  def set_bg_color(self, color="green"):
+    self.button.setStyleSheet(f"background-color: {color};")
+
+  def set_font_color(self, color="black"):
+    self.button.setStyleSheet(f"color: {color};")
+
+  def set_enabled(self):
+    self.button.setEnabled(True)
+
+  def set_disabled(self):
+    self.button.setEnabled(False)
+
