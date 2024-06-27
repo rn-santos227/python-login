@@ -160,6 +160,7 @@ class ParentsPage(QWidget):
         child.widget().deleteLater()
       elif child.layout():
         self.__clear_layout(child.layout())
+    self.top_layout.addLayout(self.init_create_layout())
 
   def __clear_fields(self):
     self.parent_name_field.clear_text()
