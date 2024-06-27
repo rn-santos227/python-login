@@ -146,6 +146,7 @@ class ParentsPage(QWidget):
 
   def __load_parent_for_update(self, parent: Parent):
     self.__switch_to_update_layout()
+    self.parent_id = parent.id
 
   def __switch_to_update_layout(self):
     while self.top_layout.count():
