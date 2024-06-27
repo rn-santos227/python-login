@@ -148,6 +148,8 @@ class ParentsPage(QWidget):
     self.__switch_to_update_layout()
     self.parent_id = parent.id
 
+    self.update_student_combo_box.set_selected_value(parent.student_id)
+
   def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
