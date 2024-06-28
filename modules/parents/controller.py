@@ -26,6 +26,9 @@ def get_parent_by_id(id) -> Union[Parent, None]:
   finally:
     cursor.close()
 
+def get_parent_by_student_id(student_id) -> Union[Parent, None]:
+  pass
+
 def get_parents(query, action) -> list[Parent]:
   sql_query = builder(table, query, action)
   cursor = DB.connect_db().cursor()
