@@ -220,7 +220,7 @@ class StudentPage(QWidget):
       update_button.clicked.connect(lambda ch, student=student: self.__load_student_for_update(student))
 
       delete_button = QPushButton("Delete")
-      delete_button.clicked.connect(lambda ch, id=student.id: self.__prompt_delete_student(id))
+      delete_button.clicked.connect(lambda ch, student_id=student.id: self.__prompt_delete_student(student_id))
       
       button_layout = QHBoxLayout()
       button_layout.addWidget(update_button)
@@ -232,14 +232,14 @@ class StudentPage(QWidget):
       
       self.table_widget.setCellWidget(row_position, 7, button_widget)
 
-  def __prompt_delete_student(self, id: int):
-    parent = parents_controller.get_parent_by_student_id(id)
+  def __prompt_delete_student(self, student_id: int):
+    parent = parents_controller.get_parent_by_student_id(student_id)
 
     if parent:
       self.message_box.show_message("Error", "Student cannot be deleted as it has attached records.", "error")
 
     else:
-      self.student_id = id
+      self.student_id = student_id
       question_box = QuestionBox(message="Do you want to delete this student?")
 
   def __load_student_for_update(self, student: Student):
