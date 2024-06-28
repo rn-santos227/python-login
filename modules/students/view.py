@@ -1,4 +1,5 @@
-import modules.students.controller as student_controller
+import modules.parents.controller as parents_controller
+import modules.students.controller as students_controller
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView,  QSpacerItem, QSizePolicy, QGridLayout
 
@@ -148,7 +149,7 @@ class StudentPage(QWidget):
       status = "active"
     )
 
-    student_controller.create_student(new_student)
+    students_controller.create_student(new_student)
     self.load_students()
     self.__clear_fields()
     self.message_box.show_message("Success", "Student has been created successfully.", "Information")
@@ -188,7 +189,7 @@ class StudentPage(QWidget):
       grade = grade
     )
 
-    student_controller.update_student(update_student)
+    students_controller.update_student(update_student)
     self.load_students()
     self.__switch_to_create_layout()
     self.message_box.show_message("Success", "Student has been updated successfully.", "Information")
@@ -197,7 +198,7 @@ class StudentPage(QWidget):
     pass
 
   def load_students(self):
-    self.students = student_controller.get_students("status = 'active'", "select")
+    self.students = students_controller.get_students("status = 'active'", "select")
     self.table_widget.setRowCount(0)
 
     if not self.students:
