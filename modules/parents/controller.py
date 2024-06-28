@@ -32,6 +32,13 @@ def get_parent_by_student_id(student_id) -> Union[Parent, None]:
 
   try:
     cursor.execute(sql_query, (student_id))
+    row = cursor.fetchone()
+
+    if row:
+      parent = Parent(*row)
+      return parent
+    else:
+      return None
 
   except Exception as e:
     print(f"Error: {e}")
