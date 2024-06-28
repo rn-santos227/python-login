@@ -30,6 +30,12 @@ def get_parent_by_student_id(student_id) -> Union[Parent, None]:
   sql_query = builder(table, 'student_id = ?', "select")
   cursor = DB.connect_db().cursor()
 
+  try:
+    cursor.execute(sql_query, (student_id))
+
+  except Exception as e:
+    print(f"Error: {e}")
+
 def get_parents(query, action) -> list[Parent]:
   sql_query = builder(table, query, action)
   cursor = DB.connect_db().cursor()
