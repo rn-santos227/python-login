@@ -232,7 +232,10 @@ class StudentPage(QWidget):
       self.table_widget.setCellWidget(row_position, 7, button_widget)
 
   def __prompt_delete_student(self, id: int):
-    self.student_id = id
+    parent = parents_controller.get_parent_by_student_id(id)
+
+    if parent:
+      self.message_box.show_message("Error", "Student cannot be deleted as it has attached records.", "error")
 
   def __load_student_for_update(self, student: Student):
     self.__switch_to_update_layout()
