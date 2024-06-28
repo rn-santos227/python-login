@@ -88,6 +88,7 @@ class DashboardAdminPage(QWidget):
     self.main_content.setCurrentWidget(self.logs_content)
 
   def handle_logout(self):
+    question_box = QuestionBox(message="Are you sure you want to log out?")
     self.pages_handler.switch_to_login_page()
 
 class DashboardStudentPage(QWidget):
