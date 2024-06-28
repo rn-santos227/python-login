@@ -66,6 +66,8 @@ class ScannerPage(QWidget):
   
   def save_face(self):
     ret, frame = self.webcam_component.capture_image()
+    if ret:
+      file_name = self.student_combo_box.get_selected_value()
   
   def __enable_capture(self):
     self.webcam_component.start_webcam()
