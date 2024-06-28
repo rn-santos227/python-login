@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget
 from PyQt5.QtCore import Qt
 
 from components.button import Button
+from components.question_box import QuestionBox
 
 from modules.admin.view import AdminsPage
 from modules.logs.view import LogsPage
