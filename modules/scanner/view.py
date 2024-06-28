@@ -40,6 +40,7 @@ class ScannerPage(QWidget):
     center_layout.addWidget(self.student_combo_box)
     center_layout.addWidget(self.webcam_component)
     center_layout.addWidget(self.start_button)
+    center_layout.addWidget(self.capture_button)
     
     h_center_layout.addItem(left_spacer)
     h_center_layout.addLayout(center_layout)
