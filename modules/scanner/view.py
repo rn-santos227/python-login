@@ -22,6 +22,7 @@ class ScannerPage(QWidget):
     self.main_layout = QVBoxLayout()
     center_layout = QVBoxLayout()
     h_center_layout = QHBoxLayout()
+    webcam_center_layout = QHBoxLayout()
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
@@ -30,15 +31,15 @@ class ScannerPage(QWidget):
 
     self.student_combo_box = ComboBox(label_text="Student Names", items=self.load_students_to_combo_box())
     self.webcam_component = Webcam(self)
+    webcam_center_layout.addWidget(self.webcam_component)
 
     self.start_button = Button("Start Webcam")
     self.start_button.connect_signal(self.__enable_capture)
 
     self.capture_button = Button("Capture Face")
-    self.capture_button.set_disabled()
 
     center_layout.addWidget(self.student_combo_box)
-    center_layout.addWidget(self.webcam_component)
+    center_layout.addLayout(webcam_center_layout)
     center_layout.addWidget(self.start_button)
     center_layout.addWidget(self.capture_button)
     
@@ -51,6 +52,7 @@ class ScannerPage(QWidget):
     self.main_layout.addItem(bottom_spacer)
 
     self.setLayout(self.main_layout)
+    self.capture_button.set_disabled()
 
   def load_students_to_combo_box(self):
     students = student_controller.get_students("status = 'active'", "select")
