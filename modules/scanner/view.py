@@ -59,4 +59,5 @@ class ScannerPage(QWidget):
     return [(student.full_name, student.id) for student in students]
   
   def __enable_capture(self):
-    pass
+    self.webcam_component.start_webcam()
+    self.capture_button.set_enabled()
