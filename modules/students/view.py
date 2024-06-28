@@ -237,6 +237,10 @@ class StudentPage(QWidget):
     if parent:
       self.message_box.show_message("Error", "Student cannot be deleted as it has attached records.", "error")
 
+    else:
+      self.student_id = id
+      question_box = QuestionBox(message="Do you want to delete this student?")
+
   def __load_student_for_update(self, student: Student):
     self.__switch_to_update_layout()
     self.student_id = student.id
