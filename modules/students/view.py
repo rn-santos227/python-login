@@ -220,6 +220,7 @@ class StudentPage(QWidget):
       update_button.clicked.connect(lambda ch, student=student: self.__load_student_for_update(student))
 
       delete_button = QPushButton("Delete")
+      delete_button.clicked.connect(lambda ch, id=student.id: self.__prompt_delete_student(id))
       
       button_layout = QHBoxLayout()
       button_layout.addWidget(update_button)
