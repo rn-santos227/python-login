@@ -229,6 +229,9 @@ class StudentPage(QWidget):
       
       self.table_widget.setCellWidget(row_position, 7, button_widget)
 
+  def __prompt_delete_student(self, id: int):
+    pass
+
   def __load_student_for_update(self, student: Student):
     self.__switch_to_update_layout()
     self.student_id = student.id
