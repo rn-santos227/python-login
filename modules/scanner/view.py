@@ -64,6 +64,9 @@ class ScannerPage(QWidget):
     
     return [(student.full_name, student.id) for student in students]
   
+  def save_face(self):
+    ret, frame = self.webcam_component.capture_image()
+  
   def __enable_capture(self):
     self.webcam_component.start_webcam()
     self.capture_button.set_enabled()
