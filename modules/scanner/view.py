@@ -31,7 +31,10 @@ class ScannerPage(QWidget):
 
     self.student_combo_box = ComboBox(label_text="Student Names", items=self.load_students_to_combo_box())
     self.webcam_component = Webcam(self)
+
+    webcam_center_layout.addItem(left_spacer)
     webcam_center_layout.addWidget(self.webcam_component)
+    webcam_center_layout.addItem(right_spacer)
 
     self.start_button = Button("Start Webcam")
     self.start_button.connect_signal(self.__enable_capture)
