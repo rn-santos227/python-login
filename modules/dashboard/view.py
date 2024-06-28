@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget, QDialog
 from PyQt5.QtCore import Qt
 
 from components.button import Button
@@ -89,7 +89,8 @@ class DashboardAdminPage(QWidget):
 
   def handle_logout(self):
     question_box = QuestionBox(message="Are you sure you want to log out?")
-    self.pages_handler.switch_to_login_page()
+    if question_box.exec() == QDialog.Accepted:
+      self.pages_handler.switch_to_login_page()
 
 class DashboardStudentPage(QWidget):
   def __init__(self, pages_handler):
