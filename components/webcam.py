@@ -7,6 +7,7 @@ class Webcam(QWidget):
   def __init__(self, parent=None):
     super().__init__(parent)
     self.init_ui()
+    self.face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
   def init_ui(self):
     self.layout = QVBoxLayout(self)
