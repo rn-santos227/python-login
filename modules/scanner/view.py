@@ -64,7 +64,7 @@ class ScannerPage(QWidget):
     if not students:
       return
     
-    return [(student.full_name, student.id) for student in students]
+    return [(student.full_name, student.student_number) for student in students]
   
   def save_face(self):
     ret, frame = self.webcam_component.capture_image()
@@ -75,7 +75,7 @@ class ScannerPage(QWidget):
         self.message_box.show_message("Validation Error", "Name cannot be empty", "error")
         return
       
-      faces_folder = os.path.join(os.path.expanduser('~'), 'Documents', 'faces')
+      faces_folder = os.path.join(os.path.expanduser('~'), 'Documents', 'Faces')
       os.makedirs(faces_folder, exist_ok=True)
 
       file_path = os.path.join(faces_folder, f"{file_name}.jpg")
