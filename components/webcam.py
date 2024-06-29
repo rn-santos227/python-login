@@ -46,9 +46,10 @@ class Webcam(QWidget):
 
   def capture_image(self):
     ret, frame = self.cap.read()
-    return ret, frame
+    if ret:
+      gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
   
   def stop_webcam(self):
     if self.cap is not None:
-        self.cap.release()
+      self.cap.release()
     self.timer.stop()
