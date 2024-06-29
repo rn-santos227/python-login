@@ -81,7 +81,7 @@ class ScannerPage(QWidget):
       file_path = os.path.join(faces_folder, f"{file_name}.jpg")
       cv2.imwrite(file_path, frame)
 
-      face_encodings = face_recognition.face_encodings(frame)
+      self.message_box.show_message("Success", f"Face has been captured.", "Information")
   
   def __enable_capture(self):
     self.webcam_component.start_webcam()
