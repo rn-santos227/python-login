@@ -1,4 +1,5 @@
 import cv2
+import face_recognition
 import os
 import modules.students.controller as student_controller
 
@@ -79,6 +80,8 @@ class ScannerPage(QWidget):
 
       file_path = os.path.join(faces_folder, f"{file_name}.jpg")
       cv2.imwrite(file_path, frame)
+
+      face_encodings = face_recognition.face_encodings(frame)
   
   def __enable_capture(self):
     self.webcam_component.start_webcam()
