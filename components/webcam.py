@@ -35,7 +35,7 @@ class Webcam(QWidget):
     self.label.setPixmap(QtGui.QPixmap.fromImage(img))
 
   def detect_faces(self, img):
-    pass
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
   def capture_image(self):
     ret, frame = self.cap.read()
