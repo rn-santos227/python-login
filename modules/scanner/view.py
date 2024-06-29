@@ -74,4 +74,5 @@ class ScannerPage(QWidget):
     self.capture_button.set_enabled()
 
   def __disable_capture(self):
-    pass
+    self.webcam_component.stop_webcam()
+    self.capture_button.set_disabled()
