@@ -41,7 +41,7 @@ class ScannerPage(QWidget):
     self.webcam_button.connect_signal(self.__enable_capture)
 
     self.capture_button = Button("Save Face")
-    self.webcam_button.connect_signal(self.save_face)
+    self.capture_button.connect_signal(self.save_face)
 
     center_layout.addWidget(self.student_combo_box)
     center_layout.addLayout(webcam_center_layout)
