@@ -26,6 +26,7 @@ class Webcam(QWidget):
   def update_frame(self):
     ret, frame = self.cap.read()
     if ret:
+      frame = self.detect_faces(frame)
       self.display_image(frame)
     
   def display_image(self, img):
