@@ -1,5 +1,4 @@
 import cv2
-import face_recognition
 import os
 import modules.students.controller as student_controller
 
