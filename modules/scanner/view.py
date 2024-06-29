@@ -36,14 +36,14 @@ class ScannerPage(QWidget):
     webcam_center_layout.addWidget(self.webcam_component)
     webcam_center_layout.addItem(right_spacer)
 
-    self.start_button = Button("Start Webcam")
-    self.start_button.connect_signal(self.__enable_capture)
+    self.webcam_button = Button("Start Webcam")
+    self.webcam_button.connect_signal(self.__enable_capture)
 
     self.capture_button = Button("Capture Face")
 
     center_layout.addWidget(self.student_combo_box)
     center_layout.addLayout(webcam_center_layout)
-    center_layout.addWidget(self.start_button)
+    center_layout.addWidget(self.webcam_button)
     center_layout.addWidget(self.capture_button)
     
     h_center_layout.addItem(left_spacer)
@@ -72,3 +72,6 @@ class ScannerPage(QWidget):
   def __enable_capture(self):
     self.webcam_component.start_webcam()
     self.capture_button.set_enabled()
+
+  def __disable_capture(self):
+    pass
