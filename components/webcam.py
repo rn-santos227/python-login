@@ -36,6 +36,7 @@ class Webcam(QWidget):
 
   def detect_faces(self, img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    faces = self.face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
 
   def capture_image(self):
     ret, frame = self.cap.read()
