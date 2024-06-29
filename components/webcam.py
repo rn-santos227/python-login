@@ -52,6 +52,7 @@ class Webcam(QWidget):
 
       if len(faces) == 1:
         return ret, frame
+    return False, None
   
   def stop_webcam(self):
     if self.cap is not None:
