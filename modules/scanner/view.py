@@ -15,6 +15,7 @@ class ScannerPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
+    self.message_box = MessageBox(self)
     self.students = []
     self.init_ui()
 
@@ -68,6 +69,10 @@ class ScannerPage(QWidget):
     ret, frame = self.webcam_component.capture_image()
     if ret:
       file_name = self.student_combo_box.get_selected_value()
+
+      if not file_name:
+        self.message_box.show_message("Validation Error", "Name cannot be empty", "error")
+        return
   
   def __enable_capture(self):
     self.webcam_component.start_webcam()
