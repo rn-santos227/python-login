@@ -49,6 +49,9 @@ class Webcam(QWidget):
     if ret:
       gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
       faces = self.face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+
+      if len(faces) == 1:
+        return ret, frame
   
   def stop_webcam(self):
     if self.cap is not None:
