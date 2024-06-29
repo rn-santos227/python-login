@@ -74,6 +74,9 @@ class ScannerPage(QWidget):
       if not file_name:
         self.message_box.show_message("Validation Error", "Name cannot be empty", "error")
         return
+      
+      faces_folder = os.path.join(os.path.expanduser('~'), 'Documents', 'faces')
+      os.makedirs(faces_folder, exist_ok=True)
   
   def __enable_capture(self):
     self.webcam_component.start_webcam()
