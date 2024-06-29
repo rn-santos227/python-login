@@ -1,6 +1,5 @@
-import sys
+import cv2
 import os
-import face_recognition
 import modules.students.controller as student_controller
 
 from PyQt5 import QtCore, QtGui
@@ -77,6 +76,9 @@ class ScannerPage(QWidget):
       
       faces_folder = os.path.join(os.path.expanduser('~'), 'Documents', 'faces')
       os.makedirs(faces_folder, exist_ok=True)
+
+      file_path = os.path.join(faces_folder, f"{file_name}.jpg")
+      cv2.imwrite(file_path, frame)
   
   def __enable_capture(self):
     self.webcam_component.start_webcam()
