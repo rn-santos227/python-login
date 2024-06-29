@@ -34,6 +34,9 @@ class Webcam(QWidget):
     img = img.rgbSwapped()
     self.label.setPixmap(QtGui.QPixmap.fromImage(img))
 
+  def detect_faces(self, img):
+    pass
+
   def capture_image(self):
     ret, frame = self.cap.read()
     return ret, frame
