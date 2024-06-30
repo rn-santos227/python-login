@@ -2,7 +2,6 @@ import cv2
 import os
 import modules.students.controller as student_controller
 
-from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
 
 from components.button import Button
