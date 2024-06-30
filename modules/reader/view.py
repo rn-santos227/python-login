@@ -1,10 +1,10 @@
 import cv2
 import os
 import face_recognition
+import modules.students.controller as student_controller
+import modules.logs.controller as log_controller
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
-
-import modules.students.controller as student_controller
 
 class ReaderPage(QWidget):
   def __init__(self, pages_handler):
@@ -16,3 +16,8 @@ class ReaderPage(QWidget):
     center_layout = QVBoxLayout()
     h_center_layout = QHBoxLayout()
     webcam_center_layout = QHBoxLayout()
+
+    top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+    bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+    left_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
+    right_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
