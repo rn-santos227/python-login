@@ -60,6 +60,7 @@ class ReaderPage(QWidget):
       if filename.endswith('.jpg') or filename.endswith('.jpeg') or filename.endswith('.png'):
         file_path = os.path.join(faces_folder, filename)
         image = face_recognition.load_image_file(file_path)
+        face_encodings = face_recognition.face_encodings(image)
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
