@@ -35,7 +35,7 @@ class DashboardAdminPage(QWidget):
     logs_button.set_fixed_width(250)
 
     reader_button = Button("Read Biometrics")
-    # reader_button.connect_signal(self.handle_scanner)
+    reader_button.connect_signal(self.handle_reader)
     reader_button.set_fixed_width(250)
     
     scanner_button = Button("Save Biometrics")
@@ -59,6 +59,7 @@ class DashboardAdminPage(QWidget):
     logout_button.set_fixed_width(250)
 
     self.navigation_menu.addWidget(logs_button)
+    self.navigation_menu.addWidget(reader_button)
     self.navigation_menu.addWidget(scanner_button)
     self.navigation_menu.addWidget(students_button)
     self.navigation_menu.addWidget(parents_button)
@@ -69,6 +70,7 @@ class DashboardAdminPage(QWidget):
     self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.parents_content)
+    self.main_content.addWidget(self.reader_content)
     self.main_content.addWidget(self.scanner_content)
     self.main_content.addWidget(self.students_content)
 
