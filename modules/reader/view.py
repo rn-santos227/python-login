@@ -45,6 +45,10 @@ class ReaderPage(QWidget):
     center_layout.addWidget(self.webcam_button)
     center_layout.addWidget(self.capture_button)
 
+    h_center_layout.addItem(left_spacer)
+    h_center_layout.addLayout(center_layout)
+    h_center_layout.addItem(right_spacer)
+
     self.main_layout.addItem(top_spacer)
     self.main_layout.addItem(h_center_layout)
     self.main_layout.addItem(bottom_spacer)
@@ -58,10 +62,11 @@ class ReaderPage(QWidget):
       os.makedirs(faces_folder)
 
     for filename in os.listdir(faces_folder):
-      if filename.endswith('.jpg') or filename.endswith('.jpeg') or filename.endswith('.png'):
+      if filename.endswith(".jpg") or filename.endswith(".png"):
         file_path = os.path.join(faces_folder, filename)
         image = face_recognition.load_image_file(file_path)
-        face_encodings = face_recognition.face_encodings(image)
+        rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        face_encodings = face_recognition.face_encodings(rgb_image)
 
       if face_encodings:
         self.student_faces[filename] = face_encodings[0]
