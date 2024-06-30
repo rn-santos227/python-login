@@ -37,14 +37,18 @@ class ReaderPage(QWidget):
 
     self.webcam_button = Button("Start Webcam")
 
+    self.capture_button = Button("Capture Face")
+
   def __enable_capture(self):
     self.webcam_component.start_webcam()
+    self.capture_button.set_enabled()
     self.webcam_button.set_button_text("Stop Webcam")
     self.webcam_button.disconnect_signal(self.__enable_capture)
     self.webcam_button.connect_signal(self.__disable_capture)
 
   def __disable_capture(self):
     self.webcam_component.stop_webcam()
+    self.capture_button.set_disabled()
     self.webcam_button.set_button_text("Start Webcam")
     self.webcam_button.disconnect_signal(self.__disable_capture)
     self.webcam_button.connect_signal(self.__enable_capture)
