@@ -40,10 +40,13 @@ class ReaderPage(QWidget):
 
     self.capture_button = Button("Capture Face")
 
-    center_layout.addWidget(self.student_combo_box)
     center_layout.addLayout(webcam_center_layout)
     center_layout.addWidget(self.webcam_button)
     center_layout.addWidget(self.capture_button)
+
+    self.main_layout.addItem(top_spacer)
+    self.main_layout.addItem(h_center_layout)
+    self.main_layout.addItem(bottom_spacer)
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
