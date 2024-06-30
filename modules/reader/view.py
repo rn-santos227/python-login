@@ -52,7 +52,7 @@ class ReaderPage(QWidget):
     self.capture_button.set_disabled()
 
   def load_student_images(self):
-    pass
+    faces_folder = os.path.join(os.path.expanduser('~'), 'Documents', 'faces')
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
