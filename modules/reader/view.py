@@ -48,6 +48,9 @@ class ReaderPage(QWidget):
     self.main_layout.addItem(h_center_layout)
     self.main_layout.addItem(bottom_spacer)
 
+    self.setLayout(self.main_layout)
+    self.capture_button.set_disabled()
+
   def __enable_capture(self):
     self.webcam_component.start_webcam()
     self.capture_button.set_enabled()
