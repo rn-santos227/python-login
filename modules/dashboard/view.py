@@ -7,6 +7,7 @@ from components.question_box import QuestionBox
 from modules.admin.view import AdminsPage
 from modules.logs.view import LogsPage
 from modules.parents.view import ParentsPage
+from modules.reader.view import ReaderPage
 from modules.scanner.view import ScannerPage
 from modules.students.view import StudentPage
 
@@ -20,6 +21,7 @@ class DashboardAdminPage(QWidget):
     self.admins_content = AdminsPage(self)
     self.logs_content = LogsPage(self)
     self.parents_content = ParentsPage(self)
+    self.reader_content = ReaderPage(self)
     self.scanner_content = ScannerPage(self)
     self.students_content = StudentPage(self)
 
