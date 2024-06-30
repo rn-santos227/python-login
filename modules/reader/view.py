@@ -17,6 +17,7 @@ class ReaderPage(QWidget):
     self.message_box = MessageBox(self)
     self.student_faces = []
     self.init_ui()
+    self.load_student_images()
 
   def init_ui(self):
     self.main_layout = QVBoxLayout()
@@ -64,6 +65,12 @@ class ReaderPage(QWidget):
 
       if face_encodings:
         self.student_faces[filename] = face_encodings[0]
+
+  def match_face(self):
+    ret, frame = self.webcam_component.capture_image()
+    if not ret:
+      self.message_box.show_message("Error", "No face detected", "error")
+      return
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
