@@ -61,15 +61,15 @@ class ReaderPage(QWidget):
     if not os.path.exists(faces_folder):
       os.makedirs(faces_folder)
 
-    for filename in os.listdir(faces_folder):
-      if filename.endswith(".jpg") or filename.endswith(".png"):
-        file_path = os.path.join(faces_folder, filename)
-        image = face_recognition.load_image_file(file_path)
-        rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        face_encodings = face_recognition.face_encodings(rgb_image)
+    self.student_faces = []
+    for file_name in os.listdir(faces_folder):
+      if file_name.endswith(('.png', '.jpg', '.jpeg')):
+        file_path = os.path.join(faces_folder, file_name)
+        image = cv2.imread(file_path)
+        face_encodings = face_recognition.face_encodings(image)
 
-      if face_encodings:
-        self.student_faces[filename] = face_encodings[0]
+        if face_encodings:
+          self.student_faces.append((face_encodings[0], file_name))
 
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()

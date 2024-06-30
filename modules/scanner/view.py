@@ -1,4 +1,5 @@
 import cv2
+import face_recognition
 import os
 import modules.students.controller as student_controller
 
@@ -74,11 +75,12 @@ class ScannerPage(QWidget):
         return
       
       faces_folder = os.path.join(os.path.expanduser('~'), 'Documents', 'Faces')
-      os.makedirs(faces_folder, exist_ok=True)
+      if not os.path.exists(faces_folder):
+        os.makedirs(faces_folder)
 
       file_path = os.path.join(faces_folder, f"{file_name}.jpg")
-      rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-      cv2.imwrite(file_path, rgb_frame)
+      gray_image = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+      cv2.imwrite(file_path, gray_image)
 
       self.message_box.show_message("Success", f"Face has been captured and saved to {file_path}.", "Information")
   
