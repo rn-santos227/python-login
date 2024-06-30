@@ -77,9 +77,10 @@ class ScannerPage(QWidget):
       os.makedirs(faces_folder, exist_ok=True)
 
       file_path = os.path.join(faces_folder, f"{file_name}.jpg")
-      cv2.imwrite(file_path, frame)
+      rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+      cv2.imwrite(file_path, rgb_frame)
 
-      self.message_box.show_message("Success", f"Face has been captured.", "Information")
+      self.message_box.show_message("Success", f"Face has been captured and saved to {file_path}.", "Information")
   
   def __enable_capture(self):
     self.webcam_component.start_webcam()
