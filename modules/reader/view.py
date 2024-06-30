@@ -39,3 +39,6 @@ class ReaderPage(QWidget):
 
   def __enable_capture(self):
     pass
+  
+  def __disable_capture(self):
+    pass
