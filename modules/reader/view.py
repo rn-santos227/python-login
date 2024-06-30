@@ -7,5 +7,6 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSiz
 import modules.students.controller as student_controller
 
 class ReaderPage(QWidget):
-  def __init__(self, page_handler):
+  def __init__(self, pages_handler):
     super().__init__()
+    self.pages_handler = pages_handler
