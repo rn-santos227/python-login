@@ -16,6 +16,7 @@ class ReaderPage(QWidget):
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
     self.student_faces = []
+    self.init_ui()
 
   def init_ui(self):
     self.main_layout = QVBoxLayout()
@@ -29,6 +30,12 @@ class ReaderPage(QWidget):
     right_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
     self.webcam_component = Webcam(self)
+
     webcam_center_layout.addItem(left_spacer)
     webcam_center_layout.addWidget(self.webcam_component)
     webcam_center_layout.addItem(right_spacer)
+
+    self.webcam_button = Button("Start Webcam")
+
+  def __enable_capture(self):
+    pass
