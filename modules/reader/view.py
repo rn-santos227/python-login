@@ -6,10 +6,16 @@ import modules.logs.controller as log_controller
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
 
+from components.button import Button
+from components.message_box import MessageBox
+from components.webcam import Webcam
+
 class ReaderPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
+    self.message_box = MessageBox(self)
+    self.student_faces = []
 
   def init_ui(self):
     self.main_layout = QVBoxLayout()
