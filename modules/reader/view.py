@@ -27,3 +27,8 @@ class ReaderPage(QWidget):
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     left_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
     right_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+    self.webcam_component = Webcam(self)
+    webcam_center_layout.addItem(left_spacer)
+    webcam_center_layout.addWidget(self.webcam_component)
+    webcam_center_layout.addItem(right_spacer)
