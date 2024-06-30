@@ -75,6 +75,10 @@ class ReaderPage(QWidget):
     rgb_frame = frame[:, :, ::-1]
     face_encodings = face_recognition.face_encodings(rgb_frame)
 
+    if len(face_encodings) != 1:
+      self.message_box.show_message("Error", "No face detected or multiple faces detected", "error")
+      return
+
   def __enable_capture(self):
     self.webcam_component.start_webcam()
     self.capture_button.set_enabled()
