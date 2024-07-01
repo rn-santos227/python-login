@@ -104,8 +104,12 @@ def create_student(student: Student) -> Student:
 
 def add_face_encode(student: Student) -> Student:
   set_clause = (
-    f"logout_time = '{student.face_encode}'"
+    f"face_encode = '{student.face_encode}'"
   )
+  where_clause = f"id = {student.id}"
+  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", "update")
+  connection = DB.connect_db()
+  cursor = connection.cursor()
 
 def update_student(student: Student) -> Student:
   set_clause = (
