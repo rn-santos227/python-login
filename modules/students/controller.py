@@ -102,6 +102,11 @@ def create_student(student: Student) -> Student:
   finally:
     cursor.close()
 
+def add_face_encode(student: Student) -> Student:
+  set_clause = (
+    f"logout_time = '{student.face_encode}'"
+  )
+
 def update_student(student: Student) -> Student:
   set_clause = (
     f"email = '{student.email}', "
