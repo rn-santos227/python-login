@@ -1,5 +1,6 @@
 import cv2
 import face_recognition
+import numpy as np
 import os
 import modules.students.controller as student_controller
 
@@ -63,26 +64,28 @@ class ScannerPage(QWidget):
     if not students:
       return
     
-    return [(student.full_name, student.student_number) for student in students]
+    return [(student.full_name, student.id) for student in students]
   
   def save_face(self):
     ret, frame = self.webcam_component.capture_image()
     if ret:
-      file_name = self.student_combo_box.get_selected_value()
+      student_id = self.student_combo_box.get_selected_value()
 
-      if not file_name:
+      if not student_id:
         self.message_box.show_message("Validation Error", "Name cannot be empty", "error")
         return
       
-      faces_folder = os.path.join(os.path.expanduser('~'), 'Documents', 'Faces')
-      if not os.path.exists(faces_folder):
-        os.makedirs(faces_folder)
+      student = student_controller.get_student_by_id(student_id)
 
-      file_path = os.path.join(faces_folder, f"{file_name}.jpg")
-      gray_image = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-      cv2.imwrite(file_path, gray_image)
+      image_rgb  = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-      self.message_box.show_message("Success", f"Face has been captured and saved to {file_path}.", "Information")
+      image_array = np.array(image_rgb , dtype=np.uint8)
+      face_locations = face_recognition.face_locations(image_array)
+      face_encodings = face_recognition.face_encodings(image_array, face_locations)
+      face_encode = np.array(face_encodings[0])
+      student.face_encode = str(face_encode.tolist())
+
+      self.message_box.show_message("Success", f"Face has been captured and saved to database.", "Information")
   
   def __enable_capture(self):
     self.webcam_component.start_webcam()
