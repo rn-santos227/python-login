@@ -111,6 +111,17 @@ def add_face_encode(student: Student) -> Student:
   connection = DB.connect_db()
   cursor = connection.cursor()
 
+  try:
+    cursor.execute(sql_query)
+    connection.commit()
+    return student
+
+  except Exception as e:
+    print(f"Error: {e}")
+
+  finally:
+    cursor.close()
+
 def update_student(student: Student) -> Student:
   set_clause = (
     f"email = '{student.email}', "
