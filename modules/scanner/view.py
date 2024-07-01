@@ -76,7 +76,6 @@ class ScannerPage(QWidget):
         return
       
       student = student_controller.get_student_by_id(student_id)
-
       image_rgb  = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
       image_array = np.array(image_rgb , dtype=np.uint8)
@@ -84,6 +83,8 @@ class ScannerPage(QWidget):
       face_encodings = face_recognition.face_encodings(image_array, face_locations)
       face_encode = np.array(face_encodings[0])
       student.face_encode = str(face_encode.tolist())
+
+      student_controller.update_student(student=student)
 
       self.message_box.show_message("Success", f"Face has been captured and saved to database.", "Information")
   
