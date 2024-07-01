@@ -26,6 +26,7 @@ class Student(User):
       contact_number TEXT,
       section TEXT,
       grade TEXT,
+      face_encode TEXT,
       status VARCHAR(10)
     );
     '''
