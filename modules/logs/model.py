@@ -7,13 +7,13 @@ class Log:
     student_id=None,
     login_time=None,
     logout_time=None,
-    ip_address=None,
+    date=None,
   ):
     self.id = id
     self.student_id = student_id
     self.login_time = login_time
     self.logout_time = logout_time
-    self.ip_address = ip_address
+    self.date = date
 
   @property
   def student(self) -> Student:
