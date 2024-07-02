@@ -74,6 +74,7 @@ class ReaderPage(QWidget):
 
     for student in self.students:
       if student.face_encode == face_encode:
+        self.message_box.show_message("Success", "Student has been detected.", "success")
         return
 
   def __enable_capture(self):
