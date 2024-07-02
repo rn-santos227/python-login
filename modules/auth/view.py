@@ -75,10 +75,6 @@ class LoginPage(QWidget):
     self.background_label.lower()
     main_layout.setContentsMargins(0, 0, 0, 0)
 
-    login_button.set_bg_color("green")
-    login_button.set_font_color("white")
-
-
   def _set_background_image(self, image_name):
     asset_handler = AssetHandler()
 

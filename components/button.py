@@ -35,11 +35,8 @@ class Button(QWidget):
     button_font.setPointSize(size)
     self.button.setFont(button_font)
 
-  def set_bg_color(self, color="green"):
-    self.button.setStyleSheet(f"background-color: {color};")
-
-  def set_font_color(self, color="black"):
-    self.button.setStyleSheet(f"color: {color};")
+  def set_color(self, bg_color, font_color):
+    self.button.setStyleSheet(f"background-color: {bg_color}; color: {font_color}")
 
   def set_enabled(self):
     self.button.setEnabled(True)
