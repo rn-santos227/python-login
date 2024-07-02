@@ -131,7 +131,7 @@ def update_student(student: Student) -> Student:
     f"contact_number = '{student.contact_number}', "
     f"section = '{student.section}', "
     f"grade = '{student.grade}', "
-    f"status = '{student.status}'"
+    f"status = 'active'"
   )
   where_clause = f"id = {student.id}"
   sql_query = builder(table, f"{set_clause} WHERE {where_clause}", "update")
