@@ -17,6 +17,7 @@ class ReaderPage(QWidget):
     self.message_box = MessageBox(self)
     self.students = []
     self.init_ui()
+    self.load_students()
 
   def init_ui(self):
     self.main_layout = QVBoxLayout()
