@@ -69,6 +69,7 @@ class ReaderPage(QWidget):
     image_rgb  = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     image_array = np.array(image_rgb , dtype=np.uint8)
     face_locations = face_recognition.face_locations(image_array)
+    face_encodings = face_recognition.face_encodings(image_array, face_locations)
 
 
   def __enable_capture(self):
