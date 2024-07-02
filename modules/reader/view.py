@@ -17,7 +17,6 @@ class ReaderPage(QWidget):
     self.message_box = MessageBox(self)
     self.student_faces = []
     self.init_ui()
-    self.load_student_images()
 
   def init_ui(self):
     self.main_layout = QVBoxLayout()
@@ -55,21 +54,6 @@ class ReaderPage(QWidget):
 
     self.setLayout(self.main_layout)
     self.capture_button.set_disabled()
-
-  def load_student_images(self):
-    faces_folder = os.path.join(os.path.expanduser('~'), 'Documents', 'Faces')
-    if not os.path.exists(faces_folder):
-      os.makedirs(faces_folder)
-
-    self.student_faces = []
-    for file_name in os.listdir(faces_folder):
-      if file_name.endswith(('.png', '.jpg', '.jpeg')):
-        file_path = os.path.join(faces_folder, file_name)
-        image = cv2.imread(file_path)
-        face_encodings = face_recognition.face_encodings(image)
-
-        if face_encodings:
-          self.student_faces.append((face_encodings[0], file_name))
 
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()
