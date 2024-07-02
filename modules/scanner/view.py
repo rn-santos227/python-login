@@ -1,7 +1,6 @@
 import cv2
 import face_recognition
 import numpy as np
-import os
 import modules.students.controller as student_controller
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy

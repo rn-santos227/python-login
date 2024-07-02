@@ -1,5 +1,4 @@
 import cv2
-import os
 import face_recognition
 import modules.students.controller as student_controller
 import modules.logs.controller as log_controller
@@ -61,9 +60,12 @@ class ReaderPage(QWidget):
 
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()
+    
     if not ret:
       self.message_box.show_message("Error", "No face detected", "error")
       return
+    
+    image_rgb  = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
