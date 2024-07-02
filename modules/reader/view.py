@@ -76,6 +76,8 @@ class ReaderPage(QWidget):
       if student.face_encode == face_encode:
         self.message_box.show_message("Success", "Student has been detected.", "success")
         return
+      
+    self.message_box.show_message("Information", "No match has been found.", "information")
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
