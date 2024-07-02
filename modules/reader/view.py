@@ -56,7 +56,7 @@ class ReaderPage(QWidget):
     self.capture_button.set_disabled()
 
   def load_students(self):
-    pass
+    self.students = student_controller.get_students("status = 'active'", "select")
 
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()
