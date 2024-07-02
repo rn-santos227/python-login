@@ -77,6 +77,7 @@ class ReaderPage(QWidget):
     for student in self.students:
       if student.face_encode == face_encode:
         self.message_box.show_message("Success", "Student has been detected.", "success")
+        current_date = datetime.now()
         return
       
     self.message_box.show_message("Information", "No match has been found.", "information")
