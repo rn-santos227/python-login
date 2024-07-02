@@ -72,6 +72,9 @@ class ReaderPage(QWidget):
     face_encodings = face_recognition.face_encodings(image_array, face_locations)
     face_encode = np.array(face_encodings[0])
 
+    for student in self.students:
+      if student.face_encode == face_encode:
+        return
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
