@@ -4,6 +4,8 @@ import numpy as np
 import modules.students.controller as student_controller
 import modules.logs.controller as log_controller
 
+from datetime import datetime
+
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
 
 from components.button import Button
