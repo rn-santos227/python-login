@@ -247,8 +247,8 @@ class StudentPage(QWidget):
       self.student_id = student_id
       question_box = QuestionBox(message="Do you want to delete this student?")
       if question_box.exec() == QDialog.Accepted:
-        pass
-      
+        self.delete_student(student_id=self.student_id)
+
   def __load_student_for_update(self, student: Student):
     self.__switch_to_update_layout()
     self.student_id = student.id
