@@ -137,6 +137,7 @@ class AdminsPage(QWidget):
 
   def delete_admin(self, admin_id):
     admin_controller.delete_admin(id=admin_id)
+    self.load_admins()
 
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
