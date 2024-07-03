@@ -136,7 +136,7 @@ class AdminsPage(QWidget):
     self.message_box.show_message("Success", "Admin has been updated successfully.", "Information")
 
   def delete_admin(self, admin_id):
-    pass
+    admin_controller.delete_admin(id=admin_id)
 
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")
