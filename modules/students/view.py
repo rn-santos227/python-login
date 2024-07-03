@@ -198,7 +198,7 @@ class StudentPage(QWidget):
     self.message_box.show_message("Success", "Student has been updated successfully.", "Information")
 
   def delete_student(self):
-    pass
+    students_controller.delete_student(id=self.student_id)
 
   def load_students(self):
     self.students = students_controller.get_students("status = 'active'", "select")
