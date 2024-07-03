@@ -167,13 +167,14 @@ class AdminsPage(QWidget):
 
   def __prompt_delete_admin(self, admin_id: int):
     self.admin_id = admin_id
+    question_box = QuestionBox(message="Do you want to delete this admin?")
 
   def __load_admin_for_update(self, admin: Admin):
     self.__switch_to_update_layout()
     self.admin_id = admin.id
 
     self.update_email_field.set_text(admin.email)
-    self.update_fullname_field.set_text(admin.full_name_)
+    self.update_fullname_field.set_text(admin.full_name)
 
   def __switch_to_update_layout(self):
     while self.top_layout.count():
