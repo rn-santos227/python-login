@@ -197,8 +197,8 @@ class StudentPage(QWidget):
     self.__switch_to_create_layout()
     self.message_box.show_message("Success", "Student has been updated successfully.", "Information")
 
-  def delete_student(self):
-    students_controller.delete_student(id=self.student_id)
+  def delete_student(self, student_id):
+    students_controller.delete_student(id=student_id)
     self.load_students()
     self.message_box.show_message("Success", "Student has been deleted successfully.", "Information")
 
@@ -248,7 +248,7 @@ class StudentPage(QWidget):
       question_box = QuestionBox(message="Do you want to delete this student?")
       if question_box.exec() == QDialog.Accepted:
         pass
-
+      
   def __load_student_for_update(self, student: Student):
     self.__switch_to_update_layout()
     self.student_id = student.id
