@@ -164,6 +164,9 @@ class AdminsPage(QWidget):
       
       self.table_widget.setCellWidget(row_position, 3, button_widget)
 
+  def __prompt_delete_admin(self, admin_id: int):
+    pass
+
   def __load_admin_for_update(self, admin: Admin):
     self.__switch_to_update_layout()
     self.admin_id = admin.id
