@@ -199,6 +199,7 @@ class StudentPage(QWidget):
 
   def delete_student(self):
     students_controller.delete_student(id=self.student_id)
+    self.load_students()
 
   def load_students(self):
     self.students = students_controller.get_students("status = 'active'", "select")
