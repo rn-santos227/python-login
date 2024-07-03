@@ -1,6 +1,6 @@
 import modules.admin.controller as admin_controller
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QDialog, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QGridLayout,  QSpacerItem, QSizePolicy
 
 from components.button import Button
 from components.message_box import MessageBox
@@ -168,6 +168,7 @@ class AdminsPage(QWidget):
   def __prompt_delete_admin(self, admin_id: int):
     self.admin_id = admin_id
     question_box = QuestionBox(message="Do you want to delete this admin?")
+
 
   def __load_admin_for_update(self, admin: Admin):
     self.__switch_to_update_layout()
