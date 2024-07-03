@@ -1,7 +1,7 @@
 import modules.parents.controller as parents_controller
 import modules.students.controller as students_controller
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView,  QSpacerItem, QSizePolicy, QGridLayout
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QDialog, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView,  QSpacerItem, QSizePolicy, QGridLayout
 
 from components.button import Button
 from components.message_box import MessageBox
@@ -244,6 +244,8 @@ class StudentPage(QWidget):
     else:
       self.student_id = student_id
       question_box = QuestionBox(message="Do you want to delete this student?")
+      if question_box.exec() == QDialog.Accepted:
+        pass
 
   def __load_student_for_update(self, student: Student):
     self.__switch_to_update_layout()
