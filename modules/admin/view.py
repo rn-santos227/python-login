@@ -174,7 +174,7 @@ class AdminsPage(QWidget):
     self.admin_id = admin_id
     question_box = QuestionBox(message="Do you want to delete this admin?")
     if question_box.exec() == QDialog.Accepted:
-      pass
+      self.delete_admin(admin_id=self.admin_id)
 
   def __load_admin_for_update(self, admin: Admin):
     self.__switch_to_update_layout()
