@@ -1,5 +1,6 @@
 import cv2
 import face_recognition
+import json
 import numpy as np
 import modules.students.controller as student_controller
 
@@ -80,12 +81,12 @@ class ScannerPage(QWidget):
       image_array = np.array(image_rgb , dtype=np.uint8)
       face_locations = face_recognition.face_locations(image_array)
       face_encodings = face_recognition.face_encodings(image_array, face_locations)
-      face_encode = np.array(face_encodings[0])
-      student.face_encode = str(face_encode.tolist())
 
-      student_controller.add_face_encode(student=student)
-
-      self.message_box.show_message("Success", f"Face has been captured and saved to database.", "Information")
+      if face_encodings:
+        face_encode = face_encodings[0]
+        student.face_encode = json.dumps(face_encode.tolist())
+        student_controller.add_face_encode(student=student)
+        self.message_box.show_message("Success", f"Face has been captured and saved to database.", "Information")
   
   def __enable_capture(self):
     self.webcam_component.start_webcam()
