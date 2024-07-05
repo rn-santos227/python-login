@@ -8,8 +8,9 @@ class Student(User):
     self.contact_number = contact_number
     self.section = section
     self.grade = grade
-    self.status = status
     self.face_encode = face_encode
+    self.status = status
+
 
   @User.password.setter
   def password(self, new_password):

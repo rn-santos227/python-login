@@ -1,5 +1,6 @@
 import cv2
 import face_recognition
+import json
 import numpy as np
 import modules.students.controller as student_controller
 import modules.logs.controller as log_controller
@@ -42,7 +43,7 @@ class ReaderPage(QWidget):
     self.webcam_button.connect_signal(self.__enable_capture)
 
     self.capture_button = Button("Search Face")
-    self.webcam_button.connect_signal(self.match_face)
+    self.capture_button.connect_signal(self.match_face)
 
     center_layout.addLayout(webcam_center_layout)
     center_layout.addWidget(self.webcam_button)
@@ -73,10 +74,17 @@ class ReaderPage(QWidget):
     image_array = np.array(image_rgb , dtype=np.uint8)
     face_locations = face_recognition.face_locations(image_array)
     face_encodings = face_recognition.face_encodings(image_array, face_locations)
-    face_encode = np.array(face_encodings[0])
+    face_input = np.array(face_encodings[0])
 
     for student in self.students:
-      if student.face_encode == face_encode:
+      student_face_encode = student.face_encode
+      if not student_face_encode:
+        continue
+      
+      student_face = np.array(json.loads(student_face_encode))
+      distance = face_recognition.face_distance([student_face], face_input)
+
+      if distance < 0.6:
         self.message_box.show_message("Success", "Student has been detected.", "success")
         current_date = datetime.now()
         return
