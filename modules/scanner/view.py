@@ -85,6 +85,7 @@ class ScannerPage(QWidget):
       if face_encodings:
         face_encode = face_encodings[0]
         student.face_encode = json.dumps(face_encode.tolist())
+
         student_controller.add_face_encode(student=student)
         self.message_box.show_message("Success", f"Face has been captured and saved to database.", "Information")
   
