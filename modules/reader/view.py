@@ -81,6 +81,7 @@ class ReaderPage(QWidget):
       if not student_face_encode:
         continue
       
+      print(student_face_encode)
       student_face = np.array(json.loads(student_face_encode))
       distance = face_recognition.face_distance([student_face], face_input)
 
