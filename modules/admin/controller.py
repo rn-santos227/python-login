@@ -5,10 +5,10 @@ from typing import Union
 from database.query import builder
 from modules.admin.model import Admin
 
-table = "admins"
+__table = "admins"
 
 def get_admin_by_id(id) -> Union[Admin, None]:
-  sql_query = builder(table, 'id = ?', "select")
+  sql_query = builder(__table, 'id = ?', "select")
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (id))
@@ -27,7 +27,7 @@ def get_admin_by_id(id) -> Union[Admin, None]:
     cursor.close()
 
 def get_admin_by_email(email) -> Union[Admin, None]:
-  sql_query = builder(table, 'email = ?', "select")
+  sql_query = builder(__table, 'email = ?', "select")
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (email))
@@ -45,7 +45,7 @@ def get_admin_by_email(email) -> Union[Admin, None]:
     cursor.close()
 
 def get_admins(query, action) -> list[Admin]:
-  sql_query = builder(table, query, action)
+  sql_query = builder(__table, query, action)
   cursor = DB.connect_db().cursor()
   
   try:
@@ -66,7 +66,7 @@ def get_admins(query, action) -> list[Admin]:
 
 def create_admin(admin: Admin) -> Admin:
   columns = "(full_name, email, password, status)"
-  sql_query = builder(table, f"{columns} VALUES (?, ?, ?, ?)", "insert")
+  sql_query = builder(__table, f"{columns} VALUES (?, ?, ?, ?)", "insert")
 
   connection = DB.connect_db()
   cursor = connection.cursor()
@@ -91,7 +91,7 @@ def update_admin(admin: Admin):
     f"status = '{admin.status}', "
   )
   where_clause = f"id = {admin.id}"
-  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", "update")
+  sql_query = builder(__table, f"{set_clause} WHERE {where_clause}", "update")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
@@ -108,7 +108,7 @@ def update_admin(admin: Admin):
 
 def delete_admin(id) -> bool:
   where_clause = f"id = {id}"
-  sql_query = builder(table, f"WHERE {where_clause}", "delete")
+  sql_query = builder(__table, f"WHERE {where_clause}", "delete")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
