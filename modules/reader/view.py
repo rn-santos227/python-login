@@ -83,17 +83,25 @@ class ReaderPage(QWidget):
       distance = face_recognition.face_distance([student_face], face_input)
 
       if distance < 0.6:
-        self.message_box.show_message("Success", "Student has been detected.", "success")
         current_date = datetime.now()
         formatted_date = current_date.strftime("%m/%d/%Y")
         formatted_date_time = current_date.strftime("%m/%d/%Y %I:%M:%S %p")
         log = log_controller.get_log_by_student_and_date(student_id=student.id, date=formatted_date)
+
+        if log.logout_time is not None:
+          self.message_box.show_message("Information", "Student already logged out.", "information")
+          return
 
         if log is None:
           log = Log(
             student_id = student.id,
             date = formatted_date
           )
+
+          login = log_controller.create_log(log)
+          login.login_time = formatted_date_time
+          log_controller.add_login_time(login)
+          self.message_box.show_message("Information", f"Student: {student.full_name} has logged in on {formatted_date_time}", "information")
 
         return
       
