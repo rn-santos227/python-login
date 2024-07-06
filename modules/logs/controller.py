@@ -27,8 +27,9 @@ def get_log_by_id(id) -> Union[Log, None]:
   finally:
     cursor.close()
 
-def get_log_by_student_and_date(id, date) -> Union[Log, None]:
-  pass
+def get_log_by_student_and_date(student_id, date) -> Union[Log, None]:
+  sql_query = builder(table, f"student_id = '{student_id}' AND date = '{date}'", "select")
+  cursor = DB.connect_db().cursor()
 
 def get_logs(query, action) -> list[Log]:
   sql_query = builder(table, query, action)
