@@ -14,6 +14,7 @@ from components.webcam import Webcam
 
 from modules.logs.model import Log
 
+from modules.logs.handler import logs
 from modules.students.handler import students
 
 class ReaderPage(QWidget):
