@@ -11,6 +11,7 @@ from components.text_field import TextField
 from handlers.validations_handler import ValidationHandler
 
 from modules.students.model import Student
+from modules.students.handler import students
 
 class StudentPage(QWidget):
   def __init__(self, pages_handler):
@@ -18,7 +19,6 @@ class StudentPage(QWidget):
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
     self.validation_handler = ValidationHandler()
-    self.students = []
     self.init_ui()
 
   def init_ui(self):
@@ -201,13 +201,13 @@ class StudentPage(QWidget):
     self.message_box.show_message("Success", "Student has been deleted successfully.", "Information")
 
   def load_students(self):
-    self.students = students_controller.get_students("status = 'active'", "select")
+    students = students_controller.get_students("status = 'active'", "select")
     self.table_widget.setRowCount(0)
 
-    if not self.students:
+    if not students:
       return
 
-    for student in self.students:
+    for student in students:
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
 
