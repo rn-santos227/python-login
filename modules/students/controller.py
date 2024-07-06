@@ -5,10 +5,10 @@ from typing import Union
 from database.query import builder
 from modules.students.model import Student
 
-table = "students"
+__table = "students"
 
 def get_student_by_id(id)-> Union[Student, None]:
-  sql_query = builder(table, 'id = ?', "select")
+  sql_query = builder(__table, 'id = ?', "select")
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (id))
@@ -27,7 +27,7 @@ def get_student_by_id(id)-> Union[Student, None]:
     cursor.close()
 
 def get_student_by_email(email) -> Union[Student, None]:
-  sql_query = builder(table, 'email = ?', "select")
+  sql_query = builder(__table, 'email = ?', "select")
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (email))
@@ -46,7 +46,7 @@ def get_student_by_email(email) -> Union[Student, None]:
     cursor.close()
 
 def get_student_by_student_number(student_number) -> Union[Student, None]:
-  sql_query = builder(table, 'student_number = ?', "select")
+  sql_query = builder(__table, 'student_number = ?', "select")
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (student_number))
@@ -65,7 +65,7 @@ def get_student_by_student_number(student_number) -> Union[Student, None]:
     cursor.close()
 
 def get_students(query, action) -> list[Student]:
-  sql_query = builder(table, query, action)
+  sql_query = builder(__table, query, action)
   cursor = DB.connect_db().cursor()
   
   try:
@@ -86,7 +86,7 @@ def get_students(query, action) -> list[Student]:
 
 def create_student(student: Student) -> Student:
   columns = "(email, password, full_name, student_number, contact_number, section, grade, status)"
-  sql_query = builder(table, f"{columns} VALUES (?, ?, ?, ?, ?, ?, ?, ?)", "insert")
+  sql_query = builder(__table, f"{columns} VALUES (?, ?, ?, ?, ?, ?, ?, ?)", "insert")
   connection = DB.connect_db()
   cursor = connection.cursor()
   
@@ -107,7 +107,7 @@ def add_face_encode(student: Student) -> Student:
     f"face_encode = '{student.face_encode}'"
   )
   where_clause = f"id = {student.id}"
-  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", "update")
+  sql_query = builder(__table, f"{set_clause} WHERE {where_clause}", "update")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
@@ -134,7 +134,7 @@ def update_student(student: Student) -> Student:
     f"status = 'active'"
   )
   where_clause = f"id = {student.id}"
-  sql_query = builder(table, f"{set_clause} WHERE {where_clause}", "update")
+  sql_query = builder(__table, f"{set_clause} WHERE {where_clause}", "update")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
@@ -151,7 +151,7 @@ def update_student(student: Student) -> Student:
 
 def delete_student(id) -> bool:
   where_clause = f"id = {id}"
-  sql_query = builder(table, f"WHERE {where_clause}", "delete")
+  sql_query = builder(__table, f"WHERE {where_clause}", "delete")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
