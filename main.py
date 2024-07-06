@@ -4,7 +4,6 @@ import config.database as db
 
 from components.screen_window import ScreenWindow
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtCore import Qt
 
 def main():
   app = QApplication(sys.argv)
