@@ -13,14 +13,14 @@ from components.button import Button
 from components.message_box import MessageBox
 from components.webcam import Webcam
 
+from modules.students.handler import students
+
 class ReaderPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
-    self.students = []
     self.init_ui()
-    self.load_students()
 
   def init_ui(self):
     self.main_layout = QVBoxLayout()
@@ -60,9 +60,6 @@ class ReaderPage(QWidget):
     self.setLayout(self.main_layout)
     self.capture_button.set_disabled()
 
-  def load_students(self):
-    self.students = student_controller.get_students("status = 'active'", "select")
-
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()
     
@@ -76,7 +73,7 @@ class ReaderPage(QWidget):
     face_encodings = face_recognition.face_encodings(image_array, face_locations)
     face_input = np.array(face_encodings[0])
 
-    for student in self.students:
+    for student in students:
       student_face_encode = student.face_encode
       if not student_face_encode:
         continue
