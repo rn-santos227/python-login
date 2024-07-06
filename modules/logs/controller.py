@@ -27,15 +27,25 @@ def get_log_by_id(id) -> Union[Log, None]:
   finally:
     cursor.close()
 
-def get_log_by_student_and_date(student_id, date) -> Union[Log, None]:
+def get_log_by_student_and_date(id, student_id, date) -> Union[Log, None]:
   sql_query = builder(table, f"student_id = '{student_id}' AND date = '{date}'", "select")
   cursor = DB.connect_db().cursor()
 
   try:
     cursor.execute(sql_query, (id))
+    row = cursor.fetchone()
+
+    if row:
+      log = Log(*row)
+      return log
+    else:
+      return None
   
   except Exception as e:
     print(f"Error: {e}")
+
+  finally:
+    cursor.close()
 
 def get_logs(query, action) -> list[Log]:
   sql_query = builder(table, query, action)
