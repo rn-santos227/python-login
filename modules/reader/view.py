@@ -14,7 +14,7 @@ from components.webcam import Webcam
 
 from modules.logs.model import Log
 
-from modules.logs.handler import logs
+from modules.logs.handler import update_logs
 from modules.students.handler import students
 
 class ReaderPage(QWidget):
@@ -103,12 +103,13 @@ class ReaderPage(QWidget):
           login.login_time = formatted_date_time
           log_controller.add_login_time(login)
           self.message_box.show_message("Information", f"Student: {student.full_name} has logged in on {formatted_date_time}", "information")
-
+          
         else:
           log.logout_time = formatted_date_time
           log_controller.add_logout_time(log)
           self.message_box.show_message("Information", f"Student: {student.full_name} has logged out on {formatted_date_time}", "information")
 
+        update_logs()
         return
       
     self.message_box.show_message("Information", "No match has been found.", "information")
