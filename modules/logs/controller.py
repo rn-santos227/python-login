@@ -27,12 +27,12 @@ def get_log_by_id(id) -> Union[Log, None]:
   finally:
     cursor.close()
 
-def get_log_by_student_and_date(id, student_id, date) -> Union[Log, None]:
+def get_log_by_student_and_date(student_id, date) -> Union[Log, None]:
   sql_query = builder(table, f"student_id = '{student_id}' AND date = '{date}'", "select")
   cursor = DB.connect_db().cursor()
 
   try:
-    cursor.execute(sql_query, (id))
+    cursor.execute(sql_query)
     row = cursor.fetchone()
 
     if row:

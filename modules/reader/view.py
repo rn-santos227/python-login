@@ -2,7 +2,6 @@ import cv2
 import face_recognition
 import json
 import numpy as np
-import modules.students.controller as student_controller
 import modules.logs.controller as log_controller
 
 from datetime import datetime
@@ -84,6 +83,9 @@ class ReaderPage(QWidget):
       if distance < 0.6:
         self.message_box.show_message("Success", "Student has been detected.", "success")
         current_date = datetime.now()
+        formatted_date = current_date.strftime("%m/%d/%Y")
+        log = log_controller.get_log_by_student_and_date(student_id=student.id, date=formatted_date)
+
         return
       
     self.message_box.show_message("Information", "No match has been found.", "information")
