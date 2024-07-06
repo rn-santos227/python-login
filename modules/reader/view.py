@@ -104,6 +104,11 @@ class ReaderPage(QWidget):
           log_controller.add_login_time(login)
           self.message_box.show_message("Information", f"Student: {student.full_name} has logged in on {formatted_date_time}", "information")
 
+        else:
+          log.logout_time = formatted_date_time
+          log_controller.add_logout_time(log)
+          self.message_box.show_message("Information", f"Student: {student.full_name} has logged out on {formatted_date_time}", "information")
+
         return
       
     self.message_box.show_message("Information", "No match has been found.", "information")
