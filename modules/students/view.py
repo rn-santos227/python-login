@@ -10,7 +10,6 @@ from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
 
-from modules.scanner.view import ScannerPage as scanner_page
 from modules.students.model import Student
 
 class StudentPage(QWidget):
@@ -155,7 +154,6 @@ class StudentPage(QWidget):
     self.load_students()
     self.__clear_fields()
     self.message_box.show_message("Success", "Student has been created successfully.", "Information")
-    scanner_page.load_students_to_combo_box(self)
 
   def update_student(self):
     email = self.update_email_field.get_text()
