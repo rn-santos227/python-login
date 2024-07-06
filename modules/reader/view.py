@@ -86,10 +86,14 @@ class ReaderPage(QWidget):
         self.message_box.show_message("Success", "Student has been detected.", "success")
         current_date = datetime.now()
         formatted_date = current_date.strftime("%m/%d/%Y")
+        formatted_date_time = current_date.strftime("%m/%d/%Y %I:%M:%S %p")
         log = log_controller.get_log_by_student_and_date(student_id=student.id, date=formatted_date)
 
         if log is None:
-          pass
+          log = Log(
+            student_id = student.id,
+            date = formatted_date
+          )
 
         return
       
