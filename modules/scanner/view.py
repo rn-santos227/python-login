@@ -2,6 +2,7 @@ import cv2
 import face_recognition
 import json
 import numpy as np
+
 import modules.students.controller as student_controller
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
@@ -11,12 +12,13 @@ from components.combo_box import ComboBox
 from components.message_box import MessageBox
 from components.webcam import Webcam
 
+from modules.students.handler import students
+
 class ScannerPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
-    self.students = []
     self.init_ui()
 
   def init_ui(self):
@@ -60,7 +62,6 @@ class ScannerPage(QWidget):
     self.capture_button.set_disabled()
 
   def load_students_to_combo_box(self):
-    students = student_controller.get_students("status = 'active'", "select")
     if not students:
       return
     
