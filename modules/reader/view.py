@@ -12,6 +12,8 @@ from components.button import Button
 from components.message_box import MessageBox
 from components.webcam import Webcam
 
+from modules.logs.model import Log
+
 from modules.students.handler import students
 
 class ReaderPage(QWidget):
@@ -85,6 +87,9 @@ class ReaderPage(QWidget):
         current_date = datetime.now()
         formatted_date = current_date.strftime("%m/%d/%Y")
         log = log_controller.get_log_by_student_and_date(student_id=student.id, date=formatted_date)
+
+        if log is None:
+          pass
 
         return
       
