@@ -88,11 +88,7 @@ class ReaderPage(QWidget):
         formatted_date = current_date.strftime("%m/%d/%Y")
         formatted_date_time = current_date.strftime("%m/%d/%Y %I:%M:%S %p")
         log = log_controller.get_log_by_student_and_date(student_id=student.id, date=formatted_date)
-
-        if log.logout_time is not None:
-          self.message_box.show_message("Information", "Student already logged out.", "information")
-          return
-
+        
         if log is None:
           log = Log(
             student_id = student.id,
@@ -105,6 +101,10 @@ class ReaderPage(QWidget):
           self.message_box.show_message("Information", f"Student: {student.full_name} has logged in on {formatted_date_time}", "information")
           
         else:
+          if log.logout_time is not None:
+            self.message_box.show_message("Information", "Student already logged out.", "information")
+            return
+          
           log.logout_time = formatted_date_time
           log_controller.add_logout_time(log)
           self.message_box.show_message("Information", f"Student: {student.full_name} has logged out on {formatted_date_time}", "information")
