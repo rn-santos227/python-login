@@ -13,7 +13,7 @@ def get_admin_by_id(id) -> Union[Admin, None]:
   cursor = connection.cursor()
 
   try:
-    cursor.execute(sql_query, (id))
+    cursor.execute(sql_query, (id,))
     row = cursor.fetchone()
 
     if row:
@@ -28,13 +28,13 @@ def get_admin_by_id(id) -> Union[Admin, None]:
   finally:
     cursor.close()
 
-def get_admin_by_email(email) -> Union[Admin, None]:
+def get_admin_by_email(email: str) -> Union[Admin, None]:
   sql_query = builder(__table, "email = %s", "select")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
   try:
-    cursor.execute(sql_query, (email))
+    cursor.execute(sql_query, (email,))
     row = cursor.fetchone()
 
     if row:

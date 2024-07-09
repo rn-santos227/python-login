@@ -13,7 +13,7 @@ def get_student_by_id(id)-> Union[Student, None]:
   cursor = connection.cursor()
 
   try:
-    cursor.execute(sql_query, (id))
+    cursor.execute(sql_query, (id,))
     row = cursor.fetchone()
 
     if row:
@@ -28,13 +28,13 @@ def get_student_by_id(id)-> Union[Student, None]:
   finally:
     cursor.close()
 
-def get_student_by_email(email) -> Union[Student, None]:
+def get_student_by_email(email: str) -> Union[Student, None]:
   sql_query = builder(__table, 'email = %s', "select")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
   try:
-    cursor.execute(sql_query, (email))
+    cursor.execute(sql_query, (email,))
     row = cursor.fetchone()
 
     if row:
@@ -55,7 +55,7 @@ def get_student_by_student_number(student_number) -> Union[Student, None]:
   cursor = connection.cursor()
 
   try:
-    cursor.execute(sql_query, (student_number))
+    cursor.execute(sql_query, (student_number,))
     row = cursor.fetchone()
 
     if row:

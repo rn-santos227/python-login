@@ -13,7 +13,7 @@ def get_log_by_id(id) -> Union[Log, None]:
   cursor = connection.cursor()
   
   try:
-    cursor.execute(sql_query, (id))
+    cursor.execute(sql_query, (id,))
     row = cursor.fetchone()
 
     if row:
@@ -29,12 +29,12 @@ def get_log_by_id(id) -> Union[Log, None]:
     cursor.close()
 
 def get_log_by_student_and_date(student_id, date) -> Union[Log, None]:
-  sql_query = builder(__table, f"student_id = '{student_id}' AND date = '{date}'", "select")
+  sql_query = builder(__table, f"student_id = %s AND date = %s", "select")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
   try:
-    cursor.execute(sql_query)
+    cursor.execute(sql_query, (student_id, date))
     row = cursor.fetchone()
 
     if row:
@@ -72,12 +72,12 @@ def get_logs(query, action) -> list[Log]:
     cursor.close()
 
 def get_logs_by_student(student_id) ->list[Log]:
-  sql_query = builder(__table, 'student_id = ?', "select")
+  sql_query = builder(__table, 'student_id = %s', "select")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
   try:
-    cursor.execute(sql_query, (student_id))
+    cursor.execute(sql_query, (student_id,))
     rows = cursor.fetchall()
 
     logs = []

@@ -7,12 +7,12 @@ from modules.parents.model import Parent
 __table = "parents"
 
 def get_parent_by_id(id) -> Union[Parent, None]:
-  sql_query = builder(__table, 'id = ?', "select")
+  sql_query = builder(__table, 'id = %s', "select")
   connection = DB.connect_db()
   cursor = connection.cursor()
   
   try:
-    cursor.execute(sql_query, (id))
+    cursor.execute(sql_query, (id,))
     row = cursor.fetchone()
 
     if row:
@@ -28,12 +28,12 @@ def get_parent_by_id(id) -> Union[Parent, None]:
     cursor.close()
 
 def get_parent_by_student_id(student_id) -> Union[Parent, None]:
-  sql_query = builder(__table, 'student_id = ?', "select")
+  sql_query = builder(__table, 'student_id = %s', "select")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
   try:
-    cursor.execute(sql_query, (student_id))
+    cursor.execute(sql_query, (student_id,))
     row = cursor.fetchone()
 
     if row:
