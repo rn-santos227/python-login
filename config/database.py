@@ -50,3 +50,8 @@ def create_table(query, table):
 
   except mysql.connector.Error as err:
     print(f"Failed to create table '{table}': {err}")
+
+  finally:
+    cursor.close()
+    conn.close()
+    print(f"Connection to the database '{database_name}' closed.")
