@@ -8,6 +8,6 @@ sip>=6.0.0
 
 # Application dependencies
 PyQt5
-mysql
+mysql-connector-python
 opencv-python-headless
 face_recognition

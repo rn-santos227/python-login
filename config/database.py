@@ -1,9 +1,8 @@
 import os
-import pyodbc
-import pypyodbc
+import mysql.connector
+from mysql.connector import errorcode
 
-from config.config import database_path
-from config.config import connection_string
+from config.config import database_name, connection_params
 
 def create_db():
   pass
