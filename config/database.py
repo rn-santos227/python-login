@@ -41,4 +41,8 @@ def check_db_connection() -> bool:
     return False
 
 def create_table(query, table):
-  pass
+  try:
+    conn = connect_db()
+
+  except mysql.connector.Error as err:
+    print(f"Failed to create table '{table}': {err}")
