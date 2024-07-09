@@ -24,7 +24,9 @@ def create_db():
     print(f"Connection to the MySQL server closed.")
 
 def connect_db():
-  pass
+  connection_params['database'] = database_name
+  conn = mysql.connector.connect(**connection_params)
+  return conn
 
 def check_db_connection() -> bool:
   pass
