@@ -33,6 +33,7 @@ def check_db_connection() -> bool:
     conn = connect_db()
     print(f"Connected to the database '{database_name}' successfully.")
     conn.close()
+    print(f"Connection to the database '{database_name}' closed.")
     return True
 
   except mysql.connector.Error as err:
