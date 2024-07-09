@@ -8,7 +8,8 @@ __table = "parents"
 
 def get_parent_by_id(id) -> Union[Parent, None]:
   sql_query = builder(__table, 'id = ?', "select")
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
   
   try:
     cursor.execute(sql_query, (id))
@@ -28,7 +29,8 @@ def get_parent_by_id(id) -> Union[Parent, None]:
 
 def get_parent_by_student_id(student_id) -> Union[Parent, None]:
   sql_query = builder(__table, 'student_id = ?', "select")
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
 
   try:
     cursor.execute(sql_query, (student_id))
@@ -48,7 +50,8 @@ def get_parent_by_student_id(student_id) -> Union[Parent, None]:
 
 def get_parents(query, action) -> list[Parent]:
   sql_query = builder(__table, query, action)
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
 
   try:
     cursor.execute(sql_query)

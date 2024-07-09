@@ -26,8 +26,7 @@ def create_db():
 def connect_db():
   connection_params_with_db = connection_params.copy()
   connection_params_with_db['database'] = database_name
-  conn = mysql.connector.connect(**connection_params_with_db)
-  return conn
+  return mysql.connector.connect(**connection_params_with_db)
 
 def check_db_connection() -> bool:
   connection_params_with_db = connection_params.copy()

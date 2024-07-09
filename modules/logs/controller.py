@@ -9,7 +9,8 @@ __table = "logs"
 
 def get_log_by_id(id) -> Union[Log, None]:
   sql_query = builder(__table, 'id = ?', "select")
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
   
   try:
     cursor.execute(sql_query, (id))
@@ -29,7 +30,8 @@ def get_log_by_id(id) -> Union[Log, None]:
 
 def get_log_by_student_and_date(student_id, date) -> Union[Log, None]:
   sql_query = builder(__table, f"student_id = '{student_id}' AND date = '{date}'", "select")
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
 
   try:
     cursor.execute(sql_query)
@@ -49,7 +51,8 @@ def get_log_by_student_and_date(student_id, date) -> Union[Log, None]:
 
 def get_logs(query, action) -> list[Log]:
   sql_query = builder(__table, query, action)
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
   
   try:
     cursor.execute(sql_query)
@@ -70,7 +73,8 @@ def get_logs(query, action) -> list[Log]:
 
 def get_logs_by_student(student_id) ->list[Log]:
   sql_query = builder(__table, 'student_id = ?', "select")
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
 
   try:
     cursor.execute(sql_query, (student_id))
@@ -88,7 +92,6 @@ def get_logs_by_student(student_id) ->list[Log]:
 
   finally:
     cursor.close()
-    DB.connect_db.close()
 
 def create_log(log: Log) -> Log:
   columns = "(student_id, date)"

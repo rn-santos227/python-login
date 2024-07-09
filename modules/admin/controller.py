@@ -9,7 +9,9 @@ __table = "admins"
 
 def get_admin_by_id(id) -> Union[Admin, None]:
   sql_query = builder(__table, "id = %s", "select")
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
+
   try:
     cursor.execute(sql_query, (id))
     row = cursor.fetchone()
@@ -28,7 +30,9 @@ def get_admin_by_id(id) -> Union[Admin, None]:
 
 def get_admin_by_email(email) -> Union[Admin, None]:
   sql_query = builder(__table, "email = %s", "select")
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
+
   try:
     cursor.execute(sql_query, (email))
     row = cursor.fetchone()
@@ -46,7 +50,8 @@ def get_admin_by_email(email) -> Union[Admin, None]:
 
 def get_admins(query, action) -> list[Admin]:
   sql_query = builder(__table, query, action)
-  cursor = DB.connect_db().cursor()
+  connection = DB.connect_db()
+  cursor = connection.cursor()
   
   try:
     cursor.execute(sql_query)
