@@ -92,7 +92,7 @@ def get_logs_by_student(student_id) ->list[Log]:
 
 def create_log(log: Log) -> Log:
   columns = "(student_id, date)"
-  sql_query = builder(__table, f"{columns} VALUES (?, ?)", "insert")
+  sql_query = builder(__table, f"{columns} VALUES (%s, %s)", "insert")
 
   connection = DB.connect_db()
   cursor = connection.cursor()

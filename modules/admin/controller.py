@@ -8,7 +8,7 @@ from modules.admin.model import Admin
 __table = "admins"
 
 def get_admin_by_id(id) -> Union[Admin, None]:
-  sql_query = builder(__table, 'id = ?', "select")
+  sql_query = builder(__table, "id = %s", "select")
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (id))
@@ -27,7 +27,7 @@ def get_admin_by_id(id) -> Union[Admin, None]:
     cursor.close()
 
 def get_admin_by_email(email) -> Union[Admin, None]:
-  sql_query = builder(__table, 'email = ?', "select")
+  sql_query = builder(__table, "email = %s", "select")
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (email))
@@ -66,7 +66,7 @@ def get_admins(query, action) -> list[Admin]:
 
 def create_admin(admin: Admin) -> Admin:
   columns = "(full_name, email, password, status)"
-  sql_query = builder(__table, f"{columns} VALUES (?, ?, ?, ?)", "insert")
+  sql_query = builder(__table, f"{columns} VALUES (%s, %s, %s, %s)", "insert")
 
   connection = DB.connect_db()
   cursor = connection.cursor()

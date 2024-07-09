@@ -8,7 +8,7 @@ from modules.students.model import Student
 __table = "students"
 
 def get_student_by_id(id)-> Union[Student, None]:
-  sql_query = builder(__table, 'id = ?', "select")
+  sql_query = builder(__table, 'id = %s', "select")
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (id))
@@ -27,7 +27,7 @@ def get_student_by_id(id)-> Union[Student, None]:
     cursor.close()
 
 def get_student_by_email(email) -> Union[Student, None]:
-  sql_query = builder(__table, 'email = ?', "select")
+  sql_query = builder(__table, 'email = %s', "select")
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (email))
@@ -46,7 +46,7 @@ def get_student_by_email(email) -> Union[Student, None]:
     cursor.close()
 
 def get_student_by_student_number(student_number) -> Union[Student, None]:
-  sql_query = builder(__table, 'student_number = ?', "select")
+  sql_query = builder(__table, 'student_number = %s', "select")
   cursor = DB.connect_db().cursor()
   try:
     cursor.execute(sql_query, (student_number))
@@ -86,7 +86,7 @@ def get_students(query, action) -> list[Student]:
 
 def create_student(student: Student) -> Student:
   columns = "(email, password, full_name, student_number, contact_number, section, grade, status)"
-  sql_query = builder(__table, f"{columns} VALUES (?, ?, ?, ?, ?, ?, ?, ?)", "insert")
+  sql_query = builder(__table, f"{columns} VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", "insert")
   connection = DB.connect_db()
   cursor = connection.cursor()
   
