@@ -8,9 +8,11 @@ def create_db():
   try:
     conn = mysql.connector.connect(**connection_params)
     cursor = conn.cursor()
+    cursor.execute(f"CREATE DATABASE IF NOT EXISTS {database_name}")
 
   except mysql.connector.Error as err:
-    pass
+    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+      print("Something is wrong with your user name or password")
 
 def connect_db():
   pass
