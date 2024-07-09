@@ -29,7 +29,11 @@ def connect_db():
   return conn
 
 def check_db_connection() -> bool:
-  pass
+  try:
+    return True
+
+  except mysql.connector.Error as err:
+    return False
 
 def create_table(query, table):
   pass
