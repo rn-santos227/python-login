@@ -43,6 +43,10 @@ def check_db_connection() -> bool:
 def create_table(query, table):
   try:
     conn = connect_db()
+    cursor = conn.cursor()
+    cursor.execute(query)
+    conn.commit()
+    print(f"Table '{table}' created successfully.")
 
   except mysql.connector.Error as err:
     print(f"Failed to create table '{table}': {err}")
