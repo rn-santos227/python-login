@@ -1,13 +1,14 @@
-import os
 import mysql.connector
 from mysql.connector import errorcode
 
 from config.config import database_name, connection_params
 
 def create_db():
+  print(connection_params)
+  conn = mysql.connector.connect(**connection_params)
+  cursor = conn.cursor()  
+  
   try:
-    conn = mysql.connector.connect(**connection_params)
-    cursor = conn.cursor()
     cursor.execute(f"CREATE DATABASE IF NOT EXISTS {database_name}")
     print(f"Database '{database_name}' created successfully.")
 
@@ -20,30 +21,34 @@ def create_db():
 
   finally:
     cursor.close()
-    conn.close()
     print(f"Connection to the MySQL server closed.")
 
 def connect_db():
-  connection_params['database'] = database_name
-  conn = mysql.connector.connect(**connection_params)
+  connection_params_with_db = connection_params.copy()
+  connection_params_with_db['database'] = database_name
+  conn = mysql.connector.connect(**connection_params_with_db)
   return conn
 
 def check_db_connection() -> bool:
+  connection_params_with_db = connection_params.copy()
+  connection_params_with_db['database'] = database_name
+  
   try:
-    conn = connect_db()
+    conn = mysql.connector.connect(**connection_params_with_db)
     print(f"Connected to the database '{database_name}' successfully.")
     conn.close()
     print(f"Connection to the database '{database_name}' closed.")
     return True
-
+  
   except mysql.connector.Error as err:
     print(f"Failed to connect to the database '{database_name}': {err}")
     return False
 
 def create_table(query, table):
+  conn = connect_db()
+  cursor = conn.cursor()
+
   try:
-    conn = connect_db()
-    cursor = conn.cursor()
     cursor.execute(query)
     conn.commit()
     print(f"Table '{table}' created successfully.")
@@ -53,5 +58,4 @@ def create_table(query, table):
 
   finally:
     cursor.close()
-    conn.close()
     print(f"Connection to the database '{database_name}' closed.")
