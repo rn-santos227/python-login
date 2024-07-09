@@ -14,9 +14,14 @@ def create_db():
   except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
       print("Something is wrong with your user name or password")
+    
+    else:
+      print(err)
 
   finally:
     cursor.close()
+    conn.close()
+    print(f"Connection to the MySQL server closed.")
 
 def connect_db():
   pass
