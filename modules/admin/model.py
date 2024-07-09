@@ -14,7 +14,7 @@ class Admin(User):
   def create_table() -> str:
     return '''
     CREATE TABLE admins (
-      id AUTOINCREMENT PRIMARY KEY,
+      id INT AUTO_INCREMENT PRIMARY KEY,
       full_name TEXT,
       email TEXT UNIQUE,
       password TEXT,
