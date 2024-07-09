@@ -16,10 +16,10 @@ class Parent:
   def create_table() -> str:
     return '''
     CREATE TABLE parents (
-      id AUTOINCREMENT PRIMARY KEY,
+      id INT AUTO_INCREMENT PRIMARY KEY,
       student_id INT,
-      full_name TEXT,
-      contact TEXT,
+      full_name VARCHAR(255),
+      contact VARCHAR(25),
       CONSTRAINT parent_student FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''
