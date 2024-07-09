@@ -5,7 +5,11 @@ from mysql.connector import errorcode
 from config.config import database_name, connection_params
 
 def create_db():
-  pass
+  try:
+    conn = mysql.connector.connect(**connection_params)
+
+  except mysql.connector.Error as err:
+    pass
 
 def connect_db():
   pass
