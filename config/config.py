@@ -4,3 +4,5 @@ connection_params = {
   "host": "localhost",
   "raise_on_warnings": True,
 }
+
+database_name = "db_logbook"
