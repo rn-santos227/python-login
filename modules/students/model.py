@@ -19,15 +19,15 @@ class Student(User):
   def create_table() -> str:
     return '''
     CREATE TABLE students (
-      id AUTOINCREMENT PRIMARY KEY,
-      email TEXT UNIQUE,
-      password TEXT,
-      full_name TEXT,
-      student_number TEXT UNIQUE,
-      contact_number TEXT,
-      section TEXT,
-      grade TEXT,
-      face_encode MEMO,
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      email VARCHAR(255) UNIQUE,
+      password VARCHAR(255),
+      full_name VARCHAR(255),
+      student_number VARCHAR(255) UNIQUE,
+      contact_number VARCHAR(25),
+      section VARCHAR(10),
+      grade VARCHAR(15),
+      face_encode TEXT,
       status VARCHAR(10)
     );
     '''
