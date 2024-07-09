@@ -23,11 +23,11 @@ class Log:
   def create_table() -> str:
     return '''
     CREATE TABLE logs (
-      id AUTOINCREMENT PRIMARY KEY,
+      id INT AUTO_INCREMENT PRIMARY KEY,
       student_id INT,
       login_time DATETIME,
       logout_time DATETIME,
-      date Date,
+      date DATE,
       CONSTRAINT log_student FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''
