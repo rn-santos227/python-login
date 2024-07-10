@@ -118,6 +118,8 @@ class DashboardAdminPage(QWidget):
     else:
       for index in range(self.navigation_menu.count()):
         widget = self.navigation_menu.itemAt(index).widget()
+        if widget is not None:
+          widget.hide()
 
 class DashboardStudentPage(QWidget):
   def __init__(self, pages_handler):
