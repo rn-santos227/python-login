@@ -20,7 +20,6 @@ class ParentsPage(QWidget):
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
     self.validation_handler = ValidationHandler()
-    self.parents = []
     self.init_ui()
 
   def init_ui(self):
@@ -118,13 +117,12 @@ class ParentsPage(QWidget):
     self.message_box.show_message("Success", "Parent has been created successfully.", "Information")
 
   def load_parents(self):
-    self.parents = parent_controller.get_parents("all", "select")
     self.table_widget.setRowCount(0)
 
-    if not self.parents:
+    if not parents:
       return
     
-    for parent in self.parents:
+    for parent in parents:
       row_position = self.table_widget.rowCount()
 
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(parent.id)))
