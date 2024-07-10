@@ -113,6 +113,7 @@ class DashboardAdminPage(QWidget):
         widget = self.navigation_menu.itemAt(index).widget()
         if widget is not None:
           widget.hide()
+      self.navigation_visible = False
     else:
       pass
 
