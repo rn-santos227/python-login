@@ -11,6 +11,8 @@ from components.text_field import TextField
 from handlers.validations_handler import ValidationHandler
 from modules.parents.model import Parent
 
+from modules.students.handler import students
+
 class ParentsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
@@ -18,7 +20,6 @@ class ParentsPage(QWidget):
     self.message_box = MessageBox(self)
     self.validation_handler = ValidationHandler()
     self.parents = []
-    self.students = []
     self.init_ui()
 
   def init_ui(self):
@@ -84,10 +85,9 @@ class ParentsPage(QWidget):
     return update_layout
   
   def load_students_to_combo_box(self):
-    students = student_controller.get_students("status = 'active'", "select")
     if not students:
       return
-    
+
     return [(student.full_name, student.id) for student in students]
 
   def create_parent(self):
