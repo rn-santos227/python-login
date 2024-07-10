@@ -117,6 +117,7 @@ class ParentsPage(QWidget):
     self.message_box.show_message("Success", "Parent has been created successfully.", "Information")
 
   def load_parents(self):
+    update_parents()
     self.table_widget.setRowCount(0)
 
     if not parents:
