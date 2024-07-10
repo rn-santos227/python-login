@@ -75,6 +75,7 @@ class DashboardAdminPage(QWidget):
     self.main_content.addWidget(self.students_content)
 
     self.toggle_button = Button("Toggle Navigation")
+    self.toggle_button.set_fixed_width(250)
 
     layout.addLayout(self.navigation_menu, 1)
     layout.addWidget(self.main_content, 9)
