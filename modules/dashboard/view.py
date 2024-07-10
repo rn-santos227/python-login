@@ -108,7 +108,8 @@ class DashboardAdminPage(QWidget):
       self.pages_handler.switch_to_login_page()
 
   def __toggle_navigation(self):
-    pass
+    if self.navigation_visible:
+      pass
 
 class DashboardStudentPage(QWidget):
   def __init__(self, pages_handler):
