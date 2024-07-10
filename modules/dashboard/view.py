@@ -106,6 +106,9 @@ class DashboardAdminPage(QWidget):
     if question_box.exec() == QDialog.Accepted:
       self.pages_handler.switch_to_login_page()
 
+  def __toggle_navigation(self):
+    pass
+
 class DashboardStudentPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
