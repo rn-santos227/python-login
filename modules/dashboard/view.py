@@ -109,6 +109,10 @@ class DashboardAdminPage(QWidget):
 
   def __toggle_navigation(self):
     if self.navigation_visible:
+      for index in reversed(range(self.navigation_menu.count())):
+        widget = self.navigation_menu.itemAt(index).widget()
+      
+    else:
       pass
 
 class DashboardStudentPage(QWidget):
