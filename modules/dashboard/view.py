@@ -111,7 +111,8 @@ class DashboardAdminPage(QWidget):
     if self.navigation_visible:
       for index in reversed(range(self.navigation_menu.count())):
         widget = self.navigation_menu.itemAt(index).widget()
-      
+        if widget is not None:
+          widget.hide()
     else:
       pass
 
