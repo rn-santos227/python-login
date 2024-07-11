@@ -83,7 +83,7 @@ class DashboardAdminPage(QWidget):
     self.left_layout.addWidget(self.toggle_button)
     self.left_layout.addLayout(self.navigation_menu)
 
-    layout.addLayout(self.navigation_menu, 1)
+    layout.addLayout(self.left_layout, 1)
     layout.addWidget(self.main_content, 9)
     
     self.setLayout(layout)
