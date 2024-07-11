@@ -16,12 +16,11 @@ class TextField(QWidget):
     label_font = QFont()
     label_font.setPointSize(14)
     self.label.setFont(label_font)
+    self.label.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
 
     text_field_font = QFont()
     text_field_font.setPointSize(12)
     self.text_field.setFont(text_field_font)
-
-    self.label.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
 
     self.layout.addWidget(self.label)
     self.layout.addWidget(self.text_field)
