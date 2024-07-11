@@ -10,4 +10,6 @@ class DateField(QWidget):
     self.layout = QVBoxLayout()
 
     self.label = QLabel(label_text)
-    self.date_edit = QDateEdit()
+    self.date_field = QDateEdit()
+    self.date_field.setCalendarPopup(True)
+    self.date_field.setDate(QDate.currentDate())
