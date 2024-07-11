@@ -20,6 +20,10 @@ class DateField(QWidget):
     self.label.setFont(label_font)
     self.label.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
 
+    label_font = QFont()
+    label_font.setPointSize(12)
+    self.date_field.setFont(label_font)
+
     self.layout.addWidget(self.label)
     self.layout.addWidget(self.date_field)
     self.setLayout(self.layout)
