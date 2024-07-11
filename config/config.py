@@ -5,7 +5,7 @@ load_dotenv()
 
 connection_params = {
   "user": os.getenv("DB_USER"),
-  "password": "",
+  "password": os.getenv("DB_PASSWORD"),
   "host": "localhost",
   "raise_on_warnings": True,
 }
