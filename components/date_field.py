@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QDateEdit
+from PyQt5.QtGui import QFont
 from PyQt5.QtCore import QDate
 
 class DateField(QWidget):
@@ -13,6 +14,10 @@ class DateField(QWidget):
     self.date_field = QDateEdit()
     self.date_field.setCalendarPopup(True)
     self.date_field.setDate(QDate.currentDate())
+
+    label_font = QFont()
+    label_font.setPointSize(14)
+    self.label.setFont(label_font)
 
     self.layout.addWidget(self.label)
     self.layout.addWidget(self.date_field)
