@@ -31,6 +31,11 @@ class DashboardAdminPage(QWidget):
     self.navigation_menu = QVBoxLayout()
     self.main_content = QStackedWidget()
 
+    self.toggle_button = Button("Toggle Navigation")
+    self.toggle_button.connect_signal(self.__toggle_navigation)
+    self.toggle_button.set_fixed_width(250)
+    self.navigation_menu.addWidget(self.toggle_button)
+
     logs_button = Button("Attendance Logs")
     logs_button.connect_signal(self.handle_logs)
     logs_button.set_fixed_width(250)
@@ -74,10 +79,6 @@ class DashboardAdminPage(QWidget):
     self.main_content.addWidget(self.reader_content)
     self.main_content.addWidget(self.scanner_content)
     self.main_content.addWidget(self.students_content)
-
-    self.toggle_button = Button("Toggle Navigation")
-    self.toggle_button.connect_signal(self.__toggle_navigation)
-    self.toggle_button.set_fixed_width(250)
 
     layout.addWidget(self.toggle_button)
     layout.addLayout(self.navigation_menu, 1)
