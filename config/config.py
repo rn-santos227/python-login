@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+import os
+
 connection_params = {
   "user": "root",
   "password": "",
