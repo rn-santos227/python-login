@@ -79,9 +79,10 @@ class DashboardAdminPage(QWidget):
     self.toggle_button = Button("Toggle Navigation")
     self.toggle_button.connect_signal(self.__toggle_navigation)
     self.toggle_button.set_fixed_width(250)
-    self.navigation_menu.addWidget(self.toggle_button)
+    
+    self.left_layout.addWidget(self.toggle_button)
+    self.left_layout.addLayout(self.navigation_menu)
 
-    layout.addWidget(self.toggle_button)
     layout.addLayout(self.navigation_menu, 1)
     layout.addWidget(self.main_content, 9)
     
