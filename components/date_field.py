@@ -13,3 +13,7 @@ class DateField(QWidget):
     self.date_field = QDateEdit()
     self.date_field.setCalendarPopup(True)
     self.date_field.setDate(QDate.currentDate())
+
+    self.layout.addWidget(self.label)
+    self.layout.addWidget(self.date_field)
+    self.setLayout(self.layout)
