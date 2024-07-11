@@ -113,8 +113,6 @@ class DashboardAdminPage(QWidget):
       self.pages_handler.switch_to_login_page()
 
   def __toggle_navigation(self):
-    print(self.navigation_visible)
-
     if self.navigation_visible:
       self.navigation_visible = False
       for index in reversed(range(self.navigation_menu.count())):

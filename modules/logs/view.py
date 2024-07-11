@@ -20,4 +20,6 @@ class LogsPage(QWidget):
 
     main_layout.addWidget(self.table_widget)
     self.setLayout(main_layout)
-   
+
+  def load_logs(self):
+    pass
