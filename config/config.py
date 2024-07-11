@@ -10,4 +10,4 @@ connection_params = {
   "raise_on_warnings": True,
 }
 
-database_name = "db_logbook"
+database_name = os.getenv("DB_NAME")
