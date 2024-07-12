@@ -19,6 +19,7 @@ class LogsPage(QWidget):
     self.field_layout = QHBoxLayout()
 
     self.start_date = DateField("Start Date")
+    self.end_date = DateField("End Date")
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(5)
