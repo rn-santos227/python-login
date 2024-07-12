@@ -27,3 +27,6 @@ class DateField(QWidget):
     self.layout.addWidget(self.label)
     self.layout.addWidget(self.date_field)
     self.setLayout(self.layout)
+
+    def get_date(self):
+      return self.date_field.date().toString("yyyy-MM-dd")
