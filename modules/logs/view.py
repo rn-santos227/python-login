@@ -50,3 +50,6 @@ class LogsPage(QWidget):
   def load_logs(self):
     update_logs()
     self.table_widget.setRowCount(0)
+
+    if not logs:
+      return
