@@ -28,5 +28,8 @@ class DateField(QWidget):
     self.layout.addWidget(self.date_field)
     self.setLayout(self.layout)
 
-    def get_date(self):
-      return self.date_field.date().toString("yyyy-MM-dd")
+  def get_date(self):
+    return self.date_field.date().toString("yyyy-MM-dd")
+  
+  def set_date(self, date_str):
+      self.date_edit.setDate(QDate.fromString(date_str, "yyyy-MM-dd"))
