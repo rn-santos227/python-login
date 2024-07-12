@@ -1,6 +1,6 @@
 import modules.logs.controller as logs_controller
 
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QGridLayout, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QHBoxLayout, QGridLayout, QTableWidget, QTableWidgetItem, QHeaderView, QSpacerItem, QSizePolicy
 
 from components.button import Button
 from components.date_field import DateField
@@ -27,6 +27,8 @@ class LogsPage(QWidget):
     field_layout.addWidget(self.end_date)
 
     search_button = Button("Search Logs")
+    
+    search_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
 
     search_layout.addLayout(field_layout)
 
