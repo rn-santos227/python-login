@@ -18,6 +18,8 @@ class LogsPage(QWidget):
     self.date_layout = QGridLayout()
     self.field_layout = QHBoxLayout()
 
+    self.start_date = DateField("Start Date")
+
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(5)
     self.table_widget.setHorizontalHeaderLabels(["Student Name", "Date", "Time Login", "Time Logout", "Actions"])
