@@ -25,6 +25,8 @@ class LogsPage(QWidget):
     field_layout.addWidget(self.start_date)
     field_layout.addWidget(self.end_date)
 
+    search_button = Button("Search Logs")
+
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(5)
     self.table_widget.setHorizontalHeaderLabels(["Student Name", "Date", "Time Login", "Time Logout", "Actions"])
