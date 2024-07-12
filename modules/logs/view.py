@@ -32,6 +32,7 @@ class LogsPage(QWidget):
     search_button_layout.addWidget(search_button)
 
     search_layout.addLayout(field_layout)
+    search_layout.addLayout(search_button_layout)
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(5)
