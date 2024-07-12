@@ -8,8 +8,9 @@ logs: List[Log] = get_logs("all", "select")
 
 def update_logs(start_date: Optional[str] = None, end_date: Optional[str] = None):
   global logs
+  
   current_date = datetime.now().strftime("%Y-%m-%d")
   start_date = start_date or current_date
   end_date = end_date or current_date
 
-  logs = get_logs("all", "select")
+  logs = get_logs(f"date >= '{start_date}' AND date <= '{end_date}'", "select")
