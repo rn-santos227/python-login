@@ -13,17 +13,19 @@ class LogsPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    main_layout = QHBoxLayout()
-    date_layout = QGridLayout()
-    field_layout = QHBoxLayout()
+    self.main_layout = QHBoxLayout()
+    self.top_layout = QHBoxLayout()
+    self.date_layout = QGridLayout()
+    self.field_layout = QHBoxLayout()
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(5)
     self.table_widget.setHorizontalHeaderLabels(["Student Name", "Date", "Time Login", "Time Logout", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-    main_layout.addWidget(self.table_widget)
-    self.setLayout(main_layout)
+    self.main_layout.addLayout(self.top_layout)
+    self.main_layout.addWidget(self.table_widget)
+    self.setLayout(self.main_layout)
 
   def load_logs(self):
     pass
