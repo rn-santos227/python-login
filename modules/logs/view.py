@@ -29,6 +29,7 @@ class LogsPage(QWidget):
     search_button = Button("Search Logs")
     
     search_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    search_button_layout.addWidget(search_button)
 
     search_layout.addLayout(field_layout)
 
