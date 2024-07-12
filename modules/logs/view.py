@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QGridLayout, QTab
 from components.button import Button
 from components.date_field import DateField
 
-from modules.logs.handler import logs
+from modules.logs.handler import logs, update_logs
 
 class LogsPage(QWidget):
   def __init__(self, pages_handler):
@@ -46,4 +46,5 @@ class LogsPage(QWidget):
     self.setLayout(self.main_layout)
 
   def load_logs(self):
-    pass
+    update_logs()
+    self.table_widget.setRowCount(0)
