@@ -43,7 +43,9 @@ class LogsPage(QWidget):
 
     self.main_layout.addLayout(self.top_layout)
     self.main_layout.addWidget(self.table_widget)
+
     self.setLayout(self.main_layout)
+    self.load_logs()
 
   def load_logs(self):
     update_logs()
