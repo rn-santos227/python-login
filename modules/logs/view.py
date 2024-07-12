@@ -16,7 +16,7 @@ class LogsPage(QWidget):
   def init_ui(self):
     self.main_layout = QHBoxLayout()
     self.top_layout = QHBoxLayout()
-    self.date_layout = QGridLayout()
+    date_layout = QGridLayout()
     field_layout = QHBoxLayout()
 
     self.start_date = DateField("Start Date")
@@ -26,6 +26,8 @@ class LogsPage(QWidget):
     field_layout.addWidget(self.end_date)
 
     search_button = Button("Search Logs")
+
+    date_layout.addLayout(field_layout)
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(5)
