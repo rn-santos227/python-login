@@ -2,6 +2,7 @@ import modules.logs.controller as logs_controller
 
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QGridLayout, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
 
+from components.button import Button
 from components.date_field import DateField
 
 from modules.logs.handler import logs
