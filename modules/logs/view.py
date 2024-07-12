@@ -1,6 +1,6 @@
 import modules.logs.controller as logs_controller
 
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QHBoxLayout, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,  QSpacerItem, QSizePolicy
 
 from components.date_field import DateField
 
@@ -14,6 +14,7 @@ class LogsPage(QWidget):
 
   def init_ui(self):
     main_layout = QHBoxLayout()
+    date_layout = QHBoxLayout()
 
     self.table_widget = QTableWidget()
     self.table_widget.setColumnCount(5)
