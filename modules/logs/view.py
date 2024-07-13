@@ -59,3 +59,4 @@ class LogsPage(QWidget):
     
     for log in logs:
       row_position = self.table_widget.rowCount()
+      self.table_widget.insertRow(row_position)
