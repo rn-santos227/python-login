@@ -4,8 +4,7 @@ import config.database as DB
 from typing import Union
 from database.query import builder, join_builder
 
-from modules.logs.model import Log
-from modules.students.model import StudentLog
+from modules.logs.model import Log, StudentLog
 
 __table = "logs"
 

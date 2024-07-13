@@ -31,16 +31,3 @@ class Student(User):
       status VARCHAR(10)
     );
     '''
-  
-class StudentLog:
-  def __init__(self, log_id, student_id, login_time, logout_time, date, email, full_name, contact_number, section, grade):
-    self.log_id = log_id
-    self.student_id = student_id
-    self.login_time = login_time
-    self.logout_time = logout_time
-    self.date = date
-    self.email = email
-    self.full_name = full_name
-    self.contact_number = contact_number
-    self.section = section
-    self.grade = grade
