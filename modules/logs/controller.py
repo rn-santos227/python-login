@@ -93,6 +93,9 @@ def get_logs_by_student(student_id) -> list[Log]:
   finally:
     cursor.close()
 
+def get_logs_with_students(query) -> list[Log]:
+    sql_query = join_builder(table1=__table, table2="students", query=query)
+
 def create_log(log: Log) -> Log:
   columns = "(student_id, date)"
   sql_query = builder(__table, f"{columns} VALUES (%s, %s)", "insert")
@@ -111,9 +114,6 @@ def create_log(log: Log) -> Log:
 
   finally:
     cursor.close()
-
-def get_logs_with_students() -> list[Log]:
-  pass
 
 def add_login_time(log: Log) -> Log:
   set_clause = (
