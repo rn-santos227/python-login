@@ -56,3 +56,6 @@ class LogsPage(QWidget):
 
     if not logs:
       return
+    
+    for log in logs:
+      pass
