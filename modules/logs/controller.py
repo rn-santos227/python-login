@@ -94,7 +94,9 @@ def get_logs_by_student(student_id) -> list[Log]:
     cursor.close()
 
 def get_logs_with_students(query) -> list[Log]:
-    sql_query = join_builder(table1=__table, table2="students", query=query)
+  sql_query = join_builder(table1=__table, table2="students", query=query)
+  connection = DB.connect_db()
+  cursor = connection.cursor()
 
 def create_log(log: Log) -> Log:
   columns = "(student_id, date)"
