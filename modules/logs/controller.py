@@ -3,7 +3,9 @@ import config.database as DB
 
 from typing import Union
 from database.query import builder, join_builder
+
 from modules.logs.model import Log
+from modules.students.model import StudentLog
 
 __table = "logs"
 
@@ -93,7 +95,7 @@ def get_logs_by_student(student_id) -> list[Log]:
   finally:
     cursor.close()
 
-def get_logs_with_students(query) -> list[Log]:
+def get_logs_with_students(query) -> list[StudentLog]:
   condition = "logs.student_id = students.id"
   columns = "logs.*, logs.id as log_id, students.email, students.full_name, students.student_number, students.section, students.grade"
   sql_query = join_builder(table1=__table, table2="students", join_condition=condition, columns=columns, query=query)
@@ -104,12 +106,12 @@ def get_logs_with_students(query) -> list[Log]:
     cursor.execute(sql_query)
     rows = cursor.fetchall()
 
-    logs = []
+    student_logs = []
     for row in rows:
-      log = Log(*row)
-      logs.append(log)
+      student_log = StudentLog(*row)
+      student_logs.append(student_log)
 
-    return logs
+    return student_logs
 
   except Exception as e:
     print(f"Error: {e}")
