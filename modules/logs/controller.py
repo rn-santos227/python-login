@@ -100,6 +100,14 @@ def get_logs_with_students(query) -> list[Log]:
 
   try:
     cursor.execute(sql_query)
+    rows = cursor.fetchall()
+
+    logs = []
+    for row in rows:
+      log = Log(*row)
+      logs.append(log)
+
+    return logs
 
   except Exception as e:
     print(f"Error: {e}")
