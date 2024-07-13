@@ -20,5 +20,6 @@ def builder(table, query, action):
   return sql_query 
 
 
-def builder_join(table1, table2, join_condition=None, join_type=None, query=None, action="select"):
-  pass
+def join_builder(table1, table2, join_condition=None, join_type=None, query=None):
+  if join_type and join_type.lower() not in ["inner", "left", "right", "full"]:
+    raise ValueError("Invalid join type. Supported join types are: 'inner', 'left', 'right', 'full'.")
