@@ -2,7 +2,7 @@
 import config.database as DB
 
 from typing import Union
-from database.query import builder
+from database.query import builder, join_builder
 from modules.logs.model import Log
 
 __table = "logs"
@@ -71,9 +71,6 @@ def get_logs(query, action) -> list[Log]:
   finally:
     cursor.close()
 
-def get_logs_with_students() -> list[Log]:
-  pass
-
 def get_logs_by_student(student_id) -> list[Log]:
   sql_query = builder(__table, 'student_id = %s', "select")
   connection = DB.connect_db()
@@ -114,6 +111,9 @@ def create_log(log: Log) -> Log:
 
   finally:
     cursor.close()
+
+def get_logs_with_students() -> list[Log]:
+  pass
 
 def add_login_time(log: Log) -> Log:
   set_clause = (
