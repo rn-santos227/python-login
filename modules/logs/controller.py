@@ -71,7 +71,10 @@ def get_logs(query, action) -> list[Log]:
   finally:
     cursor.close()
 
-def get_logs_by_student(student_id) ->list[Log]:
+def get_logs_with_students() -> list[Log]:
+  pass
+
+def get_logs_by_student(student_id) -> list[Log]:
   sql_query = builder(__table, 'student_id = %s', "select")
   connection = DB.connect_db()
   cursor = connection.cursor()
