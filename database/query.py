@@ -43,3 +43,5 @@ def join_builder(table1, table2, join_condition=None, join_type=None, query=None
 
     else:
       sql_query = f"SELECT * FROM {table1} WHERE {query};"
+
+  return sql_query
