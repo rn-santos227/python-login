@@ -1,10 +1,10 @@
 from typing import List, Optional
 from datetime import datetime
 
-from modules.logs.model import Log
+from modules.logs.model import StudentLog
 from modules.logs.controller import get_logs_with_students
 
-logs: List[Log] = get_logs_with_students()
+logs: List[StudentLog] = get_logs_with_students()
 
 def update_logs(start_date: Optional[str] = None, end_date: Optional[str] = None):
   global logs
