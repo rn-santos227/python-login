@@ -48,7 +48,10 @@ class LogsPage(QWidget):
     self.load_logs()
 
   def load_logs(self):
-    update_logs()
+    start_date = self.start_date.get_date()
+    end_date = self.end_date.get_date()
+
+    update_logs(start_date, end_date)
     self.table_widget.setRowCount(0)
 
     if not logs:
