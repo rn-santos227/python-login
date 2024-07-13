@@ -29,3 +29,7 @@ def join_builder(table1, table2, join_condition=None, join_type=None, query=None
   
   if not query:
     query = "all"
+
+  if query.lower() == 'all':
+    if table2 and join_condition:
+      sql_query = f"SELECT * FROM {table1} {join_type} JOIN {table2} ON {join_condition};"
