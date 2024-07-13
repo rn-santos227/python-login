@@ -98,6 +98,12 @@ def get_logs_with_students(query) -> list[Log]:
   connection = DB.connect_db()
   cursor = connection.cursor()
 
+  try:
+    cursor.execute(sql_query)
+
+  except Exception as e:
+    print(f"Error: {e}")
+
 def create_log(log: Log) -> Log:
   columns = "(student_id, date)"
   sql_query = builder(__table, f"{columns} VALUES (%s, %s)", "insert")
