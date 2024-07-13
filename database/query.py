@@ -20,7 +20,7 @@ def builder(table, query, action):
   return sql_query 
 
 
-def join_builder(table1, table2, join_condition=None, join_type=None, query=None):
+def join_builder(table1, table2, join_condition, join_type="inner", query=None):
   if join_type and join_type.lower() not in ["inner", "left", "right", "full"]:
     raise ValueError("Invalid join type. Supported join types are: 'inner', 'left', 'right', 'full'.")
   
@@ -31,17 +31,9 @@ def join_builder(table1, table2, join_condition=None, join_type=None, query=None
     query = "all"
 
   if query.lower() == 'all':
-    if table2 and join_condition:
-      sql_query = f"SELECT * FROM {table1} {join_type} JOIN {table2} ON {join_condition};"
-
-    else:
-      sql_query = f"SELECT * FROM {table1};"
+    sql_query = f"SELECT * FROM {table1} {join_type} JOIN {table2} ON {join_condition};"
 
   else:
-    if table2 and join_condition:
-      sql_query = f"SELECT * FROM {table1} {join_type} JOIN {table2} ON {join_condition} WHERE {query};"
-
-    else:
-      sql_query = f"SELECT * FROM {table1} WHERE {query};"
+    sql_query = f"SELECT * FROM {table1} {join_type} JOIN {table2} ON {join_condition} WHERE {query};"
 
   return sql_query
