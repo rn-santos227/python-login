@@ -58,4 +58,4 @@ class LogsPage(QWidget):
       return
     
     for log in logs:
-      pass
+      row_position = self.table_widget.rowCount()
