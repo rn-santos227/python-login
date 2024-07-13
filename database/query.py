@@ -23,3 +23,9 @@ def builder(table, query, action):
 def join_builder(table1, table2, join_condition=None, join_type=None, query=None):
   if join_type and join_type.lower() not in ["inner", "left", "right", "full"]:
     raise ValueError("Invalid join type. Supported join types are: 'inner', 'left', 'right', 'full'.")
+  
+  if join_type:
+    join_type = join_type.upper()
+  
+  if not query:
+    query = "all"
