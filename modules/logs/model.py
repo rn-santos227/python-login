@@ -8,16 +8,12 @@ class Log:
     login_time=None,
     logout_time=None,
     date=None,
-    student_name=None,
-    student_number=None,
   ):
     self.id = id
     self.student_id = student_id
     self.login_time = login_time
     self.logout_time = logout_time
     self.date = date
-    self.student_name = student_name,
-    self.student_number = student_number,
 
   @property
   def student(self) -> Student:
