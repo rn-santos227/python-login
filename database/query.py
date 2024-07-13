@@ -18,3 +18,7 @@ def builder(table, query, action):
     raise ValueError("Invalid action. Supported actions are: 'select', 'insert', 'update', 'delete'.")
 
   return sql_query 
+
+
+def builder_join(table1, table2, join_condition=None, join_type=None, query=None, action="select"):
+  pass
