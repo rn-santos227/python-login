@@ -65,3 +65,6 @@ class LogsPage(QWidget):
 
   def delete_log(self, log_id):
     pass
+
+  def __prompt_delete_log(self, log_id):
+    pass
