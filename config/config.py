@@ -3,6 +3,8 @@ import os
 
 load_dotenv()
 
+app_name = os.getenv("APP_NAME")
+
 connection_params = {
   "user": os.getenv("DB_USER"),
   "password": os.getenv("DB_PASSWORD"),

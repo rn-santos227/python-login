@@ -5,9 +5,6 @@ from PyQt5.QtCore import Qt
 from components.title_bar import TitleBar
 from handlers.pages_handler import PagesHandler
 
-from modules.auth.view import LoginPage
-from modules.dashboard.view import DashboardAdminPage
-
 class ScreenWindow(QMainWindow):
   def __init__(self):
     super().__init__()
