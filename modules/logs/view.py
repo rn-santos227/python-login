@@ -1,6 +1,6 @@
 import modules.logs.controller as logs_controller
 
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QGridLayout, QTableWidget, QTableWidgetItem, QHeaderView, QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QGridLayout, QTableWidget, QTableWidgetItem, QDialog, QHeaderView, QSpacerItem, QSizePolicy
 
 from components.button import Button
 from components.date_field import DateField
@@ -63,8 +63,12 @@ class LogsPage(QWidget):
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
 
+      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(log.full_name)))
+      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(log.date)))
+
   def delete_log(self, log_id):
     pass
 
   def __prompt_delete_log(self, log_id):
     self.log_id = log_id
+    question_box = QuestionBox(message="Do you want to delete this log?")
