@@ -4,6 +4,8 @@ from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QGridLayout, QTab
 
 from components.button import Button
 from components.date_field import DateField
+from components.message_box import MessageBox
+from components.question_box import QuestionBox
 
 from modules.logs.handler import logs, update_logs
 
