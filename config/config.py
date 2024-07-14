@@ -11,3 +11,5 @@ connection_params = {
 }
 
 database_name = os.getenv("DB_NAME")
+
+sms_api = os.getenv("SMS_API")
