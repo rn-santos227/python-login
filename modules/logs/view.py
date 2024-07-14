@@ -77,6 +77,8 @@ class LogsPage(QWidget):
       button_widget = QWidget()
       button_widget.setLayout(button_layout)
 
+      self.table_widget.setCellWidget(row_position, 4, button_widget)
+
   def delete_log(self, log_id):
     pass
 
