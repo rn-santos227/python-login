@@ -72,3 +72,5 @@ class LogsPage(QWidget):
   def __prompt_delete_log(self, log_id):
     self.log_id = log_id
     question_box = QuestionBox(message="Do you want to delete this log?")
+    if question_box.exec() == QDialog.Accepted:
+      self.delete_log(log_id=self.log_id)
