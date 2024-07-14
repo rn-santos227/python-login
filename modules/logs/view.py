@@ -70,6 +70,10 @@ class LogsPage(QWidget):
 
       delete_button = QPushButton("Delete")
 
+      button_layout = QHBoxLayout()
+      button_layout.addWidget(delete_button)
+      button_layout.setContentsMargins(0, 0, 0, 0)
+
   def delete_log(self, log_id):
     pass
 
