@@ -82,7 +82,9 @@ class LogsPage(QWidget):
       self.table_widget.setCellWidget(row_position, 4, button_widget)
 
   def delete_log(self, log_id):
-    pass
+    logs_controller.delete_log(id=log_id)
+    self.load_logs()
+    self.message_box.show_message("Success", "Log has been deleted successfully.", "Information")
 
   def __prompt_delete_log(self, log_id):
     self.log_id = log_id
