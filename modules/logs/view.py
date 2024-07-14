@@ -1,6 +1,6 @@
 import modules.logs.controller as logs_controller
 
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QGridLayout, QTableWidget, QTableWidgetItem, QDialog, QHeaderView, QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QGridLayout, QTableWidget, QTableWidgetItem, QDialog, QHeaderView, QPushButton, QSpacerItem, QSizePolicy
 
 from components.button import Button
 from components.date_field import DateField
@@ -64,9 +64,11 @@ class LogsPage(QWidget):
       self.table_widget.insertRow(row_position)
 
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(log.full_name)))
-      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(log.date)))
-      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(log.login_time)))
-      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(log.logout_time)))
+      self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(log.date)))
+      self.table_widget.setItem(row_position, 2, QTableWidgetItem(str(log.login_time)))
+      self.table_widget.setItem(row_position, 3, QTableWidgetItem(str(log.logout_time)))
+
+      delete_button = QPushButton("Delete")
 
   def delete_log(self, log_id):
     pass
