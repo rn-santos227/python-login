@@ -134,3 +134,7 @@ class ReaderPage(QWidget):
     self.webcam_button.set_button_text("Start Webcam")
     self.webcam_button.disconnect_signal(self.__disable_capture)
     self.webcam_button.connect_signal(self.__enable_capture)
+
+
+  def __send_sms_to_parents():
+    pass
