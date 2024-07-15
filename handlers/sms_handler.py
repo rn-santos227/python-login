@@ -14,6 +14,8 @@ def send_sms(contact_number, message):
 
   if response.status_code == 200:
     print("Message sent successfully!")
+    print("Response:", response.json())
 
   else:
     print("Failed to send message.")
+    
