@@ -5,7 +5,6 @@ import numpy as np
 import modules.logs.controller as log_controller
 
 from datetime import datetime
-
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
 
 from components.button import Button
@@ -15,6 +14,7 @@ from components.webcam import Webcam
 from handlers.sms_handler import send_sms, compose_message
 
 from modules.logs.model import Log
+from modules.students.model import Student
 
 from modules.logs.handler import update_logs
 from modules.parents.controller import get_parents
@@ -136,5 +136,7 @@ class ReaderPage(QWidget):
     self.webcam_button.connect_signal(self.__enable_capture)
 
 
-  def __send_sms_to_parents(student_id):
-    parents = get_parents(f"student_id = {student_id}", "select")
+  def __send_sms_to_parents(student: Student):
+    parents = get_parents(f"student_id = {student.id}", "select")
+    for parent in parents:
+      pass
