@@ -7,4 +7,5 @@ def send_sms(contact_number, message):
     "apikey": sms_api,
     "sendername": app_name,
     "number": contact_number,
+    "message": message,
   }
