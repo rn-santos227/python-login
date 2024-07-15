@@ -23,6 +23,6 @@ def send_sms(contact_number, message):
     print("Response:", response.text)
 
 
-def compose_message(student: Student, time: str, type: str) -> str:
-  message = ""
+def compose_message(student: Student, time: str, logged: str) -> str:
+  message = f"Student {student.full_name} has {logged} at {time}"
   return message
