@@ -2,6 +2,8 @@ import requests
 
 from config.config import app_name, sms_api, sms_key
 
+from modules.students.model import Student
+
 def send_sms(contact_number, message):
   data = {
     "apikey": sms_key,
@@ -19,3 +21,7 @@ def send_sms(contact_number, message):
   else:
     print("Failed to send message.")
     print("Response:", response.text)
+
+
+def compose_message(student: Student):
+  pass
