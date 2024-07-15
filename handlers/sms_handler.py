@@ -11,8 +11,9 @@ def send_sms(contact_number, message):
   }
 
   response = requests.post(sms_api, data=data)
-  
+
   if response.status_code == 200:
     print("Message sent successfully!")
 
-  
+  else:
+    print("Failed to send message.")
