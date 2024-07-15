@@ -9,3 +9,7 @@ def send_sms(contact_number, message):
     "number": contact_number,
     "message": message,
   }
+
+  response = requests.post(sms_api, data=data)
+
+  
