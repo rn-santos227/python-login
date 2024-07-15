@@ -23,6 +23,6 @@ def send_sms(contact_number, message):
     print("Response:", response.text)
 
 
-def compose_message(student: Student, type: str) -> str:
+def compose_message(student: Student, time: str, type: str) -> str:
   message = ""
   return message
