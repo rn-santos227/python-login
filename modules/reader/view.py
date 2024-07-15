@@ -17,6 +17,7 @@ from handlers.sms_handler import send_sms, compose_message
 from modules.logs.model import Log
 
 from modules.logs.handler import update_logs
+from modules.parents.controller import get_parents
 from modules.students.handler import students
 
 class ReaderPage(QWidget):
