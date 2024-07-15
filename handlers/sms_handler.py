@@ -18,4 +18,4 @@ def send_sms(contact_number, message):
 
   else:
     print("Failed to send message.")
-    
+    print("Response:", response.text)
