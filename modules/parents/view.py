@@ -148,6 +148,7 @@ class ParentsPage(QWidget):
 
   def update_parent(self):
     student_id = self.update_student_combo_box.get_selected_value()
+    parent_name = self.update_parent_name_field.get_text()
 
   def delete_parent(self):
     pass
