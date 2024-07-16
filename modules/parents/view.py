@@ -163,6 +163,7 @@ class ParentsPage(QWidget):
     update_parent = Parent(
       id = self.parent_id,
       student_id = student_id,
+      full_name = parent_name,
     )
 
   def delete_parent(self):
