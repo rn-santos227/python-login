@@ -169,6 +169,7 @@ class ParentsPage(QWidget):
     )
 
     parent_controller.update_parent(update_parent)
+    self.load_parents()
 
   def delete_parent(self):
     pass
