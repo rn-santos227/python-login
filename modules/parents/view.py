@@ -159,6 +159,10 @@ class ParentsPage(QWidget):
 
     if not self.validation_handler.validate_fields(self, fields_to_validate):
       return
+    
+    update_parent = Parent(
+      
+    )
 
   def delete_parent(self):
     pass
