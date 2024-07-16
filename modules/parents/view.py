@@ -157,6 +157,9 @@ class ParentsPage(QWidget):
       (self.validation_handler.is_not_empty, contact, "Contacts cannot be empty."),
     ]
 
+    if not self.validation_handler.validate_fields(self, fields_to_validate):
+      return
+
   def delete_parent(self):
     pass
 
