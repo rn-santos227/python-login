@@ -165,6 +165,7 @@ class ParentsPage(QWidget):
       student_id = student_id,
       full_name = parent_name,
       contact = contact,
+      status = "active"
     )
 
   def delete_parent(self):
