@@ -171,6 +171,7 @@ class ParentsPage(QWidget):
     parent_controller.update_parent(update_parent)
     self.load_parents()
     self.__switch_to_create_layout()
+    self.message_box.show_message("Success", "Parent has been updated successfully.", "Information")
 
   def delete_parent(self):
     pass
