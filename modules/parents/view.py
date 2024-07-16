@@ -90,32 +90,6 @@ class ParentsPage(QWidget):
 
     return [(student.full_name, student.id) for student in students]
 
-  def create_parent(self):
-    student_id = self.student_combo_box.get_selected_value()
-    parent_name = self.parent_name_field.get_text()
-    contact = self.parent_contact_field.get_text()
-
-    fields_to_validate = [
-      (self.validation_handler.is_not_empty, student_id, "Student cannot be empty."),
-      (self.validation_handler.is_not_empty, parent_name, "Parent's full name cannot be empty."),
-      (self.validation_handler.is_not_empty, contact, "Contacts cannot be empty."),
-    ]
-
-    if not self.validation_handler.validate_fields(self, fields_to_validate):
-      return
-
-    new_parent = Parent(
-      student_id = student_id,
-      full_name = parent_name,
-      contact = contact,
-      status = "active"
-    )
-
-    parent_controller.create_parent(new_parent)
-    self.load_parents()
-    self.__clear_fields()
-    self.message_box.show_message("Success", "Parent has been created successfully.", "Information")
-
   def load_parents(self):
     update_parents()
     self.table_widget.setRowCount(0)
@@ -145,6 +119,35 @@ class ParentsPage(QWidget):
       button_widget.setLayout(button_layout)
 
       self.table_widget.setCellWidget(row_position, 4, button_widget)
+
+  def create_parent(self):
+    student_id = self.student_combo_box.get_selected_value()
+    parent_name = self.parent_name_field.get_text()
+    contact = self.parent_contact_field.get_text()
+
+    fields_to_validate = [
+      (self.validation_handler.is_not_empty, student_id, "Student cannot be empty."),
+      (self.validation_handler.is_not_empty, parent_name, "Parent's full name cannot be empty."),
+      (self.validation_handler.is_not_empty, contact, "Contacts cannot be empty."),
+    ]
+
+    if not self.validation_handler.validate_fields(self, fields_to_validate):
+      return
+
+    new_parent = Parent(
+      student_id = student_id,
+      full_name = parent_name,
+      contact = contact,
+      status = "active"
+    )
+
+    parent_controller.create_parent(new_parent)
+    self.load_parents()
+    self.__clear_fields()
+    self.message_box.show_message("Success", "Parent has been created successfully.", "Information")
+
+  def update_parent(self):
+    pass
 
   def __load_parent_for_update(self, parent: Parent):
     self.__switch_to_update_layout()
