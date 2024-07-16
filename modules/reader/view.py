@@ -139,4 +139,4 @@ class ReaderPage(QWidget):
   def __send_sms_to_parents(student: Student, time: str, logged: str):
     parents = get_parents(f"student_id = {student.id}", "select")
     for parent in parents:
-      pass
+      message = compose_message(student=student, time=time, logged=logged)
