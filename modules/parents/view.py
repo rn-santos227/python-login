@@ -147,7 +147,7 @@ class ParentsPage(QWidget):
     self.message_box.show_message("Success", "Parent has been created successfully.", "Information")
 
   def update_parent(self):
-    pass
+    student_id = self.update_student_combo_box.get_selected_value()
 
   def delete_parent(self):
     pass
