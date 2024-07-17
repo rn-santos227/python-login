@@ -1,5 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget, QDialog
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QDialog, QHBoxLayout, QStackedWidget, QVBoxLayout, QWidget
 
 from components.button import Button
 from components.question_box import QuestionBox
