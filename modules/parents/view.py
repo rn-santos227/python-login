@@ -179,7 +179,7 @@ class ParentsPage(QWidget):
     self.message_box.show_message("Success", "Parent has been deleted successfully.", "Information")
 
   def __prompt_delete_parent(self, parent_id: int):
-    pass
+    self.parent_id = parent_id
 
   def __load_parent_for_update(self, parent: Parent):
     self.__switch_to_update_layout()
