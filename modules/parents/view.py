@@ -182,6 +182,7 @@ class ParentsPage(QWidget):
 
   def __prompt_delete_parent(self, parent_id: int):
     self.parent_id = parent_id
+    question_box = QuestionBox(message="Do you want to delete this parent record?")
 
   def __load_parent_for_update(self, parent: Parent):
     self.__switch_to_update_layout()
