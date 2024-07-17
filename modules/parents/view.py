@@ -1,4 +1,4 @@
-import modules.parents.controller as parent_controller
+import modules.parents.controller as parents_controller
 import modules.students.controller as student_controller
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHeaderView, QGridLayout, QSpacerItem, QSizePolicy, QTableWidgetItem, QPushButton
@@ -141,7 +141,7 @@ class ParentsPage(QWidget):
       status = "active"
     )
 
-    parent_controller.create_parent(new_parent)
+    parents_controller.create_parent(new_parent)
     self.load_parents()
     self.__clear_fields()
     self.message_box.show_message("Success", "Parent has been created successfully.", "Information")
@@ -168,7 +168,7 @@ class ParentsPage(QWidget):
       status = "active"
     )
 
-    parent_controller.update_parent(update_parent)
+    parents_controller.update_parent(update_parent)
     self.load_parents()
     self.__switch_to_create_layout()
     self.message_box.show_message("Success", "Parent has been updated successfully.", "Information")
