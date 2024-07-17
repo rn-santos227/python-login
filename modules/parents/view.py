@@ -175,6 +175,7 @@ class ParentsPage(QWidget):
 
   def delete_parent(self, parent_id):
     parents_controller.delete_parent(parent_id)
+    self.load_parents()
 
   def __load_parent_for_update(self, parent: Parent):
     self.__switch_to_update_layout()
