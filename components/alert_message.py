@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout
+from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget
 from PyQt5.QtCore import Qt
 
 class AlertMessage(QWidget):
@@ -14,6 +14,7 @@ class AlertMessage(QWidget):
     self.label.setAlignment(Qt.AlignCenter)
 
     self.layout.addWidget(self.label)
+    self.set_alert_type(alert_type)
 
   def set_alert_type(self, alert_type):
     if alert_type == "success":
