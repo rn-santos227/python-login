@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QHe
 from components.button import Button
 from components.combo_box import ComboBox
 from components.message_box import MessageBox
+from components.question_box import QuestionBox
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
