@@ -70,6 +70,7 @@ class ParentsPage(QWidget):
     self.update_parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
     update_button = Button("Update Parent")
+    update_button.connect_signal(self.update_parent)
 
     cancel_button = Button("Cancel Update")
     cancel_button.connect_signal(self.__switch_to_create_layout)
