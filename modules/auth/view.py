@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QHBoxLayout, QLineEdit, QSpacerItem, QSizePolicy, QFrame
+from PyQt5.QtWidgets import QFrame, QHBoxLayout, QLabel, QLineEdit, QSpacerItem, QSizePolicy, QVBoxLayout, QWidget
 
 from components.alert_message import AlertMessage
 from components.button import Button
