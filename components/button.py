@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton, QSizePolicy
+from PyQt5.QtWidgets import QPushButton, QSizePolicy, QVBoxLayout, QWidget
 from PyQt5.QtGui import QFont
 
 class Button(QWidget):
