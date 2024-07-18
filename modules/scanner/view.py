@@ -3,7 +3,7 @@ import face_recognition
 import json
 import numpy as np
 
-import modules.students.controller as student_controller
+import modules.students.controller as students_controller
 
 from PyQt5.QtWidgets import QHBoxLayout, QSizePolicy, QSpacerItem, QVBoxLayout, QWidget
 
@@ -12,13 +12,12 @@ from components.combo_box import ComboBox
 from components.message_box import MessageBox
 from components.webcam import Webcam
 
-from modules.students.handler import students
-
 class ScannerPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
+    self.students = []
     self.init_ui()
 
   def init_ui(self):
@@ -62,10 +61,12 @@ class ScannerPage(QWidget):
     self.capture_button.set_disabled()
 
   def load_students_to_combo_box(self):
-    if not students:
+    self.students = students_controller.get_students("status = 'active'", "select")
+
+    if not self.students:
       return
     
-    return [(student.full_name, student.id) for student in students]
+    return [(student.full_name, student.id) for student in self.students]
   
   def save_face(self):
     ret, frame = self.webcam_component.capture_image()
@@ -76,7 +77,7 @@ class ScannerPage(QWidget):
         self.message_box.show_message("Validation Error", "Name cannot be empty", "error")
         return
       
-      student = student_controller.get_student_by_id(student_id)
+      student = students_controller.get_student_by_id(student_id)
       image_rgb  = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
       image_array = np.array(image_rgb , dtype=np.uint8)
@@ -87,7 +88,7 @@ class ScannerPage(QWidget):
         face_encode = face_encodings[0]
         student.face_encode = json.dumps(face_encode.tolist())
 
-        student_controller.add_face_encode(student=student)
+        students_controller.add_face_encode(student=student)
         self.message_box.show_message("Success", f"Face has been captured and saved to database.", "Information")
   
   def __enable_capture(self):
