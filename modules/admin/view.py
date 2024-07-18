@@ -148,7 +148,7 @@ class AdminsPage(QWidget):
     if not self.admins:
       return
       
-    for admin in self.admin:
+    for admin in self.admins:
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
 
