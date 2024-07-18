@@ -18,13 +18,13 @@ from modules.students.model import Student
 
 from modules.logs.handler import update_logs
 from modules.parents.controller import get_parents
-from modules.students.handler import students
 
 class ReaderPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
+    self.students = []
     self.init_ui()
 
   def init_ui(self):
@@ -78,7 +78,7 @@ class ReaderPage(QWidget):
     face_encodings = face_recognition.face_encodings(image_array, face_locations)
     face_input = np.array(face_encodings[0])
 
-    for student in students:
+    for student in self.students:
       student_face_encode = student.face_encode
       if not student_face_encode:
         continue
