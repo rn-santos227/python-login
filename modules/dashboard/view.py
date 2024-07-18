@@ -103,6 +103,7 @@ class DashboardAdminPage(QWidget):
     self.main_content.setCurrentWidget(self.students_content)
 
   def handle_parents(self):
+    self.parents_content.load_students_to_combo_box()
     self.main_content.setCurrentWidget(self.parents_content)
 
   def handle_logs(self):
