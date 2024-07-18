@@ -2,7 +2,9 @@ import cv2
 import face_recognition
 import json
 import numpy as np
+
 import modules.logs.controller as log_controller
+import modules.students.controller as students_controller
 
 from datetime import datetime
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
