@@ -10,16 +10,14 @@ from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
 from modules.parents.model import Parent
-
-from modules.parents.handler import parents, update_parents
-from modules.students.handler import students
-
 class ParentsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
     self.validation_handler = ValidationHandler()
+    self.students = []
+    self.parents = []
     self.init_ui()
 
   def init_ui(self):
