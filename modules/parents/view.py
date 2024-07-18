@@ -93,13 +93,13 @@ class ParentsPage(QWidget):
     return [(student.full_name, student.id) for student in self.students]
   
   def load_parents(self):
-    update_parents()
+    self.parents = parents_controller.get_parents("all", "select")
     self.table_widget.setRowCount(0)
 
-    if not parents:
+    if not self.parents:
       return
     
-    for parent in parents:
+    for parent in self.parents:
       row_position = self.table_widget.rowCount()
 
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(parent.id)))
