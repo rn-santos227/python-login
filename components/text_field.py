@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLineEdit, QLabel
+from PyQt5.QtWidgets import QLabel, QLineEdit, QVBoxLayout, QWidget
 from PyQt5.QtGui import QFont
 
 class TextField(QWidget):
@@ -7,7 +7,7 @@ class TextField(QWidget):
     self.init_ui(label_text, placeholder_text)
 
   def init_ui(self, label_text, placeholder_text):
-    self.layout = QVBoxLayout()
+    self.layout: QVBoxLayout = QVBoxLayout()
 
     self.label = QLabel(label_text)
     self.text_field = QLineEdit()
