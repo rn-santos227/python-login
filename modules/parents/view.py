@@ -90,7 +90,8 @@ class ParentsPage(QWidget):
     if not self.students:
       return
     
-    return [(student.full_name, student.id) for student in self.students]
+    items = [(student.full_name, student.id) for student in self.students]
+    self.student_combo_box.set_items(items)
   
   def load_parents(self):
     self.parents = parents_controller.get_parents("all", "select")
