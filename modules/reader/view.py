@@ -3,7 +3,7 @@ import face_recognition
 import json
 import numpy as np
 
-import modules.logs.controller as log_controller
+import modules.logs.controller as logs_controller
 import modules.students.controller as students_controller
 
 from datetime import datetime
@@ -71,7 +71,7 @@ class ReaderPage(QWidget):
     start_date = str(datetime.now().strftime("%Y-%m-%d"))
     end_date = str(datetime.now().strftime("%Y-%m-%d"))
 
-    self.logs = log_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
+    self.logs = logs_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
 
   def match_face(self):
     self.students = students_controller.get_students("status = 'active'", "select")
@@ -99,7 +99,7 @@ class ReaderPage(QWidget):
         current_date = datetime.now()
         formatted_date = current_date.strftime("%m/%d/%Y")
         formatted_date_time = current_date.strftime("%m/%d/%Y %I:%M:%S %p")
-        log = log_controller.get_log_by_student_and_date(student_id=student.id, date=formatted_date)
+        log = logs_controller.get_log_by_student_and_date(student_id=student.id, date=formatted_date)
         
         if log is None:
           log = Log(
@@ -107,9 +107,9 @@ class ReaderPage(QWidget):
             date = formatted_date
           )
 
-          login = log_controller.create_log(log)
+          login = logs_controller.create_log(log)
           login.login_time = formatted_date_time
-          log_controller.add_login_time(login)
+          logs_controller.add_login_time(login)
           self.message_box.show_message("Information", f"Student: {student.full_name} has logged in on {formatted_date_time}", "information")
           login_message = compose_message(student=student, time=formatted_date_time, logged="logged in")
           send_sms(contact_number=student.contact_number, message=login_message)
@@ -121,7 +121,7 @@ class ReaderPage(QWidget):
             return
           
           log.logout_time = formatted_date_time
-          log_controller.add_logout_time(log)
+          logs_controller.add_logout_time(log)
           self.message_box.show_message("Information", f"Student: {student.full_name} has logged out on {formatted_date_time}", "information")
           logout_message = compose_message(student=student, time=formatted_date_time, logged="logged out")
           send_sms(contact_number=student.contact_number, message=logout_message)
