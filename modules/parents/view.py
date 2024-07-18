@@ -85,11 +85,13 @@ class ParentsPage(QWidget):
     return update_layout
   
   def load_students_to_combo_box(self):
-    if not students:
+    self.students = students_controller.get_students("status = 'active'", "select")
+
+    if not self.students:
       return
-
-    return [(student.full_name, student.id) for student in students]
-
+    
+    return [(student.full_name, student.id) for student in self.students]
+  
   def load_parents(self):
     update_parents()
     self.table_widget.setRowCount(0)
