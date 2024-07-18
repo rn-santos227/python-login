@@ -10,7 +10,6 @@ from components.text_field import TextField
 from handlers.validations_handler import ValidationHandler
 
 from modules.admin.model import Admin
-from modules.admin.handler import admins, update_admins
 
 class AdminsPage(QWidget):
   def __init__(self, pages_handler):
@@ -18,6 +17,7 @@ class AdminsPage(QWidget):
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
     self.validation_handler = ValidationHandler()
+    self.admins = []
     self.init_ui()
 
   def init_ui(self):
@@ -142,13 +142,13 @@ class AdminsPage(QWidget):
     self.message_box.show_message("Success", "Admin has been deleted successfully.", "Information")
 
   def load_admins(self):
-    update_admins()
+    self.admins = admin_controller.get_admins("status = 'active'", "select")
     self.table_widget.setRowCount(0)
 
-    if not admins:
+    if not self.admins:
       return
       
-    for admin in admins:
+    for admin in self.admin:
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
 
