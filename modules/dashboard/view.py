@@ -3,6 +3,8 @@ from PyQt5.QtWidgets import QDialog, QHBoxLayout, QStackedWidget, QVBoxLayout, Q
 from components.button import Button
 from components.question_box import QuestionBox
 
+from handlers.pages_handler import PagesHandler
+
 from modules.admin.view import AdminsPage
 from modules.logs.view import LogsPage
 from modules.parents.view import ParentsPage
