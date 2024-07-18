@@ -5,6 +5,5 @@ from modules.students.controller import get_students
 
 students: List[Student] = get_students("status = 'active'", "select")
 
-def update_students():
-  global students
-  students = get_students("status = 'active'", "select")
+def update_students_list() -> List[Student]:
+  return get_students("status = 'active'", "select")
