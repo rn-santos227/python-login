@@ -71,6 +71,8 @@ class ReaderPage(QWidget):
     start_date = str(datetime.now().strftime("%Y-%m-%d"))
     end_date = str(datetime.now().strftime("%Y-%m-%d"))
 
+    self.logs = log_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
+
   def match_face(self):
     self.students = students_controller.get_students("status = 'active'", "select")
     ret, frame = self.webcam_component.capture_image()
