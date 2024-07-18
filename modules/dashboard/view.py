@@ -3,8 +3,6 @@ from PyQt5.QtWidgets import QDialog, QHBoxLayout, QStackedWidget, QVBoxLayout, Q
 from components.button import Button
 from components.question_box import QuestionBox
 
-from handlers.pages_handler import PagesHandler
-
 from modules.admin.view import AdminsPage
 from modules.logs.view import LogsPage
 from modules.parents.view import ParentsPage
@@ -13,9 +11,9 @@ from modules.scanner.view import ScannerPage
 from modules.students.view import StudentPage
 
 class DashboardAdminPage(QWidget):
-  def __init__(self, pages_handler: PagesHandler):
+  def __init__(self, pages_handler):
     super().__init__()
-    self.pages_handler: PagesHandler = pages_handler
+    self.pages_handler = pages_handler
     self.navigation_visible = True
     self.init_ui()
 

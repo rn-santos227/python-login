@@ -14,7 +14,7 @@ class ScreenWindow(QMainWindow):
 
     self.central_widget = QWidget(self)
     self.setCentralWidget(self.central_widget)
-    self.layout = QVBoxLayout(self.central_widget)
+    self.layout: QVBoxLayout = QVBoxLayout(self.central_widget)
     self.layout.setContentsMargins(0, 0, 0, 0)
     self.layout.setSpacing(0)
 
