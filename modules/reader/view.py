@@ -69,6 +69,7 @@ class ReaderPage(QWidget):
 
   def load_logs(self):
     start_date = str(datetime.now().strftime("%Y-%m-%d"))
+    end_date = str(datetime.now().strftime("%Y-%m-%d"))
 
   def match_face(self):
     self.students = students_controller.get_students("status = 'active'", "select")
