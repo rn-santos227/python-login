@@ -1,6 +1,5 @@
 import modules.logs.controller as logs_controller
 
-from datetime import datetime
 from PyQt5.QtWidgets import QDialog, QGridLayout, QHeaderView, QHBoxLayout, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
 from components.button import Button
@@ -8,13 +7,12 @@ from components.date_field import DateField
 from components.message_box import MessageBox
 from components.question_box import QuestionBox
 
-from modules.logs.handler import logs, update_logs
-
 class LogsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
+    self.logs = []
     self.init_ui()
 
   def init_ui(self):
@@ -55,13 +53,13 @@ class LogsPage(QWidget):
     start_date = self.start_date.get_date()
     end_date = self.end_date.get_date()
 
-    update_logs(start_date, end_date)
+    self.logs = logs_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
     self.table_widget.setRowCount(0)
 
-    if not logs:
+    if not self.logs :
       return
     
-    for log in logs:
+    for log in self.logs :
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
 
