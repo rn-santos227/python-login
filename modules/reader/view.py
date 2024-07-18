@@ -68,7 +68,7 @@ class ReaderPage(QWidget):
     self.capture_button.set_disabled()
 
   def load_logs(self):
-    pass
+    start_date = str(datetime.now().strftime("%Y-%m-%d"))
 
   def match_face(self):
     self.students = students_controller.get_students("status = 'active'", "select")
