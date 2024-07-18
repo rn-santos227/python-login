@@ -44,7 +44,7 @@ class ParentsPage(QWidget):
     
     self.student_combo_box = ComboBox(label_text="Student Name")
     self.load_students_to_combo_box()
-    
+
     self.parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
@@ -65,7 +65,9 @@ class ParentsPage(QWidget):
     update_layout = QGridLayout()
     self.update_button_layout = QHBoxLayout()
 
-    self.update_student_combo_box = ComboBox(label_text="Student Name", items=self.load_students_to_combo_box())
+    self.update_student_combo_box = ComboBox(label_text="Student Name")
+    self.load_students_to_combo_box()
+    
     self.update_parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.update_parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
@@ -86,14 +88,19 @@ class ParentsPage(QWidget):
 
     return update_layout
   
-  def load_students_to_combo_box(self):
+  def load_students_to_combo_box(self, update=False):
     self.students = students_controller.get_students("status = 'active'", "select")
 
     if not self.students:
       return
     
     items = [(student.full_name, student.id) for student in self.students]
-    self.student_combo_box.set_items(items)
+
+    if update:
+      self.update_student_combo_box.set_items(items)
+    
+    else:
+      self.student_combo_box.set_items(items)
   
   def load_parents(self):
     self.parents = parents_controller.get_parents("all", "select")
