@@ -1,5 +1,6 @@
 import modules.logs.controller as logs_controller
 
+from datetime import datetime
 from PyQt5.QtWidgets import QDialog, QGridLayout, QHeaderView, QHBoxLayout, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
 from components.button import Button
