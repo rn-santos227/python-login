@@ -18,7 +18,6 @@ from handlers.sms_handler import send_sms, compose_message
 from modules.logs.model import Log
 from modules.students.model import Student
 
-from modules.logs.handler import update_logs
 from modules.parents.controller import get_parents
 
 class ReaderPage(QWidget):
@@ -121,7 +120,6 @@ class ReaderPage(QWidget):
           send_sms(contact_number=student.contact_number, message=logout_message)
           self.__send_sms_to_parents(student=student, time=formatted_date_time, logged="logged out")
 
-        update_logs()
         return
       
     self.message_box.show_message("Information", "No match has been found.", "information")
