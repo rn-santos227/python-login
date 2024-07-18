@@ -93,6 +93,7 @@ class DashboardAdminPage(QWidget):
     self.main_content.setCurrentWidget(self.admins_content)
 
   def handle_reader(self):
+    self.reader_content.load_logs()
     self.main_content.setCurrentWidget(self.reader_content)
 
   def handle_scanner(self):
