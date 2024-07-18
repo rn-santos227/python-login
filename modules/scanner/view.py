@@ -31,7 +31,9 @@ class ScannerPage(QWidget):
     left_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
     right_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-    self.student_combo_box = ComboBox(label_text="Student Names", items=self.load_students_to_combo_box())
+    self.student_combo_box = ComboBox(label_text="Student Names")
+    self.items=self.load_students_to_combo_box()
+    
     self.webcam_component = Webcam(self)
 
     webcam_center_layout.addItem(left_spacer)
@@ -66,7 +68,8 @@ class ScannerPage(QWidget):
     if not self.students:
       return
     
-    return [(student.full_name, student.id) for student in self.students]
+    items = [(student.full_name, student.id) for student in self.students]
+    self.student_combo_box.set_items(items)
   
   def save_face(self):
     ret, frame = self.webcam_component.capture_image()
