@@ -1,4 +1,5 @@
 import modules.parents.controller as parents_controller
+import modules.students.controller as students_controller
 
 from PyQt5.QtWidgets import QDialog, QGridLayout, QHeaderView, QHBoxLayout, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
