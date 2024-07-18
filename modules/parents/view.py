@@ -42,7 +42,9 @@ class ParentsPage(QWidget):
     create_layout = QGridLayout()
     self.create_button_layout = QHBoxLayout()
     
-    self.student_combo_box = ComboBox(label_text="Student Name", items=self.load_students_to_combo_box())
+    self.student_combo_box = ComboBox(label_text="Student Name")
+    self.load_students_to_combo_box()
+    
     self.parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
