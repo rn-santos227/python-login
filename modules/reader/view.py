@@ -25,6 +25,7 @@ class ReaderPage(QWidget):
     super().__init__()
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
+    self.logs = []
     self.students = []
     self.init_ui()
 
