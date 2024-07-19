@@ -1,6 +1,6 @@
 import requests
 
-from config.config import app_name, sms_api, sms_key
+from config.config import sms_api, sms_key
 
 from modules.students.model import Student
 
