@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QPushButton, QLabel
+from PyQt5.QtWidgets import QHBoxLayout, QLabel, QPushButton, QWidget
 from PyQt5.QtCore import Qt
 
 class TitleBar(QWidget):
