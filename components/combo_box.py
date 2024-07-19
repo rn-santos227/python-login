@@ -7,7 +7,7 @@ class ComboBox(QWidget):
     self.init_ui(label_text, items)
 
   def init_ui(self, label_text, items):
-    self.layout = QVBoxLayout()
+    self.layout: QVBoxLayout = QVBoxLayout()
 
     self.label = QLabel(label_text)
     self.combo_box = QComboBox()

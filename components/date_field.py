@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QDateEdit
+from PyQt5.QtWidgets import QDateEdit, QLabel, QVBoxLayout, QWidget
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import QDate
 
