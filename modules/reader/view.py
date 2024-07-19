@@ -97,8 +97,8 @@ class ReaderPage(QWidget):
 
       if distance < 0.6:
         current_date = datetime.now()
-        formatted_date = current_date.strftime("%m/%d/%Y")
-        formatted_date_time = current_date.strftime("%m/%d/%Y %I:%M:%S %p")
+        formatted_date = current_date.strftime("%Y-%m-%d")
+        formatted_date_time = current_date.strftime("%Y-%m-%d %I:%M:%S")
         log = logs_controller.get_log_by_student_and_date(student_id=student.id, date=formatted_date)
         
         if log is None:
