@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import QHBoxLayout, QLabel, QPushButton, QWidget
 from PyQt5.QtCore import Qt
 
+from config.config import app_name
+
 class TitleBar(QWidget):
   def __init__(self, parent=None):
     super().__init__(parent)
@@ -13,7 +15,7 @@ class TitleBar(QWidget):
     layout.setContentsMargins(0, 0, 0, 0)
     layout.setSpacing(0)
 
-    self.title = QLabel("Digital Logbook Application")
+    self.title = QLabel(app_name)
     self.title.setAlignment(Qt.AlignCenter)
 
     self.close_button = QPushButton("X")
