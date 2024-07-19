@@ -1,7 +1,7 @@
 import cv2
 
 from PyQt5 import QtCore, QtGui
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel
+from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget
 
 class Webcam(QWidget):
   def __init__(self, parent=None):
