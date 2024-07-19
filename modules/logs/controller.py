@@ -126,7 +126,7 @@ def create_log(log: Log) -> Log:
   cursor = connection.cursor()
 
   try:
-    values = (log.student_id, log.ip_address)
+    values = (log.student_id, log.date)
     cursor.execute(sql_query, values)
     connection.commit()
     return log
