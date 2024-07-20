@@ -31,6 +31,7 @@ class ParentsPage(QWidget):
     self.table_widget.setColumnCount(5)
     self.table_widget.setHorizontalHeaderLabels(["ID", "Student Name", "Parent Name", "Contact Number", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+    self.table_widget.verticalHeader().setVisible(False)
 
     self.main_layout.addLayout(self.top_layout)
     self.main_layout.addWidget(self.table_widget)
