@@ -121,6 +121,7 @@ def get_logs_with_students(query) -> list[StudentLog]:
 def create_log(log: Log) -> Log:
   columns = "(student_id, date)"
   sql_query = builder(__table, f"{columns} VALUES (%s, %s)", "insert")
+  sql_select = builder(__table, "id = LAST_INSERT_ID()", "select")
 
   connection = DB.connect_db()
   cursor = connection.cursor()
@@ -129,7 +130,15 @@ def create_log(log: Log) -> Log:
     values = (log.student_id, log.date)
     cursor.execute(sql_query, values)
     connection.commit()
-    return log
+
+    cursor.execute(sql_select)
+    result = cursor.fetchone()
+    
+    if result:
+      log = Log(*result)
+      return log
+    else:
+      return None
 
   except Exception as e:
     print(f"Error: {e}")
