@@ -27,7 +27,11 @@ class ValidationHandler:
     return re.match(phone_regex, input_str) is not None
   
   @staticmethod
-  def is_unique_email(input_email):
+  def is_unique_admin_email(input_email):
+    pass
+  
+  @staticmethod
+  def is_unique_student_email(input_email):
     return student_controller.get_student_by_email(email=input_email) == None
 
   @staticmethod
