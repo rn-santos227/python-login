@@ -114,7 +114,7 @@ class ReaderPage(QWidget):
             date = login.date,
             login_time = formatted_date_time
           ))
-          
+
           self.message_box.show_message("Information", f"Student: {student.full_name} has logged in on {formatted_date_time}", "information")
           login_message = compose_message(student=student, time=formatted_date_time, logged="logged in")
           send_sms(contact_number=student.contact_number, message=login_message)
@@ -129,9 +129,9 @@ class ReaderPage(QWidget):
             id = log.id,
             date = log.date,
             login_time = log.login_time,
+            logout_time = formatted_date_time,
           )
 
-          log.logout_time = formatted_date_time
           logs_controller.add_logout_time(logout_update_student)
           self.message_box.show_message("Information", f"Student: {student.full_name} has logged out on {formatted_date_time}", "information")
           logout_message = compose_message(student=student, time=formatted_date_time, logged="logged out")
