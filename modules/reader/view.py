@@ -108,6 +108,7 @@ class ReaderPage(QWidget):
           )
 
           login = logs_controller.create_log(log)
+          login.login_time = formatted_date_time
 
           logs_controller.add_login_time(Log(
             id = login.id,
