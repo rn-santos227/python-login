@@ -172,8 +172,6 @@ class StudentPage(QWidget):
       (self.validation_handler.is_not_empty, student_number, "Student number cannot be empty."),
       (self.validation_handler.is_not_empty, section, "Section cannot be empty."),
       (self.validation_handler.is_not_empty, grade, "Grade cannot be empty."),
-      (self.validation_handler.is_unique_email, email, "Email must be unique."),
-      (self.validation_handler.is_unique_student_number, student_number, "Student Number must be unique.")
     ]
 
     if not self.validation_handler.validate_fields(self, fields_to_validate):
