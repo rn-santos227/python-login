@@ -29,7 +29,7 @@ class ValidationHandler:
   
   @staticmethod
   def is_unique_admin_email(input_email):
-    pass
+    return admin_controller.get_admin_by_email(email=input_email) == None
   
   @staticmethod
   def is_unique_student_email(input_email):
