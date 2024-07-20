@@ -128,6 +128,7 @@ class ReaderPage(QWidget):
           
           logout_update_student =  Log(
             id = log.id,
+            date = log.date,
           )
 
           log.logout_time = formatted_date_time
