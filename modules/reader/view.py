@@ -110,7 +110,8 @@ class ReaderPage(QWidget):
           login = logs_controller.create_log(log)
 
           update_student =  Log(
-            id = login.id
+            id = login.id,
+            date = login.date,
           )
 
           login.login_time = formatted_date_time
