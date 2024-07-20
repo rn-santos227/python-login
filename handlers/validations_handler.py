@@ -1,6 +1,7 @@
 import re
 from datetime import datetime
 
+import modules.admin.controller as admin_controller
 import modules.students.controller as student_controller
 
 class ValidationHandler:
