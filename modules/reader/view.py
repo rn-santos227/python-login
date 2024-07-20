@@ -115,7 +115,6 @@ class ReaderPage(QWidget):
             login_time = formatted_date_time
           )
 
-          login.login_time = formatted_date_time
           logs_controller.add_login_time(update_student)
           self.message_box.show_message("Information", f"Student: {student.full_name} has logged in on {formatted_date_time}", "information")
           login_message = compose_message(student=student, time=formatted_date_time, logged="logged in")
