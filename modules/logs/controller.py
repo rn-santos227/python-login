@@ -203,7 +203,7 @@ def update_log(log: Log) -> Log:
 
 def delete_log(id) -> bool:
   where_clause = f"id = {id}"
-  sql_query = builder(__table, f"WHERE {where_clause}", "delete")
+  sql_query = builder(__table, where_clause, "delete")
 
   connection = DB.connect_db()
   cursor = connection.cursor()
