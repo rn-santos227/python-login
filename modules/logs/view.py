@@ -81,6 +81,9 @@ class LogsPage(QWidget):
 
       self.table_widget.setCellWidget(row_position, 4, button_widget)
 
+  def search_logs(self):
+    pass
+
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
     self.load_logs()
