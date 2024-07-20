@@ -154,7 +154,7 @@ class ReaderPage(QWidget):
     self.webcam_button.disconnect_signal(self.__disable_capture)
     self.webcam_button.connect_signal(self.__enable_capture)
 
-  def __send_sms_to_parents(student: Student, message):
+  def __send_sms_to_parents(self, student: Student, message: str):
     parents = get_parents(f"student_id = {student.id}", "select")
     for parent in parents:
       send_sms(contact_number=parent.contact, message=message)
