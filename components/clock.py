@@ -1,4 +1,3 @@
-import sys
 import math
 
 from PyQt5 import QtCore, QtGui
@@ -15,3 +14,6 @@ class Clock(QWidget):
     self.layout: QVBoxLayout = QVBoxLayout(self)
     self.label = QLabel(self)
     self.layout.addWidget(self.label)
+
+  def update_time(self):
+    current_time = QtCore.QTime.currentTime()
