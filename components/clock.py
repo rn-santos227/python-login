@@ -21,3 +21,4 @@ class Clock(QWidget):
 
   def display_clock(self, time):
     side = 255
+    image = QtGui.QImage(side, side, QtGui.QImage.Format_ARGB32)
