@@ -25,3 +25,4 @@ class Clock(QWidget):
     image.fill(QtCore.Qt.transparent)
 
     painter = QtGui.QPainter(image)
+    painter.setRenderHint(QtGui.QPainter.Antialiasing)
