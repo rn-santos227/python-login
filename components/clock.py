@@ -49,3 +49,4 @@ class Clock(QWidget):
     # Draw minute hand
     painter.save()
     painter.rotate(6.0 * (time.minute() + time.second() / 60.0))
+    painter.setPen(QtGui.QPen(QtCore.Qt.black, 4, QtCore.Qt.SolidLine, QtCore.Qt.RoundCap, QtCore.Qt.RoundJoin))
