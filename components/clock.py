@@ -55,3 +55,4 @@ class Clock(QWidget):
 
     # Draw second hand
     painter.save()
+    painter.rotate(6.0 * time.second())
