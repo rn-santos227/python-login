@@ -28,3 +28,4 @@ class Clock(QWidget):
     painter.setRenderHint(QtGui.QPainter.Antialiasing)
 
     painter.translate(side / 2, side / 2)
+    painter.scale(side / 200.0, side / 200.0)
