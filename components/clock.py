@@ -62,3 +62,6 @@ class Clock(QWidget):
 
     painter.end()
     self.label.setPixmap(QtGui.QPixmap.fromImage(image))
+
+  def stop_clock(self):
+    pass
