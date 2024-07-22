@@ -31,3 +31,4 @@ class Clock(QWidget):
     painter.scale(side / 200.0, side / 200.0)
 
     painter.setPen(QtCore.Qt.NoPen)
+    painter.setBrush(QtGui.QColor(0, 0, 0))
