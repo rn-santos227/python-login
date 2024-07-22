@@ -40,3 +40,4 @@ class Clock(QWidget):
       painter.restore()
 
     painter.save()
+    painter.rotate(30.0 * (time.hour() + time.minute() / 60.0))
