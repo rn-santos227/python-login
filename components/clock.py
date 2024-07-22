@@ -26,3 +26,5 @@ class Clock(QWidget):
 
     painter = QtGui.QPainter(image)
     painter.setRenderHint(QtGui.QPainter.Antialiasing)
+
+    painter.translate(side / 2, side / 2)
