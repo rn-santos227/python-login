@@ -38,3 +38,5 @@ class Clock(QWidget):
       painter.rotate(30.0 * i)
       painter.drawRect(85, -5, 10, 10)
       painter.restore()
+
+    painter.save()
