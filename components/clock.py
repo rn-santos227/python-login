@@ -23,3 +23,5 @@ class Clock(QWidget):
     side = 255
     image = QtGui.QImage(side, side, QtGui.QImage.Format_ARGB32)
     image.fill(QtCore.Qt.transparent)
+
+    painter = QtGui.QPainter(image)
