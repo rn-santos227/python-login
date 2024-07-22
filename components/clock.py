@@ -36,3 +36,4 @@ class Clock(QWidget):
     for i in range(12):
       painter.save()
       painter.rotate(30.0 * i)
+      painter.drawRect(85, -5, 10, 10)
