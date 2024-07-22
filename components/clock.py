@@ -61,3 +61,4 @@ class Clock(QWidget):
     painter.restore()
 
     painter.end()
+    self.label.setPixmap(QtGui.QPixmap.fromImage(image))
