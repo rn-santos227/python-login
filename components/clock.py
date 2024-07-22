@@ -56,3 +56,4 @@ class Clock(QWidget):
     # Draw second hand
     painter.save()
     painter.rotate(6.0 * time.second())
+    painter.setPen(QtGui.QPen(QtCore.Qt.red, 2, QtCore.Qt.SolidLine, QtCore.Qt.RoundCap, QtCore.Qt.RoundJoin))
