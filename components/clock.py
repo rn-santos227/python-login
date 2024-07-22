@@ -34,4 +34,5 @@ class Clock(QWidget):
     painter.setBrush(QtGui.QColor(0, 0, 0))
 
     for i in range(12):
-      ainter.save()
+      painter.save()
+      painter.rotate(30.0 * i)
