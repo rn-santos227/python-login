@@ -32,3 +32,6 @@ class Clock(QWidget):
 
     painter.setPen(QtCore.Qt.NoPen)
     painter.setBrush(QtGui.QColor(0, 0, 0))
+
+    for i in range(12):
+      pass
