@@ -51,3 +51,4 @@ class Clock(QWidget):
     painter.rotate(6.0 * (time.minute() + time.second() / 60.0))
     painter.setPen(QtGui.QPen(QtCore.Qt.black, 4, QtCore.Qt.SolidLine, QtCore.Qt.RoundCap, QtCore.Qt.RoundJoin))
     painter.drawLine(0, 0, 70, 0)
+    painter.restore()
