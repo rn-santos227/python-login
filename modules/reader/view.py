@@ -9,6 +9,7 @@ import modules.students.controller as students_controller
 from datetime import datetime
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
 
+from components.clock import Clock
 from components.button import Button
 from components.message_box import MessageBox
 from components.webcam import Webcam
