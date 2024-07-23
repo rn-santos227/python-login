@@ -60,6 +60,8 @@ class ReaderPage(QWidget):
     webcam_layout.addWidget(self.webcam_button)
     webcam_layout.addWidget(self.capture_button)
 
+    self.clock_component = Clock(self)
+
     h_center_layout.addItem(left_spacer)
     h_center_layout.addLayout(webcam_layout)
     h_center_layout.addItem(right_spacer)
