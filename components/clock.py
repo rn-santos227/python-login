@@ -67,4 +67,4 @@ class Clock(QWidget):
     self.timer.stop()
 
   def start_clock(self):
-    pass
+    self.timer.start(1000)
