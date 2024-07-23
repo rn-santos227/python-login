@@ -32,7 +32,10 @@ class ReaderPage(QWidget):
 
   def init_ui(self):
     self.main_layout: QVBoxLayout = QVBoxLayout()
+    
     webcam_layout: QVBoxLayout = QVBoxLayout()
+    clock_layout: QVBoxLayout = QVBoxLayout()
+
     h_center_layout: QHBoxLayout = QHBoxLayout()
     webcam_center_layout: QHBoxLayout = QHBoxLayout()
 
