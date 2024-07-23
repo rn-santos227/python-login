@@ -32,10 +32,9 @@ class ReaderPage(QWidget):
 
   def init_ui(self):
     self.main_layout: QVBoxLayout = QVBoxLayout()
-    center_layout: QVBoxLayout = QVBoxLayout()
+    webcam_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
     webcam_center_layout: QHBoxLayout = QHBoxLayout()
-    clock_center_layour: QHBoxLayout = QHBoxLayout()
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
@@ -54,12 +53,12 @@ class ReaderPage(QWidget):
     self.capture_button = Button("Search Face")
     self.capture_button.connect_signal(self.match_face)
 
-    center_layout.addLayout(webcam_center_layout)
-    center_layout.addWidget(self.webcam_button)
-    center_layout.addWidget(self.capture_button)
+    webcam_layout.addLayout(webcam_center_layout)
+    webcam_layout.addWidget(self.webcam_button)
+    webcam_layout.addWidget(self.capture_button)
 
     h_center_layout.addItem(left_spacer)
-    h_center_layout.addLayout(center_layout)
+    h_center_layout.addLayout(webcam_layout)
     h_center_layout.addItem(right_spacer)
 
     self.main_layout.addItem(top_spacer)
