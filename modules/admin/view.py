@@ -26,7 +26,7 @@ class AdminsPage(QWidget):
     
     self.top_layout.addLayout(self.init_create_layout())
 
-    self.table_widget = QTableWidget()
+    self.table_widget: QTableWidget = QTableWidget()
     self.table_widget.setColumnCount(4)
     self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
