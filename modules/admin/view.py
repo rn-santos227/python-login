@@ -47,7 +47,7 @@ class AdminsPage(QWidget):
     self.password_field.text_field.setEchoMode(QLineEdit.Password)
     self.fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
 
-    create_button = Button("Create Admin")
+    create_button: Button = Button("Create Admin")
     create_button.connect_signal(self.create_admin)
 
     self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
