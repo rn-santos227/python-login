@@ -78,7 +78,7 @@ class LoginPage(QWidget):
     login_button.set_color(bg_color="green", font_color="white")
 
   def _set_background_image(self, image_name):
-    asset_handler = AssetHandler()
+    asset_handler: AssetHandler = AssetHandler()
 
     try:
       pixmap = asset_handler.get_image(image_name)
