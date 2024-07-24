@@ -28,7 +28,7 @@ class LoginPage(QWidget):
 
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
-    button_layout = QHBoxLayout()
+    button_layout: QHBoxLayout = QHBoxLayout()
 
     form_frame = QFrame(self)
     form_frame.setFrameShape(QFrame.Box)
