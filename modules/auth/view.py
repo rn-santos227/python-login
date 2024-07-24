@@ -70,7 +70,7 @@ class LoginPage(QWidget):
 
     self.setLayout(main_layout)
 
-    self.message_box = MessageBox(self)
+    self.message_box: MessageBox = MessageBox(self)
 
     self.background_label.lower()
     main_layout.setContentsMargins(0, 0, 0, 0)
