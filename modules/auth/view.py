@@ -47,7 +47,7 @@ class LoginPage(QWidget):
     self.password_field: TextField = TextField(label_text="Password", placeholder_text="Enter your password")
     self.password_field.text_field.setEchoMode(QLineEdit.Password)
 
-    login_button = Button("Login")
+    login_button: Button = Button("Login")
     login_button.connect_signal(self.handle_login)
 
     button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
