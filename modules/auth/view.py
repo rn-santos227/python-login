@@ -30,7 +30,7 @@ class LoginPage(QWidget):
     h_center_layout: QHBoxLayout = QHBoxLayout()
     button_layout: QHBoxLayout = QHBoxLayout()
 
-    form_frame = QFrame(self)
+    form_frame: QFrame = QFrame(self)
     form_frame.setFrameShape(QFrame.Box)
     form_frame.setFrameShadow(QFrame.Raised)
     form_frame.setStyleSheet("background-color: rgba(255, 255, 255, 220);")
