@@ -16,7 +16,7 @@ class LoginPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    main_layout = QVBoxLayout(self)
+    main_layout: QVBoxLayout = QVBoxLayout(self)
     main_layout.setContentsMargins(0, 0, 0, 0)
     main_layout.setSpacing(0)
 
