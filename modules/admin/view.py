@@ -39,8 +39,8 @@ class AdminsPage(QWidget):
     self.load_admins()
 
   def init_create_layout(self):
-    create_layout = QGridLayout()
-    self.create_button_layout = QHBoxLayout()
+    create_layout: QGridLayout = QGridLayout()
+    self.create_button_layout: QHBoxLayout = QHBoxLayout()
 
     self.email_field = TextField(label_text="Email", placeholder_text="Enter admin email.")
     self.password_field = TextField(label_text="Password", placeholder_text="Enter admin password.")
