@@ -43,7 +43,7 @@ class LoginPage(QWidget):
     
     self.alert_message: AlertMessage = AlertMessage() 
 
-    self.email_field = TextField(label_text="Email", placeholder_text="Enter your username")
+    self.email_field: TextField = TextField(label_text="Email", placeholder_text="Enter your username")
     self.password_field = TextField(label_text="Password", placeholder_text="Enter your password")
     self.password_field.text_field.setEchoMode(QLineEdit.Password)
 
