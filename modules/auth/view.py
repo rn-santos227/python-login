@@ -20,7 +20,7 @@ class LoginPage(QWidget):
     main_layout.setContentsMargins(0, 0, 0, 0)
     main_layout.setSpacing(0)
 
-    self.background_label = QLabel(self)
+    self.background_label: QLabel = QLabel(self)
     self._set_background_image("bg.jpg")
     self.background_label.setGeometry(self.rect())
     self.background_label.setScaledContents(True)
