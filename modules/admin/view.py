@@ -65,7 +65,7 @@ class AdminsPage(QWidget):
     self.update_button_layout = QHBoxLayout()
 
     self.update_email_field: TextField = TextField(label_text="Email", placeholder_text="Enter admin email.")
-    self.update_password_field = TextField(label_text="Password", placeholder_text="Enter admin password.")
+    self.update_password_field: TextField = TextField(label_text="Password", placeholder_text="Enter admin password.")
     self.update_password_field.text_field.setEchoMode(QLineEdit.Password)
     self.update_fullname_field = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
 
