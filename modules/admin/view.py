@@ -157,7 +157,7 @@ class AdminsPage(QWidget):
       self.table_widget.setItem(row_position, 1, QTableWidgetItem(admin.full_name))
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(admin.email))
 
-      update_button = QPushButton("Update")
+      update_button: QPushButton = QPushButton("Update")
       update_button.clicked.connect(lambda ch, admin=admin: self.__load_admin_for_update(admin))
 
       delete_button = QPushButton("Delete")
