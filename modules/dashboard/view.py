@@ -20,7 +20,7 @@ class DashboardAdminPage(QWidget):
   def init_ui(self):
     self.admins_content: AdminsPage = AdminsPage(self)
     self.logs_content: LogsPage = LogsPage(self)
-    self.parents_content = ParentsPage(self)
+    self.parents_content: ParentsPage = ParentsPage(self)
     self.reader_content = ReaderPage(self)
     self.scanner_content = ScannerPage(self)
     self.students_content = StudentPage(self)
