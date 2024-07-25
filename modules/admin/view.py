@@ -100,7 +100,7 @@ class AdminsPage(QWidget):
     if not self.validation_handler.validate_fields(self, fields_to_validate):
       return
     
-    new_admin = Admin(
+    new_admin: Admin = Admin(
       email = email,
       password = password,
       full_name = full_name,
