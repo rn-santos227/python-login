@@ -51,7 +51,7 @@ class DashboardAdminPage(QWidget):
     parents_button.connect_signal(self.handle_parents)
     parents_button.set_fixed_width(250)
 
-    users_button = Button("Admin Users")
+    users_button: Button = Button("Admin Users")
     users_button.connect_signal(self.handle_admins)
     users_button.set_fixed_width(250)
     
