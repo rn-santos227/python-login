@@ -25,11 +25,11 @@ class DashboardAdminPage(QWidget):
     self.scanner_content: ScannerPage = ScannerPage(self)
     self.students_content: StudentPage = StudentPage(self)
 
-    layout = QHBoxLayout(self)
+    layout: QHBoxLayout = QHBoxLayout(self)
 
-    self.navigation_menu = QVBoxLayout()
-    self.left_layout = QVBoxLayout()
-    self.main_content = QStackedWidget()
+    self.navigation_menu: QVBoxLayout = QVBoxLayout()
+    self.left_layout: QVBoxLayout = QVBoxLayout()
+    self.main_content: QStackedWidget = QStackedWidget()
 
     logs_button = Button("Attendance Logs")
     logs_button.connect_signal(self.handle_logs)
