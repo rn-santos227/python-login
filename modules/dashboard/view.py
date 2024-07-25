@@ -39,7 +39,7 @@ class DashboardAdminPage(QWidget):
     reader_button.connect_signal(self.handle_reader)
     reader_button.set_fixed_width(250)
     
-    scanner_button = Button("Save Biometrics")
+    scanner_button: Button = Button("Save Biometrics")
     scanner_button.connect_signal(self.handle_scanner)
     scanner_button.set_fixed_width(250)
     
