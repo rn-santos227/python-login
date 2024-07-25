@@ -31,7 +31,7 @@ class DashboardAdminPage(QWidget):
     self.left_layout: QVBoxLayout = QVBoxLayout()
     self.main_content: QStackedWidget = QStackedWidget()
 
-    logs_button = Button("Attendance Logs")
+    logs_button: Button = Button("Attendance Logs")
     logs_button.connect_signal(self.handle_logs)
     logs_button.set_fixed_width(250)
 
