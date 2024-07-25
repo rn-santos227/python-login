@@ -23,7 +23,7 @@ class DashboardAdminPage(QWidget):
     self.parents_content: ParentsPage = ParentsPage(self)
     self.reader_content: ReaderPage = ReaderPage(self)
     self.scanner_content: ScannerPage = ScannerPage(self)
-    self.students_content = StudentPage(self)
+    self.students_content: StudentPage = StudentPage(self)
 
     layout = QHBoxLayout(self)
 
