@@ -18,7 +18,7 @@ class DashboardAdminPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    self.admins_content = AdminsPage(self)
+    self.admins_content: AdminsPage = AdminsPage(self)
     self.logs_content = LogsPage(self)
     self.parents_content = ParentsPage(self)
     self.reader_content = ReaderPage(self)
