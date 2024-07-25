@@ -163,7 +163,7 @@ class AdminsPage(QWidget):
       delete_button : QPushButton = QPushButton("Delete")
       delete_button.clicked.connect(lambda ch, admin_id=admin.id: self.__prompt_delete_admin(admin_id))
 
-      button_layout = QHBoxLayout()
+      button_layout: QHBoxLayout = QHBoxLayout()
       button_layout.addWidget(update_button)
       button_layout.addWidget(delete_button)
       button_layout.setContentsMargins(0, 0, 0, 0)
