@@ -22,7 +22,7 @@ class LogsPage(QWidget):
     search_button_layout: QHBoxLayout = QHBoxLayout()
     field_layout: QHBoxLayout = QHBoxLayout()
 
-    self.start_date = DateField("Start Date")
+    self.start_date: DateField = DateField("Start Date")
     self.end_date = DateField("End Date")
 
     field_layout.addWidget(self.start_date)
