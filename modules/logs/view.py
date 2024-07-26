@@ -69,7 +69,7 @@ class LogsPage(QWidget):
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(str(log.login_time)))
       self.table_widget.setItem(row_position, 3, QTableWidgetItem(str(log.logout_time)))
 
-      delete_button = QPushButton("Delete")
+      delete_button: QPushButton = QPushButton("Delete")
       delete_button.clicked.connect(lambda ch, log_id=log.log_id: self.__prompt_delete_log(log_id))
 
       button_layout = QHBoxLayout()
