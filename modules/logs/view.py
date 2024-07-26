@@ -19,7 +19,7 @@ class LogsPage(QWidget):
     self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
     search_layout: QGridLayout = QGridLayout()
-    search_button_layout = QHBoxLayout()
+    search_button_layout: QHBoxLayout = QHBoxLayout()
     field_layout = QHBoxLayout()
 
     self.start_date = DateField("Start Date")
