@@ -55,7 +55,7 @@ class DashboardAdminPage(QWidget):
     users_button.connect_signal(self.handle_admins)
     users_button.set_fixed_width(250)
     
-    logout_button = Button("Log Out")
+    logout_button: Button = Button("Log Out")
     logout_button.connect_signal(self.handle_logout)
     logout_button.set_fixed_width(250)
 
