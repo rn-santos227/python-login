@@ -41,7 +41,7 @@ class ParentsPage(QWidget):
 
   def init_create_layout(self):
     create_layout: QGridLayout = QGridLayout()
-    self.create_button_layout = QHBoxLayout()
+    self.create_button_layout: QHBoxLayout = QHBoxLayout()
     
     self.student_combo_box = ComboBox(label_text="Student Name")
     self.load_students_to_combo_box()
