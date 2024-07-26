@@ -11,7 +11,7 @@ class LogsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
-    self.message_box = MessageBox(self)
+    self.message_box: MessageBox = MessageBox(self)
     self.logs = []
     self.init_ui()
 
