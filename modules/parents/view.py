@@ -49,7 +49,7 @@ class ParentsPage(QWidget):
     self.parent_name_field: TextField = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.parent_contact_field: TextField = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
-    create_button = Button("Create Parent")
+    create_button: Button = Button("Create Parent")
     create_button.connect_signal(self.create_parent)
 
     self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
