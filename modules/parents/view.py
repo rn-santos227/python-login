@@ -22,8 +22,8 @@ class ParentsPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    self.main_layout = QVBoxLayout()
-    self.top_layout = QHBoxLayout()
+    self.main_layout: QVBoxLayout = QVBoxLayout()
+    self.top_layout: QHBoxLayout = QHBoxLayout()
 
     self.top_layout.addLayout(self.init_create_layout())
 
