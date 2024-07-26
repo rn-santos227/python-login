@@ -38,7 +38,7 @@ class LogsPage(QWidget):
 
     self.top_layout.addLayout(search_layout)
 
-    self.table_widget = QTableWidget()
+    self.table_widget: QTableWidget = QTableWidget()
     self.table_widget.setColumnCount(5)
     self.table_widget.setHorizontalHeaderLabels(["Student Name", "Date", "Time Login", "Time Logout", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
