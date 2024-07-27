@@ -116,6 +116,7 @@ class DashboardAdminPage(QWidget):
   def handle_logout(self):
     question_box: QuestionBox = QuestionBox(message="Are you sure you want to log out?")
     if question_box.exec() == QDialog.Accepted:
+      self.reader_content.clock_component.stop_clock()
       self.pages_handler.switch_to_login_page()
 
   def __toggle_navigation(self):
