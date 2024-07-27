@@ -25,6 +25,7 @@ class ReaderPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
+    self.clock_component = Clock()
     self.message_box = MessageBox(self)
     self.logs = []
     self.students = []
@@ -60,8 +61,6 @@ class ReaderPage(QWidget):
     webcam_layout.addLayout(webcam_center_layout)
     webcam_layout.addWidget(self.webcam_button)
     webcam_layout.addWidget(self.capture_button)
-
-    self.clock_component = Clock()
     
     clock_center_layout = QHBoxLayout()
     clock_center_layout.addItem(left_spacer)
@@ -75,9 +74,7 @@ class ReaderPage(QWidget):
     center_layout.addLayout(webcam_layout)
     center_layout.setStretch(1, 1)
 
-    h_center_layout.addItem(left_spacer)
     h_center_layout.addLayout(center_layout)
-    h_center_layout.addItem(right_spacer)
 
     self.main_layout.addItem(top_spacer)
     self.main_layout.addLayout(h_center_layout)
