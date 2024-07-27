@@ -7,6 +7,7 @@ import modules.students.controller as student_controller
 class ValidationHandler:
   @staticmethod
   def is_not_empty(input_str):
+    input_str = str(input_str)
     return bool(input_str.strip())
 
   @staticmethod
