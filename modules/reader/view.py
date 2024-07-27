@@ -31,14 +31,13 @@ class ReaderPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    self.main_layout: QVBoxLayout = QVBoxLayout()
-    
-    webcam_layout: QVBoxLayout = QVBoxLayout()
-    clock_layout: QVBoxLayout = QVBoxLayout()
+    self.main_layout = QVBoxLayout()
 
-    center_layout: QHBoxLayout = QHBoxLayout()
-    h_center_layout: QHBoxLayout = QHBoxLayout()
-    webcam_center_layout: QHBoxLayout = QHBoxLayout()
+    webcam_layout = QVBoxLayout()
+    clock_layout = QVBoxLayout()
+
+    center_layout = QHBoxLayout()
+    h_center_layout = QHBoxLayout()
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
@@ -47,6 +46,7 @@ class ReaderPage(QWidget):
 
     self.webcam_component = Webcam(self)
 
+    webcam_center_layout = QHBoxLayout()
     webcam_center_layout.addItem(left_spacer)
     webcam_center_layout.addWidget(self.webcam_component)
     webcam_center_layout.addItem(right_spacer)
@@ -65,14 +65,16 @@ class ReaderPage(QWidget):
     clock_layout.addWidget(self.clock_component)
 
     center_layout.addLayout(clock_layout)
+    center_layout.setStretch(0, 1) 
     center_layout.addLayout(webcam_layout)
+    center_layout.setStretch(1, 1) 
 
     h_center_layout.addItem(left_spacer)
     h_center_layout.addLayout(center_layout)
     h_center_layout.addItem(right_spacer)
 
     self.main_layout.addItem(top_spacer)
-    self.main_layout.addItem(h_center_layout)
+    self.main_layout.addLayout(h_center_layout)
     self.main_layout.addItem(bottom_spacer)
 
     self.setLayout(self.main_layout)
