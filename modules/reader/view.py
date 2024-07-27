@@ -50,9 +50,9 @@ class ReaderPage(QWidget):
     self.webcam_component = Webcam(self)
 
     webcam_center_layout = QHBoxLayout()
-    webcam_center_layout.addItem(left_spacer)
+    webcam_center_layout.addItem(small_left_spacer)
     webcam_center_layout.addWidget(self.webcam_component)
-    webcam_center_layout.addItem(right_spacer)
+    webcam_center_layout.addItem(small_right_spacer)
 
     self.webcam_button = Button("Start Webcam")
     self.webcam_button.connect_signal(self.__enable_capture)
