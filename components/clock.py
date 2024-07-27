@@ -12,9 +12,10 @@ class Clock(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    self.layout: QVBoxLayout = QVBoxLayout(self)
+    self.layout = QVBoxLayout(self)
     self.label = QLabel(self)
     self.layout.addWidget(self.label)
+    self.update_time()
 
   def update_time(self):
     current_time = QtCore.QTime.currentTime()
