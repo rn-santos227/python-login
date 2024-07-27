@@ -152,7 +152,6 @@ class ParentsPage(QWidget):
       student_id = student_id,
       full_name = parent_name,
       contact = contact,
-      status = "active"
     )
 
     parents_controller.create_parent(new_parent)
