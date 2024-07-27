@@ -7,6 +7,7 @@ import modules.logs.controller as logs_controller
 import modules.students.controller as students_controller
 
 from datetime import datetime
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
 
 from components.clock import Clock
