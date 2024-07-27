@@ -64,6 +64,9 @@ class ReaderPage(QWidget):
     self.clock_component = Clock()
     clock_layout.addWidget(self.clock_component)
 
+    v_center_layout.addLayout(clock_layout)
+    v_center_layout.addLayout(webcam_layout)
+
     h_center_layout.addItem(left_spacer)
     h_center_layout.addLayout(webcam_layout)
     h_center_layout.addItem(right_spacer)
