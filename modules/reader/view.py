@@ -44,15 +44,12 @@ class ReaderPage(QWidget):
     left_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
     right_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-    small_left_spacer = QSpacerItem(20, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
-    small_right_spacer = QSpacerItem(20, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
     self.webcam_component = Webcam(self)
 
     webcam_center_layout = QHBoxLayout()
-    webcam_center_layout.addItem(small_left_spacer)
+    webcam_center_layout.addItem(left_spacer)
     webcam_center_layout.addWidget(self.webcam_component)
-    webcam_center_layout.addItem(small_right_spacer)
+    webcam_center_layout.addItem(right_spacer)
 
     self.webcam_button = Button("Start Webcam")
     self.webcam_button.connect_signal(self.__enable_capture)
@@ -65,12 +62,18 @@ class ReaderPage(QWidget):
     webcam_layout.addWidget(self.capture_button)
 
     self.clock_component = Clock()
-    clock_layout.addWidget(self.clock_component)
+    
+    clock_center_layout = QHBoxLayout()
+    clock_center_layout.addItem(left_spacer)
+    clock_center_layout.addWidget(self.clock_component)
+    clock_center_layout.addItem(right_spacer)
+
+    clock_layout.addLayout(clock_center_layout)
 
     center_layout.addLayout(clock_layout)
-    center_layout.setStretch(0, 1) 
+    center_layout.setStretch(0, 1)
     center_layout.addLayout(webcam_layout)
-    center_layout.setStretch(1, 1) 
+    center_layout.setStretch(1, 1)
 
     h_center_layout.addItem(left_spacer)
     h_center_layout.addLayout(center_layout)
