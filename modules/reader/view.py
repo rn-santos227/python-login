@@ -68,7 +68,7 @@ class ReaderPage(QWidget):
     v_center_layout.addLayout(webcam_layout)
 
     h_center_layout.addItem(left_spacer)
-    h_center_layout.addLayout(webcam_layout)
+    h_center_layout.addLayout(v_center_layout)
     h_center_layout.addItem(right_spacer)
 
     self.main_layout.addItem(top_spacer)
