@@ -7,8 +7,8 @@ import modules.logs.controller as logs_controller
 import modules.students.controller as students_controller
 
 from datetime import datetime
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSpacerItem, QSizePolicy
+from PyQt5.QtCore import Qt, QDate
+from PyQt5.QtWidgets import QLabel, QHBoxLayout, QSpacerItem, QSizePolicy, QVBoxLayout, QWidget
 
 from components.clock import Clock
 from components.button import Button
@@ -62,6 +62,8 @@ class ReaderPage(QWidget):
     webcam_layout.addLayout(webcam_center_layout)
     webcam_layout.addWidget(self.webcam_button)
     webcam_layout.addWidget(self.capture_button)
+
+    date_label = QLabel(self)
     
     clock_center_layout = QHBoxLayout()
     clock_center_layout.addItem(left_spacer)
