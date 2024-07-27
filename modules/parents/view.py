@@ -112,7 +112,8 @@ class ParentsPage(QWidget):
     
     for parent in self.parents:
       row_position = self.table_widget.rowCount()
-
+      self.table_widget.insertRow(row_position)
+      
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(parent.id)))
       self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(parent.student.full_name)))
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(str(parent.full_name)))

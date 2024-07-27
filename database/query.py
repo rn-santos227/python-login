@@ -1,6 +1,6 @@
 def builder(table, query, action):
   if action.lower() == "select":
-    if query.lower() == 'all':
+    if query.lower() == "all":
       sql_query = f"SELECT * FROM {table};"
     else:
       sql_query = f"SELECT * FROM {table} WHERE {query};"

@@ -57,10 +57,10 @@ class LogsPage(QWidget):
     self.logs = logs_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
     self.table_widget.setRowCount(0)
 
-    if not self.logs :
+    if not self.logs:
       return
     
-    for log in self.logs :
+    for log in self.logs:
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
 
