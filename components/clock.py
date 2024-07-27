@@ -9,6 +9,7 @@ class Clock(QWidget):
     self.init_ui()
     self.timer = QtCore.QTimer(self)
     self.timer.start(1000)
+    self.init_ui()
 
   def init_ui(self):
     self.layout: QVBoxLayout = QVBoxLayout(self)
