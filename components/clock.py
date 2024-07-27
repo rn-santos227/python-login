@@ -18,7 +18,6 @@ class Clock(QWidget):
 
   def update_time(self):
     current_time = QtCore.QTime.currentTime()
-    print(current_time)
     self.display_clock(current_time)
 
   def display_clock(self, time):
@@ -31,6 +30,7 @@ class Clock(QWidget):
 
     painter.translate(side / 2, side / 2)
     painter.scale(side / 200.0, side / 200.0)
+    painter.rotate(-90)
 
     painter.setPen(QtCore.Qt.NoPen)
     painter.setBrush(QtGui.QColor(0, 0, 0))
