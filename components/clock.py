@@ -6,13 +6,12 @@ from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget
 class Clock(QWidget):
   def __init__(self):
     super().__init__()
-    self.init_ui()
     self.timer = QtCore.QTimer(self)
     self.timer.start(1000)
     self.init_ui()
 
   def init_ui(self):
-    self.layout = QVBoxLayout(self)
+    self.layout: QVBoxLayout = QVBoxLayout(self)
     self.label = QLabel(self)
     self.layout.addWidget(self.label)
     self.update_time()

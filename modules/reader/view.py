@@ -36,7 +36,7 @@ class ReaderPage(QWidget):
     webcam_layout: QVBoxLayout = QVBoxLayout()
     clock_layout: QVBoxLayout = QVBoxLayout()
 
-    v_center_layout: QVBoxLayout = QVBoxLayout()
+    center_layout: QHBoxLayout = QHBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
     webcam_center_layout: QHBoxLayout = QHBoxLayout()
 
@@ -64,11 +64,11 @@ class ReaderPage(QWidget):
     self.clock_component = Clock()
     clock_layout.addWidget(self.clock_component)
 
-    v_center_layout.addLayout(clock_layout)
-    v_center_layout.addLayout(webcam_layout)
+    center_layout.addLayout(clock_layout)
+    center_layout.addLayout(webcam_layout)
 
     h_center_layout.addItem(left_spacer)
-    h_center_layout.addLayout(v_center_layout)
+    h_center_layout.addLayout(center_layout)
     h_center_layout.addItem(right_spacer)
 
     self.main_layout.addItem(top_spacer)
