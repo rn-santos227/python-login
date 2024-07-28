@@ -1,5 +1,5 @@
 import os
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QPixmap, QImage, QPainter
 from PyQt5.QtSvg import QSvgRenderer
 
 class AssetHandler:
@@ -20,3 +20,4 @@ class AssetHandler:
 
     if os.path.exists(svg_path):
       svg_renderer = QSvgRenderer(svg_path)
+      image = QImage(100, 100, QImage.Format_ARGB32)
