@@ -98,6 +98,7 @@ class DashboardAdminPage(QWidget):
     self.main_content.setCurrentWidget(self.reader_content)
 
   def handle_scanner(self):
+    self.reader_content.clock_component.stop_clock()
     self.scanner_content.load_students_to_combo_box()
     self.main_content.setCurrentWidget(self.scanner_content)
 
