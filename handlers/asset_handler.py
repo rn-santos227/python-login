@@ -13,3 +13,6 @@ class AssetHandler:
     
     else:
       raise FileNotFoundError(f"Image {image_name} not found in {self.assets_dir}")
+    
+  def get_svg(self, svg_name):
+    pass
