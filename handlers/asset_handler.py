@@ -1,5 +1,6 @@
 import os
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtSvg import QSvgRenderer
 
 class AssetHandler:
   def __init__(self, assets_dir="assets"):
