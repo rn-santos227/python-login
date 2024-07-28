@@ -15,4 +15,4 @@ class AssetHandler:
       raise FileNotFoundError(f"Image {image_name} not found in {self.assets_dir}")
     
   def get_svg(self, svg_name):
-    pass
+    svg_path = os.path.join(f"{self.assets_dir}/svg", svg_name)
