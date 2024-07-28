@@ -19,4 +19,4 @@ class AssetHandler:
     svg_path = os.path.join(f"{self.assets_dir}/svg", svg_name)
 
     if os.path.exists(svg_path):
-      pass
+      svg_renderer = QSvgRenderer(svg_path)
