@@ -16,3 +16,6 @@ class AssetHandler:
     
   def get_svg(self, svg_name):
     svg_path = os.path.join(f"{self.assets_dir}/svg", svg_name)
+
+    if os.path.exists(svg_path):
+      pass
