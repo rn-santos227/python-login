@@ -106,14 +106,14 @@ class DashboardAdminPage(QWidget):
     self.main_content.setCurrentWidget(self.students_content)
 
   def handle_parents(self):
+    self.reader_content.clock_component.stop_clock()
     self.parents_content.load_students_to_combo_box()
     self.parents_content.load_parents()
-    self.reader_content.clock_component.stop_clock()
     self.main_content.setCurrentWidget(self.parents_content)
 
   def handle_logs(self):
-    self.logs_content.load_logs()
     self.reader_content.clock_component.stop_clock()
+    self.logs_content.load_logs()
     self.main_content.setCurrentWidget(self.logs_content)
 
   def handle_logout(self):
