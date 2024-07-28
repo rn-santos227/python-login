@@ -24,3 +24,6 @@ class AssetHandler:
       image.fill(0)
       painter = QPainter(image)
       svg_renderer.render(painter)
+
+    else:
+      raise FileNotFoundError(f"SVG {svg_name} not found in {self.assets_dir}")
