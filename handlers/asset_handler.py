@@ -21,3 +21,4 @@ class AssetHandler:
     if os.path.exists(svg_path):
       svg_renderer = QSvgRenderer(svg_path)
       image = QImage(100, 100, QImage.Format_ARGB32)
+      image.fill(0)
