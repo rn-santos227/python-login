@@ -22,3 +22,4 @@ class AssetHandler:
       svg_renderer = QSvgRenderer(svg_path)
       image = QImage(100, 100, QImage.Format_ARGB32)
       image.fill(0)
+      painter = QPainter(image)
