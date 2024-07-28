@@ -112,6 +112,7 @@ class DashboardAdminPage(QWidget):
 
   def handle_logs(self):
     self.logs_content.load_logs()
+    self.reader_content.clock_component.stop_clock()
     self.main_content.setCurrentWidget(self.logs_content)
 
   def handle_logout(self):
