@@ -17,7 +17,7 @@ class Clock(QWidget):
     self.update_time()
 
   def update_time(self):
-    current_time = QtCore.QTime.currentTime()
+    current_time: QtCore.QTime = QtCore.QTime.currentTime()
     self.display_clock(current_time)
 
   def display_clock(self, time):
