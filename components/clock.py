@@ -25,7 +25,7 @@ class Clock(QWidget):
     image: QtGui.QImage = QtGui.QImage(side, side, QtGui.QImage.Format_ARGB32)
     image.fill(QtCore.Qt.transparent)
 
-    painter = QtGui.QPainter(image)
+    painter: QtGui.QPainter = QtGui.QPainter(image)
     painter.setRenderHint(QtGui.QPainter.Antialiasing)
 
     painter.translate(side / 2, side / 2)
