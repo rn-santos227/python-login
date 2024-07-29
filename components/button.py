@@ -8,7 +8,7 @@ class Button(QWidget):
 
   def init_ui(self, button_text):
     self.layout: QVBoxLayout = QVBoxLayout()
-    self.button = QPushButton(button_text)
+    self.button: QPushButton = QPushButton(button_text)
     self.button.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
 
     button_font = QFont()
