@@ -11,7 +11,7 @@ class Button(QWidget):
     self.button: QPushButton = QPushButton(button_text)
     self.button.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
 
-    button_font = QFont()
+    button_font: QFont = QFont()
     button_font.setPointSize(12)
     self.button.setFont(button_font)
 
