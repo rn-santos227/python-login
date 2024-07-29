@@ -7,7 +7,7 @@ class Clock(QWidget):
   def __init__(self):
     super().__init__()
     self.init_ui()
-    self.timer = QtCore.QTimer(self)
+    self.timer: QtCore.QTimer = QtCore.QTimer(self)
     self.timer.timeout.connect(self.update_time)
 
   def init_ui(self):
