@@ -10,7 +10,7 @@ class AlertMessage(QWidget):
     self.layout: QVBoxLayout = QVBoxLayout()
     self.setLayout(self.layout)
 
-    self.label = QLabel(message)
+    self.label: QLabel = QLabel(message)
     self.label.setAlignment(Qt.AlignCenter)
 
     self.layout.addWidget(self.label)
