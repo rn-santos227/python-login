@@ -39,7 +39,7 @@ class Clock(QWidget):
     for i in range(1, 13):
       painter.save()
       painter.rotate(30.0 * i)
-      painter.drawRect(85, -5, 10, 10)
+      painter.translate(85, -5)
       painter.restore()
 
     # Draw hour hand
