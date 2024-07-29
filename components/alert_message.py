@@ -7,7 +7,7 @@ class AlertMessage(QWidget):
     self.init_ui(message, alert_type)
 
   def init_ui(self, message, alert_type):
-    self.layout = QVBoxLayout()
+    self.layout: QVBoxLayout = QVBoxLayout()
     self.setLayout(self.layout)
 
     self.label = QLabel(message)
