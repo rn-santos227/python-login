@@ -13,12 +13,12 @@ class TextField(QWidget):
     self.text_field: QLineEdit = QLineEdit()
     self.text_field.setPlaceholderText(placeholder_text)
 
-    label_font = QFont()
+    label_font: QFont = QFont()
     label_font.setPointSize(14)
     self.label.setFont(label_font)
     self.label.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
 
-    text_field_font = QFont()
+    text_field_font: QFont = QFont()
     text_field_font.setPointSize(12)
     self.text_field.setFont(text_field_font)
 
