@@ -10,7 +10,7 @@ class TextField(QWidget):
     self.layout: QVBoxLayout = QVBoxLayout()
 
     self.label: QLabel = QLabel(label_text)
-    self.text_field = QLineEdit()
+    self.text_field: QLineEdit = QLineEdit()
     self.text_field.setPlaceholderText(placeholder_text)
 
     label_font = QFont()
