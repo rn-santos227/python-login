@@ -31,7 +31,7 @@ class Webcam(QWidget):
       self.display_image(frame)
     
   def display_image(self, img):
-    qformat = QImage.Format_RGB888
+    qformat: QImage = QImage.Format_RGB888
     img = QImage(img, img.shape[1], img.shape[0], img.strides[0], qformat)
     img = img.rgbSwapped()
     self.label.setPixmap(QPixmap.fromImage(img))
