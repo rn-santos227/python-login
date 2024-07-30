@@ -21,7 +21,7 @@ class ScreenWindow(QMainWindow):
     self.title_bar: TitleBar = TitleBar(self)
     self.layout.addWidget(self.title_bar)
 
-    self.stacked_widget = QStackedWidget()
+    self.stacked_widget: QStackedWidget = QStackedWidget()
     self.layout.addWidget(self.stacked_widget)
 
     self.pages_handler = PagesHandler(self.stacked_widget)
