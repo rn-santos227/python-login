@@ -18,7 +18,7 @@ class ScreenWindow(QMainWindow):
     self.layout.setContentsMargins(0, 0, 0, 0)
     self.layout.setSpacing(0)
 
-    self.title_bar = TitleBar(self)
+    self.title_bar: TitleBar = TitleBar(self)
     self.layout.addWidget(self.title_bar)
 
     self.stacked_widget = QStackedWidget()
