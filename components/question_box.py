@@ -17,7 +17,7 @@ class QuestionBox(QDialog):
     self.yes_button.clicked.connect(self.accept)
     self.button_layout.addWidget(self.yes_button)
     
-    self.no_button = QPushButton("No")
+    self.no_button: QPushButton = QPushButton("No")
     self.no_button.clicked.connect(self.reject)
     self.button_layout.addWidget(self.no_button)
     
