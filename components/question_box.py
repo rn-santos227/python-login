@@ -13,7 +13,7 @@ class QuestionBox(QDialog):
     self.layout.addWidget(self.message_label)
 
     self.button_layout: QHBoxLayout = QHBoxLayout()
-    self.yes_button = QPushButton("Yes")
+    self.yes_button: QPushButton = QPushButton("Yes")
     self.yes_button.clicked.connect(self.accept)
     self.button_layout.addWidget(self.yes_button)
     
