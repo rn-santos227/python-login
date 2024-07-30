@@ -1,6 +1,7 @@
 import cv2
 
-from PyQt5 import QtCore, QtGui
+from PyQt5.QtCore import QTimer
+from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget
 
 class Webcam(QWidget):
@@ -16,7 +17,7 @@ class Webcam(QWidget):
     self.layout.addWidget(self.label)
 
     self.cap = None
-    self.timer = QtCore.QTimer(self)
+    self.timer: QTimer = QTimer(self)
     self.timer.timeout.connect(self.update_frame)
 
   def start_webcam(self):
@@ -30,10 +31,10 @@ class Webcam(QWidget):
       self.display_image(frame)
     
   def display_image(self, img):
-    qformat = QtGui.QImage.Format_RGB888
-    img = QtGui.QImage(img, img.shape[1], img.shape[0], img.strides[0], qformat)
+    qformat = QImage.Format_RGB888
+    img = QImage(img, img.shape[1], img.shape[0], img.strides[0], qformat)
     img = img.rgbSwapped()
-    self.label.setPixmap(QtGui.QPixmap.fromImage(img))
+    self.label.setPixmap(QPixmap.fromImage(img))
 
   def detect_faces(self, img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
