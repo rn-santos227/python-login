@@ -10,7 +10,7 @@ class DateField(QWidget):
   def init_ui(self, label_text):
     self.layout: QVBoxLayout = QVBoxLayout()
 
-    self.label = QLabel(label_text)
+    self.label: QLabel = QLabel(label_text)
     self.date_field = QDateEdit()
     self.date_field.setCalendarPopup(True)
     self.date_field.setDate(QDate.currentDate())
