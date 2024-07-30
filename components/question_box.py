@@ -9,7 +9,7 @@ class QuestionBox(QDialog):
   def init_ui(self, message):
     self.layout: QVBoxLayout = QVBoxLayout()
 
-    self.message_label = QLabel(message)
+    self.message_label: QLabel = QLabel(message)
     self.layout.addWidget(self.message_label)
 
     self.button_layout: QHBoxLayout = QHBoxLayout()
