@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QMainWindow, QStackedWidget, QVBoxLayout, QWidget
 from PyQt5.QtCore import Qt
 
 from components.title_bar import TitleBar
@@ -24,7 +24,7 @@ class ScreenWindow(QMainWindow):
     self.stacked_widget: QStackedWidget = QStackedWidget()
     self.layout.addWidget(self.stacked_widget)
 
-    self.pages_handler = PagesHandler(self.stacked_widget)
+    self.pages_handler: PagesHandler = PagesHandler(self.stacked_widget)
 
     self.stacked_widget.addWidget(self.pages_handler.login_page)
     self.stacked_widget.addWidget(self.pages_handler.dashboard_page)
