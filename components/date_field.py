@@ -15,7 +15,7 @@ class DateField(QWidget):
     self.date_field.setCalendarPopup(True)
     self.date_field.setDate(QDate.currentDate())
 
-    label_font = QFont()
+    label_font: QFont = QFont()
     label_font.setPointSize(14)
     self.label.setFont(label_font)
     self.label.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
