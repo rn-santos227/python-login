@@ -10,7 +10,7 @@ class ComboBox(QWidget):
     self.layout: QVBoxLayout = QVBoxLayout()
 
     self.label: QLabel = QLabel(label_text)
-    self.combo_box = QComboBox()
+    self.combo_box: QComboBox = QComboBox()
 
     label_font = QFont()
     label_font.setPointSize(14)
