@@ -11,7 +11,7 @@ class TitleBar(QWidget):
   def init_ui(self):
     self.setFixedHeight(30) 
 
-    layout = QHBoxLayout()
+    layout: QHBoxLayout = QHBoxLayout()
     layout.setContentsMargins(0, 0, 0, 0)
     layout.setSpacing(0)
 
