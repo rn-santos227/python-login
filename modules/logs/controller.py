@@ -18,7 +18,7 @@ def get_log_by_id(id) -> Union[Log, None]:
     row = cursor.fetchone()
 
     if row:
-      log = Log(*row)
+      log: Log = Log(*row)
       return log
     else:
       return None
