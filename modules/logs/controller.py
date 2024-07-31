@@ -61,7 +61,7 @@ def get_logs(query, action) -> list[Log]:
 
     logs = list(Log)
     for row in rows:
-      log = Log(*row)
+      log: Log = Log(*row)
       logs.append(log)
 
     return logs
