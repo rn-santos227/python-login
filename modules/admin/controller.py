@@ -17,7 +17,7 @@ def get_admin_by_id(id) -> Union[Admin, None]:
     row = cursor.fetchone()
 
     if row:
-      admin = Admin(*row)
+      admin: Admin = Admin(*row)
       return admin
     else:
       return None
