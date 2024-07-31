@@ -81,7 +81,7 @@ def get_logs_by_student(student_id) -> list[Log]:
     cursor.execute(sql_query, (student_id,))
     rows = cursor.fetchall()
 
-    logs = []
+    logs = list(Log)
     for row in rows:
       log = Log(*row)
       logs.append(log)
