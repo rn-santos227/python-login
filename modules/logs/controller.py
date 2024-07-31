@@ -107,7 +107,7 @@ def get_logs_with_students(query) -> list[StudentLog]:
 
     student_logs: list[StudentLog] = []
     for row in rows:
-      student_log = StudentLog(*row)
+      student_log: StudentLog = StudentLog(*row)
       student_logs.append(student_log)
 
     return student_logs
