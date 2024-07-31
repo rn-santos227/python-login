@@ -135,7 +135,7 @@ def create_log(log: Log) -> Log:
     result = cursor.fetchone()
     
     if result:
-      log = Log(*result)
+      log: Log = Log(*result)
       return log
     else:
       return None
