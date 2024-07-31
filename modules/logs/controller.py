@@ -83,7 +83,7 @@ def get_logs_by_student(student_id) -> list[Log]:
 
     logs = list(Log)
     for row in rows:
-      log = Log(*row)
+      log: Log = Log(*row)
       logs.append(log)
 
     return logs
