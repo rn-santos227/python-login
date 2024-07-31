@@ -6,7 +6,7 @@ class AssetHandler:
   def __init__(self, assets_dir="assets"):
     self.assets_dir = assets_dir
 
-  def get_image(self, image_name):
+  def get_image(self, image_name) -> QPixmap:
     image_path = os.path.join(f"{self.assets_dir}/images", image_name)
     
     if os.path.exists(image_path):
