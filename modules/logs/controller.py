@@ -39,7 +39,7 @@ def get_log_by_student_and_date(student_id, date) -> Union[Log, None]:
     row = cursor.fetchone()
 
     if row:
-      log = Log(*row)
+      log: Log = Log(*row)
       return log
     else:
       return None
