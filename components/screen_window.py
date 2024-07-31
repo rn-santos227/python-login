@@ -1,4 +1,3 @@
-from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QMainWindow, QStackedWidget, QVBoxLayout, QWidget
 from PyQt5.QtCore import Qt
 
