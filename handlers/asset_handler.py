@@ -19,7 +19,7 @@ class AssetHandler:
     svg_path = os.path.join(f"{self.assets_dir}/svg", svg_name)
 
     if os.path.exists(svg_path):
-      svg_renderer = QSvgRenderer(svg_path)
+      svg_renderer: QSvgRenderer = QSvgRenderer(svg_path)
       image = QImage(100, 100, QImage.Format_ARGB32)
       image.fill(0)
       painter = QPainter(image)
