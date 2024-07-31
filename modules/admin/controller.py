@@ -57,7 +57,7 @@ def get_admins(query, action) -> list[Admin]:
     cursor.execute(sql_query)
     rows = cursor.fetchall()
 
-    admins = list(Admin)
+    admins: list[Admin] = []
     for row in rows:
       admin: Admin = Admin(*row)
       admins.append(admin)
