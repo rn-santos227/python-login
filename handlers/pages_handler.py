@@ -1,10 +1,12 @@
 
+from PyQt5.QtWidgets import QStackedWidget
+
 from modules.auth.view import LoginPage
 from modules.dashboard.view import DashboardAdminPage
 
 class PagesHandler:
   def __init__(self, stacked_widget):
-    self.stacked_widget = stacked_widget
+    self.stacked_widget: QStackedWidget = stacked_widget
     self.login_page: LoginPage = LoginPage(self)
     self.dashboard_page: LoginPage = DashboardAdminPage(self)
 
