@@ -38,7 +38,7 @@ def get_admin_by_email(email: str) -> Union[Admin, None]:
     row = cursor.fetchone()
 
     if row:
-      admin = Admin(*row)
+      admin: Admin = Admin(*row)
       return admin
     else:
       return None
