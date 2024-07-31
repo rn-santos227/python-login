@@ -6,7 +6,7 @@ class PagesHandler:
   def __init__(self, stacked_widget):
     self.stacked_widget = stacked_widget
     self.login_page: LoginPage = LoginPage(self)
-    self.dashboard_page = DashboardAdminPage(self)
+    self.dashboard_page: LoginPage = DashboardAdminPage(self)
 
   def switch_to_login_page(self):
     self.stacked_widget.setCurrentWidget(self.login_page)
