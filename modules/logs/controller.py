@@ -59,7 +59,7 @@ def get_logs(query, action) -> list[Log]:
     cursor.execute(sql_query)
     rows = cursor.fetchall()
 
-    logs = list(Log)
+    logs: list[Log] = []
     for row in rows:
       log: Log = Log(*row)
       logs.append(log)
