@@ -69,7 +69,7 @@ class ParentsPage(QWidget):
     self.update_student_combo_box: ComboBox = ComboBox(label_text="Student Name")
     self.load_students_to_combo_box()
     
-    self.update_parent_name_field = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
+    self.update_parent_name_field: TextField = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
     self.update_parent_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
     update_button = Button("Update Parent")
