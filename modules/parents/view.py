@@ -174,7 +174,7 @@ class ParentsPage(QWidget):
     if not self.validation_handler.validate_fields(self, fields_to_validate):
       return
     
-    update_parent = Parent(
+    update_parent: Parent = Parent(
       id = self.parent_id,
       student_id = student_id,
       full_name = parent_name,
