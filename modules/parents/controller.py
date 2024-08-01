@@ -59,7 +59,7 @@ def get_parents(query, action) -> list[Parent]:
 
     parents: list[Parent] = []
     for row in rows:
-      parent = Parent(*row)
+      parent: Parent = Parent(*row)
       parents.append(parent)
     return parents
   
