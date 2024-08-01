@@ -193,7 +193,7 @@ class ParentsPage(QWidget):
 
   def __prompt_delete_parent(self, parent_id: int):
     self.parent_id = parent_id
-    question_box = QuestionBox(message="Do you want to delete this parent record?")
+    question_box: QuestionBox = QuestionBox(message="Do you want to delete this parent record?")
     if question_box.exec() == QDialog.Accepted:
       self.delete_parent(parent_id=self.parent_id)
 
