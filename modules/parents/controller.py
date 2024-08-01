@@ -37,7 +37,7 @@ def get_parent_by_student_id(student_id) -> Union[Parent, None]:
     row = cursor.fetchone()
 
     if row:
-      parent = Parent(*row)
+      parent: Parent = Parent(*row)
       return parent
     else:
       return None
