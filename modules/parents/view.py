@@ -122,7 +122,7 @@ class ParentsPage(QWidget):
       update_button: QPushButton = QPushButton("Update")
       update_button.clicked.connect(lambda ch, parent=parent: self.__load_parent_for_update(parent))
 
-      delete_button = QPushButton("Delete")
+      delete_button: QPushButton = QPushButton("Delete")
       delete_button.clicked.connect(lambda ch, parent_id=parent.id: self.__prompt_delete_parent(parent_id))
 
       button_layout = QHBoxLayout()
