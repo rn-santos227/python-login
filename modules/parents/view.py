@@ -130,7 +130,7 @@ class ParentsPage(QWidget):
       button_layout.addWidget(delete_button)
       button_layout.setContentsMargins(0, 0, 0, 0)
 
-      button_widget = QWidget()
+      button_widget: QWidget = QWidget()
       button_widget.setLayout(button_layout)
 
       self.table_widget.setCellWidget(row_position, 4, button_widget)
