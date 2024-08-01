@@ -15,7 +15,7 @@ class AdminsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
-    self.message_box = MessageBox(self)
+    self.message_box: MessageBox = MessageBox(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.admins: list[Admin] = []
     self.init_ui()
