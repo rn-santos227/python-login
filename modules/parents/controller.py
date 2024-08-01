@@ -57,7 +57,7 @@ def get_parents(query, action) -> list[Parent]:
     cursor.execute(sql_query)
     rows = cursor.fetchall()
 
-    parents = []
+    parents: list[Parent] = []
     for row in rows:
       parent = Parent(*row)
       parents.append(parent)
