@@ -26,7 +26,7 @@ class ReaderPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
-    self.clock_component = Clock()
+    self.clock_component: Clock = Clock()
     self.message_box = MessageBox(self)
     self.logs = []
     self.students = []
