@@ -29,7 +29,7 @@ class ReaderPage(QWidget):
     self.clock_component: Clock = Clock()
     self.message_box: MessageBox = MessageBox(self)
     self.logs: list[Log] = []
-    self.students = []
+    self.students: list[Student] = []
     self.init_ui()
 
   def init_ui(self):
