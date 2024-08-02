@@ -42,7 +42,7 @@ class ScannerPage(QWidget):
     webcam_center_layout.addWidget(self.webcam_component)
     webcam_center_layout.addItem(right_spacer)
 
-    self.webcam_button = Button("Start Webcam")
+    self.webcam_button: Button = Button("Start Webcam")
     self.webcam_button.connect_signal(self.__enable_capture)
 
     self.capture_button = Button("Save Face")
