@@ -39,7 +39,7 @@ class ReaderPage(QWidget):
     clock_layout: QVBoxLayout = QVBoxLayout()
 
     center_layout: QHBoxLayout = QHBoxLayout()
-    h_center_layout = QHBoxLayout()
+    h_center_layout: QHBoxLayout = QHBoxLayout()
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
