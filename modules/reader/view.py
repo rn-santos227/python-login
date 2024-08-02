@@ -63,7 +63,7 @@ class ReaderPage(QWidget):
     webcam_layout.addWidget(self.webcam_button)
     webcam_layout.addWidget(self.capture_button)
 
-    date_label = QLabel(self)
+    date_label: QLabel = QLabel(self)
     
     clock_center_layout = QHBoxLayout()
     clock_center_layout.addItem(left_spacer)
