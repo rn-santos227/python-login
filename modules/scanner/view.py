@@ -19,7 +19,7 @@ class ScannerPage(QWidget):
     super().__init__()
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
-    self.students: = []
+    self.students: list[Student] = []
     self.init_ui()
 
   def init_ui(self):
