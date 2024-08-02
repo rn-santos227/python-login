@@ -38,7 +38,7 @@ class ReaderPage(QWidget):
     webcam_layout: QVBoxLayout = QVBoxLayout()
     clock_layout: QVBoxLayout = QVBoxLayout()
 
-    center_layout = QHBoxLayout()
+    center_layout: QHBoxLayout = QHBoxLayout()
     h_center_layout = QHBoxLayout()
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
