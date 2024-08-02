@@ -12,12 +12,14 @@ from components.combo_box import ComboBox
 from components.message_box import MessageBox
 from components.webcam import Webcam
 
+from modules.students.model import Student
+
 class ScannerPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
-    self.students = []
+    self.students: = []
     self.init_ui()
 
   def init_ui(self):
