@@ -36,7 +36,7 @@ class ReaderPage(QWidget):
     self.main_layout: QVBoxLayout = QVBoxLayout()
 
     webcam_layout: QVBoxLayout = QVBoxLayout()
-    clock_layout = QVBoxLayout()
+    clock_layout: QVBoxLayout = QVBoxLayout()
 
     center_layout = QHBoxLayout()
     h_center_layout = QHBoxLayout()
