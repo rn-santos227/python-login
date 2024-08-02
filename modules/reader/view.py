@@ -48,7 +48,7 @@ class ReaderPage(QWidget):
 
     self.webcam_component: Webcam = Webcam(self)
 
-    webcam_center_layout = QHBoxLayout()
+    webcam_center_layout: QHBoxLayout = QHBoxLayout()
     webcam_center_layout.addItem(left_spacer)
     webcam_center_layout.addWidget(self.webcam_component)
     webcam_center_layout.addItem(right_spacer)
