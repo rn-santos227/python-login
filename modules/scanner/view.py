@@ -33,7 +33,7 @@ class ScannerPage(QWidget):
     left_spacer: QSpacerItem = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
     right_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-    self.student_combo_box = ComboBox(label_text="Student Names")
+    self.student_combo_box: ComboBox = ComboBox(label_text="Student Names")
     self.items=self.load_students_to_combo_box()
     
     self.webcam_component = Webcam(self)
