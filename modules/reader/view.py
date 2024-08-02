@@ -56,7 +56,7 @@ class ReaderPage(QWidget):
     self.webcam_button: Button = Button("Start Webcam")
     self.webcam_button.connect_signal(self.__enable_capture)
 
-    self.capture_button = Button("Search Face")
+    self.capture_button: Button = Button("Search Face")
     self.capture_button.connect_signal(self.match_face)
 
     webcam_layout.addLayout(webcam_center_layout)
