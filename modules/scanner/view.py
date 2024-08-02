@@ -26,7 +26,7 @@ class ScannerPage(QWidget):
     self.main_layout: QVBoxLayout = QVBoxLayout()
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
-    webcam_center_layout = QHBoxLayout()
+    webcam_center_layout: QHBoxLayout = QHBoxLayout()
 
     top_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
