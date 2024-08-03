@@ -16,7 +16,7 @@ class StudentPage(QWidget):
     super().__init__()
     self.pages_handler = pages_handler
     self.message_box: MessageBox = MessageBox(self)
-    self.validation_handler = ValidationHandler()
+    self.validation_handler: ValidationHandler = ValidationHandler()
     self.students = []
     self.init_ui()
 
