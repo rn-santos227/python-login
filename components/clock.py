@@ -7,7 +7,6 @@ class Clock(QWidget):
   def __init__(self):
     super().__init__()
     self.init_ui()
-    self.asset_handler: AssetHandler = AssetHandler()
     self.timer: QtCore.QTimer = QtCore.QTimer(self)
     self.timer.timeout.connect(self.update_time)
 
@@ -22,6 +21,7 @@ class Clock(QWidget):
     self.display_clock(current_time)
 
   def display_clock(self, time):
+    asset_handler: AssetHandler = AssetHandler()
     side = 500
     image: QtGui.QImage = QtGui.QImage(side, side, QtGui.QImage.Format_ARGB32)
     image.fill(QtCore.Qt.transparent)
@@ -40,7 +40,7 @@ class Clock(QWidget):
       painter.save()
       painter.rotate(30.0 * i)
       painter.translate(85, -5)
-      svg_pixmap = self.asset_handler.get_svg(f"{i}.svg")
+      svg_pixmap = asset_handler.get_svg(f"{i}.svg")
       painter.drawPixmap(-50, -50, svg_pixmap)
       painter.restore()
 
