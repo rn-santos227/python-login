@@ -37,16 +37,15 @@ class Clock(QWidget):
     painter.setBrush(QtGui.QColor(0, 0, 0))
 
     for i in range(1, 13):
-      painter.save()
-      angle = 30.0 * i
-      painter.rotate(angle)
-      painter.translate(85, 0)
-      painter.rotate(-angle)
-      painter.rotate(-90)
-      svg_renderer = asset_handler.get_svg(f"{i}.svg")
-      painter.scale(0.05, 0.05)
-      svg_renderer.render(painter)
-      painter.restore()
+        painter.save()
+        angle = 30.0 * (i)
+        painter.rotate(angle)
+        painter.translate(80, -5)  
+        painter.rotate(-angle + 90) 
+        svg_renderer = asset_handler.get_svg(f"{i}.svg")
+        painter.scale(0.04, 0.04)
+        svg_renderer.render(painter)
+        painter.restore()
 
     # Draw hour hand
     painter.save()
