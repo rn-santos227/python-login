@@ -1,5 +1,5 @@
 import os
-from PyQt5.QtGui import QPixmap, QImage, QPainter
+from PyQt5.QtGui import QPixmap, QImage, QPainter,QtSvg
 from PyQt5.QtSvg import QSvgRenderer
 
 class AssetHandler:
@@ -19,13 +19,7 @@ class AssetHandler:
     svg_path = os.path.join(f"{self.assets_dir}/svg", svg_name)
 
     if os.path.exists(svg_path):
-      svg_renderer: QSvgRenderer = QSvgRenderer(svg_path)
-      image = QImage(100, 100, QImage.Format_ARGB32)
-      image.fill(0)
-      painter: QPainter = QPainter(image)
-      svg_renderer.render(painter)
-      painter.end()
-      return QPixmap.fromImage(image)
+      return QSvgRenderer(svg_path)
 
     else:
       raise FileNotFoundError(f"SVG {svg_name} not found in {self.assets_dir}")
