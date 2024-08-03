@@ -79,7 +79,7 @@ def get_students(query, action) -> list[Student]:
     cursor.execute(sql_query)
     rows = cursor.fetchall()
 
-    students = []
+    students: list[Student] = []
     for row in rows:
       student = Student(*row)
       students.append(student)
