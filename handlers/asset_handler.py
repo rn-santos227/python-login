@@ -1,5 +1,5 @@
 import os
-from PyQt5.QtGui import QPixmap, QImage, QPainter,QtSvg
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtSvg import QSvgRenderer
 
 class AssetHandler:
