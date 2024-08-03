@@ -38,9 +38,10 @@ class Clock(QWidget):
 
     for i in range(1, 13):
       painter.save()
-      painter.rotate(30.0 * i)
+      angle = 30.0 * i
+      painter.rotate(angle)
       painter.translate(85, 0)
-      painter.rotate(90)
+      painter.rotate(-angle)
       svg_pixmap = asset_handler.get_svg(f"{i}.svg")
       scaled_pixmap = svg_pixmap.scaled(30, 30, QtCore.Qt.KeepAspectRatio, QtCore.Qt.SmoothTransformation)
       painter.drawPixmap(-scaled_pixmap.width() // 2, -scaled_pixmap.height() // 2, scaled_pixmap)
