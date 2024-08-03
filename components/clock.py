@@ -23,7 +23,7 @@ class Clock(QWidget):
 
   def display_clock(self, time):
     asset_handler: AssetHandler = AssetHandler()
-    side = 500
+    side = 200
     image: QtGui.QImage = QtGui.QImage(side, side, QtGui.QImage.Format_ARGB32)
     image.fill(QtCore.Qt.transparent)
 
