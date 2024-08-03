@@ -59,7 +59,7 @@ def get_student_by_student_number(student_number) -> Union[Student, None]:
     row = cursor.fetchone()
 
     if row:
-      student = Student(*row)
+      student: Student = Student(*row)
       return student
     else:
       return None
