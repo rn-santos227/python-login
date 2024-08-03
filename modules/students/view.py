@@ -21,7 +21,7 @@ class StudentPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
-    self.main_layout = QVBoxLayout()
+    self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout = QHBoxLayout()
 
     self.top_layout.addLayout(self.init_create_layout())
