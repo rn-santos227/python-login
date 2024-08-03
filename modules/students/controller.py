@@ -17,7 +17,7 @@ def get_student_by_id(id)-> Union[Student, None]:
     row = cursor.fetchone()
 
     if row:
-      student = Student(*row)
+      student: Student = Student(*row)
       return student
     else:
       return None
