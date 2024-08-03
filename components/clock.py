@@ -42,9 +42,9 @@ class Clock(QWidget):
       painter.rotate(angle)
       painter.translate(85, 0)
       painter.rotate(-angle)
-      svg_pixmap = asset_handler.get_svg(f"{i}.svg")
-      scaled_pixmap = svg_pixmap.scaled(30, 30, QtCore.Qt.KeepAspectRatio, QtCore.Qt.SmoothTransformation)
-      painter.drawPixmap(-scaled_pixmap.width() // 2, -scaled_pixmap.height() // 2, scaled_pixmap)
+      svg_renderer = asset_handler.get_svg(f"{i}.svg")
+      painter.scale(0.3, 0.3)
+      svg_renderer.render(painter)
       painter.restore()
 
     # Draw hour hand
