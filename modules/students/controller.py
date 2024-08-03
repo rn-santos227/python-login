@@ -81,7 +81,7 @@ def get_students(query, action) -> list[Student]:
 
     students: list[Student] = []
     for row in rows:
-      student = Student(*row)
+      student: Student = Student(*row)
       students.append(student)
     return students
   
