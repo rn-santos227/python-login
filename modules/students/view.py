@@ -17,7 +17,7 @@ class StudentPage(QWidget):
     self.pages_handler = pages_handler
     self.message_box: MessageBox = MessageBox(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
-    self.students = []
+    self.students: list[Student] = []
     self.init_ui()
 
   def init_ui(self):
