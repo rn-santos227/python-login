@@ -78,7 +78,7 @@ class StudentPage(QWidget):
     update_layout: QGridLayout = QGridLayout()
 
     field_layout_1: QHBoxLayout = QHBoxLayout()
-    field_layout_2 = QHBoxLayout()
+    field_layout_2: QHBoxLayout = QHBoxLayout()
     self.update_button_layout = QHBoxLayout()
 
     self.update_email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
