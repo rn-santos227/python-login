@@ -44,6 +44,7 @@ class Clock(QWidget):
       painter.translate(80, -5)  
       painter.rotate(-angle + 90) 
       svg_renderer: QSvgRenderer = asset_handler.get_svg(f"{i}.svg")
+      painter.scale(0.04, 0.04)
       svg_renderer.render(painter)
       painter.restore()
 
