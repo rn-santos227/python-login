@@ -81,7 +81,7 @@ class StudentPage(QWidget):
     field_layout_2: QHBoxLayout = QHBoxLayout()
     self.update_button_layout: QHBoxLayout = QHBoxLayout()
 
-    self.update_email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
+    self.update_email_field: TextField = TextField(label_text="Email", placeholder_text="Enter student email.")
     self.update_password_field = TextField(label_text="Password", placeholder_text="Enter student password.")
     self.update_password_field.text_field.setEchoMode(QLineEdit.Password)
     self.update_fullname_field = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
