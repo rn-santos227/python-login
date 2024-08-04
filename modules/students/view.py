@@ -50,7 +50,7 @@ class StudentPage(QWidget):
     self.fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
     self.contact_field: TextField = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
     self.student_number_field: TextField = TextField(label_text="Student Number", placeholder_text="Enter student number.")
-    self.section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
+    self.section_field: TextField = TextField(label_text="Student Section", placeholder_text="Enter student section.")
     self.grade_field = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
 
     field_layout_1.addWidget(self.contact_field)
