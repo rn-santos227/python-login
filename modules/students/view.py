@@ -139,7 +139,7 @@ class StudentPage(QWidget):
     if not self.validation_handler.validate_fields(self, fields_to_validate):
       return
     
-    new_student = Student(
+    new_student: Student = Student(
       email = email,
       password = password,
       full_name = full_name,
