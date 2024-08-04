@@ -41,7 +41,7 @@ class StudentPage(QWidget):
   def init_create_layout(self):
     create_layout: QGridLayout = QGridLayout()
     field_layout_1: QHBoxLayout = QHBoxLayout()
-    field_layout_2 = QHBoxLayout()
+    field_layout_2: QHBoxLayout = QHBoxLayout()
     self.create_button_layout = QHBoxLayout()
 
     self.email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
