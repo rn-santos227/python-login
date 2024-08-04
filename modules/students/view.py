@@ -40,7 +40,7 @@ class StudentPage(QWidget):
     
   def init_create_layout(self):
     create_layout: QGridLayout = QGridLayout()
-    field_layout_1 = QHBoxLayout()
+    field_layout_1: QHBoxLayout = QHBoxLayout()
     field_layout_2 = QHBoxLayout()
     self.create_button_layout = QHBoxLayout()
 
