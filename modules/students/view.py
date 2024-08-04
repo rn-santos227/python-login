@@ -84,7 +84,7 @@ class StudentPage(QWidget):
     self.update_email_field: TextField = TextField(label_text="Email", placeholder_text="Enter student email.")
     self.update_password_field: TextField = TextField(label_text="Password", placeholder_text="Enter student password.")
     self.update_password_field.text_field.setEchoMode(QLineEdit.Password)
-    self.update_fullname_field = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
+    self.update_fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
     self.update_contact_field = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
     self.update_student_number_field = TextField(label_text="Student Number", placeholder_text="Enter student number.")
     self.update_section_field = TextField(label_text="Student Section", placeholder_text="Enter student section.")
