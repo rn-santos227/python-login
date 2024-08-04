@@ -75,7 +75,7 @@ class StudentPage(QWidget):
     return create_layout
 
   def init_update_layout(self):
-    update_layout = QGridLayout()
+    update_layout: QGridLayout = QGridLayout()
 
     field_layout_1 = QHBoxLayout()
     field_layout_2 = QHBoxLayout()
