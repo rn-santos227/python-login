@@ -59,7 +59,7 @@ class StudentPage(QWidget):
     field_layout_2.addWidget(self.section_field)
     field_layout_2.addWidget(self.grade_field)
 
-    create_button = Button("Create Student")
+    create_button: Button = Button("Create Student")
     create_button.connect_signal(self.create_student)
 
     self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
