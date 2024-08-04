@@ -42,7 +42,7 @@ class StudentPage(QWidget):
     create_layout: QGridLayout = QGridLayout()
     field_layout_1: QHBoxLayout = QHBoxLayout()
     field_layout_2: QHBoxLayout = QHBoxLayout()
-    self.create_button_layout = QHBoxLayout()
+    self.create_button_layout: QHBoxLayout = QHBoxLayout()
 
     self.email_field = TextField(label_text="Email", placeholder_text="Enter student email.")
     self.password_field = TextField(label_text="Password", placeholder_text="Enter student password.")
