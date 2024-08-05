@@ -35,6 +35,7 @@ class Clock(QWidget):
     painter.rotate(-90)
 
     painter.save()
+    painter.setPen(QtGui.QPen(QtCore.Qt.black, 2, QtCore.Qt.SolidLine))
 
     painter.setPen(QtCore.Qt.NoPen)
     painter.setBrush(QtGui.QColor(0, 0, 0))
