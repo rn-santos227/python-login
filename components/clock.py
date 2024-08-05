@@ -36,6 +36,7 @@ class Clock(QWidget):
 
     painter.save()
     painter.setPen(QtGui.QPen(QtCore.Qt.black, 2, QtCore.Qt.SolidLine))
+    painter.drawEllipse(QtCore.QPointF(0, 0), 100, 100)
 
     painter.setPen(QtCore.Qt.NoPen)
     painter.setBrush(QtGui.QColor(0, 0, 0))
