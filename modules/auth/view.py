@@ -39,6 +39,7 @@ class LoginPage(QWidget):
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
     shadow_effect.setBlurRadius(15)
+    shadow_effect.setColor(QColor(0, 0, 0, 160))
 
     form_layout: QVBoxLayout = QVBoxLayout(form_frame)
 
