@@ -46,6 +46,7 @@ class LoginPage(QWidget):
 
     header_layout.addWidget(logo1_label)
     header_layout.addWidget(title_label)
+    header_layout.addWidget(logo2_label)
     
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
