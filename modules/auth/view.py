@@ -79,6 +79,7 @@ class LoginPage(QWidget):
     button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     button_layout.addWidget(login_button)
 
+    form_layout.addLayout(header_layout)
     form_layout.addWidget(self.email_field)
     form_layout.addWidget(self.password_field)
     form_layout.addLayout(button_layout)
@@ -112,6 +113,9 @@ class LoginPage(QWidget):
 
     except FileNotFoundError as e:
       print(e)
+
+  def _set_logo(self, image_name):
+    pass
 
   def resizeEvent(self, event):
     super().resizeEvent(event)
