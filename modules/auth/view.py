@@ -117,6 +117,12 @@ class LoginPage(QWidget):
   def _set_logo(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
+    try:
+      return asset_handler.get_image(image_name)
+
+    except FileNotFoundError as e:
+      print(e)
+
   def resizeEvent(self, event):
     super().resizeEvent(event)
     self.background_label.setGeometry(self.rect())
