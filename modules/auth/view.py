@@ -45,6 +45,7 @@ class LoginPage(QWidget):
     title_label.setObjectName("titleLabel")
 
     header_layout.addWidget(logo1_label)
+    header_layout.addWidget(title_label)
     
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
