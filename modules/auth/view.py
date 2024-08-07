@@ -10,7 +10,7 @@ from handlers.asset_handler import AssetHandler
 
 from modules.auth.controller import login
 
-from assets.styles.styles import auth_form_border_style
+from assets.styles.styles import auth_view_style
 class LoginPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
@@ -35,9 +35,7 @@ class LoginPage(QWidget):
 
     form_frame: QFrame = QFrame(self)
     form_frame.setObjectName("formFrame")
-    form_frame.setFrameShape(QFrame.Box)
-    form_frame.setFrameShadow(QFrame.Raised)
-    form_frame.setStyleSheet(auth_form_border_style)
+    form_layout: QVBoxLayout = QVBoxLayout(form_frame)
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
     shadow_effect.setBlurRadius(15)
@@ -45,7 +43,6 @@ class LoginPage(QWidget):
     shadow_effect.setOffset(0, 5)
     
     form_frame.setGraphicsEffect(shadow_effect)
-    form_layout: QVBoxLayout = QVBoxLayout(form_frame)
 
     top_spacer: QSpacerItem = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     bottom_spacer: QSpacerItem = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
