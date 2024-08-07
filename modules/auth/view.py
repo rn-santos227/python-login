@@ -36,6 +36,8 @@ class LoginPage(QWidget):
     logo2_label: QLabel = QLabel(self)
     title_label: QLabel = QLabel("LOG IN MODULE", self)
 
+    title_label.setAlignment(Qt.AlignCenter)
+
     logo1_pixmap = QPixmap("logo1.png").scaled(100, 100, Qt.KeepAspectRatio)
     logo2_pixmap = QPixmap("logo2.png").scaled(100, 100, Qt.KeepAspectRatio)
     logo1_label.setPixmap(logo1_pixmap)
