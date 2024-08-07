@@ -46,7 +46,7 @@ class LoginPage(QWidget):
 
     header_layout.addWidget(logo1_label, alignment=Qt.AlignLeft)
     header_layout.addWidget(title_label, alignment=Qt.AlignCenter)
-    header_layout.addWidget(logo2_label)
+    header_layout.addWidget(logo2_label, alignment=Qt.AlignRight)
     
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
