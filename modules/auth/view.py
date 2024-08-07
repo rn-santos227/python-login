@@ -39,7 +39,7 @@ class LoginPage(QWidget):
     logo1_pixmap = QPixmap("logo1.png").scaled(100, 100, Qt.KeepAspectRatio)
     logo2_pixmap = QPixmap("logo2.png").scaled(100, 100, Qt.KeepAspectRatio)
     logo1_label.setPixmap(logo1_pixmap)
-
+    logo2_label.setPixmap(logo2_pixmap)
     
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
