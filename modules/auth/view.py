@@ -14,6 +14,7 @@ from assets.styles.styles import auth_view_style
 class LoginPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
+    self.setStyleSheet(auth_view_style)
     self.alert_message: AlertMessage = AlertMessage() 
     self.pages_handler = pages_handler
     self.init_ui()
