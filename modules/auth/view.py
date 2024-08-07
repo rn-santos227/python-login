@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QLabel, QLineEdit, QSpacerItem, QSizePolicy, QVBoxLayout, QWidget
 from PyQt5.QtGui import QPixmap, QColor
+from PyQt5.QtCore import Qt
 
 from components.alert_message import AlertMessage
 from components.button import Button
@@ -35,6 +36,9 @@ class LoginPage(QWidget):
     logo2_label: QLabel = QLabel(self)
     title_label: QLabel = QLabel("LOG IN MODULE", self)
 
+    logo1_pixmap = QPixmap("path_to_logo1.png").scaled(100, 100, Qt.KeepAspectRatio)
+
+    
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
     button_layout: QHBoxLayout = QHBoxLayout()
