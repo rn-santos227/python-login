@@ -41,7 +41,8 @@ class LoginPage(QWidget):
     shadow_effect.setBlurRadius(15)
     shadow_effect.setColor(QColor(0, 0, 0, 160))
     shadow_effect.setOffset(0, 5)
-
+    
+    form_frame.setGraphicsEffect(shadow_effect)
     form_layout: QVBoxLayout = QVBoxLayout(form_frame)
 
     top_spacer: QSpacerItem = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
