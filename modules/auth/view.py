@@ -14,6 +14,7 @@ from assets.styles.styles import auth_form_border_style
 class LoginPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
+    self.alert_message: AlertMessage = AlertMessage() 
     self.pages_handler = pages_handler
     self.init_ui()
 
@@ -33,6 +34,7 @@ class LoginPage(QWidget):
     button_layout: QHBoxLayout = QHBoxLayout()
 
     form_frame: QFrame = QFrame(self)
+    form_frame.setObjectName("formFrame")
     form_frame.setFrameShape(QFrame.Box)
     form_frame.setFrameShadow(QFrame.Raised)
     form_frame.setStyleSheet(auth_form_border_style)
@@ -50,7 +52,6 @@ class LoginPage(QWidget):
     left_spacer: QSpacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
     right_spacer: QSpacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
     
-    self.alert_message: AlertMessage = AlertMessage() 
 
     self.email_field: TextField = TextField(label_text="Email", placeholder_text="Enter your username")
     self.password_field: TextField = TextField(label_text="Password", placeholder_text="Enter your password")
