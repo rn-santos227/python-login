@@ -42,6 +42,7 @@ class LoginPage(QWidget):
     logo2_label.setPixmap(logo2_pixmap)
 
     title_label.setAlignment(Qt.AlignCenter)
+    title_label.setObjectName("titleLabel")
     
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
