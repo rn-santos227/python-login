@@ -36,7 +36,7 @@ class LoginPage(QWidget):
     logo2_label: QLabel = QLabel(self)
     title_label: QLabel = QLabel("LOG IN MODULE", self)
 
-    logo1_pixmap = QPixmap("logo1.png").scaled(100, 100, Qt.KeepAspectRatio)
+    logo1_pixmap: QPixmap = QPixmap(self._set_logo("logo1.png")).scaled(100, 100, Qt.KeepAspectRatio)
     logo2_pixmap = QPixmap("logo2.png").scaled(100, 100, Qt.KeepAspectRatio)
     logo1_label.setPixmap(logo1_pixmap)
     logo2_label.setPixmap(logo2_pixmap)
@@ -119,7 +119,6 @@ class LoginPage(QWidget):
 
     try:
       return asset_handler.get_image(image_name)
-
     except FileNotFoundError as e:
       print(e)
 
