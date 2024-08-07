@@ -31,6 +31,7 @@ class LoginPage(QWidget):
     self.background_label.lower()
 
     header_layout: QHBoxLayout = QHBoxLayout()
+    logo1_label: QLabel = QLabel(self)
 
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
