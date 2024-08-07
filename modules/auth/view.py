@@ -115,7 +115,7 @@ class LoginPage(QWidget):
       print(e)
 
   def _set_logo(self, image_name):
-    pass
+    asset_handler: AssetHandler = AssetHandler()
 
   def resizeEvent(self, event):
     super().resizeEvent(event)
