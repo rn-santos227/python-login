@@ -9,6 +9,7 @@ from handlers.asset_handler import AssetHandler
 
 from modules.auth.controller import login
 
+from assets.styles.styles import auth_form_border_style
 class LoginPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
