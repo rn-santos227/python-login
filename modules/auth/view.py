@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QLabel, QLineEdit, QSpacerItem, QSizePolicy, QVBoxLayout, QWidget
+from PyQt5.QtGui import QColor
 
 from components.alert_message import AlertMessage
 from components.button import Button
