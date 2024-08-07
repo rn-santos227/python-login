@@ -34,7 +34,7 @@ class LoginPage(QWidget):
     form_frame: QFrame = QFrame(self)
     form_frame.setFrameShape(QFrame.Box)
     form_frame.setFrameShadow(QFrame.Raised)
-    form_frame.setStyleSheet("background-color: rgba(255, 255, 255, 220);")
+    form_frame.setStyleSheet(auth_form_border_style)
     form_layout: QVBoxLayout = QVBoxLayout(form_frame)
 
     top_spacer: QSpacerItem = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
