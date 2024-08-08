@@ -40,7 +40,7 @@ class Clock(QWidget):
     painter.restore()
 
     painter.setPen(QtCore.Qt.NoPen)
-    painter.setBrush(QtGui.QColor(0, 0, 0))
+    painter.setBrush(QtGui.QColor(255, 255, 255))
 
     for i in range(1, 13):
       painter.save()
