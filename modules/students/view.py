@@ -284,7 +284,7 @@ class StudentPage(QWidget):
     self.section_field.clear_text()
     self.grade_field.clear_text()
 
-  def __clear_layout(self, layout):
+  def __clear_layout(self, layout: QLayout):
     while layout.count():
       child = layout.takeAt(0)
       if child.widget():
