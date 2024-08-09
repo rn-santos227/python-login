@@ -217,7 +217,7 @@ class StudentPage(QWidget):
       self.table_widget.setItem(row_position, 5, QTableWidgetItem(student.section))
       self.table_widget.setItem(row_position, 6, QTableWidgetItem(student.grade))
 
-      update_button = QPushButton("Update")
+      update_button: QPushButton = QPushButton("Update")
       update_button.clicked.connect(lambda ch, student=student: self.__load_student_for_update(student))
 
       delete_button = QPushButton("Delete")
