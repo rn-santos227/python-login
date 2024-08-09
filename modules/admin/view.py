@@ -212,7 +212,7 @@ class AdminsPage(QWidget):
 
   def __clear_layout(self, layout: QLayout):
     while layout.count():
-      child = layout.takeAt(0)
+      child: QLayoutItem = layout.takeAt(0)
       if child.widget():
         child.widget().deleteLater()
       elif child.layout():
