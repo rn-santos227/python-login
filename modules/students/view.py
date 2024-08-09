@@ -90,7 +90,7 @@ class StudentPage(QWidget):
     self.update_section_field: TextField = TextField(label_text="Student Section", placeholder_text="Enter student section.")
     self.update_grade_field: TextField = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
 
-    update_button = Button("Update Student")
+    update_button: Button = Button("Update Student")
     update_button.connect_signal(self.update_student)
 
     cancel_button = Button("Cancel Update")
