@@ -11,7 +11,6 @@ from components.text_field import TextField
 from handlers.validations_handler import ValidationHandler
 
 from modules.students.model import Student
-from modules.parents.model import Parent
 
 class StudentPage(QWidget):
   def __init__(self, pages_handler):

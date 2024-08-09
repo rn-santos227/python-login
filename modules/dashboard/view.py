@@ -88,6 +88,8 @@ class DashboardAdminPage(QWidget):
     self.setLayout(layout)
     self.handle_logs()
 
+    logs_button.set_color(bg_color="cyan", font_color="black")
+
   def handle_admins(self):
     self.reader_content.clock_component.start_clock()
     self.admins_content.load_admins()
