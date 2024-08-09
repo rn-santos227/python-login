@@ -1,6 +1,6 @@
 import modules.admin.controller as admin_controller
 
-from PyQt5.QtWidgets import QDialog, QGridLayout, QHeaderView, QHBoxLayout, QLayout, QLineEdit, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QDialog, QGridLayout, QHeaderView, QHBoxLayout, QLayout, QLayoutItem, QLineEdit, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
 from components.button import Button
 from components.message_box import MessageBox
