@@ -26,7 +26,7 @@ class LoginPage(QWidget):
     main_layout.setSpacing(0)
 
     self.background_label: QLabel = QLabel(self)
-    self._set_background_image("bg.jpg")
+    self.__set_background_image("bg.jpg")
     self.background_label.setGeometry(self.rect())
     self.background_label.setScaledContents(True)
     self.background_label.lower()
@@ -36,8 +36,8 @@ class LoginPage(QWidget):
     logo2_label: QLabel = QLabel(self)
     title_label: QLabel = QLabel("LOG IN MODULE", self)
 
-    logo1_pixmap: QPixmap = QPixmap(self._set_logo("logo1.png")).scaled(100, 100, Qt.KeepAspectRatio)
-    logo2_pixmap: QPixmap = QPixmap(self._set_logo("logo2.png")).scaled(100, 100, Qt.KeepAspectRatio)
+    logo1_pixmap: QPixmap = QPixmap(self.__set_logo("logo1.png")).scaled(100, 100, Qt.KeepAspectRatio)
+    logo2_pixmap: QPixmap = QPixmap(self.__set_logo("logo2.png")).scaled(100, 100, Qt.KeepAspectRatio)
     logo1_label.setPixmap(logo1_pixmap)
     logo2_label.setPixmap(logo2_pixmap)
 
@@ -103,7 +103,7 @@ class LoginPage(QWidget):
 
     login_button.set_color(bg_color="green", font_color="white")
 
-  def _set_background_image(self, image_name):
+  def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
     try:
@@ -113,7 +113,7 @@ class LoginPage(QWidget):
     except FileNotFoundError as e:
       print(e)
 
-  def _set_logo(self, image_name):
+  def __set_logo(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
     try:

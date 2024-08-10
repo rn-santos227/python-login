@@ -26,7 +26,8 @@ class DashboardAdminPage(QWidget):
     main_layout.setSpacing(0)
 
     self.background_label: QLabel = QLabel(self)
-    self._set_background_image("bg.jpg")
+    self.__set_background_image("bg.jpg")
+    self.background_label.setScaledContents(True)
     
     self.admins_content: AdminsPage = AdminsPage(self)
     self.logs_content: LogsPage = LogsPage(self)
@@ -144,6 +145,10 @@ class DashboardAdminPage(QWidget):
       self.reader_content.clock_component.stop_clock()
       self.pages_handler.switch_to_login_page()
 
+  def resizeEvent(self, event):
+    super().resizeEvent(event)
+    self.background_label.setGeometry(self.rect())
+
   def __toggle_navigation(self):
     if self.navigation_visible:
       self.navigation_visible = False
@@ -159,7 +164,7 @@ class DashboardAdminPage(QWidget):
         if widget is not None:
           widget.show()
 
-  def _set_background_image(self, image_name):
+  def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
     try:
@@ -167,10 +172,10 @@ class DashboardAdminPage(QWidget):
       scaled_pixmap = pixmap.scaled(self.size(), Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation)
       self.background_label.setPixmap(scaled_pixmap)
       self.background_label.setGeometry(self.rect())
-      self.background_label.setScaledContents(True)
 
     except FileNotFoundError as e:
       print(e)
+      
 
 class DashboardStudentPage(QWidget):
   def __init__(self, pages_handler):
