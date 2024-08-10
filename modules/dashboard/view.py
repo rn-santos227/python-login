@@ -92,6 +92,7 @@ class DashboardAdminPage(QWidget):
     reader_button.set_color(bg_color="cyan", font_color="black")
     scanner_button.set_color(bg_color="cyan", font_color="black")
     students_button.set_color(bg_color="cyan", font_color="black")
+    parents_button.set_color(bg_color="cyan", font_color="black")
 
   def handle_admins(self):
     self.reader_content.clock_component.start_clock()
