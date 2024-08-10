@@ -103,6 +103,7 @@ class DashboardAdminPage(QWidget):
 
     try:
       pixmap = asset_handler.get_image(image_name)
+      self.background_label.setPixmap(pixmap)
 
     except FileNotFoundError as e:
       print(e)
