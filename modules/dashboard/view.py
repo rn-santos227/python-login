@@ -98,6 +98,9 @@ class DashboardAdminPage(QWidget):
     users_button.set_color(bg_color="cyan", font_color="black")
     logout_button.set_color(bg_color="cyan", font_color="black")
 
+  def _set_background_image(self, image_name):
+    pass
+
   def handle_admins(self):
     self.reader_content.clock_component.start_clock()
     self.admins_content.load_admins()
