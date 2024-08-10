@@ -8,6 +8,7 @@ from components.message_box import MessageBox
 from components.text_field import TextField
 
 from handlers.asset_handler import AssetHandler
+from handlers.pages_handler import PagesHandler
 
 from modules.auth.controller import login
 
@@ -17,7 +18,7 @@ class LoginPage(QWidget):
     super().__init__()
     self.setStyleSheet(auth_view_style)
     self.alert_message: AlertMessage = AlertMessage() 
-    self.pages_handler = pages_handler
+    self.pages_handler: PagesHandler = pages_handler
     self.init_ui()
 
   def init_ui(self):
