@@ -33,7 +33,7 @@ class DashboardAdminPage(QWidget):
     self.scanner_content: ScannerPage = ScannerPage(self)
     self.students_content: StudentPage = StudentPage(self)
 
-    layout: QHBoxLayout = QHBoxLayout(self)
+    main_layout: QHBoxLayout = QHBoxLayout(self)
 
     self.navigation_menu: QVBoxLayout = QVBoxLayout()
     self.left_layout: QVBoxLayout = QVBoxLayout()
@@ -90,11 +90,14 @@ class DashboardAdminPage(QWidget):
     self.left_layout.addWidget(self.toggle_button)
     self.left_layout.addLayout(self.navigation_menu)
 
-    layout.addLayout(self.left_layout, 1)
-    layout.addWidget(self.main_content, 9)
+    main_layout.addLayout(self.left_layout, 1)
+    main_layout.addWidget(self.main_content, 9)
     
-    self.setLayout(layout)
+    self.setLayout(main_layout)
     self.handle_logs()
+
+    self.background_label.lower()
+    main_layout.setContentsMargins(0, 0, 0, 0)
 
     logs_button.set_color(bg_color="cyan", font_color="black")
     reader_button.set_color(bg_color="cyan", font_color="black")
