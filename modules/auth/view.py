@@ -67,7 +67,6 @@ class LoginPage(QWidget):
     bottom_spacer: QSpacerItem = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
     left_spacer: QSpacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
     right_spacer: QSpacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-    
 
     self.email_field: TextField = TextField(label_text="Email", placeholder_text="Enter your username")
     self.password_field: TextField = TextField(label_text="Password", placeholder_text="Enter your password")

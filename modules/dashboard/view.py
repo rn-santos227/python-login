@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QDialog, QHBoxLayout, QLabel, QStackedWidget, QVBoxLayout, QWidget
+from PyQt5.QtCore import Qt
 
 from components.button import Button
 from components.question_box import QuestionBox
@@ -20,11 +21,12 @@ class DashboardAdminPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
+    main_layout: QHBoxLayout = QHBoxLayout(self)
+    main_layout.setContentsMargins(0, 0, 0, 0)
+    main_layout.setSpacing(0)
+
     self.background_label: QLabel = QLabel(self)
     self._set_background_image("bg.jpg")
-    self.background_label.setGeometry(self.rect())
-    self.background_label.setScaledContents(True)
-    self.background_label.lower()
     
     self.admins_content: AdminsPage = AdminsPage(self)
     self.logs_content: LogsPage = LogsPage(self)
@@ -32,8 +34,6 @@ class DashboardAdminPage(QWidget):
     self.reader_content: ReaderPage = ReaderPage(self)
     self.scanner_content: ScannerPage = ScannerPage(self)
     self.students_content: StudentPage = StudentPage(self)
-
-    main_layout: QHBoxLayout = QHBoxLayout(self)
 
     self.navigation_menu: QVBoxLayout = QVBoxLayout()
     self.left_layout: QVBoxLayout = QVBoxLayout()
@@ -107,16 +107,6 @@ class DashboardAdminPage(QWidget):
     users_button.set_color(bg_color="cyan", font_color="black")
     logout_button.set_color(bg_color="cyan", font_color="black")
 
-  def _set_background_image(self, image_name):
-    asset_handler: AssetHandler = AssetHandler()
-
-    try:
-      pixmap = asset_handler.get_image(image_name)
-      self.background_label.setPixmap(pixmap)
-
-    except FileNotFoundError as e:
-      print(e)
-
   def handle_admins(self):
     self.reader_content.clock_component.start_clock()
     self.admins_content.load_admins()
@@ -168,6 +158,19 @@ class DashboardAdminPage(QWidget):
         widget = self.navigation_menu.itemAt(index).widget()
         if widget is not None:
           widget.show()
+
+  def _set_background_image(self, image_name):
+    asset_handler: AssetHandler = AssetHandler()
+
+    try:
+      pixmap = asset_handler.get_image(image_name)
+      scaled_pixmap = pixmap.scaled(self.size(), Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation)
+      self.background_label.setPixmap(scaled_pixmap)
+      self.background_label.setGeometry(self.rect())
+      self.background_label.setScaledContents(True)
+
+    except FileNotFoundError as e:
+      print(e)
 
 class DashboardStudentPage(QWidget):
   def __init__(self, pages_handler):
