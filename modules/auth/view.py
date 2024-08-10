@@ -141,3 +141,6 @@ class LoginPage(QWidget):
       print("Login Unsuccessful.")
       self.alert_message.set_message("Invalid username or password")
       self.alert_message.set_alert_type("error")
+
+  def _set_background_image(self, image_name):
+    pass
