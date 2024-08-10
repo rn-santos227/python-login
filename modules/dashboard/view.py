@@ -23,6 +23,7 @@ class DashboardAdminPage(QWidget):
     self.background_label: QLabel = QLabel(self)
     self._set_background_image("bg.jpg")
     self.background_label.setGeometry(self.rect())
+    self.background_label.setScaledContents(True)
 
     
     self.admins_content: AdminsPage = AdminsPage(self)
