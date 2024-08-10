@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QDialog, QHBoxLayout, QStackedWidget, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QDialog, QHBoxLayout, QLabel, QStackedWidget, QVBoxLayout, QWidget
 
 from components.button import Button
 from components.question_box import QuestionBox
@@ -20,6 +20,9 @@ class DashboardAdminPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
+    self.background_label: QLabel = QLabel(self)
+
+    
     self.admins_content: AdminsPage = AdminsPage(self)
     self.logs_content: LogsPage = LogsPage(self)
     self.parents_content: ParentsPage = ParentsPage(self)
