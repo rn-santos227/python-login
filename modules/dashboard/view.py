@@ -101,6 +101,12 @@ class DashboardAdminPage(QWidget):
   def _set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
+    try:
+      pixmap = asset_handler.get_image(image_name)
+
+    except FileNotFoundError as e:
+      print(e)
+
   def handle_admins(self):
     self.reader_content.clock_component.start_clock()
     self.admins_content.load_admins()
