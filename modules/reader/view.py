@@ -69,6 +69,7 @@ class ReaderPage(QWidget):
     current_date = QDate.currentDate().toString("dddd, MMMM d, yyyy")
     self.date_label.setText(current_date)
     self.date_label.setAlignment(Qt.AlignCenter)
+    self.date_label.setStyleSheet(date_label_style)
     
     clock_center_layout = QHBoxLayout()
     clock_center_layout.addItem(left_spacer)
