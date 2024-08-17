@@ -10,3 +10,5 @@ auth_view_style = """
     color: #333; /* Customize the color as needed */
   }
 """
+
+date_label_style = "background-color: white; padding: 10px; font-size: 16px; border: 1px solid black;"
