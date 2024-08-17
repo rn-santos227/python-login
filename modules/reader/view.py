@@ -22,6 +22,8 @@ from modules.students.model import Student
 
 from modules.parents.controller import get_parents
 
+from assets.styles.styles import date_label_style
+
 class ReaderPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
