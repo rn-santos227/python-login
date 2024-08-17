@@ -64,6 +64,7 @@ class ReaderPage(QWidget):
     webcam_layout.addWidget(self.capture_button)
 
     date_label: QLabel = QLabel(self)
+    current_date = QDate.currentDate().toString("dddd, MMMM d, yyyy")
     
     clock_center_layout = QHBoxLayout()
     clock_center_layout.addItem(left_spacer)
