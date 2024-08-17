@@ -25,7 +25,7 @@ class Clock(QWidget):
     asset_handler: AssetHandler = AssetHandler()
     side = 500
     image: QtGui.QImage = QtGui.QImage(side, side, QtGui.QImage.Format_ARGB32)
-    image.fill(QtCore.Qt.white)
+    image.fill(QtCore.Qt.transparent)
 
     painter: QtGui.QPainter = QtGui.QPainter(image)
     painter.setRenderHint(QtGui.QPainter.Antialiasing)
@@ -39,8 +39,9 @@ class Clock(QWidget):
     painter.drawEllipse(QtCore.QPointF(0, 0), 95, 95)
     painter.restore()
 
+    painter.setBrush(QtGui.QColor(255, 255, 255)) 
     painter.setPen(QtCore.Qt.NoPen)
-    painter.setBrush(QtGui.QColor(255, 255, 255))
+    painter.drawEllipse(QtCore.QPointF(0, 0), 94, 94) 
 
     for i in range(1, 13):
       painter.save()
