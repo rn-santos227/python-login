@@ -25,7 +25,7 @@ class Clock(QWidget):
     asset_handler: AssetHandler = AssetHandler()
     side = 500
     image: QtGui.QImage = QtGui.QImage(side, side, QtGui.QImage.Format_ARGB32)
-    image.fill(QtCore.Qt.transparent)
+    image.fill(QtCore.Qt.white)
 
     painter: QtGui.QPainter = QtGui.QPainter(image)
     painter.setRenderHint(QtGui.QPainter.Antialiasing)
