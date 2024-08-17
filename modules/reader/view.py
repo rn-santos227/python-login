@@ -77,6 +77,7 @@ class ReaderPage(QWidget):
     clock_center_layout.addItem(right_spacer)
 
     clock_layout.addLayout(clock_center_layout)
+    clock_layout.addWidget(self.date_label) 
 
     center_layout.addLayout(clock_layout)
     center_layout.setStretch(0, 1)
