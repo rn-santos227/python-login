@@ -31,7 +31,7 @@ class TextField(QWidget):
     self.text_field.setText(text)
   
   def set_label_text(self, text):
-    self.label.setText(text)
+    self.label.set_text(text)
 
   def set_placeholder_text(self, text):
     self.text_field.setPlaceholderText(text)
