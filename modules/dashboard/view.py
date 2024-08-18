@@ -13,6 +13,8 @@ from modules.students.view import StudentPage
 
 from handlers.asset_handler import AssetHandler
 
+from assets.styles.styles import admin_dashboard_style
+
 class DashboardAdminPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
