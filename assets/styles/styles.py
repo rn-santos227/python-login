@@ -7,7 +7,14 @@ auth_view_style = """
   QLabel#titleLabel {
     font-size: 20px;
     font-weight: bold;
-    color: #333; /* Customize the color as needed */
+    color: #333;
+  }
+"""
+
+admin_dashboard_style = """
+  QFrame#formFrame {
+    background-color: rgba(255, 255, 255, 220);
+    border: 2px solid #444;
   }
 """
 
