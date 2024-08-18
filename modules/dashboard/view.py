@@ -18,6 +18,7 @@ from assets.styles.styles import admin_dashboard_style
 class DashboardAdminPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
+    self.setStyleSheet(admin_dashboard_style)
     self.pages_handler = pages_handler
     self.navigation_visible = True
     self.init_ui()
