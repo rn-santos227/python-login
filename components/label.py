@@ -12,3 +12,4 @@ class Label(QWidget):
     label_font: QFont = QFont()
     label_font.setPointSize(14)
     self.label.setFont(label_font)
+    self.label.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
