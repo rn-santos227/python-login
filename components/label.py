@@ -8,3 +8,5 @@ class Label(QWidget):
 
   def init_ui(self, label_text):
     self.label: QLabel = QLabel(label_text)
+
+    label_font: QFont = QFont()
