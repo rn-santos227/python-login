@@ -7,4 +7,4 @@ class Label(QWidget):
     self.init_ui(label_text)
 
   def init_ui(self, label_text):
-    pass
+    self.label: QLabel = QLabel(label_text)
