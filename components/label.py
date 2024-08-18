@@ -10,3 +10,4 @@ class Label(QWidget):
     self.label: QLabel = QLabel(label_text)
 
     label_font: QFont = QFont()
+    label_font.setPointSize(14)
