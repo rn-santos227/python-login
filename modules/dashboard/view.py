@@ -78,6 +78,7 @@ class DashboardAdminPage(QWidget):
     self.navigation_menu.addStretch()
 
     main_content_frame: QFrame = QFrame(self)
+    main_content_frame.setObjectName("formFrame")
 
     self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
