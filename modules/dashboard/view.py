@@ -77,6 +77,8 @@ class DashboardAdminPage(QWidget):
     self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addStretch()
 
+    main_content_frame: QFrame = QFrame(self)
+
     self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.parents_content)
