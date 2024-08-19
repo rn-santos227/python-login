@@ -40,6 +40,9 @@ class DashboardAdminPage(QWidget):
     self.scanner_content: ScannerPage = ScannerPage(self)
     self.students_content: StudentPage = StudentPage(self)
 
+    main_content_frame: QFrame = QFrame(self)
+    main_content_frame.setObjectName("formFrame")
+
     self.navigation_menu: QVBoxLayout = QVBoxLayout()
     self.left_layout: QVBoxLayout = QVBoxLayout()
     self.main_content: QStackedWidget = QStackedWidget()
@@ -80,9 +83,6 @@ class DashboardAdminPage(QWidget):
     self.navigation_menu.addWidget(users_button)
     self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addStretch()
-
-    main_content_frame: QFrame = QFrame(self)
-    main_content_frame.setObjectName("formFrame")
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
     shadow_effect.setBlurRadius(15)
