@@ -27,6 +27,7 @@ from assets.styles.styles import date_label_style, content_frame_style
 class ReaderPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
+    self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
     self.clock_component: Clock = Clock()
     self.message_box: MessageBox = MessageBox(self)
