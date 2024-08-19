@@ -22,7 +22,7 @@ class LogsPage(QWidget):
     content_frame: QFrame = QFrame(self)
     content_frame.setObjectName("contentFrame")
     
-    self.main_layout: QVBoxLayout = QVBoxLayout()
+    self.main_layout: QVBoxLayout = QVBoxLayout(content_frame)
     self.top_layout: QHBoxLayout = QHBoxLayout()
     search_layout: QGridLayout = QGridLayout()
     search_button_layout: QHBoxLayout = QHBoxLayout()
