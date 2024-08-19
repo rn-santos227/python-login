@@ -12,7 +12,7 @@ auth_view_style = """
 """
 
 content_frame_style = """
-  #contentFrame {
+  QFrame#contentFrame {
     background-color: rgba(255, 255, 255, 220);
     border: 2px solid #444;
   }
