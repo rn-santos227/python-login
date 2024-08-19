@@ -1,5 +1,4 @@
-from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QLabel, QStackedWidget, QVBoxLayout, QWidget
-from PyQt5.QtGui import QColor 
+from PyQt5.QtWidgets import QDialog, QFrame, QHBoxLayout, QLabel, QStackedWidget, QVBoxLayout, QWidget
 from PyQt5.QtCore import Qt
 
 from components.button import Button
@@ -19,6 +18,7 @@ from assets.styles.styles import admin_dashboard_style
 class DashboardAdminPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
+    self.setStyleSheet(admin_dashboard_style)
     self.pages_handler = pages_handler
     self.navigation_visible = True
     self.init_ui()
@@ -39,20 +39,9 @@ class DashboardAdminPage(QWidget):
     self.scanner_content: ScannerPage = ScannerPage(self)
     self.students_content: StudentPage = StudentPage(self)
 
-    main_content_frame: QFrame = QFrame(self)
-    main_content_frame.setObjectName("contentFrame")
-    main_content_frame.setStyleSheet(admin_dashboard_style)
-    
-    shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
-    shadow_effect.setBlurRadius(15)
-    shadow_effect.setColor(QColor(0, 0, 0, 160))
-    shadow_effect.setOffset(0, 5)
-
-    main_content_frame.setGraphicsEffect(shadow_effect)
-
     self.navigation_menu: QVBoxLayout = QVBoxLayout()
     self.left_layout: QVBoxLayout = QVBoxLayout()
-    self.main_content: QStackedWidget = QStackedWidget(main_content_frame)
+    self.main_content: QStackedWidget = QStackedWidget()
 
     logs_button: Button = Button("Attendance Logs")
     logs_button.connect_signal(self.handle_logs)
@@ -91,6 +80,9 @@ class DashboardAdminPage(QWidget):
     self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addStretch()
 
+    main_content_frame: QFrame = QFrame(self)
+    main_content_frame.setObjectName("formFrame")
+
     self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.parents_content)
@@ -112,7 +104,7 @@ class DashboardAdminPage(QWidget):
     self.handle_logs()
 
     self.background_label.lower()
-    main_layout.setContentsMargins(15, 0, 15, 15)
+    main_layout.setContentsMargins(0, 0, 0, 0)
 
     logs_button.set_color(bg_color="cyan", font_color="black")
     reader_button.set_color(bg_color="cyan", font_color="black")
