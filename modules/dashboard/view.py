@@ -112,7 +112,7 @@ class DashboardAdminPage(QWidget):
     self.handle_logs()
 
     self.background_label.lower()
-    main_layout.setContentsMargins(15, 15, 15, 15)
+    main_layout.setContentsMargins(15, 0, 15, 15)
 
     logs_button.set_color(bg_color="cyan", font_color="black")
     reader_button.set_color(bg_color="cyan", font_color="black")
