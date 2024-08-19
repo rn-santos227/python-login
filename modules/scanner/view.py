@@ -5,7 +5,7 @@ import numpy as np
 
 import modules.students.controller as students_controller
 
-from PyQt5.QtWidgets import QHBoxLayout, QSizePolicy, QSpacerItem, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QFrame, QHBoxLayout, QSizePolicy, QSpacerItem, QVBoxLayout, QWidget
 
 from components.button import Button
 from components.combo_box import ComboBox
@@ -13,6 +13,8 @@ from components.message_box import MessageBox
 from components.webcam import Webcam
 
 from modules.students.model import Student
+
+from assets.styles.styles import content_frame_style
 
 class ScannerPage(QWidget):
   def __init__(self, pages_handler):
