@@ -22,8 +22,9 @@ class LogsPage(QWidget):
   def init_ui(self):
     content_frame: QFrame = QFrame(self)
     content_frame.setObjectName("contentFrame")
+    content_layout: QVBoxLayout = QVBoxLayout(content_frame)
     
-    self.main_layout: QVBoxLayout = QVBoxLayout(content_frame)
+    self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
     search_layout: QGridLayout = QGridLayout()
     search_button_layout: QHBoxLayout = QHBoxLayout()
@@ -51,9 +52,11 @@ class LogsPage(QWidget):
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
     self.table_widget.verticalHeader().setVisible(False)
 
-    self.main_layout.addLayout(self.top_layout)
-    self.main_layout.addWidget(self.table_widget)
-    self.main_layout.setContentsMargins(50, 50, 50, 50)
+    content_layout.addLayout(self.top_layout)
+    content_layout.addWidget(self.table_widget)
+    content_layout.setContentsMargins(50, 50, 50, 50)
+
+    self.main_layout.addWidget(content_frame)
 
     self.setLayout(self.main_layout)
     self.load_logs()
