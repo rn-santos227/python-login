@@ -40,7 +40,7 @@ class DashboardAdminPage(QWidget):
     self.students_content: StudentPage = StudentPage(self)
 
     main_content_frame: QFrame = QFrame(self)
-    main_content_frame.setObjectName("formFrame")
+    main_content_frame.setObjectName("contentFrame")
     main_content_frame.setStyleSheet(admin_dashboard_style)
     
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
