@@ -8,6 +8,8 @@ from components.date_field import DateField
 from components.message_box import MessageBox
 from components.question_box import QuestionBox
 
+from assets.styles.styles import content_frame_style
+
 class LogsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
