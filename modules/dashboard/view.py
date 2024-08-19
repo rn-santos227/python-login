@@ -83,6 +83,8 @@ class DashboardAdminPage(QWidget):
     main_content_frame: QFrame = QFrame(self)
     main_content_frame.setObjectName("formFrame")
 
+    shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
+
     self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.parents_content)
