@@ -86,7 +86,7 @@ class DashboardAdminPage(QWidget):
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
     shadow_effect.setBlurRadius(15)
-    
+    shadow_effect.setColor(QColor(0, 0, 0, 160))
 
     self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
