@@ -8,7 +8,7 @@ import modules.students.controller as students_controller
 
 from datetime import datetime
 from PyQt5.QtCore import Qt, QDate
-from PyQt5.QtWidgets import QLabel, QHBoxLayout, QSpacerItem, QSizePolicy, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QFrame, QLabel, QHBoxLayout, QSpacerItem, QSizePolicy, QVBoxLayout, QWidget
 
 from components.clock import Clock
 from components.button import Button
@@ -22,7 +22,7 @@ from modules.students.model import Student
 
 from modules.parents.controller import get_parents
 
-from assets.styles.styles import date_label_style
+from assets.styles.styles import date_label_style, content_frame_style
 
 class ReaderPage(QWidget):
   def __init__(self, pages_handler):
