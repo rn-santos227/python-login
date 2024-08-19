@@ -19,6 +19,8 @@ class LogsPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
+    form_frame: QFrame = QFrame(self)
+    
     self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
     search_layout: QGridLayout = QGridLayout()
