@@ -42,6 +42,13 @@ class DashboardAdminPage(QWidget):
     main_content_frame: QFrame = QFrame(self)
     main_content_frame.setObjectName("formFrame")
     main_content_frame.setStyleSheet(admin_dashboard_style)
+    
+    shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
+    shadow_effect.setBlurRadius(15)
+    shadow_effect.setColor(QColor(0, 0, 0, 160))
+    shadow_effect.setOffset(0, 5)
+
+    main_content_frame.setGraphicsEffect(shadow_effect)
 
     self.navigation_menu: QVBoxLayout = QVBoxLayout()
     self.left_layout: QVBoxLayout = QVBoxLayout()
@@ -84,13 +91,6 @@ class DashboardAdminPage(QWidget):
     self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addStretch()
 
-    shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
-    shadow_effect.setBlurRadius(15)
-    shadow_effect.setColor(QColor(0, 0, 0, 160))
-    shadow_effect.setOffset(0, 5)
-
-    main_content_frame.setGraphicsEffect(shadow_effect)
-
     self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.parents_content)
@@ -112,7 +112,7 @@ class DashboardAdminPage(QWidget):
     self.handle_logs()
 
     self.background_label.lower()
-    main_layout.setContentsMargins(0, 0, 0, 0)
+    main_layout.setContentsMargins(15, 15, 15, 15)
 
     logs_button.set_color(bg_color="cyan", font_color="black")
     reader_button.set_color(bg_color="cyan", font_color="black")

@@ -14,7 +14,7 @@ auth_view_style = """
 admin_dashboard_style = """
   #formFrame {
     border: 3px solid cyan;
-    border-radius: 10px; 
+    border-radius: 10px;
     background-color: white;
   }
 """
