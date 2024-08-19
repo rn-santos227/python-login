@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QLabel, QStackedWidget, QVBoxLayout, QWidget
+from PyQt5.QtGui import QColor 
 from PyQt5.QtCore import Qt
 
 from components.button import Button
@@ -85,6 +86,7 @@ class DashboardAdminPage(QWidget):
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
     shadow_effect.setBlurRadius(15)
+    
 
     self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
