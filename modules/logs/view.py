@@ -1,6 +1,7 @@
 import modules.logs.controller as logs_controller
 
-from PyQt5.QtWidgets import QDialog, QGridLayout, QHeaderView, QHBoxLayout, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLayout, QHeaderView, QHBoxLayout, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
+from PyQt5.QtGui import QColor
 
 from components.button import Button
 from components.date_field import DateField
