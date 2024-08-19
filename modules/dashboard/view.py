@@ -41,6 +41,7 @@ class DashboardAdminPage(QWidget):
 
     main_content_frame: QFrame = QFrame(self)
     main_content_frame.setObjectName("formFrame")
+    main_content_frame.setStyleSheet(admin_dashboard_style)
 
     self.navigation_menu: QVBoxLayout = QVBoxLayout()
     self.left_layout: QVBoxLayout = QVBoxLayout()
