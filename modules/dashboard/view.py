@@ -89,6 +89,8 @@ class DashboardAdminPage(QWidget):
     shadow_effect.setColor(QColor(0, 0, 0, 160))
     shadow_effect.setOffset(0, 5)
 
+    main_content_frame.setGraphicsEffect(shadow_effect)
+
     self.main_content.addWidget(self.admins_content)
     self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.parents_content)
