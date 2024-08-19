@@ -12,9 +12,10 @@ auth_view_style = """
 """
 
 admin_dashboard_style = """
-  QFrame#formFrame {
-    background-color: rgba(255, 255, 255, 220);
-    border: 2px solid #444;
+  #formFrame {
+    border: 3px solid cyan;
+    border-radius: 10px; 
+    background-color: white;
   }
 """
 
