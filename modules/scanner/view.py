@@ -26,6 +26,8 @@ class ScannerPage(QWidget):
     self.init_ui()
 
   def init_ui(self):
+    content_frame: QFrame = QFrame(self)
+    
     self.main_layout: QVBoxLayout = QVBoxLayout()
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
