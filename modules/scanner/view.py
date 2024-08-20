@@ -64,9 +64,9 @@ class ScannerPage(QWidget):
     h_center_layout.addLayout(center_layout)
     h_center_layout.addItem(right_spacer)
 
-    self.main_layout.addItem(top_spacer)
-    self.main_layout.addItem(h_center_layout)
-    self.main_layout.addItem(bottom_spacer)
+    content_layout.addItem(top_spacer)
+    content_layout.addItem(h_center_layout)
+    content_layout.addItem(bottom_spacer)
 
     self.setLayout(self.main_layout)
     self.capture_button.set_disabled()
