@@ -46,8 +46,9 @@ class ReaderPage(QWidget):
     shadow_effect.setColor(QColor(0, 0, 0, 160))
     shadow_effect.setOffset(0, 5)
 
-    self.main_layout: QVBoxLayout = QVBoxLayout()
+    content_frame.setGraphicsEffect(shadow_effect)
 
+    self.main_layout: QVBoxLayout = QVBoxLayout()
     webcam_layout: QVBoxLayout = QVBoxLayout()
     clock_layout: QVBoxLayout = QVBoxLayout()
 
