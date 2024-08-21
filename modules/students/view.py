@@ -43,6 +43,8 @@ class StudentPage(QWidget):
 
     content_layout.addLayout(self.top_layout)
     content_layout.addWidget(self.table_widget)
+
+    self.main_layout.addWidget(content_frame)
   
     self.setLayout(self.main_layout)
     self.load_students()
