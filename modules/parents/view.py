@@ -36,6 +36,8 @@ class ParentsPage(QWidget):
     shadow_effect.setColor(QColor(0, 0, 0, 160))
     shadow_effect.setOffset(0, 5)
 
+    content_frame.setGraphicsEffect(shadow_effect)
+
     self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
 
