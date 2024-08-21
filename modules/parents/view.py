@@ -33,7 +33,7 @@ class ParentsPage(QWidget):
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
     shadow_effect.setBlurRadius(15)
-    search_layout: QGridLayout = QGridLayout()
+    shadow_effect.setColor(QColor(0, 0, 0, 160))
 
     self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
