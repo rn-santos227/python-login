@@ -31,6 +31,8 @@ class ParentsPage(QWidget):
     content_frame.setObjectName("contentFrame")
     content_layout: QVBoxLayout = QVBoxLayout(content_frame)
 
+    shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
+
     self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
 
