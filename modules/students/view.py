@@ -24,7 +24,8 @@ class StudentPage(QWidget):
 
   def init_ui(self):
     content_frame: QFrame = QFrame(self)
-    
+    content_frame.setObjectName("contentFrame")
+
     self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
 
