@@ -8,6 +8,7 @@ import modules.students.controller as students_controller
 
 from datetime import datetime
 from PyQt5.QtCore import Qt, QDate
+from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QLabel, QHBoxLayout, QSpacerItem, QSizePolicy, QVBoxLayout, QWidget
 
 from components.clock import Clock
@@ -41,6 +42,8 @@ class ReaderPage(QWidget):
     content_layout: QVBoxLayout = QVBoxLayout(content_frame)
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
+    shadow_effect.setBlurRadius(15)
+    shadow_effect.setColor(QColor(0, 0, 0, 160))
 
     self.main_layout: QVBoxLayout = QVBoxLayout()
 
