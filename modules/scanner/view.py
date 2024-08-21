@@ -65,7 +65,7 @@ class ScannerPage(QWidget):
     h_center_layout.addItem(right_spacer)
 
     content_layout.addItem(top_spacer)
-    content_layout.addItem(h_center_layout)
+    content_layout.addLayout(h_center_layout)
     content_layout.addItem(bottom_spacer)
 
     self.main_layout.addWidget(content_frame)
