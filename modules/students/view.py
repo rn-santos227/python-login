@@ -13,6 +13,8 @@ from handlers.validations_handler import ValidationHandler
 
 from modules.students.model import Student
 
+from assets.styles.styles import content_frame_style
+
 class StudentPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
