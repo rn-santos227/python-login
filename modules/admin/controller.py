@@ -113,7 +113,7 @@ def update_admin(admin: Admin):
 
 def delete_admin(id) -> bool:
   where_clause = f"id = {id}"
-  sql_query = builder(__table, f"WHERE {where_clause}", "delete")
+  sql_query = builder(__table, where_clause, "delete")
   connection = DB.connect_db()
   cursor = connection.cursor()
 
