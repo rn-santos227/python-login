@@ -5,7 +5,8 @@ import numpy as np
 
 import modules.students.controller as students_controller
 
-from PyQt5.QtWidgets import QFrame, QHBoxLayout, QSizePolicy, QSpacerItem, QVBoxLayout, QWidget
+from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QSizePolicy, QSpacerItem, QVBoxLayout, QWidget
 
 from components.button import Button
 from components.combo_box import ComboBox
