@@ -29,6 +29,7 @@ class StudentPage(QWidget):
     content_frame: QFrame = QFrame(self)
     content_frame.setObjectName("contentFrame")
     content_layout: QVBoxLayout = QVBoxLayout(content_frame)
+    shadow_effect.setOffset(0, 5)
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
     shadow_effect.setBlurRadius(15)
