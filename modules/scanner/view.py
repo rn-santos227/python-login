@@ -31,6 +31,8 @@ class ScannerPage(QWidget):
     content_frame.setObjectName("contentFrame")
     content_layout: QVBoxLayout = QVBoxLayout(content_frame)
 
+    shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
+
     self.main_layout: QVBoxLayout = QVBoxLayout()
     center_layout: QVBoxLayout = QVBoxLayout()
     h_center_layout: QHBoxLayout = QHBoxLayout()
