@@ -29,6 +29,7 @@ class ParentsPage(QWidget):
   def init_ui(self):
     content_frame: QFrame = QFrame(self)
     content_frame.setObjectName("contentFrame")
+    content_layout: QVBoxLayout = QVBoxLayout(content_frame)
 
     self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
