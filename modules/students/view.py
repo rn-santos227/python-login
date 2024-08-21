@@ -43,6 +43,7 @@ class StudentPage(QWidget):
 
     content_layout.addLayout(self.top_layout)
     content_layout.addWidget(self.table_widget)
+    content_layout.setContentsMargins(50, 50, 50, 50)
 
     self.main_layout.addWidget(content_frame)
   
