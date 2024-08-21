@@ -1,7 +1,8 @@
 import modules.parents.controller as parents_controller
 import modules.students.controller as students_controller
 
-from PyQt5.QtWidgets import QDialog, QGridLayout, QHeaderView, QHBoxLayout, QLayout, QLayoutItem, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
+from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLayout, QHeaderView, QHBoxLayout, QLayout, QLayoutItem, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
 from components.button import Button
 from components.combo_box import ComboBox
