@@ -49,8 +49,8 @@ class ParentsPage(QWidget):
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
     self.table_widget.verticalHeader().setVisible(False)
 
-    self.main_layout.addLayout(self.top_layout)
-    self.main_layout.addWidget(self.table_widget)
+    content_layout.addLayout(self.top_layout)
+    content_layout.addWidget(self.table_widget)
   
     self.setLayout(self.main_layout)
     self.load_parents()
