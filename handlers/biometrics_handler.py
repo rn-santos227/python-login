@@ -1,4 +1,5 @@
 import win32com.client
 
 class BiometricsHandler:
-  pass
+  def __init__(self):
+    pass
