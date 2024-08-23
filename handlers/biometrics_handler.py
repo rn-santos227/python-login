@@ -2,6 +2,8 @@ import ctypes
 
 from config.config import dpfj_url, dpfpdd_url
 
+from library.biometrics import DPFPDD_SUCCESS
+
 class BiometricsHandler:
   def __init__(self):
     self.dpfj = ctypes.WinDLL(dpfj_url)
