@@ -13,5 +13,4 @@ PyQt5
 mysql-connector-python
 opencv-python-headless
 face_recognition
-pywin32
 
