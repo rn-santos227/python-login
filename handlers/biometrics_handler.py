@@ -5,6 +5,7 @@ class BiometricsHandler:
     try:
       self.device_control = win32com.client.Dispatch("DPFPDevX.DeviceControl")
       self.device = self.device_control.Devices(0)
+      self.device.Open(1)
 
     except Exception as e:
       print(f"Failed to initialize fingerprint scanner: {e}")
