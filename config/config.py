@@ -4,6 +4,7 @@ import os
 load_dotenv()
 
 app_name = os.getenv("APP_NAME")
+fingerjet_url = "C:/Program Files/DigitalPersona/U.are.U SDK/Windows/Lib/x64/dpfj.dll"
 
 connection_params = {
   "user": os.getenv("DB_USER"),
