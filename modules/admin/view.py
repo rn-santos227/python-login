@@ -43,6 +43,7 @@ class AdminsPage(QWidget):
 
     content_layout.addLayout(self.top_layout)
     content_layout.addWidget(self.table_widget)
+    content_layout.setContentsMargins(50, 50, 50, 50)
   
     self.setLayout(self.main_layout)
     self.load_admins()
