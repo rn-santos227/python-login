@@ -14,4 +14,4 @@ class BiometricsHandler:
       print(f"Error initializing SDK: {result}")
 
     else:
-      print(f"Biometric Device has been initialized.")
+      print("SDK initialized successfully.")
