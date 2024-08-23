@@ -12,6 +12,9 @@ from handlers.validations_handler import ValidationHandler
 
 from modules.admin.model import Admin
 
+
+from assets.styles.styles import content_frame_style
+
 class AdminsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
