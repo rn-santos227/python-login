@@ -23,6 +23,7 @@ class ScannerPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.setStyleSheet(content_frame_style)
+    self.biometrics: BiometricsHandler = BiometricsHandler()
     self.pages_handler = pages_handler
     self.message_box = MessageBox(self)
     self.students: list[Student] = []
