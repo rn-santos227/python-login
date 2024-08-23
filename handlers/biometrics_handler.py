@@ -12,3 +12,6 @@ class BiometricsHandler:
 
     if result != DPFPDD_SUCCESS:
       print(f"Error initializing SDK: {result}")
+
+    else:
+      print(f"Biometric Device has been initialized.")
