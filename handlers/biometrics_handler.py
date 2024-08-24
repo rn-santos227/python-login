@@ -30,3 +30,6 @@ class BiometricsHandler:
 
     image_buffer = (ctypes.c_ubyte * 100000)()
     fingerprint_data = bytes(image_buffer)
+
+    if result != DPFPDD_SUCCESS:
+      pass
