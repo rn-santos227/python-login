@@ -24,3 +24,5 @@ class BiometricsHandler:
     if result != DPFPDD_SUCCESS:
       print(f"Error opening device: {result}")
       return None
+    
+    capture_result = DPFPDD_CAPTURE_RESULT()
