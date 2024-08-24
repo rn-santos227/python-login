@@ -36,3 +36,4 @@ class BiometricsHandler:
       return None
     
     print(f"Fingerprint captured successfully with quality: {capture_result.quality}")
+    return fingerprint_data
