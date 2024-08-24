@@ -15,3 +15,6 @@ class BiometricsHandler:
 
     else:
       print("SDK initialized successfully.")
+
+  def capture_fingerprint(device_name):
+    pass
