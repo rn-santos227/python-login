@@ -26,3 +26,4 @@ class BiometricsHandler:
       return None
     
     capture_result = DPFPDD_CAPTURE_RESULT()
+    capture_result.size = ctypes.sizeof(capture_result)
