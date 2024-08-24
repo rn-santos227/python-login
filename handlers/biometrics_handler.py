@@ -32,4 +32,5 @@ class BiometricsHandler:
     fingerprint_data = bytes(image_buffer)
 
     if result != DPFPDD_SUCCESS:
-      pass
+      print(f"Error capturing fingerprint: {result}")
+      return None
