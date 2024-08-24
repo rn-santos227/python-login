@@ -34,3 +34,5 @@ class BiometricsHandler:
     if result != DPFPDD_SUCCESS:
       print(f"Error capturing fingerprint: {result}")
       return None
+    
+    print(f"Fingerprint captured successfully with quality: {capture_result.quality}")
