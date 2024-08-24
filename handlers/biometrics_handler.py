@@ -27,3 +27,5 @@ class BiometricsHandler:
     
     capture_result = DPFPDD_CAPTURE_RESULT()
     capture_result.size = ctypes.sizeof(capture_result)
+
+    image_buffer = (ctypes.c_ubyte * 100000)()
