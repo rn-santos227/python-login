@@ -29,3 +29,4 @@ class BiometricsHandler:
     capture_result.size = ctypes.sizeof(capture_result)
 
     image_buffer = (ctypes.c_ubyte * 100000)()
+    fingerprint_data = bytes(image_buffer)
