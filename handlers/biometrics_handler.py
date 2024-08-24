@@ -1,4 +1,5 @@
 import ctypes
+from ctypes import byref
 
 from config.config import dpfj_url, dpfpdd_url
 
@@ -16,5 +17,5 @@ class BiometricsHandler:
     else:
       print("SDK initialized successfully.")
 
-  def capture_fingerprint(device_name):
-    pass
+  def capture_fingerprint(self):
+     device = ctypes.c_void_p()
