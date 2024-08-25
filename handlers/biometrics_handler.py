@@ -37,3 +37,6 @@ class BiometricsHandler:
     
     print(f"Fingerprint captured successfully with quality: {capture_result.quality}")
     return fingerprint_data
+
+  def verify_fingerprints(self, fingerprint_1, fingerprint_2):
+    pass
