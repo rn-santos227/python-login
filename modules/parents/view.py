@@ -136,7 +136,8 @@ class ParentsPage(QWidget):
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(parent.id)))
       self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(parent.student.full_name)))
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(str(parent.full_name)))
-      self.table_widget.setItem(row_position, 3, QTableWidgetItem(str(parent.contact)))
+      self.table_widget.setItem(row_position, 3, QTableWidgetItem(str(parent.email)))
+      self.table_widget.setItem(row_position, 4, QTableWidgetItem(str(parent.contact)))
 
       update_button: QPushButton = QPushButton("Update")
       update_button.clicked.connect(lambda ch, parent=parent: self.__load_parent_for_update(parent))
@@ -152,7 +153,7 @@ class ParentsPage(QWidget):
       button_widget: QWidget = QWidget()
       button_widget.setLayout(button_layout)
 
-      self.table_widget.setCellWidget(row_position, 4, button_widget)
+      self.table_widget.setCellWidget(row_position, 5, button_widget)
 
   def create_parent(self):
     student_id = self.student_combo_box.get_selected_value()
