@@ -41,3 +41,5 @@ class BiometricsHandler:
   def verify_fingerprints(self, fingerprint_1, fingerprint_2):
     features_1 = (ctypes.c_ubyte * 100000)()
     features_2 = (ctypes.c_ubyte * 100000)()
+
+    self.dpfj.dpfj_create_feature_set(byref(fingerprint_1), byref(features_1))
