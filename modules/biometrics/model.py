@@ -7,5 +7,9 @@ class Biometric():
   @staticmethod
   def create_table() -> str:
     return '''
-    
+    CREATE TABLE biometrics (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      student_id INT
+      CONSTRAINT parent_student FOREIGN KEY (student_id) REFERENCES students(id)
+    );
     '''  
