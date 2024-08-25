@@ -1,8 +1,15 @@
+from modules.students.model import Student
+from modules.students.controller import get_student_by_id
+
 class Biometric():
   def __init__(self, id=None, student_id=None, fingerprint_data=None):
     self.id = id
     self.student_id = student_id
     self.fingerprint_data = fingerprint_data
+
+  @property
+  def student(self) -> Student:
+    return get_student_by_id(self.student_id)
 
   @staticmethod
   def create_table() -> str:
