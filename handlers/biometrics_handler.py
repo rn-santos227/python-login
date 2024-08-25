@@ -38,7 +38,7 @@ class BiometricsHandler:
     print(f"Fingerprint captured successfully with quality: {capture_result.quality}")
     return fingerprint_data
 
-  def verify_fingerprints(self, fingerprint_1, fingerprint_2):
+  def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     features_1 = (ctypes.c_ubyte * 100000)()
     features_2 = (ctypes.c_ubyte * 100000)()
 
@@ -50,6 +50,6 @@ class BiometricsHandler:
 
     if result == DPFPDD_SUCCESS and score.value > 0:
       print(f"Fingerprints matched with score: {score.value}")
-      
+
     else:
       print(f"Fingerprints did not match.")
