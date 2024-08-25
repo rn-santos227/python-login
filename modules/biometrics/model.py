@@ -10,6 +10,7 @@ class Biometric():
     CREATE TABLE biometrics (
       id INT AUTO_INCREMENT PRIMARY KEY,
       student_id INT
+      fingerprint_data BLOB NOT NULL,
       CONSTRAINT parent_student FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''  
