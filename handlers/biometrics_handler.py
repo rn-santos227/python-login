@@ -43,3 +43,4 @@ class BiometricsHandler:
     features_2 = (ctypes.c_ubyte * 100000)()
 
     self.dpfj.dpfj_create_feature_set(byref(fingerprint_1), byref(features_1))
+    self.dpfj.dpfj_create_feature_set(byref(fingerprint_2), byref(features_2))
