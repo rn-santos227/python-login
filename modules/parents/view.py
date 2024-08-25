@@ -66,6 +66,7 @@ class ParentsPage(QWidget):
     self.load_students_to_combo_box()
 
     self.parent_name_field: TextField = TextField(label_text="Parent Full Name", placeholder_text="Enter parent full name.")
+    self.parent_email_field: TextField = TextField(label_text="Email", placeholder_text="Enter student email.")
     self.parent_contact_field: TextField = TextField(label_text="Contact Number", placeholder_text="Enter parent contact number.")
 
     create_button: Button = Button("Create Parent")
