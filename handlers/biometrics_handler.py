@@ -50,6 +50,8 @@ class BiometricsHandler:
 
     if result == DPFPDD_SUCCESS and score.value > 0:
       print(f"Fingerprints matched with score: {score.value}")
+      return True
 
     else:
       print(f"Fingerprints did not match.")
+      return False
