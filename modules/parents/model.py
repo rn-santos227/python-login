@@ -2,9 +2,10 @@ from modules.students.model import Student
 from modules.students.controller import get_student_by_id
 
 class Parent:
-  def __init__(self, id=None, student_id=None, full_name=None, contact=None):
+  def __init__(self, id=None, student_id=None, email=None, full_name=None, contact=None):
     self.id = id
     self.student_id = student_id
+    self.email = email
     self.full_name = full_name
     self.contact = contact
 
