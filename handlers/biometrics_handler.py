@@ -47,3 +47,9 @@ class BiometricsHandler:
 
     score = ctypes.c_int()
     result =  self.dpfj.dpfj_verify(byref(features_1), byref(features_2), byref(score))
+
+    if result == DPFPDD_SUCCESS and score.value > 0:
+      print(f"Fingerprints matched with score: {score.value}")
+      
+    else:
+      print(f"Fingerprints did not match.")
