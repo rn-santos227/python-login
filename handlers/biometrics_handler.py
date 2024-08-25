@@ -39,4 +39,4 @@ class BiometricsHandler:
     return fingerprint_data
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2):
-    pass
+    features_1 = (ctypes.c_ubyte * 100000)()
