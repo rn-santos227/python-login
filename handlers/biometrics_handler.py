@@ -46,3 +46,4 @@ class BiometricsHandler:
     self.dpfj.dpfj_create_feature_set(byref(fingerprint_2), byref(features_2))
 
     score = ctypes.c_int()
+    result =  self.dpfj.dpfj_verify(byref(features_1), byref(features_2), byref(score))
