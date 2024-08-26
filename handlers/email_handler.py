@@ -17,3 +17,8 @@ def send_email(receiver_email, subject, message):
 
   except Exception as e:
     print(f"Failed to send email: {e}")
+
+  finally:
+    server.quit()
+
+
