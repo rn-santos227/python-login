@@ -207,6 +207,7 @@ class ParentsPage(QWidget):
       id = self.parent_id,
       student_id = student_id,
       full_name = parent_name,
+      email=email,
       contact = contact
     )
 
