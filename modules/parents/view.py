@@ -166,6 +166,7 @@ class ParentsPage(QWidget):
     contact = self.parent_contact_field.get_text()
 
     fields_to_validate = [
+      (self.validation_handler.is_valid_email, email, "Invalid email address."),
       (self.validation_handler.is_not_empty, student_id, "Student cannot be empty."),
       (self.validation_handler.is_not_empty, parent_name, "Parent's full name cannot be empty."),
       (self.validation_handler.is_not_empty, contact, "Contacts cannot be empty."),
