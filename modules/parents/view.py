@@ -162,6 +162,7 @@ class ParentsPage(QWidget):
   def create_parent(self):
     student_id = self.student_combo_box.get_selected_value()
     parent_name = self.parent_name_field.get_text()
+    email = self.parent_email_field.get_text()
     contact = self.parent_contact_field.get_text()
 
     fields_to_validate = [
