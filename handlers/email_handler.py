@@ -8,3 +8,4 @@ def send_email(receiver_email, subject, message):
   email_message = MIMEMultipart()
   email_message["From"] = email_user
   email_message["To"] = receiver_email
+  email_message["Subject"] = subject
