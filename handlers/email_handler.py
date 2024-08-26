@@ -11,3 +11,9 @@ def send_email(receiver_email, subject, message):
   email_message["Subject"] = subject
 
   email_message.attach(MIMEText(message, "plain"))
+
+  try:
+    server = smtplib.SMTP(smtp_server, smtp_port)
+
+  except Exception as e:
+    print(f"Failed to send email: {e}")
