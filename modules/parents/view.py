@@ -77,8 +77,9 @@ class ParentsPage(QWidget):
 
     create_layout.addWidget(self.student_combo_box, 0, 0, 1, 2)
     create_layout.addWidget(self.parent_name_field, 1, 0, 1, 2)
-    create_layout.addWidget(self.parent_contact_field, 2, 0, 1, 2)
-    create_layout.addLayout(self.create_button_layout, 3, 0, 1, 2)
+    create_layout.addWidget(self.parent_email_field, 2, 0, 1, 2)
+    create_layout.addWidget(self.parent_contact_field, 3, 0, 1, 2)
+    create_layout.addLayout(self.create_button_layout, 4, 0, 1, 2)
 
     return create_layout
   
