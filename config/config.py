@@ -18,6 +18,7 @@ connection_params = {
 database_name = os.getenv("DB_NAME")
 
 email_user = os.getenv("EMAIL_USER")
+email_password = os.getenv("EMAIL_PASSWORD")
 
 sms_api = os.getenv("SMS_API")
 sms_key = os.getenv("SMS_KEY")
