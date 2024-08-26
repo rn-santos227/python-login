@@ -17,8 +17,8 @@ connection_params = {
 
 database_name = os.getenv("DB_NAME")
 
-email_smtp = os.getenv("EMAIL_SMTP")
-email_port = os.getenv("EMAIL_PORT")
+smtp_server = os.getenv("SMTP_SERVER")
+smtp_port = os.getenv("SMTP_PORT")
 email_user = os.getenv("EMAIL_USER")
 email_password = os.getenv("EMAIL_PASSWORD")
 
