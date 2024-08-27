@@ -20,6 +20,9 @@ def get_biometrics(query, action) -> list[Biometric]:
   except Exception as e:
     print(f"Error: {e}")
 
+  finally:
+    cursor.close()
+
 def match_biometrics():
   pass
 
