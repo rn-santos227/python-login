@@ -4,6 +4,7 @@ from typing import Union
 from database.query import builder
 from modules.biometrics.model import Biometric
 
+<<<<<<< HEAD
 __table = "biometrics"
 
 def get_biometrics(query, action) -> list[Biometric]:
@@ -34,3 +35,6 @@ def add_biometric():
 
 def delete_biometric():
   pass
+=======
+__table = "biometrics"
+>>>>>>> parent of 63a6158 (added get biometrics function in biometrics controller)
