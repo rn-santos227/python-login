@@ -13,6 +13,7 @@ def get_biometrics(query, action) -> list[Biometric]:
 
   try:
     cursor.execute(sql_query)
+    rows = cursor.fetchall()
 
   except Exception as e:
     print(f"Error: {e}")
