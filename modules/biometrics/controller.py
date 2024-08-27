@@ -11,6 +11,12 @@ def get_biometrics(query, action) -> list[Biometric]:
   connection = DB.connect_db()
   cursor = connection.cursor()
 
+  try:
+    cursor.execute(sql_query)
+
+  except Exception as e:
+    print(f"Error: {e}")
+
 def match_biometrics():
   pass
 
