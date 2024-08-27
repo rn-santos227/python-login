@@ -1,7 +1,9 @@
 import config.database as DB
 
-from typing import Union
 from database.query import builder
+
+from handlers.biometrics_handler import BiometricsHandler
+
 from modules.biometrics.model import Biometric
 
 __table = "biometrics"
