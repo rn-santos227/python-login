@@ -8,6 +8,7 @@ __table = "biometrics"
 
 def get_biometrics(query, action) -> list[Biometric]:
   sql_query = builder(__table, query, action)
+  connection = DB.connect_db()
 
 def match_biometrics():
   pass
