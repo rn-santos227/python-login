@@ -6,8 +6,8 @@ from modules.biometrics.model import Biometric
 
 __table = "biometrics"
 
-def get_biometrics():
-  pass
+def get_biometrics(query, action):
+  sql_query = builder(__table, query, action)
 
 def match_biometrics():
   pass
