@@ -23,5 +23,4 @@ def send_sms(contact_number, message):
 
 
 def compose_message(student: Student, time: str, logged: str) -> str:
-  message = f"Student {student.full_name} has {logged} at {time}"
-  return message
+  return f"Student {student.full_name} has {logged} at {time}"
