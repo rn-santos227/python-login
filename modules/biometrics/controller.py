@@ -6,7 +6,7 @@ from modules.biometrics.model import Biometric
 
 __table = "biometrics"
 
-def get_biometrics(query, action):
+def get_biometrics(query, action) -> list[Biometric]:
   sql_query = builder(__table, query, action)
 
 def match_biometrics():
