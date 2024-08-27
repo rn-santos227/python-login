@@ -29,4 +29,5 @@ def send_email(receiver_email, subject, message):
     server.quit()
 
 def compose_message(student: Student, time: str, logged: str) -> str:
-  message = f"Student {student.full_name} has {logged} at {time}."
+  return f"Student {student.full_name} has {logged} at {time}."
+  
