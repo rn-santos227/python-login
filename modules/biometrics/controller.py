@@ -18,6 +18,7 @@ def get_biometrics(query, action) -> list[Biometric]:
     biometrics: list[Biometric] = []
     for row in rows:
       biometric: Biometric = Biometric(*row)
+      biometrics.append(biometric)
 
   except Exception as e:
     print(f"Error: {e}")
