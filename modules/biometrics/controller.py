@@ -9,6 +9,9 @@ __table = "biometrics"
 def get_biometrics():
   pass
 
+def match_biometrics():
+  pass
+
 def add_biometric():
   pass
 
