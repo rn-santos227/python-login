@@ -29,7 +29,7 @@ def get_biometrics(query, action) -> list[Biometric]:
     cursor.close()
 
 def match_biometrics():
-  pass
+  biometric_handler: BiometricsHandler = BiometricsHandler()
 
 def add_biometric():
   pass
