@@ -16,6 +16,8 @@ def get_biometrics(query, action) -> list[Biometric]:
     rows = cursor.fetchall()
 
     biometrics: list[Biometric] = []
+    for row in rows:
+      biometric: Biometric = Biometric(*row)
 
   except Exception as e:
     print(f"Error: {e}")
