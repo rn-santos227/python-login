@@ -14,6 +14,7 @@ def send_email(receiver_email, subject, message):
 
   try:
     server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
 
   except Exception as e:
     print(f"Failed to send email: {e}")
