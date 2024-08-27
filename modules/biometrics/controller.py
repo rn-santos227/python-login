@@ -11,3 +11,6 @@ def get_biometrics():
 
 def add_biometric():
   pass
+
+def delete_biometric():
+  pass
