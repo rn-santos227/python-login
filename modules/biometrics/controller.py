@@ -5,3 +5,6 @@ from database.query import builder
 from modules.biometrics.model import Biometric
 
 __table = "biometrics"
+
+def get_biometrics():
+  pass
