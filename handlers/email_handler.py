@@ -4,6 +4,8 @@ from email.mime.multipart import MIMEMultipart
 
 from config.config import smtp_server, smtp_port, email_user, email_password
 
+from modules.students.model import Student
+
 def send_email(receiver_email, subject, message):
   email_message = MIMEMultipart()
   email_message["From"] = email_user
@@ -25,5 +27,3 @@ def send_email(receiver_email, subject, message):
 
   finally:
     server.quit()
-
-
