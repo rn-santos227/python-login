@@ -36,4 +36,4 @@ def add_biometric():
   biometric_handler: BiometricsHandler = BiometricsHandler()
 
 def remove_biometric(id) -> bool:
-  pass
+  where_clause = f"id = {id}"
