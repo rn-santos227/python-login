@@ -11,3 +11,4 @@ def table_migration():
   db.create_table(Student.create_table(), "students")
   db.create_table(Log.create_table(), "logs")
   db.create_table(Parent.create_table(), "parents")
+  db.create_table(Biometric.create_table(), "biometrics")
