@@ -191,4 +191,4 @@ class ReaderPage(QWidget):
     parents = get_parents(f"student_id = {student.id}", "select")
     for parent in parents:
       send_sms(contact_number=parent.contact, message=message)
-      send_email(parent.email, "Digital Logbook Application - Attendance Notification", message=message)
+      send_email(parent.email, message=message)
