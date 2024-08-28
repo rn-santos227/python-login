@@ -35,5 +35,5 @@ def match_biometrics(fingerprint_1, fingerprint_2) -> bool:
 def add_biometric():
   biometric_handler: BiometricsHandler = BiometricsHandler()
 
-def delete_student(id) -> bool:
+def remove_biometric(id) -> bool:
   pass
