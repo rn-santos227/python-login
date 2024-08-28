@@ -28,7 +28,7 @@ def get_biometrics(query, action) -> list[Biometric]:
   finally:
     cursor.close()
 
-def match_biometrics():
+def match_biometrics(fingerprint_1, fingerprint_2):
   biometric_handler: BiometricsHandler = BiometricsHandler()
 
 def add_biometric():
