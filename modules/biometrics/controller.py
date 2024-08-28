@@ -46,3 +46,6 @@ def remove_biometric(id) -> bool:
 
   except Exception as e:
     print(f"Error: {e}")
+
+  finally:
+    cursor.close()
