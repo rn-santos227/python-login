@@ -19,8 +19,10 @@ database_name = os.getenv("DB_NAME")
 
 smtp_server = os.getenv("SMTP_SERVER")
 smtp_port = os.getenv("SMTP_PORT")
+
 email_user = os.getenv("EMAIL_USER")
 email_password = os.getenv("EMAIL_PASSWORD")
+email_subject = os.getenv("EMAIL_SUBJECT")
 
 sms_api = os.getenv("SMS_API")
 sms_key = os.getenv("SMS_KEY")
