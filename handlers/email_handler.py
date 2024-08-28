@@ -2,15 +2,15 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-from config.config import smtp_server, smtp_port, email_user, email_password
+from config.config import smtp_server, smtp_port, email_user, email_password, email_subject
 
 from modules.students.model import Student
 
-def send_email(receiver_email, subject, message):
+def send_email(receiver_email, message):
   email_message = MIMEMultipart()
   email_message["From"] = email_user
   email_message["To"] = receiver_email
-  email_message["Subject"] = subject
+  email_message["Subject"] = email_subject
 
   email_message.attach(MIMEText(message, "plain"))
 
