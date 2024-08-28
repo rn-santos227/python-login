@@ -33,7 +33,7 @@ def match_biometrics(fingerprint_1, fingerprint_2) -> bool:
   return biometric_handler.verify_fingerprints(fingerprint_1=fingerprint_1, fingerprint_2=fingerprint_2)
 
 def add_biometric():
-  pass
+  biometric_handler: BiometricsHandler = BiometricsHandler()
 
 def delete_biometric():
   pass
