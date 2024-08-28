@@ -17,6 +17,7 @@ from components.message_box import MessageBox
 from components.webcam import Webcam
 
 from handlers.sms_handler import send_sms, compose_message
+from handlers.email_handler import send_email
 
 from modules.logs.model import Log
 from modules.students.model import Student
