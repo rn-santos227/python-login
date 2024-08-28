@@ -38,3 +38,4 @@ def add_biometric():
 def remove_biometric(id) -> bool:
   where_clause = f"id = {id}"
   sql_query = builder(__table, where_clause, "delete")
+  connection = DB.connect_db()
