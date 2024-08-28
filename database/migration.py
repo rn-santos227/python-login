@@ -4,6 +4,7 @@ from modules.admin.model import Admin
 from modules.students.model import Student
 from modules.logs.model import Log
 from modules.parents.model import Parent
+from modules.biometrics.model import Biometric
 
 def table_migration():
   db.create_table(Admin.create_table(), "admins")
