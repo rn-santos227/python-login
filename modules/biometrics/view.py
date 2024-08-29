@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QFrame, QHeaderView, QWidget
+from PyQt5.QtWidgets import QFrame, QHeaderView, QSpacerItem, QVBoxLayout, QWidget
 
 from components.message_box import MessageBox
 
@@ -18,3 +18,4 @@ class BiometricsPage(QWidget):
   def init_ui(self):
     content_frame: QFrame = QFrame(self)
     content_frame.setObjectName("contentFrame")
+    
