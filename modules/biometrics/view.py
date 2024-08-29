@@ -22,4 +22,5 @@ class BiometricsPage(QWidget):
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
     shadow_effect.setBlurRadius(15)
+    shadow_effect.setColor(QColor(0, 0, 0, 160))
     
