@@ -21,4 +21,5 @@ class BiometricsPage(QWidget):
     content_layout: QVBoxLayout = QVBoxLayout(content_frame)
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
+    shadow_effect.setBlurRadius(15)
     
