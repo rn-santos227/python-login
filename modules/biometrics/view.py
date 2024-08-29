@@ -18,4 +18,5 @@ class BiometricsPage(QWidget):
   def init_ui(self):
     content_frame: QFrame = QFrame(self)
     content_frame.setObjectName("contentFrame")
+    content_layout: QVBoxLayout = QVBoxLayout(content_frame)
     
