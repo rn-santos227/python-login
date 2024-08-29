@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWidgets import QFrame, QWidget
 
 from components.message_box import MessageBox
 
@@ -13,4 +13,4 @@ class BiometricsPage(QWidget):
     self.students: list[Biometric] = []
 
   def init_ui(self):
-    pass
+    content_frame: QFrame = QFrame(self)
