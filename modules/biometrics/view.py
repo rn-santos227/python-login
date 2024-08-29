@@ -5,6 +5,8 @@ from components.message_box import MessageBox
 
 from modules.biometrics.model import Biometric
 
+from assets.styles.styles import content_frame_style
+
 class BiometricsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
