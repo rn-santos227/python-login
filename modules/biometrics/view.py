@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QFrame, QWidget
+from PyQt5.QtWidgets import QFrame, QHeaderView, QWidget
 
 from components.message_box import MessageBox
 
