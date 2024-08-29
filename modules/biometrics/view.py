@@ -3,4 +3,4 @@ from PyQt5.QtWidgets import QWidget
 
 class BiometricsPage(QWidget):
   def __init__(self, pages_handler):
-    pass
+    super().__init__()
