@@ -8,5 +8,6 @@ from modules.biometrics.model import Biometric
 class BiometricsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
-    self.message_box: MessageBox = MessageBox(self)
     self.pages_handler = pages_handler
+    self.message_box: MessageBox = MessageBox(self)
+    self.students: list[Biometric] = []
