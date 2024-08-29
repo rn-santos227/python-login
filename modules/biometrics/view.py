@@ -3,6 +3,8 @@ from PyQt5.QtWidgets import QWidget
 
 from components.message_box import MessageBox
 
+from modules.biometrics.model import Biometric
+
 class BiometricsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
