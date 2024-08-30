@@ -125,15 +125,18 @@ class DashboardAdminPage(QWidget):
     self.reader_content.load_logs()
     self.main_content.setCurrentWidget(self.reader_content)
 
-  def handle_scanner(self):
-    self.reader_content.clock_component.stop_clock()
-    self.scanner_content.load_students_to_combo_box()
-    self.main_content.setCurrentWidget(self.scanner_content)
-
   def handle_students(self):
     self.reader_content.clock_component.stop_clock()
     self.students_content.load_students()
     self.main_content.setCurrentWidget(self.students_content)
+
+  def handle_biometrics(self):
+    pass
+
+  def handle_scanner(self):
+    self.reader_content.clock_component.stop_clock()
+    self.scanner_content.load_students_to_combo_box()
+    self.main_content.setCurrentWidget(self.scanner_content)
 
   def handle_parents(self):
     self.reader_content.clock_component.stop_clock()
