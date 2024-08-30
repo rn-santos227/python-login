@@ -1,6 +1,8 @@
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QSpacerItem, QVBoxLayout, QWidget
 
+import modules.students.controller as students_controller
+
 from components.button import Button
 from components.combo_box import ComboBox
 from components.message_box import MessageBox
