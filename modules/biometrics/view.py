@@ -46,5 +46,6 @@ class BiometricsPage(QWidget):
       return
     
     items = [(student.full_name, student.id) for student in self.students]
+    self.student_combo_box.set_items(items)
     
     
