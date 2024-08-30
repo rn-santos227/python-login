@@ -27,3 +27,4 @@ class BiometricsPage(QWidget):
 
     content_frame.setGraphicsEffect(shadow_effect)
     
+    self.main_layout: QVBoxLayout = QVBoxLayout()
