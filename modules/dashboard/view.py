@@ -5,6 +5,7 @@ from components.button import Button
 from components.question_box import QuestionBox
 
 from modules.admin.view import AdminsPage
+from modules.biometrics.view import BiometricsPage
 from modules.logs.view import LogsPage
 from modules.parents.view import ParentsPage
 from modules.reader.view import ReaderPage

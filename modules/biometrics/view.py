@@ -29,6 +29,4 @@ class BiometricsPage(QWidget):
     
     self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
-
-    create_layout: QGridLayout = QGridLayout()
     
