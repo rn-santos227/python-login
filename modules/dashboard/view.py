@@ -58,6 +58,8 @@ class DashboardAdminPage(QWidget):
     students_button.connect_signal(self.handle_students)
     students_button.set_fixed_width(250)
 
+    biometrics_button: Button = Button("Biometrics")
+
     parents_button: Button = Button("Parents")
     parents_button.connect_signal(self.handle_parents)
     parents_button.set_fixed_width(250)
