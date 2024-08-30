@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QSpacerItem, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QSpacerItem, QVBoxLayout, QWidget
 
 from components.message_box import MessageBox
 
@@ -29,3 +29,6 @@ class BiometricsPage(QWidget):
     
     self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
+
+    create_layout: QGridLayout = QGridLayout()
+    
