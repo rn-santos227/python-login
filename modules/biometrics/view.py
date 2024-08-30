@@ -15,6 +15,7 @@ class BiometricsPage(QWidget):
     self.pages_handler = pages_handler
     self.message_box: MessageBox = MessageBox(self)
     self.biometrics: list[Biometric] = []
+    self.students: list[Student] = []
 
   def init_ui(self):
     content_frame: QFrame = QFrame(self)
