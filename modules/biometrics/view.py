@@ -40,6 +40,6 @@ class BiometricsPage(QWidget):
     self.student_combo_box: ComboBox = ComboBox(label_text="Student Names")
 
   def load_students_to_combo_box(self):
-    pass
+    self.students = students_controller.get_students("status = 'active'", "select")
     
     
