@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QHBoxLay
 from components.message_box import MessageBox
 
 from modules.biometrics.model import Biometric
+from modules.students.model import Student
 
 from assets.styles.styles import content_frame_style
 
@@ -13,7 +14,7 @@ class BiometricsPage(QWidget):
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
     self.message_box: MessageBox = MessageBox(self)
-    self.students: list[Biometric] = []
+    self.biometrics: list[Biometric] = []
 
   def init_ui(self):
     content_frame: QFrame = QFrame(self)
