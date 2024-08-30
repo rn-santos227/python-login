@@ -34,5 +34,7 @@ class BiometricsPage(QWidget):
     self.main_layout: QVBoxLayout = QVBoxLayout()
     left_content_layout: QVBoxLayout = QVBoxLayout()
     right_content_layout: QVBoxLayout = QVBoxLayout()
+
+    self.student_combo_box: ComboBox = ComboBox(label_text="Student Names")
     
     
