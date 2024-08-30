@@ -45,4 +45,6 @@ class BiometricsPage(QWidget):
     if not self.students:
       return
     
+    items = [(student.full_name, student.id) for student in self.students]
+    
     
