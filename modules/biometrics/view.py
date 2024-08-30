@@ -1,6 +1,8 @@
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QSpacerItem, QVBoxLayout, QWidget
 
+from components.button import Button
+from components.combo_box import ComboBox
 from components.message_box import MessageBox
 
 from modules.biometrics.model import Biometric
