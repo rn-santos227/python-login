@@ -46,7 +46,7 @@ class DashboardAdminPage(QWidget):
     logs_button.connect_signal(self.handle_logs)
     logs_button.set_fixed_width(250)
 
-    reader_button: Button = Button("Read Biometrics")
+    reader_button: Button = Button("Attendance Reader")
     reader_button.connect_signal(self.handle_reader)
     reader_button.set_fixed_width(250)
     
@@ -54,9 +54,9 @@ class DashboardAdminPage(QWidget):
     students_button.connect_signal(self.handle_students)
     students_button.set_fixed_width(250)
 
-    biometrics_button: Button = Button("Biometrics")
+    biometrics_button: Button = Button("Biometrics Scanner")
 
-    scanner_button: Button = Button("Save Student Face")
+    scanner_button: Button = Button("Face Scanner")
     scanner_button.connect_signal(self.handle_scanner)
     scanner_button.set_fixed_width(250)
 
