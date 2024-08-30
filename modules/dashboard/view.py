@@ -31,6 +31,7 @@ class DashboardAdminPage(QWidget):
     self.background_label.setScaledContents(True)
     
     self.admins_content: AdminsPage = AdminsPage(self)
+    self.biometrics_content: BiometricsPage = BiometricsPage(self)
     self.logs_content: LogsPage = LogsPage(self)
     self.parents_content: ParentsPage = ParentsPage(self)
     self.reader_content: ReaderPage = ReaderPage(self)
