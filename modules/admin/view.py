@@ -31,6 +31,7 @@ class AdminsPage(QWidget):
     content_layout: QVBoxLayout = QVBoxLayout(content_frame)
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
+    shadow_effect.setBlurRadius(15)
 
     self.main_layout: QVBoxLayout = QVBoxLayout()
     self.top_layout: QHBoxLayout = QHBoxLayout()
