@@ -131,7 +131,7 @@ class DashboardAdminPage(QWidget):
     self.main_content.setCurrentWidget(self.students_content)
 
   def handle_biometrics(self):
-    pass
+    self.reader_content.clock_component.stop_clock()
 
   def handle_scanner(self):
     self.reader_content.clock_component.stop_clock()
