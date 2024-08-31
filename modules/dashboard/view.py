@@ -87,6 +87,7 @@ class DashboardAdminPage(QWidget):
     main_content_frame.setObjectName("formFrame")
 
     self.main_content.addWidget(self.admins_content)
+    self.main_content.addWidget(self.biometrics_content)
     self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.parents_content)
     self.main_content.addWidget(self.reader_content)
