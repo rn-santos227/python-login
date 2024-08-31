@@ -50,7 +50,7 @@ class DashboardAdminPage(QWidget):
     reader_button.connect_signal(self.handle_reader)
     reader_button.set_fixed_width(250)
     
-    students_button: Button = Button("Students")
+    students_button: Button = Button("Students List")
     students_button.connect_signal(self.handle_students)
     students_button.set_fixed_width(250)
 
@@ -60,7 +60,7 @@ class DashboardAdminPage(QWidget):
     scanner_button.connect_signal(self.handle_scanner)
     scanner_button.set_fixed_width(250)
 
-    parents_button: Button = Button("Parents")
+    parents_button: Button = Button("Parents List")
     parents_button.connect_signal(self.handle_parents)
     parents_button.set_fixed_width(250)
 
