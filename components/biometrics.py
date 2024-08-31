@@ -16,3 +16,6 @@ class Biometrics(QWidget):
     self.layout.addWidget(self.label)
 
     self.timer = QTimer(self)
+
+  def update_frame(self):
+    pass
