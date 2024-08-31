@@ -10,6 +10,7 @@ class Biometrics(QWidget):
   def __init__(self, parent=None):
     super().__init__(parent)
     self.biometrics_handler: BiometricsHandler = BiometricsHandler()
+    self.message_box: MessageBox = MessageBox(self)
     self.init_ui()
 
   def init_ui(self):
