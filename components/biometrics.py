@@ -10,3 +10,4 @@ class Biometrics(QWidget):
 
   def init_ui(self):
     self.layout: QVBoxLayout = QVBoxLayout(self)
+    self.label = QLabel(self)
