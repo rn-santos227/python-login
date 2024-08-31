@@ -1,3 +1,4 @@
+from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget
 
 from handlers.biometrics_handler import BiometricsHandler
