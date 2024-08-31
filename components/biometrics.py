@@ -21,4 +21,8 @@ class Biometrics(QWidget):
     self.timer = QTimer(self)
 
   def update_frame(self):
-    pass
+    try:
+      fingerprint_image = self.biometrics_handler.capture_fingerprint()
+
+    except Exception as e:
+      self.message_box.show_message("Error", f"Error during fingerprint capture: {str(e)}", "error")
