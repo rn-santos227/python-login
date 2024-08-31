@@ -14,3 +14,5 @@ class Biometrics(QWidget):
     self.layout: QVBoxLayout = QVBoxLayout(self)
     self.label = QLabel(self)
     self.layout.addWidget(self.label)
+
+    self.timer = QTimer(self)
