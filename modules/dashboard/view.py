@@ -133,6 +133,7 @@ class DashboardAdminPage(QWidget):
   def handle_biometrics(self):
     self.reader_content.clock_component.stop_clock()
     self.biometrics_content.load_students_to_combo_box()
+    self.main_content.setCurrentWidget(self.biometrics_content)
 
   def handle_scanner(self):
     self.reader_content.clock_component.stop_clock()
