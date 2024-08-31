@@ -75,8 +75,9 @@ class DashboardAdminPage(QWidget):
 
     self.navigation_menu.addWidget(logs_button)
     self.navigation_menu.addWidget(reader_button)
-    self.navigation_menu.addWidget(scanner_button)
     self.navigation_menu.addWidget(students_button)
+    self.navigation_menu.addWidget(biometrics_button)
+    self.navigation_menu.addWidget(scanner_button)
     self.navigation_menu.addWidget(parents_button)
     self.navigation_menu.addWidget(users_button)
     self.navigation_menu.addWidget(logout_button)
