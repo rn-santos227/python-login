@@ -21,7 +21,12 @@ class Biometrics(QWidget):
     self.timer = QTimer(self)
 
   def start_scanner(self):
-    pass
+    try:
+      self.biometrics_handler.initialize()
+
+    except Exception as e:
+      self.message_box.show_message("Error", f"Error during fingerprint capture: {str(e)}", "error")
+    
 
   def update_frame(self):
     try:
