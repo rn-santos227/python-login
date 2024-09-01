@@ -25,6 +25,9 @@ class BiometricsHandler:
     if result != DPFPDD_SUCCESS:
       print(f"Error initializing SDK: {result}")
 
+    else:
+      print("SDK initialized successfully.")
+
   def capture_fingerprint(self):
     device = ctypes.c_void_p()
     result = self.dpfpdd.dpfpdd_open("Device1".encode('utf-8'), byref(device))
