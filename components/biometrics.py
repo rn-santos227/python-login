@@ -26,3 +26,6 @@ class Biometrics(QWidget):
 
     except Exception as e:
       self.message_box.show_message("Error", f"Error during fingerprint capture: {str(e)}", "error")
+
+  def display_image(self, img_data):
+    pass
