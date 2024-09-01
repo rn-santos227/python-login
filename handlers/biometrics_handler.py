@@ -17,8 +17,8 @@ class BiometricsHandler:
     else:
       print("SDK initialized successfully.")
 
-  def initialize():
-    pass
+  def initialize(self):
+    self.dpfj = ctypes.WinDLL(dpfj_url)
 
   def capture_fingerprint(self):
     device = ctypes.c_void_p()
