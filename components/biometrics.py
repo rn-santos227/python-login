@@ -29,3 +29,4 @@ class Biometrics(QWidget):
 
   def display_image(self, img_data):
     img = QImage.fromData(img_data)
+    pixmap = QPixmap.fromImage(img)
