@@ -55,6 +55,7 @@ class DashboardAdminPage(QWidget):
     students_button.set_fixed_width(250)
 
     biometrics_button: Button = Button("Biometrics Scanner")
+    biometrics_button.connect_signal(self.handle_biometrics)
     biometrics_button.set_fixed_width(250)
 
     scanner_button: Button = Button("Face Scanner")
