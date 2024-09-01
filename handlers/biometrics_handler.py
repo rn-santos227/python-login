@@ -20,6 +20,7 @@ class BiometricsHandler:
   def initialize(self):
     self.dpfj = ctypes.WinDLL(dpfj_url)
     self.dpfpdd = ctypes.WinDLL(dpfpdd_url) 
+    result = self.dpfpdd.dpfpdd_init()
 
   def capture_fingerprint(self):
     device = ctypes.c_void_p()
