@@ -30,3 +30,5 @@ class Biometrics(QWidget):
   def display_image(self, img_data):
     img = QImage.fromData(img_data)
     pixmap = QPixmap.fromImage(img)
+
+    self.label.setPixmap(pixmap.scaled(256, 360, aspectRatioMode=Qt.KeepAspectRatio))
