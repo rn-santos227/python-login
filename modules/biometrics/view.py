@@ -45,6 +45,7 @@ class BiometricsPage(QWidget):
     left_content_layout.addWidget(self.biometrics_component)
 
     content_layout.addLayout(left_content_layout)
+    content_layout.addLayout(right_content_layout)
 
   def load_students_to_combo_box(self):
     self.students = students_controller.get_students("status = 'active'", "select")
