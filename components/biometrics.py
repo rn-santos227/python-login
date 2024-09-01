@@ -20,6 +20,9 @@ class Biometrics(QWidget):
 
     self.timer = QTimer(self)
 
+  def start_scanner(self):
+    pass
+
   def update_frame(self):
     try:
       fingerprint_image = self.biometrics_handler.capture_fingerprint()
