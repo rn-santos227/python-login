@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QHBoxLay
 
 import modules.students.controller as students_controller
 
+from components.biometrics import Biometrics
 from components.button import Button
 from components.combo_box import ComboBox
 from components.message_box import MessageBox
