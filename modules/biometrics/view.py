@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QSpacerItem, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QSpacerItem, QVBoxLayout, QWidget
 
 import modules.students.controller as students_controller
 
@@ -40,6 +40,8 @@ class BiometricsPage(QWidget):
 
     self.student_combo_box: ComboBox = ComboBox(label_text="Student Names")
     self.biometrics_component: Biometrics = Biometrics()
+
+    left_content_layout.addWidget(self.student_combo_box)
 
   def load_students_to_combo_box(self):
     self.students = students_controller.get_students("status = 'active'", "select")
