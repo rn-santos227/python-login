@@ -12,14 +12,12 @@ from modules.reader.view import ReaderPage
 from modules.scanner.view import ScannerPage
 from modules.students.view import StudentPage
 
-from handlers.biometrics_handler import BiometricsHandler
 
 from handlers.asset_handler import AssetHandler
 
 class DashboardAdminPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
-    self.biometrics_handler: BiometricsHandler = BiometricsHandler()
     self.pages_handler = pages_handler
     self.navigation_visible = True
     self.init_ui()
@@ -34,7 +32,7 @@ class DashboardAdminPage(QWidget):
     self.background_label.setScaledContents(True)
     
     self.admins_content: AdminsPage = AdminsPage(self)
-    self.biometrics_content: BiometricsPage = BiometricsPage(self, biometrics_handler=self.biometrics_handler)
+    self.biometrics_content: BiometricsPage = BiometricsPage(self)
     self.logs_content: LogsPage = LogsPage(self)
     self.parents_content: ParentsPage = ParentsPage(self)
     self.reader_content: ReaderPage = ReaderPage(self)
