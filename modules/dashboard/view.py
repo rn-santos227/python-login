@@ -12,6 +12,8 @@ from modules.reader.view import ReaderPage
 from modules.scanner.view import ScannerPage
 from modules.students.view import StudentPage
 
+from handlers.biometrics_handler import BiometricsHandler
+
 from handlers.asset_handler import AssetHandler
 
 class DashboardAdminPage(QWidget):
