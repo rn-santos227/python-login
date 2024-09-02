@@ -14,7 +14,7 @@ from modules.students.model import Student
 from assets.styles.styles import content_frame_style
 
 class BiometricsPage(QWidget):
-  def __init__(self, pages_handler):
+  def __init__(self, pages_handler, biometrics):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
