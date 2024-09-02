@@ -23,7 +23,7 @@ class ParentsPage(QWidget):
     self.message_box: MessageBox = MessageBox(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.students = []
-    self.parents = []
+    self.parents: Parent[list] = []
     self.init_ui()
 
   def init_ui(self):
