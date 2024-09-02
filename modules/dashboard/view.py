@@ -19,6 +19,7 @@ from handlers.asset_handler import AssetHandler
 class DashboardAdminPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
+    self.biometrics_handler: BiometricsHandler = BiometricsHandler()
     self.pages_handler = pages_handler
     self.navigation_visible = True
     self.init_ui()
