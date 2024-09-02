@@ -18,9 +18,9 @@ class LoginPage(QWidget):
     self.setStyleSheet(auth_view_style)
     self.alert_message: AlertMessage = AlertMessage() 
     self.pages_handler = pages_handler
-    self.init_ui()
+    self.__init_ui()
 
-  def init_ui(self):
+  def __init_ui(self):
     main_layout: QVBoxLayout = QVBoxLayout(self)
     main_layout.setContentsMargins(0, 0, 0, 0)
     main_layout.setSpacing(0)
