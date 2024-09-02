@@ -31,8 +31,8 @@ def get_biometrics(query, action) -> list[Biometric]:
 def match_biometrics(biometric_handler: BiometricsHandler, fingerprint_1, fingerprint_2) -> bool:
   return biometric_handler.verify_fingerprints(fingerprint_1=fingerprint_1, fingerprint_2=fingerprint_2)
 
-def add_biometric():
-  biometric_handler: BiometricsHandler = BiometricsHandler()
+def add_biometric(biometric_handler: BiometricsHandler):
+  pass
 
 def remove_biometric(id) -> bool:
   where_clause = f"id = {id}"
