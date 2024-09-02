@@ -11,15 +11,12 @@ from components.message_box import MessageBox
 from modules.biometrics.model import Biometric
 from modules.students.model import Student
 
-from handlers.biometrics_handler import BiometricsHandler
-
 from assets.styles.styles import content_frame_style
 
 class BiometricsPage(QWidget):
-  def __init__(self, pages_handler, biometrics_handler):
+  def __init__(self, pages_handler):
     super().__init__()
     self.setStyleSheet(content_frame_style)
-    self.biometrics: BiometricsHandler = biometrics_handler
     self.pages_handler = pages_handler
     self.message_box: MessageBox = MessageBox(self)
     self.biometrics: list[Biometric] = []
