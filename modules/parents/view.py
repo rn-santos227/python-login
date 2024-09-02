@@ -11,7 +11,9 @@ from components.question_box import QuestionBox
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
+
 from modules.parents.model import Parent
+from modules.students.model import Student
 
 from assets.styles.styles import content_frame_style
 
