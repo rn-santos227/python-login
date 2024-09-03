@@ -26,7 +26,7 @@ class BiometricsPage(QWidget):
   def __init_ui(self):
     content_frame: QFrame = QFrame(self)
     content_frame.setObjectName("contentFrame")
-    content_layout: QVBoxLayout = QVBoxLayout(content_frame)
+    content_layout: QHBoxLayout = QHBoxLayout(content_frame)
 
     shadow_effect: QGraphicsDropShadowEffect = QGraphicsDropShadowEffect()
     shadow_effect.setBlurRadius(15)
@@ -51,7 +51,7 @@ class BiometricsPage(QWidget):
     self.table_widget.verticalHeader().setVisible(False)
 
     content_layout.addLayout(left_content_layout)
-    content_layout.addLayout( self.table_widget)
+    content_layout.addWidget( self.table_widget)
     content_layout.setContentsMargins(50, 50, 50, 50)
 
     self.main_layout.addWidget(content_frame)
