@@ -20,9 +20,9 @@ class DashboardAdminPage(QWidget):
     super().__init__()
     self.pages_handler = pages_handler
     self.navigation_visible = True
-    self.init_ui()
+    self.__init_ui()
 
-  def init_ui(self):
+  def __init_ui(self):
     main_layout: QHBoxLayout = QHBoxLayout(self)
     main_layout.setContentsMargins(0, 0, 0, 0)
     main_layout.setSpacing(0)
