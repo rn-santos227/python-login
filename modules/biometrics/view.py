@@ -47,6 +47,7 @@ class BiometricsPage(QWidget):
 
     self.table_widget: QTableWidget = QTableWidget()
     self.table_widget.setColumnCount(3)
+    self.table_widget.setHorizontalHeaderLabels(["ID", "Student Name", "Actions"])
 
     content_layout.addLayout(left_content_layout)
     content_layout.addLayout(right_content_layout)
