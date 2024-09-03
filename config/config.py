@@ -5,7 +5,7 @@ load_dotenv()
 
 app_name = os.getenv("APP_NAME")
 
-dpfpdd_url = "C:\Program Files\DigitalPersona\Bin\DPFPEngineDP.dll"
+dpfpdd_url = "C:\\Program Files\\DigitalPersona\\Bin\\DPFPEngineDP.dll"
 
 connection_params = {
   "user": os.getenv("DB_USER"),
