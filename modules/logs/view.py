@@ -17,9 +17,9 @@ class LogsPage(QWidget):
     self.pages_handler = pages_handler
     self.message_box: MessageBox = MessageBox(self)
     self.logs = []
-    self.init_ui()
+    self.__init_ui()
 
-  def init_ui(self):
+  def __init_ui(self):
     content_frame: QFrame = QFrame(self)
     content_frame.setObjectName("contentFrame")
     content_layout: QVBoxLayout = QVBoxLayout(content_frame)
