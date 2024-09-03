@@ -10,7 +10,7 @@ class BiometricsHandler:
     self.initialize()
 
   def initialize(self):
-    pass
+    dp_sdk = ctypes.CDLL(dpfpdd_url)
 
   def capture_fingerprint(self):
     pass
