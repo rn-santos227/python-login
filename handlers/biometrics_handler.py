@@ -13,6 +13,8 @@ class BiometricsHandler:
       self.dp_sdk = comtypes.client.CreateObject("DPFPDev.DPFPReader")
       status = self.dp_sdk.Status
 
+      print("Fingerprint reader initialized. Status:", status)
+
     except Exception as e:
       print(f"Error initializing fingerprint reader: {e}")
 
