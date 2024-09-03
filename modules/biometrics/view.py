@@ -35,9 +35,8 @@ class BiometricsPage(QWidget):
 
     content_frame.setGraphicsEffect(shadow_effect)
     
-    self.main_layout: QVBoxLayout = QVBoxLayout()
+    self.main_layout: QHBoxLayout = QHBoxLayout()
     left_content_layout: QVBoxLayout = QVBoxLayout()
-    right_content_layout: QVBoxLayout = QVBoxLayout()
 
     self.student_combo_box: ComboBox = ComboBox(label_text="Student Names")
     self.biometrics_component: Biometrics = Biometrics()
@@ -51,10 +50,8 @@ class BiometricsPage(QWidget):
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
     self.table_widget.verticalHeader().setVisible(False)
 
-    right_content_layout.addWidget(self.table_widget)
-
     content_layout.addLayout(left_content_layout)
-    content_layout.addLayout(right_content_layout)
+    content_layout.addLayout( self.table_widget)
     content_layout.setContentsMargins(50, 50, 50, 50)
 
     self.main_layout.addWidget(content_frame)
