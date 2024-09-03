@@ -9,7 +9,11 @@ class BiometricsHandler:
     self.initialize()
 
   def initialize(self):
-    pass
+    try:
+      self.dp_sdk = comtypes.client.CreateObject("DPFPDev.DPFPReader")
+
+    except Exception as e:
+      print(f"Error initializing fingerprint reader: {e}")
 
   def capture_fingerprint(self):
     pass
