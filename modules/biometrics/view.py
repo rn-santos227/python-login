@@ -49,7 +49,7 @@ class BiometricsPage(QWidget):
     self.table_widget.setHorizontalHeaderLabels(["ID", "Student Name", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
     self.table_widget.verticalHeader().setVisible(False)
-    self.table_widget.setFixedWidth(200)
+    self.table_widget.setFixedWidth(500)
 
     content_layout.addLayout(left_content_layout)
     content_layout.addWidget( self.table_widget)
