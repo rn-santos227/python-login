@@ -51,6 +51,8 @@ class BiometricsPage(QWidget):
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
     self.table_widget.verticalHeader().setVisible(False)
 
+    right_content_layout.addWidget(self.table_widget)
+
     content_layout.addLayout(left_content_layout)
     content_layout.addLayout(right_content_layout)
     content_layout.setContentsMargins(50, 50, 50, 50)
