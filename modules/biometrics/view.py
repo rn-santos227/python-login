@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QSpacerItem, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QSpacerItem, QTableWidget, QVBoxLayout, QWidget
 
 import modules.students.controller as students_controller
 
@@ -44,6 +44,8 @@ class BiometricsPage(QWidget):
 
     left_content_layout.addWidget(self.student_combo_box)
     left_content_layout.addWidget(self.biometrics_component)
+
+    self.table_widget: QTableWidget = QTableWidget()
 
     content_layout.addLayout(left_content_layout)
     content_layout.addLayout(right_content_layout)
