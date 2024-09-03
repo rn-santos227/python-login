@@ -26,9 +26,9 @@ class ParentsPage(QWidget):
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.students: Student[list] = []
     self.parents: Parent[list] = []
-    self.init_ui()
+    self.__init_ui()
 
-  def init_ui(self):
+  def __init_ui(self):
     content_frame: QFrame = QFrame(self)
     content_frame.setObjectName("contentFrame")
     content_layout: QVBoxLayout = QVBoxLayout(content_frame)
