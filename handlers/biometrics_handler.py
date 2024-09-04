@@ -23,7 +23,8 @@ class BiometricsHandler:
       print("SDK initialized successfully.")
 
   def capture_fingerprint(self):
-    return None
+    dpfpdd_open = self.dpfpdd.dpfpdd_open
+    dpfpdd_open.restype = ctypes.c_int
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     features_1 = (ctypes.c_ubyte * 100000)()
