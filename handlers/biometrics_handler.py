@@ -13,6 +13,7 @@ class BiometricsHandler:
     self.dpfj = ctypes.CDLL("dpfpdd.dll")
     self.dpfpdd = ctypes.CDLL("dpfpdd.dll") 
     dpfpdd_init  = self.dpfpdd.dpfpdd_init
+    dpfpdd_init.restype = ctypes.c_int
 
     if result != DPFPDD_SUCCESS:
       print(f"Error initializing SDK: {result}")
