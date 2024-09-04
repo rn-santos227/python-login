@@ -31,6 +31,10 @@ class BiometricsHandler:
     p2 = ctypes.c_void_p()
 
     result = dpfpdd_open(p1, ctypes.pointer(p2))
+    
+    if result != DPFPDD_SUCCESS:
+      print(f"Error opening device: {result}")
+      return None
 
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
