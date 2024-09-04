@@ -28,6 +28,8 @@ class BiometricsHandler:
     dpfpdd_open.argtypes = [ctypes.c_char_p, ctypes.c_void_p]
 
     p1 = ctypes.c_char_p(device_name.encode("ascii"))
+    p2 = ctypes.c_void_p()
+
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     features_1 = (ctypes.c_ubyte * 100000)()
