@@ -10,8 +10,8 @@ class BiometricsHandler:
     self.initialize()
 
   def initialize(self):
-    self.dpfj = ctypes.WinDLL(dpfj_url)
-    self.dpfpdd = ctypes.WinDLL(dpfpdd_url) 
+    self.dpfj = ctypes.CDLL(dpfj_url)
+    self.dpfpdd = ctypes.CDLL(dpfpdd_url) 
     result = self.dpfpdd.dpfpdd_init()
 
     if result != DPFPDD_SUCCESS:
