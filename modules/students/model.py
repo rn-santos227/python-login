@@ -28,6 +28,7 @@ class Student(User):
       section VARCHAR(10),
       grade VARCHAR(15),
       face_encode TEXT,
+      face_url TEXT,
       status VARCHAR(10)
     );
     '''
