@@ -10,9 +10,9 @@ class BiometricsHandler:
     self.initialize()
 
   def initialize(self):
-    self.dpfj = ctypes.CDLL(dpfj_url)
-    self.dpfpdd = ctypes.CDLL(dpfpdd_url) 
-    result = self.dpfpdd.dpfpdd_init()
+    self.dpfj = ctypes.CDLL("dpfpdd.dll")
+    self.dpfpdd = ctypes.CDLL("dpfpdd.dll") 
+    dpfpdd_init  = self.dpfpdd.dpfpdd_init
 
     if result != DPFPDD_SUCCESS:
       print(f"Error initializing SDK: {result}")
