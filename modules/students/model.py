@@ -20,7 +20,7 @@ class Student(User):
     return '''
     CREATE TABLE students (
       id INT AUTO_INCREMENT PRIMARY KEY,
-      email VARCHAR(255) UNIQUE,
+      email VARCHAR(255) UNIQUE NOT NULL,
       password VARCHAR(255),
       full_name VARCHAR(255),
       student_number VARCHAR(255) UNIQUE,
