@@ -3,6 +3,8 @@ import os
 
 load_dotenv()
 
+device_name = os.getenv("DEVICE_NAME")
+
 app_name = os.getenv("APP_NAME")
 
 connection_params = {
