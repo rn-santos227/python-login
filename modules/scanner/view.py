@@ -13,6 +13,8 @@ from components.combo_box import ComboBox
 from components.message_box import MessageBox
 from components.webcam import Webcam
 
+from handlers.face_handler import FaceHandler
+
 from modules.students.model import Student
 
 from assets.styles.styles import content_frame_style
@@ -22,7 +24,8 @@ class ScannerPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
-    self.message_box = MessageBox(self)
+    self.face_handler: FaceHandler = FaceHandler()
+    self.message_box: MessageBox = MessageBox(self)
     self.students: list[Student] = []
     self.__init_ui()
 
