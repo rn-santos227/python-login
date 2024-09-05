@@ -130,6 +130,9 @@ def add_face_encode(student: Student) -> Student:
     cursor.close()
 
 def add_face_url(student: Student) -> Student:
+  set_clause = (
+    f"face_url = '{student.face_url}'"
+  )
   return student
 
 def update_student(student: Student) -> Student:
