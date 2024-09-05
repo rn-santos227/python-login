@@ -135,6 +135,8 @@ def add_face_url(student: Student) -> Student:
   )
   where_clause = f"id = {student.id}"
   sql_query = builder(__table, f"{set_clause} WHERE {where_clause}", "update")
+  connection = DB.connect_db()
+  
   return student
 
 def update_student(student: Student) -> Student:
