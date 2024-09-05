@@ -139,6 +139,7 @@ def add_face_url(student: Student) -> Student:
   cursor = connection.cursor()
 
   try:
+    cursor.execute(sql_query)
     return student
 
   except Exception as e:
