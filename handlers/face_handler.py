@@ -7,3 +7,4 @@ class FaceHandler:
 
   def save_face(self, image_data, student_id):
     image_filename = f"{student_id}_face.png"
+    image_path = os.path.join(self.documents_folder, image_filename)
