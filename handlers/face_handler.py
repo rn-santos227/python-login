@@ -6,3 +6,6 @@ class FaceHandler:
     
     if not os.path.exists(self.documents_folder):
       os.makedirs(self.documents_folder)
+
+  def save_face(self, image_data):
+    pass
