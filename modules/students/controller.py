@@ -140,6 +140,7 @@ def add_face_url(student: Student) -> Student:
 
   try:
     cursor.execute(sql_query)
+    connection.commit()
     return student
 
   except Exception as e:
