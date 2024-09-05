@@ -133,6 +133,7 @@ def add_face_url(student: Student) -> Student:
   set_clause = (
     f"face_url = '{student.face_url}'"
   )
+  where_clause = f"id = {student.id}"
   return student
 
 def update_student(student: Student) -> Student:
