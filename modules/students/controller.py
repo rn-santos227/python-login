@@ -129,6 +129,9 @@ def add_face_encode(student: Student) -> Student:
   finally:
     cursor.close()
 
+def add_face_url(student: Student) -> Student:
+  return student
+
 def update_student(student: Student) -> Student:
   set_clause = (
     f"email = '{student.email}', "
