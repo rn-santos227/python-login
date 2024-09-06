@@ -13,4 +13,4 @@ class PopupDialog(QWidget):
     self.setLayout(self.layout)
 
     self.image_label = QLabel(self)
-    
+    pixmap = QPixmap(student.face_url)
