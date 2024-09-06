@@ -5,4 +5,4 @@ class PopupDialog(QWidget):
     super().__init__(parent)
 
   def init_ui(self):
-    pass
+    self.setWindowTitle("Information")
