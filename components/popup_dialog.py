@@ -11,3 +11,5 @@ class PopupDialog(QWidget):
     self.setWindowTitle("Information")
     self.layout = QVBoxLayout()
     self.setLayout(self.layout)
+
+    self.image_label = QLabel(self)
