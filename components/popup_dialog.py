@@ -19,3 +19,5 @@ class PopupDialog(QWidget):
     self.image_label.setPixmap(pixmap)
     self.image_label.setFixedSize(100, 100)
     self.image_label.setStyleSheet(image_label_style)
+
+    self.form_layout = QVBoxLayout()
