@@ -109,7 +109,7 @@ class ScannerPage(QWidget):
       face_locations = face_recognition.face_locations(image_array)
       face_encodings = face_recognition.face_encodings(image_array, face_locations)
 
-      face_url = self.face_handler.save_face(image_data=frame, student_id=student.student_number)
+      student.face_url = self.face_handler.save_face(image_data=frame, student_id=student.student_number)
 
       if face_encodings:
         face_encode = face_encodings[0]
