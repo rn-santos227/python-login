@@ -7,3 +7,4 @@ class PopupDialog(QWidget):
 
   def init_ui(self):
     self.setWindowTitle("Information")
+    self.layout = QVBoxLayout()
