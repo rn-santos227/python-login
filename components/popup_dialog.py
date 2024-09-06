@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QLabel, QWidget
+from PyQt5.QtWidgets import QApplication, QFrame, QLabel, QHBoxLayout, QPushButton, QVBoxLayout, QWidget
 
 class PopupDialog(QWidget):
   def __init__(self, parent=None):
