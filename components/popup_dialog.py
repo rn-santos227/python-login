@@ -3,6 +3,8 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QApplication, QFrame, QLabel, QHBoxLayout, QPushButton, QVBoxLayout, QWidget
 
 from modules.students.model import Student
+
+from assets.styles.styles import image_label_style
 class PopupDialog(QWidget):
   def __init__(self, parent=None):
     super().__init__(parent)
