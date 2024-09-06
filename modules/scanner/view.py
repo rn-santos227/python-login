@@ -109,13 +109,12 @@ class ScannerPage(QWidget):
       face_locations = face_recognition.face_locations(image_array)
       face_encodings = face_recognition.face_encodings(image_array, face_locations)
 
-      student.face_url = self.face_handler.save_face(image_data=frame, student_id=student.student_number)
-
       if face_encodings:
         face_encode = face_encodings[0]
         student.face_encode = json.dumps(face_encode.tolist())
-
         students_controller.add_face_encode(student=student)
+        
+        student.face_url = self.face_handler.save_face(image_data=frame, student_id=student.student_number)
         self.message_box.show_message("Success", f"Face has been captured and saved to database.", "Information")
   
   def __enable_capture(self):
