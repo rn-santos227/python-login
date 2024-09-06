@@ -18,3 +18,4 @@ class PopupDialog(QWidget):
     pixmap = QPixmap(student.face_url)
     self.image_label.setPixmap(pixmap)
     self.image_label.setFixedSize(100, 100)
+    self.image_label.setStyleSheet(image_label_style)
