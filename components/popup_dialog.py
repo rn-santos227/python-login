@@ -32,4 +32,5 @@ class PopupDialog(QWidget):
 
     self.course_label: QLabel= QLabel("Student Course:")
     self.course_input: QLineEdit = QLineEdit()
+    self.course_input.setReadOnly(True) 
     
