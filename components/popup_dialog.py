@@ -35,4 +35,5 @@ class PopupDialog(QWidget):
     self.course_input.setReadOnly(True) 
     self.course_input.setText(student.course)
     self.form_layout.addWidget(self.course_label)
+    self.form_layout.addWidget(self.course_input)
     
