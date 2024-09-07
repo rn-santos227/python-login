@@ -273,7 +273,7 @@ class StudentPage(QWidget):
     self.update_student_number_field.set_text(student.student_number)
     self.update_contact_field.set_text(student.contact_number)
     self.update_section_field.set_text(student.section)
-    self.update_grade_field.set_text(student.grade)
+    self.update_course_field.set_text(student.course)
     
   def __switch_to_update_layout(self):
     while self.top_layout.count():
