@@ -301,7 +301,7 @@ class StudentPage(QWidget):
     self.contact_field.clear_text()
     self.student_number_field.clear_text()
     self.section_field.clear_text()
-    self.grade_field.clear_text()
+    self.course_field.clear_text()
 
   def __clear_layout(self, layout: QLayout):
     while layout.count():
