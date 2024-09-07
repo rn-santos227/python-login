@@ -107,7 +107,7 @@ class StudentPage(QWidget):
     self.update_contact_field: TextField = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
     self.update_student_number_field: TextField = TextField(label_text="Student Number", placeholder_text="Enter student number.")
     self.update_section_field: TextField = TextField(label_text="Student Section", placeholder_text="Enter student section.")
-    self.update_grade_field: TextField = TextField(label_text="Student Grade", placeholder_text="Enter student grade.")
+    self.update_course_field: TextField = TextField(label_text="Student Course", placeholder_text="Enter student course.")
 
     update_button: Button = Button("Update Student")
     update_button.connect_signal(self.update_student)
@@ -123,7 +123,7 @@ class StudentPage(QWidget):
     field_layout_1.addWidget(self.update_student_number_field)
 
     field_layout_2.addWidget(self.update_section_field)
-    field_layout_2.addWidget(self.update_grade_field)
+    field_layout_2.addWidget(self.update_course_field)
 
     update_layout.addWidget(self.update_email_field, 0, 0, 1, 2)
     update_layout.addWidget(self.update_password_field, 1, 0, 1, 2)
