@@ -141,7 +141,7 @@ class StudentPage(QWidget):
     contact_number = self.contact_field.get_text()
     student_number = self.student_number_field.get_text()
     section = self.section_field.get_text()
-    grade =  self.grade_field.get_text()
+    course =  self.course_field.get_text()
 
     fields_to_validate = [
       (self.validation_handler.is_valid_email, email, "Invalid email address."),
@@ -150,7 +150,7 @@ class StudentPage(QWidget):
       (self.validation_handler.is_not_empty, contact_number, "Contact number cannot be empty."),
       (self.validation_handler.is_not_empty, student_number, "Student number cannot be empty."),
       (self.validation_handler.is_not_empty, section, "Section cannot be empty."),
-      (self.validation_handler.is_not_empty, grade, "Grade cannot be empty."),
+      (self.validation_handler.is_not_empty, course, "Course cannot be empty."),
       (self.validation_handler.is_unique_student_email, email, "Email must be unique."),
       (self.validation_handler.is_unique_student_number, student_number, "Student Number must be unique.")
     ]
@@ -165,7 +165,7 @@ class StudentPage(QWidget):
       contact_number = contact_number,
       student_number = student_number,
       section = section,
-      grade = grade,
+      course = course,
       status = "active"
     )
 
