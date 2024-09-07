@@ -1,6 +1,6 @@
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QApplication, QFrame, QLabel, QHBoxLayout, QPushButton, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QApplication, QFrame, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 
 from modules.students.model import Student
 from modules.logs.model import Log
@@ -23,4 +23,4 @@ class PopupDialog(QWidget):
 
     self.form_layout: QVBoxLayout = QVBoxLayout()
 
-    self.name_label: QLabel= QLabel("Name:")
+    self.name_label: QLabel= QLabel("Student Name:")
