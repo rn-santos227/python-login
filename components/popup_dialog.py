@@ -29,4 +29,6 @@ class PopupDialog(QWidget):
     self.name_input.setText(student.full_name)
     self.form_layout.addWidget(self.name_label)
     self.form_layout.addWidget(self.name_input)
+
+    self.name_label: QLabel= QLabel("Student Course:")
     
