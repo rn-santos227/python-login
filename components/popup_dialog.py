@@ -25,3 +25,5 @@ class PopupDialog(QWidget):
 
     self.name_label: QLabel= QLabel("Student Name:")
     self.name_input: QLineEdit = QLineEdit()
+    self.name_input.setReadOnly(True) 
+    self.form_layout.addWidget(self.name_label)
