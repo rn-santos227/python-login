@@ -92,13 +92,13 @@ def get_students(query, action) -> list[Student]:
     cursor.close()
 
 def create_student(student: Student) -> Student:
-  columns = "(email, password, full_name, student_number, contact_number, section, grade, status)"
+  columns = "(email, password, full_name, student_number, contact_number, section, course, status)"
   sql_query = builder(__table, f"{columns} VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", "insert")
   connection = DB.connect_db()
   cursor = connection.cursor()
   
   try:
-    values = (student.email, student.password, student.full_name, student.student_number, student.contact_number, student.section, student.grade, student.status)
+    values = (student.email, student.password, student.full_name, student.student_number, student.contact_number, student.section, student.course, student.status)
     cursor.execute(sql_query, values)
     connection.commit()
     return student
@@ -157,7 +157,7 @@ def update_student(student: Student) -> Student:
     f"student_number = '{student.student_number}', "
     f"contact_number = '{student.contact_number}', "
     f"section = '{student.section}', "
-    f"grade = '{student.grade}', "
+    f"course = '{student.course}', "
     f"status = 'active'"
   )
   where_clause = f"id = {student.id}"
