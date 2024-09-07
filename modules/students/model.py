@@ -1,13 +1,13 @@
 from modules.users.model import User
 
 class Student(User):
-  def __init__(self, id=None, email=None, password=None, full_name=None, student_number=None, contact_number=None, section=None, grade=None, face_encode=None, face_url=None, status=None):
+  def __init__(self, id=None, email=None, password=None, full_name=None, student_number=None, contact_number=None, section=None, course=None, face_encode=None, face_url=None, status=None):
     super().__init__(id, email, password)
     self.full_name = full_name
     self.student_number = student_number
     self.contact_number = contact_number
     self.section = section
-    self.grade = grade
+    self.course = course
     self.face_encode = face_encode
     self.face_url = face_url
     self.status = status
@@ -27,7 +27,7 @@ class Student(User):
       student_number VARCHAR(255) UNIQUE NOT NULL,
       contact_number VARCHAR(25) NOT NULL,
       section VARCHAR(10) NOT NULL,
-      grade VARCHAR(15) NOT NULL,
+      course VARCHAR(15) NOT NULL,
       face_encode TEXT,
       face_url TEXT,
       status VARCHAR(10)
