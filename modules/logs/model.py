@@ -33,7 +33,7 @@ class Log:
     '''
   
 class StudentLog:
-  def __init__(self, log_id, student_id, login_time, logout_time, date, email, full_name, contact_number, section, grade, face_url):
+  def __init__(self, log_id, student_id, login_time, logout_time, date, email, full_name, contact_number, section, course, face_url):
     self.log_id = log_id
     self.student_id = student_id
     self.login_time = login_time
@@ -43,5 +43,5 @@ class StudentLog:
     self.full_name = full_name
     self.contact_number = contact_number
     self.section = section
-    self.grade = grade
+    self.course = course
     self.face_url = face_url
