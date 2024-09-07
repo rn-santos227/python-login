@@ -21,3 +21,5 @@ class PopupDialog(QWidget):
     self.image_label.setStyleSheet(image_label_style)
 
     self.form_layout: QVBoxLayout = QVBoxLayout()
+
+    self.name_label: QLabel= QLabel("Name:")
