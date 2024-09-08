@@ -47,5 +47,7 @@ class PopupDialog(QWidget):
     self.time_layout.addWidget(self.time_input)
     self.form_layout.addLayout(self.time_layout)
 
-    self.close_button = QPushButton("Close")
+    self.close_button: QPushButton = QPushButton("Close")
+
+    self.image_and_form_layout: QHBoxLayout = QHBoxLayout()
     
