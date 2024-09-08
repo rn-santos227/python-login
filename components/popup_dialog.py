@@ -1,6 +1,6 @@
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QApplication, QFrame, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 
 from modules.students.model import Student
 from modules.logs.model import Log
@@ -55,4 +55,6 @@ class PopupDialog(QWidget):
 
     self.layout.addLayout(self.image_and_form_layout)
     self.layout.addWidget(self.close_button)
+
+    self.setStyleSheet(popup_dialog_style)
     
