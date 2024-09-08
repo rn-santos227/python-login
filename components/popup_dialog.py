@@ -10,6 +10,7 @@ class PopupDialog(QWidget):
   def __init__(self, parent=None, log: Log = None, student: Student = None):
     super().__init__(parent)
     self.log = log
+    self.student = student
 
   def init_ui(self, log: Log, student: Student):
     self.setWindowTitle("Information")
