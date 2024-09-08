@@ -41,4 +41,5 @@ class PopupDialog(QWidget):
     self.form_layout.addWidget(self.course_input)
 
     self.time_layout: QHBoxLayout = QHBoxLayout()
+    self.time_label = QLabel("Time:")
     
