@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QApplication, QFrame, QHBoxLayout, QLabel, QLineEdit
 from modules.students.model import Student
 from modules.logs.model import Log
 
-from assets.styles.styles import image_label_style
+from assets.styles.styles import image_label_style, popup_dialog_style
 class PopupDialog(QWidget):
   def __init__(self, parent=None, log: Log = None, student: Student = None):
     super().__init__(parent)
