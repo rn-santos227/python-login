@@ -60,5 +60,5 @@ class PopupDialog(QWidget):
     self.setGeometry(300, 300, 400, 200)
 
   def close_popup(self):
-    pass
+    self.close()
     
