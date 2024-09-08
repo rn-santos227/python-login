@@ -9,6 +9,7 @@ from assets.styles.styles import image_label_style
 class PopupDialog(QWidget):
   def __init__(self, parent=None, log: Log = None, student: Student = None):
     super().__init__(parent)
+    self.log = log
 
   def init_ui(self, log: Log, student: Student):
     self.setWindowTitle("Information")
