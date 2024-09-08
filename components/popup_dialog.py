@@ -58,4 +58,7 @@ class PopupDialog(QWidget):
 
     self.setStyleSheet(popup_dialog_style)
     self.setGeometry(300, 300, 400, 200)
+
+  def close_popup(self):
+    pass
     
