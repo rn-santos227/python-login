@@ -54,4 +54,5 @@ class PopupDialog(QWidget):
     self.image_and_form_layout.addLayout(self.form_layout)
 
     self.layout.addLayout(self.image_and_form_layout)
+    self.layout.addWidget(self.close_button)
     
