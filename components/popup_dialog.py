@@ -7,7 +7,7 @@ from modules.logs.model import Log
 
 from assets.styles.styles import image_label_style
 class PopupDialog(QWidget):
-  def __init__(self, parent=None):
+  def __init__(self, parent=None, log: Log = None):
     super().__init__(parent)
 
   def init_ui(self, log: Log, student: Student):
