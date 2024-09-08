@@ -52,4 +52,6 @@ class PopupDialog(QWidget):
     self.image_and_form_layout: QHBoxLayout = QHBoxLayout()
     self.image_and_form_layout.addWidget(self.image_label)
     self.image_and_form_layout.addLayout(self.form_layout)
+
+    self.layout.addLayout(self.image_and_form_layout)
     
