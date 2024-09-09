@@ -13,6 +13,7 @@ from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QLabel, QHBoxLayo
 
 from components.clock import Clock
 from components.button import Button
+from components.popup_dialog import PopupDialog
 from components.message_box import MessageBox
 from components.webcam import Webcam
 
