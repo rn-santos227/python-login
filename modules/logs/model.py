@@ -24,7 +24,7 @@ class Log:
     return '''
     CREATE TABLE logs (
       id INT AUTO_INCREMENT PRIMARY KEY,
-      student_id INT,
+      student_id INT NOT NULL,
       login_time DATETIME,
       logout_time DATETIME,
       date DATE,
