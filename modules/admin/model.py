@@ -15,7 +15,7 @@ class Admin(User):
     return '''
     CREATE TABLE admins (
       id INT AUTO_INCREMENT PRIMARY KEY,
-      full_name VARCHAR(255),
+      full_name VARCHAR(255) NOT NULL,
       email VARCHAR(255) UNIQUE,
       password VARCHAR(255),
       status VARCHAR(10)
