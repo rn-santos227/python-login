@@ -3,7 +3,6 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 
 from modules.students.model import Student
-from modules.logs.model import Log
 
 from assets.styles.styles import image_label_style, popup_dialog_style
 class PopupDialog(QWidget):
@@ -13,7 +12,7 @@ class PopupDialog(QWidget):
     self.student = student
     self.init_ui(log=log, student=student)
 
-  def init_ui(self, log: Log, student: Student):
+  def init_ui(self, student: Student, logged: str):
     self.setWindowTitle("Information")
     self.layout: QVBoxLayout = QVBoxLayout()
     self.setLayout(self.layout)
