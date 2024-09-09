@@ -85,7 +85,7 @@ class ReaderPage(QWidget):
     self.date_label.setAlignment(Qt.AlignCenter)
     self.date_label.setStyleSheet(date_label_style)
     
-    clock_center_layout = QHBoxLayout()
+    clock_center_layout: QHBoxLayout = QHBoxLayout()
     clock_center_layout.addItem(left_spacer)
     clock_center_layout.addWidget(self.clock_component)
     clock_center_layout.addItem(right_spacer)
