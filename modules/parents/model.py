@@ -18,7 +18,7 @@ class Parent:
     return '''
     CREATE TABLE parents (
       id INT AUTO_INCREMENT PRIMARY KEY,
-      student_id INT,
+      student_id INT NOT NULL,
       full_name VARCHAR(255),
       email VARCHAR(255),
       contact VARCHAR(25),
