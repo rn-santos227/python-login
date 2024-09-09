@@ -27,7 +27,7 @@ class Log:
       student_id INT NOT NULL,
       login_time DATETIME,
       logout_time DATETIME,
-      date DATE,
+      date DATE NOT NULL,
       CONSTRAINT log_student FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''
