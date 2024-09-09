@@ -8,7 +8,7 @@ from assets.styles.styles import image_label_style, popup_dialog_style
 class PopupDialog(QWidget):
   def __init__(self, parent=None, student: Student = None, logged: str = ""):
     super().__init__(parent)
-    self.log = logged
+    self.logged = logged
     self.student = student
     self.init_ui()
 
@@ -42,7 +42,7 @@ class PopupDialog(QWidget):
     self.time_layout: QHBoxLayout = QHBoxLayout()
     self.time_label: QLabel = QLabel("Time:")
     self.time_input: QLineEdit = QLineEdit()
-    self.time_input.setReadOnly(True) 
+    self.time_input.setReadOnly(True)
     self.time_layout.addWidget(self.time_label)
     self.time_layout.addWidget(self.time_input)
     self.form_layout.addLayout(self.time_layout)
