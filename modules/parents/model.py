@@ -21,7 +21,7 @@ class Parent:
       student_id INT NOT NULL,
       full_name VARCHAR(255) NOT NULL,
       email VARCHAR(255) NOT NULL,
-      contact VARCHAR(25),
+      contact VARCHAR(25) NOT NULL,
       CONSTRAINT parent_student FOREIGN KEY (student_id) REFERENCES students(id)
     );
     '''
