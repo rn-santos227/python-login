@@ -19,7 +19,7 @@ class Parent:
     CREATE TABLE parents (
       id INT AUTO_INCREMENT PRIMARY KEY,
       student_id INT NOT NULL,
-      full_name VARCHAR(255),
+      full_name VARCHAR(255) NOT NULL,
       email VARCHAR(255),
       contact VARCHAR(25),
       CONSTRAINT parent_student FOREIGN KEY (student_id) REFERENCES students(id)
