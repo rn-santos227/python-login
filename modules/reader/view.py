@@ -177,6 +177,7 @@ class ReaderPage(QWidget):
           self.__send_sms_to_parents(student, message=logout_message)
 
           popup_dialog: PopupDialog = PopupDialog(student=student, log=log)
+          popup_dialog.show()
 
         return
     self.message_box.show_message("Information", "No match has been found.", "information")
