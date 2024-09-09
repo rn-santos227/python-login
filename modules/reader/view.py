@@ -173,10 +173,10 @@ class ReaderPage(QWidget):
           send_email(student.email, message=logout_message)
           self.__send_sms_to_parents(student, message=logout_message)
 
-          popup_dialog: PopupDialog = PopupDialog(student=student, logged=formatted_date_time)
-          popup_dialog.show()
-
+        popup_dialog: PopupDialog = PopupDialog(student=student, logged=formatted_date_time)
+        popup_dialog.show()
         return
+      
     self.message_box.show_message("Information", "No match has been found.", "information")
 
   def __enable_capture(self):
