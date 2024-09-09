@@ -161,6 +161,7 @@ class ReaderPage(QWidget):
           self.__send_sms_to_parents(student, message=login_message)
 
           popup_dialog: PopupDialog = PopupDialog(student=student, log=log)
+          popup_dialog.show()
 
         else:
           if log.logout_time is not None:
