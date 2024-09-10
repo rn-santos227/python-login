@@ -39,6 +39,8 @@ def get_biometrics_with_students(query) -> list[StudentBiometrics]:
     cursor.execute(sql_query)
     rows = cursor.fetchall()
 
+    student_biometrics: list[StudentBiometrics] = []
+
   except Exception as e:
     print(f"Error: {e}")
 
