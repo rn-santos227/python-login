@@ -33,6 +33,7 @@ def get_biometrics_with_students(query) -> list[StudentBiometrics]:
   columns = f"{__table}.id as biometrics_id, {__table}.student_id, students.email, students.full_name, students.course"
   sql_query = join_builder(table1=__table, table2="students", join_condition=condition, columns=columns, query=query)
   connection = DB.connect_db()
+  cursor = connection.cursor()
 
 def match_biometrics(biometric_handler: BiometricsHandler, fingerprint_1, fingerprint_2) -> bool:
   return biometric_handler.verify_fingerprints(fingerprint_1=fingerprint_1, fingerprint_2=fingerprint_2)
