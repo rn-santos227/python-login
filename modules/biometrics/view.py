@@ -68,5 +68,8 @@ class BiometricsPage(QWidget):
     
     items = [(student.full_name, student.id) for student in self.students]
     self.student_combo_box.set_items(items)
+
+  def load_biometrics(self):
+    pass
     
     
