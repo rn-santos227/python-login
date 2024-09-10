@@ -14,6 +14,7 @@ class PopupDialog(QWidget):
 
     self.timer: QTimer = QTimer(self)
     self.timer.timeout.connect(self.close_popup)
+    self.timer.start(3000)
 
   def init_ui(self):
     self.setWindowTitle("Information")
