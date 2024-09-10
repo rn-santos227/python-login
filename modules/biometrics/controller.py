@@ -1,6 +1,6 @@
 import config.database as DB
 
-from database.query import builder
+from database.query import builder, join_builder
 
 from handlers.biometrics_handler import BiometricsHandler
 
