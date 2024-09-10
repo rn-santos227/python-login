@@ -28,6 +28,9 @@ def get_biometrics(query, action) -> list[Biometric]:
   finally:
     cursor.close()
 
+def get_biometrics_with_students() -> list[StudentBiometrics]:
+  pass
+
 def match_biometrics(biometric_handler: BiometricsHandler, fingerprint_1, fingerprint_2) -> bool:
   return biometric_handler.verify_fingerprints(fingerprint_1=fingerprint_1, fingerprint_2=fingerprint_2)
 
