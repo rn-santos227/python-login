@@ -30,6 +30,7 @@ def get_biometrics(query, action) -> list[Biometric]:
 
 def get_biometrics_with_students() -> list[StudentBiometrics]:
   condition = f"{__table}.student_id = students.id"
+  columns = f"{__table}.id as biometrics_id, {__table}.student_id, students.email, students.full_name, students.course"
 
 def match_biometrics(biometric_handler: BiometricsHandler, fingerprint_1, fingerprint_2) -> bool:
   return biometric_handler.verify_fingerprints(fingerprint_1=fingerprint_1, fingerprint_2=fingerprint_2)
