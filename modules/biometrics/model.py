@@ -20,4 +20,8 @@ class Biometric():
       fingerprint_data BLOB NOT NULL,
       CONSTRAINT student_biometric FOREIGN KEY (student_id) REFERENCES students(id)
     );
-    '''  
+    '''
+  
+class StudentBiometrics:
+  def __init__(self):
+    pass
