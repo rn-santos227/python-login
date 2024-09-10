@@ -4,7 +4,7 @@ from database.query import builder, join_builder
 
 from handlers.biometrics_handler import BiometricsHandler
 
-from modules.biometrics.model import Biometric
+from modules.biometrics.model import Biometric, StudentBiometrics
 
 __table = "biometrics"
 
