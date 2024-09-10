@@ -23,5 +23,5 @@ class Biometric():
     '''
   
 class StudentBiometrics:
-  def __init__(self):
-    pass
+  def __init__(self, biometrics_id):
+    self.biometrics_id = biometrics_id
