@@ -12,6 +12,8 @@ class PopupDialog(QWidget):
     self.student = student
     self.init_ui()
 
+    self.timer = QTimer(self)
+
   def init_ui(self):
     self.setWindowTitle("Information")
     self.layout: QVBoxLayout = QVBoxLayout()
