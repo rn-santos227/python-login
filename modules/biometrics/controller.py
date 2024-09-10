@@ -41,6 +41,9 @@ def get_biometrics_with_students(query) -> list[StudentBiometrics]:
   except Exception as e:
     print(f"Error: {e}")
 
+  finally:
+    cursor.close()
+
 def match_biometrics(biometric_handler: BiometricsHandler, fingerprint_1, fingerprint_2) -> bool:
   return biometric_handler.verify_fingerprints(fingerprint_1=fingerprint_1, fingerprint_2=fingerprint_2)
 
