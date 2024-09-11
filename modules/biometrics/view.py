@@ -88,6 +88,7 @@ class BiometricsPage(QWidget):
 
       button_layout: QHBoxLayout = QHBoxLayout()
       button_layout.addWidget(delete_button)
+      button_layout.setContentsMargins(0, 0, 0, 0)
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
