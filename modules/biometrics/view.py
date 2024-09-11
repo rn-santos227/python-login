@@ -70,5 +70,7 @@ class BiometricsPage(QWidget):
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
+    if not self.biometrics:
+      return
     
     
