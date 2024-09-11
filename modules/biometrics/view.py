@@ -82,6 +82,7 @@ class BiometricsPage(QWidget):
       self.table_widget.insertRow(row_position)
 
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(biometric.biometrics_id)))
+      self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(biometric.full_name)))
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
