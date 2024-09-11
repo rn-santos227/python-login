@@ -42,6 +42,8 @@ class BiometricsPage(QWidget):
     self.student_combo_box: ComboBox = ComboBox(label_text="Student Names")
     self.biometrics_component: Biometrics = Biometrics()
 
+    self.biometrics_button: Button = Button("Start Fingerprint Reader")
+
     left_content_layout.addWidget(self.student_combo_box)
     left_content_layout.addWidget(self.biometrics_component)
 
@@ -53,7 +55,7 @@ class BiometricsPage(QWidget):
     self.table_widget.setFixedWidth(500)
 
     content_layout.addLayout(left_content_layout)
-    content_layout.addWidget( self.table_widget)
+    content_layout.addWidget(self.table_widget)
     content_layout.setContentsMargins(50, 50, 50, 50)
 
     self.main_layout.addWidget(content_frame)
