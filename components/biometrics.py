@@ -25,7 +25,6 @@ class Biometrics(QWidget):
 
   def start_scanner(self):
     try:
-      self.biometrics_handler.initialize()
       self.timer.start(1000) 
 
     except Exception as e:
