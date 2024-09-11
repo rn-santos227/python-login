@@ -8,7 +8,7 @@ from components.button import Button
 from components.combo_box import ComboBox
 from components.message_box import MessageBox
 
-from modules.biometrics.model import Biometric
+from modules.biometrics.model import Biometric, StudentBiometrics
 from modules.students.model import Student
 
 from assets.styles.styles import content_frame_style
@@ -19,7 +19,7 @@ class BiometricsPage(QWidget):
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
     self.message_box: MessageBox = MessageBox(self)
-    self.biometrics: list[Biometric] = []
+    self.biometrics: list[StudentBiometrics] = []
     self.students: list[Student] = []
     self.__init_ui()
 
