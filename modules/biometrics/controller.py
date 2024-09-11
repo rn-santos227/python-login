@@ -43,6 +43,7 @@ def get_biometrics_with_students(query) -> list[StudentBiometrics]:
     student_biometrics: list[StudentBiometrics] = []
     for row in rows:
       biometric: StudentBiometrics = StudentBiometrics(*row)
+      student_biometrics.append(biometric)
 
   except Exception as e:
     print(f"Error: {e}")
