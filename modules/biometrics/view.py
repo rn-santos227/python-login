@@ -58,8 +58,6 @@ class BiometricsPage(QWidget):
     self.main_layout.addWidget(content_frame)
     self.setLayout(self.main_layout)
 
-    self.biometrics_component.start_scanner()
-
   def load_students_to_combo_box(self):
     self.students = students_controller.get_students("status = 'active'", "select")
 
