@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QHeaderView, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QHeaderView, QPushButton, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
 import modules.biometrics.controller as biometrics_controller
 import modules.students.controller as students_controller
@@ -83,6 +83,8 @@ class BiometricsPage(QWidget):
 
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(biometric.biometrics_id)))
       self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(biometric.full_name)))
+
+      delete_button: QPushButton = QPushButton("Delete")
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
