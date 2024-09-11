@@ -8,6 +8,8 @@ from components.date_field import DateField
 from components.message_box import MessageBox
 from components.question_box import QuestionBox
 
+from modules.logs.model import StudentLog
+
 from assets.styles.styles import content_frame_style
 
 class LogsPage(QWidget):
