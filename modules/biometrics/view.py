@@ -75,5 +75,6 @@ class BiometricsPage(QWidget):
     
     for biometric in self.biometrics:
       row_position = self.table_widget.rowCount()
+      self.table_widget.insertRow(row_position)
     
     
