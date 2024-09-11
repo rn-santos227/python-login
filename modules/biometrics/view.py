@@ -73,4 +73,7 @@ class BiometricsPage(QWidget):
     if not self.biometrics:
       return
     
+    for biometric in self.biometrics:
+      row_position = self.table_widget.rowCount()
+    
     
