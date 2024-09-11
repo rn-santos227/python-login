@@ -26,7 +26,7 @@ class Student(User):
       full_name VARCHAR(255) NOT NULL,
       student_number VARCHAR(255) UNIQUE NOT NULL,
       contact_number VARCHAR(25) NOT NULL,
-      section VARCHAR(10) NOT NULL,
+      section VARCHAR(20) NOT NULL,
       course VARCHAR(255) NOT NULL,
       face_encode TEXT,
       face_url TEXT,
