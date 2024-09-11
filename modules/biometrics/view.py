@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QHeaderView, QSpacerItem, QTableWidget, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QHeaderView, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
 import modules.biometrics.controller as biometrics_controller
 import modules.students.controller as students_controller
@@ -76,5 +76,6 @@ class BiometricsPage(QWidget):
     for biometric in self.biometrics:
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
+
     
     
