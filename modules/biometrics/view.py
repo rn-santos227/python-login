@@ -1,6 +1,7 @@
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QHeaderView, QSpacerItem, QTableWidget, QVBoxLayout, QWidget
 
+import modules.biometrics.controller as biometrics_controller
 import modules.students.controller as students_controller
 
 from components.biometrics import Biometrics
