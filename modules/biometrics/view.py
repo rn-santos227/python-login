@@ -93,6 +93,8 @@ class BiometricsPage(QWidget):
       button_widget: QWidget = QWidget()
       button_widget.setLayout(button_layout)
 
+      self.table_widget.setCellWidget(row_position, 4, button_widget)
+
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
 
