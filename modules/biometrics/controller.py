@@ -44,6 +44,7 @@ def get_biometrics_with_students(query) -> list[StudentBiometrics]:
     for row in rows:
       biometric: StudentBiometrics = StudentBiometrics(*row)
       student_biometrics.append(biometric)
+    return student_biometrics
 
   except Exception as e:
     print(f"Error: {e}")
