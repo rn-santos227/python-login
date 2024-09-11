@@ -18,7 +18,7 @@ class LogsPage(QWidget):
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
     self.message_box: MessageBox = MessageBox(self)
-    self.logs: StudentLog = []
+    self.logs: list[StudentLog] = []
     self.__init_ui()
 
   def __init_ui(self):
