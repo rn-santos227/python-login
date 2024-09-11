@@ -47,6 +47,7 @@ class BiometricsPage(QWidget):
 
     left_content_layout.addWidget(self.student_combo_box)
     left_content_layout.addWidget(self.biometrics_component)
+    left_content_layout.addWidget(self.biometrics_button)
 
     self.table_widget: QTableWidget = QTableWidget()
     self.table_widget.setColumnCount(3)
