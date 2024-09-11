@@ -77,5 +77,8 @@ class BiometricsPage(QWidget):
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
 
+  def __enable_biometrics_scanner(self):
+    pass
+
     
     
