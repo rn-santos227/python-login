@@ -105,6 +105,7 @@ class BiometricsPage(QWidget):
   def __disable_biometrics_scanner(self):
     self.biometrics_component.stop_scanner()
     self.biometrics_button.set_button_text("Start Fingerprint Reader")
+    self.biometrics_button.disconnect_signal(self.__disable_biometrics_scanner)
 
     
     
