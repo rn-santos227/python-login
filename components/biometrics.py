@@ -29,6 +29,9 @@ class Biometrics(QWidget):
 
     except Exception as e:
       self.message_box.show_message("Error", f"Error during fingerprint capture: {str(e)}", "error")
+
+  def stop_scanner(self):
+    pass
     
   def update_frame(self):
     try:
