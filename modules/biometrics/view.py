@@ -98,6 +98,7 @@ class BiometricsPage(QWidget):
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
+    self.biometrics_button.set_enabled()
 
   def __disable_biometrics_scanner(self):
     pass
