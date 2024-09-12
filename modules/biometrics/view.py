@@ -104,7 +104,7 @@ class BiometricsPage(QWidget):
     self.biometrics_button.connect_signal(self.__disable_biometrics_scanner)
 
   def __disable_biometrics_scanner(self):
-    pass
+    self.biometrics_component.stop_scanner()
 
     
     
