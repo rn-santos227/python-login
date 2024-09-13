@@ -1,11 +1,11 @@
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QDialog, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout
 
 from modules.students.model import Student
 
 from assets.styles.styles import image_label_style, popup_dialog_style
-class PopupDialog(QWidget):
+class PopupDialog(QDialog):
   def __init__(self, parent=None, student: Student = None, logged: str = ""):
     super().__init__(parent)
     self.logged = logged
