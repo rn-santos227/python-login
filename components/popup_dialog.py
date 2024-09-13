@@ -17,7 +17,7 @@ class PopupDialog(QDialog):
     # self.timer.start(5000)
 
   def exec_(self):
-    pass
+    self.init_ui()
 
   def init_ui(self):
     self.setWindowTitle("Information")
