@@ -12,12 +12,9 @@ class PopupDialog(QDialog):
     self.timer.timeout.connect(self.close_popup)
     self.init_ui()
 
-    # self.timer: QTimer = QTimer(self)
-    # self.timer.timeout.connect(self.close_popup)
-    # self.timer.start(5000)
-
   def show(self):
     self.init_ui()
+    self.reset_timer() 
     super().exec_()  
 
   def init_ui(self):
