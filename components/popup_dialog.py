@@ -81,4 +81,5 @@ class PopupDialog(QDialog):
   def reset_timer(self):
     if self.timer.isActive():
       self.timer.stop()
+    self.timer.start(5000) 
   
