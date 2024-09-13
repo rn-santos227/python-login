@@ -24,7 +24,7 @@ class PopupDialog(QDialog):
     self.image_label: QLabel = QLabel(self)
     pixmap: QPixmap = QPixmap(self.student.face_url)
     self.image_label.setPixmap(pixmap)
-    self.image_label.setFixedSize(100, 100)
+    self.image_label.setFixedSize(250, 250)
     self.image_label.setStyleSheet(image_label_style)
 
     self.form_layout: QVBoxLayout = QVBoxLayout()
