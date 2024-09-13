@@ -173,7 +173,7 @@ class ReaderPage(QWidget):
           send_email(student.email, message=logout_message)
           self.__send_sms_to_parents(student, message=logout_message)
 
-        popup_dialog: PopupDialog = PopupDialog(student=student, logged=formatted_date_time)
+        popup_dialog: PopupDialog = PopupDialog(parent=self, student=student, logged=formatted_date_time)
         popup_dialog.show()
         return
       
