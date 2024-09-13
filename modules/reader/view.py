@@ -32,6 +32,7 @@ class ReaderPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
+    self.popup_dialog: PopupDialog = PopupDialog(parent=self)
     self.clock_component: Clock = Clock()
     self.message_box: MessageBox = MessageBox(self)
     self.logs: list[Log] = []
