@@ -76,4 +76,4 @@ class PopupDialog(QDialog):
     self.student = student
 
   def set_logged_time(self, logged: str):
-    pass
+    self.logged = logged
