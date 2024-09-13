@@ -8,6 +8,7 @@ from assets.styles.styles import image_label_style, popup_dialog_style
 class PopupDialog(QDialog):
   def __init__(self, parent=None):
     super().__init__(parent)
+    self.timer: QTimer = QTimer(self)
     self.init_ui()
 
     # self.timer: QTimer = QTimer(self)
