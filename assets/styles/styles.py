@@ -20,4 +20,4 @@ content_frame_style = """
 
 date_label_style = "background-color: white; padding: 10px; font-size: 16px; border: 1px solid black;"
 image_label_style = "border: 2px solid black;"
-popup_dialog_style = "background-color: #D3D3D3; color: white; border: 2px solid black;"
+popup_dialog_style = "background-color: #D3D3D3; color: black; border: 2px solid black;"
