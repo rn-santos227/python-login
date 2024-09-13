@@ -77,3 +77,7 @@ class PopupDialog(QDialog):
 
   def set_logged_time(self, logged: str):
     self.logged = logged
+
+  def reset_timer(self):
+    pass
+  
