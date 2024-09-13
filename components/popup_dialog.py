@@ -73,4 +73,4 @@ class PopupDialog(QDialog):
     self.close()
     
   def set_student(self, student: Student):
-    pass
+    self.student = student
