@@ -150,10 +150,6 @@ class ReaderPage(QWidget):
             date = formatted_date
           )
 
-          self.popup_dialog.set_student(student=student)
-          self.popup_dialog.set_logged_time(logged=formatted_date_time)
-          self.popup_dialog.show()
-
           login = logs_controller.create_log(log)
           login.login_time = formatted_date_time
 
@@ -178,6 +174,9 @@ class ReaderPage(QWidget):
           send_email(student.email, message=logout_message)
           self.__send_sms_to_parents(student, message=logout_message)
         
+        self.popup_dialog.set_student(student=student)
+        self.popup_dialog.set_logged_time(logged=formatted_date_time)
+        self.popup_dialog.show()
         return
       
     self.message_box.show_message("Information", "No match has been found.", "information")
