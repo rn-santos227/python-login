@@ -112,7 +112,7 @@ class ScannerPage(QWidget):
       if face_encodings:
         face_encode = face_encodings[0]
         student.face_encode = json.dumps(face_encode.tolist())
-        student.face_url = self.face_handler.save_face(image_data=frame, student_id=student.student_number)
+        student.face_url = self.face_handler.save_face(image_data=frame, student_number=student.student_number)
         
         students_controller.add_face_encode(student=student)
         students_controller.add_face_url(student=student)
