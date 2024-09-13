@@ -149,9 +149,6 @@ class ReaderPage(QWidget):
             date = formatted_date
           )
 
-          popup_dialog: PopupDialog = PopupDialog(parent=self, student=student, logged=formatted_date_time)
-          popup_dialog.exec_() 
-
           login = logs_controller.create_log(log)
           login.login_time = formatted_date_time
 
