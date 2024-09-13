@@ -16,6 +16,9 @@ class PopupDialog(QDialog):
     # self.timer.timeout.connect(self.close_popup)
     # self.timer.start(5000)
 
+  def exec_(self):
+    pass
+
   def init_ui(self):
     self.setWindowTitle("Information")
     self.layout: QVBoxLayout = QVBoxLayout()
