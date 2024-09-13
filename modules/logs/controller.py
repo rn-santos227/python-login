@@ -96,7 +96,7 @@ def get_logs_by_student(student_id) -> list[Log]:
 
 def get_logs_with_students(query) -> list[StudentLog]:
   condition = f"{__table}.student_id = students.id"
-  columns = f"{__table}.id as log_id, {__table}.student_id, {__table}.login_time, {__table}.logout_time, {__table}.date, students.email, students.full_name, students.student_number, students.section, students.course"
+  columns = f"{__table}.id as log_id, {__table}.student_id, {__table}.login_time, {__table}.logout_time, {__table}.date, students.email, students.full_name, students.student_number, students.section, students.course, students.face_url"
   sql_query = join_builder(table1=__table, table2="students", join_condition=condition, columns=columns, query=query)
   connection = DB.connect_db()
   cursor = connection.cursor()
