@@ -47,6 +47,7 @@ class PopupDialog(QDialog):
     self.name_input.setText("No Student")
     self.name_input.setFont(self.name_font)
     
+    self.name_layout: QHBoxLayout = QHBoxLayout()
     self.form_layout.addWidget(self.name_label)
     self.form_layout.addWidget(self.name_input)
 
