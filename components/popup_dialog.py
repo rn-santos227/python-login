@@ -20,9 +20,6 @@ class PopupDialog(QDialog):
     super().exec_()  
 
   def init_ui(self):
-    full_name = "No Student"
-    course = "No Course"
-
     self.setWindowTitle("Information")
     self.layout: QVBoxLayout = QVBoxLayout()
     self.setLayout(self.layout)
@@ -33,12 +30,7 @@ class PopupDialog(QDialog):
       pixmap: QPixmap = QPixmap(self.student.face_url)
       self.image_label.setPixmap(pixmap)
 
-      full_name = self.student.full_name
-      course = self.student.course
-    
-    else:
-      self.image_label.setText("No Image Available")
-    
+    self.image_label.setText("No Image Available") 
     self.image_label.setFixedSize(250, 250)
     self.image_label.setStyleSheet(image_label_style)
 
@@ -47,14 +39,14 @@ class PopupDialog(QDialog):
     self.name_label: QLabel= QLabel("Student Name:")
     self.name_input: QLineEdit = QLineEdit()
     self.name_input.setReadOnly(True) 
-    self.name_input.setText(full_name)
+    self.name_input.setText("No Student")
     self.form_layout.addWidget(self.name_label)
     self.form_layout.addWidget(self.name_input)
 
     self.course_label: QLabel= QLabel("Student Course:")
     self.course_input: QLineEdit = QLineEdit()
     self.course_input.setReadOnly(True) 
-    self.course_input.setText(course)
+    self.course_input.setText("No Course")
     self.form_layout.addWidget(self.course_label)
     self.form_layout.addWidget(self.course_input)
 
