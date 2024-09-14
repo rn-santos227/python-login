@@ -48,8 +48,9 @@ class PopupDialog(QDialog):
     self.name_input.setFont(self.name_font)
     
     self.name_layout: QHBoxLayout = QHBoxLayout()
-    self.form_layout.addWidget(self.name_label)
-    self.form_layout.addWidget(self.name_input)
+    self.name_layout.addWidget(self.name_label)
+    self.name_layout.addWidget(self.name_input)
+    self.form_layout.addLayout(self.name_layout)
 
     self.course_font: QFont = QFont()
     self.course_font.setPointSize(14)
