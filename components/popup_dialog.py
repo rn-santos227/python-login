@@ -20,6 +20,10 @@ class PopupDialog(QDialog):
     super().exec_()  
 
   def init_ui(self):
+    full_name = "No Student"
+    course = "No Course"
+    logged = "No Time"
+
     self.setWindowTitle("Information")
     self.layout: QVBoxLayout = QVBoxLayout()
     self.setLayout(self.layout)
