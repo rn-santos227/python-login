@@ -22,7 +22,6 @@ class PopupDialog(QDialog):
   def init_ui(self):
     full_name = "No Student"
     course = "No Course"
-    logged = "No Time"
 
     self.setWindowTitle("Information")
     self.layout: QVBoxLayout = QVBoxLayout()
@@ -45,14 +44,14 @@ class PopupDialog(QDialog):
     self.name_label: QLabel= QLabel("Student Name:")
     self.name_input: QLineEdit = QLineEdit()
     self.name_input.setReadOnly(True) 
-    self.name_input.setText(self.student.full_name)
+    self.name_input.setText(full_name)
     self.form_layout.addWidget(self.name_label)
     self.form_layout.addWidget(self.name_input)
 
     self.course_label: QLabel= QLabel("Student Course:")
     self.course_input: QLineEdit = QLineEdit()
     self.course_input.setReadOnly(True) 
-    self.course_input.setText(self.student.course)
+    self.course_input.setText(course)
     self.form_layout.addWidget(self.course_label)
     self.form_layout.addWidget(self.course_input)
 
