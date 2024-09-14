@@ -82,6 +82,7 @@ class PopupDialog(QDialog):
 
     if self.student:
       self.name_input.setText(self.student.full_name)
+      self.course_input.setText(self.student.course)
 
   def close_popup(self):
     self.close()
