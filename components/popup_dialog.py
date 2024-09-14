@@ -32,7 +32,6 @@ class PopupDialog(QDialog):
     
     else:
       self.image_label = QLabel("No Image Available", self)
-
     
     self.image_label.setFixedSize(250, 250)
     self.image_label.setStyleSheet(image_label_style)
