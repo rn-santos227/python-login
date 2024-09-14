@@ -54,6 +54,8 @@ class PopupDialog(QDialog):
     self.course_font.setPointSize(14)
 
     self.course_label: QLabel= QLabel("Student Course:")
+    self.course_label.setFont(self.course_font)
+
     self.course_input: QLineEdit = QLineEdit()
     self.course_input.setReadOnly(True) 
     self.course_input.setText("No Course")
