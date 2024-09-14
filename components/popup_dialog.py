@@ -76,6 +76,9 @@ class PopupDialog(QDialog):
     if self.student and self.student.face_url:
       pixmap: QPixmap = QPixmap(self.student.face_url)
       self.image_label.setPixmap(pixmap)
+    
+    else:
+      self.image_label.setText("No Image Available")
 
   def close_popup(self):
     self.close()
