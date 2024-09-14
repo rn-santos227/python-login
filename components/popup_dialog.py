@@ -63,8 +63,10 @@ class PopupDialog(QDialog):
     self.course_input.setText("No Course")
     self.course_input.setFont(self.course_font)
     
-    self.form_layout.addWidget(self.course_label)
-    self.form_layout.addWidget(self.course_input)
+    self.course_layout: QHBoxLayout = QHBoxLayout()
+    self.course_layout.addWidget(self.course_label)
+    self.course_layout.addWidget(self.course_input)
+    self.form_layout.addLayout(self.course_layout)
 
     self.time_layout: QHBoxLayout = QHBoxLayout()
     self.time_label: QLabel = QLabel("Time:")
@@ -86,7 +88,7 @@ class PopupDialog(QDialog):
     self.layout.addWidget(self.close_button)
 
     self.setStyleSheet(popup_dialog_style)
-    self.setGeometry(300, 300, 400, 200)
+    self.setGeometry(600, 600, 800, 400)
 
   def update_ui(self):
     if self.student and self.student.face_url:
