@@ -32,6 +32,8 @@ class PopupDialog(QDialog):
     if self.student and self.student.face_url:
       pixmap: QPixmap = QPixmap(self.student.face_url)
       self.image_label.setPixmap(pixmap)
+
+      full_name = self.student.full_name
     
     else:
       self.image_label = QLabel("No Image Available", self)
