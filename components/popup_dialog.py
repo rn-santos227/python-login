@@ -75,6 +75,7 @@ class PopupDialog(QDialog):
   def update_ui(self):
     if self.student and self.student.face_url:
       pixmap: QPixmap = QPixmap(self.student.face_url)
+      self.image_label.setPixmap(pixmap)
 
   def close_popup(self):
     self.close()
