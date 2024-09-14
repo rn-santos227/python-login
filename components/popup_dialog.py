@@ -37,6 +37,7 @@ class PopupDialog(QDialog):
     self.form_layout: QVBoxLayout = QVBoxLayout()
 
     self.name_font: QFont = QFont()
+    self.name_font.setPointSize(14)
     self.name_label: QLabel= QLabel("Student Name:")
     self.name_input: QLineEdit = QLineEdit()
     self.name_input.setReadOnly(True) 
