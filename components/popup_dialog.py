@@ -10,6 +10,7 @@ class PopupDialog(QDialog):
     super().__init__(parent)
     self.timer: QTimer = QTimer(self)
     self.timer.timeout.connect(self.close_popup)
+    self.student: Student = None
     self.init_ui()
 
   def show(self):
