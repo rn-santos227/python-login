@@ -73,7 +73,8 @@ class PopupDialog(QDialog):
     self.setGeometry(300, 300, 400, 200)
 
   def update_ui(self):
-    pass
+    if self.student and self.student.face_url:
+      pixmap: QPixmap = QPixmap(self.student.face_url)
 
   def close_popup(self):
     self.close()
