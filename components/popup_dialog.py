@@ -15,7 +15,7 @@ class PopupDialog(QDialog):
     self.init_ui()
 
   def show(self):
-    self.init_ui()
+    self.update_ui()
     self.reset_timer() 
     super().exec_()  
 
