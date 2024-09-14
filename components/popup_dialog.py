@@ -59,6 +59,8 @@ class PopupDialog(QDialog):
     self.course_input: QLineEdit = QLineEdit()
     self.course_input.setReadOnly(True) 
     self.course_input.setText("No Course")
+    self.course_input.setFont(self.course_font)
+    
     self.form_layout.addWidget(self.course_label)
     self.form_layout.addWidget(self.course_input)
 
