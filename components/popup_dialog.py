@@ -30,6 +30,9 @@ class PopupDialog(QDialog):
       pixmap: QPixmap = QPixmap(self.student.face_url)
       self.image_label.setPixmap(pixmap)
     
+    else:
+      self.image_label = QLabel("No Image Available", self)
+
     
     self.image_label.setFixedSize(250, 250)
     self.image_label.setStyleSheet(image_label_style)
