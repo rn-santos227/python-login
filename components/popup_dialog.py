@@ -37,7 +37,7 @@ class PopupDialog(QDialog):
       course = self.student.course
     
     else:
-      self.image_label = QLabel("No Image Available", self)
+      self.image_label.setText("No Image Available")
     
     self.image_label.setFixedSize(250, 250)
     self.image_label.setStyleSheet(image_label_style)
@@ -79,6 +79,9 @@ class PopupDialog(QDialog):
 
     self.setStyleSheet(popup_dialog_style)
     self.setGeometry(300, 300, 400, 200)
+
+  def update_ui(self):
+    pass
 
   def close_popup(self):
     self.close()
