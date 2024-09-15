@@ -47,7 +47,7 @@ class PopupDialog(QDialog):
     self.name_input.setText("No Student")
     self.name_input.setFont(self.name_font)
     
-    self.name_layout: QHBoxLayout = QHBoxLayout()
+    self.name_layout: QVBoxLayout = QVBoxLayout()
     self.name_layout.addWidget(self.name_label)
     self.name_layout.addWidget(self.name_input)
     self.form_layout.addLayout(self.name_layout)
@@ -63,7 +63,7 @@ class PopupDialog(QDialog):
     self.course_input.setText("No Course")
     self.course_input.setFont(self.course_font)
     
-    self.course_layout: QHBoxLayout = QHBoxLayout()
+    self.course_layout: QVBoxLayout = QVBoxLayout()
     self.course_layout.addWidget(self.course_label)
     self.course_layout.addWidget(self.course_input)
     self.form_layout.addLayout(self.course_layout)
@@ -79,7 +79,7 @@ class PopupDialog(QDialog):
     self.time_input.setText(self.logged) 
     self.time_input.setFont(self.course_font)
 
-    self.time_layout: QHBoxLayout = QHBoxLayout()
+    self.time_layout: QVBoxLayout = QVBoxLayout()
     self.time_layout.addWidget(self.time_label)
     self.time_layout.addWidget(self.time_input)
     self.form_layout.addLayout(self.time_layout)
