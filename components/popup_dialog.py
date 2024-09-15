@@ -38,53 +38,8 @@ class PopupDialog(QDialog):
 
     self.form_layout: QVBoxLayout = QVBoxLayout()
 
-    self.name_font: QFont = QFont()
-    self.name_font.setPointSize(14)
-    
-    self.name_label: QLabel= QLabel("Student Name:")
-    self.name_label.setFont(self.name_font)
-    
-    self.name_input: QLineEdit = QLineEdit()
-    self.name_input.setReadOnly(True) 
-    self.name_input.setText("No Student")
-    self.name_input.setFont(self.name_font)
-    
-    self.name_layout: QVBoxLayout = QVBoxLayout()
-    self.name_layout.addWidget(self.name_label)
-    self.name_layout.addWidget(self.name_input)
-    self.form_layout.addLayout(self.name_layout)
-
-    self.course_font: QFont = QFont()
-    self.course_font.setPointSize(14)
-
-    self.course_label: QLabel= QLabel("Student Course:")
-    self.course_label.setFont(self.course_font)
-
-    self.course_input: QLineEdit = QLineEdit()
-    self.course_input.setReadOnly(True) 
-    self.course_input.setText("No Course")
-    self.course_input.setFont(self.course_font)
-    
-    self.course_layout: QVBoxLayout = QVBoxLayout()
-    self.course_layout.addWidget(self.course_label)
-    self.course_layout.addWidget(self.course_input)
-    self.form_layout.addLayout(self.course_layout)
-
-    self.time_font: QFont = QFont()
-    self.time_font.setPointSize(14)
-
-    self.time_label: QLabel = QLabel("Time:")
-    self.time_label.setFont(self.course_font)
-
-    self.time_input: QLineEdit = QLineEdit()
-    self.time_input.setReadOnly(True)
-    self.time_input.setText(self.logged) 
-    self.time_input.setFont(self.course_font)
-
-    self.time_layout: QVBoxLayout = QVBoxLayout()
-    self.time_layout.addWidget(self.time_label)
-    self.time_layout.addWidget(self.time_input)
-    self.form_layout.addLayout(self.time_layout)
+    self.student_name_field: TextField = TextField(label_text="Student Name:", placeholder_text="Enter student email.")
+    self.student_name_field.set_text("No Student")
 
     self.close_button: QPushButton = QPushButton("Close")
     self.close_button.clicked.connect(self.close_popup)
@@ -106,11 +61,6 @@ class PopupDialog(QDialog):
     
     else:
       self.image_label.setText("No Image Available")
-
-    if self.student:
-      self.name_input.setText(self.student.full_name)
-      self.course_input.setText(self.student.course)
-      self.time_input.setText(self.logged)
 
   def close_popup(self):
     self.close()
