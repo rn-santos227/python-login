@@ -51,6 +51,7 @@ class PopupDialog(QDialog):
     self.close_button.clicked.connect(self.close_popup)
 
     self.form_layout.addWidget(self.student_name_field, 0, 0, 1, 2)
+    self.form_layout.addWidget(self.student_course_field, 1, 0, 1, 2)
 
     self.image_and_form_layout: QHBoxLayout = QHBoxLayout()
     self.image_and_form_layout.addWidget(self.image_label)
