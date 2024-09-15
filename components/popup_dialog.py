@@ -1,6 +1,6 @@
 from PyQt5.QtCore import  QTimer
 from PyQt5.QtGui import QFont, QPixmap
-from PyQt5.QtWidgets import QDialog, QHBoxLayout, QGridLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout
+from PyQt5.QtWidgets import QDialog, QHBoxLayout, QGridLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 
 from modules.students.model import Student
 
@@ -92,11 +92,14 @@ class PopupDialog(QDialog):
     self.timer.start(10000) 
 
   def center_to_parent(self):
-    parent_geometry = self.parent().geometry()
-    dialog_geometry = self.geometry()
+    parent = self.parent()
 
-    x: int = parent_geometry.x() + (parent_geometry.width() - dialog_geometry.width()) // 2
-    y: int = parent_geometry.y() + (parent_geometry.height() - dialog_geometry.height()) // 2
+    if isinstance(parent, QWidget):
+      parent_geometry = parent.geometry()
+      dialog_geometry = self.geometry()
 
-    self.move(x, y)
+      x: int = parent_geometry.x() + (parent_geometry.width() - dialog_geometry.width()) // 2
+      y: int = parent_geometry.y() + (parent_geometry.height() - dialog_geometry.height()) // 2
+
+      self.move(x, y)
   
