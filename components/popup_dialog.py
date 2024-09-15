@@ -75,6 +75,7 @@ class PopupDialog(QDialog):
     if self.student:
       self.student_name_field.set_text(self.student.full_name)
       self.student_course_field.set_text(self.student.course)
+      self.student_logged_field.set_text(self.logged)
 
   def close_popup(self):
     self.close()
