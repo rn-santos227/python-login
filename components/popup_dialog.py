@@ -4,6 +4,8 @@ from PyQt5.QtWidgets import QDialog, QHBoxLayout, QLabel, QLineEdit, QPushButton
 
 from modules.students.model import Student
 
+from components.text_field import TextField
+
 from assets.styles.styles import image_label_style, popup_dialog_style
 class PopupDialog(QDialog):
   def __init__(self, parent=None):
