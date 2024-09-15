@@ -92,5 +92,5 @@ class PopupDialog(QDialog):
     self.timer.start(10000) 
 
   def center_to_parent(self):
-    pass
+    parent_geometry = self.parent().geometry()
   
