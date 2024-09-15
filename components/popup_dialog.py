@@ -72,6 +72,9 @@ class PopupDialog(QDialog):
     else:
       self.image_label.setText("No Image Available")
 
+    if self.student:
+      self.student_name_field.set_text(self.student.full_name)
+
   def close_popup(self):
     self.close()
     
