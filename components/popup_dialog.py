@@ -45,6 +45,7 @@ class PopupDialog(QDialog):
     self.student_course_field.set_text("No Student")
 
     self.student_logged_field: TextField = TextField(label_text="Logged Time:", placeholder_text="Enter logged time.")
+    self.student_course_field.set_text("No Student")
 
     self.close_button: QPushButton = QPushButton("Close")
     self.close_button.clicked.connect(self.close_popup)
