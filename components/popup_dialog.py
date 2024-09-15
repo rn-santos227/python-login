@@ -1,6 +1,6 @@
 from PyQt5.QtCore import  QTimer
 from PyQt5.QtGui import QFont, QPixmap
-from PyQt5.QtWidgets import QDialog, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout
+from PyQt5.QtWidgets import QDialog, QHBoxLayout, QGridLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout
 
 from modules.students.model import Student
 
@@ -36,13 +36,15 @@ class PopupDialog(QDialog):
     self.image_label.setFixedSize(250, 250)
     self.image_label.setStyleSheet(image_label_style)
 
-    self.form_layout: QVBoxLayout = QVBoxLayout()
+    self.form_layout: QGridLayout = QGridLayout()
 
     self.student_name_field: TextField = TextField(label_text="Student Name:", placeholder_text="Enter student email.")
     self.student_name_field.set_text("No Student")
 
     self.close_button: QPushButton = QPushButton("Close")
     self.close_button.clicked.connect(self.close_popup)
+
+    self.form_layout.addWidget(self.student_name_field, 0, 0, 1, 2)
 
     self.image_and_form_layout: QHBoxLayout = QHBoxLayout()
     self.image_and_form_layout.addWidget(self.image_label)
