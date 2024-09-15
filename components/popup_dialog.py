@@ -102,4 +102,7 @@ class PopupDialog(QDialog):
       y: int = parent_geometry.y() + (parent_geometry.height() - dialog_geometry.height()) // 2
 
       self.move(x, y)
+
+    else:
+      print("Parent is not a QWidget or is None, can't center.")
   
