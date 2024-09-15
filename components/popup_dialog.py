@@ -94,4 +94,6 @@ class PopupDialog(QDialog):
   def center_to_parent(self):
     parent_geometry = self.parent().geometry()
     dialog_geometry = self.geometry()
+
+    x = parent_geometry.x() + (parent_geometry.width() - dialog_geometry.width()) // 2
   
