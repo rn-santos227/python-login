@@ -90,4 +90,7 @@ class PopupDialog(QDialog):
     if self.timer.isActive():
       self.timer.stop()
     self.timer.start(10000) 
+
+  def center_to_parent(self):
+    pass
   
