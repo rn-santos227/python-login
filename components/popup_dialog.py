@@ -72,6 +72,8 @@ class PopupDialog(QDialog):
     self.time_font.setPointSize(14)
 
     self.time_label: QLabel = QLabel("Time:")
+    self.time_label.setFont(self.course_font)
+
     self.time_input: QLineEdit = QLineEdit()
     self.time_input.setReadOnly(True)
     self.time_input.setText(self.logged) 
