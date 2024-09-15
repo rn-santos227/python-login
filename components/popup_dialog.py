@@ -69,7 +69,8 @@ class PopupDialog(QDialog):
     self.form_layout.addLayout(self.course_layout)
 
     self.time_font: QFont = QFont()
-    
+    self.time_font.setPointSize(14)
+
     self.time_layout: QHBoxLayout = QHBoxLayout()
     self.time_label: QLabel = QLabel("Time:")
     self.time_input: QLineEdit = QLineEdit()
