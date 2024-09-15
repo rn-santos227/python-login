@@ -77,6 +77,7 @@ class PopupDialog(QDialog):
     self.time_input: QLineEdit = QLineEdit()
     self.time_input.setReadOnly(True)
     self.time_input.setText(self.logged) 
+    self.time_input.setFont(self.course_font)
 
     self.time_layout: QHBoxLayout = QHBoxLayout()
     self.time_layout.addWidget(self.time_label)
