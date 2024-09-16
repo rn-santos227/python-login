@@ -63,7 +63,7 @@ class PopupDialog(QDialog):
     self.layout.addWidget(self.close_button)
 
     self.setStyleSheet(popup_dialog_style)
-    self.setGeometry(800, 800, 1000, 600)
+    self.setGeometry(600, 600, 8000, 400)
 
   def update_ui(self):
     if self.student and self.student.face_url:
