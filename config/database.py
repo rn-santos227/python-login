@@ -66,6 +66,7 @@ def drop_db():
 
   try:
     cursor.execute(f"DROP DATABASE IF EXISTS {database_name}")
+    print(f"Database '{database_name}' dropped successfully.")
 
   except mysql.connector.Error as err:
     print(f"Failed to drop database '{database_name}': {err}")
