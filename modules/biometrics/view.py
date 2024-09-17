@@ -40,14 +40,14 @@ class BiometricsPage(QWidget):
     self.main_layout: QHBoxLayout = QHBoxLayout()
     left_content_layout: QVBoxLayout = QVBoxLayout()
 
+    self.biometrics_combo_box: ComboBox = ComboBox(label_text="Biometrics List")
     self.students_combo_box: ComboBox = ComboBox(label_text="Student List")
     self.biometrics_component: Biometrics = Biometrics()
-
-    self.biometrics_combo_box: ComboBox = ComboBox(label_text="Biometrics List")
 
     self.biometrics_button: Button = Button("Start Fingerprint Reader")
     self.biometrics_button.connect_signal(self.__enable_biometrics_scanner)
 
+    left_content_layout.addWidget(self.biometrics_combo_box)
     left_content_layout.addWidget(self.students_combo_box)
     left_content_layout.addWidget(self.biometrics_component)
     left_content_layout.addWidget(self.biometrics_button)
