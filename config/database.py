@@ -70,3 +70,6 @@ def drop_db():
 
   except mysql.connector.Error as err:
     print(f"Failed to drop database '{database_name}': {err}")
+
+  finally:
+    cursor.close()
