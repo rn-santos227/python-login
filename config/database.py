@@ -60,4 +60,4 @@ def create_table(query, table):
     print(f"Connection to the database '{database_name}' closed.")
 
 def drop_db():
-  pass
+  print(connection_params)
