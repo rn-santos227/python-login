@@ -62,3 +62,4 @@ def create_table(query, table):
 def drop_db():
   print(connection_params)
   conn = mysql.connector.connect(**connection_params)
+  cursor = conn.cursor()
