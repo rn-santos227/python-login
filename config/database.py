@@ -73,3 +73,4 @@ def drop_db():
 
   finally:
     cursor.close()
+    conn.close()
