@@ -22,7 +22,7 @@ def initialize_db():
   create_default_user()
 
 def reset_db():
-  pass
+  print("resetting database...")
 
 if __name__ == "__main__":
   init()
