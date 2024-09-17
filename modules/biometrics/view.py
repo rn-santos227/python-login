@@ -74,7 +74,7 @@ class BiometricsPage(QWidget):
       return
     
     items = [(student.full_name, student.id) for student in self.students]
-    self.student_combo_box.set_items(items)
+    self.students_combo_box.set_items(items)
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
