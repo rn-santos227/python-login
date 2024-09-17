@@ -21,5 +21,8 @@ def initialize_db():
   print("creating default user...")
   create_default_user()
 
+def reset_db():
+  pass
+
 if __name__ == "__main__":
   init()
