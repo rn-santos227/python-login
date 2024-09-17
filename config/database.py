@@ -58,3 +58,6 @@ def create_table(query, table):
   finally:
     cursor.close()
     print(f"Connection to the database '{database_name}' closed.")
+
+def drop_db():
+  pass
