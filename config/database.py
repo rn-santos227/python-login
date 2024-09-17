@@ -35,13 +35,15 @@ def check_db_connection() -> bool:
   try:
     conn = mysql.connector.connect(**connection_params_with_db)
     print(f"Connected to the database '{database_name}' successfully.")
-    conn.close()
-    print(f"Connection to the database '{database_name}' closed.")
     return True
   
   except mysql.connector.Error as err:
     print(f"Failed to connect to the database '{database_name}': {err}")
     return False
+  
+  finally:
+    conn.close()    
+    print(f"Connection to the database '{database_name}' closed.")
 
 def create_table(query, table):
   conn = connect_db()
