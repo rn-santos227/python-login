@@ -7,7 +7,7 @@ from database.seeder import create_default_user
 def init():
   print("initializing app config.")
   if(DB.check_db_connection()):
-    print("database has already been created.")
+    print("Database already exists. No further actions will be taken.")
 
   else:
     initialize_db()
