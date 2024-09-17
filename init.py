@@ -23,6 +23,7 @@ def initialize_db():
 
 def reset_db():
   print("resetting database...")
+  DB.drop_db()
 
 if __name__ == "__main__":
   init()
