@@ -1,3 +1,4 @@
+import sys
 import config.database as DB
 
 from database.migration import table_migration
