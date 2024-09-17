@@ -22,6 +22,9 @@ class BiometricsHandler:
     else:
       print("SDK initialized successfully.")
 
+  def get_devices(self):
+    pass
+
   def capture_fingerprint(self):
     dpfpdd_open = self.dpfpdd.dpfpdd_open
     dpfpdd_open.restype = ctypes.c_int
