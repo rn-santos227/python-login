@@ -24,7 +24,7 @@ class ParentsPage(QWidget):
     self.pages_handler = pages_handler
     self.message_box: MessageBox = MessageBox(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
-    self.students: Student[list] = []
+    self.students: list[Student] = []
     self.parents: Parent[list] = []
     self.__init_ui()
 
