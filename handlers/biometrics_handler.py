@@ -29,6 +29,8 @@ class BiometricsHandler:
     dpfpdd_version_func.argtypes = [ctypes.POINTER(DPFPDD_VERSION)]
     dpfpdd_version_func.restype = c_int
 
+    version_info = DPFPDD_VERSION()
+
   def get_devices(self):
     pass
 
