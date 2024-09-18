@@ -10,7 +10,6 @@ class BiometricsHandler:
     self.initialize()
 
   def initialize(self):
-    self.dpfj = ctypes.CDLL("dpfpdd.dll")
     self.dpfpdd = ctypes.CDLL("dpfpdd.dll") 
     dpfpdd_init  = self.dpfpdd.dpfpdd_init
     dpfpdd_init.restype = ctypes.c_int
@@ -23,7 +22,7 @@ class BiometricsHandler:
       print("SDK initialized successfully.")
 
   def get_version(self):
-    pass
+    dpfpdd_init  = self.dpfpdd.dpfpdd_init
 
   def get_devices(self):
     pass
