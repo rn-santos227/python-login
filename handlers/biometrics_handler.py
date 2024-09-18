@@ -22,7 +22,14 @@ class BiometricsHandler:
       print("SDK initialized successfully.")
 
   def get_version(self):
-    dpfpdd_version  = self.dpfpdd.dpfpdd_version
+    dpfpdd_version  = self.dpfpdd.dpfpdd_init
+    result = dpfpdd_version()
+
+    if result != DPFPDD_SUCCESS:
+      print(f"An Error has been Detected: {result}")
+
+    else:
+      print("SDK initialized successfully.")
 
   def get_devices(self):
     pass
