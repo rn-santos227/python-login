@@ -10,9 +10,9 @@ class BiometricsHandler:
     self.initialize()
 
   def initialize(self):
-    self.dpfj = ctypes.CDLL("dpfj.dll") 
-    self.dpfpdd = ctypes.CDLL("dpfpdd.dll")
-     
+    self.dpfj = ctypes.WinDLL("dpfj.dll") 
+    self.dpfpdd = ctypes.WinDLL("dpfpdd.dll")
+
     dpfpdd_init  = self.dpfpdd.dpfpdd_init
     dpfpdd_init.restype = ctypes.c_int
     result = dpfpdd_init()
@@ -26,7 +26,7 @@ class BiometricsHandler:
 
   def get_version(self):
     dpfpdd_version  = self.dpfpdd.dpfpdd_version
-    result = dpfpdd_version()
+    result = dpfpdd_version
 
     if result != DPFPDD_SUCCESS:
       print(f"An Error has been Detected: {result}")
