@@ -29,7 +29,7 @@ class BiometricsHandler:
       print(f"An Error has been Detected: {result}")
 
     else:
-      print("SDK initialized successfully.")
+      print(f"SDK Version: {result}")
 
   def get_devices(self):
     pass
