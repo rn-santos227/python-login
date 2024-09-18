@@ -1,5 +1,5 @@
 import ctypes
-from ctypes import byref
+from ctypes import c_int, byref
 
 from config.config import device_name
 
@@ -27,6 +27,7 @@ class BiometricsHandler:
   def get_version(self):
     dpfpdd_version_func = self.dpfpdd.dpfpdd_get_version
     dpfpdd_version_func.argtypes = [ctypes.POINTER(DPFPDD_VERSION)]
+    dpfpdd_version_func.restype = c_int
 
   def get_devices(self):
     pass
