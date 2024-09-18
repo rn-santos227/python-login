@@ -23,7 +23,7 @@ class BiometricsHandler:
       self.get_version()
 
   def get_version(self):
-    dpfpdd_version  = self.dpfpdd.dpfpdd_init
+    dpfpdd_version  = self.dpfpdd.dpfpdd_version
     result = dpfpdd_version()
 
     if result != DPFPDD_SUCCESS:
