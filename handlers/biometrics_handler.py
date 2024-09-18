@@ -25,14 +25,8 @@ class BiometricsHandler:
       self.get_version()
 
   def get_version(self):
-    dpfpdd_version  = self.dpfpdd.dpfpdd_version
-    result = dpfpdd_version
-
-    if result != DPFPDD_SUCCESS:
-      print(f"An Error has been Detected: {result}")
-
-    else:
-      print(f"SDK Version: {result}")
+    dpfpdd_version_func = self.dpfpdd.dpfpdd_get_version
+    
 
   def get_devices(self):
     pass
