@@ -70,7 +70,7 @@ def get_parents(query, action) -> list[Parent]:
     cursor.close()
 
 def create_parent(parent: Parent) -> Parent:
-  columns = "(student_id, full_name, contact)" 
+  columns = "(student_id, full_name, email, contact)" 
   sql_query = builder(__table, f"{columns} VALUES (%s, %s, %s)", "insert")
   connection = DB.connect_db()
   cursor = connection.cursor()
