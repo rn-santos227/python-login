@@ -20,6 +20,7 @@ class BiometricsHandler:
 
     else:
       print("SDK initialized successfully.")
+      self.get_version()
 
   def get_version(self):
     dpfpdd_version  = self.dpfpdd.dpfpdd_init
