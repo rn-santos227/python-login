@@ -30,6 +30,7 @@ class BiometricsHandler:
     dpfpdd_version_func.restype = c_int
 
     version_info = DPFPDD_VERSION()
+    result = dpfpdd_version_func(byref(version_info))
 
   def get_devices(self):
     pass
