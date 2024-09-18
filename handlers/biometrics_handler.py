@@ -32,6 +32,9 @@ class BiometricsHandler:
     version_info = DPFPDD_VERSION()
     result = dpfpdd_version_func(byref(version_info))
 
+    if result == DPFPDD_SUCCESS:
+      print(f"SDK Version: {version_info.major}.{version_info.minor}.{version_info.maintenance}.{version_info.build}")
+
   def get_devices(self):
     pass
 
