@@ -180,7 +180,7 @@ class ParentsPage(QWidget):
     new_parent: Parent = Parent(
       student_id = student_id,
       full_name = parent_name,
-      email=email,
+      email = email,
       contact = contact,
     )
 
@@ -258,6 +258,7 @@ class ParentsPage(QWidget):
 
   def __clear_fields(self):
     self.parent_name_field.clear_text()
+    self.parent_email_field.clear_text()
     self.parent_contact_field.clear_text()
 
   def __clear_layout(self, layout: QLayout):
