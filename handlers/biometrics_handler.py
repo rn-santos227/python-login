@@ -3,7 +3,7 @@ from ctypes import byref
 
 from config.config import device_name
 
-from library.biometrics import DPFPDD_SUCCESS, DPFPDD_CAPTURE_RESULT
+from library.biometrics import DPFPDD_SUCCESS, DPFPDD_VERSION
 
 class BiometricsHandler:
   def __init__(self):
