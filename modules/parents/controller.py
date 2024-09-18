@@ -90,7 +90,7 @@ def create_parent(parent: Parent) -> Parent:
 def update_parent(parent: Parent) -> Parent:
   set_clause = (
     f"full_name = '{parent.full_name}', "
-    f"contact_number = '{parent.contact_number}', "
+    f"contact = '{parent.contact}', "
   )
   where_clause = f"id = {parent.id}"
   sql_query = builder(__table, f"{set_clause} WHERE {where_clause}", "update")
