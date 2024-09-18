@@ -22,6 +22,9 @@ class BiometricsHandler:
     else:
       print("SDK initialized successfully.")
 
+  def get_version(self):
+    pass
+
   def get_devices(self):
     pass
 
