@@ -35,6 +35,9 @@ class BiometricsHandler:
     if result == DPFPDD_SUCCESS:
       print(f"SDK Version: {version_info.major}.{version_info.minor}.{version_info.maintenance}.{version_info.build}")
 
+    else:
+      print(f"An error occurred: {result}")
+
   def get_devices(self):
     pass
 
