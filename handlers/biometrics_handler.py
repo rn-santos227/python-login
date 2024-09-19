@@ -3,9 +3,10 @@ from com.digitalpersona.uareu import UareUGlobal, Reader
 class BiometricsHandler:
   def __init__(self):
     self.initialize()
+    self.get_devices()
 
   def initialize(self):
-    pass
+    result = UareUGlobal.Init()
 
   def get_version(self):
     pass
@@ -18,6 +19,7 @@ class BiometricsHandler:
 
     else:
       reader = readers.get(0)
+      print(f"Using reader: {reader.GetDescription().name}")
 
   def capture_fingerprint(self):
     pass
