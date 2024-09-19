@@ -1,8 +1,4 @@
-import jpype
-import jpype.imports
-from jpype.types import *
-
-from config.config import jar_path
+from com.digitalpersona.uareu import UareUGlobal, Reader
 
 class BiometricsHandler:
   def __init__(self):
@@ -15,7 +11,7 @@ class BiometricsHandler:
     pass
 
   def get_devices(self):
-    pass
+    readers = UareUGlobal.GetReaderCollection()
 
   def capture_fingerprint(self):
     pass
