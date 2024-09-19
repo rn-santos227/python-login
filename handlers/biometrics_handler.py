@@ -7,9 +7,12 @@ class BiometricsHandler:
 
   def initialize(self):
     result = UareUGlobal.Init()
-    
+
     if result == UareUGlobal.DPFPDD_SUCCESS:
       print("SDK initialized successfully.")
+    
+    else:
+      print(f"SDK initialization failed with error code: {result}")
 
   def get_version(self):
     pass
