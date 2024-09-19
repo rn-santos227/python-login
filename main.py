@@ -8,7 +8,11 @@ from jpype.types import *
 
 from config.config import jar_path
 
-jpype.startJVM()
+jpype.startJVM(
+  classpath = [
+    f"{jar_path}/dpuareu.jar"
+  ]
+)
 
 from components.screen_window import ScreenWindow
 from PyQt5.QtWidgets import QApplication
