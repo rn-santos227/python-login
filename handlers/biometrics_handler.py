@@ -6,19 +6,14 @@ class BiometricsHandler:
     self.get_devices()
 
   def initialize(self):
-    result = UareUGlobal.Init()
-
-    if result == UareUGlobal.DPFPDD_SUCCESS:
-      print("SDK initialized successfully.")
-    
-    else:
-      print(f"SDK initialization failed with error code: {result}")
+    pass
 
   def get_version(self):
     pass
 
   def get_devices(self):
     readers = UareUGlobal.GetReaderCollection()
+    readers.GetReaders()
 
     if len(readers) == 0:
       print("No fingerprint readers found.")
