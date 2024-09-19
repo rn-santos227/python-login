@@ -1,6 +1,3 @@
-import ctypes
-from ctypes import c_int, byref
-
 class BiometricsHandler:
   def __init__(self):
     self.initialize()
@@ -16,7 +13,6 @@ class BiometricsHandler:
 
   def capture_fingerprint(self):
     pass
-
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     pass

@@ -5,6 +5,8 @@ load_dotenv()
 
 app_name = os.getenv("APP_NAME")
 
+jar_path = "C:/Program Files/DigitalPersona/U.are.U SDK/Windows/Lib/Java"
+
 connection_params = {
   "user": os.getenv("DB_USER"),
   "password": os.getenv("DB_PASSWORD"),
