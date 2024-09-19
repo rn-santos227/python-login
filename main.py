@@ -10,7 +10,8 @@ from config.config import jar_path
 
 jpype.startJVM(
   classpath = [
-    f"{jar_path}/dpuareu.jar"
+    f"{jar_path}/dpuareu.jar",
+    f"{jar_path}/xercesImpl-2.6.2.jar",
   ]
 )
 
