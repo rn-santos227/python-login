@@ -19,18 +19,7 @@ class BiometricsHandler:
     pass
 
   def capture_fingerprint(self):
-    dpfpdd_open = self.dpfpdd.dpfpdd_open
-    dpfpdd_open.restype = ctypes.c_int
-    dpfpdd_open.argtypes = [ctypes.c_char_p, ctypes.POINTER(ctypes.c_void_p)]
-
-    p1 = ctypes.c_char_p(device_name.encode("utf-8"))
-    p2 = ctypes.c_void_p()
-
-    result = dpfpdd_open(p1, ctypes.pointer(p2))
-
-    if result != DPFPDD_SUCCESS:
-      print(f"Error opening device: {result}")
-      return None
+    pass
 
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
