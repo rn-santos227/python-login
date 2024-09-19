@@ -1,8 +1,6 @@
 import ctypes
 from ctypes import c_int, byref
 
-from config.config import device_name
-
 class BiometricsHandler:
   def __init__(self):
     self.initialize()
