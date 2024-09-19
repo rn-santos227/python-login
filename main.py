@@ -12,6 +12,7 @@ jpype.startJVM(
   classpath = [
     f"{jar_path}/dpuareu.jar",
     f"{jar_path}/xercesImpl-2.6.2.jar",
+    f"{jar_path}/xmlParserAPIs.jar"
   ]
 )
 
