@@ -1,3 +1,7 @@
+import jpype
+import jpype.imports
+from jpype.types import *
+
 class BiometricsHandler:
   def __init__(self):
     self.initialize()
