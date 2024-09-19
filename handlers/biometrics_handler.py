@@ -13,6 +13,9 @@ class BiometricsHandler:
   def get_devices(self):
     readers = UareUGlobal.GetReaderCollection()
 
+    if len(readers) == 0:
+      print("No fingerprint readers found.")
+
   def capture_fingerprint(self):
     pass
 
