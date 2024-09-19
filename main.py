@@ -8,6 +8,8 @@ from jpype.types import *
 
 from config.config import jar_path
 
+jpype.startJVM()
+
 from components.screen_window import ScreenWindow
 from PyQt5.QtWidgets import QApplication
 
