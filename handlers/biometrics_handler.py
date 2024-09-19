@@ -7,6 +7,9 @@ class BiometricsHandler:
 
   def initialize(self):
     result = UareUGlobal.Init()
+    
+    if result == UareUGlobal.DPFPDD_SUCCESS:
+      print("SDK initialized successfully.")
 
   def get_version(self):
     pass
