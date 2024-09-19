@@ -2,6 +2,12 @@ import sys
 import init
 import config.database as db
 
+import jpype
+import jpype.imports
+from jpype.types import *
+
+from config.config import jar_path
+
 from components.screen_window import ScreenWindow
 from PyQt5.QtWidgets import QApplication
 
