@@ -2,6 +2,8 @@ import jpype
 import jpype.imports
 from jpype.types import *
 
+from config.config import jar_path
+
 class BiometricsHandler:
   def __init__(self):
     self.initialize()
