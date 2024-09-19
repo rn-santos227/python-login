@@ -1,4 +1,4 @@
-from com.digitalpersona.uareu import UareUGlobal, Reader
+from com.digitalpersona.uareu import UareUGlobal, Reader # type: ignore
 
 class BiometricsHandler:
   def __init__(self):
@@ -15,12 +15,17 @@ class BiometricsHandler:
     readers = UareUGlobal.GetReaderCollection()
     readers.GetReaders()
 
+    devices = []
+
     if len(readers) == 0:
       print("No fingerprint readers found.")
 
     else:
       reader = readers.get(0)
       print(f"Using reader: {reader.GetDescription().name}")
+      devices.append(reader)
+
+    return devices
 
   def capture_fingerprint(self):
     pass
