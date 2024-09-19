@@ -16,6 +16,9 @@ class BiometricsHandler:
     if len(readers) == 0:
       print("No fingerprint readers found.")
 
+    else:
+      reader = readers.get(0)
+
   def capture_fingerprint(self):
     pass
 
