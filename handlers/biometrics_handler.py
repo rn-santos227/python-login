@@ -21,6 +21,7 @@ class BiometricsHandler:
 
     else:
       reader = readers.get(0)
+      device_name = reader.GetDescription().name
       print(f"Using reader: {reader.GetDescription().name}")
       devices.append(reader)
 
