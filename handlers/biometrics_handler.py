@@ -3,7 +3,6 @@ from com.digitalpersona.uareu import UareUGlobal, Reader # type: ignore
 class BiometricsHandler:
   def __init__(self):
     self.initialize()
-    self.get_devices()
 
   def initialize(self):
     pass
