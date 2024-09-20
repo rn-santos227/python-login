@@ -23,6 +23,7 @@ class BiometricsHandler:
       else:
         for i in range(len(readers)):
           reader = readers.get(i)
+          device_name = reader.GetDescription().name
 
       return devices
     
