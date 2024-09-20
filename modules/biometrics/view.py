@@ -1,3 +1,5 @@
+import re
+
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QHeaderView, QPushButton, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
@@ -86,6 +88,7 @@ class BiometricsPage(QWidget):
       return
     
     pattern = r"\{(.*?)\}"
+    
     items = [(device, device) for device in self.devices]
     print(items)
     # self.biometrics_combo_box.set_items(items)
