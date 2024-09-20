@@ -91,7 +91,7 @@ class BiometricsPage(QWidget):
     items = []
     
     for device in self.devices:
-      match = re.search(pattern, device[0])
+      match = re.search(pattern, device)
       if match:
         items.append((match.group(1), device))
 
