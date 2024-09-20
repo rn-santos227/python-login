@@ -95,7 +95,6 @@ class BiometricsPage(QWidget):
       if match:
         items.append((match.group(1), device))
 
-    print(items)
     self.biometrics_combo_box.set_items(items)
 
   def load_biometrics(self):
