@@ -88,10 +88,10 @@ class BiometricsPage(QWidget):
       return
     
     pattern = r"\{(.*?)\}"
-    
-    items = [(re.search(pattern, device[0]).group(1), device) for device in self.devices]
+    items = []
+
     print(items)
-    # self.biometrics_combo_box.set_items(items)
+    self.biometrics_combo_box.set_items(items)
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
