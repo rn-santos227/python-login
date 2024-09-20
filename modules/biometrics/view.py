@@ -21,6 +21,7 @@ class BiometricsPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
+    self.biometrics_handler: BiometricsHandler = BiometricsHandler()
     self.message_box: MessageBox = MessageBox(self)
     self.biometrics: list[StudentBiometrics] = []
     self.devices = []
