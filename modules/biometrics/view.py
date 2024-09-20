@@ -9,6 +9,8 @@ from components.button import Button
 from components.combo_box import ComboBox
 from components.message_box import MessageBox
 
+from handlers.biometrics_handler import BiometricsHandler
+
 from modules.biometrics.model import Biometric, StudentBiometrics
 from modules.students.model import Student
 
