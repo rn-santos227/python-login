@@ -24,6 +24,8 @@ class BiometricsHandler:
         for i in range(len(readers)):
           reader = readers.get(i)
           device_name = reader.GetDescription().name
+          print(f"Using reader: {device_name}")
+          devices.append(device_name)
 
       return devices
     
