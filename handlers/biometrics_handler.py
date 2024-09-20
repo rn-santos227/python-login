@@ -1,4 +1,4 @@
-from com.digitalpersona.uareu import UareUGlobal, Reader # type: ignore
+from com.digitalpersona.uareu import UareUGlobal, Reader, UareUException # type: ignore
 
 class BiometricsHandler:
   def __init__(self):
@@ -11,21 +11,25 @@ class BiometricsHandler:
     pass
 
   def get_devices(self):
-    readers = UareUGlobal.GetReaderCollection()
-    readers.GetReaders()
+    try: 
+      readers = UareUGlobal.GetReaderCollection()
+      readers.GetReaders()
 
-    devices = []
+      devices = []
 
-    if len(readers) == 0:
-      print("No fingerprint readers found.")
+      if len(readers) == 0:
+        print("No fingerprint readers found.")
 
-    else:
-      reader = readers.get(0)
-      device_name = reader.GetDescription().name
-      print(f"Using reader: {device_name}")
-      devices.append(device_name)
+      else:
+        reader = readers.get(0)
+        device_name = reader.GetDescription().name
+        print(f"Using reader: {device_name}")
+        devices.append(device_name)
 
-    return devices
+      return devices
+    
+    except UareUException as err:
+      print(f"Biometrics SDK failed to initialized: {err}")
 
   def capture_fingerprint(self):
     pass
