@@ -81,6 +81,10 @@ class BiometricsPage(QWidget):
 
   def load_biometric_devices_to_combo_box(self):
     self.devices = self.biometrics_handler.get_devices()
+
+    if not self.devices:
+      return
+    
     self.biometrics_combo_box.set_items(self.devices)
 
   def load_biometrics(self):
