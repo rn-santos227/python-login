@@ -89,7 +89,7 @@ class BiometricsPage(QWidget):
     
     pattern = r"\{(.*?)\}"
     
-    items = [(device, device) for device in self.devices]
+    items = [(re.search(pattern, device[0]).group(1), device) for device in self.devices]
     print(items)
     # self.biometrics_combo_box.set_items(items)
 
