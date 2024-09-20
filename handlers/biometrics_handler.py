@@ -26,8 +26,9 @@ class BiometricsHandler:
           reader = readers.get(i)
           device_name = reader.GetDescription().name
           print(f"Using reader: {device_name}")
-          devices.append(device_name)
-          
+          python_string = str(device_name)
+          devices.append(python_string)
+
         return devices
     
     except UareUException as err:
