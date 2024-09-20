@@ -85,7 +85,8 @@ class BiometricsPage(QWidget):
     if not self.devices:
       return
     
-    self.biometrics_combo_box.set_items(self.devices)
+    items = [(device, device) for device in self.devices]
+    self.biometrics_combo_box.set_items(items)
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
