@@ -67,6 +67,9 @@ class BiometricsHandler:
         if capture_result.quality == Reader.CaptureQuality.GOOD and capture_result.image is not None:
           return capture_result.image
       
+        else:
+          print(f"Capture failed: {capture_result.quality}")
+          return None
       
       except UareUException as err:
         print(f"Error initializing capture: {err}")
