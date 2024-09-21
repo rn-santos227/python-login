@@ -51,7 +51,7 @@ class ScannerPage(QWidget):
     left_spacer: QSpacerItem = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
     right_spacer = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-    self.student_combo_box: ComboBox = ComboBox(label_text="Student Names")
+    self.students_combo_box: ComboBox = ComboBox(label_text="Student Names")
     self.items=self.load_students_to_combo_box()
     
     self.webcam_component: Webcam = Webcam(self)
@@ -66,7 +66,7 @@ class ScannerPage(QWidget):
     self.capture_button: Button = Button("Save Face")
     self.capture_button.connect_signal(self.save_face)
 
-    center_layout.addWidget(self.student_combo_box)
+    center_layout.addWidget(self.students_combo_box)
     center_layout.addLayout(webcam_center_layout)
     center_layout.addWidget(self.webcam_button)
     center_layout.addWidget(self.capture_button)
@@ -91,12 +91,12 @@ class ScannerPage(QWidget):
       return
     
     items = [(student.full_name, student.id) for student in self.students]
-    self.student_combo_box.set_items(items)
+    self.students_combo_box.set_items(items)
   
   def save_face(self):
     ret, frame = self.webcam_component.capture_image()
     if ret:
-      student_id = self.student_combo_box.get_selected_value()
+      student_id = self.students_combo_box.get_selected_value()
 
       if not student_id:
         self.message_box.show_message("Validation Error", "Name cannot be empty", "error")
