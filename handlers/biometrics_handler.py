@@ -72,6 +72,7 @@ class BiometricsHandler:
            print("Fingerprint captured successfully.")
 
            view = capture_result.image.Views[0]
+           image_data = view.Bytes
       
         else:
           print(f"Capture failed: {capture_result.quality}")
