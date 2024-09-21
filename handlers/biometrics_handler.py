@@ -43,6 +43,7 @@ class BiometricsHandler:
     
     try:
       self.selected_reader.StartCapture()
+      image = self.selected_reader.GetImage()
 
     except UareUException as err:
       print(f"Error capturing fingerprint: {err}")
