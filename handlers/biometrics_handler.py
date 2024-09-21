@@ -34,10 +34,11 @@ class BiometricsHandler:
       print(f"Biometrics SDK failed to initialized: {err}")
       return devices
 
-  def capture_fingerprint(self, device):
+  def capture_fingerprint(self, device_name):
     for i in range(len(self.readers)):
       reader = self.readers.get(i)
-
-
+      if reader.GetDescription().name == device_name:
+        self.selected_reader = reader
+        
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     pass
