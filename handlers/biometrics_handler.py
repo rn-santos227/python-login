@@ -2,8 +2,8 @@ from com.digitalpersona.uareu import  Fid, ImageProcessing, UareUGlobal, UareUEx
 
 class BiometricsHandler:
   def __init__(self):
-    self.devices = []
     print("SDK Initialized.")
+    self.devices = []
 
   def get_version(self):
     pass
@@ -13,7 +13,7 @@ class BiometricsHandler:
       readers = UareUGlobal.GetReaderCollection()
       readers.GetReaders()
 
-      devices = []
+      self.device = []
 
       if len(readers) == 0:
         print("No fingerprint readers found.")
@@ -25,9 +25,6 @@ class BiometricsHandler:
           device_name = reader.GetDescription().name
           print(f"Using reader: {device_name}")
           python_string = str(device_name)
-          devices.append(python_string)
-
-        return devices
     
     except UareUException as err:
       print(f"Biometrics SDK failed to initialized: {err}")
