@@ -17,15 +17,17 @@ class Biometrics(QWidget):
 
   def init_ui(self):
     self.layout: QVBoxLayout = QVBoxLayout(self)
+    
     self.label = QLabel(self)
     self.layout.addWidget(self.label)
 
+    self.cap = None
     self.timer = QTimer(self)
     self.timer.timeout.connect(self.update_frame)
 
   def start_scanner(self):
     try:
-      self.timer.start(1000) 
+      self.timer.start(20)
 
     except Exception as e:
       self.message_box.show_message("Error", f"Error during fingerprint capture: {str(e)}", "error")

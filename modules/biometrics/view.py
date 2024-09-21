@@ -99,7 +99,6 @@ class BiometricsPage(QWidget):
 
   def save_biometrics(self):
     student_id = self.students_combo_box.get_selected_value()
-    biometrics_device = self.biometrics_combo_box.get_selected_value()
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
