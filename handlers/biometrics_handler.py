@@ -25,6 +25,8 @@ class BiometricsHandler:
           device_name = reader.GetDescription().name
           print(f"Using reader: {device_name}")
           python_string = str(device_name)
+          self.devices.append(python_string)
+
     
     except UareUException as err:
       print(f"Biometrics SDK failed to initialized: {err}")
