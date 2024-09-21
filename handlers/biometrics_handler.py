@@ -41,13 +41,14 @@ class BiometricsHandler:
       reader = self.readers.get(i)
       if reader.GetDescription().name == device_name:
         self._reader = reader
+        self._reader.Open(Reader.Priority.EXCLUSIVE)
         print(f"Selected reader: {device_name}")
         break
 
     if self._reader:
       try:
         img_format = Fid.Format.ANSI_381_2004
-        img_proc = Reader.ImageProcessing.DEFAULT
+        img_proc = Reader.ImageProcessing.IMG_PROC_DEFAULT
 
         while True:
           status = self._reader.GetStatus()
