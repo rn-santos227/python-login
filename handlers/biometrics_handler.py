@@ -75,9 +75,9 @@ class BiometricsHandler:
            image_data = view.Bytes
            width = view.Width
            height = view.Height
-           depth = view.BitsPerPixel
 
            img = QImage(image_data, width, height, QImage.Format_Grayscale8)
+           return img
       
         else:
           print(f"Capture failed: {capture_result.quality}")
