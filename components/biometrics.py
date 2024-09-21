@@ -25,6 +25,8 @@ class Biometrics(QWidget):
     self.biometrics_combo_box: ComboBox = ComboBox(label_text="Biometrics List")
 
     self.label = QLabel(self)
+
+    self.layout.addWidget(self.biometrics_combo_box)
     self.layout.addWidget(self.label)
 
     self.cap = None

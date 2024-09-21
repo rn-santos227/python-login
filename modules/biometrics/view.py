@@ -1,5 +1,3 @@
-import re
-
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QGridLayout, QHeaderView, QPushButton, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
@@ -83,6 +81,8 @@ class BiometricsPage(QWidget):
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
+    self.biometrics_component.load_biometric_devices_to_combo_box()
+
     if not self.biometrics:
       return
     
