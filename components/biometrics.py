@@ -60,7 +60,8 @@ class Biometrics(QWidget):
     
   def update_frame(self):
     try:
-      fingerprint_image = self.biometrics_handler.capture_fingerprint()
+      device = self.biometrics_combo_box.get_selected_value()
+      fingerprint_image = self.biometrics_handler.capture_fingerprint(device)
 
       if fingerprint_image:
         self.display_image(fingerprint_image)
@@ -76,3 +77,6 @@ class Biometrics(QWidget):
     pixmap = QPixmap.fromImage(img)
 
     self.label.setPixmap(pixmap.scaled(256, 360, aspectRatioMode=Qt.KeepAspectRatio))
+
+  def stop_scanner(self):
+    self.timer.stop()
