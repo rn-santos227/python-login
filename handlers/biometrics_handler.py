@@ -13,7 +13,8 @@ class BiometricsHandler:
       readers = UareUGlobal.GetReaderCollection()
       readers.GetReaders()
 
-      self.device = []
+      self.devices = readers
+      devices = []
 
       if len(readers) == 0:
         print("No fingerprint readers found.")
@@ -24,16 +25,17 @@ class BiometricsHandler:
           device_name = reader.GetDescription().name
           print(f"Using reader: {device_name}")
           python_string = str(device_name)
-          self.devices.append(python_string)
+          devices.append(python_string)
 
-      return self.devices
+      return devices
     
     except UareUException as err:
       print(f"Biometrics SDK failed to initialized: {err}")
-      return self.devices
+      return devices
 
   def capture_fingerprint(self, device):
     pass
+
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     pass
