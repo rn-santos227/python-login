@@ -41,15 +41,13 @@ class BiometricsHandler:
         self._reader = reader
         print(f"Selected reader: {device_name}")
         break
-    
-    try:
-      self.selected_reader.StartCapture()
-      image = self.selected_reader.GetImage()
-      return image.ExportImageData()
 
-    except UareUException as err:
-      print(f"Error capturing fingerprint: {err}")
-      return None
+    if self._reader:
+      try:
+        img_format = Fid.Format.ANSI_381_2004
+
+      except UareUException as err:
+        print(f"Error initializing capture: {err}")
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     pass
