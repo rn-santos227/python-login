@@ -3,7 +3,7 @@ from com.digitalpersona.uareu import  Fid, ImageProcessing, UareUGlobal, UareUEx
 class BiometricsHandler:
   def __init__(self):
     print("SDK Initialized.")
-    self.devices = []
+    self.readers = []
 
   def get_version(self):
     pass
@@ -13,7 +13,7 @@ class BiometricsHandler:
       readers = UareUGlobal.GetReaderCollection()
       readers.GetReaders()
 
-      self.devices = readers
+      self.readers = readers
       devices = []
 
       if len(readers) == 0:
