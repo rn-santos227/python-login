@@ -1,3 +1,5 @@
+import time
+
 from com.digitalpersona.uareu import Fid, Reader, UareUGlobal, UareUException # type: ignore
 
 class BiometricsHandler:
@@ -49,10 +51,13 @@ class BiometricsHandler:
 
         while True:
           status = self._reader.GetStatus()
-          
+
           if status.status == Reader.ReaderStatus.READY:
             break
 
+          elif status.status in [Reader.ReaderStatus.READY, Reader.ReaderStatus.NEED_CALIBRATION]:
+             time.sleep(0.1)
+             
       except UareUException as err:
         print(f"Error initializing capture: {err}")
 
