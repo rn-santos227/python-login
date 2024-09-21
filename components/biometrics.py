@@ -31,6 +31,8 @@ class Biometrics(QWidget):
 
   def load_biometric_devices_to_combo_box(self):
     self.devices = self.biometrics_handler.get_devices()
+    if not self.devices:
+      return
 
   def start_scanner(self):
     try:
