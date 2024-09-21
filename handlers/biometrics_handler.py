@@ -4,7 +4,7 @@ class BiometricsHandler:
   def __init__(self):
     print("SDK Initialized.")
     self.readers = []
-    self.selected_reader = None
+    self._reader = None
 
   def get_version(self):
     pass
@@ -38,7 +38,8 @@ class BiometricsHandler:
     for i in range(len(self.readers)):
       reader = self.readers.get(i)
       if reader.GetDescription().name == device_name:
-        self.selected_reader = reader
+        self._reader = reader
+        print(f"Selected reader: {device_name}")
         break
     
     try:
