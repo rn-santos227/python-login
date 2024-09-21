@@ -69,7 +69,9 @@ class BiometricsHandler:
         capture_result = self._reader.Capture(img_format, img_proc, self._reader.GetCapabilities().resolutions[0], -1)
 
         if capture_result.quality == Reader.CaptureQuality.GOOD and capture_result.image is not None:
-          return capture_result.image
+           print("Fingerprint captured successfully.")
+
+           view = capture_result.image.Views[0]
       
         else:
           print(f"Capture failed: {capture_result.quality}")
