@@ -33,6 +33,9 @@ class Biometrics(QWidget):
     self.devices = self.biometrics_handler.get_devices()
     if not self.devices:
       return
+    
+    pattern = r"\{(.*?)\}"
+    items = []
 
   def start_scanner(self):
     try:
