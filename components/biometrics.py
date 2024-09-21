@@ -54,9 +54,10 @@ class Biometrics(QWidget):
 
     except Exception as e:
       self.message_box.show_message("Error", f"Error during fingerprint capture: {str(e)}", "error")
+      self.stop_scanner()
 
   def stop_scanner(self):
-    pass
+     self.timer.stop()
     
   def update_frame(self):
     try:
@@ -78,5 +79,4 @@ class Biometrics(QWidget):
 
     self.label.setPixmap(pixmap.scaled(256, 360, aspectRatioMode=Qt.KeepAspectRatio))
 
-  def stop_scanner(self):
-    self.timer.stop()
+   
