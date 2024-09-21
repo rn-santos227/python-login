@@ -1,5 +1,8 @@
 import time
 
+from PyQt5.QtCore import QObject
+from PyQt5.QtGui import QImage
+
 from com.digitalpersona.uareu import Fid, Reader, UareUGlobal, UareUException # type: ignore
 
 class BiometricsHandler:
