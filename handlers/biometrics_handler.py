@@ -57,7 +57,11 @@ class BiometricsHandler:
 
           elif status.status in [Reader.ReaderStatus.READY, Reader.ReaderStatus.NEED_CALIBRATION]:
              time.sleep(0.1)
-             
+
+          else:
+            print(f"Reader error: {status.status}")
+            return None
+
       except UareUException as err:
         print(f"Error initializing capture: {err}")
 
