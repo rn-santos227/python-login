@@ -40,6 +40,13 @@ class BiometricsHandler:
       if reader.GetDescription().name == device_name:
         self.selected_reader = reader
         break
+    
+    try:
+      self.selected_reader.StartCapture()
+
+    except UareUException as err:
+      print(f"Error capturing fingerprint: {err}")
+      return None
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     pass
