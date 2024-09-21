@@ -1,3 +1,5 @@
+import re
+
 import modules.biometrics.controller as biometrics_controller
 
 from PyQt5.QtCore import Qt, QTimer
@@ -36,6 +38,11 @@ class Biometrics(QWidget):
     
     pattern = r"\{(.*?)\}"
     items = []
+
+    for device in self.devices:
+      match = re.search(pattern, device)
+      if match:
+        items.append((match.group(1), device))
 
   def start_scanner(self):
     try:
