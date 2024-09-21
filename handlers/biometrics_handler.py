@@ -2,6 +2,7 @@ from com.digitalpersona.uareu import  Fid, ImageProcessing, UareUGlobal, UareUEx
 
 class BiometricsHandler:
   def __init__(self):
+    self.devices = []
     print("SDK Initialized.")
 
   def get_version(self):
@@ -31,7 +32,7 @@ class BiometricsHandler:
     except UareUException as err:
       print(f"Biometrics SDK failed to initialized: {err}")
 
-  def capture_fingerprint(self):
+  def capture_fingerprint(self, device):
     pass
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
