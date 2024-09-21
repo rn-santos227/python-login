@@ -1,4 +1,4 @@
-from com.digitalpersona.uareu import  Fid, ImageProcessing, UareUGlobal, UareUException # type: ignore
+from com.digitalpersona.uareu import Fid, Reader, UareUGlobal, UareUException # type: ignore
 
 class BiometricsHandler:
   def __init__(self):
