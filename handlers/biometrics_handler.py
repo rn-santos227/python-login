@@ -39,6 +39,7 @@ class BiometricsHandler:
       reader = self.readers.get(i)
       if reader.GetDescription().name == device_name:
         self.selected_reader = reader
-        
+        break
+
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     pass
