@@ -45,6 +45,13 @@ class BiometricsHandler:
     if self._reader:
       try:
         img_format = Fid.Format.ANSI_381_2004
+        img_proc = Reader.ImageProcessing.DEFAULT
+
+        while True:
+          status = self._reader.GetStatus()
+          
+          if status.status == Reader.ReaderStatus.READY:
+            break
 
       except UareUException as err:
         print(f"Error initializing capture: {err}")
