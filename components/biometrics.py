@@ -4,6 +4,7 @@ from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget
 
+from components.combo_box import ComboBox
 from components.message_box import MessageBox
 
 from handlers.biometrics_handler import BiometricsHandler
@@ -13,6 +14,7 @@ class Biometrics(QWidget):
     super().__init__(parent)
     self.biometrics_handler: BiometricsHandler = BiometricsHandler()
     self.message_box: MessageBox = MessageBox(self)
+    self.devices = []
     self.init_ui()
 
   def init_ui(self):
