@@ -17,7 +17,6 @@ class BiometricsHandler:
 
       if len(readers) == 0:
         print("No fingerprint readers found.")
-        return []
 
       else:
         for i in range(len(readers)):
@@ -27,9 +26,11 @@ class BiometricsHandler:
           python_string = str(device_name)
           self.devices.append(python_string)
 
+      return self.devices
     
     except UareUException as err:
       print(f"Biometrics SDK failed to initialized: {err}")
+      return self.devices
 
   def capture_fingerprint(self, device):
     pass
