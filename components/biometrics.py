@@ -30,7 +30,7 @@ class Biometrics(QWidget):
     self.timer.timeout.connect(self.update_frame)
 
   def load_biometric_devices_to_combo_box(self):
-    pass
+    self.devices = self.biometrics_handler.get_devices()
 
   def start_scanner(self):
     try:
