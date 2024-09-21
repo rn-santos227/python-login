@@ -4,6 +4,7 @@ class BiometricsHandler:
   def __init__(self):
     print("SDK Initialized.")
     self.readers = []
+    self.selected_reader = None
 
   def get_version(self):
     pass
