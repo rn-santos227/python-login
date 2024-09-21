@@ -34,7 +34,8 @@ class BiometricsHandler:
       return devices
 
   def capture_fingerprint(self, device):
-    pass
+    for i in range(len(self.readers)):
+      reader = self.readers.get(i)
 
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
