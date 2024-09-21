@@ -73,6 +73,7 @@ class BiometricsHandler:
 
            view = capture_result.image.Views[0]
            image_data = view.Bytes
+           width = view.Width
       
         else:
           print(f"Capture failed: {capture_result.quality}")
