@@ -97,6 +97,9 @@ class BiometricsPage(QWidget):
 
     self.biometrics_combo_box.set_items(items)
 
+  def save_biometrics(self):
+    pass
+
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
     if not self.biometrics:
