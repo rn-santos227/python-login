@@ -44,6 +44,8 @@ class Biometrics(QWidget):
       if match:
         items.append((match.group(1), device))
 
+    self.biometrics_combo_box.set_items(items)
+
   def start_scanner(self):
     try:
       self.timer.start(20)
