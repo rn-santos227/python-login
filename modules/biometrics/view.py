@@ -26,7 +26,6 @@ class BiometricsPage(QWidget):
     self.biometrics_handler: BiometricsHandler = BiometricsHandler()
     self.message_box: MessageBox = MessageBox(self)
     self.biometrics: list[StudentBiometrics] = []
-    self.devices = []
     self.students: list[Student] = []
     self.__init_ui()
 
@@ -45,14 +44,12 @@ class BiometricsPage(QWidget):
     self.main_layout: QHBoxLayout = QHBoxLayout()
     left_content_layout: QVBoxLayout = QVBoxLayout()
 
-    self.biometrics_combo_box: ComboBox = ComboBox(label_text="Biometrics List")
     self.students_combo_box: ComboBox = ComboBox(label_text="Student List")
     self.biometrics_component: Biometrics = Biometrics()
 
     self.biometrics_button: Button = Button("Start Fingerprint Reader")
     self.biometrics_button.connect_signal(self.__enable_biometrics_scanner)
 
-    left_content_layout.addWidget(self.biometrics_combo_box)
     left_content_layout.addWidget(self.students_combo_box)
     left_content_layout.addWidget(self.biometrics_component)
     left_content_layout.addWidget(self.biometrics_button)
@@ -80,22 +77,6 @@ class BiometricsPage(QWidget):
     
     items = [(student.full_name, student.id) for student in self.students]
     self.students_combo_box.set_items(items)
-
-  def load_biometric_devices_to_combo_box(self):
-    self.devices = self.biometrics_handler.get_devices()
-
-    if not self.devices:
-      return
-    
-    pattern = r"\{(.*?)\}"
-    items = []
-    
-    for device in self.devices:
-      match = re.search(pattern, device)
-      if match:
-        items.append((match.group(1), device))
-
-    self.biometrics_combo_box.set_items(items)
 
   def save_biometrics(self):
     student_id = self.students_combo_box.get_selected_value()
