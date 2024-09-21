@@ -2,10 +2,11 @@ from com.digitalpersona.uareu import UareUGlobal, Reader, UareUException # type:
 
 class BiometricsHandler:
   def __init__(self):
-    self.initialize()
+    print("SDK Initialized")
 
   def initialize(self):
-    pass
+    result = UareUGlobal.GetEngine()
+    print(dir(result))
 
   def get_version(self):
     pass
