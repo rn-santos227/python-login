@@ -61,6 +61,8 @@ class BiometricsHandler:
           else:
             print(f"Reader error: {status.status}")
             return None
+          
+        capture_result = self._reader.Capture(img_format, img_proc, self._reader.GetCapabilities().resolutions[0], -1)
 
       except UareUException as err:
         print(f"Error initializing capture: {err}")
