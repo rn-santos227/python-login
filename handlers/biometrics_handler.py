@@ -76,6 +76,7 @@ class BiometricsHandler:
           print(f"Image object methods and attributes: {dir(capture_result.image)}")
 
           image = capture_result.image
+          views = image.getViews()
         else:
           print(f"Capture failed: {capture_result.quality}")
           return None
