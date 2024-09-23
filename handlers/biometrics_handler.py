@@ -90,3 +90,6 @@ class BiometricsHandler:
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     pass
+
+  def close_reader():
+    pass
