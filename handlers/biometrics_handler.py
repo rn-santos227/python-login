@@ -91,5 +91,10 @@ class BiometricsHandler:
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     pass
 
-  def close_reader():
-    pass
+  def close_reader(self):
+    if self._reader:
+      try:
+        self._reader.Close()
+
+      except UareUException as err:
+        print(f"Error closing reader: {err}")
