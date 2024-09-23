@@ -95,6 +95,7 @@ class BiometricsHandler:
     if self._reader:
       try:
         self._reader.Close()
-
+        print("Reader closed successfully.")
+        
       except UareUException as err:
         print(f"Error closing reader: {err}")
