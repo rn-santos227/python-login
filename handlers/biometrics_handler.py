@@ -84,6 +84,8 @@ class BiometricsHandler:
             image_data = first_view.getData()
             q_image = QImage(image_data, first_view.getWidth(), first_view.getHeight(), QImage.Format_Grayscale8)
 
+            self.close_reader()
+            
         else:
           print(f"Capture failed: {capture_result.quality}")
           return None
