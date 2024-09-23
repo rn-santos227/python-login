@@ -79,6 +79,7 @@ class BiometricsHandler:
             image_data = first_view.getData()
 
             width = first_view.getWidth()
+            height = first_view.getHeight()
             
             q_image = QImage(image_data, first_view.getWidth(), first_view.getHeight(), QImage.Format_Grayscale8)
 
