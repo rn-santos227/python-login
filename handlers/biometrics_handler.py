@@ -74,10 +74,13 @@ class BiometricsHandler:
             first_view = views[0]
 
             image_data = first_view.getData()
+
+            width = first_view.getWidth()
+            height = first_view.getHeight()
             raw_data = bytes(image_data)
 
             self.close_reader()
-            return raw_data 
+            return raw_data, width, height 
         else:
           print(f"Capture failed: {capture_result.quality}")
           self.close_reader()
