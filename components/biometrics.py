@@ -76,7 +76,7 @@ class Biometrics(QWidget):
       self.message_box.show_message("Error", f"Error during fingerprint capture: {str(e)}", "error")
 
   def display_image(self, img_data, width, height):
-    img = QImage.fromData(img_data, width, height QImage.Format_Grayscale8)
+    img = QImage.fromData(img_data, width, height, QImage.Format_Grayscale8)
     pixmap = QPixmap.fromImage(img)
     self.label.setPixmap(pixmap.scaled(300, 600, aspectRatioMode=Qt.KeepAspectRatio))
 
