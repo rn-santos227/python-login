@@ -70,11 +70,6 @@ class BiometricsHandler:
 
         if capture_result.quality == Reader.CaptureQuality.GOOD and capture_result.image is not None:
           print("Fingerprint captured successfully.")
-
-          # Print out the type and available methods/attributes of the image object
-          print(f"Image object type: {type(capture_result.image)}")
-          print(f"Image object methods and attributes: {dir(capture_result.image)}")
-
           image = capture_result.image
           views = image.getViews()
 
@@ -85,7 +80,7 @@ class BiometricsHandler:
             q_image = QImage(image_data, first_view.getWidth(), first_view.getHeight(), QImage.Format_Grayscale8)
 
             self.close_reader()
-            
+            return q_image 
         else:
           print(f"Capture failed: {capture_result.quality}")
           return None
