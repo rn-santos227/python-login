@@ -77,6 +77,9 @@ class BiometricsHandler:
 
           image = capture_result.image
           views = image.getViews()
+
+          if len(views) > 0:
+            first_view = views[0]
         else:
           print(f"Capture failed: {capture_result.quality}")
           return None
