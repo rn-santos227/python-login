@@ -83,6 +83,7 @@ class BiometricsHandler:
             return q_image 
         else:
           print(f"Capture failed: {capture_result.quality}")
+          self.close_reader()
           return None
       
       except UareUException as err:
@@ -96,6 +97,6 @@ class BiometricsHandler:
       try:
         self._reader.Close()
         print("Reader closed successfully.")
-        
+
       except UareUException as err:
         print(f"Error closing reader: {err}")
