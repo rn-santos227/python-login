@@ -5,4 +5,6 @@ class CaptureThread(QThread):
 
   def __init__(self, biometrics_handler, device_name):
     super().__init__()
+    self.biometrics_handler = biometrics_handler
+    self.device_name = device_name
 
