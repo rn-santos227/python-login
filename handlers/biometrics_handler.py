@@ -1,8 +1,5 @@
 import time
 
-from PyQt5.QtCore import QObject
-from PyQt5.QtGui import QImage
-
 from com.digitalpersona.uareu import Fid, Reader, UareUGlobal, UareUException # type: ignore
 
 class BiometricsHandler:
@@ -77,15 +74,10 @@ class BiometricsHandler:
             first_view = views[0]
 
             image_data = first_view.getData()
-
-            width = first_view.getWidth()
-            height = first_view.getHeight()
             raw_data = bytes(image_data)
-            
-            q_image = QImage(raw_data, width, height, QImage.Format_Grayscale8)
 
             self.close_reader()
-            return q_image 
+            return raw_data 
         else:
           print(f"Capture failed: {capture_result.quality}")
           self.close_reader()
