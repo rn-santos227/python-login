@@ -25,6 +25,7 @@ class Biometrics(QWidget):
     self.biometrics_combo_box: ComboBox = ComboBox(label_text="Biometrics List")
 
     self.label = QLabel(self)
+    self.label.setAlignment(Qt.AlignCenter)
 
     self.layout.addWidget(self.biometrics_combo_box)
     self.layout.addWidget(self.label)
@@ -76,6 +77,6 @@ class Biometrics(QWidget):
   def display_image(self, img_data):
     img = QImage.fromData(img_data)
     pixmap = QPixmap.fromImage(img)
-    self.label.setPixmap(pixmap.scaled(256, 360, aspectRatioMode=Qt.KeepAspectRatio))
+    self.label.setPixmap(pixmap.scaled(300, 600, aspectRatioMode=Qt.KeepAspectRatio))
 
    
