@@ -8,3 +8,5 @@ class CaptureThread(QThread):
     self.biometrics_handler = biometrics_handler
     self.device_name: str = device_name
 
+  def run(self):
+    pass
