@@ -63,6 +63,9 @@ class Biometrics(QWidget):
     
   def update_frame(self, capture_result):
     img_data, width, height = capture_result
+
+    if img_data:
+      self.display_image(img_data, width, height)
   
   def display_image(self, img_data, width, height):
     img = QImage(img_data, width, height, QImage.Format_Grayscale8)
