@@ -10,6 +10,7 @@ class CaptureThread(QThread):
     super().__init__()
     self.biometrics_handler: BiometricsHandler = biometrics_handler
     self.device_name: str = device_name
+    self._stop_flag = False 
 
   def run(self):
     while not self.stop_flag:
