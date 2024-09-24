@@ -11,6 +11,8 @@ from components.message_box import MessageBox
 
 from handlers.biometrics_handler import BiometricsHandler
 
+from threads.capture_thread import CaptureThread
+
 class Biometrics(QWidget):
   def __init__(self, parent=None):
     super().__init__(parent)
