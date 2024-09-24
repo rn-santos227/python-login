@@ -20,3 +20,6 @@ class CaptureThread(QThread):
       
       else:
         self.result_ready.emit((None, None, None))
+
+  def stop(self):
+    self.stop_flag = True
