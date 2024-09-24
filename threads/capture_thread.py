@@ -23,6 +23,8 @@ class CaptureThread(QThread):
       
       else:
         self.result_ready.emit((None, None, None))
+      
+      self.msleep(200)
 
   def stop(self):
     self.stop_flag = True
