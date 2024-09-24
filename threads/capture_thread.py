@@ -4,6 +4,7 @@ from handlers.biometrics_handler import BiometricsHandler
 
 class CaptureThread(QThread):
   result_ready = pyqtSignal(tuple) 
+  stop_flag = False
 
   def __init__(self, biometrics_handler, device_name: str):
     super().__init__()
