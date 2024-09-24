@@ -23,3 +23,4 @@ class CaptureThread(QThread):
 
   def stop(self):
     self.stop_flag = True
+    self.quit()
