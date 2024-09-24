@@ -66,6 +66,9 @@ class Biometrics(QWidget):
 
     if img_data:
       self.display_image(img_data, width, height)
+    
+    else:
+      self.message_box.show_message("Error", "Failed to capture fingerprint", "error")
   
   def display_image(self, img_data, width, height):
     img = QImage(img_data, width, height, QImage.Format_Grayscale8)
