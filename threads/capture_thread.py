@@ -12,3 +12,5 @@ class CaptureThread(QThread):
 
   def run(self):
     capture_result = self.biometrics_handler.capture_fingerprint(self.device_name)
+    if capture_result:
+      self.result_ready.emit(capture_result)
