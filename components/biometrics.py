@@ -17,6 +17,7 @@ class Biometrics(QWidget):
   def __init__(self, parent=None):
     super().__init__(parent)
     self.biometrics_handler: BiometricsHandler = BiometricsHandler()
+    self.capture_thread: CaptureThread = None 
     self.message_box: MessageBox = MessageBox(self)
     self.devices = []
     self.init_ui()
