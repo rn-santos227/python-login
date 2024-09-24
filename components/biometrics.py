@@ -53,12 +53,7 @@ class Biometrics(QWidget):
     self.biometrics_combo_box.set_items(items)
 
   def start_scanner(self):
-    try:
-      self.timer.start(20)
-
-    except Exception as e:
-      self.message_box.show_message("Error", f"Error during fingerprint capture: {str(e)}", "error")
-      self.stop_scanner()
+    device = self.biometrics_combo_box.get_selected_value()
 
   def stop_scanner(self):
      self.timer.stop()
