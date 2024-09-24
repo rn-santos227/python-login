@@ -61,21 +61,9 @@ class Biometrics(QWidget):
   def stop_scanner(self):
      self.timer.stop()
     
-  def update_frame(self):
-    try:
-      device = self.biometrics_combo_box.get_selected_value()
-      capture_result = self.biometrics_handler.capture_fingerprint(device)
-      
-      if capture_result:
-        img_data, width, height = capture_result
-        self.display_image(img_data, width, height)
-
-      else:
-        print("Waiting for fingerprint...")
-
-    except Exception as e:
-      self.message_box.show_message("Error", f"Error during fingerprint capture: {str(e)}", "error")
-
+  def update_frame(self, capture_result):
+    img_data, width, height = capture_result
+  
   def display_image(self, img_data, width, height):
     img = QImage(img_data, width, height, QImage.Format_Grayscale8)
     pixmap = QPixmap.fromImage(img)
