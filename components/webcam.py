@@ -55,6 +55,9 @@ class Webcam(QWidget):
         return ret, frame
     return False, None
   
+  def display_black_screen(self):
+    pass
+  
   def stop_webcam(self):
     if self.cap is not None:
       self.cap.release()
