@@ -31,6 +31,7 @@ class Biometrics(QWidget):
     self.label = QLabel(self)
     self.label.setAlignment(Qt.AlignCenter)
     self.label.setStyleSheet(biometrics_label_style)
+    self.label.setFixedSize(300, 300) 
 
     self.layout.addWidget(self.biometrics_combo_box)
     self.layout.addWidget(self.label)
