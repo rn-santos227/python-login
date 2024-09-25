@@ -24,6 +24,8 @@ class CaptureThread(QThread):
       else:
         self.result_ready.emit((None, None, None))
       
+      self.msleep(500) 
+      
     print("Thread exiting...")
 
   def stop(self):
