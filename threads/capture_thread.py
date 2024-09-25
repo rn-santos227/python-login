@@ -6,7 +6,6 @@ from handlers.biometrics_handler import BiometricsHandler
 
 class CaptureThread(QThread):
   result_ready = pyqtSignal(tuple) 
-  stop_flag = False
 
   def __init__(self, biometrics_handler, device_name: str):
     super().__init__()
@@ -27,5 +26,7 @@ class CaptureThread(QThread):
     print("Thread exiting...")
 
   def stop(self):
-    self.stop_flag = True
-    self.wait(500)
+    print("Stop method called")
+    self._stop_flag.set() 
+    self.wait(500) 
+    print("Thread stopped")
