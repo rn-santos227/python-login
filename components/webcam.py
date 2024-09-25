@@ -58,6 +58,7 @@ class Webcam(QWidget):
   
   def display_black_screen(self):
     black_img = np.zeros((480, 640, 3), dtype=np.uint8)
+    self.display_image(black_img)
   
   def stop_webcam(self):
     if self.cap is not None:
