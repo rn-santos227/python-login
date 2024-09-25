@@ -28,4 +28,4 @@ class CaptureThread(QThread):
 
   def stop(self):
     self.stop_flag = True
-    self.wait()
+    self.wait(500)
