@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QImage, QPixmap
@@ -56,7 +57,7 @@ class Webcam(QWidget):
     return False, None
   
   def display_black_screen(self):
-    pass
+    black_img = np.zeros((480, 640, 3), dtype=np.uint8)
   
   def stop_webcam(self):
     if self.cap is not None:
