@@ -65,8 +65,9 @@ class Biometrics(QWidget):
       self.capture_thread.start()
 
   def stop_scanner(self):
-    if self.capture_thread:
+    if self.capture_thread and self.capture_thread.isRunning():
       self.capture_thread.stop()
+      self.capture_thread.wait() 
     
   def update_frame(self, capture_result):
     img_data, width, height = capture_result
