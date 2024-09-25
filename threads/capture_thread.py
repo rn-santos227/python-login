@@ -30,6 +30,12 @@ class CaptureThread(QThread):
 
   def stop(self):
     print("Stop method called for fingerprint scanner.")
+    self.biometrics_handler.close_reader()
     self._stop_flag.set() 
-    self.wait(500) 
+    self.wait(500)
+
+    if self.isRunning():
+      print("Waiting for thread to fully stop.")
+      self.wait()
+      
     print("Thread stopped")
