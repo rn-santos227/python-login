@@ -1,3 +1,5 @@
+import threading
+
 from PyQt5.QtCore import QThread, pyqtSignal
 
 from handlers.biometrics_handler import BiometricsHandler
@@ -10,7 +12,7 @@ class CaptureThread(QThread):
     super().__init__()
     self.biometrics_handler: BiometricsHandler = biometrics_handler
     self.device_name: str = device_name
-    self._stop_flag = False 
+    self._stop_flag = threading.Event() 
 
   def run(self):
     while not self.stop_flag:
