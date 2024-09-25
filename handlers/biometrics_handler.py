@@ -72,9 +72,7 @@ class BiometricsHandler:
 
           if len(views) > 0:
             first_view = views[0]
-
             image_data = first_view.getData()
-
             width = first_view.getWidth()
             height = first_view.getHeight()
             raw_data = bytes(image_data)
@@ -88,6 +86,8 @@ class BiometricsHandler:
       
       except UareUException as err:
         print(f"Error initializing capture: {err}")
+        self.close_reader()
+        return None
 
   def verify_fingerprints(self, fingerprint_1, fingerprint_2) -> bool:
     pass
