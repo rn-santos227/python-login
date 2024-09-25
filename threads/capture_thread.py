@@ -15,18 +15,16 @@ class CaptureThread(QThread):
     self._stop_flag = threading.Event() 
 
   def run(self):
-    while not self.stop_flag:
-      capture_result = self.biometrics_handler.capture_fingerprint(self.device_name) 
-      if self._stop_flag:
-        break
+    print("Thread started")
+    capture_result = self.biometrics_handler.capture_fingerprint(self.device_name) 
 
-      if capture_result:
-        self.result_ready.emit(capture_result)
+    if capture_result:
+      self.result_ready.emit(capture_result)
+    
+    else:
+      self.result_ready.emit((None, None, None))
       
-      else:
-        self.result_ready.emit((None, None, None))
-      
-      self.msleep(200)
+    print("Thread exiting...")
 
   def stop(self):
     self.stop_flag = True
