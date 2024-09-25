@@ -10,8 +10,9 @@ from components.combo_box import ComboBox
 from components.message_box import MessageBox
 
 from handlers.biometrics_handler import BiometricsHandler
-
 from threads.capture_thread import CaptureThread
+
+from assets.styles.styles import biometrics_label_style
 
 class Biometrics(QWidget):
   def __init__(self, parent=None):
@@ -29,6 +30,7 @@ class Biometrics(QWidget):
 
     self.label = QLabel(self)
     self.label.setAlignment(Qt.AlignCenter)
+    self.label.setStyleSheet(biometrics_label_style)
 
     self.layout.addWidget(self.biometrics_combo_box)
     self.layout.addWidget(self.label)
