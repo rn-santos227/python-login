@@ -29,7 +29,7 @@ class CaptureThread(QThread):
     print("Thread exiting...")
 
   def stop(self):
-    print("Stop method called")
+    print("Stop method called for fingerprint scanner.")
     self._stop_flag.set() 
     self.wait(500) 
     print("Thread stopped")
