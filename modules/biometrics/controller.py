@@ -65,6 +65,7 @@ def create_biometric(biometric: Biometric):
     values = (biometric.student_id, biometric.fingerprint_data)
     cursor.execute(sql_query, values)
     connection.commit()
+    return biometric
 
   except Exception as e:
     print(f"Error: {e}")
