@@ -62,7 +62,9 @@ def create_biometric(biometric: Biometric):
   cursor = connection.cursor()
 
   try:
-    values = (biometric.student_id, biometric.fingerprint_data)
+    fingerprint_blob = biometric.fingerprint_data if isinstance(biometric.fingerprint_data, bytes) else bytes(biometric.fingerprint_data)
+
+    values = (biometric.student_id, fingerprint_blob)
     cursor.execute(sql_query, values)
     connection.commit()
     return biometric
