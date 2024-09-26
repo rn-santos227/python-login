@@ -68,6 +68,8 @@ class BiometricsPage(QWidget):
 
     self.main_layout.addWidget(content_frame)
     self.setLayout(self.main_layout)
+
+    self.save_biometric_button.set_disabled()
     self.load_biometrics()
 
   def load_students_to_combo_box(self):
