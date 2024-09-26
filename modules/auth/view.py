@@ -34,7 +34,7 @@ class LoginPage(QWidget):
     header_layout: QHBoxLayout = QHBoxLayout()
     logo1_label: QLabel = QLabel(self)
     logo2_label: QLabel = QLabel(self)
-    title_label: QLabel = QLabel("LOG IN MODULE", self)
+    title_label: QLabel = QLabel("Student Login / Logout System", self)
 
     logo1_pixmap: QPixmap = QPixmap(self.__set_logo("logo1.png")).scaled(100, 100, Qt.KeepAspectRatio)
     logo2_pixmap: QPixmap = QPixmap(self.__set_logo("logo2.png")).scaled(100, 100, Qt.KeepAspectRatio)
