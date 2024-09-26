@@ -63,6 +63,7 @@ def create_biometric(biometric: Biometric):
 
   try:
     values = (biometric.student_id, biometric.fingerprint_data)
+    cursor.execute(sql_query, values)
 
   except Exception as e:
     print(f"Error: {e}")
