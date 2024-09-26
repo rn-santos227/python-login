@@ -55,7 +55,7 @@ def get_biometrics_with_students(query) -> list[StudentBiometrics]:
 def match_biometrics(biometric_handler: BiometricsHandler, fingerprint_1, fingerprint_2) -> bool:
   return biometric_handler.verify_fingerprints(fingerprint_1=fingerprint_1, fingerprint_2=fingerprint_2)
 
-def add_biometric(biometric_handler: BiometricsHandler):
+def create_biometric(biometric: Biometric):
   pass
 
 def remove_biometric(id) -> bool:
