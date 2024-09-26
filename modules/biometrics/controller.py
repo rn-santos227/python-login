@@ -73,6 +73,7 @@ def create_biometric(biometric: Biometric):
 
   finally:
     cursor.close()
+    connection.close() 
 
 def remove_biometric(id) -> bool:
   where_clause = f"id = {id}"
