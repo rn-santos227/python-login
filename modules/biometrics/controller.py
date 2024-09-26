@@ -69,6 +69,7 @@ def create_biometric(biometric: Biometric):
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
