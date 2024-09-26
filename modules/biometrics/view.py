@@ -85,6 +85,10 @@ class BiometricsPage(QWidget):
   def save_biometrics(self):
     student_id = self.students_combo_box.get_selected_value()
 
+    if not student_id:
+      self.message_box.show_error("Please select a student.")
+      return
+
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
     self.biometrics_component.load_biometric_devices_to_combo_box()
