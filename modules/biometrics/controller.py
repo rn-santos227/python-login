@@ -61,6 +61,12 @@ def create_biometric(biometric: Biometric):
   connection = DB.connect_db()
   cursor = connection.cursor()
 
+  try:
+    values = (biometric.student_id, biometric.fingerprint_data)
+
+  except Exception as e:
+    print(f"Error: {e}")
+
 def remove_biometric(id) -> bool:
   where_clause = f"id = {id}"
   sql_query = builder(__table, where_clause, "delete")
