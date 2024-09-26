@@ -56,7 +56,7 @@ def match_biometrics(biometric_handler: BiometricsHandler, fingerprint_1, finger
   return biometric_handler.verify_fingerprints(fingerprint_1=fingerprint_1, fingerprint_2=fingerprint_2)
 
 def create_biometric(biometric: Biometric):
-  pass
+  columns = "(student_id, fingerprint_data)"
 
 def remove_biometric(id) -> bool:
   where_clause = f"id = {id}"
