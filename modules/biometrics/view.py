@@ -48,7 +48,8 @@ class BiometricsPage(QWidget):
     self.biometrics_button: Button = Button("Start Fingerprint Reader")
     self.biometrics_button.connect_signal(self.__enable_biometrics_scanner)
 
-    self.save_biometric_button: Button = Button("Save Biometric")
+    self.save_biometric_button: Button = Button("Save Student Biometric")
+    self.save_biometric_button.connect_signal(self.save_biometrics)
 
     left_content_layout.addWidget(self.students_combo_box)
     left_content_layout.addWidget(self.biometrics_component)
