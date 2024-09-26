@@ -67,6 +67,9 @@ def create_biometric(biometric: Biometric):
   except Exception as e:
     print(f"Error: {e}")
 
+  finally:
+    cursor.close()
+
 def remove_biometric(id) -> bool:
   where_clause = f"id = {id}"
   sql_query = builder(__table, where_clause, "delete")
