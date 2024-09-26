@@ -86,7 +86,7 @@ class BiometricsPage(QWidget):
     student_id = self.students_combo_box.get_selected_value()
 
     if not student_id:
-      self.message_box.show_error("Please select a student.")
+      self.message_box.show_message("Warning", "Please select a student.", "warning")
       return
 
   def load_biometrics(self):
