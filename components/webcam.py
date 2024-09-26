@@ -27,9 +27,12 @@ class Webcam(QWidget):
 
   def update_frame(self):
     ret, frame = self.cap.read()
+    
     if ret:
       frame = self.detect_faces(frame)
       self.display_image(frame)
+    else:
+      self.display_black_screen()
     
   def display_image(self, img):
     qformat: QImage = QImage.Format_RGB888
