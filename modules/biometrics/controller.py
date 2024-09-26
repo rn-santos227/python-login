@@ -59,6 +59,7 @@ def create_biometric(biometric: Biometric):
   columns = "(student_id, fingerprint_data)"
   sql_query = builder(__table, f"{columns} VALUES (%s, %s)", "insert")
   connection = DB.connect_db()
+  cursor = connection.cursor()
 
 def remove_biometric(id) -> bool:
   where_clause = f"id = {id}"
