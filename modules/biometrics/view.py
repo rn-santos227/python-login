@@ -88,13 +88,9 @@ class BiometricsPage(QWidget):
     student_id = self.students_combo_box.get_selected_value()
     fingerprint_data = self.biometrics_component.fingerprint_data
 
-    if not student_id:
-      self.message_box.show_message("Warning", "Please select a student.", "warning")
-      return
-    
-    if not fingerprint_data:
-      self.message_box.show_message("Warning", "No Fingerprint Data.", "warning")
-      return 
+    fields_to_validate = [
+      (self.validation_handler.is_not_empty, student_id, "Student cannot be empty."),
+    ]
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
