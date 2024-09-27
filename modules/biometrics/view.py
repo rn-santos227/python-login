@@ -84,28 +84,6 @@ class BiometricsPage(QWidget):
     items = [(student.full_name, student.id) for student in self.students]
     self.students_combo_box.set_items(items)
 
-  def save_biometrics(self):
-    student_id = self.students_combo_box.get_selected_value()
-    fingerprint_data = self.biometrics_component.fingerprint_data
-
-    fields_to_validate = [
-      (self.validation_handler.is_not_empty, student_id, "Student cannot be empty."),
-      (self.validation_handler.is_not_empty, fingerprint_data, "Fingerprint Data cannot be empty."),
-    ]
-
-    if not self.validation_handler.validate_fields(self, fields_to_validate):
-      return
-    
-    new_biometrics: Biometric = Biometric(
-      student_id = student_id,
-      fingerprint_data = fingerprint_data,
-    )
-
-    biometrics_controller.create_biometric(new_biometrics)
-    self.load_biometrics()
-    self.message_box.show_message("Success", "Fingerprint data has been saved.", "Information")
-    self.__disable_biometrics_scanner()
-
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
     self.biometrics_component.load_biometric_devices_to_combo_box()
@@ -131,8 +109,31 @@ class BiometricsPage(QWidget):
 
       self.table_widget.setCellWidget(row_position, 4, button_widget)
 
+  def save_biometrics(self):
+    student_id = self.students_combo_box.get_selected_value()
+    fingerprint_data = self.biometrics_component.fingerprint_data
+
+    fields_to_validate = [
+      (self.validation_handler.is_not_empty, student_id, "Student cannot be empty."),
+      (self.validation_handler.is_not_empty, fingerprint_data, "Fingerprint Data cannot be empty."),
+    ]
+
+    if not self.validation_handler.validate_fields(self, fields_to_validate):
+      return
+    
+    new_biometrics: Biometric = Biometric(
+      student_id = student_id,
+      fingerprint_data = fingerprint_data,
+    )
+
+    biometrics_controller.create_biometric(new_biometrics)
+    self.load_biometrics()
+    self.message_box.show_message("Success", "Fingerprint data has been saved.", "Information")
+    self.__disable_biometrics_scanner()
+
+
   def delete_biometrics(self, biometrics_id):
-    pass
+    biometrics_controller.remove_biometric(biometrics_id)
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
