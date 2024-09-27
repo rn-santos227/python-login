@@ -89,6 +89,10 @@ class BiometricsPage(QWidget):
     if not student_id:
       self.message_box.show_message("Warning", "Please select a student.", "warning")
       return
+    
+    if not fingerprint_data:
+      self.message_box.show_message("Warning", "No Fingerprint Data.", "warning")
+      return 
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
