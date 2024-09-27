@@ -131,6 +131,9 @@ class BiometricsPage(QWidget):
 
       self.table_widget.setCellWidget(row_position, 4, button_widget)
 
+  def delete_biometrics(self, biometrics_id):
+    pass
+
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
     self.biometrics_button.set_button_text("Stop Fingerprint Reader")
