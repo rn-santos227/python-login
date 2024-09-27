@@ -84,6 +84,7 @@ class BiometricsPage(QWidget):
 
   def save_biometrics(self):
     student_id = self.students_combo_box.get_selected_value()
+    fingerprint_data = self.biometrics_component.fingerprint_data
 
     if not student_id:
       self.message_box.show_message("Warning", "Please select a student.", "warning")
