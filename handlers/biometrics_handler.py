@@ -83,6 +83,7 @@ class BiometricsHandler:
             width = first_view.getWidth()
             height = first_view.getHeight()
             raw_data = bytes(image_data)
+            self.fingerprint_data = raw_data
 
             self.close_reader()
             return raw_data, width, height 
