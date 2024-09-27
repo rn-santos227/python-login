@@ -102,6 +102,7 @@ class BiometricsPage(QWidget):
     )
 
     biometrics_controller.create_biometric(new_biometrics)
+    self.load_biometrics()
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
