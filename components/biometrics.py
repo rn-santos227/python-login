@@ -77,6 +77,7 @@ class Biometrics(QWidget):
     img_data, width, height = capture_result
     if self.capture_thread:
       if img_data:
+        self.fingerprint_data = img_data
         self.display_image(img_data, width, height)
       
       else:
