@@ -6,6 +6,7 @@ class BiometricsHandler:
   def __init__(self):
     print("SDK Initialized.")
     self.readers = []
+    self.fingerprint_data = None
     self._reader = None
 
   def get_version(self):
