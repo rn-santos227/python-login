@@ -128,9 +128,8 @@ class BiometricsPage(QWidget):
 
     biometrics_controller.create_biometric(new_biometrics)
     self.load_biometrics()
-    self.message_box.show_message("Success", "Fingerprint data has been saved.", "Information")
     self.__disable_biometrics_scanner()
-
+    self.message_box.show_message("Success", "Fingerprint data has been saved.", "Information")
 
   def delete_biometrics(self, biometrics_id):
     biometrics_controller.remove_biometric(biometrics_id)
