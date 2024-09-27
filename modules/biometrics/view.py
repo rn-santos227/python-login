@@ -95,6 +95,8 @@ class BiometricsPage(QWidget):
 
     if not self.validation_handler.validate_fields(self, fields_to_validate):
       return
+    
+    biometrics: Biometric = Biometric()
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
