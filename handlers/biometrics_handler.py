@@ -6,7 +6,6 @@ class BiometricsHandler:
   def __init__(self):
     print("SDK Initialized.")
     self.readers = []
-    self.fingerprint_data = None
     self._reader = None
 
   def get_version(self):
@@ -83,7 +82,6 @@ class BiometricsHandler:
             width = first_view.getWidth()
             height = first_view.getHeight()
             raw_data = bytes(image_data)
-            self.fingerprint_data = raw_data
 
             self.close_reader()
             return raw_data, width, height 

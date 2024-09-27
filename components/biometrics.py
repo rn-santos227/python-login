@@ -20,6 +20,7 @@ class Biometrics(QWidget):
     self.biometrics_handler: BiometricsHandler = BiometricsHandler()
     self.capture_thread: CaptureThread = None 
     self.message_box: MessageBox = MessageBox(self)
+    self.fingerprint_data = None
     self.devices = []
     self.init_ui()
 
