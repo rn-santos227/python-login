@@ -97,7 +97,8 @@ class BiometricsPage(QWidget):
       return
     
     biometrics: Biometric = Biometric(
-      student_id = student_id
+      student_id = student_id,
+      fingerprint_data = fingerprint_data,
     )
 
   def load_biometrics(self):
