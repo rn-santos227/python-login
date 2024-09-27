@@ -90,6 +90,7 @@ class BiometricsPage(QWidget):
 
     fields_to_validate = [
       (self.validation_handler.is_not_empty, student_id, "Student cannot be empty."),
+      (self.validation_handler.is_not_empty, fingerprint_data, "Fingerprint Data cannot be empty."),
     ]
 
   def load_biometrics(self):
