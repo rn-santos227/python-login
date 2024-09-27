@@ -52,9 +52,6 @@ def get_biometrics_with_students(query) -> list[StudentBiometrics]:
   finally:
     cursor.close()
 
-def match_biometrics(biometric_handler: BiometricsHandler, fingerprint_1, fingerprint_2) -> bool:
-  return biometric_handler.verify_fingerprints(fingerprint_1=fingerprint_1, fingerprint_2=fingerprint_2)
-
 def create_biometric(biometric: Biometric):
   columns = "(student_id, fingerprint_data)"
   sql_query = builder(__table, f"{columns} VALUES (%s, %s)", "insert")
