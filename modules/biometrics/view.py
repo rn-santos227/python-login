@@ -134,6 +134,7 @@ class BiometricsPage(QWidget):
 
   def delete_biometrics(self, biometrics_id):
     biometrics_controller.remove_biometric(biometrics_id)
+    self.load_biometrics()
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
