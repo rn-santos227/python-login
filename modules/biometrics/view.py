@@ -103,7 +103,8 @@ class BiometricsPage(QWidget):
 
     biometrics_controller.create_biometric(new_biometrics)
     self.load_biometrics()
-     self.message_box.show_message("Success", "Fingerprint data has been saved.", "Information")
+    self.message_box.show_message("Success", "Fingerprint data has been saved.", "Information")
+    self.__disable_biometrics_scanner()
 
   def load_biometrics(self):
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
