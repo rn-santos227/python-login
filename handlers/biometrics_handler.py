@@ -84,7 +84,13 @@ class BiometricsHandler:
         return None
 
   def verify_fingerprints(self, device_name, student_fingerprint_data) -> bool:
-    pass
+    
+    try:
+      new_fingerprint_data, width, height = self.capture_fingerprint(device_name)
+
+    except UareUException as err:
+      print(f"Error during fingerprint verification: {err}")
+      return False
 
   def close_reader(self):
     if self._reader:
