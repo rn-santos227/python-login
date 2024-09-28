@@ -87,6 +87,8 @@ def remove_biometric(id) -> bool:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
