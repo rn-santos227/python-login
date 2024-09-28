@@ -48,9 +48,11 @@ def get_biometrics_with_students(query) -> list[StudentBiometrics]:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def create_biometric(biometric: Biometric):
   columns = "(student_id, fingerprint_data)"
