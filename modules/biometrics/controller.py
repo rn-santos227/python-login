@@ -2,8 +2,6 @@ import config.database as DB
 
 from database.query import builder, join_builder
 
-from handlers.biometrics_handler import BiometricsHandler
-
 from modules.biometrics.model import Biometric, StudentBiometrics
 
 __table = "biometrics"
@@ -25,9 +23,11 @@ def get_biometrics(query, action) -> list[Biometric]:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def get_biometrics_with_students(query) -> list[StudentBiometrics]:
   condition = f"{__table}.student_id = students.id"
