@@ -23,9 +23,9 @@ class Biometric():
     '''
   
 class StudentBiometrics:
-  def __init__(self, biometrics_id, student_id, full_name, email, course):
+  def __init__(self, biometrics_id, student_id, email, full_name, course):
     self.biometrics_id = biometrics_id
     self.student_id = student_id
-    self.full_name = full_name
     self.email = email
+    self.full_name = full_name
     self.course = course
