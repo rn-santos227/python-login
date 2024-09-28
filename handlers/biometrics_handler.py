@@ -1,6 +1,6 @@
 import time
 
-from com.digitalpersona.uareu import Fid, Reader, UareUGlobal, UareUException # type: ignore
+from com.digitalpersona.uareu import Engine, Fid, Reader, UareUGlobal, UareUException # type: ignore
 
 class BiometricsHandler:
   def __init__(self):
@@ -92,6 +92,8 @@ class BiometricsHandler:
       if new_fingerprint_data is None:
         print("Failed to capture fingerprint for verification.")
         return False
+      
+      result = self.engine.Compare(Engine.Candidate(new_fingerprint_data), Engine.Candidate(student_fingerprint_data))
 
     except UareUException as err:
       print(f"Error during fingerprint verification: {err}")
