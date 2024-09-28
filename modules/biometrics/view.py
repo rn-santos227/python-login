@@ -91,7 +91,7 @@ class BiometricsPage(QWidget):
     if not self.biometrics:
       return
     
-    self.table_widget.setColumnWidth(0, 40)
+    self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Fixed)
 
     for biometric in self.biometrics:
       row_position = self.table_widget.rowCount()
