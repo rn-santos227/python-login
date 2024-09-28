@@ -76,7 +76,7 @@ def create_parent(parent: Parent) -> Parent:
   cursor = connection.cursor()
 
   try:
-    values = (parent.student_id, parent.full_name, parent.contact)
+    values = (parent.student_id, parent.full_name, parent.email, parent.contact)
     cursor.execute(sql_query, values)
     connection.commit()
     return parent
