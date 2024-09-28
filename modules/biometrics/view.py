@@ -91,7 +91,7 @@ class BiometricsPage(QWidget):
     if not self.biometrics:
       return
     
-    self.table_widget.setColumnWidth(0, 50)
+    self.table_widget.setColumnWidth(0, 40)
 
     for biometric in self.biometrics:
       row_position = self.table_widget.rowCount()
@@ -109,7 +109,7 @@ class BiometricsPage(QWidget):
       button_widget: QWidget = QWidget()
       button_widget.setLayout(button_layout)
 
-      self.table_widget.setCellWidget(row_position, 4, button_widget)
+      self.table_widget.setCellWidget(row_position, 2, button_widget)
 
   def save_biometrics(self):
     student_id = self.students_combo_box.get_selected_value()
