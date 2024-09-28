@@ -88,6 +88,10 @@ class BiometricsHandler:
     try:
       new_fingerprint_data, width, height = self.capture_fingerprint(device_name)
 
+      if new_fingerprint_data is None:
+        print("Failed to capture fingerprint for verification.")
+        return False
+
     except UareUException as err:
       print(f"Error during fingerprint verification: {err}")
       return False
