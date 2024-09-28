@@ -110,6 +110,14 @@ class BiometricsHandler:
   def __set_device(self, device_name):
     for i in range(len(self.readers)):
       reader = self.readers.get(i)
-      
+
       if reader.GetDescription().name == device_name:
         self._reader = reader
+        try:
+          self._reader.Open(Reader.Priority.EXCLUSIVE)
+          print(f"Selected reader: {device_name}")
+
+        except UareUException as err:
+          print(f"Failed to open reader: {err}")
+          return None
+        break
