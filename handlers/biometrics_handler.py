@@ -95,6 +95,13 @@ class BiometricsHandler:
       
       result = self.engine.Compare(Engine.Candidate(new_fingerprint_data), Engine.Candidate(student_fingerprint_data))
 
+      if result:
+        print("Fingerprint matched successfully.")
+        return True
+      else:
+        print("Fingerprint did not match.")
+        return False
+
     except UareUException as err:
       print(f"Error during fingerprint verification: {err}")
       return False
