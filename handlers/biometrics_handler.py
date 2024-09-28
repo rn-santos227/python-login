@@ -1,12 +1,13 @@
 import time
 
-from com.digitalpersona.uareu import Fid, Reader, UareUGlobal, UareUException # type: ignore
+from com.digitalpersona.uareu import Engine, Fid, Reader, UareUGlobal, UareUException # type: ignore
 
 class BiometricsHandler:
   def __init__(self):
     print("SDK Initialized.")
     self.readers = []
     self._reader = None
+    self._engine = Engine()
 
   def get_version(self):
     pass
