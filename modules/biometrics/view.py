@@ -91,6 +91,8 @@ class BiometricsPage(QWidget):
     if not self.biometrics:
       return
     
+    self.table_widget.setColumnWidth(0, 50)
+
     for biometric in self.biometrics:
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
