@@ -45,6 +45,8 @@ class StudentPage(QWidget):
     self.table_widget: QTableWidget = QTableWidget()
     self.table_widget.setColumnCount(8)
     self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Student Number", "Contact Number", "Section", "Course", "Actions"])
+    self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Fixed)
+    self.table_widget.setColumnWidth(0, 50)
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
     self.table_widget.verticalHeader().setVisible(False)
 
