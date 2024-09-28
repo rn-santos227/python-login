@@ -110,3 +110,6 @@ class BiometricsHandler:
   def __set_device(self, device_name):
     for i in range(len(self.readers)):
       reader = self.readers.get(i)
+      
+      if reader.GetDescription().name == device_name:
+        self._reader = reader
