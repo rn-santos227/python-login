@@ -17,6 +17,7 @@ from components.popup_dialog import PopupDialog
 from components.message_box import MessageBox
 from components.webcam import Webcam
 
+from handlers.biometrics_handler import BiometricsHandler
 from handlers.sms_handler import send_sms, compose_message
 from handlers.email_handler import send_email
 
@@ -32,6 +33,7 @@ class ReaderPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
+    self.biometrics_handler: BiometricsHandler = BiometricsHandler()
     self.popup_dialog: PopupDialog = PopupDialog(parent=self)
     self.clock_component: Clock = Clock()
     self.message_box: MessageBox = MessageBox(self)
