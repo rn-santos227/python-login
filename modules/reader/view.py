@@ -217,6 +217,7 @@ class ReaderPage(QWidget):
         self.stop_scanner()
 
       self.capture_thread = CaptureThread(self.biometrics_handler, device)
+      self.capture_thread.result_ready.connect(self.update_frame)
 
   def stop_scanner(self):
     if self.capture_thread:
