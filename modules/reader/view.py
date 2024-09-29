@@ -1,6 +1,7 @@
 import cv2
 import face_recognition
 import json
+import re
 import numpy as np
 
 import modules.logs.controller as logs_controller
@@ -125,6 +126,10 @@ class ReaderPage(QWidget):
     
     pattern = r"\{(.*?)\}"
     items = []
+
+
+    for device in self.devices:
+      match = re.search(pattern, device)
 
   def match_face(self):
     self.students = students_controller.get_students("status = 'active'", "select")
