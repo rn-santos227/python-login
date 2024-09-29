@@ -22,7 +22,7 @@ class CaptureThread(QThread):
         self.result_ready.emit(capture_result)
       
       else:
-        self.result_ready.emit((None, None, None, None))
+        self.result_ready.emit((None, None, None))
       
       self.msleep(500) 
       

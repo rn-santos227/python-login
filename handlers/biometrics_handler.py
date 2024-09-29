@@ -67,14 +67,14 @@ class BiometricsHandler:
 
           if len(views) > 0:
             first_view = views[0]
+            print(first_view)
             image_data = first_view.getData()
             width = first_view.getWidth()
             height = first_view.getHeight()
-            resolution = first_view.getResolution()
             raw_data = bytes(image_data)
 
             self.close_reader()
-            return raw_data, width, height, resolution
+            return raw_data, width, height
         else:
           print(f"Capture failed: {capture_result.quality}")
           self.close_reader()
@@ -85,15 +85,16 @@ class BiometricsHandler:
         self.close_reader()
         return None
 
-  def verify_fingerprints(self, capture_result, student_fingerprint_data, width, height, resolution) -> bool:
+  def verify_fingerprints(self, capture_result, student_fingerprint_data, width, height) -> bool:
     
     try:      
       if capture_result is None or student_fingerprint_data is None:
         print("Invalid fingerprint data.")
         return False
       
-      candidate_1 = self._engine.CreateFmd(capture_result, width, height, resolution, 1, 16, Fmd.Format.ANSI_378_2004)
-
+      candidate_1 = self._engine.CreateFmd(capture_result, width, height, 500, 1, 16, Fmd.Format.ANSI_378_2004)
+      candidate_2 = self._engine.CreateFmd(student_fingerprint_data, width, height, 500, 1, 16, Fmd.Format.ANSI_378_2004)
+      
       result = 0
 
       if result == 0:

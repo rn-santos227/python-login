@@ -229,13 +229,13 @@ class ReaderPage(QWidget):
       self.capture_thread.start()
 
   def update_fingerprint(self, capture_result):
-    img_data, width, height, resolution = capture_result
+    img_data, width, height = capture_result
     
     if self.capture_thread:
       fingerprint_data = img_data
 
       for biometric in self.biometrics:
-        result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data, width, height, resolution)
+        result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data, width, height)
         print(result)
 
     else:
