@@ -8,7 +8,7 @@ import modules.logs.controller as logs_controller
 import modules.students.controller as students_controller
 
 from datetime import datetime
-from PyQt5.QtCore import Qt, QDate, QEvent
+from PyQt5.QtCore import Qt, QDate, QEvent, QTimer
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QLabel, QHBoxLayout, QSpacerItem, QSizePolicy, QVBoxLayout, QWidget
 
@@ -120,6 +120,9 @@ class ReaderPage(QWidget):
     self.setLayout(self.main_layout)
     self.capture_button.set_disabled()
 
+    self.timer = QTimer(self)
+    self.timer.timeout.connect(self.update_fingerprint)
+
   def hideEvent(self, event: QEvent):
     self.stop_scanner()
     super().hideEvent(event)
@@ -218,7 +221,11 @@ class ReaderPage(QWidget):
         self.stop_scanner()
 
       self.capture_thread = CaptureThread(self.biometrics_handler, device)
+      self.capture_thread.result_ready.connect(self.update_fingerprint)
       self.capture_thread.start()
+
+  def update_fingerprint(self, capture_result):
+    img_data, width, height = capture_result
 
   def stop_scanner(self):
     if self.capture_thread:

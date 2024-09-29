@@ -35,7 +35,6 @@ class Biometrics(QWidget):
     self.layout.addWidget(self.biometrics_combo_box)
     self.layout.addWidget(self.label)
 
-    self.cap = None
     self.timer = QTimer(self)
     self.timer.timeout.connect(self.update_frame)
 
