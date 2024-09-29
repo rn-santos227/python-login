@@ -137,6 +137,8 @@ class ReaderPage(QWidget):
       if match:
         items.append((match.group(1), device))
 
+    self.biometrics_combo_box.set_items(items)
+
   def match_face(self):
     self.students = students_controller.get_students("status = 'active'", "select")
     ret, frame = self.webcam_component.capture_image()
