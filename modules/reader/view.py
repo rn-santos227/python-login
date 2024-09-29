@@ -8,7 +8,7 @@ import modules.logs.controller as logs_controller
 import modules.students.controller as students_controller
 
 from datetime import datetime
-from PyQt5.QtCore import Qt, QDate
+from PyQt5.QtCore import Qt, QDate, QEvent
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QLabel, QHBoxLayout, QSpacerItem, QSizePolicy, QVBoxLayout, QWidget
 
@@ -119,6 +119,10 @@ class ReaderPage(QWidget):
 
     self.setLayout(self.main_layout)
     self.capture_button.set_disabled()
+
+  def hideEvent(self, event: QEvent):
+    self.stop_scanner()
+    super().hideEvent(event)
 
   def load_logs(self):
     start_date = str(datetime.now().strftime("%Y-%m-%d"))
