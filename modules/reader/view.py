@@ -25,8 +25,9 @@ from handlers.email_handler import send_email
 
 from modules.logs.model import Log
 from modules.students.model import Student
-
 from modules.parents.controller import get_parents
+
+from threads.capture_thread import CaptureThread
 
 from assets.styles.styles import date_label_style, content_frame_style
 
@@ -36,6 +37,7 @@ class ReaderPage(QWidget):
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
     self.biometrics_handler: BiometricsHandler = BiometricsHandler()
+    self.capture_thread: CaptureThread = None 
     self.popup_dialog: PopupDialog = PopupDialog(parent=self)
     self.clock_component: Clock = Clock()
     self.message_box: MessageBox = MessageBox(self)
@@ -215,6 +217,11 @@ class ReaderPage(QWidget):
     self.webcam_button.set_button_text("Start Webcam")
     self.webcam_button.disconnect_signal(self.__disable_capture)
     self.webcam_button.connect_signal(self.__enable_capture)
+
+  def stop_scanner(self):
+    if self.capture_thread:
+      print("Stopping scanner...")
+
 
   def __send_sms_to_parents(self, student: Student, message: str):
     parents = get_parents(f"student_id = {student.id}", "select")
