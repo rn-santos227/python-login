@@ -98,7 +98,6 @@ class ReaderPage(QWidget):
     clock_center_layout.addWidget(self.clock_component)
     clock_center_layout.addItem(right_spacer)
 
-    clock_layout.addWidget(self.biometrics_combo_box)
     clock_layout.addLayout(clock_center_layout)
     clock_layout.addWidget(self.date_label) 
 
@@ -109,6 +108,7 @@ class ReaderPage(QWidget):
 
     h_center_layout.addLayout(center_layout)
 
+    content_layout.addWidget(self.biometrics_combo_box)
     content_layout.addItem(top_spacer)
     content_layout.addLayout(h_center_layout)
     content_layout.addItem(bottom_spacer)
