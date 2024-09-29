@@ -41,6 +41,7 @@ class ReaderPage(QWidget):
     self.popup_dialog: PopupDialog = PopupDialog(parent=self)
     self.clock_component: Clock = Clock()
     self.message_box: MessageBox = MessageBox(self)
+    self.fingerprint_data = None
     self.logs: list[Log] = []
     self.students: list[Student] = []
     self.devices = []
@@ -226,6 +227,11 @@ class ReaderPage(QWidget):
 
   def update_fingerprint(self, capture_result):
     img_data, width, height = capture_result
+    
+    if self.capture_thread:
+      self.fingerprint_data = img_data
+    else:
+      self.message_box.show_message("Error", "Failed to capture fingerprint", "error")
 
   def stop_scanner(self):
     if self.capture_thread:
