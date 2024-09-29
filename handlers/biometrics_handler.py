@@ -85,14 +85,14 @@ class BiometricsHandler:
         self.close_reader()
         return None
 
-  def verify_fingerprints(self, capture_result, student_fingerprint_data, width, height) -> bool:
+  def verify_fingerprints(self, capture_result, student_fingerprint_data, width, height, resolution) -> bool:
     
     try:      
       if capture_result is None:
         print("Failed to capture fingerprint for verification.")
         return False
       
-      candidate_1 = self._engine.CreateFmd(capture_result, width, height, 1, 1, 16, Fmd.Format.ANSI_378_2004)
+      candidate_1 = self._engine.CreateFmd(capture_result, width, height, resolution, 1, 16, Fmd.Format.ANSI_378_2004)
 
       result = 0
 

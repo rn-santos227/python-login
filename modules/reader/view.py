@@ -235,7 +235,7 @@ class ReaderPage(QWidget):
       fingerprint_data = img_data
 
       for biometric in self.biometrics:
-        result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data, width, height)
+        result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data, width, height, resolution)
         print(result)
 
     else:
