@@ -91,20 +91,7 @@ class BiometricsHandler:
         print("Failed to capture fingerprint for verification.")
         return False
       
-      candidate1 = Engine.Candidate()
-      candidate2 = Engine.Candidate()
-
-      candidate1.SetTemplate(capture_result)
-      candidate2.SetTemplate(student_fingerprint_data)
-      
-      result = self.engine.Compare(candidate1, candidate2)
-
-      if result:
-        print("Fingerprint matched successfully.")
-        return True
-      else:
-        print("Fingerprint did not match.")
-        return False
+      false_positive_rate = Engine.PROBABILITY_ONE // 100000
 
     except UareUException as err:
       print(f"Error during fingerprint verification: {err}")
