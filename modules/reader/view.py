@@ -209,6 +209,7 @@ class ReaderPage(QWidget):
       print("Stopping scanner...")
       self.capture_thread.stop()
       self.capture_thread = None
+      print("Scanner stopped.")
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
