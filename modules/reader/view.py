@@ -130,6 +130,8 @@ class ReaderPage(QWidget):
 
     for device in self.devices:
       match = re.search(pattern, device)
+      if match:
+        items.append((match.group(1), device))
 
   def match_face(self):
     self.students = students_controller.get_students("status = 'active'", "select")
