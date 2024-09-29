@@ -96,6 +96,13 @@ class BiometricsHandler:
         Engine.Candidate(student_fingerprint_data)
       )
 
+      if result == 0:
+        print("Fingerprint matched.")
+        return True
+      else:
+        print("Fingerprint did not match.")
+        return False
+
     except UareUException as err:
       print(f"Error during fingerprint verification: {err}")
       return False
