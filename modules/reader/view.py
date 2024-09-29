@@ -122,6 +122,9 @@ class ReaderPage(QWidget):
     self.devices = self.biometrics_handler.get_devices()
     if not self.devices:
       return
+    
+    pattern = r"\{(.*?)\}"
+    items = []
 
   def match_face(self):
     self.students = students_controller.get_students("status = 'active'", "select")
