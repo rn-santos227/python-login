@@ -92,6 +92,9 @@ class BiometricsHandler:
         return False
       
       new_fingerprint_data, width, height = capture_result
+      
+      candidate1 = Engine.Candidate()
+      
       result = self._engine.Compare(Engine.Candidate(new_fingerprint_data), Engine.Candidate(student_fingerprint_data))
 
       if result:
