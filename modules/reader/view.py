@@ -204,6 +204,11 @@ class ReaderPage(QWidget):
       
     self.message_box.show_message("Information", "No match has been found.", "information")
 
+  def stop_scanner(self):
+    if self.capture_thread:
+      print("Stopping scanner...")
+      self.capture_thread.stop()
+
   def __enable_capture(self):
     self.webcam_component.start_webcam()
     self.capture_button.set_enabled()
@@ -217,11 +222,6 @@ class ReaderPage(QWidget):
     self.webcam_button.set_button_text("Start Webcam")
     self.webcam_button.disconnect_signal(self.__disable_capture)
     self.webcam_button.connect_signal(self.__enable_capture)
-
-  def stop_scanner(self):
-    if self.capture_thread:
-      print("Stopping scanner...")
-
 
   def __send_sms_to_parents(self, student: Student, message: str):
     parents = get_parents(f"student_id = {student.id}", "select")
