@@ -145,6 +145,7 @@ class ReaderPage(QWidget):
         items.append((match.group(1), device))
 
     self.biometrics_combo_box.set_items(items)
+    self.start_scanner()
 
   def match_face(self):
     self.students = students_controller.get_students("status = 'active'", "select")
@@ -217,7 +218,7 @@ class ReaderPage(QWidget):
         self.stop_scanner()
 
       self.capture_thread = CaptureThread(self.biometrics_handler, device)
-      self.capture_thread.result_ready.connect(self.update_frame)
+      self.capture_thread.start()
 
   def stop_scanner(self):
     if self.capture_thread:
