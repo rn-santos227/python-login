@@ -12,10 +12,11 @@ from PyQt5.QtCore import Qt, QDate
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QLabel, QHBoxLayout, QSpacerItem, QSizePolicy, QVBoxLayout, QWidget
 
-from components.clock import Clock
 from components.button import Button
-from components.popup_dialog import PopupDialog
+from components.clock import Clock
+from components.combo_box import ComboBox
 from components.message_box import MessageBox
+from components.popup_dialog import PopupDialog
 from components.webcam import Webcam
 
 from handlers.biometrics_handler import BiometricsHandler
@@ -40,6 +41,7 @@ class ReaderPage(QWidget):
     self.message_box: MessageBox = MessageBox(self)
     self.logs: list[Log] = []
     self.students: list[Student] = []
+    self.devices = []
     self.__init_ui()
 
   def __init_ui(self):
@@ -126,7 +128,6 @@ class ReaderPage(QWidget):
     
     pattern = r"\{(.*?)\}"
     items = []
-
 
     for device in self.devices:
       match = re.search(pattern, device)
