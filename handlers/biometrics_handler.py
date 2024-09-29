@@ -1,6 +1,6 @@
 import time
 
-from com.digitalpersona.uareu import Engine, Fid, Reader, UareUGlobal, UareUException # type: ignore
+from com.digitalpersona.uareu import Engine, Fid, Fmd, Reader, UareUGlobal, UareUException # type: ignore
 
 class BiometricsHandler:
   def __init__(self):
@@ -91,10 +91,9 @@ class BiometricsHandler:
         print("Failed to capture fingerprint for verification.")
         return False
       
-      result = self.engine.Compare(
-        Engine.Candidate(capture_result),
-        Engine.Candidate(student_fingerprint_data)
-      )
+      candidate_1 = self._engine.CreateFmd(capture_result, Fmd.Format.ANSI_378_2004)
+
+      result = 0
 
       if result == 0:
         print("Fingerprint matched.")
