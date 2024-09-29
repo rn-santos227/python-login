@@ -24,7 +24,9 @@ from handlers.sms_handler import send_sms, compose_message
 from handlers.email_handler import send_email
 
 from modules.logs.model import Log
+from modules.biometrics.model import Biometric
 from modules.students.model import Student
+from modules.biometrics.controller import get_biometrics
 from modules.parents.controller import get_parents
 
 from threads.capture_thread import CaptureThread
@@ -41,6 +43,7 @@ class ReaderPage(QWidget):
     self.popup_dialog: PopupDialog = PopupDialog(parent=self)
     self.clock_component: Clock = Clock()
     self.message_box: MessageBox = MessageBox(self)
+    self.biometrics: list[Biometric] = []
     self.logs: list[Log] = []
     self.students: list[Student] = []
     self.devices = []
@@ -133,6 +136,7 @@ class ReaderPage(QWidget):
 
     self.logs = logs_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
     self.students = students_controller.get_students("status = 'active'", "select")
+    self.biometrics = get_biometrics("all")
 
   def load_biometric_devices_to_combo_box(self):
     self.devices.clear()
@@ -229,6 +233,10 @@ class ReaderPage(QWidget):
     
     if self.capture_thread:
       fingerprint_data = img_data
+
+      for biometric in self.biometrics:
+        result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data)
+      
 
     else:
       self.stop_scanner()
