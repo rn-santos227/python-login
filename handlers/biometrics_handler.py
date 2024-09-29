@@ -100,6 +100,11 @@ class BiometricsHandler:
       if dissimilarity_score == 0:
         print("Fingerprint matched.")
         return True
+      
+      elif dissimilarity_score < Engine.PROBABILITY_ONE:
+        print("Fingers are a potential match.")
+        return True
+      
       else:
         print("Fingerprint did not match.")
         return False

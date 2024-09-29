@@ -236,7 +236,12 @@ class ReaderPage(QWidget):
 
       for biometric in self.biometrics:
         result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data, width, height)
-        print(result)
+        if result:
+          print("Found a Match")
+          return
+        
+      
+      self.message_box.show_message("Information", "No fingerprint match has been found.", "information")
 
     else:
       self.stop_scanner()

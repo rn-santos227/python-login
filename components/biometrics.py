@@ -73,7 +73,7 @@ class Biometrics(QWidget):
       print("Scanner stopped.")
     
   def update_frame(self, capture_result):
-    img_data, width, height, resolution = capture_result
+    img_data, width, height = capture_result
     if self.capture_thread:
       if img_data:
         self.fingerprint_data = img_data
