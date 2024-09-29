@@ -95,9 +95,9 @@ class BiometricsHandler:
       candidate_1 = self._engine.CreateFmd(capture_result, width, height, 500, 1, 16, Fmd.Format.ANSI_378_2004)
       candidate_2 = self._engine.CreateFmd(student_fingerprint_data, width, height, 500, 1, 16, Fmd.Format.ANSI_378_2004)
       
-      result = 0
+      dissimilarity_score = self._engine.Compare(candidate_1, 0, candidate_2, 0)
 
-      if result == 0:
+      if dissimilarity_score == 0:
         print("Fingerprint matched.")
         return True
       else:
