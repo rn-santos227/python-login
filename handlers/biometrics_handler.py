@@ -84,7 +84,7 @@ class BiometricsHandler:
         self.close_reader()
         return None
 
-  def verify_fingerprints(self, capture_result, student_fingerprint_data) -> bool:
+  def verify_fingerprints(self, capture_result, student_fingerprint_data, width, height) -> bool:
     
     try:      
       if capture_result is None:
