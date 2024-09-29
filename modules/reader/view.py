@@ -41,7 +41,6 @@ class ReaderPage(QWidget):
     self.popup_dialog: PopupDialog = PopupDialog(parent=self)
     self.clock_component: Clock = Clock()
     self.message_box: MessageBox = MessageBox(self)
-    self.fingerprint_data = None
     self.logs: list[Log] = []
     self.students: list[Student] = []
     self.devices = []
@@ -133,6 +132,7 @@ class ReaderPage(QWidget):
     end_date = str(datetime.now().strftime("%Y-%m-%d"))
 
     self.logs = logs_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
+    self.students = students_controller.get_students("status = 'active'", "select")
 
   def load_biometric_devices_to_combo_box(self):
     self.devices.clear()
@@ -152,14 +152,13 @@ class ReaderPage(QWidget):
     self.start_scanner()
 
   def match_face(self):
-    self.students = students_controller.get_students("status = 'active'", "select")
     ret, frame = self.webcam_component.capture_image()
     
     if not ret:
       self.message_box.show_message("Error", "No face detected", "error")
       return
     
-    image_rgb  = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     image_array = np.array(image_rgb , dtype=np.uint8)
     face_locations = face_recognition.face_locations(image_array)
     face_encodings = face_recognition.face_encodings(image_array, face_locations)
@@ -229,9 +228,10 @@ class ReaderPage(QWidget):
     img_data, width, height = capture_result
     
     if self.capture_thread:
-      self.fingerprint_data = img_data
+      fingerprint_data = img_data
+
     else:
-      self.message_box.show_message("Error", "Failed to capture fingerprint", "error")
+      self.stop_scanner()
 
   def stop_scanner(self):
     if self.capture_thread:
