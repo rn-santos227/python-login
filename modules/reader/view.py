@@ -85,6 +85,8 @@ class ReaderPage(QWidget):
     webcam_layout.addWidget(self.webcam_button)
     webcam_layout.addWidget(self.capture_button)
 
+    self.biometrics_combo_box: ComboBox = ComboBox(label_text="Biometrics List")
+
     self.date_label: QLabel = QLabel(self)
     current_date = QDate.currentDate().toString("dddd, MMMM d, yyyy")
     self.date_label.setText(current_date)
@@ -96,6 +98,7 @@ class ReaderPage(QWidget):
     clock_center_layout.addWidget(self.clock_component)
     clock_center_layout.addItem(right_spacer)
 
+    clock_layout.addWidget(self.biometrics_combo_box)
     clock_layout.addLayout(clock_center_layout)
     clock_layout.addWidget(self.date_label) 
 
