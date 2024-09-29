@@ -70,10 +70,11 @@ class BiometricsHandler:
             image_data = first_view.getData()
             width = first_view.getWidth()
             height = first_view.getHeight()
+            resolution = first_view.getImageResolution()
             raw_data = bytes(image_data)
 
             self.close_reader()
-            return raw_data, width, height 
+            return raw_data, width, height, resolution
         else:
           print(f"Capture failed: {capture_result.quality}")
           self.close_reader()
@@ -91,7 +92,7 @@ class BiometricsHandler:
         print("Failed to capture fingerprint for verification.")
         return False
       
-      candidate_1 = self._engine.CreateFmd(capture_result, width, height, 1, 1, 1, Fmd.Format.ANSI_378_2004)
+      candidate_1 = self._engine.CreateFmd(capture_result, width, height, 1, 1, 16, Fmd.Format.ANSI_378_2004)
 
       result = 0
 
