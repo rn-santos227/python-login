@@ -131,6 +131,7 @@ class ReaderPage(QWidget):
     self.logs = logs_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
 
   def load_biometric_devices_to_combo_box(self):
+    self.devices.clear()
     self.devices = self.biometrics_handler.get_devices()
     if not self.devices:
       return
@@ -207,6 +208,9 @@ class ReaderPage(QWidget):
         return
       
     self.message_box.show_message("Information", "No match has been found.", "information")
+
+  def start_scanner(self):
+    device = self.biometrics_combo_box.get_selected_value()
 
   def stop_scanner(self):
     if self.capture_thread:
