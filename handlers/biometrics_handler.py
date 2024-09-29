@@ -91,7 +91,7 @@ class BiometricsHandler:
         print("Failed to capture fingerprint for verification.")
         return False
       
-      candidate_1 = self._engine.CreateFmd(capture_result, width, height, Fmd.Format.ANSI_378_2004)
+      candidate_1 = self._engine.CreateFmd(capture_result, width, height, 1, 1, 1, Fmd.Format.ANSI_378_2004)
 
       result = 0
 
