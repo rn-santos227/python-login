@@ -91,12 +91,10 @@ class BiometricsHandler:
         print("Failed to capture fingerprint for verification.")
         return False
       
-      new_fingerprint_data, width, height = capture_result
-      
       candidate1 = Engine.Candidate()
       candidate2 = Engine.Candidate()
 
-      candidate1.SetTemplate(new_fingerprint_data)
+      candidate1.SetTemplate(capture_result)
       candidate2.SetTemplate(student_fingerprint_data)
       
       result = self.engine.Compare(candidate1, candidate2)

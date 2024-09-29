@@ -233,7 +233,6 @@ class ReaderPage(QWidget):
     
     if self.capture_thread:
       fingerprint_data = img_data
-      print(fingerprint_data)
 
       for biometric in self.biometrics:
         result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data)
