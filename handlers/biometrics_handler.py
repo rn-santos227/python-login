@@ -97,6 +97,7 @@ class BiometricsHandler:
       candidate2 = Engine.Candidate()
 
       candidate1.SetTemplate(new_fingerprint_data)
+      candidate2.SetTemplate(student_fingerprint_data)
       
       result = self._engine.Compare(Engine.Candidate(new_fingerprint_data), Engine.Candidate(student_fingerprint_data))
 
