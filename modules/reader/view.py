@@ -136,7 +136,7 @@ class ReaderPage(QWidget):
 
     self.logs = logs_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
     self.students = students_controller.get_students("status = 'active'", "select")
-    self.biometrics = get_biometrics("all")
+    self.biometrics = get_biometrics("all", "select")
 
   def load_biometric_devices_to_combo_box(self):
     self.devices.clear()
@@ -233,10 +233,11 @@ class ReaderPage(QWidget):
     
     if self.capture_thread:
       fingerprint_data = img_data
+      print(fingerprint_data)
 
       for biometric in self.biometrics:
         result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data)
-      
+        print(result)
 
     else:
       self.stop_scanner()

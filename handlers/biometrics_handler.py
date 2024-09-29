@@ -84,16 +84,15 @@ class BiometricsHandler:
         self.close_reader()
         return None
 
-  def verify_fingerprints(self, device_name, student_fingerprint_data) -> bool:
+  def verify_fingerprints(self, capture_result, student_fingerprint_data) -> bool:
     
-    try:
-      new_fingerprint_data, width, height = self.capture_fingerprint(device_name)
-
-      if new_fingerprint_data is None:
+    try:      
+      if capture_result is None:
         print("Failed to capture fingerprint for verification.")
         return False
       
-      result = self.engine.Compare(Engine.Candidate(new_fingerprint_data), Engine.Candidate(student_fingerprint_data))
+      new_fingerprint_data, width, height = capture_result
+      result = self._engine.Compare(Engine.Candidate(new_fingerprint_data), Engine.Candidate(student_fingerprint_data))
 
       if result:
         print("Fingerprint matched successfully.")
