@@ -118,6 +118,11 @@ class ReaderPage(QWidget):
 
     self.logs = logs_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
 
+  def load_biometric_devices_to_combo_box(self):
+    self.devices = self.biometrics_handler.get_devices()
+    if not self.devices:
+      return
+
   def match_face(self):
     self.students = students_controller.get_students("status = 'active'", "select")
     ret, frame = self.webcam_component.capture_image()
