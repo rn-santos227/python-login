@@ -248,11 +248,12 @@ class ReaderPage(QWidget):
       self.stop_scanner()
 
   def stop_scanner(self):
-    if self.capture_thread:
-      print("Stopping scanner...")
-      self.capture_thread.stop()
-      self.capture_thread = None
-      print("Scanner stopped.")
+    if len(self.devices) > 0:
+      if self.capture_thread:
+        print("Stopping scanner...")
+        self.capture_thread.stop()
+        self.capture_thread = None
+        print("Scanner stopped.")
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
