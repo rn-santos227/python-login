@@ -91,9 +91,11 @@ def create_admin(admin: Admin) -> Admin:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def update_admin(admin: Admin):
   set_clause = (
