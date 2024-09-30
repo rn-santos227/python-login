@@ -248,6 +248,9 @@ class ReaderPage(QWidget):
           current_date = datetime.now()
           formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
           log = self.get_log(current_date, biometric.student_id)
+
+          if log is None:
+            login = self.create_log(current_date, biometric.student_id)
           
           return
         
