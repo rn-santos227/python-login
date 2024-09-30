@@ -159,7 +159,7 @@ class ReaderPage(QWidget):
     formatted_date = current_date.strftime("%Y-%m-%d")
     formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
 
-  def get_log(self, current_date) -> Log:
+  def get_log(self, current_date, student_id):
     formatted_date = current_date.strftime("%Y-%m-%d")
     formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
 
