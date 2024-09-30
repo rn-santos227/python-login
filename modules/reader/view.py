@@ -161,7 +161,7 @@ class ReaderPage(QWidget):
 
   def get_log(self, current_date, student_id):
     formatted_date = current_date.strftime("%Y-%m-%d")
-    formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
+    return logs_controller.get_log_by_student_and_date(student_id=student_id, date=formatted_date)
 
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()
