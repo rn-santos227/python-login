@@ -157,7 +157,10 @@ class ReaderPage(QWidget):
 
   def create_log(self, current_date: datetime, student_id) -> Log:
     formatted_date = current_date.strftime("%Y-%m-%d")
-    formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
+    log = Log(
+      student_id = student_id,
+      date = formatted_date
+    )
 
   def get_log(self, current_date: datetime, student_id):
     formatted_date = current_date.strftime("%Y-%m-%d")
@@ -188,7 +191,7 @@ class ReaderPage(QWidget):
         current_date = datetime.now()
         formatted_date = current_date.strftime("%Y-%m-%d")
         formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
-        log = logs_controller.get_log_by_student_and_date(student_id=student.id, date=formatted_date)
+        log = self.get_log(current_date, student.id)
 
         if log is None:
           log = Log(
