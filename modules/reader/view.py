@@ -245,6 +245,7 @@ class ReaderPage(QWidget):
       for biometric in self.biometrics:
         result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data, width, height)
         if result:
+          student = students_controller.get_student_by_id(biometric.student_id)
           current_date = datetime.now()
           formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
           log = self.get_log(current_date, biometric.student_id)
@@ -254,12 +255,16 @@ class ReaderPage(QWidget):
             login.login_time = formatted_date_time
             
             logs_controller.add_login_time(login)
-            student = students_controller.get_student_by_id(biometric.student_id)
 
             login_message = compose_message(student=student, time=formatted_date_time, logged="logged in")
             send_sms(contact_number=student.contact_number, message=login_message)
             send_email(student.email, message=login_message)
             self.__send_sms_to_parents(student, message=login_message)
+
+          else:
+            if log.logout_time is not None:
+              self.message_box.show_message("Information", "Student already logged out.", "information")
+            return
 
           return
         
