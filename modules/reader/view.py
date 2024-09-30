@@ -218,15 +218,16 @@ class ReaderPage(QWidget):
     self.message_box.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
-    device = self.biometrics_combo_box.get_selected_value()
+    if len(self.devices) > 0:
+      device = self.biometrics_combo_box.get_selected_value()
 
-    if device:
-      if self.capture_thread and self.capture_thread.isRunning():
-        self.stop_scanner()
+      if device:
+        if self.capture_thread and self.capture_thread.isRunning():
+          self.stop_scanner()
 
-      self.capture_thread = CaptureThread(self.biometrics_handler, device)
-      self.capture_thread.result_ready.connect(self.update_fingerprint)
-      self.capture_thread.start()
+        self.capture_thread = CaptureThread(self.biometrics_handler, device)
+        self.capture_thread.result_ready.connect(self.update_fingerprint)
+        self.capture_thread.start()
 
   def update_fingerprint(self, capture_result):
     img_data, width, height = capture_result
