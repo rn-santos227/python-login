@@ -155,7 +155,7 @@ class ReaderPage(QWidget):
     self.biometrics_combo_box.set_items(items)
     self.start_scanner()
 
-  def create_log(self, current_date: datetime, student_id) -> Log:
+  def create_log(self, current_date: datetime, student_id: int) -> Log:
     formatted_date = current_date.strftime("%Y-%m-%d")
     log = Log(
       student_id = student_id,
@@ -164,7 +164,7 @@ class ReaderPage(QWidget):
 
     return logs_controller.create_log(log)
 
-  def get_log(self, current_date: datetime, student_id):
+  def get_log(self, current_date: datetime, student_id: int):
     formatted_date = current_date.strftime("%Y-%m-%d")
     return logs_controller.get_log_by_student_and_date(student_id=student_id, date=formatted_date)
 
@@ -191,17 +191,11 @@ class ReaderPage(QWidget):
 
       if distance < 0.6:
         current_date = datetime.now()
-        formatted_date = current_date.strftime("%Y-%m-%d")
         formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
         log = self.get_log(current_date, student.id)
 
         if log is None:
-          log = Log(
-            student_id = student.id,
-            date = formatted_date
-          )
-
-          login = logs_controller.create_log(log)
+          login = self.create_log(current_date, student.id)
           login.login_time = formatted_date_time
           logs_controller.add_login_time(login)
            
