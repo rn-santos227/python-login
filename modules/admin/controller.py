@@ -44,11 +44,14 @@ def get_admin_by_email(email: str) -> Union[Admin, None]:
       return admin
     else:
       return None
+  
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def get_admins(query, action) -> list[Admin]:
   sql_query = builder(__table, query, action)
