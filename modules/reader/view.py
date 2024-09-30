@@ -252,6 +252,7 @@ class ReaderPage(QWidget):
           if log is None:
             login = self.create_log(current_date, biometric.student_id)
             login.login_time = formatted_date_time
+            logs_controller.add_login_time(login)
           
           return
         
