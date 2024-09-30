@@ -255,9 +255,9 @@ class ReaderPage(QWidget):
             
             logs_controller.add_login_time(login)
             student = students_controller.get_student_by_id(biometric.student_id)
-            
+
             login_message = compose_message(student=student, time=formatted_date_time, logged="logged in")
-          
+            send_sms(contact_number=student.contact_number, message=login_message)
           return
         
       
