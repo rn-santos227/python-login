@@ -168,6 +168,9 @@ class ReaderPage(QWidget):
     formatted_date = current_date.strftime("%Y-%m-%d")
     return logs_controller.get_log_by_student_and_date(student_id=student_id, date=formatted_date)
 
+  def get_student(self, student_id: int) -> Student:
+    pass
+
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()
     
@@ -253,6 +256,7 @@ class ReaderPage(QWidget):
             login = self.create_log(current_date, biometric.student_id)
             login.login_time = formatted_date_time
             logs_controller.add_login_time(login)
+            
           
           return
         
