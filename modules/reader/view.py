@@ -155,13 +155,13 @@ class ReaderPage(QWidget):
     self.biometrics_combo_box.set_items(items)
     self.start_scanner()
 
-  def create_log(self) -> Log:
-    current_date = datetime.now()
+  def create_log(self, current_date) -> Log:
     formatted_date = current_date.strftime("%Y-%m-%d")
     formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
 
-  def get_log(self) -> Log:
-    pass
+  def get_log(self, current_date) -> Log:
+    formatted_date = current_date.strftime("%Y-%m-%d")
+    formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
 
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()
