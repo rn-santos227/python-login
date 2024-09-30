@@ -169,7 +169,7 @@ class ReaderPage(QWidget):
     return logs_controller.get_log_by_student_and_date(student_id=student_id, date=formatted_date)
 
   def get_student(self, student_id: int) -> Student:
-    pass
+    return students_controller.get_student_by_id(student_id)
 
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()
