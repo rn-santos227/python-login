@@ -246,6 +246,7 @@ class ReaderPage(QWidget):
         result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data, width, height)
         if result:
           current_date = datetime.now()
+          formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
           
           return
         
