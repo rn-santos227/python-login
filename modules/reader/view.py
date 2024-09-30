@@ -155,6 +155,9 @@ class ReaderPage(QWidget):
     self.biometrics_combo_box.set_items(items)
     self.start_scanner()
 
+  def create_log(self, log: Log) -> Log:
+    return log
+
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()
     
