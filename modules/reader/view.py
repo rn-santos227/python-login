@@ -245,7 +245,8 @@ class ReaderPage(QWidget):
       for biometric in self.biometrics:
         result = self.biometrics_handler.verify_fingerprints(fingerprint_data, biometric.fingerprint_data, width, height)
         if result:
-          print("Found a Match")
+          current_date = datetime.now()
+          
           return
         
       
