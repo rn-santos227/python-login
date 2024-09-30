@@ -155,11 +155,11 @@ class ReaderPage(QWidget):
     self.biometrics_combo_box.set_items(items)
     self.start_scanner()
 
-  def create_log(self, current_date, student_id) -> Log:
+  def create_log(self, current_date: datetime, student_id) -> Log:
     formatted_date = current_date.strftime("%Y-%m-%d")
     formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
 
-  def get_log(self, current_date, student_id):
+  def get_log(self, current_date: datetime, student_id):
     formatted_date = current_date.strftime("%Y-%m-%d")
     return logs_controller.get_log_by_student_and_date(student_id=student_id, date=formatted_date)
 
