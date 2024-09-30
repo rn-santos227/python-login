@@ -160,6 +160,9 @@ class ReaderPage(QWidget):
     formatted_date = current_date.strftime("%Y-%m-%d")
     formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
 
+  def get_log(self) -> Log:
+    pass
+
   def match_face(self):
     ret, frame = self.webcam_component.capture_image()
     
