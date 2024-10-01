@@ -13,3 +13,6 @@ class SessionHandler:
     
     else:
       return False
+    
+  def destroy_session(self):
+    self.user = None
