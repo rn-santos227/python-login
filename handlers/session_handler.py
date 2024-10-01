@@ -8,4 +8,5 @@ class SessionHandler:
     self.user = user
 
   def verify_password(self, password):
-    pass
+    if self.user:
+      return self.user.verify_password(password)
