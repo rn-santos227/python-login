@@ -15,3 +15,6 @@ def login(email, password) -> bool:
     return True
   else:
     return False
+  
+  def get_user():
+    pass
