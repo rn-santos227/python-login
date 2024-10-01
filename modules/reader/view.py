@@ -266,8 +266,9 @@ class ReaderPage(QWidget):
             
             log.logout_time = formatted_date_time
             logs_controller.add_logout_time(log)
+            
             logout_message = compose_message(student=student, time=formatted_date_time, logged="logged out")
-
+            send_sms(contact_number=student.contact_number, message=logout_message)
             return
           
           return
