@@ -252,8 +252,7 @@ class ReaderPage(QWidget):
 
           if log is None:
             login = self.create_log(current_date, biometric.student_id)
-            login.login_time = formatted_date_time
-            
+            login.login_time = formatted_date_time      
             logs_controller.add_login_time(login)
 
             login_message = compose_message(student=student, time=formatted_date_time, logged="logged in")
@@ -266,6 +265,8 @@ class ReaderPage(QWidget):
               self.message_box.show_message("Information", "Student already logged out.", "information")
             
             log.logout_time = formatted_date_time
+            logs_controller.add_logout_time(log)
+
             return
           
           return
