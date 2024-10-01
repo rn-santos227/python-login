@@ -264,11 +264,12 @@ class ReaderPage(QWidget):
           else:
             if log.logout_time is not None:
               self.message_box.show_message("Information", "Student already logged out.", "information")
+            
+            log.logout_time = formatted_date_time
             return
-
+          
           return
         
-      
       self.message_box.show_message("Information", "No fingerprint match has been found.", "information")
 
     else:
