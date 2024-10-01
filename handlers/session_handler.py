@@ -5,4 +5,4 @@ class SessionHandler:
     self.user: User = None
 
   def create_session(self, user: User):
-    pass
+    self.user = user
