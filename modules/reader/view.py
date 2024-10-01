@@ -263,7 +263,8 @@ class ReaderPage(QWidget):
           else:
             if log.logout_time is not None:
               self.message_box.show_message("Information", "Student already logged out.", "information")
-            
+              return
+
             log.logout_time = formatted_date_time
             logs_controller.add_logout_time(log)
             
