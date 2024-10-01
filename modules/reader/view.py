@@ -275,6 +275,7 @@ class ReaderPage(QWidget):
           
           self.popup_dialog.set_student(student=student)
           self.popup_dialog.set_logged_time(logged=formatted_date_time)
+          self.popup_dialog.show()
           return
         
       self.message_box.show_message("Information", "No fingerprint match has been found.", "information")
