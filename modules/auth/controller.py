@@ -16,5 +16,5 @@ def login(email, password) -> bool:
   else:
     return False
   
-  def get_user():
-    pass
+def get_user(email):
+  student = student_controller.get_student_by_email(email)
