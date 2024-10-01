@@ -20,3 +20,7 @@ def get_user(email):
   student = student_controller.get_student_by_email(email)
   if isinstance(student, Student):
     return student
+  
+  admin = admin_controller.get_admin_by_email(email)
+
+  return None
