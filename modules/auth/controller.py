@@ -18,3 +18,5 @@ def login(email, password) -> bool:
   
 def get_user(email):
   student = student_controller.get_student_by_email(email)
+  if isinstance(student, Student):
+    return student
