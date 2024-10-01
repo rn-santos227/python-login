@@ -7,6 +7,9 @@ class SessionHandler:
   def create_session(self, user: User):
     self.user = user
 
-  def verify_password(self, password):
+  def verify_password(self, password) -> bool:
     if self.user:
       return self.user.verify_password(password)
+    
+    else:
+      return False
