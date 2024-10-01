@@ -273,6 +273,7 @@ class ReaderPage(QWidget):
             send_email(student.email, message=logout_message)
             self.__send_sms_to_parents(student, message=logout_message)
           
+          self.popup_dialog.set_student(student=student)
           return
         
       self.message_box.show_message("Information", "No fingerprint match has been found.", "information")
