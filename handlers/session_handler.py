@@ -6,3 +6,6 @@ class SessionHandler:
 
   def create_session(self, user: User):
     self.user = user
+
+  def verify_password(self, password):
+    pass
