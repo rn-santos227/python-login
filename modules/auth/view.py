@@ -2,14 +2,14 @@ from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QLab
 from PyQt5.QtGui import QPixmap, QColor
 from PyQt5.QtCore import Qt
 
+import modules.auth.controller as auth_controller
+
 from components.alert_message import AlertMessage
 from components.button import Button
 from components.message_box import MessageBox
 from components.text_field import TextField
 
 from handlers.asset_handler import AssetHandler
-
-from modules.auth.controller import login
 
 from assets.styles.styles import auth_view_style
 class LoginPage(QWidget):
