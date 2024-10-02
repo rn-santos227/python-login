@@ -129,7 +129,7 @@ class LoginPage(QWidget):
     email = self.email_field.get_text()
     password = self.password_field.get_text()
 
-    if(login(email, password)):
+    if(auth_controller.login(email, password)):
       print("Login Success.")
       self.password_field.clear_text()
       self.email_field.clear_text()
