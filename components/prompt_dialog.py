@@ -19,4 +19,4 @@ class PromptDialog(QDialog):
     self.button_layout = QHBoxLayout()
 
   def on_okay_clicked(self):
-    pass
+    self.user_input = self.input_field.text()
