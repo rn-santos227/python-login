@@ -10,19 +10,19 @@ class PromptDialog(QDialog):
   def init_ui(self, message):
     self.layout: QVBoxLayout = QVBoxLayout()
 
-    self.message_label = QLabel(message)
+    self.message_label: QLabel = QLabel(message)
     self.layout.addWidget(self.message_label)
 
-    self.input_field = QLineEdit(self)
+    self.input_field: QLineEdit = QLineEdit(self)
     self.layout.addWidget(self.input_field)
 
-    self.button_layout = QHBoxLayout()
+    self.button_layout: QHBoxLayout = QHBoxLayout()
 
-    self.okay_button = QPushButton("Okay")
+    self.okay_button: QPushButton = QPushButton("Okay")
     self.okay_button.clicked.connect(self.on_okay_clicked)
     self.button_layout.addWidget(self.okay_button)
 
-    self.cancel_button = QPushButton("Cancel")
+    self.cancel_button: QPushButton = QPushButton("Cancel")
     self.cancel_button.clicked.connect(self.reject)
     self.button_layout.addWidget(self.cancel_button)
 
