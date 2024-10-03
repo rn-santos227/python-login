@@ -3,3 +3,5 @@ from PyQt5.QtWidgets import QDialog, QHBoxLayout, QLabel, QPushButton, QVBoxLayo
 class PromptDialog(QDialog):
   def __init__(self, title="Input Prompt", message="Please enter something:", parent=None):
     super().__init__(parent)
+    self.setWindowTitle(title)
+    self.parent = parent
