@@ -5,7 +5,7 @@ class PromptDialog(QDialog):
     super().__init__(parent)
     self.setWindowTitle(title)
     self.parent = parent
-    self.user_input = None
+    self.__user_input = None
 
   def init_ui(self, message):
     self.layout: QVBoxLayout = QVBoxLayout()
@@ -19,5 +19,8 @@ class PromptDialog(QDialog):
     self.button_layout = QHBoxLayout()
 
   def on_okay_clicked(self):
-    self.user_input = self.input_field.text()
+    self.__user_input = self.input_field.text()
     self.accept()
+
+  def get_user_input(self):
+    return self.__user_input
