@@ -12,3 +12,6 @@ class PromptDialog(QDialog):
 
     self.message_label = QLabel(message)
     self.layout.addWidget(self.message_label)
+
+    self.input_field = QLineEdit(self)
+    self.layout.addWidget(self.input_field)
