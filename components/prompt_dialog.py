@@ -8,4 +8,7 @@ class PromptDialog(QDialog):
     self.user_input = None
 
   def init_ui(self, message):
-    self.layout = QVBoxLayout()
+    self.layout: QVBoxLayout = QVBoxLayout()
+
+    self.message_label = QLabel(message)
+    self.layout.addWidget(self.message_label)
