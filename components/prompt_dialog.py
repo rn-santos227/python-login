@@ -15,3 +15,5 @@ class PromptDialog(QDialog):
 
     self.input_field = QLineEdit(self)
     self.layout.addWidget(self.input_field)
+
+    self.button_layout = QHBoxLayout()
