@@ -22,6 +22,10 @@ class PromptDialog(QDialog):
     self.okay_button.clicked.connect(self.on_okay_clicked)
     self.button_layout.addWidget(self.okay_button)
 
+    self.cancel_button = QPushButton("Cancel")
+    self.cancel_button.clicked.connect(self.reject)
+    self.button_layout.addWidget(self.cancel_button)
+
   def on_okay_clicked(self):
     self.__user_input = self.input_field.text()
     self.accept()
