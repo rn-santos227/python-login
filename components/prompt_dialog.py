@@ -5,3 +5,4 @@ class PromptDialog(QDialog):
     super().__init__(parent)
     self.setWindowTitle(title)
     self.parent = parent
+    self.user_input = None
