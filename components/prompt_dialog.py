@@ -20,3 +20,4 @@ class PromptDialog(QDialog):
 
   def on_okay_clicked(self):
     self.user_input = self.input_field.text()
+    self.accept()
