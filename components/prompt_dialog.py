@@ -6,3 +6,6 @@ class PromptDialog(QDialog):
     self.setWindowTitle(title)
     self.parent = parent
     self.user_input = None
+
+  def init_ui(self, message):
+    self.layout = QVBoxLayout()
