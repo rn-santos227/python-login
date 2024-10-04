@@ -8,6 +8,7 @@ from components.biometrics import Biometrics
 from components.button import Button
 from components.combo_box import ComboBox
 from components.message_dialog import MessageDialog
+from components.question_dialog import QuestionDialog
 
 from handlers.biometrics_handler import BiometricsHandler
 from handlers.validations_handler import ValidationHandler
