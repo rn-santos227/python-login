@@ -5,8 +5,8 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 
 from components.button import Button
 from components.date_field import DateField
-from components.message_box import MessageBox
-from components.question_box import QuestionBox
+from components.message_dialog import MessageBox
+from components.question_dialog import QuestionBox
 
 from modules.logs.model import StudentLog
 
@@ -17,7 +17,7 @@ class LogsPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
-    self.message_box: MessageBox = MessageBox(self)
+    self.message_dialog: MessageBox = MessageBox(self)
     self.logs: list[StudentLog] = []
     self.__init_ui()
 
@@ -107,7 +107,7 @@ class LogsPage(QWidget):
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
     self.load_logs()
-    self.message_box.show_message("Success", "Log has been deleted successfully.", "Information")
+    self.message_dialog.show_message("Success", "Log has been deleted successfully.", "Information")
 
   def __prompt_delete_log(self, log_id):
     self.log_id = log_id

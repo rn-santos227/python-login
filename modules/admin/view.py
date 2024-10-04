@@ -4,8 +4,8 @@ from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLayout, QHeaderView, QHBoxLayout, QLayout, QLayoutItem, QLineEdit, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
 from components.button import Button
-from components.message_box import MessageBox
-from components.question_box import QuestionBox
+from components.message_dialog import MessageBox
+from components.question_dialog import QuestionBox
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
@@ -19,7 +19,7 @@ class AdminsPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
-    self.message_box: MessageBox = MessageBox(self)
+    self.message_dialog: MessageBox = MessageBox(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.admins: list[Admin] = []
     self.__init_ui()
@@ -130,7 +130,7 @@ class AdminsPage(QWidget):
     admin_controller.create_admin(new_admin)
     self.load_admins()
     self.__clear_fields()
-    self.message_box.show_message("Success", "Admin has been created successfully.", "Information")
+    self.message_dialog.show_message("Success", "Admin has been created successfully.", "Information")
   
   def update_admin(self):
     email = self.update_email_field.get_text()
@@ -155,12 +155,12 @@ class AdminsPage(QWidget):
     admin_controller.update_admin(update_admin)
     self.load_admins()
     self.__switch_to_create_layout()
-    self.message_box.show_message("Success", "Admin has been updated successfully.", "Information")
+    self.message_dialog.show_message("Success", "Admin has been updated successfully.", "Information")
 
   def delete_admin(self, admin_id):
     admin_controller.delete_admin(id=admin_id)
     self.load_admins()
-    self.message_box.show_message("Success", "Admin has been deleted successfully.", "Information")
+    self.message_dialog.show_message("Success", "Admin has been deleted successfully.", "Information")
 
   def load_admins(self):
     self.admins = admin_controller.get_admins("status = 'active'", "select")

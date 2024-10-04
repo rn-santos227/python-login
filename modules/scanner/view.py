@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QSiz
 
 from components.button import Button
 from components.combo_box import ComboBox
-from components.message_box import MessageBox
+from components.message_dialog import MessageBox
 from components.webcam import Webcam
 
 from handlers.face_handler import FaceHandler
@@ -25,7 +25,7 @@ class ScannerPage(QWidget):
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
     self.face_handler: FaceHandler = FaceHandler()
-    self.message_box: MessageBox = MessageBox(self)
+    self.message_dialog: MessageBox = MessageBox(self)
     self.students: list[Student] = []
     self.__init_ui()
 
@@ -99,7 +99,7 @@ class ScannerPage(QWidget):
       student_id = self.students_combo_box.get_selected_value()
 
       if not student_id:
-        self.message_box.show_message("Validation Error", "Name cannot be empty", "error")
+        self.message_dialog.show_message("Validation Error", "Name cannot be empty", "error")
         return
       
       student = students_controller.get_student_by_id(student_id)
@@ -118,7 +118,7 @@ class ScannerPage(QWidget):
         student.face_url =  student.face_url.replace("/", "\\")   
 
         students_controller.add_face_url(student=student)
-        self.message_box.show_message("Success", f"Face has been captured and saved to database.", "Information")
+        self.message_dialog.show_message("Success", f"Face has been captured and saved to database.", "Information")
   
   def __enable_capture(self):
     self.webcam_component.start_webcam()

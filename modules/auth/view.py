@@ -6,7 +6,7 @@ import modules.auth.controller as auth_controller
 
 from components.alert_message import AlertMessage
 from components.button import Button
-from components.message_box import MessageBox
+from components.message_dialog import MessageBox
 from components.text_field import TextField
 
 from handlers.asset_handler import AssetHandler
@@ -96,7 +96,7 @@ class LoginPage(QWidget):
 
     self.setLayout(main_layout)
 
-    self.message_box: MessageBox = MessageBox(self)
+    self.message_dialog: MessageBox = MessageBox(self)
 
     self.background_label.lower()
     main_layout.setContentsMargins(0, 0, 0, 0)
@@ -135,7 +135,7 @@ class LoginPage(QWidget):
       self.pages_handler.session_handler.create_session(user)
       self.password_field.clear_text()
       self.email_field.clear_text()
-      self.message_box.show_message(title="Information", message="Login Successful.")
+      self.message_dialog.show_message(title="Information", message="Login Successful.")
       self.pages_handler.switch_to_dashboard_page()
 
     else:

@@ -5,8 +5,8 @@ from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLayout, QHeaderView, QHBoxLayout, QLayout, QLayoutItem, QLineEdit, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
 from components.button import Button
-from components.message_box import MessageBox
-from components.question_box import QuestionBox
+from components.message_dialog import MessageBox
+from components.question_dialog import QuestionBox
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
@@ -20,7 +20,7 @@ class StudentPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
-    self.message_box: MessageBox = MessageBox(self)
+    self.message_dialog: MessageBox = MessageBox(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.students: list[Student] = []
     self.__init_ui()
@@ -174,7 +174,7 @@ class StudentPage(QWidget):
     students_controller.create_student(new_student)
     self.load_students()
     self.__clear_fields()
-    self.message_box.show_message("Success", "Student has been created successfully.", "Information")
+    self.message_dialog.show_message("Success", "Student has been created successfully.", "Information")
 
   def update_student(self):
     email = self.update_email_field.get_text()
@@ -212,12 +212,12 @@ class StudentPage(QWidget):
     students_controller.update_student(update_student)
     self.load_students()
     self.__switch_to_create_layout()
-    self.message_box.show_message("Success", "Student has been updated successfully.", "Information")
+    self.message_dialog.show_message("Success", "Student has been updated successfully.", "Information")
 
   def delete_student(self, student_id):
     students_controller.delete_student(id=student_id)
     self.load_students()
-    self.message_box.show_message("Success", "Student has been deleted successfully.", "Information")
+    self.message_dialog.show_message("Success", "Student has been deleted successfully.", "Information")
 
   def load_students(self):
     self.students = students_controller.get_students("status = 'active'", "select")
@@ -258,7 +258,7 @@ class StudentPage(QWidget):
     parent = parents_controller.get_parent_by_student_id(student_id)
 
     if parent:
-      self.message_box.show_message("Error", "Student cannot be deleted as it has attached records.", "error")
+      self.message_dialog.show_message("Error", "Student cannot be deleted as it has attached records.", "error")
 
     else:
       self.student_id = student_id

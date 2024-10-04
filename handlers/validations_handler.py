@@ -44,6 +44,6 @@ class ValidationHandler:
   def validate_fields(self, fields):
     for validation_method, field_value, error_message in fields:
       if not validation_method(field_value):
-        self.message_box.show_message("Validation Error", error_message, "error")
+        self.message_dialog.show_message("Validation Error", error_message, "error")
         return False
     return True

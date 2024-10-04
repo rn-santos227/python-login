@@ -7,7 +7,7 @@ import modules.students.controller as students_controller
 from components.biometrics import Biometrics
 from components.button import Button
 from components.combo_box import ComboBox
-from components.message_box import MessageBox
+from components.message_dialog import MessageBox
 
 from handlers.biometrics_handler import BiometricsHandler
 from handlers.validations_handler import ValidationHandler
@@ -23,7 +23,7 @@ class BiometricsPage(QWidget):
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
     self.biometrics_handler: BiometricsHandler = BiometricsHandler()
-    self.message_box: MessageBox = MessageBox(self)
+    self.message_dialog: MessageBox = MessageBox(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.biometrics: list[StudentBiometrics] = []
     self.students: list[Student] = []
@@ -133,12 +133,12 @@ class BiometricsPage(QWidget):
     biometrics_controller.create_biometric(new_biometrics)
     self.load_biometrics()
     self.__disable_biometrics_scanner()
-    self.message_box.show_message("Success", "Fingerprint data has been saved.", "Information")
+    self.message_dialog.show_message("Success", "Fingerprint data has been saved.", "Information")
 
   def delete_biometrics(self, biometrics_id):
     biometrics_controller.remove_biometric(biometrics_id)
     self.load_biometrics()
-    self.message_box.show_message("Success", "Biometrics has been deleted successfully.", "Information")
+    self.message_dialog.show_message("Success", "Biometrics has been deleted successfully.", "Information")
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()

@@ -15,7 +15,7 @@ from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QLabel, QHBoxLayo
 from components.button import Button
 from components.clock import Clock
 from components.combo_box import ComboBox
-from components.message_box import MessageBox
+from components.message_dialog import MessageBox
 from components.popup_dialog import PopupDialog
 from components.webcam import Webcam
 
@@ -42,7 +42,7 @@ class ReaderPage(QWidget):
     self.capture_thread: CaptureThread = None 
     self.popup_dialog: PopupDialog = PopupDialog(parent=self)
     self.clock_component: Clock = Clock()
-    self.message_box: MessageBox = MessageBox(self)
+    self.message_dialog: MessageBox = MessageBox(self)
     self.biometrics: list[Biometric] = []
     self.logs: list[Log] = []
     self.students: list[Student] = []
@@ -172,7 +172,7 @@ class ReaderPage(QWidget):
     ret, frame = self.webcam_component.capture_image()
     
     if not ret:
-      self.message_box.show_message("Error", "No face detected", "error")
+      self.message_dialog.show_message("Error", "No face detected", "error")
       return
     
     image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
@@ -206,7 +206,7 @@ class ReaderPage(QWidget):
 
         else:
           if log.logout_time is not None:
-            self.message_box.show_message("Information", "Student already logged out.", "information")
+            self.message_dialog.show_message("Information", "Student already logged out.", "information")
             return
           
           log.logout_time = formatted_date_time
@@ -222,7 +222,7 @@ class ReaderPage(QWidget):
         self.popup_dialog.show()
         return
       
-    self.message_box.show_message("Information", "No match has been found.", "information")
+    self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
     if len(self.devices) > 0:
@@ -262,7 +262,7 @@ class ReaderPage(QWidget):
 
           else:
             if log.logout_time is not None:
-              self.message_box.show_message("Information", "Student already logged out.", "information")
+              self.message_dialog.show_message("Information", "Student already logged out.", "information")
               return
 
             log.logout_time = formatted_date_time
@@ -278,7 +278,7 @@ class ReaderPage(QWidget):
           self.popup_dialog.show()
           return
         
-      self.message_box.show_message("Information", "No fingerprint match has been found.", "information")
+      self.message_dialog.show_message("Information", "No fingerprint match has been found.", "information")
 
     else:
       self.stop_scanner()

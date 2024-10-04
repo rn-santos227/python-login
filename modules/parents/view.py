@@ -6,8 +6,8 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 
 from components.button import Button
 from components.combo_box import ComboBox
-from components.message_box import MessageBox
-from components.question_box import QuestionBox
+from components.message_dialog import MessageBox
+from components.question_dialog import QuestionBox
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
@@ -22,7 +22,7 @@ class ParentsPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
-    self.message_box: MessageBox = MessageBox(self)
+    self.message_dialog: MessageBox = MessageBox(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.students: list[Student] = []
     self.parents: list[Parent] = []
@@ -189,7 +189,7 @@ class ParentsPage(QWidget):
     parents_controller.create_parent(new_parent)
     self.load_parents()
     self.__clear_fields()
-    self.message_box.show_message("Success", "Parent has been created successfully.", "Information")
+    self.message_dialog.show_message("Success", "Parent has been created successfully.", "Information")
 
   def update_parent(self):
     student_id = self.update_student_combo_box.get_selected_value()
@@ -218,12 +218,12 @@ class ParentsPage(QWidget):
     parents_controller.update_parent(update_parent)
     self.load_parents()
     self.__switch_to_create_layout()
-    self.message_box.show_message("Success", "Parent has been updated successfully.", "Information")
+    self.message_dialog.show_message("Success", "Parent has been updated successfully.", "Information")
 
   def delete_parent(self, parent_id):
     parents_controller.delete_parent(parent_id)
     self.load_parents()
-    self.message_box.show_message("Success", "Parent has been deleted successfully.", "Information")
+    self.message_dialog.show_message("Success", "Parent has been deleted successfully.", "Information")
 
   def __prompt_delete_parent(self, parent_id: int):
     self.parent_id = parent_id
