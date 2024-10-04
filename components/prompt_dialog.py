@@ -37,4 +37,5 @@ class PromptDialog(QDialog):
     return self.__user_input
   
   def showEvent(self, event):
-    pass
+    if self.parent:
+      parent_geometry = self.parent.frameGeometry()
