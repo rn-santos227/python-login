@@ -42,3 +42,4 @@ class PromptDialog(QDialog):
       dialog_geometry = self.frameGeometry()
       center_point = parent_geometry.center()
       dialog_geometry.moveCenter(center_point)
+      self.move(dialog_geometry.topLeft())
