@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 
 from components.button import Button
 from components.combo_box import ComboBox
-from components.message_dialog import MessageBox
+from components.message_dialog import MessageDialog
 from components.question_dialog import QuestionBox
 from components.text_field import TextField
 
@@ -22,7 +22,7 @@ class ParentsPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
-    self.message_dialog: MessageBox = MessageBox(self)
+    self.message_dialog: MessageDialog = MessageDialog(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.students: list[Student] = []
     self.parents: list[Parent] = []

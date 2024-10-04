@@ -7,7 +7,7 @@ import modules.students.controller as students_controller
 from components.biometrics import Biometrics
 from components.button import Button
 from components.combo_box import ComboBox
-from components.message_dialog import MessageBox
+from components.message_dialog import MessageDialog
 
 from handlers.biometrics_handler import BiometricsHandler
 from handlers.validations_handler import ValidationHandler
@@ -23,7 +23,7 @@ class BiometricsPage(QWidget):
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
     self.biometrics_handler: BiometricsHandler = BiometricsHandler()
-    self.message_dialog: MessageBox = MessageBox(self)
+    self.message_dialog: MessageDialog = MessageDialog(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.biometrics: list[StudentBiometrics] = []
     self.students: list[Student] = []

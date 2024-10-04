@@ -7,7 +7,7 @@ from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget
 
 from components.combo_box import ComboBox
-from components.message_dialog import MessageBox
+from components.message_dialog import MessageDialog
 
 from handlers.biometrics_handler import BiometricsHandler
 from threads.capture_thread import CaptureThread
@@ -19,7 +19,7 @@ class Biometrics(QWidget):
     super().__init__(parent)
     self.biometrics_handler: BiometricsHandler = BiometricsHandler()
     self.capture_thread: CaptureThread = None 
-    self.message_dialog: MessageBox = MessageBox(self)
+    self.message_dialog: MessageDialog = MessageDialog(self)
     self.fingerprint_data = None
     self.devices = []
     self.init_ui()

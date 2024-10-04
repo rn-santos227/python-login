@@ -15,7 +15,7 @@ from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QLabel, QHBoxLayo
 from components.button import Button
 from components.clock import Clock
 from components.combo_box import ComboBox
-from components.message_dialog import MessageBox
+from components.message_dialog import MessageDialog
 from components.popup_dialog import PopupDialog
 from components.webcam import Webcam
 
@@ -42,7 +42,7 @@ class ReaderPage(QWidget):
     self.capture_thread: CaptureThread = None 
     self.popup_dialog: PopupDialog = PopupDialog(parent=self)
     self.clock_component: Clock = Clock()
-    self.message_dialog: MessageBox = MessageBox(self)
+    self.message_dialog: MessageDialog = MessageDialog(self)
     self.biometrics: list[Biometric] = []
     self.logs: list[Log] = []
     self.students: list[Student] = []

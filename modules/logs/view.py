@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 
 from components.button import Button
 from components.date_field import DateField
-from components.message_dialog import MessageBox
+from components.message_dialog import MessageDialog
 from components.question_dialog import QuestionBox
 
 from modules.logs.model import StudentLog
@@ -17,7 +17,7 @@ class LogsPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
-    self.message_dialog: MessageBox = MessageBox(self)
+    self.message_dialog: MessageDialog = MessageDialog(self)
     self.logs: list[StudentLog] = []
     self.__init_ui()
 

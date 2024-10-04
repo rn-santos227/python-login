@@ -5,7 +5,7 @@ from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLayout, QHeaderView, QHBoxLayout, QLayout, QLayoutItem, QLineEdit, QPushButton, QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
 from components.button import Button
-from components.message_dialog import MessageBox
+from components.message_dialog import MessageDialog
 from components.question_dialog import QuestionBox
 from components.text_field import TextField
 
@@ -20,7 +20,7 @@ class StudentPage(QWidget):
     super().__init__()
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
-    self.message_dialog: MessageBox = MessageBox(self)
+    self.message_dialog: MessageDialog = MessageDialog(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.students: list[Student] = []
     self.__init_ui()

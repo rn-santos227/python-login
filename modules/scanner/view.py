@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QSiz
 
 from components.button import Button
 from components.combo_box import ComboBox
-from components.message_dialog import MessageBox
+from components.message_dialog import MessageDialog
 from components.webcam import Webcam
 
 from handlers.face_handler import FaceHandler
@@ -25,7 +25,7 @@ class ScannerPage(QWidget):
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
     self.face_handler: FaceHandler = FaceHandler()
-    self.message_dialog: MessageBox = MessageBox(self)
+    self.message_dialog: MessageDialog = MessageDialog(self)
     self.students: list[Student] = []
     self.__init_ui()
 

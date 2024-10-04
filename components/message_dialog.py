@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QMessageBox
 
-class MessageBox:
+class MessageDialog:
   def __init__(self, parent=None):
     self.parent = parent
 
