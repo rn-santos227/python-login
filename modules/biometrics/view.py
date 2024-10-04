@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QHeaderView, QPushButton, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QHBoxLayout, QHeaderView, QPushButton, QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 
 import modules.biometrics.controller as biometrics_controller
 import modules.students.controller as students_controller
@@ -144,6 +144,8 @@ class BiometricsPage(QWidget):
   def __prompt_delete_biometric(self, biometric_id: int):
     self.biometric_id = biometric_id
     question_box = QuestionDialog(message="Do you want to delete this fingerprint record?")
+    if question_box.exec() == QDialog.Accepted:
+      self.delete_biometrics(biometrics_id=biometric_id)
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
