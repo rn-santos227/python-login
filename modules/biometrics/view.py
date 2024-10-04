@@ -143,6 +143,7 @@ class BiometricsPage(QWidget):
 
   def __prompt_delete_biometric(self, biometric_id: int):
     self.biometric_id = biometric_id
+    question_box = QuestionDialog(message="Do you want to delete this fingerprint record?")
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
