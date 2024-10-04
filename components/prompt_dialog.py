@@ -5,6 +5,7 @@ class PromptDialog(QDialog):
     super().__init__(parent)
     self.setWindowTitle(title)
     self.parent = parent
+    self.is_password = is_password 
     self.__user_input = None
 
   def init_ui(self, message):
