@@ -141,7 +141,7 @@ class BiometricsPage(QWidget):
     self.message_dialog.show_message("Success", "Biometrics has been deleted successfully.", "Information")
 
   def __prompt_delete_biometric(self, biometric_id: int):
-    pass
+    self.biometric_id = biometric_id
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
