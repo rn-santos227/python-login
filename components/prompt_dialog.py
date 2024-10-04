@@ -40,3 +40,4 @@ class PromptDialog(QDialog):
     if self.parent:
       parent_geometry = self.parent.frameGeometry()
       dialog_geometry = self.frameGeometry()
+      center_point = parent_geometry.center()
