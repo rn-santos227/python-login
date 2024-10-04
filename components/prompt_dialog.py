@@ -35,3 +35,6 @@ class PromptDialog(QDialog):
 
   def get_user_input(self):
     return self.__user_input
+  
+  def showEvent(self, event):
+    pass
