@@ -142,7 +142,6 @@ class BiometricsPage(QWidget):
     self.message_dialog.show_message("Success", "Biometrics has been deleted successfully.", "Information")
 
   def __prompt_delete_biometric(self, biometric_id: int):
-    self.biometric_id = biometric_id
     question_box = QuestionDialog(message="Do you want to delete this fingerprint record?")
     if question_box.exec() == QDialog.Accepted:
       self.delete_biometrics(biometrics_id=biometric_id)
