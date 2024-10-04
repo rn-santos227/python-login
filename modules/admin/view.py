@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 
 from components.button import Button
 from components.message_dialog import MessageDialog
-from components.question_dialog import QuestionBox
+from components.question_dialog import QuestionDialog
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
@@ -195,7 +195,7 @@ class AdminsPage(QWidget):
 
   def __prompt_delete_admin(self, admin_id: int):
     self.admin_id = admin_id
-    question_box = QuestionBox(message="Do you want to delete this admin?")
+    question_box = QuestionDialog(message="Do you want to delete this admin?")
     if question_box.exec() == QDialog.Accepted:
       self.delete_admin(admin_id=self.admin_id)
 

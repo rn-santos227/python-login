@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 from components.button import Button
 from components.combo_box import ComboBox
 from components.message_dialog import MessageDialog
-from components.question_dialog import QuestionBox
+from components.question_dialog import QuestionDialog
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
@@ -227,7 +227,7 @@ class ParentsPage(QWidget):
 
   def __prompt_delete_parent(self, parent_id: int):
     self.parent_id = parent_id
-    question_box: QuestionBox = QuestionBox(message="Do you want to delete this parent record?")
+    question_box: QuestionDialog = QuestionDialog(message="Do you want to delete this parent record?")
     if question_box.exec() == QDialog.Accepted:
       self.delete_parent(parent_id=self.parent_id)
 

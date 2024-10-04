@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 
 from components.button import Button
 from components.message_dialog import MessageDialog
-from components.question_dialog import QuestionBox
+from components.question_dialog import QuestionDialog
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
@@ -262,7 +262,7 @@ class StudentPage(QWidget):
 
     else:
       self.student_id = student_id
-      question_box = QuestionBox(message="Do you want to delete this student?")
+      question_box: QuestionDialog = QuestionDialog(message="Do you want to delete this student?")
       if question_box.exec() == QDialog.Accepted:
         self.delete_student(student_id=self.student_id)
 

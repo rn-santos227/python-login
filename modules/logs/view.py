@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 from components.button import Button
 from components.date_field import DateField
 from components.message_dialog import MessageDialog
-from components.question_dialog import QuestionBox
+from components.question_dialog import QuestionDialog
 
 from modules.logs.model import StudentLog
 
@@ -111,6 +111,6 @@ class LogsPage(QWidget):
 
   def __prompt_delete_log(self, log_id):
     self.log_id = log_id
-    question_box: QuestionBox = QuestionBox(message="Do you want to delete this log?")
+    question_box: QuestionDialog = QuestionDialog(message="Do you want to delete this log?")
     if question_box.exec() == QDialog.Accepted:
       self.delete_log(log_id=self.log_id)

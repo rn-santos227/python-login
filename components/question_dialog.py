@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QDialog, QHBoxLayout, QLabel, QPushButton, QVBoxLayout
 
-class QuestionBox(QDialog):
+class QuestionDialog(QDialog):
   def __init__(self, title="Question", message="Are you sure?", parent=None):
     super().__init__(parent)
     self.setWindowTitle(title)
