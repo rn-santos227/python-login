@@ -147,6 +147,7 @@ class AdminsPage(QWidget):
       return
     
     update_admin: Admin = Admin(
+      id = self.admin_id,
       email = email,
       password = password,
       full_name = full_name
