@@ -15,6 +15,10 @@ class PromptDialog(QDialog):
     self.layout.addWidget(self.message_label)
 
     self.input_field: QLineEdit = QLineEdit(self)
+    
+    if self.is_password:
+      self.input_field.setEchoMode(QLineEdit.Password)
+    
     self.layout.addWidget(self.input_field)
 
     self.button_layout: QHBoxLayout = QHBoxLayout()
