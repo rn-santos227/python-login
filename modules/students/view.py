@@ -272,6 +272,9 @@ class StudentPage(QWidget):
         if self.pages_handler.session_handler.verify_password(password):
           self.delete_student(student_id=self.student_id)
 
+        else:
+          self.message_dialog.show_message("Information", "Password does not match.", "information")
+
   def __load_student_for_update(self, student: Student):
     self.__switch_to_update_layout()
     self.student_id = student.id
