@@ -12,14 +12,14 @@ from modules.reader.view import ReaderPage
 from modules.scanner.view import ScannerPage
 from modules.students.view import StudentPage
 
-
 from handlers.asset_handler import AssetHandler
+from handlers.session_handler import SessionHandler
 
 class DashboardAdminPage(QWidget):
-  def __init__(self, pages_handler, session_handler):
+  def __init__(self, pages_handler, session_handler: SessionHandler):
     super().__init__()
     self.pages_handler = pages_handler
-    self.session_handler = session_handler
+    self.session_handler: SessionHandler = session_handler
     self.navigation_visible = True
     self.__init_ui()
 
