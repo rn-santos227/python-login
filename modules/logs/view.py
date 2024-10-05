@@ -117,3 +117,6 @@ class LogsPage(QWidget):
 
     if self.pages_handler.session_handler.verify_password(password):
       self.delete_log(self.log_id)
+    
+    else:
+      self.message_dialog.show_message("Information", "Password does not match.", "information")
