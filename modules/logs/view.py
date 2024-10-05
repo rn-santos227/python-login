@@ -6,7 +6,6 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 from components.button import Button
 from components.date_field import DateField
 from components.message_dialog import MessageDialog
-from components.question_dialog import QuestionDialog
 from components.prompt_dialog import PromptDialog
 
 from modules.logs.model import StudentLog

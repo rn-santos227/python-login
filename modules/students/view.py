@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 from components.button import Button
 from components.message_dialog import MessageDialog
 from components.question_dialog import QuestionDialog
+from components.prompt_dialog import PromptDialog
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
@@ -262,6 +263,7 @@ class StudentPage(QWidget):
 
     else:
       self.student_id = student_id
+      prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
       question_box: QuestionDialog = QuestionDialog(message="Do you want to delete this student?")
       if question_box.exec() == QDialog.Accepted:
         self.delete_student(student_id=self.student_id)
