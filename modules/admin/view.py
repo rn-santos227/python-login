@@ -6,7 +6,6 @@ from PyQt5.QtWidgets import QDialog, QFrame, QGraphicsDropShadowEffect, QGridLay
 from components.button import Button
 from components.message_dialog import MessageDialog
 from components.prompt_dialog import PromptDialog
-from components.question_dialog import QuestionDialog
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
@@ -198,9 +197,9 @@ class AdminsPage(QWidget):
   def __prompt_delete_admin(self, admin_id: int):
     self.admin_id = admin_id
     prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
-    question_box = QuestionDialog(message="Do you want to delete this admin?")
-    if question_box.exec() == QDialog.Accepted:
-      self.delete_admin(admin_id=self.admin_id)
+
+    if prompt_dialog.exec_() == QDialog.Accepted:
+      password = prompt_dialog.get_user_input()
 
   def __load_admin_for_update(self, admin: Admin):
     self.__switch_to_update_layout()
