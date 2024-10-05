@@ -268,7 +268,9 @@ class StudentPage(QWidget):
       
       if prompt_dialog.exec_() == QDialog.Accepted:
         password = prompt_dialog.get_user_input()
-        self.delete_student(student_id=self.student_id)
+
+        if self.pages_handler.session_handler.verify_password(password):
+          self.delete_student(student_id=self.student_id)
 
   def __load_student_for_update(self, student: Student):
     self.__switch_to_update_layout()
