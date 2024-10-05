@@ -112,6 +112,5 @@ class LogsPage(QWidget):
 
   def __prompt_delete_log(self, log_id):
     self.log_id = log_id
-    question_box: QuestionDialog = QuestionDialog(message="Do you want to delete this log?")
-    if question_box.exec() == QDialog.Accepted:
-      self.delete_log(log_id=self.log_id)
+    prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
+    password = prompt_dialog.get_user_input()
