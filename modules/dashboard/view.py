@@ -16,9 +16,10 @@ from modules.students.view import StudentPage
 from handlers.asset_handler import AssetHandler
 
 class DashboardAdminPage(QWidget):
-  def __init__(self, pages_handler):
+  def __init__(self, pages_handler, session_handler):
     super().__init__()
     self.pages_handler = pages_handler
+    self.session_handler = session_handler
     self.navigation_visible = True
     self.__init_ui()
 
