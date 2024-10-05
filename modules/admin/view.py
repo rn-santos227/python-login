@@ -201,6 +201,12 @@ class AdminsPage(QWidget):
     if prompt_dialog.exec_() == QDialog.Accepted:
       password = prompt_dialog.get_user_input()
 
+      if self.pages_handler.session_handler.verify_password(password):
+        self.delete_admin(self.admin_id)
+
+      else:
+        self.message_dialog.show_message("Information", "Password does not match.", "information")
+
   def __load_admin_for_update(self, admin: Admin):
     self.__switch_to_update_layout()
     self.admin_id = admin.id
