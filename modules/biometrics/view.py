@@ -104,7 +104,7 @@ class BiometricsPage(QWidget):
       self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(biometric.full_name)))
 
       delete_button: QPushButton = QPushButton("Delete")
-      delete_button.clicked.connect(lambda ch, biometric_id=biometric.id: self.__prompt_delete_biometric(biometric_id))
+      delete_button.clicked.connect(lambda ch, biometric_id= biometric.biometrics_id: self.__prompt_delete_biometric(biometric_id))
 
       button_layout: QHBoxLayout = QHBoxLayout()
       button_layout.addWidget(delete_button)
