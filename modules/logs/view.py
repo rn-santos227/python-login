@@ -113,10 +113,12 @@ class LogsPage(QWidget):
   def __prompt_delete_log(self, log_id):
     self.log_id = log_id
     prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
-    password = prompt_dialog.get_user_input()
-
-    if self.pages_handler.session_handler.verify_password(password):
-      self.delete_log(self.log_id)
     
-    else:
-      self.message_dialog.show_message("Information", "Password does not match.", "information")
+    if prompt_dialog.exec_() == QDialog.Accepted:
+      password = prompt_dialog.get_user_input()
+
+      if self.pages_handler.session_handler.verify_password(password):
+        self.delete_log(self.log_id)
+      
+      else:
+        self.message_dialog.show_message("Information", "Password does not match.", "information")

@@ -7,7 +7,7 @@ class User:
     self._password_hash = password
 
   @staticmethod
-  def encrypt_password(password) -> str:
+  def encrypt_password(password: str) -> str:
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
     return hashed_password
 
