@@ -267,6 +267,7 @@ class StudentPage(QWidget):
       question_box: QuestionDialog = QuestionDialog(message="Do you want to delete this student?")
       
       if prompt_dialog.exec_() == QDialog.Accepted:
+        password = prompt_dialog.get_user_input()
         self.delete_student(student_id=self.student_id)
 
   def __load_student_for_update(self, student: Student):
