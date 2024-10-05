@@ -11,6 +11,7 @@ class PromptDialog(QDialog):
     self.__init_ui(message)
 
   def __init_ui(self, message):
+    self.setFixedWidth(self.fixed_width) 
     self.layout: QVBoxLayout = QVBoxLayout()
 
     self.message_label: QLabel = QLabel(message)
