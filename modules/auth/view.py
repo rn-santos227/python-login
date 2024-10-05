@@ -10,15 +10,16 @@ from components.message_dialog import MessageDialog
 from components.text_field import TextField
 
 from handlers.asset_handler import AssetHandler
+from handlers.session_handler import SessionHandler
 
 from assets.styles.styles import auth_view_style
 class LoginPage(QWidget):
-  def __init__(self, pages_handler, session_handler):
+  def __init__(self, pages_handler, session_handler: SessionHandler):
     super().__init__()
     self.setStyleSheet(auth_view_style)
     self.alert_message: AlertMessage = AlertMessage() 
     self.pages_handler = pages_handler
-    self.session_handler = session_handler
+    self.session_handler: SessionHandler = session_handler
     self.__init_ui()
 
   def __init_ui(self):
