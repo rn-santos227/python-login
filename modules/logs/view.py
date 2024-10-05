@@ -114,3 +114,6 @@ class LogsPage(QWidget):
     self.log_id = log_id
     prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
     password = prompt_dialog.get_user_input()
+
+    if self.pages_handler.session_handler.verify_password(password):
+      pass
