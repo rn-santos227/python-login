@@ -7,8 +7,9 @@ class PromptDialog(QDialog):
     self.parent = parent
     self.is_password = is_password 
     self.__user_input = None
+    self.__init_ui(message)
 
-  def init_ui(self, message):
+  def __init_ui(self, message):
     self.layout: QVBoxLayout = QVBoxLayout()
 
     self.message_label: QLabel = QLabel(message)
