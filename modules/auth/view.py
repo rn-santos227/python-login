@@ -133,7 +133,7 @@ class LoginPage(QWidget):
     if(auth_controller.login(email, password)):
       print("Login Success.")
       user = auth_controller.get_user(email)
-      self.pages_handler.session_handler.create_session(user)
+      self.session_handler.create_session(user)
       self.password_field.clear_text()
       self.email_field.clear_text()
       self.message_dialog.show_message(title="Information", message="Login Successful.")
