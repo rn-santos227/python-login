@@ -116,4 +116,4 @@ class LogsPage(QWidget):
     password = prompt_dialog.get_user_input()
 
     if self.pages_handler.session_handler.verify_password(password):
-      pass
+      self.delete_log(self.log_id)
