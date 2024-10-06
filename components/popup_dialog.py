@@ -10,6 +10,8 @@ from assets.styles.styles import image_label_style, popup_dialog_style
 class PopupDialog(QDialog):
   def __init__(self, parent=None):
     super().__init__(parent)
+    self.setWindowTitle("Information")
+    self.parent = parent
     self.timer: QTimer = QTimer(self)
     self.timer.timeout.connect(self.close_popup)
     self.student: Student = None
@@ -22,7 +24,6 @@ class PopupDialog(QDialog):
     super().exec_()  
 
   def init_ui(self):
-    self.setWindowTitle("Information")
     self.layout: QVBoxLayout = QVBoxLayout()
     self.setLayout(self.layout)
 
