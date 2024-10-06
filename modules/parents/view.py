@@ -8,6 +8,7 @@ from components.button import Button
 from components.combo_box import ComboBox
 from components.message_dialog import MessageDialog
 from components.question_dialog import QuestionDialog
+from components.prompt_dialog import PromptDialog
 from components.text_field import TextField
 
 from handlers.validations_handler import ValidationHandler
