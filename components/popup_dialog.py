@@ -19,7 +19,6 @@ class PopupDialog(QDialog):
   def show(self):
     self.update_ui()
     self.reset_timer() 
-    self.center_to_parent()
     super().exec_()  
 
   def init_ui(self):
@@ -92,18 +91,3 @@ class PopupDialog(QDialog):
       self.timer.stop()
     self.timer.start(10000) 
 
-  def center_to_parent(self):
-    parent = self.parent()
-
-    if isinstance(parent, QWidget):
-      parent_geometry = parent.geometry()
-      dialog_geometry = self.geometry()
-
-      x: int = parent_geometry.x() + (parent_geometry.width() - dialog_geometry.width()) // 2
-      y: int = parent_geometry.y() + (parent_geometry.height() - dialog_geometry.height()) // 2
-
-      self.move(x, y)
-
-    else:
-      print("Parent is not a QWidget or is None, can't center.")
-  
