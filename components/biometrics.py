@@ -55,7 +55,6 @@ class Biometrics(QWidget):
 
   def start_scanner(self):
     device = self.biometrics_combo_box.get_selected_value()
-
     if device:
 
       if self.capture_thread and self.capture_thread.isRunning():
