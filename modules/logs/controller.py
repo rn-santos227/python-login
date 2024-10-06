@@ -198,9 +198,11 @@ def add_logout_time(log: Log) -> Log:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def update_log(log: Log) -> Log:
   set_clause = (
