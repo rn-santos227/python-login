@@ -96,9 +96,11 @@ def get_logs_by_student(student_id) -> list[Log]:
   
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def get_logs_with_students(query) -> list[StudentLog]:
   condition = f"{__table}.student_id = students.id"
