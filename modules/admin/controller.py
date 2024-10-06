@@ -135,7 +135,9 @@ def delete_admin(id) -> bool:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
     return False
   
   finally:
     cursor.close()
+    connection.close() 
