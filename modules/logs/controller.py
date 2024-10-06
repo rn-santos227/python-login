@@ -152,9 +152,11 @@ def create_log(log: Log) -> Log:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def add_login_time(log: Log) -> Log:
   set_clause = (
