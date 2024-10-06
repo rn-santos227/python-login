@@ -48,9 +48,11 @@ def get_log_by_student_and_date(student_id, date) -> Union[Log, None]:
   
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def get_logs(query, action) -> list[Log]:
   sql_query = builder(__table, query, action)
