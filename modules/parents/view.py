@@ -228,6 +228,7 @@ class ParentsPage(QWidget):
 
   def __prompt_delete_parent(self, parent_id: int):
     self.parent_id = parent_id
+    prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
     question_box: QuestionDialog = QuestionDialog(message="Do you want to delete this parent record?")
     if question_box.exec() == QDialog.Accepted:
       self.delete_parent(parent_id=self.parent_id)
