@@ -235,6 +235,8 @@ class ParentsPage(QWidget):
       if self.pages_handler.session_handler.verify_password(password):
         self.delete_parent(parent_id=self.parent_id)
 
+      else:
+        self.message_dialog.show_message("Information", "Password does not match.", "information")
 
   def __load_parent_for_update(self, parent: Parent):
     self.__switch_to_update_layout()
