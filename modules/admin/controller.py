@@ -116,9 +116,11 @@ def update_admin(admin: Admin):
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def delete_admin(id) -> bool:
   where_clause = f"id = {id}"
