@@ -122,9 +122,11 @@ def get_logs_with_students(query) -> list[StudentLog]:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def create_log(log: Log) -> Log:
   columns = "(student_id, date)"
