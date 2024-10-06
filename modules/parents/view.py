@@ -231,7 +231,10 @@ class ParentsPage(QWidget):
     
     if prompt_dialog.exec_() == QDialog.Accepted:
       password = prompt_dialog.get_user_input()
-      self.delete_parent(parent_id=self.parent_id)
+
+      if self.pages_handler.session_handler.verify_password(password):
+        self.delete_parent(parent_id=self.parent_id)
+
 
   def __load_parent_for_update(self, parent: Parent):
     self.__switch_to_update_layout()
