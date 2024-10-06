@@ -230,6 +230,7 @@ class ParentsPage(QWidget):
     prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
     
     if prompt_dialog.exec_() == QDialog.Accepted:
+      password = prompt_dialog.get_user_input()
       self.delete_parent(parent_id=self.parent_id)
 
   def __load_parent_for_update(self, parent: Parent):
