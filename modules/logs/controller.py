@@ -72,9 +72,11 @@ def get_logs(query, action) -> list[Log]:
   
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def get_logs_by_student(student_id) -> list[Log]:
   sql_query = builder(__table, 'student_id = %s', "select")
