@@ -247,3 +247,4 @@ def delete_log(id) -> bool:
   
   finally:
     cursor.close()
+    connection.close() 
