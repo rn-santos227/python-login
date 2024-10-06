@@ -230,7 +230,7 @@ class ParentsPage(QWidget):
     self.parent_id = parent_id
     prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
     question_box: QuestionDialog = QuestionDialog(message="Do you want to delete this parent record?")
-    if question_box.exec() == QDialog.Accepted:
+    if prompt_dialog.exec_() == QDialog.Accepted:
       self.delete_parent(parent_id=self.parent_id)
 
   def __load_parent_for_update(self, parent: Parent):
