@@ -226,6 +226,7 @@ def update_log(log: Log) -> Log:
 
   finally:
     cursor.close()
+    connection.close() 
 
 def delete_log(id) -> bool:
   where_clause = f"id = {id}"
@@ -241,6 +242,7 @@ def delete_log(id) -> bool:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
     return False
   
   finally:
