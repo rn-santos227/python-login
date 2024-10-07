@@ -69,9 +69,11 @@ def get_parents(query, action) -> list[Parent]:
   
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def create_parent(parent: Parent) -> Parent:
   columns = "(student_id, full_name, email, contact)" 
