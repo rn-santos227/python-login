@@ -113,9 +113,11 @@ def update_parent(parent: Parent) -> Parent:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def delete_parent(id) -> bool:
   where_clause = f"id = {id}"
