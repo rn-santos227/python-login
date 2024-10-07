@@ -47,9 +47,11 @@ def get_student_by_email(email: str) -> Union[Student, None]:
     
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def get_student_by_student_number(student_number) -> Union[Student, None]:
   sql_query = builder(__table, 'student_number = %s', "select")
