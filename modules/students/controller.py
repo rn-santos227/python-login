@@ -186,9 +186,11 @@ def update_student(student: Student) -> Student:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def delete_student(id) -> bool:
   where_clause = f"id = {id}"
