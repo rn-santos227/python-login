@@ -46,9 +46,11 @@ def get_parent_by_student_id(student_id) -> Union[Parent, None]:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def get_parents(query, action) -> list[Parent]:
   sql_query = builder(__table, query, action)
