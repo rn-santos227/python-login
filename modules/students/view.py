@@ -1,3 +1,4 @@
+import modules.biometrics.controller as biometrics_controller
 import modules.parents.controller as parents_controller
 import modules.students.controller as students_controller
 
@@ -223,7 +224,7 @@ class StudentPage(QWidget):
     self.students = students_controller.get_students("status = 'active'", "select")
     self.table_widget.setRowCount(0)
 
-    if not self.students :
+    if not self.students:
       return
 
     for student in self.students :
