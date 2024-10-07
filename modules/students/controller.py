@@ -157,9 +157,11 @@ def add_face_url(student: Student) -> Student:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def update_student(student: Student) -> Student:
   set_clause = (
