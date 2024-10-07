@@ -70,9 +70,11 @@ def get_student_by_student_number(student_number) -> Union[Student, None]:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def get_students(query, action) -> list[Student]:
   sql_query = builder(__table, query, action)
