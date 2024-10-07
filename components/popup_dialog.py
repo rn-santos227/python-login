@@ -93,5 +93,6 @@ class PopupDialog(QDialog):
     self.timer.start(10000) 
 
   def showEvent(self, event):
-    pass
+    if self.parent:
+      pass
 
