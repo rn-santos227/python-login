@@ -95,4 +95,5 @@ class PopupDialog(QDialog):
   def showEvent(self, event):
     if self.parent:
       parent_geometry = self.parent.frameGeometry()
+      dialog_geometry = self.frameGeometry()
 
