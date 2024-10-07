@@ -89,9 +89,11 @@ def create_parent(parent: Parent) -> Parent:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
   finally:
     cursor.close()
+    connection.close() 
 
 def update_parent(parent: Parent) -> Parent:
   set_clause = (
