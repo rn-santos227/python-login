@@ -259,7 +259,7 @@ class StudentPage(QWidget):
     parent = parents_controller.get_parent_by_student_id(student_id)
     biometric = biometrics_controller.get_biometrics_by_student_id(student_id)
 
-    if parent:
+    if parent or biometric:
       self.message_dialog.show_message("Error", "Student cannot be deleted as it has attached records.", "error")
 
     else:
