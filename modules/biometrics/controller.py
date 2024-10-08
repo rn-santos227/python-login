@@ -11,6 +11,12 @@ def get_biometrics_by_student_id(student_id):
   connection = DB.connect_db()
   cursor = connection.cursor()
 
+  try:
+    cursor.execute(sql_query, (student_id,))
+
+  except Exception as e:
+    print(f"Error: {e}")
+
 def get_biometrics(query, action) -> list[Biometric]:
   sql_query = builder(__table, query, action)
   connection = DB.connect_db()
