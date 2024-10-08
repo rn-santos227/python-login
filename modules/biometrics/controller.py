@@ -25,6 +25,7 @@ def get_biometrics_by_student_id(student_id)  -> Union[Biometric, None]:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
 def get_biometrics(query, action) -> list[Biometric]:
   sql_query = builder(__table, query, action)
