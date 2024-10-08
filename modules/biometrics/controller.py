@@ -7,7 +7,7 @@ from modules.biometrics.model import Biometric, StudentBiometrics
 
 __table = "biometrics"
 
-def get_biometrics_by_student_id(student_id):
+def get_biometrics_by_student_id(student_id)  -> Union[Biometric, None]:
   sql_query = builder(__table, 'student_id = %s', "select")
   connection = DB.connect_db()
   cursor = connection.cursor()
