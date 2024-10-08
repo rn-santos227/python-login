@@ -16,6 +16,9 @@ def get_biometrics_by_student_id(student_id)  -> Union[Biometric, None]:
     cursor.execute(sql_query, (student_id,))
     row = cursor.fetchone()
 
+    if row:
+      biometric: Biometric = Biometric(*row)
+
   except Exception as e:
     print(f"Error: {e}")
 
