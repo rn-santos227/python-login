@@ -89,9 +89,9 @@ class BiometricsPage(QWidget):
     self.students_combo_box.set_items(items)
 
   def load_biometrics(self):
+    self.table_widget.setRowCount(0)
     self.biometrics = biometrics_controller.get_biometrics_with_students("all")
     self.biometrics_component.load_biometric_devices_to_combo_box()
-    self.table_widget.setRowCount(0)
 
     if not self.biometrics:
       return
