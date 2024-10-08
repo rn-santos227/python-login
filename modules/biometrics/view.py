@@ -145,6 +145,8 @@ class BiometricsPage(QWidget):
 
   def __prompt_delete_biometric(self, biometric_id: int):
     question_box = QuestionDialog(message="Do you want to delete this fingerprint record?")
+    prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
+    
     if question_box.exec() == QDialog.Accepted:
       self.delete_biometrics(biometrics_id=biometric_id)
 
