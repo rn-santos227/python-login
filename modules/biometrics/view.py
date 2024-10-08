@@ -151,6 +151,9 @@ class BiometricsPage(QWidget):
       if self.pages_handler.session_handler.verify_password(password):
         self.delete_biometrics(biometrics_id=biometric_id)
 
+      else:
+        self.message_dialog.show_message("Information", "Password does not match.", "information")
+
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
     self.biometrics_button.set_button_text("Stop Fingerprint Reader")
