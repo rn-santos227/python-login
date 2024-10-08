@@ -18,6 +18,7 @@ def get_biometrics_by_student_id(student_id)  -> Union[Biometric, None]:
 
     if row:
       biometric: Biometric = Biometric(*row)
+      return biometric
 
   except Exception as e:
     print(f"Error: {e}")
