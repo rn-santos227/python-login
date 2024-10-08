@@ -29,6 +29,7 @@ def get_biometrics_by_student_id(student_id)  -> Union[Biometric, None]:
 
   finally:
     cursor.close()
+    connection.close() 
 
 def get_biometrics(query, action) -> list[Biometric]:
   sql_query = builder(__table, query, action)
