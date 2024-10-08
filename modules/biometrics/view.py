@@ -9,7 +9,6 @@ from components.button import Button
 from components.combo_box import ComboBox
 from components.message_dialog import MessageDialog
 from components.prompt_dialog import PromptDialog
-from components.question_dialog import QuestionDialog
 
 from handlers.biometrics_handler import BiometricsHandler
 from handlers.validations_handler import ValidationHandler
@@ -144,10 +143,9 @@ class BiometricsPage(QWidget):
     self.message_dialog.show_message("Success", "Biometrics has been deleted successfully.", "Information")
 
   def __prompt_delete_biometric(self, biometric_id: int):
-    question_box = QuestionDialog(message="Do you want to delete this fingerprint record?")
     prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
     
-    if question_box.exec() == QDialog.Accepted:
+    if prompt_dialog.exec_() == QDialog.Accepted:
       self.delete_biometrics(biometrics_id=biometric_id)
 
   def __enable_biometrics_scanner(self):
