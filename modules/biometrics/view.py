@@ -146,6 +146,7 @@ class BiometricsPage(QWidget):
     prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
     
     if prompt_dialog.exec_() == QDialog.Accepted:
+      password = prompt_dialog.get_user_input()
       self.delete_biometrics(biometrics_id=biometric_id)
 
   def __enable_biometrics_scanner(self):
