@@ -257,6 +257,7 @@ class StudentPage(QWidget):
 
   def __prompt_delete_student(self, student_id: int):
     parent = parents_controller.get_parent_by_student_id(student_id)
+    biometric = biometrics_controller.get_biometrics_by_student_id(student_id)
 
     if parent:
       self.message_dialog.show_message("Error", "Student cannot be deleted as it has attached records.", "error")
