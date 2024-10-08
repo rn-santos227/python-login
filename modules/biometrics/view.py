@@ -147,7 +147,9 @@ class BiometricsPage(QWidget):
     
     if prompt_dialog.exec_() == QDialog.Accepted:
       password = prompt_dialog.get_user_input()
-      self.delete_biometrics(biometrics_id=biometric_id)
+
+      if self.pages_handler.session_handler.verify_password(password):
+        self.delete_biometrics(biometrics_id=biometric_id)
 
   def __enable_biometrics_scanner(self):
     self.biometrics_component.start_scanner()
