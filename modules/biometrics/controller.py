@@ -109,6 +109,7 @@ def remove_biometric(id) -> bool:
 
   try:
     cursor.execute(sql_query)
+    connection.commit()
 
   except Exception as e:
     print(f"Error: {e}")
