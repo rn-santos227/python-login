@@ -127,6 +127,9 @@ class ScannerPage(QWidget):
       students_controller.add_face_url(student=student)
 
       self.message_dialog.show_message("Success", "Face has been captured and saved to the database.", "Information")
+    
+    else:
+      self.message_dialog.show_message("Error", "Failed to encode face. Please ensure your face is clearly visible.", "error")
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
