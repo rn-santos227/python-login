@@ -24,6 +24,9 @@ class DashboardAdminPage(QWidget):
     self.__init_ui()
 
   def __init_ui(self):
+    button_bg_color = "#fff6f6"
+    button_font_color = "#000000"
+
     main_layout: QHBoxLayout = QHBoxLayout(self)
     main_layout.setContentsMargins(0, 0, 0, 0)
     main_layout.setSpacing(0)
