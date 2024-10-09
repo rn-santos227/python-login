@@ -102,7 +102,7 @@ class ScannerPage(QWidget):
     student_id = self.students_combo_box.get_selected_value()
     if not student_id:
       self.message_dialog.show_message("Validation Error", "Name cannot be empty", "error")
-
+      return
 
 
     if ret:
