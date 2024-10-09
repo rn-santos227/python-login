@@ -117,7 +117,7 @@ class DashboardAdminPage(QWidget):
     main_layout.setContentsMargins(0, 0, 0, 0)
 
     logs_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
-    scanner_button.set_color(bg_color="#fff6f6", font_color="black")
+    scanner_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
     students_button.set_color(bg_color="#fff6f6", font_color="black")
     biometrics_button.set_color(bg_color="#fff6f6", font_color="black")
     reader_button.set_color(bg_color="#fff6f6", font_color="black")
