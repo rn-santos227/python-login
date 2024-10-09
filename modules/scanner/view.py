@@ -117,7 +117,7 @@ class ScannerPage(QWidget):
     face_encodings = face_recognition.face_encodings(image_rgb, [face_locations[0]])
     
     if face_encodings:
-      pass
+      face_encode = face_encodings[0]
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
