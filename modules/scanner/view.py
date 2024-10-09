@@ -116,31 +116,7 @@ class ScannerPage(QWidget):
     face_locations = sorted(face_locations, key=lambda loc: (loc[2] - loc[0]) * (loc[1] - loc[3]), reverse=True)
     face_encodings = face_recognition.face_encodings(image_rgb, [face_locations[0]])
     
-    if ret:
-      student_id = self.students_combo_box.get_selected_value()
 
-      if not student_id:
-        self.message_dialog.show_message("Validation Error", "Name cannot be empty", "error")
-        return
-      
-      student = students_controller.get_student_by_id(student_id)
-      image_rgb  = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
-      image_array = np.array(image_rgb , dtype=np.uint8)
-      face_locations = face_recognition.face_locations(image_array)
-      face_encodings = face_recognition.face_encodings(image_array, face_locations)
-
-      if face_encodings:
-        face_encode = face_encodings[0]
-        student.face_encode = json.dumps(face_encode.tolist())
-        students_controller.add_face_encode(student=student)
-
-        student.face_url = self.face_handler.save_face(image_data=frame, student_number=student.student_number)
-        student.face_url =  student.face_url.replace("/", "\\")   
-
-        students_controller.add_face_url(student=student)
-        self.message_dialog.show_message("Success", f"Face has been captured and saved to database.", "Information")
-  
   def __enable_capture(self):
     self.webcam_component.start_webcam()
     self.capture_button.set_enabled()
