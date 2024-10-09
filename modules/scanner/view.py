@@ -114,7 +114,8 @@ class ScannerPage(QWidget):
       return
     
     face_locations = sorted(face_locations, key=lambda loc: (loc[2] - loc[0]) * (loc[1] - loc[3]), reverse=True)
-
+    face_encodings = face_recognition.face_encodings(image_rgb, [face_locations[0]])
+    
     if ret:
       student_id = self.students_combo_box.get_selected_value()
 
