@@ -117,7 +117,7 @@ class DashboardAdminPage(QWidget):
     scanner_button.set_color(bg_color="#fff6f6", font_color="black")
     students_button.set_color(bg_color="#fff6f6", font_color="black")
     biometrics_button.set_color(bg_color="#fff6f6", font_color="black")
-    reader_button.set_color(bg_color="cyan", font_color="black")
+    reader_button.set_color(bg_color="#fff6f6", font_color="black")
     parents_button.set_color(bg_color="cyan", font_color="black")
     users_button.set_color(bg_color="cyan", font_color="black")
     logout_button.set_color(bg_color="cyan", font_color="black")
