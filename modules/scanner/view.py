@@ -3,6 +3,8 @@ import face_recognition
 import json
 import numpy as np
 
+from datetime import datetime
+
 import modules.students.controller as students_controller
 
 from PyQt5.QtGui import QColor
@@ -121,6 +123,8 @@ class ScannerPage(QWidget):
 
       student.face_encode = json.dumps(face_encode.tolist())
       students_controller.add_face_encode(student=student)
+
+      timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
