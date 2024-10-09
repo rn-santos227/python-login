@@ -166,8 +166,8 @@ class AdminsPage(QWidget):
   def load_admins(self):
     current_admin = self.pages_handler.session_handler.user
     query = f"status = 'active' AND id != {current_admin.id}"
-    
-    self.admins = admin_controller.get_admins("status = 'active'", "select")
+
+    self.admins = admin_controller.get_admins(query, "select")
     self.table_widget.setRowCount(0)
 
     if not self.admins:
