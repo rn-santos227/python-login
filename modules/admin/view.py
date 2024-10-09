@@ -164,6 +164,7 @@ class AdminsPage(QWidget):
     self.message_dialog.show_message("Success", "Admin has been deleted successfully.", "Information")
 
   def load_admins(self):
+    current_admin = self.pages_handler.session_handler.user
     self.admins = admin_controller.get_admins("status = 'active'", "select")
     self.table_widget.setRowCount(0)
 
