@@ -119,6 +119,8 @@ class ScannerPage(QWidget):
     if face_encodings:
       face_encode = face_encodings[0]
 
+      student.face_encode = json.dumps(face_encode.tolist())
+
   def __enable_capture(self):
     self.webcam_component.start_webcam()
     self.capture_button.set_enabled()
