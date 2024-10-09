@@ -123,7 +123,7 @@ class DashboardAdminPage(QWidget):
     reader_button.set_color(bg_color="#fff6f6", font_color="black")
     parents_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
     users_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
-    logout_button.set_color(bg_color="fff6f6", font_color="black")
+    logout_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
 
   def handle_admins(self):
     self.reader_content.clock_component.start_clock()
