@@ -107,6 +107,8 @@ class ScannerPage(QWidget):
     student = students_controller.get_student_by_id(student_id)
     image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
+    face_locations = face_recognition.face_locations(image_rgb, model="cnn")
+    
     if ret:
       student_id = self.students_combo_box.get_selected_value()
 
