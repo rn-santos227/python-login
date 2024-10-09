@@ -95,6 +95,11 @@ class ScannerPage(QWidget):
   
   def save_face(self):
     ret, frame = self.webcam_component.capture_image()
+    if not ret:
+      self.message_dialog.show_message("Error", "Failed to capture image.", "error")
+      return
+
+
     if ret:
       student_id = self.students_combo_box.get_selected_value()
 
