@@ -108,6 +108,9 @@ class ScannerPage(QWidget):
     image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     face_locations = face_recognition.face_locations(image_rgb, model="cnn")
+
+    if not face_locations:
+      self.message_dialog.show_message("Error", "No face detected in the frame. Please try again.", "error")
     
     if ret:
       student_id = self.students_combo_box.get_selected_value()
