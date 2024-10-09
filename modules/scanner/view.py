@@ -113,6 +113,8 @@ class ScannerPage(QWidget):
       self.message_dialog.show_message("Error", "No face detected in the frame. Please try again.", "error")
       return
     
+    face_locations = sorted(face_locations, key=lambda loc: (loc[2] - loc[0]) * (loc[1] - loc[3]), reverse=True)
+
     if ret:
       student_id = self.students_combo_box.get_selected_value()
 
