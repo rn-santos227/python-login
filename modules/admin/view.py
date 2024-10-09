@@ -168,6 +168,8 @@ class AdminsPage(QWidget):
     
     if current_admin:
       query = f"status = 'active' AND id != {current_admin.id}"
+    else:
+      query = "status = 'active'"
 
     self.admins = admin_controller.get_admins(query, "select")
     self.table_widget.setRowCount(0)
