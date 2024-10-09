@@ -125,6 +125,7 @@ class ScannerPage(QWidget):
       students_controller.add_face_encode(student=student)
 
       timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+      image_filename = f"{student.student_number}_{timestamp}.jpg"
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
