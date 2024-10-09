@@ -98,6 +98,8 @@ class ScannerPage(QWidget):
     if not ret:
       self.message_dialog.show_message("Error", "Failed to capture image.", "error")
       return
+    
+    student_id = self.students_combo_box.get_selected_value()
 
 
     if ret:
