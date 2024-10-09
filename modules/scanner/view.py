@@ -122,8 +122,9 @@ class ScannerPage(QWidget):
       face_encode = face_encodings[0]
       student.face_url = self.face_handler.save_face(image_data=frame, student_number=student.student_number)  
       student.face_encode = json.dumps(face_encode.tolist())
-      
+
       students_controller.add_face_encode(student=student)
+      students_controller.add_face_url(student=student)
 
   def __enable_capture(self):
     self.webcam_component.start_webcam()
