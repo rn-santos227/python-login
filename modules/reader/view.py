@@ -176,52 +176,7 @@ class ReaderPage(QWidget):
       return
     
     image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    image_array = np.array(image_rgb , dtype=np.uint8)
-    face_locations = face_recognition.face_locations(image_array)
-    face_encodings = face_recognition.face_encodings(image_array, face_locations)
-    face_input = np.array(face_encodings[0])
-
-    for student in self.students:
-      student_face_encode = student.face_encode
-      if not student_face_encode:
-        continue
-      
-      student_face = np.array(json.loads(student_face_encode))
-      distance = face_recognition.face_distance([student_face], face_input)
-
-      if distance < 0.6:
-        current_date = datetime.now()
-        formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
-        log = self.get_log(current_date, student.id)
-
-        if log is None:
-          login = self.create_log(current_date, student.id)
-          login.login_time = formatted_date_time
-          logs_controller.add_login_time(login)
-           
-          login_message = compose_message(student=student, time=formatted_date_time, logged="logged in")
-          send_sms(contact_number=student.contact_number, message=login_message)
-          send_email(student.email, message=login_message)
-          self.__send_sms_to_parents(student, message=login_message)
-
-        else:
-          if log.logout_time is not None:
-            self.message_dialog.show_message("Information", "Student already logged out.", "information")
-            return
-          
-          log.logout_time = formatted_date_time
-
-          logs_controller.add_logout_time(log)
-          logout_message = compose_message(student=student, time=formatted_date_time, logged="logged out")
-          send_sms(contact_number=student.contact_number, message=logout_message)
-          send_email(student.email, message=logout_message)
-          self.__send_sms_to_parents(student, message=logout_message)
-        
-        self.popup_dialog.set_student(student=student)
-        self.popup_dialog.set_logged_time(logged=formatted_date_time)
-        self.popup_dialog.show()
-        return
-      
+ 
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
