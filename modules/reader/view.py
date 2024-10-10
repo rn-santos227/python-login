@@ -182,6 +182,9 @@ class ReaderPage(QWidget):
       self.message_dialog.show_message("Error", "No face detected in the frame. Please try again.", "error")
       return
  
+    face_locations = sorted(face_locations, key=lambda loc: (loc[2] - loc[0]) * (loc[1] - loc[3]), reverse=True)
+    
+
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
