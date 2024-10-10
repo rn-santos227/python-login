@@ -176,6 +176,8 @@ class ReaderPage(QWidget):
       return
     
     image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    face_locations = face_recognition.face_locations(image_rgb, model="cnn")
+    
  
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
