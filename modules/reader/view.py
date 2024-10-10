@@ -180,6 +180,7 @@ class ReaderPage(QWidget):
 
     if not face_locations:
       self.message_dialog.show_message("Error", "No face detected in the frame. Please try again.", "error")
+      return
  
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
