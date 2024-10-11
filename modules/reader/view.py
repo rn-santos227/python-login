@@ -221,6 +221,8 @@ class ReaderPage(QWidget):
             return
           
           log.logout_time = formatted_date_time
+          logs_controller.add_logout_time(log)
+
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
