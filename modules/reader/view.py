@@ -185,6 +185,9 @@ class ReaderPage(QWidget):
     face_locations = sorted(face_locations, key=lambda loc: (loc[2] - loc[0]) * (loc[1] - loc[3]), reverse=True)
     face_encodings = face_recognition.face_encodings(image_rgb, [face_locations[0]])
 
+    if not face_encodings:
+      self.message_dialog.show_message("Error", "Failed to encode face. Please ensure your face is clearly visible.", "error")
+
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
