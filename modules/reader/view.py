@@ -193,6 +193,9 @@ class ReaderPage(QWidget):
 
     for student in self.students:
       student_face_encode = student.face_encode
+      
+      if not student_face_encode:
+        continue
 
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
