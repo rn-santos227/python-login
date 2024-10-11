@@ -183,7 +183,7 @@ class ReaderPage(QWidget):
       return
  
     face_locations = sorted(face_locations, key=lambda loc: (loc[2] - loc[0]) * (loc[1] - loc[3]), reverse=True)
-    
+    face_encodings = face_recognition.face_encodings(image_rgb, [face_locations[0]])
 
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
