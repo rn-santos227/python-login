@@ -189,6 +189,8 @@ class ReaderPage(QWidget):
       self.message_dialog.show_message("Error", "Failed to encode face. Please ensure your face is clearly visible.", "error")
       return
     
+    face_input = face_encodings[0]
+
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
