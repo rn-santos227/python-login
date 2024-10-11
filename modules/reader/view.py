@@ -197,6 +197,8 @@ class ReaderPage(QWidget):
       if not student_face_encode:
         continue
 
+      student_face = np.array(json.loads(student_face_encode))
+      
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
