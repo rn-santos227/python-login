@@ -214,6 +214,7 @@ class ReaderPage(QWidget):
           send_sms(contact_number=student.contact_number, message=login_message)
           send_email(student.email, message=login_message)
           self.__send_sms_to_parents(student, message=login_message)
+          send_email(student.email, message=logout_message)
 
         else:
           if log.logout_time is not None:
