@@ -211,7 +211,8 @@ class ReaderPage(QWidget):
 
           logs_controller.add_login_time(login)
           login_message = compose_message(student=student, time=formatted_date_time, logged="logged in")
-
+          send_sms(contact_number=student.contact_number, message=login_message)
+          
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
