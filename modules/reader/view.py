@@ -207,6 +207,7 @@ class ReaderPage(QWidget):
 
         if log is None:
           login = self.create_log(current_date, student.id)
+          login.login_time = formatted_date_time
 
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
