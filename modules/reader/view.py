@@ -220,6 +220,7 @@ class ReaderPage(QWidget):
             self.message_dialog.show_message("Information", "Student already logged out.", "information")
             return
           
+          log.logout_time = formatted_date_time
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
