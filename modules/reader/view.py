@@ -205,6 +205,9 @@ class ReaderPage(QWidget):
         formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
         log = self.get_log(current_date, student.id)
 
+        if log is None:
+          login = self.create_log(current_date, student.id)
+
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
