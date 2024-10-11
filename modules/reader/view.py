@@ -203,6 +203,7 @@ class ReaderPage(QWidget):
       if distance < 0.5:
         current_date = datetime.now()
         formatted_date_time = current_date.strftime("%Y-%m-%d %H:%M:%S")
+        log = self.get_log(current_date, student.id)
 
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
