@@ -222,6 +222,7 @@ class ReaderPage(QWidget):
           
           log.logout_time = formatted_date_time
           logs_controller.add_logout_time(log)
+          logout_message = compose_message(student=student, time=formatted_date_time, logged="logged out")
 
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
