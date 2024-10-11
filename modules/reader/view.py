@@ -215,7 +215,10 @@ class ReaderPage(QWidget):
           send_email(student.email, message=login_message)
           self.__send_sms_to_parents(student, message=login_message)
 
-          
+        else:
+          if log.logout_time is not None:
+            self.message_dialog.show_message("Information", "Student already logged out.", "information")
+            
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
