@@ -198,7 +198,8 @@ class ReaderPage(QWidget):
         continue
 
       student_face = np.array(json.loads(student_face_encode))
-      
+      distance = face_recognition.face_distance([student_face], face_input)[0]
+
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
