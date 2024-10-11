@@ -191,6 +191,9 @@ class ReaderPage(QWidget):
     
     face_input = face_encodings[0]
 
+    for student in self.students:
+      student_face_encode = student.face_encode
+
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
