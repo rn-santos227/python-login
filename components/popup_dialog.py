@@ -46,6 +46,7 @@ class PopupDialog(QDialog):
 
     self.student_course_field: TextField = TextField(label_text="Student Course:", placeholder_text="Enter student course.")
     self.student_course_field.set_text(self.student.course)
+    self.student_course_field.set_read_only(True)
 
     self.student_logged_field: TextField = TextField(label_text="Logged Time:", placeholder_text="Enter logged time.")
     self.student_logged_field.set_text(self.logged)
