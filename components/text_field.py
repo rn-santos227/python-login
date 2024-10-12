@@ -42,5 +42,8 @@ class TextField(QWidget):
   def set_enabled(self, condition: bool = True):
     self.text_field.setEnabled(condition)
 
+  def set_read_only(self, condition: bool = False):
+    pass
+
   def clear_text(self):
     self.text_field.clear()
