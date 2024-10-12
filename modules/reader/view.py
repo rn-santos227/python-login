@@ -229,6 +229,7 @@ class ReaderPage(QWidget):
 
         self.popup_dialog.set_student(student=student)
         self.popup_dialog.set_logged_time(logged=formatted_date_time)
+        self.popup_dialog.show()
 
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
