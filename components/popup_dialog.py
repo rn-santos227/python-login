@@ -8,7 +8,7 @@ from components.text_field import TextField
 
 from assets.styles.styles import image_label_style, popup_dialog_style
 class PopupDialog(QDialog):
-  def __init__(self, parent=None):
+  def __init__(self, parent=None, student: Student = None):
     super().__init__(parent)
     self.setWindowTitle("Information")
     self.parent = parent
