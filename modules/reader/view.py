@@ -176,7 +176,7 @@ class ReaderPage(QWidget):
       return
     
     image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    face_locations = face_recognition.face_locations(image_rgb, model="cnn")
+    face_locations = face_recognition.face_locations(image_rgb, model="hog")
 
     if not face_locations:
       self.message_dialog.show_message("Error", "No face detected in the frame. Please try again.", "error")
