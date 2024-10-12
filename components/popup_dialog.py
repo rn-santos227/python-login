@@ -1,6 +1,6 @@
 from PyQt5.QtCore import  QTimer
 from PyQt5.QtGui import QFont, QPixmap
-from PyQt5.QtWidgets import QDialog, QHBoxLayout, QGridLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QApplication, QDialog, QHBoxLayout, QGridLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 
 from modules.students.model import Student
 
@@ -101,3 +101,6 @@ class PopupDialog(QDialog):
       y: int = parent_geometry.y() + (parent_geometry.height() - dialog_geometry.height()) // 2
 
       self.move(x, y)
+
+    else:
+      screen_geometry = QApplication.desktop().screenGeometry()
