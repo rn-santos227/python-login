@@ -42,6 +42,7 @@ class PopupDialog(QDialog):
 
     self.student_name_field: TextField = TextField(label_text="Student Name:", placeholder_text="Enter student name.")
     self.student_name_field.set_text("No Student")
+    self.student_name_field.set_text(self.student.full_name)
 
     self.student_course_field: TextField = TextField(label_text="Student Course:", placeholder_text="Enter student course.")
     self.student_course_field.set_text("No Student")
@@ -75,7 +76,7 @@ class PopupDialog(QDialog):
       self.image_label.setText("No Image Available")
 
     if self.student:
-      self.student_name_field.set_text(self.student.full_name)
+
       self.student_course_field.set_text(self.student.course)
       self.student_logged_field.set_text(self.logged)
 
