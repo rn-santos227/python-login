@@ -11,7 +11,6 @@ class PopupDialog(QDialog):
   def __init__(self, parent=None):
     super().__init__(parent)
     self.setWindowTitle("Information")
-    self.parent = parent
     self.timer: QTimer = QTimer(self)
     self.timer.timeout.connect(self.close_popup)
     self.student: Student = None
@@ -63,7 +62,7 @@ class PopupDialog(QDialog):
     self.layout.addWidget(self.close_button)
 
     self.setStyleSheet(popup_dialog_style)
-    self.setGeometry(600, 600, 8000, 400)
+    self.setGeometry(600, 600, 800, 400)
 
   def update_ui(self):
     if self.student and self.student.face_url:
@@ -92,12 +91,5 @@ class PopupDialog(QDialog):
       self.timer.stop()
     self.timer.start(10000) 
 
-  def showEvent(self, event):
-    if self.parent:
-      parent_geometry = self.parent.frameGeometry()
-      dialog_geometry = self.frameGeometry()
-      center_point = parent_geometry.center()
-      dialog_geometry.moveCenter(center_point)
-      self.move(dialog_geometry.topLeft())
-    super().showEvent(event)
+    
 
