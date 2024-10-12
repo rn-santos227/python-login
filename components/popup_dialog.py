@@ -41,14 +41,13 @@ class PopupDialog(QDialog):
     self.form_layout: QGridLayout = QGridLayout()
 
     self.student_name_field: TextField = TextField(label_text="Student Name:", placeholder_text="Enter student name.")
-    self.student_name_field.set_text("No Student")
     self.student_name_field.set_text(self.student.full_name)
 
     self.student_course_field: TextField = TextField(label_text="Student Course:", placeholder_text="Enter student course.")
-    self.student_course_field.set_text("No Student")
+    self.student_course_field.set_text(self.student.course)
 
     self.student_logged_field: TextField = TextField(label_text="Logged Time:", placeholder_text="Enter logged time.")
-    self.student_logged_field.set_text("No Student")
+    self.student_logged_field.set_text(self.logged)
 
     self.close_button: QPushButton = QPushButton("Close")
     self.close_button.clicked.connect(self.close_popup)
@@ -77,8 +76,7 @@ class PopupDialog(QDialog):
 
     if self.student:
 
-      self.student_course_field.set_text(self.student.course)
-      self.student_logged_field.set_text(self.logged)
+
 
   def close_popup(self):
     self.close()
