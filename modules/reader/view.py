@@ -214,7 +214,6 @@ class ReaderPage(QWidget):
           send_sms(contact_number=student.contact_number, message=login_message)
           send_email(student.email, message=login_message)
           self.__send_sms_to_parents(student, message=login_message)
-          send_email(student.email, message=logout_message)
 
         else:
           if log.logout_time is not None:
@@ -225,6 +224,7 @@ class ReaderPage(QWidget):
           logs_controller.add_logout_time(log)
           logout_message = compose_message(student=student, time=formatted_date_time, logged="logged out")
           send_sms(contact_number=student.contact_number, message=logout_message)
+          send_email(student.email, message=logout_message)
 
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
