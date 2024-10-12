@@ -104,3 +104,4 @@ class PopupDialog(QDialog):
 
     else:
       screen_geometry = QApplication.desktop().screenGeometry()
+      x = (screen_geometry.width() - self.width()) // 2
