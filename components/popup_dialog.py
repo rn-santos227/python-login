@@ -8,14 +8,14 @@ from components.text_field import TextField
 
 from assets.styles.styles import image_label_style, popup_dialog_style
 class PopupDialog(QDialog):
-  def __init__(self, parent=None, student: Student = None):
+  def __init__(self, parent=None, student: Student = None, logged: str = ""):
     super().__init__(parent)
     self.setWindowTitle("Information")
     self.parent = parent
     self.timer: QTimer = QTimer(self)
     # self.timer.timeout.connect(self.close_popup)
     self.student: Student = student
-    self.logged: str = ""
+    self.logged: str = logged
     self.init_ui()
 
   def show(self):
@@ -73,10 +73,6 @@ class PopupDialog(QDialog):
     
     else:
       self.image_label.setText("No Image Available")
-
-    if self.student:
-
-
 
   def close_popup(self):
     self.close()
