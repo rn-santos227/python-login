@@ -12,4 +12,4 @@ class FaceHandler:
     cv2.imwrite(image_path, image_data)
 
     image_path_escaped = image_path.replace("\\", "\\\\")
-    return image_path
+    return image_path_escaped
