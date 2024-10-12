@@ -227,6 +227,8 @@ class ReaderPage(QWidget):
           send_email(student.email, message=logout_message)
           self.__send_sms_to_parents(student, message=logout_message)
 
+        self.popup_dialog.set_student(student=student)
+
     self.message_dialog.show_message("Information", "No match has been found.", "information")
 
   def start_scanner(self):
