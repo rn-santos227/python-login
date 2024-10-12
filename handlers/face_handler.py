@@ -11,4 +11,5 @@ class FaceHandler:
     image_path = os.path.join(self.documents_folder, image_filename)
     cv2.imwrite(image_path, image_data)
 
+    image_path_escaped = image_path.replace("\\", "\\\\")
     return image_path

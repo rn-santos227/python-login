@@ -12,7 +12,7 @@ class PopupDialog(QDialog):
     super().__init__(parent)
     self.setWindowTitle("Information")
     self.timer: QTimer = QTimer(self)
-    self.timer.timeout.connect(self.close_popup)
+    # self.timer.timeout.connect(self.close_popup)
     self.student: Student = None
     self.logged: str = ""
     self.init_ui()
