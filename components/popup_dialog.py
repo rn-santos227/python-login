@@ -95,4 +95,4 @@ class PopupDialog(QDialog):
     parent_geometry = self.parent().geometry()
     dialog_geometry = self.geometry()
   
-
+    x: int = parent_geometry.x() + (parent_geometry.width() - dialog_geometry.width()) // 2
