@@ -19,7 +19,6 @@ class PopupDialog(QDialog):
     self.init_ui()
 
   def show(self):
-    self.update_ui()
     self.reset_timer()
     self.center_to_parent()
     super().exec_()  
@@ -69,14 +68,6 @@ class PopupDialog(QDialog):
 
     self.setStyleSheet(popup_dialog_style)
     self.setGeometry(600, 600, 800, 400)
-
-  def update_ui(self):
-    if self.student and self.student.face_url:
-      pixmap: QPixmap = QPixmap(self.student.face_url)
-      self.image_label.setPixmap(pixmap)
-    
-    else:
-      self.image_label.setText("No Image Available")
 
   def close_popup(self):
     self.close()
