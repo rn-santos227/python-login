@@ -69,9 +69,6 @@ class PopupDialog(QDialog):
   def close_popup(self):
     self.close()
 
-  def set_logged_time(self, logged: str):
-    self.logged = logged
-
   def center_to_parent(self):
     if self.parent() is not None:
       parent_geometry = self.parent().geometry()
