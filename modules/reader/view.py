@@ -40,7 +40,6 @@ class ReaderPage(QWidget):
     self.pages_handler = pages_handler
     self.biometrics_handler: BiometricsHandler = BiometricsHandler()
     self.capture_thread: CaptureThread = None 
-    self.popup_dialog: PopupDialog = PopupDialog(parent=self)
     self.clock_component: Clock = Clock()
     self.message_dialog: MessageDialog = MessageDialog(self)
     self.biometrics: list[Biometric] = []
@@ -227,9 +226,6 @@ class ReaderPage(QWidget):
           send_email(student.email, message=logout_message)
           self.__send_sms_to_parents(student, message=logout_message)
 
-        self.popup_dialog.set_student(student=student)
-        self.popup_dialog.set_logged_time(logged=formatted_date_time)
-        self.popup_dialog.show()
         return
 
     self.message_dialog.show_message("Information", "No match has been found.", "information")
@@ -282,10 +278,7 @@ class ReaderPage(QWidget):
             send_sms(contact_number=student.contact_number, message=logout_message)
             send_email(student.email, message=logout_message)
             self.__send_sms_to_parents(student, message=logout_message)
-          
-          self.popup_dialog.set_student(student=student)
-          self.popup_dialog.set_logged_time(logged=formatted_date_time)
-          self.popup_dialog.show()
+
           return
         
       self.message_dialog.show_message("Information", "No fingerprint match has been found.", "information")
