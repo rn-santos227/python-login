@@ -1,4 +1,4 @@
-from PyQt5.QtCore import  QTimer
+from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QFont, QPixmap
 from PyQt5.QtWidgets import QApplication, QDialog, QHBoxLayout, QGridLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 
@@ -31,6 +31,7 @@ class PopupDialog(QDialog):
 
     if self.student and self.student.face_url:
       pixmap: QPixmap = QPixmap(self.student.face_url)
+      scaled_pixmap = pixmap.scaled(self.image_label.size(), aspectMode=Qt.KeepAspectRatio)
       self.image_label.setFixedSize(250, 250)
       self.image_label.setPixmap(pixmap)
 
