@@ -14,15 +14,10 @@ class PopupDialog(QDialog):
     self.init_ui()
     self.parent = parent
     self.timer: QTimer = QTimer(self)
-    # self.timer.timeout.connect(self.close_popup)
     self.student: Student = student
     self.logged: str = logged
+    # self.timer.timeout.connect(self.close_popup)
     self.timer.start(10000) 
-
-  def show(self):
-    self.reset_timer()
-    self.center_to_parent()
-    super().exec_()  
 
   def init_ui(self):
     self.layout: QVBoxLayout = QVBoxLayout()
@@ -79,11 +74,6 @@ class PopupDialog(QDialog):
 
   def set_logged_time(self, logged: str):
     self.logged = logged
-
-  def reset_timer(self):
-    if self.timer.isActive():
-      self.timer.stop()
-    self.timer.start(10000) 
 
   def center_to_parent(self):
     if self.parent() is not None:
