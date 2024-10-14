@@ -70,4 +70,5 @@ class PopupDialog(QDialog):
     self.close()
 
   def showEvent(self, event):
-    pass
+    if self.parent:
+      pass
