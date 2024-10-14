@@ -68,3 +68,6 @@ class PopupDialog(QDialog):
 
   def close_popup(self):
     self.close()
+
+  def showEvent(self, event):
+    pass
