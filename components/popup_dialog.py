@@ -10,7 +10,7 @@ from assets.styles.styles import image_label_style, popup_dialog_style
 class PopupDialog(QDialog):
   def __init__(self, parent=None, student: Student = None, logged: str = ""):
     super().__init__(parent)
-    self.setWindowTitle("Information")
+    self.setWindowTitle("Student Information")
     self.parent = parent
 
     self.student: Student = student
@@ -21,11 +21,11 @@ class PopupDialog(QDialog):
     self.timer.start(10000) 
 
   def __init_ui(self):
+    self.setFixedWidth(800) 
     self.layout: QVBoxLayout = QVBoxLayout()
-    self.setLayout(self.layout)
 
     self.image_label: QLabel = QLabel(self)
-    self.image_label.setFixedSize(200, 200)
+    self.image_label.setFixedSize(250, 250)
 
     if self.student and self.student.face_url:
       pixmap: QPixmap = QPixmap(self.student.face_url)
@@ -65,6 +65,7 @@ class PopupDialog(QDialog):
     self.layout.addWidget(self.close_button)
 
     self.setStyleSheet(popup_dialog_style)
+    self.setLayout(self.layout)
     self.setGeometry(600, 600, 800, 400)
 
   def close_popup(self):
