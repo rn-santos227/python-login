@@ -105,6 +105,8 @@ class LogsPage(QWidget):
     start_date = self.start_date.get_date()
     end_date = self.end_date.get_date()
 
+    self.logs = logs_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
+
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
     self.load_logs()
