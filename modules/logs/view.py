@@ -108,6 +108,9 @@ class LogsPage(QWidget):
     self.logs = logs_controller.get_logs_with_students(f"date >= '{start_date}' AND date <= '{end_date}'")
     self.table_widget.setRowCount(0)
 
+    if not self.logs:
+      return
+
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
     self.load_logs()
