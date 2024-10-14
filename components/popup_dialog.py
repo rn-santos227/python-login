@@ -25,6 +25,7 @@ class PopupDialog(QDialog):
     self.setLayout(self.layout)
 
     self.image_label: QLabel = QLabel(self)
+    self.image_label.setFixedSize(200, 200)
 
     if self.student and self.student.face_url:
       pixmap: QPixmap = QPixmap(self.student.face_url)
@@ -33,7 +34,6 @@ class PopupDialog(QDialog):
 
     else:
       self.image_label.setText("No Image Available") 
-      self.image_label.setFixedSize(250, 250)
       self.image_label.setStyleSheet(image_label_style)
 
     self.form_layout: QGridLayout = QGridLayout()
