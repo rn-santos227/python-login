@@ -23,7 +23,7 @@ class PopupDialog(QDialog):
   def __init_ui(self):
     self.setFixedWidth(800)
     self.setFixedHeight(400)
-    
+
     self.layout: QVBoxLayout = QVBoxLayout()
 
     self.image_label: QLabel = QLabel(self)
@@ -68,7 +68,6 @@ class PopupDialog(QDialog):
 
     self.setStyleSheet(popup_dialog_style)
     self.setLayout(self.layout)
-    self.setGeometry(600, 600, 800, 400)
 
   def close_popup(self):
     self.close()
