@@ -103,6 +103,7 @@ class LogsPage(QWidget):
 
   def search_logs(self):
     start_date = self.start_date.get_date()
+    end_date = self.end_date.get_date()
 
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
