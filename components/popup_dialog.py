@@ -15,12 +15,12 @@ class PopupDialog(QDialog):
 
     self.student: Student = student
     self.logged: str = logged
-    self.init_ui()
+    self.__init_ui()
     self.timer: QTimer = QTimer(self)
     # self.timer.timeout.connect(self.close_popup)
     self.timer.start(10000) 
 
-  def init_ui(self):
+  def __init_ui(self):
     self.layout: QVBoxLayout = QVBoxLayout()
     self.setLayout(self.layout)
 
