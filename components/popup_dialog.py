@@ -68,19 +68,3 @@ class PopupDialog(QDialog):
 
   def close_popup(self):
     self.close()
-
-  def center_to_parent(self):
-    if self.parent() is not None:
-      parent_geometry = self.parent().geometry()
-      dialog_geometry = self.geometry()
-    
-      x: int = parent_geometry.x() + (parent_geometry.width() - dialog_geometry.width()) // 2
-      y: int = parent_geometry.y() + (parent_geometry.height() - dialog_geometry.height()) // 2
-
-      self.move(x, y)
-
-    else:
-      screen_geometry = QApplication.desktop().screenGeometry()
-      x: int = (screen_geometry.width() - self.width()) // 2
-      y: int = (screen_geometry.height() - self.height()) // 2
-      self.move(x, y)
