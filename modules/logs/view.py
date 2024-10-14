@@ -110,6 +110,9 @@ class LogsPage(QWidget):
 
     if not self.logs:
       return
+    
+    for log in self.logs:
+      row_position = self.table_widget.rowCount()
 
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
