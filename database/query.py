@@ -1,3 +1,5 @@
+import re
+
 def builder(table, query, action):
   if action.lower() == "select":
     if query.lower() == "all":
@@ -24,8 +26,7 @@ def join_builder(table1, table2, join_condition, join_type="inner", columns="*",
   if join_type and join_type.lower() not in ["inner", "left", "right", "full"]:
     raise ValueError("Invalid join type. Supported join types are: 'inner', 'left', 'right', 'full'.")
   
-  if join_type:
-    join_type = join_type.upper()
+  join_type = join_type.upper()
   
   if not query:
     query = "all"
