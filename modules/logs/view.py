@@ -120,6 +120,8 @@ class LogsPage(QWidget):
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(str(log.login_time)))
       self.table_widget.setItem(row_position, 3, QTableWidgetItem(str(log.logout_time)))
 
+      delete_button: QPushButton = QPushButton("Delete")
+
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
     self.load_logs()
