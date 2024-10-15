@@ -40,6 +40,7 @@ class AdminsPage(QWidget):
     self.top_layout: QHBoxLayout = QHBoxLayout()
     
     self.top_layout.addLayout(self.init_create_layout())
+    self.top_layout.setContentsMargins(150, 0, 150, 20)
 
     self.table_widget: QTableWidget = QTableWidget()
     self.table_widget.setColumnCount(4)
