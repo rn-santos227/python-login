@@ -40,7 +40,7 @@ def join_builder(table1, table2, join_condition, join_type="inner", columns="*",
     match = re.search(r'limit:(\d+),(asc|desc)', query, re.IGNORECASE)
     limit_value = match.group(1)
     order = match.group(2).upper()
-  
+    sql_query += f" ORDER BY created_at {order} LIMIT {limit_value};"
 
 
   if query.lower() == 'all':
