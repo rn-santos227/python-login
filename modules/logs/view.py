@@ -116,6 +116,7 @@ class LogsPage(QWidget):
       self.table_widget.insertRow(row_position)
 
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(log.full_name)))
+      self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(log.date)))
 
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
