@@ -115,6 +115,8 @@ class LogsPage(QWidget):
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
 
+      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(log.full_name)))
+
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
     self.load_logs()
