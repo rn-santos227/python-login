@@ -45,8 +45,8 @@ class TextField(QWidget):
   def set_read_only(self, condition: bool = False):
     self.text_field.setReadOnly(condition)
 
-  def set_width(value: int):
-    pass
+  def set_width(self, value: int):
+    self.text_field.setFixedWidth(value)
 
   def clear_text(self):
     self.text_field.clear()
