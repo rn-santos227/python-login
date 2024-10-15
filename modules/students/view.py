@@ -42,6 +42,7 @@ class StudentPage(QWidget):
     self.top_layout: QHBoxLayout = QHBoxLayout()
 
     self.top_layout.addLayout(self.init_create_layout())
+    self.top_layout.setContentsMargins(150, 0, 150, 20)
 
     self.table_widget: QTableWidget = QTableWidget()
     self.table_widget.setColumnCount(8)
@@ -53,7 +54,7 @@ class StudentPage(QWidget):
 
     content_layout.addLayout(self.top_layout)
     content_layout.addWidget(self.table_widget)
-    content_layout.setContentsMargins(50, 50, 50, 50)
+    content_layout.setContentsMargins(50, 20, 50, 20)
 
     self.main_layout.addWidget(content_frame)
   
@@ -67,34 +68,19 @@ class StudentPage(QWidget):
     self.create_button_layout: QHBoxLayout = QHBoxLayout()
 
     self.email_field: TextField = TextField(label_text="Email Address", placeholder_text="Enter student email.")
-    self.email_field.set_width(250) 
-
     self.password_field: TextField= TextField(label_text="Password", placeholder_text="Enter student password.")
     self.password_field.text_field.setEchoMode(QLineEdit.Password)
-    self.password_field.set_width(250)
-
     self.fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
-    self.fullname_field.set_width(250)
-
     self.contact_field: TextField = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
-    self.contact_field.set_width(250)
-    
     self.student_number_field: TextField = TextField(label_text="Student Number", placeholder_text="Enter student number.")
-    self.student_number_field.set_width(250)
-
     self.section_field: TextField = TextField(label_text="Student Year and Section", placeholder_text="Enter student year and section.")
-    self.section_field.set_width(250)
-
     self.course_field: TextField = TextField(label_text="Student Course", placeholder_text="Enter student course.")
-    self.course_field.set_width(250)
 
     field_layout_1.addWidget(self.contact_field)
     field_layout_1.addWidget(self.student_number_field)
-    field_layout_1.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
 
     field_layout_2.addWidget(self.section_field)
     field_layout_2.addWidget(self.course_field)
-    field_layout_2.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
 
     create_button: Button = Button("Create Student")
     create_button.connect_signal(self.create_student)
