@@ -72,7 +72,7 @@ class LogsPage(QWidget):
     self.load_logs()
 
   def load_logs(self):
-    self.logs = logs_controller.get_logs_with_students(" ORDER BY created_at DESC LIMIT 100")
+    self.logs = logs_controller.get_logs_with_students("LIMIT:100,DESC")
     self.table_widget.setRowCount(0)
 
     if not self.logs:
