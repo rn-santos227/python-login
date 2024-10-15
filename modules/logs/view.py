@@ -127,6 +127,9 @@ class LogsPage(QWidget):
       button_layout.addWidget(delete_button)
       button_layout.setContentsMargins(0, 0, 0, 0)
 
+      button_widget: QWidget = QWidget()
+      button_widget.setLayout(button_layout)
+
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
     self.load_logs()
