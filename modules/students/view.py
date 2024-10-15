@@ -90,6 +90,7 @@ class StudentPage(QWidget):
 
     field_layout_1.addWidget(self.contact_field)
     field_layout_1.addWidget(self.student_number_field)
+    field_layout_1.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
 
     field_layout_2.addWidget(self.section_field)
     field_layout_2.addWidget(self.course_field)
