@@ -42,11 +42,7 @@ def join_builder(table1, table2, join_condition, join_type="inner", columns="*",
     order = match.group(2).upper()
     sql_query += f" ORDER BY created_at {order} LIMIT {limit_value};"
 
-
-  if query.lower() == 'all':
-    sql_query = f"SELECT {columns} FROM {table1} {join_type} JOIN {table2} ON {join_condition};"
-
-  else:
-    sql_query = f"SELECT {columns} FROM {table1} {join_type} JOIN {table2} ON {join_condition} WHERE {query};"
-
+  elif query:
+    sql_query += f" WHERE {query};"
+  
   return sql_query
