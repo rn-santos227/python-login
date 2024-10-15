@@ -80,6 +80,8 @@ class StudentPage(QWidget):
     self.contact_field.set_width(250)
     
     self.student_number_field: TextField = TextField(label_text="Student Number", placeholder_text="Enter student number.")
+    self.student_number_field.set_width(250)
+
     self.section_field: TextField = TextField(label_text="Student Year and Section", placeholder_text="Enter student year and section.")
     self.course_field: TextField = TextField(label_text="Student Course", placeholder_text="Enter student course.")
 
