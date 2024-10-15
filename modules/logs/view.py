@@ -118,6 +118,7 @@ class LogsPage(QWidget):
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(log.full_name)))
       self.table_widget.setItem(row_position, 1, QTableWidgetItem(str(log.date)))
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(str(log.login_time)))
+      self.table_widget.setItem(row_position, 3, QTableWidgetItem(str(log.logout_time)))
 
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
