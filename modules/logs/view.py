@@ -123,6 +123,8 @@ class LogsPage(QWidget):
       delete_button: QPushButton = QPushButton("Delete")
       delete_button.clicked.connect(lambda ch, log_id=log.log_id: self.__prompt_delete_log(log_id))
 
+      button_layout: QHBoxLayout = QHBoxLayout()
+
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
     self.load_logs()
