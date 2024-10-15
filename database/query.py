@@ -37,7 +37,8 @@ def join_builder(table1, table2, join_condition, join_type="inner", columns="*",
     sql_query += ";"
 
   elif query and re.search(r'limit:(\d+),(asc|desc)', query, re.IGNORECASE):
-    limit_value = re.search(r'limit:(\d+),desc', query, re.IGNORECASE).group(1)
+    match = re.search(r'limit:(\d+),(asc|desc)', query, re.IGNORECASE)
+    limit_value = match.group(1)
   
 
 
