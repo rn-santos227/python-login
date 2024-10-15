@@ -71,9 +71,6 @@ class LogsPage(QWidget):
     self.load_logs()
 
   def load_logs(self):
-    start_date = self.start_date.get_date()
-    end_date = self.end_date.get_date()
-
     self.logs = logs_controller.get_logs_with_students("ORDER BY created_at DESC LIMIT 100")
     self.table_widget.setRowCount(0)
 
