@@ -74,6 +74,8 @@ class StudentPage(QWidget):
     self.password_field.set_width(250)
 
     self.fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter student full name.")
+    self.fullname_field.set_width(250)
+
     self.contact_field: TextField = TextField(label_text="Contact Number", placeholder_text="Enter student contact number.")
     self.student_number_field: TextField = TextField(label_text="Student Number", placeholder_text="Enter student number.")
     self.section_field: TextField = TextField(label_text="Student Year and Section", placeholder_text="Enter student year and section.")
