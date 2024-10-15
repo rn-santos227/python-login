@@ -31,13 +31,15 @@ def join_builder(table1, table2, join_condition, join_type="inner", columns="*",
   limit_match = re.search(r'limit:(\d+),desc', query.lower()) if query else None
   sql_query = f"SELECT {columns} FROM {table1} {join_type} JOIN {table2} ON {join_condition}"
   
+  if not query:
+    query = "all"
+
   if query and query.lower() == "all":
     sql_query += ";"
 
   
   
-  if not query:
-    query = "all"
+
 
   if query.lower() == 'all':
     sql_query = f"SELECT {columns} FROM {table1} {join_type} JOIN {table2} ON {join_condition};"
