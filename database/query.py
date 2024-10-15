@@ -29,8 +29,12 @@ def join_builder(table1, table2, join_condition, join_type="inner", columns="*",
   join_type = join_type.upper()
   
   limit_match = re.search(r'limit:(\d+),desc', query.lower()) if query else None
-  
   sql_query = f"SELECT {columns} FROM {table1} {join_type} JOIN {table2} ON {join_condition}"
+  
+  if query and query.lower() == "all":
+    sql_query += ";"
+
+  
   
   if not query:
     query = "all"
