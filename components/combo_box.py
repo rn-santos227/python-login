@@ -29,7 +29,7 @@ class ComboBox(QWidget):
       self.set_items(items)
 
   def get_items(self):
-    pass
+    items = []
 
   def get_selected_value(self):
     return self.combo_box.currentData()
