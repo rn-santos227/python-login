@@ -78,6 +78,9 @@ class BiometricsPage(QWidget):
 
     self.save_biometric_button.set_disabled()
     self.load_biometrics()
+    
+    if not self.biometrics:
+      pass
 
   def load_students_to_combo_box(self):
     self.students = students_controller.get_students("status = 'active'", "select")
