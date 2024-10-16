@@ -30,10 +30,13 @@ class ComboBox(QWidget):
 
   def get_items(self):
     items = []
+
     for index in range(self.combo_box.count()):
       text = self.combo_box.itemText(index)
       data = self.combo_box.itemData(index)
       items.append((text, data))
+
+    return items
 
   def get_selected_value(self):
     return self.combo_box.currentData()
