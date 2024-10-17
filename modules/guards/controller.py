@@ -9,3 +9,4 @@ __table = "guards"
 def get_guards_by_id(id) -> Union[Guard, None]:
   ql_query = builder(__table, "id = %s", "select")
   connection = DB.connect_db()
+  cursor = connection.cursor()
