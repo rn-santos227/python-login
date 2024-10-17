@@ -13,6 +13,7 @@ def get_guards_by_id(id) -> Union[Guard, None]:
 
   try:
     cursor.execute(sql_query, (id))
+    row = cursor.fetchone()
 
   except Exception as e:
     print(f"Error: {e}")
