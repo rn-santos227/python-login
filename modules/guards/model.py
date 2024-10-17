@@ -8,4 +8,4 @@ class Guard(User):
 
   @User.password.setter
   def password(self, new_password):
-    pass
+    self._password_hash = self.encrypt_password(new_password)
