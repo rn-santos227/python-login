@@ -13,7 +13,7 @@ def get_admin_by_id(id) -> Union[Admin, None]:
   cursor = connection.cursor()
 
   try:
-    cursor.execute(sql_query, (id,))
+    cursor.execute(sql_query, (id))
     row = cursor.fetchone()
 
     if row:
