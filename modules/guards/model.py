@@ -13,4 +13,7 @@ class Guard(User):
   @staticmethod
   def create_table() -> str:
     return '''
+    CREATE TABLE guards (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+    );
     '''
