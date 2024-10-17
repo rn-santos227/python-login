@@ -16,3 +16,4 @@ def get_guards_by_id(id) -> Union[Guard, None]:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
