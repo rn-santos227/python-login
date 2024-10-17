@@ -5,3 +5,7 @@ class Guard(User):
     super().__init__(id, email, password)
     self.full_name = full_name
     self.status = status
+
+  @User.password.setter
+  def password(self, new_password):
+    pass
