@@ -12,4 +12,5 @@ class Guard(User):
 
   @staticmethod
   def create_table() -> str:
-    pass
+    return '''
+    '''
