@@ -34,3 +34,9 @@ def get_guard_by_id(id) -> Union[Guard, None]:
     sql_query = builder(__table, "email = %s", "select")
     connection = DB.connect_db()
     cursor = connection.cursor()
+
+    try:
+      cursor.execute(sql_query, (email))
+
+    except Exception as e:
+      print(f"Error: {e}")
