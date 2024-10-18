@@ -60,6 +60,7 @@ def get_guards(query, action) -> list[Guard]:
 
   try:
     cursor.execute(sql_query)
+    rows = cursor.fetchall()
 
   except Exception as e:
     print(f"Error: {e}")
