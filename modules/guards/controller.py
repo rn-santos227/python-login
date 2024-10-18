@@ -33,3 +33,4 @@ def get_guard_by_id(id) -> Union[Guard, None]:
   def get_admin_by_email(email: str) -> Union[Guard, None]:
     sql_query = builder(__table, "email = %s", "select")
     connection = DB.connect_db()
+    cursor = connection.cursor()
