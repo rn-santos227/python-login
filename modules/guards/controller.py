@@ -63,6 +63,8 @@ def get_guards(query, action) -> list[Guard]:
     rows = cursor.fetchall()
 
     guards: list[Guard] = []
+    for row in rows:
+      guard: Guard = Guard(*row)
 
   except Exception as e:
     print(f"Error: {e}")
