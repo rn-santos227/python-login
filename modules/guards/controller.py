@@ -39,6 +39,9 @@ def get_admin_by_email(email: str) -> Union[Guard, None]:
     cursor.execute(sql_query, (email))
     row = cursor.fetchone()
 
+    if row:
+      guard: Guard = Guard(*row)
+
   except Exception as e:
     print(f"Error: {e}")
     connection.rollback() 
