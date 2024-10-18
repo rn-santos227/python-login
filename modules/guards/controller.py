@@ -6,7 +6,7 @@ from modules.guards.model import Guard
 
 __table = "guards"
 
-def get_guards_by_id(id) -> Union[Guard, None]:
+def get_guard_by_id(id) -> Union[Guard, None]:
   sql_query = builder(__table, "id = %s", "select")
   connection = DB.connect_db()
   cursor = connection.cursor()
@@ -14,6 +14,9 @@ def get_guards_by_id(id) -> Union[Guard, None]:
   try:
     cursor.execute(sql_query, (id))
     row = cursor.fetchone()
+
+    if row:
+      guard: Guard = Guard(*row)
 
   except Exception as e:
     print(f"Error: {e}")
