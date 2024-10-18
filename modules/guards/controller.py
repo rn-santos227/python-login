@@ -44,3 +44,4 @@ def get_guard_by_id(id) -> Union[Guard, None]:
 
     finally:
       cursor.close()
+      connection.close() 
