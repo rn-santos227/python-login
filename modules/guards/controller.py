@@ -57,3 +57,9 @@ def get_guards(query, action) -> list[Guard]:
   sql_query = builder(__table, query, action)
   connection = DB.connect_db()
   cursor = connection.cursor()
+
+  try:
+    cursor.execute(sql_query)
+
+  except Exception as e:
+    print(f"Error: {e}")
