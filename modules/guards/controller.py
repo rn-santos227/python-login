@@ -17,6 +17,7 @@ def get_guard_by_id(id) -> Union[Guard, None]:
 
     if row:
       guard: Guard = Guard(*row)
+      return guard
 
   except Exception as e:
     print(f"Error: {e}")
