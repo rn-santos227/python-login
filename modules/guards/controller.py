@@ -62,6 +62,8 @@ def get_guards(query, action) -> list[Guard]:
     cursor.execute(sql_query)
     rows = cursor.fetchall()
 
+    guards: list[Guard] = []
+
   except Exception as e:
     print(f"Error: {e}")
     connection.rollback() 
