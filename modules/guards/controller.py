@@ -18,7 +18,7 @@ def get_guard_by_id(id) -> Union[Guard, None]:
     if row:
       guard: Guard = Guard(*row)
       return guard
-      
+
     else:
       return None
 
@@ -29,3 +29,6 @@ def get_guard_by_id(id) -> Union[Guard, None]:
   finally:
     cursor.close()
     connection.close() 
+
+  def get_admin_by_email(email: str) -> Union[Guard, None]:
+    sql_query = builder(__table, "email = %s", "select")
