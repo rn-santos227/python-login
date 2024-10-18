@@ -42,6 +42,8 @@ def get_admin_by_email(email: str) -> Union[Guard, None]:
     if row:
       guard: Guard = Guard(*row)
       return guard
+    else:
+      return None
 
   except Exception as e:
     print(f"Error: {e}")
