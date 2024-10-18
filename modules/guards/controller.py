@@ -65,6 +65,7 @@ def get_guards(query, action) -> list[Guard]:
     guards: list[Guard] = []
     for row in rows:
       guard: Guard = Guard(*row)
+      guards.append(guard)
 
   except Exception as e:
     print(f"Error: {e}")
