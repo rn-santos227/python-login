@@ -60,8 +60,11 @@ def get_guards(query, action) -> list[Guard]:
 
   try:
     cursor.execute(sql_query)
-    connection.rollback() 
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
+
+  finally:
+    cursor.close()
     connection.close() 
