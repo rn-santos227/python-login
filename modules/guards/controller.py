@@ -51,4 +51,7 @@ def get_admin_by_email(email: str) -> Union[Guard, None]:
 
   finally:
     cursor.close()
-    connection.close() 
+    connection.close()
+
+def get_guards(query, action) -> list[Guard]:
+  sql_query = builder(__table, query, action)
