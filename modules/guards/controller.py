@@ -97,7 +97,7 @@ def create_guard(guard: Guard) -> Guard:
     cursor.close()
     connection.close()
 
-def update_admin(guard: Guard):
+def update_guard(guard: Guard):
   set_clause = (
     f"email = '{guard.email}', "
     f"password = '{guard.encrypt_password(guard.password)}', "
@@ -121,4 +121,7 @@ def update_admin(guard: Guard):
 
   finally:
     cursor.close()
-    connection.close() 
+    connection.close()
+
+def delete_guard(id) -> bool:
+  where_clause = f"id = {id}"
