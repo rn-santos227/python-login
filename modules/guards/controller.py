@@ -101,4 +101,5 @@ def update_admin(guard: Guard):
   set_clause = (
     f"email = '{guard.email}', "
     f"password = '{guard.encrypt_password(guard.password)}', "
+    f"full_name = '{guard.full_name}', "
   )
