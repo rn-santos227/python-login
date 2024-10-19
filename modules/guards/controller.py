@@ -82,3 +82,9 @@ def create_guard(guard: Guard) -> Guard:
 
   connection = DB.connect_db()
   cursor = connection.cursor()
+
+  try:
+    values = (guard.full_name, guard.email, guard.password, guard.status)
+
+  except Exception as e:
+    print(f"Error: {e}")
