@@ -109,3 +109,9 @@ def update_admin(guard: Guard):
   sql_query = builder(__table, f"{set_clause} WHERE {where_clause}", "update")
   connection = DB.connect_db()
   cursor = connection.cursor()
+
+  try:
+    cursor.execute(sql_query)
+
+  except Exception as e:
+    print(f"Error: {e}")
