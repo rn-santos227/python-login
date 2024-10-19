@@ -88,3 +88,4 @@ def create_guard(guard: Guard) -> Guard:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
