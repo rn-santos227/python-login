@@ -99,5 +99,5 @@ def create_guard(guard: Guard) -> Guard:
 
 def update_admin(guard: Guard):
   set_clause = (
-    
+    f"email = '{guard.email}', "
   )
