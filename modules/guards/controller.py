@@ -75,3 +75,6 @@ def get_guards(query, action) -> list[Guard]:
   finally:
     cursor.close()
     connection.close() 
+
+def create_guard(guard: Guard) -> Guard:
+  columns = "(full_name, email, password, status)"
