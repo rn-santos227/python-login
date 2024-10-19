@@ -104,3 +104,5 @@ def update_admin(guard: Guard):
     f"full_name = '{guard.full_name}', "
     f"status = '{guard.status}', "
   )
+
+  where_clause = f"id = {guard.id}"
