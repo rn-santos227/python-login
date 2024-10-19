@@ -112,6 +112,7 @@ def update_admin(guard: Guard):
 
   try:
     cursor.execute(sql_query)
+    connection.commit()
 
   except Exception as e:
     print(f"Error: {e}")
