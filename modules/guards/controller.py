@@ -115,4 +115,8 @@ def update_admin(guard: Guard):
 
   except Exception as e:
     print(f"Error: {e}")
-    connection.rollback() 
+    connection.rollback()
+
+  finally:
+    cursor.close()
+    connection.close() 
