@@ -85,6 +85,7 @@ def create_guard(guard: Guard) -> Guard:
 
   try:
     values = (guard.full_name, guard.email, guard.password, guard.status)
+    cursor.execute(sql_query, values)
 
   except Exception as e:
     print(f"Error: {e}")
