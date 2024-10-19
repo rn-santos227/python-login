@@ -106,3 +106,4 @@ def update_admin(guard: Guard):
   )
 
   where_clause = f"id = {guard.id}"
+  sql_query = builder(__table, f"{set_clause} WHERE {where_clause}", "update")
