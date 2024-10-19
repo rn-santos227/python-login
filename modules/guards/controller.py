@@ -78,3 +78,4 @@ def get_guards(query, action) -> list[Guard]:
 
 def create_guard(guard: Guard) -> Guard:
   columns = "(full_name, email, password, status)"
+  sql_query = builder(__table, f"{columns} VALUES (%s, %s, %s, %s)", "insert")
