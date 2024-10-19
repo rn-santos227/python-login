@@ -81,3 +81,4 @@ def create_guard(guard: Guard) -> Guard:
   sql_query = builder(__table, f"{columns} VALUES (%s, %s, %s, %s)", "insert")
 
   connection = DB.connect_db()
+  cursor = connection.cursor()
