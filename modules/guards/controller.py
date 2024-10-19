@@ -95,4 +95,9 @@ def create_guard(guard: Guard) -> Guard:
 
   finally:
     cursor.close()
-    connection.close() 
+    connection.close()
+
+def update_admin(guard: Guard):
+  set_clause = (
+    
+  )
