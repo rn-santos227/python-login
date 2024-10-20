@@ -45,3 +45,5 @@ class GuardsPage(QWidget):
   def init_create_layout(self):
     create_layout: QGridLayout = QGridLayout()
     self.create_button_layout: QHBoxLayout = QHBoxLayout()
+
+    self.email_field: TextField = TextField(label_text="Email", placeholder_text="Enter guard email.")
