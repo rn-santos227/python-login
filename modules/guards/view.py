@@ -40,3 +40,7 @@ class GuardsPage(QWidget):
     self.top_layout: QHBoxLayout = QHBoxLayout()
 
     self.top_layout.setContentsMargins(150, 0, 150, 20)
+
+  
+  def init_create_layout(self):
+    create_layout: QGridLayout = QGridLayout()
