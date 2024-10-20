@@ -119,7 +119,11 @@ class GuardsPage(QWidget):
         child.widget().deleteLater()
       elif child.layout():
         self.__clear_layout(child.layout())
-
+        
+  def __clear_fields(self):
+    self.email_field.clear_text()
+    self.password_field.clear_text()
+    self.fullname_field.clear_text()
 
   def __clear_layout(self, layout: QLayout):
     while layout.count():
