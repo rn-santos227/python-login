@@ -87,3 +87,7 @@ class GuardsPage(QWidget):
     self.update_password_field: TextField = TextField(label_text="Password", placeholder_text="Enter admin password.")
     self.update_password_field.text_field.setEchoMode(QLineEdit.Password)
     self.update_fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
+
+    update_button: Button = Button("Update Student")
+
+    cancel_button: Button = Button("Cancel Update")
