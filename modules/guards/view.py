@@ -50,6 +50,10 @@ class GuardsPage(QWidget):
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
     self.table_widget.verticalHeader().setVisible(False)
 
+    content_layout.addLayout(self.top_layout)
+    content_layout.addWidget(self.table_widget)
+    content_layout.setContentsMargins(50, 20, 50, 20)
+
 
   
   def init_create_layout(self):
