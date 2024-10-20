@@ -13,3 +13,7 @@ from handlers.validations_handler import ValidationHandler
 from modules.guards.model import Guard
 
 from assets.styles.styles import content_frame_style
+
+class GuardsPage(QWidget):
+  def __init__(self, pages_handler):
+    super().__init__()
