@@ -54,6 +54,7 @@ class GuardsPage(QWidget):
     content_layout.addWidget(self.table_widget)
     content_layout.setContentsMargins(50, 20, 50, 20)
 
+    self.main_layout.addWidget(content_frame)
 
   
   def init_create_layout(self):
