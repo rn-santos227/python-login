@@ -43,6 +43,8 @@ class GuardsPage(QWidget):
     self.top_layout.setContentsMargins(150, 0, 150, 20)
     
     self.table_widget: QTableWidget = QTableWidget()
+    self.table_widget.setColumnCount(4)
+    self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Actions"])
 
 
   
