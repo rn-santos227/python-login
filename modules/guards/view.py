@@ -21,3 +21,4 @@ class GuardsPage(QWidget):
     self.pages_handler = pages_handler
     self.message_dialog: MessageDialog = MessageDialog(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
+    self.guards: list[Guard] = []
