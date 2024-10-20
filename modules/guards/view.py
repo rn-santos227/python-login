@@ -22,6 +22,7 @@ class GuardsPage(QWidget):
     self.message_dialog: MessageDialog = MessageDialog(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.guards: list[Guard] = []
+    self.__init_ui()
 
   def __init_ui(self):
     content_frame: QFrame = QFrame(self)
@@ -38,7 +39,7 @@ class GuardsPage(QWidget):
     self.main_layout: QVBoxLayout = QVBoxLayout()
     
     self.top_layout: QHBoxLayout = QHBoxLayout()
-
+    self.top_layout.addLayout(self.init_create_layout())
     self.top_layout.setContentsMargins(150, 0, 150, 20)
 
   
