@@ -47,3 +47,4 @@ class GuardsPage(QWidget):
     self.create_button_layout: QHBoxLayout = QHBoxLayout()
 
     self.email_field: TextField = TextField(label_text="Email", placeholder_text="Enter guard email.")
+    self.password_field: TextField = TextField(label_text="Password", placeholder_text="Enter admin password.")
