@@ -60,3 +60,5 @@ class GuardsPage(QWidget):
     create_layout.addWidget(self.password_field, 1, 0, 1, 2)
     create_layout.addWidget(self.fullname_field, 2, 0, 1, 2)
     create_layout.addLayout(self.create_button_layout, 3, 0, 1, 2)
+
+    return create_layout
