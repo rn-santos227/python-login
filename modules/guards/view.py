@@ -36,4 +36,7 @@ class GuardsPage(QWidget):
     content_frame.setGraphicsEffect(shadow_effect)
 
     self.main_layout: QVBoxLayout = QVBoxLayout()
+    
     self.top_layout: QHBoxLayout = QHBoxLayout()
+
+    self.top_layout.setContentsMargins(150, 0, 150, 20)

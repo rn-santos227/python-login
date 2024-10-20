@@ -37,8 +37,8 @@ class AdminsPage(QWidget):
     content_frame.setGraphicsEffect(shadow_effect)
 
     self.main_layout: QVBoxLayout = QVBoxLayout()
-    self.top_layout: QHBoxLayout = QHBoxLayout()
     
+    self.top_layout: QHBoxLayout = QHBoxLayout()
     self.top_layout.addLayout(self.init_create_layout())
     self.top_layout.setContentsMargins(150, 0, 150, 20)
 
