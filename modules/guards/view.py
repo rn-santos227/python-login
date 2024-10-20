@@ -81,3 +81,4 @@ class GuardsPage(QWidget):
   
   def init_update_layout(self):
     update_layout = QGridLayout()
+    self.update_button_layout = QHBoxLayout()
