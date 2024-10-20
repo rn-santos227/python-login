@@ -52,3 +52,6 @@ class GuardsPage(QWidget):
     self.fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
 
     create_button: Button = Button("Create Admin")
+
+    self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
+    self.create_button_layout.addWidget(create_button)
