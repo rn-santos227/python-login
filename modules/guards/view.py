@@ -102,3 +102,7 @@ class GuardsPage(QWidget):
     update_layout.addLayout(self.update_button_layout, 3, 0, 1, 2)
 
     return update_layout
+  
+  def __switch_to_update_layout(self):
+    while self.top_layout.count():
+      child = self.top_layout.takeAt(0)
