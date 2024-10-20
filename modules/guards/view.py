@@ -56,6 +56,7 @@ class GuardsPage(QWidget):
 
     self.main_layout.addWidget(content_frame)
 
+    self.setLayout(self.main_layout)
   
   def init_create_layout(self):
     create_layout: QGridLayout = QGridLayout()
