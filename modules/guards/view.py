@@ -34,3 +34,6 @@ class GuardsPage(QWidget):
     shadow_effect.setOffset(0, 5)
 
     content_frame.setGraphicsEffect(shadow_effect)
+
+    self.main_layout: QVBoxLayout = QVBoxLayout()
+    self.top_layout: QHBoxLayout = QHBoxLayout()
