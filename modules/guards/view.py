@@ -113,3 +113,5 @@ class GuardsPage(QWidget):
   def __clear_layout(self, layout: QLayout):
     while layout.count():
       child: QLayoutItem = layout.takeAt(0)
+      if child.widget():
+        child.widget().deleteLater()
