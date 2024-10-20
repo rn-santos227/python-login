@@ -20,3 +20,4 @@ class GuardsPage(QWidget):
     self.setStyleSheet(content_frame_style)
     self.pages_handler = pages_handler
     self.message_dialog: MessageDialog = MessageDialog(self)
+    self.validation_handler: ValidationHandler = ValidationHandler()
