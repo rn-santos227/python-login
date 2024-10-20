@@ -22,3 +22,6 @@ class GuardsPage(QWidget):
     self.message_dialog: MessageDialog = MessageDialog(self)
     self.validation_handler: ValidationHandler = ValidationHandler()
     self.guards: list[Guard] = []
+
+  def __init_ui(self):
+    content_frame: QFrame = QFrame(self)
