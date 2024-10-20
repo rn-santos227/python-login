@@ -17,3 +17,4 @@ from assets.styles.styles import content_frame_style
 class GuardsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
+    self.setStyleSheet(content_frame_style)
