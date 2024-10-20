@@ -78,3 +78,6 @@ class GuardsPage(QWidget):
     create_layout.addLayout(self.create_button_layout, 3, 0, 1, 2)
 
     return create_layout
+  
+  def init_update_layout(self):
+    update_layout = QGridLayout()
