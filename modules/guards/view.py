@@ -44,3 +44,4 @@ class GuardsPage(QWidget):
   
   def init_create_layout(self):
     create_layout: QGridLayout = QGridLayout()
+    self.create_button_layout: QHBoxLayout = QHBoxLayout()
