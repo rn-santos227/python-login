@@ -18,3 +18,4 @@ class GuardsPage(QWidget):
   def __init__(self, pages_handler):
     super().__init__()
     self.setStyleSheet(content_frame_style)
+    self.pages_handler = pages_handler
