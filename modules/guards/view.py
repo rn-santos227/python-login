@@ -47,6 +47,8 @@ class GuardsPage(QWidget):
     self.table_widget.setHorizontalHeaderLabels(["ID", "Full Name", "Email", "Actions"])
     self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Fixed)
     self.table_widget.setColumnWidth(0, 50)
+    self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+    self.table_widget.verticalHeader().setVisible(False)
 
 
   
