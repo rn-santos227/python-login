@@ -49,3 +49,4 @@ class GuardsPage(QWidget):
     self.email_field: TextField = TextField(label_text="Email", placeholder_text="Enter guard email.")
     self.password_field: TextField = TextField(label_text="Password", placeholder_text="Enter admin password.")
     self.password_field.text_field.setEchoMode(QLineEdit.Password)
+    self.fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
