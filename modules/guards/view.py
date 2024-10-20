@@ -95,3 +95,10 @@ class GuardsPage(QWidget):
     self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.update_button_layout.addWidget(update_button)
     self.update_button_layout.addWidget(cancel_button)
+
+    update_layout.addWidget(self.update_email_field, 0, 0, 1, 2)
+    update_layout.addWidget(self.update_password_field, 1, 0, 1, 2)
+    update_layout.addWidget(self.update_fullname_field, 2, 0, 1, 2)
+    update_layout.addLayout(self.update_button_layout, 3, 0, 1, 2)
+
+    return update_layout
