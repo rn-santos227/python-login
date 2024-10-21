@@ -91,6 +91,7 @@ class GuardsPage(QWidget):
     update_button: Button = Button("Update Student")
 
     cancel_button: Button = Button("Cancel Update")
+    cancel_button.connect_signal(self.__switch_to_create_layout)
 
     self.update_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
     self.update_button_layout.addWidget(update_button)
