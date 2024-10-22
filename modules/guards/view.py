@@ -120,6 +120,7 @@ class GuardsPage(QWidget):
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(guard.email))
 
       update_button: QPushButton = QPushButton("Update")
+      update_button.clicked.connect(lambda ch, guard=guard: self.__load_guard_for_update(guard))
 
       delete_button : QPushButton = QPushButton("Delete")
 
