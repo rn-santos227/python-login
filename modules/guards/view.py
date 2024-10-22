@@ -136,6 +136,7 @@ class GuardsPage(QWidget):
 
   def __prompt_delete_guard(self, guard_id: int):
     self.guard_id = guard_id
+    prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
 
   def __load_guard_for_update(self, guard: Guard):
     self.__switch_to_update_layout()
