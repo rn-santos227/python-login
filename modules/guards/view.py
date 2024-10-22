@@ -106,6 +106,7 @@ class GuardsPage(QWidget):
   
   def delete_guard(self, guard_id):
     guards_controller.delete_guard(id=guard_id)
+    self.load_guards()
   
   def load_guards(self):
     self.guards = guards_controller.get_guards("status = 'active'", "select")
