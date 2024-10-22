@@ -115,6 +115,9 @@ class GuardsPage(QWidget):
       row_position = self.table_widget.rowCount()
       self.table_widget.insertRow(row_position)
 
+      self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(guard.id)))
+      self.table_widget.setItem(row_position, 1, QTableWidgetItem(guard.full_name))
+
   def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
