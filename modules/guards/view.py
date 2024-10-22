@@ -138,6 +138,9 @@ class GuardsPage(QWidget):
     self.guard_id = guard_id
     prompt_dialog: PromptDialog = PromptDialog(title="Security Prompt", message="Enter your Admin Password", is_password=True)
 
+    if prompt_dialog.exec_() == QDialog.Accepted:
+      password = prompt_dialog.get_user_input()
+
   def __load_guard_for_update(self, guard: Guard):
     self.__switch_to_update_layout()
     self.guard_id = guard.id
