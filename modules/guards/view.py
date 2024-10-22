@@ -134,6 +134,9 @@ class GuardsPage(QWidget):
 
       self.table_widget.setCellWidget(row_position, 3, button_widget)
 
+  def __prompt_delete_guard(self, guard_id: int):
+    self.guard_id = guard_id
+
   def __load_guard_for_update(self, guard: Guard):
     self.__switch_to_update_layout()
     self.guard_id = guard.id
