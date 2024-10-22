@@ -141,6 +141,9 @@ class GuardsPage(QWidget):
     if prompt_dialog.exec_() == QDialog.Accepted:
       password = prompt_dialog.get_user_input()
 
+      if self.pages_handler.session_handler.verify_password(password):
+        self.delete_admin(self.admin_id)
+
   def __load_guard_for_update(self, guard: Guard):
     self.__switch_to_update_layout()
     self.guard_id = guard.id
