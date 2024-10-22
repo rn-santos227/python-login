@@ -6,6 +6,7 @@ from components.question_dialog import QuestionDialog
 
 from modules.admin.view import AdminsPage
 from modules.biometrics.view import BiometricsPage
+from modules.guards.view import GuardsPage
 from modules.logs.view import LogsPage
 from modules.parents.view import ParentsPage
 from modules.reader.view import ReaderPage
@@ -37,6 +38,7 @@ class DashboardAdminPage(QWidget):
     
     self.admins_content: AdminsPage = AdminsPage(self)
     self.biometrics_content: BiometricsPage = BiometricsPage(self)
+    self.guards_content: GuardsPage = GuardsPage(self)
     self.logs_content: LogsPage = LogsPage(self)
     self.parents_content: ParentsPage = ParentsPage(self)
     self.reader_content: ReaderPage = ReaderPage(self)
