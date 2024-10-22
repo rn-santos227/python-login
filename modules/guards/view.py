@@ -104,6 +104,11 @@ class GuardsPage(QWidget):
 
     return update_layout
   
+  def create_guard(self):
+    email = self.email_field.get_text()
+    password = self.password_field.get_text()
+    full_name = self.fullname_field.get_text()
+
   def delete_guard(self, guard_id):
     guards_controller.delete_guard(id=guard_id)
     self.load_guards()
