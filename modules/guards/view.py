@@ -128,6 +128,7 @@ class GuardsPage(QWidget):
     guards_controller.create_guard(new_guard)
     self.load_guards()
     self.__clear_fields()
+    self.message_dialog.show_message("Success", "Guard Account has been created successfully.", "Information")
 
   def delete_guard(self, guard_id):
     guards_controller.delete_guard(id=guard_id)
