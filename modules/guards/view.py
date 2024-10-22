@@ -115,6 +115,9 @@ class GuardsPage(QWidget):
       (self.validation_handler.is_not_empty, full_name, "Full name cannot be empty."),
     ]
 
+    if not self.validation_handler.validate_fields(self, fields_to_validate):
+      return
+
   def delete_guard(self, guard_id):
     guards_controller.delete_guard(id=guard_id)
     self.load_guards()
