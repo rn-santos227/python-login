@@ -128,6 +128,9 @@ class GuardsPage(QWidget):
       button_layout.addWidget(delete_button)
       button_layout.setContentsMargins(0, 0, 0, 0)
 
+      button_widget: QWidget = QWidget()
+      button_widget.setLayout(button_layout)
+
   def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
