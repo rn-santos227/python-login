@@ -144,6 +144,9 @@ class GuardsPage(QWidget):
       if self.pages_handler.session_handler.verify_password(password):
         self.delete_admin(self.admin_id)
 
+      else:
+        self.message_dialog.show_message("Information", "Password does not match.", "information")
+
   def __load_guard_for_update(self, guard: Guard):
     self.__switch_to_update_layout()
     self.guard_id = guard.id
