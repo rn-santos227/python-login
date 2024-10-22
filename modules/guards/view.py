@@ -117,6 +117,11 @@ class GuardsPage(QWidget):
 
     if not self.validation_handler.validate_fields(self, fields_to_validate):
       return
+    
+    new_guard: Guard = Guard(
+      email = email,
+      password = password,
+    )
 
   def delete_guard(self, guard_id):
     guards_controller.delete_guard(id=guard_id)
