@@ -131,6 +131,7 @@ class DashboardAdminPage(QWidget):
     reader_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
     parents_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
     users_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
+    guards_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
     logout_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
 
   def handle_admins(self):
