@@ -92,6 +92,7 @@ class DashboardAdminPage(QWidget):
     self.navigation_menu.addWidget(scanner_button)
     self.navigation_menu.addWidget(parents_button)
     self.navigation_menu.addWidget(users_button)
+    self.navigation_menu.addWidget(guards_button)
     self.navigation_menu.addWidget(logout_button)
     self.navigation_menu.addStretch()
 
