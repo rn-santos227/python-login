@@ -113,6 +113,7 @@ class GuardsPage(QWidget):
     
     for guard in self.guards:
       row_position = self.table_widget.rowCount()
+      self.table_widget.insertRow(row_position)
 
   def __switch_to_update_layout(self):
     while self.top_layout.count():
