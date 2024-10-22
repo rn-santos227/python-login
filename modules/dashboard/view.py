@@ -136,6 +136,7 @@ class DashboardAdminPage(QWidget):
 
   def handle_guards(self):
     self.reader_content.clock_component.stop_clock()
+    self.guards_content.load_guards()
 
   def handle_reader(self):
     self.reader_content.clock_component.start_clock()
