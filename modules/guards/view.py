@@ -123,6 +123,8 @@ class GuardsPage(QWidget):
 
       delete_button : QPushButton = QPushButton("Delete")
 
+      button_layout: QHBoxLayout = QHBoxLayout()
+
   def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
