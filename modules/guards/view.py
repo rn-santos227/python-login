@@ -117,6 +117,7 @@ class GuardsPage(QWidget):
 
       self.table_widget.setItem(row_position, 0, QTableWidgetItem(str(guard.id)))
       self.table_widget.setItem(row_position, 1, QTableWidgetItem(guard.full_name))
+      self.table_widget.setItem(row_position, 2, QTableWidgetItem(guard.email))
 
   def __switch_to_update_layout(self):
     while self.top_layout.count():
