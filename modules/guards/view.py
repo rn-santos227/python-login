@@ -137,6 +137,8 @@ class GuardsPage(QWidget):
     self.__switch_to_update_layout()
     self.guard_id = guard.id
 
+    self.update_email_field.set_text(guard.email)
+
   def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
