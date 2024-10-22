@@ -62,12 +62,12 @@ class GuardsPage(QWidget):
     create_layout: QGridLayout = QGridLayout()
     self.create_button_layout: QHBoxLayout = QHBoxLayout()
 
-    self.email_field: TextField = TextField(label_text="Email", placeholder_text="Enter guard email.")
-    self.password_field: TextField = TextField(label_text="Password", placeholder_text="Enter admin password.")
+    self.email_field: TextField = TextField(label_text="Email", placeholder_text="Enter guard account email.")
+    self.password_field: TextField = TextField(label_text="Password", placeholder_text="Enter guard account password.")
     self.password_field.text_field.setEchoMode(QLineEdit.Password)
-    self.fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
+    self.fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter guard account full name.")
 
-    create_button: Button = Button("Create Admin")
+    create_button: Button = Button("Create Guard Account")
     create_button.connect_signal(self.create_guard)
 
     self.create_button_layout.addSpacerItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
@@ -84,10 +84,10 @@ class GuardsPage(QWidget):
     update_layout = QGridLayout()
     self.update_button_layout = QHBoxLayout()
 
-    self.update_email_field: TextField = TextField(label_text="Email", placeholder_text="Enter admin email.")
-    self.update_password_field: TextField = TextField(label_text="Password", placeholder_text="Enter admin password.")
+    self.update_email_field: TextField = TextField(label_text="Email", placeholder_text="Enter guard account email.")
+    self.update_password_field: TextField = TextField(label_text="Password", placeholder_text="Enter guard account password.")
     self.update_password_field.text_field.setEchoMode(QLineEdit.Password)
-    self.update_fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter admin full name.")
+    self.update_fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter guard account full name.")
 
     update_button: Button = Button("Update Student")
 
