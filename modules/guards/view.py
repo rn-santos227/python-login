@@ -135,6 +135,7 @@ class GuardsPage(QWidget):
 
   def __load_guard_for_update(self, guard: Guard):
     self.__switch_to_update_layout()
+    self.guard_id = guard.id
 
   def __switch_to_update_layout(self):
     while self.top_layout.count():
