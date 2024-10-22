@@ -130,9 +130,12 @@ class DashboardAdminPage(QWidget):
     logout_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
 
   def handle_admins(self):
-    self.reader_content.clock_component.start_clock()
+    self.reader_content.clock_component.stop_clock()
     self.admins_content.load_admins()
     self.main_content.setCurrentWidget(self.admins_content)
+
+  def handle_guards(self):
+    self.reader_content.clock_component.stop_clock()
 
   def handle_reader(self):
     self.reader_content.clock_component.start_clock()
