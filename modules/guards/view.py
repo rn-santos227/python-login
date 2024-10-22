@@ -104,6 +104,9 @@ class GuardsPage(QWidget):
 
     return update_layout
   
+  def delete_guard(self, guard_id):
+    guards_controller.delete_guard(id=guard_id)
+  
   def load_guards(self):
     self.guards = guards_controller.get_guards("status = 'active'", "select")
     self.table_widget.setRowCount(0)
