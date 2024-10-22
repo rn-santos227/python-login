@@ -131,6 +131,8 @@ class GuardsPage(QWidget):
       button_widget: QWidget = QWidget()
       button_widget.setLayout(button_layout)
 
+      self.table_widget.setCellWidget(row_position, 3, button_widget)
+
   def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
