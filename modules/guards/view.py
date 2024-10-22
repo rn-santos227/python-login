@@ -119,6 +119,10 @@ class GuardsPage(QWidget):
       self.table_widget.setItem(row_position, 1, QTableWidgetItem(guard.full_name))
       self.table_widget.setItem(row_position, 2, QTableWidgetItem(guard.email))
 
+      update_button: QPushButton = QPushButton("Update")
+
+      delete_button : QPushButton = QPushButton("Delete")
+
   def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
