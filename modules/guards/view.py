@@ -123,6 +123,8 @@ class GuardsPage(QWidget):
       update_button.clicked.connect(lambda ch, guard=guard: self.__load_guard_for_update(guard))
 
       delete_button : QPushButton = QPushButton("Delete")
+      delete_button.clicked.connect(lambda ch, guard_id=guard.id: self.__prompt_delete_guard(guard_id))
+
 
       button_layout: QHBoxLayout = QHBoxLayout()
       button_layout.addWidget(update_button)
