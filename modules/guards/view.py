@@ -104,6 +104,9 @@ class GuardsPage(QWidget):
 
     return update_layout
   
+  def load_guards(self):
+    self.guards = guards_controller.get_guards("status = 'active'", "select")
+
   def __switch_to_update_layout(self):
     while self.top_layout.count():
       child = self.top_layout.takeAt(0)
