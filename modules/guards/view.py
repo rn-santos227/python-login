@@ -106,6 +106,7 @@ class GuardsPage(QWidget):
   
   def load_guards(self):
     self.guards = guards_controller.get_guards("status = 'active'", "select")
+    self.table_widget.setRowCount(0)
 
   def __switch_to_update_layout(self):
     while self.top_layout.count():
