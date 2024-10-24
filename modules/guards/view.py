@@ -139,6 +139,7 @@ class GuardsPage(QWidget):
     fields_to_validate = [
       (self.validation_handler.is_valid_email, email, "Invalid email address."),
       (self.validation_handler.is_not_empty, password, "Password cannot be empty."),
+      (self.validation_handler.is_not_empty, full_name, "Full name cannot be empty."),
     ]
 
   def delete_guard(self, guard_id):
