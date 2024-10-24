@@ -154,6 +154,7 @@ class GuardsPage(QWidget):
 
     guards_controller.update_guard(update_guard)
     self.load_guards()
+    self.__switch_to_create_layout()
 
   def delete_guard(self, guard_id):
     guards_controller.delete_guard(id=guard_id)
