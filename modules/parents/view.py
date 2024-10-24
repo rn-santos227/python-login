@@ -111,7 +111,7 @@ class ParentsPage(QWidget):
 
     update_layout.addWidget(self.update_student_combo_box, 0, 0, 1, 2)
     update_layout.addWidget(self.update_parent_name_field, 1, 0, 1, 2)
-    update_layout.addWidget(self.update_parent_name_field, 2, 0, 1, 2)
+    update_layout.addWidget(self.update_parent_email_field, 2, 0, 1, 2)
     update_layout.addWidget(self.update_parent_contact_field, 3, 0, 1, 2)
     update_layout.addLayout(self.update_button_layout, 4, 0, 1, 2)
 
@@ -212,7 +212,7 @@ class ParentsPage(QWidget):
       id = self.parent_id,
       student_id = student_id,
       full_name = parent_name,
-      email=email,
+      email = email,
       contact = contact
     )
 
