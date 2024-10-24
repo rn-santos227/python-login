@@ -153,6 +153,7 @@ class GuardsPage(QWidget):
     )
 
     guards_controller.update_guard(update_guard)
+    self.load_guards()
 
   def delete_guard(self, guard_id):
     guards_controller.delete_guard(id=guard_id)
