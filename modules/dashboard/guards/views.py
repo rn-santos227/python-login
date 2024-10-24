@@ -5,7 +5,11 @@ from handlers.asset_handler import AssetHandler
 from handlers.session_handler import SessionHandler
 
 class DashboardGuardPage(QWidget):
-   def __init__(self, pages_handler, session_handler: SessionHandler):
+  def __init__(self, pages_handler, session_handler: SessionHandler):
     super().__init__()
     self.pages_handler = pages_handler
     self.session_handler: SessionHandler = session_handler
+
+  def __init_ui(self):
+    button_bg_color = "#fff6f6"
+    button_font_color = "#000000"
