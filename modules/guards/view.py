@@ -136,6 +136,9 @@ class GuardsPage(QWidget):
     password = self.update_password_field.get_text()
     full_name = self.update_fullname_field.get_text()
 
+    fields_to_validate = [
+    ]
+
   def delete_guard(self, guard_id):
     guards_controller.delete_guard(id=guard_id)
     self.load_guards()
