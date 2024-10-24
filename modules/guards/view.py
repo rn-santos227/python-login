@@ -147,6 +147,7 @@ class GuardsPage(QWidget):
     
     update_guard: Guard = Guard(
       id = self.guard_id,
+      email = email,
     )
 
   def delete_guard(self, guard_id):
