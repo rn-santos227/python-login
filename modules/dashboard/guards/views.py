@@ -34,6 +34,7 @@ class DashboardGuardPage(QWidget):
     self.reader_content: ReaderPage = ReaderPage(self)
 
     self.navigation_menu: QVBoxLayout = QVBoxLayout()
+    self.left_layout: QVBoxLayout = QVBoxLayout()
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
