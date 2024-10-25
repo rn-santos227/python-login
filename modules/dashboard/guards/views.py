@@ -41,6 +41,7 @@ class DashboardGuardPage(QWidget):
     logs_button.set_fixed_width(250)
 
     reader_button: Button = Button("Attendance Reader")
+    reader_button.set_fixed_width(250)
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
