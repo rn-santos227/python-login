@@ -44,6 +44,7 @@ class DashboardGuardPage(QWidget):
     reader_button.set_fixed_width(250)
 
     logout_button: Button = Button("Log Out")
+    logout_button.set_fixed_width(250)
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
