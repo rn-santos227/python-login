@@ -1,6 +1,9 @@
 from PyQt5.QtWidgets import QDialog, QFrame, QHBoxLayout, QLabel, QStackedWidget, QVBoxLayout, QWidget
 from PyQt5.QtCore import Qt
 
+from components.button import Button
+from components.question_dialog import QuestionDialog
+
 from handlers.asset_handler import AssetHandler
 from handlers.session_handler import SessionHandler
 
@@ -10,7 +13,7 @@ class DashboardGuardPage(QWidget):
     self.pages_handler = pages_handler
     self.session_handler: SessionHandler = session_handler
     self.navigation_visible = True
-     self.__init_ui()
+    self.__init_ui()
 
   def __init_ui(self):
     button_bg_color = "#fff6f6"
