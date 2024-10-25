@@ -9,6 +9,7 @@ class DashboardGuardPage(QWidget):
     super().__init__()
     self.pages_handler = pages_handler
     self.session_handler: SessionHandler = session_handler
+    self.navigation_visible = True
 
   def __init_ui(self):
     button_bg_color = "#fff6f6"
