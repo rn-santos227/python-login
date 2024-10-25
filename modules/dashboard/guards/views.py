@@ -35,6 +35,7 @@ class DashboardGuardPage(QWidget):
 
     self.navigation_menu: QVBoxLayout = QVBoxLayout()
     self.left_layout: QVBoxLayout = QVBoxLayout()
+    self.main_content: QStackedWidget = QStackedWidget()
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
