@@ -25,6 +25,7 @@ class DashboardGuardPage(QWidget):
 
     self.background_label: QLabel = QLabel(self)
     self.__set_background_image("bg.jpg")
+    self.background_label.setScaledContents(True)
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
