@@ -39,6 +39,8 @@ class DashboardGuardPage(QWidget):
 
     logs_button: Button = Button("Attendance Logs")
 
+    reader_button: Button = Button("Attendance Reader")
+
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
