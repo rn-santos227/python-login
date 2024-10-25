@@ -33,6 +33,8 @@ class DashboardGuardPage(QWidget):
     self.logs_content: LogsPage = LogsPage(self)
     self.reader_content: ReaderPage = ReaderPage(self)
 
+    self.navigation_menu: QVBoxLayout = QVBoxLayout()
+
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
