@@ -24,3 +24,6 @@ class DashboardGuardPage(QWidget):
     main_layout.setSpacing(0)
 
     self.background_label: QLabel = QLabel(self)
+
+  def __set_background_image(self, image_name):
+    asset_handler: AssetHandler = AssetHandler()
