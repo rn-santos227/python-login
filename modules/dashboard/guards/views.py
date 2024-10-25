@@ -31,6 +31,7 @@ class DashboardGuardPage(QWidget):
     self.background_label.setScaledContents(True)
 
     self.logs_content: LogsPage = LogsPage(self)
+    self.reader_content: ReaderPage = ReaderPage(self)
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
