@@ -30,6 +30,7 @@ class DashboardGuardPage(QWidget):
 
     try:
       pixmap = asset_handler.get_image(image_name)
+      scaled_pixmap = pixmap.scaled(self.size(), Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation)
 
     except FileNotFoundError as e:
       print(e)
