@@ -4,6 +4,9 @@ from PyQt5.QtCore import Qt
 from components.button import Button
 from components.question_dialog import QuestionDialog
 
+from modules.logs.view import LogsPage
+from modules.reader.view import ReaderPage
+
 from handlers.asset_handler import AssetHandler
 from handlers.session_handler import SessionHandler
 
