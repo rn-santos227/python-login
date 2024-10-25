@@ -37,6 +37,8 @@ class DashboardGuardPage(QWidget):
     self.left_layout: QVBoxLayout = QVBoxLayout()
     self.main_content: QStackedWidget = QStackedWidget()
 
+    logs_button: Button = Button("Attendance Logs")
+
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
