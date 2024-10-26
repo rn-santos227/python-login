@@ -58,6 +58,7 @@ class DashboardGuardPage(QWidget):
     main_content_frame.setObjectName("formFrame")
 
     self.main_content.addWidget(self.logs_content)
+    self.main_content.addWidget(self.reader_content)
 
   def handle_reader(self):
     self.reader_content.clock_component.start_clock()
