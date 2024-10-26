@@ -55,6 +55,7 @@ class DashboardGuardPage(QWidget):
     self.navigation_menu.addStretch()
 
     main_content_frame: QFrame = QFrame(self)
+    main_content_frame.setObjectName("formFrame")
 
   def handle_reader(self):
     self.reader_content.clock_component.start_clock()
