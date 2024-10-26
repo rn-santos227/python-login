@@ -49,6 +49,7 @@ class DashboardGuardPage(QWidget):
   def handle_logs(self):
     self.reader_content.clock_component.stop_clock()
     self.logs_content.load_logs()
+    self.main_content.setCurrentWidget(self.logs_content)
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
