@@ -51,6 +51,9 @@ class DashboardGuardPage(QWidget):
     self.logs_content.load_logs()
     self.main_content.setCurrentWidget(self.logs_content)
 
+  def handle_logout(self):
+    question_box: QuestionDialog = QuestionDialog(message="Are you sure you want to log out?")
+
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
