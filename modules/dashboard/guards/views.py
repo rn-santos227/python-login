@@ -38,10 +38,11 @@ class DashboardGuardPage(QWidget):
     self.main_content: QStackedWidget = QStackedWidget()
 
     logs_button: Button = Button("Attendance Logs")
-    reader_button.connect_signal(self.handle_reader)
+    logs_button.connect_signal(self.handle_logs)
     logs_button.set_fixed_width(250)
 
     reader_button: Button = Button("Attendance Reader")
+    reader_button.connect_signal(self.handle_reader)
     reader_button.set_fixed_width(250)
 
     logout_button: Button = Button("Log Out")
