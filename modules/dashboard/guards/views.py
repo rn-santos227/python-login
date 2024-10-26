@@ -60,6 +60,8 @@ class DashboardGuardPage(QWidget):
     self.main_content.addWidget(self.logs_content)
     self.main_content.addWidget(self.reader_content)
 
+    self.toggle_button: Button = Button("Toggle Navigation")
+
   def handle_reader(self):
     self.reader_content.clock_component.start_clock()
     self.reader_content.load_logs()
