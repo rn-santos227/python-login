@@ -50,6 +50,7 @@ class DashboardGuardPage(QWidget):
     self.reader_content.clock_component.start_clock()
     self.reader_content.load_logs()
     self.reader_content.load_biometric_devices_to_combo_box()
+    self.main_content.setCurrentWidget(self.reader_content)
 
   def handle_logs(self):
     self.reader_content.clock_component.stop_clock()
