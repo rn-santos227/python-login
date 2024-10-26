@@ -46,6 +46,7 @@ class DashboardGuardPage(QWidget):
     reader_button.set_fixed_width(250)
 
     logout_button: Button = Button("Log Out")
+    logout_button.connect_signal(self.handle_logout)
     logout_button.set_fixed_width(250)
 
   def handle_reader(self):
