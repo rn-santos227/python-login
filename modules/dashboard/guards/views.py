@@ -48,6 +48,7 @@ class DashboardGuardPage(QWidget):
 
   def handle_reader(self):
     self.reader_content.clock_component.start_clock()
+    self.reader_content.load_logs()
 
   def handle_logs(self):
     self.reader_content.clock_component.stop_clock()
