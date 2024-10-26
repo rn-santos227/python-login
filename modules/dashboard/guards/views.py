@@ -50,6 +50,7 @@ class DashboardGuardPage(QWidget):
     logout_button.set_fixed_width(250)
 
     self.navigation_menu.addWidget(logs_button)
+    self.navigation_menu.addWidget(reader_button)
 
   def handle_reader(self):
     self.reader_content.clock_component.start_clock()
