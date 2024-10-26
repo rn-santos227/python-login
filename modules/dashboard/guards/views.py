@@ -56,6 +56,7 @@ class DashboardGuardPage(QWidget):
     if question_box.exec() == QDialog.Accepted:
       self.reader_content.clock_component.stop_clock()
       self.session_handler.destroy_session()
+      self.pages_handler.switch_to_login_page()
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
