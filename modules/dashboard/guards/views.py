@@ -67,6 +67,8 @@ class DashboardGuardPage(QWidget):
     self.left_layout.addWidget(self.toggle_button)
     self.left_layout.addLayout(self.navigation_menu)
 
+    main_layout.addLayout(self.left_layout, 1)
+
   def handle_reader(self):
     self.reader_content.clock_component.start_clock()
     self.reader_content.load_logs()
