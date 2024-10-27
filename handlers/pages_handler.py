@@ -13,10 +13,10 @@ class PagesHandler:
     self.stacked_widget: QStackedWidget = stacked_widget
 
     self.login_page: LoginPage = LoginPage(self, self.session_handler)
-    self.dashboard_page: DashboardAdminPage = DashboardAdminPage(self, self.session_handler)
+    self.dashboard_admin_page: DashboardAdminPage = DashboardAdminPage(self, self.session_handler)
 
   def switch_to_login_page(self):
     self.stacked_widget.setCurrentWidget(self.login_page)
 
   def switch_to_dashboard_page(self):
-    self.stacked_widget.setCurrentWidget(self.dashboard_page)
+    self.stacked_widget.setCurrentWidget(self.dashboard_admin_page)
