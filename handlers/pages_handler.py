@@ -14,6 +14,7 @@ class PagesHandler:
 
     self.login_page: LoginPage = LoginPage(self, self.session_handler)
     self.dashboard_admin_page: DashboardAdminPage = DashboardAdminPage(self, self.session_handler)
+    self.dashboard_guard_page: DashboardGuardPage = DashboardAdminPage(self, self.session_handler)
 
   def switch_to_login_page(self):
     self.stacked_widget.setCurrentWidget(self.login_page)
