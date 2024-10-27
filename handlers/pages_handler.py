@@ -5,6 +5,7 @@ from handlers.session_handler import SessionHandler
 
 from modules.auth.view import LoginPage
 from modules.dashboard.admins.view import DashboardAdminPage
+from modules.dashboard.guards.view import DashboardGuardPage
 
 class PagesHandler:
   def __init__(self, stacked_widget: QStackedWidget):
