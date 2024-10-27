@@ -13,6 +13,10 @@ def login(email, password) -> str:
   
   if admin_valid:
     return "admin"
+  
+  elif student_valid:
+    return "student"
+
   else:
     return ""
   
