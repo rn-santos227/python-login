@@ -1,4 +1,5 @@
 import modules.admin.controller as admin_controller
+import modules.guards.controller as guard_controller
 import modules.students.controller as student_controller
 
 from modules.admin.model import Admin
@@ -8,7 +9,6 @@ from modules.students.model import Student
 def login(email, password) -> str:
   student = student_controller.get_student_by_email(email)
   admin = admin_controller.get_admin_by_email(email)
-
   
   admin_valid = isinstance(admin, Admin) and admin.verify_password(password)
   student_valid = isinstance(student, Student) and student.verify_password(password)
