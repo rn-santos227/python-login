@@ -19,7 +19,7 @@ class PagesHandler:
   def switch_to_login_page(self):
     self.stacked_widget.setCurrentWidget(self.login_page)
 
-  def switch_to_dashboard_page(self):
+  def switch_to_dashboard_admin_page(self):
     self.stacked_widget.setCurrentWidget(self.dashboard_admin_page)
 
   def switch_to_dashboard_guard_page(self):
