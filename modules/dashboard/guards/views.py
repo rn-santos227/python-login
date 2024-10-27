@@ -81,6 +81,10 @@ class DashboardGuardPage(QWidget):
       self.session_handler.destroy_session()
       self.pages_handler.switch_to_login_page()
 
+  def __toggle_navigation(self):
+    if self.navigation_visible:
+      self.navigation_visible = False
+
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
