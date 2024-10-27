@@ -61,6 +61,7 @@ class DashboardGuardPage(QWidget):
     self.main_content.addWidget(self.reader_content)
 
     self.toggle_button: Button = Button("Toggle Navigation")
+    self.toggle_button.connect_signal(self.__toggle_navigation)
     self.toggle_button.set_fixed_width(250)
 
   def handle_reader(self):
