@@ -86,6 +86,8 @@ class DashboardGuardPage(QWidget):
       self.navigation_visible = False
       for index in reversed(range(self.navigation_menu.count())):
         widget = self.navigation_menu.itemAt(index).widget()
+        if widget is not None:
+          widget.hide()
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
