@@ -77,6 +77,7 @@ class DashboardGuardPage(QWidget):
     main_layout.setContentsMargins(0, 0, 0, 0)
 
     logs_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
+    reader_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
 
   def handle_reader(self):
     self.reader_content.clock_component.start_clock()
