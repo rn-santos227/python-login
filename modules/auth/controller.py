@@ -12,6 +12,7 @@ def login(email, password) -> str:
   admin = admin_controller.get_admin_by_email(email)
   
   admin_valid = isinstance(admin, Admin) and admin.verify_password(password)
+  guard_valid = isinstance(guard, Guard) and guard.verify_password(password)
   student_valid = isinstance(student, Student) and student.verify_password(password)
   
   if admin_valid:
