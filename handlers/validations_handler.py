@@ -2,7 +2,7 @@ import re
 from datetime import datetime
 
 import modules.admin.controller as admin_controller
-import modules.admin.controller as guard_controller
+import modules.guards.controller as guard_controller
 import modules.students.controller as student_controller
 
 class ValidationHandler:
@@ -36,6 +36,10 @@ class ValidationHandler:
   @staticmethod
   def is_unique_student_email(input_email):
     return student_controller.get_student_by_email(email=input_email) == None
+  
+  @staticmethod
+  def is_unique_guard_email(input_email):
+    return guard_controller.get_guard_by_email(email=input_email) == None
 
   @staticmethod
   def is_unique_student_number(input_student_number):
