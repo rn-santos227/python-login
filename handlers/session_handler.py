@@ -24,6 +24,9 @@ class SessionHandler:
     elif isinstance(self.user, Admin):
       return "admin"
     
+    elif isinstance(self.user, Guard):
+      return "guard"
+    
     else:
       return ""
     
