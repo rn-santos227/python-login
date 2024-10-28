@@ -7,9 +7,9 @@ from modules.guards.model import Guard
 from modules.students.model import Student
 
 def login(email, password) -> str:
-  student = student_controller.get_student_by_email(email)
-  guard = guard_controller.get_admin_by_email(email)
-  admin = admin_controller.get_admin_by_email(email)
+  student = student_controller.get_student_by_email(str(email))
+  guard = guard_controller.get_guard_by_email(str(email))
+  admin = admin_controller.get_admin_by_email(str(email))
   
   admin_valid = isinstance(admin, Admin) and admin.verify_password(password)
   guard_valid = isinstance(guard, Guard) and guard.verify_password(password)
@@ -36,7 +36,7 @@ def get_user(email):
   if isinstance(admin, Admin):
     return admin
   
-  guard = guard_controller.get_admin_by_email(email)
+  guard = guard_controller.get_guard_by_email(email)
   if isinstance(guard, Guard):
     return guard
 

@@ -90,7 +90,7 @@ class LogsPage(QWidget):
 
       user_type = self.pages_handler.session_handler.get_user_type()
       
-      if user_type is "admin":
+      if user_type == "admin":
         delete_button: QPushButton = QPushButton("Delete")
         delete_button.clicked.connect(lambda ch, log_id=log.log_id: self.__prompt_delete_log(log_id))
 
@@ -124,7 +124,7 @@ class LogsPage(QWidget):
 
       user_type = self.pages_handler.session_handler.get_user_type()
       
-      if user_type is "admin":
+      if user_type == "admin":
         delete_button: QPushButton = QPushButton("Delete")
         delete_button.clicked.connect(lambda ch, log_id=log.log_id: self.__prompt_delete_log(log_id))
 
