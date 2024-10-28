@@ -21,6 +21,9 @@ class SessionHandler:
     if isinstance(self.user, Student):
       return "student"
     
+    elif isinstance(self.user, Admin):
+      return "admin"
+    
     else:
       return ""
     
