@@ -128,3 +128,9 @@ def delete_guard(id) -> bool:
   sql_query = builder(__table, where_clause, "delete")
   connection = DB.connect_db()
   cursor = connection.cursor()
+
+  try:
+    cursor.execute(sql_query)
+
+  except Exception as e:
+    print(f"Error: {e}")
