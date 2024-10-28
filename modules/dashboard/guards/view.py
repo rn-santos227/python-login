@@ -97,6 +97,9 @@ class DashboardGuardPage(QWidget):
       self.session_handler.destroy_session()
       self.pages_handler.switch_to_login_page()
 
+  def resizeEvent(self, event):
+    super().resizeEvent(event)
+
   def __toggle_navigation(self):
     if self.navigation_visible:
       self.navigation_visible = False
