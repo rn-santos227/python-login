@@ -139,7 +139,7 @@ class LoginPage(QWidget):
       self.email_field.clear_text()
       self.message_dialog.show_message(title="Information", message="Login Successful.")
 
-      print(user)
+      user_type = self.pages_handler.session_handler.get_user_type()
       
       if user is "admin":
         self.pages_handler.switch_to_dashboard_admin_page()
