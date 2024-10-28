@@ -99,6 +99,7 @@ class DashboardGuardPage(QWidget):
 
   def resizeEvent(self, event):
     super().resizeEvent(event)
+    self.background_label.setGeometry(self.rect())
 
   def __toggle_navigation(self):
     if self.navigation_visible:
