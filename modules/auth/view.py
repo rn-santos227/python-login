@@ -142,6 +142,9 @@ class LoginPage(QWidget):
       if user is "admin":
         self.pages_handler.switch_to_dashboard_admin_page()
 
+      elif user is "guard":
+        self.pages_handler.switch_to_dashboard_guard_page()
+
     else:
       print("Login Unsuccessful.")
       self.alert_message.set_message("Invalid username or password")
