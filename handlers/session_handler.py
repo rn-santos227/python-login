@@ -1,3 +1,5 @@
+from modules.admin.model import Admin
+
 from modules.users.model import User
 
 class SessionHandler:
