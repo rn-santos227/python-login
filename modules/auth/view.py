@@ -144,7 +144,7 @@ class LoginPage(QWidget):
       if user_type is "admin":
         self.pages_handler.switch_to_dashboard_admin_page()
 
-      elif user is "guard":
+      elif user_type is "guard":
         self.pages_handler.switch_to_dashboard_guard_page()
 
     else:
