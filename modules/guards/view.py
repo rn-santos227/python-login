@@ -89,7 +89,7 @@ class GuardsPage(QWidget):
     self.update_password_field.text_field.setEchoMode(QLineEdit.Password)
     self.update_fullname_field: TextField = TextField(label_text="Full Name", placeholder_text="Enter guard account full name.")
 
-    update_button: Button = Button("Update Student")
+    update_button: Button = Button("Update Guard Account")
 
     cancel_button: Button = Button("Cancel Update")
     cancel_button.connect_signal(self.__switch_to_create_layout)
