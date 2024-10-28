@@ -21,5 +21,8 @@ class SessionHandler:
     if isinstance(self.user, Student):
       return "student"
     
+    else:
+      return ""
+    
   def destroy_session(self):
     self.user = None
