@@ -36,7 +36,7 @@ def get_guard_by_email(email: str) -> Union[Guard, None]:
   cursor = connection.cursor()
 
   try:
-    cursor.execute(sql_query, (email))
+    cursor.execute(sql_query, (email,))
     row = cursor.fetchone()
 
     if row:
