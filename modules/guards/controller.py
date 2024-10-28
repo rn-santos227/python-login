@@ -141,3 +141,4 @@ def delete_guard(id) -> bool:
   
   finally:
     cursor.close()
+    connection.close() 
