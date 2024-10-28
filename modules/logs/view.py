@@ -120,18 +120,19 @@ class LogsPage(QWidget):
       self.table_widget.setItem(row_position, 3, QTableWidgetItem(str(log.logout_time)))
 
       user_type = self.pages_handler.session_handler.get_user_type()
+      
+      if user_type is "admin":
+        delete_button: QPushButton = QPushButton("Delete")
+        delete_button.clicked.connect(lambda ch, log_id=log.log_id: self.__prompt_delete_log(log_id))
 
-      delete_button: QPushButton = QPushButton("Delete")
-      delete_button.clicked.connect(lambda ch, log_id=log.log_id: self.__prompt_delete_log(log_id))
+        button_layout: QHBoxLayout = QHBoxLayout()
+        button_layout.addWidget(delete_button)
+        button_layout.setContentsMargins(0, 0, 0, 0)
 
-      button_layout: QHBoxLayout = QHBoxLayout()
-      button_layout.addWidget(delete_button)
-      button_layout.setContentsMargins(0, 0, 0, 0)
+        button_widget: QWidget = QWidget()
+        button_widget.setLayout(button_layout)
 
-      button_widget: QWidget = QWidget()
-      button_widget.setLayout(button_layout)
-
-      self.table_widget.setCellWidget(row_position, 4, button_widget)
+        self.table_widget.setCellWidget(row_position, 4, button_widget)
 
   def delete_log(self, log_id):
     logs_controller.delete_log(id=log_id)
