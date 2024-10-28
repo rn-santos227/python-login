@@ -35,5 +35,7 @@ def get_user(email):
   admin = admin_controller.get_admin_by_email(email)
   if isinstance(admin, Admin):
     return admin
+  
+  guard = guard_controller.get_admin_by_email(email)
 
   return None
