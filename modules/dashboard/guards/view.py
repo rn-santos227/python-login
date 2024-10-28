@@ -109,6 +109,9 @@ class DashboardGuardPage(QWidget):
         if widget is not None:
           widget.hide()
 
+    else:
+      self.navigation_visible = True
+
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
