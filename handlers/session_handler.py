@@ -1,5 +1,6 @@
 from modules.admin.model import Admin
 from modules.guards.model import Guard
+from modules.students.model import Student
 from modules.users.model import User
 
 class SessionHandler:
