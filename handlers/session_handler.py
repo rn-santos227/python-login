@@ -14,5 +14,8 @@ class SessionHandler:
     else:
       return False
     
+  def get_user_type(self) -> str:
+    pass
+    
   def destroy_session(self):
     self.user = None
