@@ -138,3 +138,6 @@ def delete_guard(id) -> bool:
     print(f"Error: {e}")
     connection.rollback()
     return False
+  
+  finally:
+    cursor.close()
