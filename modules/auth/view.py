@@ -138,7 +138,9 @@ class LoginPage(QWidget):
       self.password_field.clear_text()
       self.email_field.clear_text()
       self.message_dialog.show_message(title="Information", message="Login Successful.")
-      self.pages_handler.switch_to_dashboard_admin_page()
+      
+      if user is "admin":
+        self.pages_handler.switch_to_dashboard_admin_page()
 
     else:
       print("Login Unsuccessful.")
