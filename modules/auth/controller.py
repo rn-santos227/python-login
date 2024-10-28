@@ -21,6 +21,9 @@ def login(email, password) -> str:
   elif student_valid:
     return "student"
 
+  elif guard_valid:
+    return "guard"
+
   else:
     return ""
   
