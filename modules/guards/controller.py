@@ -136,4 +136,5 @@ def delete_guard(id) -> bool:
 
   except Exception as e:
     print(f"Error: {e}")
-    connection.rollback() 
+    connection.rollback()
+    return False
