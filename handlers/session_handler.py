@@ -18,7 +18,8 @@ class SessionHandler:
       return False
     
   def get_user_type(self) -> str:
-    pass
+    if isinstance(self.user, Student):
+      return "student"
     
   def destroy_session(self):
     self.user = None
