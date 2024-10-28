@@ -90,17 +90,18 @@ class LogsPage(QWidget):
 
       user_type = self.pages_handler.session_handler.get_user_type()
       
-      delete_button: QPushButton = QPushButton("Delete")
-      delete_button.clicked.connect(lambda ch, log_id=log.log_id: self.__prompt_delete_log(log_id))
+      if user_type is "admin":
+        delete_button: QPushButton = QPushButton("Delete")
+        delete_button.clicked.connect(lambda ch, log_id=log.log_id: self.__prompt_delete_log(log_id))
 
-      button_layout: QHBoxLayout = QHBoxLayout()
-      button_layout.addWidget(delete_button)
-      button_layout.setContentsMargins(0, 0, 0, 0)
+        button_layout: QHBoxLayout = QHBoxLayout()
+        button_layout.addWidget(delete_button)
+        button_layout.setContentsMargins(0, 0, 0, 0)
 
-      button_widget: QWidget = QWidget()
-      button_widget.setLayout(button_layout)
+        button_widget: QWidget = QWidget()
+        button_widget.setLayout(button_layout)
 
-      self.table_widget.setCellWidget(row_position, 4, button_widget)
+        self.table_widget.setCellWidget(row_position, 4, button_widget)
 
   def search_logs(self):
     start_date = self.start_date.get_date()
