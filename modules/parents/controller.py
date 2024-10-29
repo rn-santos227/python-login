@@ -36,6 +36,7 @@ def get_parent_by_email(email: str) -> Union[Parent, None]:
 
   try:
     cursor.execute(sql_query, (email,))
+    row = cursor.fetchone()
 
   except Exception as e:
     print(f"Error: {e}")
