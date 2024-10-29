@@ -245,6 +245,7 @@ class ParentsPage(QWidget):
 
     self.update_student_combo_box.set_selected_value(parent.student_id)
     self.update_parent_name_field.set_text(parent.full_name)
+    self.update_parent_email_field.set_text(parent.email)
     self.update_parent_contact_field.set_text(parent.contact)
 
   def __switch_to_update_layout(self):
