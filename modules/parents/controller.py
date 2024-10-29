@@ -40,6 +40,7 @@ def get_parent_by_email(email: str) -> Union[Parent, None]:
   
     if row:
       parent: Parent = Parent(*row)
+      return parent
 
   except Exception as e:
     print(f"Error: {e}")
