@@ -29,6 +29,9 @@ def get_parent_by_id(id) -> Union[Parent, None]:
     cursor.close()
     connection.close() 
 
+def get_parent_by_email(email: str) -> Union[Parent, None]:
+  sql_query = builder(__table, "email = %s", "select")
+
 def get_parent_by_student_id(student_id) -> Union[Parent, None]:
   sql_query = builder(__table, 'student_id = %s', "select")
   connection = DB.connect_db()
