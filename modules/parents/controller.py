@@ -34,6 +34,12 @@ def get_parent_by_email(email: str) -> Union[Parent, None]:
   connection = DB.connect_db()
   cursor = connection.cursor()
 
+  try:
+    cursor.execute(sql_query, (email,))
+
+  except Exception as e:
+    print(f"Error: {e}")
+
 def get_parent_by_student_id(student_id) -> Union[Parent, None]:
   sql_query = builder(__table, 'student_id = %s', "select")
   connection = DB.connect_db()
