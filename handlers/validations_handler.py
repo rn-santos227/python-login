@@ -42,6 +42,10 @@ class ValidationHandler:
     return guard_controller.get_guard_by_email(email=input_email) == None
 
   @staticmethod
+  def is_unique_parents_email(input_email):
+    pass
+
+  @staticmethod
   def is_unique_student_number(input_student_number):
     return student_controller.get_student_by_student_number(student_number=input_student_number) == None
 
