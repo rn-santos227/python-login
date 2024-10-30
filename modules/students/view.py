@@ -189,6 +189,7 @@ class StudentPage(QWidget):
 
     fields_to_validate = [
       (self.validation_handler.is_valid_email, email, "Invalid email address."),
+      (self.validation_handler.is_unique_admin_email, email, "Email has been taken."),
       (self.validation_handler.is_unique_student_email, email, "Email has been taken."),
       (self.validation_handler.is_unique_parents_email, email, "Email has been taken."),
       (self.validation_handler.is_not_empty, password, "Password cannot be empty."),
