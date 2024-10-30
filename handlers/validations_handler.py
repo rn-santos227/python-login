@@ -1,10 +1,10 @@
 import re
 from datetime import datetime
 
-import modules.admin.controller as admin_controller
-import modules.guards.controller as guard_controller
-import modules.parents.controller as parent_controller
-import modules.students.controller as student_controller
+import modules.admin.controller as admins_controller
+import modules.guards.controller as guards_controller
+import modules.parents.controller as parents_controller
+import modules.students.controller as students_controller
 
 class ValidationHandler:
   @staticmethod
@@ -32,15 +32,15 @@ class ValidationHandler:
   
   @staticmethod
   def is_unique_admin_email(input_email):
-    return admin_controller.get_admin_by_email(email=input_email) == None
+    return admins_controller.get_admin_by_email(email=input_email) == None
   
   @staticmethod
   def is_unique_student_email(input_email):
-    return student_controller.get_student_by_email(email=input_email) == None
+    return students_controller.get_student_by_email(email=input_email) == None
   
   @staticmethod
   def is_unique_guard_email(input_email):
-    return guard_controller.get_guard_by_email(email=input_email) == None
+    return guards_controller.get_guard_by_email(email=input_email) == None
 
   @staticmethod
   def is_unique_parents_email(input_email):
@@ -48,7 +48,7 @@ class ValidationHandler:
 
   @staticmethod
   def is_unique_student_number(input_student_number):
-    return student_controller.get_student_by_student_number(student_number=input_student_number) == None
+    return students_controller.get_student_by_student_number(student_number=input_student_number) == None
 
   @staticmethod
   def validate_fields(self, fields):
