@@ -46,6 +46,7 @@ def get_parent_by_email(email: str) -> Union[Parent, None]:
 
   except Exception as e:
     print(f"Error: {e}")
+    connection.rollback() 
 
 def get_parent_by_student_id(student_id) -> Union[Parent, None]:
   sql_query = builder(__table, 'student_id = %s', "select")
