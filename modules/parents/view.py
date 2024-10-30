@@ -175,6 +175,7 @@ class ParentsPage(QWidget):
       (self.validation_handler.is_unique_admin_email, email, "Email has been taken."),
       (self.validation_handler.is_unique_student_email, email, "Email has been taken."),
       (self.validation_handler.is_unique_guard_email, email, "Email has been taken."),
+      (self.validation_handler.is_unique_parents_email, email, "Email has been taken."),
       (self.validation_handler.is_not_empty, student_id, "Student cannot be empty."),
       (self.validation_handler.is_not_empty, parent_name, "Parent's full name cannot be empty."),
       (self.validation_handler.is_not_empty, contact, "Contacts cannot be empty."),
