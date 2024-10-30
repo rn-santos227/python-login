@@ -3,6 +3,7 @@ from datetime import datetime
 
 import modules.admin.controller as admin_controller
 import modules.guards.controller as guard_controller
+import modules.parents.controller as parent_controller
 import modules.students.controller as student_controller
 
 class ValidationHandler:
