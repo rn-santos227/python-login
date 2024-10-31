@@ -10,6 +10,7 @@ class DashboardStudentPage(QWidget):
     self.pages_handler = pages_handler
     self.session_handler: SessionHandler = session_handler
     self.navigation_visible = True
+    self.__init_ui()
 
   def __init_ui(self):
     button_bg_color = "#fff6f6"
