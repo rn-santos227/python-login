@@ -20,6 +20,8 @@ class DashboardStudentPage(QWidget):
     main_layout.setContentsMargins(0, 0, 0, 0)
     main_layout.setSpacing(0)
 
+    self.background_label: QLabel = QLabel(self)
+
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
 
