@@ -17,3 +17,4 @@ class DashboardStudentPage(QWidget):
     button_font_color = "#000000"
 
     main_layout: QHBoxLayout = QHBoxLayout(self)
+    main_layout.setContentsMargins(0, 0, 0, 0)
