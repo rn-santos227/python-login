@@ -29,6 +29,7 @@ class DashboardStudentPage(QWidget):
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
+    self.background_label.setGeometry(self.rect())
 
     try:
       pixmap = asset_handler.get_image(image_name)
