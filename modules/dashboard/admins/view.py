@@ -214,8 +214,3 @@ class DashboardAdminPage(QWidget):
     except FileNotFoundError as e:
       print(e)
       
-
-class DashboardStudentPage(QWidget):
-  def __init__(self, pages_handler):
-    super().__init__()
-    self.pages_handler = pages_handler
