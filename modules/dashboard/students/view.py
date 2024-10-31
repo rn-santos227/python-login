@@ -18,3 +18,4 @@ class DashboardStudentPage(QWidget):
 
     main_layout: QHBoxLayout = QHBoxLayout(self)
     main_layout.setContentsMargins(0, 0, 0, 0)
+    main_layout.setSpacing(0)
