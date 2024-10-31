@@ -7,3 +7,4 @@ from handlers.session_handler import SessionHandler
 class DashboardStudentPage(QWidget):
   def __init__(self, pages_handler, session_handler: SessionHandler):
     super().__init__()
+    self.pages_handler = pages_handler
