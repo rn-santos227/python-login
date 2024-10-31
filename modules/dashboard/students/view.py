@@ -22,3 +22,9 @@ class DashboardStudentPage(QWidget):
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
+
+    try:
+      pixmap = asset_handler.get_image(image_name)
+
+    except FileNotFoundError as e:
+      print(e)
