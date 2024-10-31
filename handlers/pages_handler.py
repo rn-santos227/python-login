@@ -21,6 +21,7 @@ class PagesHandler:
 
   def switch_to_dashboard_admin_page(self):
     self.stacked_widget.setCurrentWidget(self.dashboard_admin_page)
+    self.dashboard_admin_page.logs_content.load_logs()
 
   def switch_to_dashboard_guard_page(self):
     self.stacked_widget.setCurrentWidget(self.dashboard_guard_page)
