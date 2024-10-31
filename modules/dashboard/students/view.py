@@ -26,6 +26,7 @@ class DashboardStudentPage(QWidget):
     try:
       pixmap = asset_handler.get_image(image_name)
       scaled_pixmap = pixmap.scaled(self.size(), Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation)
+      self.background_label.setPixmap(scaled_pixmap)
 
     except FileNotFoundError as e:
       print(e)
