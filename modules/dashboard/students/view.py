@@ -15,3 +15,5 @@ class DashboardStudentPage(QWidget):
   def __init_ui(self):
     button_bg_color = "#fff6f6"
     button_font_color = "#000000"
+
+    main_layout: QHBoxLayout = QHBoxLayout(self)
