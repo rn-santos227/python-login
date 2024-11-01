@@ -36,6 +36,7 @@ class DashboardStudentPage(QWidget):
 
     logs_button: Button = Button("Attendance Logs")
     logs_button.connect_signal(self.handle_logs)
+    logs_button.set_fixed_width(250)
 
   def handle_logs(self):
     self.logs_content.load_logs()
