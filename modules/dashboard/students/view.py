@@ -40,6 +40,7 @@ class DashboardStudentPage(QWidget):
     logs_button.set_fixed_width(250)
 
     logout_button: Button = Button("Log Out")
+    logout_button.connect_signal(self.handle_logout)
 
     self.navigation_menu.addWidget(logs_button)
 
