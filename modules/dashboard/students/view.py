@@ -34,6 +34,8 @@ class DashboardStudentPage(QWidget):
     self.left_layout: QVBoxLayout = QVBoxLayout()
     self.main_content: QStackedWidget = QStackedWidget()
 
+    logs_button: Button = Button("Attendance Logs")
+
   def handle_logs(self):
     self.logs_content.load_logs()
     self.main_content.setCurrentWidget(self.logs_content)
