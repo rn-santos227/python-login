@@ -32,6 +32,7 @@ class DashboardStudentPage(QWidget):
 
     self.navigation_menu: QVBoxLayout = QVBoxLayout()
     self.left_layout: QVBoxLayout = QVBoxLayout()
+    self.main_content: QStackedWidget = QStackedWidget()
 
   def resizeEvent(self, event):
     super().resizeEvent(event)
