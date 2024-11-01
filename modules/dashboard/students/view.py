@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QDialog, QFrame, QHBoxLayout, QLabel, QStackedWidget
 from PyQt5.QtCore import Qt
 
 from components.button import Button
+from components.question_dialog import QuestionDialog
 
 from modules.logs.view import LogsPage
 
