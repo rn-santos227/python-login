@@ -50,6 +50,9 @@ class DashboardStudentPage(QWidget):
     self.logs_content.load_logs()
     self.main_content.setCurrentWidget(self.logs_content)
 
+  def handle_logout(self):
+    question_box: QuestionDialog = QuestionDialog(message="Are you sure you want to log out?")
+
   def resizeEvent(self, event):
     super().resizeEvent(event)
 
