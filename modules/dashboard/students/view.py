@@ -39,6 +39,8 @@ class DashboardStudentPage(QWidget):
     logs_button.connect_signal(self.handle_logs)
     logs_button.set_fixed_width(250)
 
+    self.navigation_menu.addWidget(logs_button)
+
   def handle_logs(self):
     self.logs_content.load_logs()
     self.main_content.setCurrentWidget(self.logs_content)
