@@ -45,6 +45,7 @@ class DashboardStudentPage(QWidget):
 
     self.navigation_menu.addWidget(logs_button)
     self.navigation_menu.addWidget(logout_button)
+    self.navigation_menu.addStretch()
 
     main_content_frame: QFrame = QFrame(self)
     main_content_frame.setObjectName("formFrame")
