@@ -30,6 +30,8 @@ class DashboardStudentPage(QWidget):
 
     self.logs_content: LogsPage = LogsPage(self)
 
+    self.navigation_menu: QVBoxLayout = QVBoxLayout()
+
   def resizeEvent(self, event):
     super().resizeEvent(event)
 
