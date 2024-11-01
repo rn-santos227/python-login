@@ -41,6 +41,8 @@ class DashboardStudentPage(QWidget):
 
     self.navigation_menu.addWidget(logs_button)
 
+    main_content_frame: QFrame = QFrame(self)
+
   def handle_logs(self):
     self.logs_content.load_logs()
     self.main_content.setCurrentWidget(self.logs_content)
