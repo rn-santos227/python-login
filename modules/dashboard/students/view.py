@@ -35,6 +35,7 @@ class DashboardStudentPage(QWidget):
     self.main_content: QStackedWidget = QStackedWidget()
 
     logs_button: Button = Button("Attendance Logs")
+    logs_button.connect_signal(self.handle_logs)
 
   def handle_logs(self):
     self.logs_content.load_logs()
