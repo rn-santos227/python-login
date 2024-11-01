@@ -52,6 +52,8 @@ class DashboardStudentPage(QWidget):
 
   def handle_logout(self):
     question_box: QuestionDialog = QuestionDialog(message="Are you sure you want to log out?")
+    if question_box.exec() == QDialog.Accepted:
+      self.session_handler.destroy_session()
 
   def resizeEvent(self, event):
     super().resizeEvent(event)
