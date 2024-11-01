@@ -39,6 +39,8 @@ class DashboardStudentPage(QWidget):
     logs_button.connect_signal(self.handle_logs)
     logs_button.set_fixed_width(250)
 
+    logout_button: Button = Button("Log Out")
+
     self.navigation_menu.addWidget(logs_button)
 
     main_content_frame: QFrame = QFrame(self)
