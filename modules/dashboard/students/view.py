@@ -36,6 +36,7 @@ class DashboardStudentPage(QWidget):
 
   def handle_logs(self):
     self.logs_content.load_logs()
+    self.main_content.setCurrentWidget(self.logs_content)
 
   def resizeEvent(self, event):
     super().resizeEvent(event)
