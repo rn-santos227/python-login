@@ -53,6 +53,7 @@ class DashboardStudentPage(QWidget):
     self.main_content.addWidget(self.logs_content)
 
     self.toggle_button: Button = Button("Toggle Navigation")
+    self.toggle_button.connect_signal(self.__toggle_navigation)
 
   def handle_logs(self):
     self.logs_content.load_logs()
