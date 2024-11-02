@@ -67,6 +67,10 @@ class DashboardStudentPage(QWidget):
   def resizeEvent(self, event):
     super().resizeEvent(event)
 
+  def __toggle_navigation(self):
+    if self.navigation_visible:
+      self.navigation_visible = False
+
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
     self.background_label.setGeometry(self.rect())
