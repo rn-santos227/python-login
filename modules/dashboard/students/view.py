@@ -72,6 +72,8 @@ class DashboardStudentPage(QWidget):
       self.navigation_visible = False
       for index in reversed(range(self.navigation_menu.count())):
         widget = self.navigation_menu.itemAt(index).widget()
+        if widget is not None:
+          widget.hide()
 
     else:
       self.navigation_visible = True
