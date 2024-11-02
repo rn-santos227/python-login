@@ -63,6 +63,7 @@ class DashboardStudentPage(QWidget):
     main_layout.addWidget(self.main_content, 9)
 
     self.setLayout(main_layout)
+    self.handle_logs()
 
   def handle_logs(self):
     self.logs_content.load_logs()
