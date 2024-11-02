@@ -57,6 +57,7 @@ class DashboardStudentPage(QWidget):
     self.toggle_button.set_fixed_width(250)
 
     self.left_layout.addWidget(self.toggle_button)
+    self.left_layout.addLayout(self.navigation_menu)
 
   def handle_logs(self):
     self.logs_content.load_logs()
