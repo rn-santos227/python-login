@@ -147,6 +147,9 @@ class LoginPage(QWidget):
       elif user_type == "guard":
         self.pages_handler.switch_to_dashboard_guard_page()
 
+      elif user_type == "student":
+        self.pages_handler.switch_to_dashboard_student_page()
+
     else:
       print("Login Unsuccessful.")
       self.alert_message.set_message("Invalid username or password")
