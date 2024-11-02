@@ -79,6 +79,8 @@ class DashboardStudentPage(QWidget):
       self.navigation_visible = True
       for index in range(self.navigation_menu.count()):
         widget = self.navigation_menu.itemAt(index).widget()
+        if widget is not None:
+          widget.show()
 
   def __set_background_image(self, image_name):
     asset_handler: AssetHandler = AssetHandler()
