@@ -68,6 +68,8 @@ class DashboardStudentPage(QWidget):
     self.background_label.lower()
     main_layout.setContentsMargins(0, 0, 0, 0)
 
+    logs_button.set_color(bg_color=button_bg_color, font_color=button_font_color)
+
   def handle_logs(self):
     self.logs_content.load_logs()
     self.main_content.setCurrentWidget(self.logs_content)
