@@ -65,6 +65,8 @@ class DashboardStudentPage(QWidget):
     self.setLayout(main_layout)
     self.handle_logs()
 
+    self.background_label.lower()
+
   def handle_logs(self):
     self.logs_content.load_logs()
     self.main_content.setCurrentWidget(self.logs_content)
