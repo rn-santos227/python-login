@@ -31,3 +31,4 @@ class PagesHandler:
 
   def switch_to_dashboard_student_page(self):
     self.stacked_widget.setCurrentWidget(self.dashboard_student_page)
+    self.dashboard_student_page.logs_content.load_logs()
