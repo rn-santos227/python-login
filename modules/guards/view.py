@@ -40,7 +40,7 @@ class GuardsPage(QWidget):
     
     self.top_layout: QHBoxLayout = QHBoxLayout()
     self.top_layout.addLayout(self.init_create_layout())
-    self.top_layout.setContentsMargins(200, 0, 150, 20)
+    self.top_layout.setContentsMargins(200, 0, 200, 20)
     
     self.table_widget: QTableWidget = QTableWidget()
     self.table_widget.setColumnCount(4)
