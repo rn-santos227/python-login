@@ -55,7 +55,7 @@ class LogsPage(QWidget):
     search_layout.addLayout(search_button_layout, 1, 0, 1, 2)
 
     self.top_layout.addLayout(search_layout)
-    self.top_layout.setContentsMargins(200, 0, 150, 20)
+    self.top_layout.setContentsMargins(200, 0, 200, 20)
 
     self.table_widget: QTableWidget = QTableWidget()
     self.table_widget.setColumnCount(5)
