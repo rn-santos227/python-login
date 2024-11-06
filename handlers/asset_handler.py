@@ -15,8 +15,8 @@ class AssetHandler:
     else:
       raise FileNotFoundError(f"Image {image_name} not found in {self.assets_dir}")
     
-  def get_svg(self, svg_name) -> QPixmap:
-    svg_path = os.path.join(f"{self.assets_dir}/svg", svg_name)
+  def get_svg(self, svg_folder, svg_name) -> QPixmap:
+    svg_path = os.path.join(f"{self.assets_dir}/svg/{svg_folder}", svg_name)
 
     if os.path.exists(svg_path):
       return QSvgRenderer(svg_path)
