@@ -2,4 +2,6 @@
   <circle cx="12" cy="10" r="4" fill="#000000" />
 
   <circle cx="12" cy="10" r="1" fill="none" />
+
+   <circle cx="12" cy="10" r="6" stroke="#000000" stroke-width="1.5" />
 </svg>
