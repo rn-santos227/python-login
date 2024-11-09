@@ -44,3 +44,6 @@ class Button(QWidget):
   def set_disabled(self):
     self.button.setEnabled(False)
 
+  def set_svg_icon(self, svg_path, icon_size=24):
+    pass
+
