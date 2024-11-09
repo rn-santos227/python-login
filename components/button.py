@@ -1,5 +1,7 @@
 from PyQt5.QtWidgets import QPushButton, QSizePolicy, QVBoxLayout, QWidget
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QIcon, QPixmap
+from PyQt5.QtSvg import QSvgRenderer
+from PyQt5.QtCore import QSize
 
 class Button(QWidget):
   def __init__(self, button_text="Button", parent=None):
