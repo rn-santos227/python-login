@@ -48,4 +48,5 @@ class Button(QWidget):
 
   def set_svg_icon(self, svg_path, icon_size=24):
     svg_renderer = QSvgRenderer(svg_path)
+    pixmap = QPixmap(icon_size, icon_size)
 
