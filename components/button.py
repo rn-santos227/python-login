@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QPushButton, QSizePolicy, QVBoxLayout, QWidget
-from PyQt5.QtGui import QFont, QIcon, QPixmap
+from PyQt5.QtGui import QFont, QIcon, QPixmap, QPainter
 from PyQt5.QtSvg import QSvgRenderer
 from PyQt5.QtCore import QSize, Qt
 
@@ -50,4 +50,6 @@ class Button(QWidget):
     svg_renderer = QSvgRenderer(svg_path)
     pixmap = QPixmap(icon_size, icon_size)
     pixmap.fill(Qt.transparent)
+    painter = QPainter(pixmap)
+    
 
