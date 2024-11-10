@@ -103,7 +103,6 @@ class LoginPage(QWidget):
     self.background_label.lower()
     main_layout.setContentsMargins(0, 0, 0, 0)
 
-
     login_button.set_svg_icon("icons", "login.svg")
     login_button.set_color(bg_color="green", font_color="white")
 
