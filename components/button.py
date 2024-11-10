@@ -8,9 +8,9 @@ from assets.styles.styles import button_style, button_icon_style
 class Button(QWidget):
   def __init__(self, button_text="Button", parent=None):
     super().__init__(parent)
-    self.init_ui(button_text)
+    self.__init_ui(button_text)
 
-  def init_ui(self, button_text):
+  def __init_ui(self, button_text):
     self.layout: QVBoxLayout = QVBoxLayout()
     self.button: QPushButton = QPushButton(button_text)
     self.button.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
