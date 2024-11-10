@@ -27,3 +27,5 @@ popup_dialog_style = "background-color: #D3D3D3;"
 biometrics_label_style = "background-color: white;"
 
 button_style = "padding-left: 8px; padding-right: 8px;"
+
+button_icon_style = "text-align: left; padding-left: 8px; padding-right: 8px;"
