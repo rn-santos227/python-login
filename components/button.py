@@ -52,9 +52,9 @@ class Button(QWidget):
   def set_disabled(self):
     self.button.setEnabled(False)
 
-  def set_svg_icon(self, sv_folder, icon_size=16):
+  def set_svg_icon(self, sv_folder, svg_name, icon_size=16):
     asset_handler: AssetHandler = AssetHandler()
-    svg_renderer = QSvgRenderer(svg_path)
+    svg_renderer = asset_handler.get_svg(svg_folder=sv_folder, svg_name=svg_name)
     pixmap = QPixmap(icon_size, icon_size)
     pixmap.fill(Qt.transparent)
     painter = QPainter(pixmap)
