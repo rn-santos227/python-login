@@ -19,6 +19,8 @@ class Button(QWidget):
     button_font.setPointSize(12)
     self.button.setFont(button_font)
 
+    self.button.setStyleSheet(button_style)
+
     self.layout.addWidget(self.button)
     self.setLayout(self.layout)
 
