@@ -62,3 +62,5 @@ class Button(QWidget):
     self.button.setIcon(icon)
     self.button.setIconSize(QSize(icon_size, icon_size))
 
+    self.button.setStyleSheet(button_icon_style)
+
