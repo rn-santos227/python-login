@@ -54,10 +54,12 @@ class Button(QWidget):
 
   def set_svg_icon(self, sv_folder, svg_name, icon_size=16):
     asset_handler: AssetHandler = AssetHandler()
-    svg_renderer = asset_handler.get_svg(svg_folder=sv_folder, svg_name=svg_name)
+    svg_renderer: QSvgRenderer = asset_handler.get_svg(svg_folder=sv_folder, svg_name=svg_name)
+    
     pixmap = QPixmap(icon_size, icon_size)
     pixmap.fill(Qt.transparent)
     painter = QPainter(pixmap)
+    
     svg_renderer.render(painter)
     painter.end()
     
