@@ -55,4 +55,5 @@ class Button(QWidget):
     painter.end()
     
     icon = QIcon(pixmap)
+    self.button.setIcon(icon)
 
