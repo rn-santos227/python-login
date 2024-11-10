@@ -3,6 +3,8 @@ from PyQt5.QtGui import QFont, QIcon, QPixmap, QPainter
 from PyQt5.QtSvg import QSvgRenderer
 from PyQt5.QtCore import QSize, Qt
 
+from assets.styles.styles import button_style, button_icon_style
+
 class Button(QWidget):
   def __init__(self, button_text="Button", parent=None):
     super().__init__(parent)
@@ -46,7 +48,7 @@ class Button(QWidget):
   def set_disabled(self):
     self.button.setEnabled(False)
 
-  def set_svg_icon(self, svg_path, icon_size=24):
+  def set_svg_icon(self, svg_path, icon_size=16):
     svg_renderer = QSvgRenderer(svg_path)
     pixmap = QPixmap(icon_size, icon_size)
     pixmap.fill(Qt.transparent)
