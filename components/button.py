@@ -56,4 +56,5 @@ class Button(QWidget):
     
     icon = QIcon(pixmap)
     self.button.setIcon(icon)
+    self.button.setIconSize(QSize(icon_size, icon_size))
 
