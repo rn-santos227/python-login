@@ -51,5 +51,6 @@ class Button(QWidget):
     pixmap = QPixmap(icon_size, icon_size)
     pixmap.fill(Qt.transparent)
     painter = QPainter(pixmap)
+    svg_renderer.render(painter)
     
 
