@@ -54,4 +54,5 @@ class Button(QWidget):
     svg_renderer.render(painter)
     painter.end()
     
+    icon = QIcon(pixmap)
 
