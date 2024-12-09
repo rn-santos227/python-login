@@ -28,6 +28,7 @@ class ScreenWindow(QMainWindow):
     self.stacked_widget.addWidget(self.pages_handler.login_page)
     self.stacked_widget.addWidget(self.pages_handler.dashboard_admin_page)
     self.stacked_widget.addWidget(self.pages_handler.dashboard_guard_page)
+    self.stacked_widget.addWidget(self.pages_handler.dashboard_student_page)
 
     self.pages_handler.switch_to_login_page()
 
